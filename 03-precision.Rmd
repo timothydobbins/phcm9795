@@ -1,0 +1,22 @@
+# Precision, standard errors and confidence intervals
+
+## Learning objectives {-}
+
+By the end of this module you will be able to:
+
+- Explain the purpose of sampling, different sampling methods and their implications for data analysis;
+- Distinguish between standard deviation of a sample and standard error of a mean;
+- Recognise the importance of the central limit theorem;
+- Calculate the standard error of a mean;
+- Calculate and interpret confidence intervals for a mean;
+- Be familiar with the t-distribution and when to use it.
+
+## Readings {-}
+
+@kirkwood_sterne01; Chapters 4 and 6.
+
+@bland15; Sections 3.3 and 3.4, 8.1 to 8.3.
+
+@juul_frydenberg14; Sections 11.5 to 11.7.
+
+## Section

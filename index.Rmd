@@ -1,0 +1,27 @@
+--- 
+title: "PHCM9795 Foundations of Biostatistics"
+author: "Course notes"
+date: "Term 2, 2022"
+site: bookdown::bookdown_site
+documentclass: memoir
+mainfont: Roboto
+sansfont: Clancy
+monofont: Roboto Mono
+bibliography: [book.bib, PHCM9795.bib]
+# url: your book url like https://bookdown.org/yihui/bookdown
+# cover-image: path to the social sharing image like images/cover.jpg
+description: |
+  This is a minimal example of using the bookdown package to write a book.
+  The HTML output format for this example is bookdown::gitbook,
+  set in the _output.yml file.
+link-citations: yes
+github-repo: rstudio/bookdown-demo
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(tidyverse)
+library(here)
+library(knitr)
+library(huxtable)
+```

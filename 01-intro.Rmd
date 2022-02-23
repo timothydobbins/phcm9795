@@ -1,0 +1,23 @@
+# Introduction to statistics and presenting data
+
+## Learning objectives {-}
+
+By the end of this module, you will be able to:
+
+- Define the term statistics;
+- Describe and identify the underpinning concepts of descriptive and inferential statistics;
+- Distinguish between different types of variables (i.e. quantitative – discrete and continuous; and qualitative – ordinal and nominal);
+- Construct appropriate frequency tables from raw data; 
+- Compute summary statistics to describe the centre and spread of data; 
+- Describe the (centre and spread of the) data using appropriate graphs (histogram and box plot); 
+- Present and interpret graphical summaries of variables using a variety of graphs (bar charts, line-graphs, histograms, boxplots, pie charts and others).
+
+## Readings {-}
+
+[@kirkwood_sterne01]; Chapters 2 and 3.
+
+[@bland15]; Chapter 4.
+
+[@acock10]; Chapter 5.
+
+## An introduction to statistics

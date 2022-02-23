@@ -1,0 +1,17 @@
+# Comparing the means of two groups
+
+## Learning objectives {-}
+
+By the end of this module you will be able to:
+
+- blah
+- blah
+- blah
+
+## Readings {-}
+
+[@kirkwood_sterne01]
+
+[@bland15]
+
+## Introduction
