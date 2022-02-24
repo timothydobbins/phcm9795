@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.15)  24 FEB 2022 09:49
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.15)  24 FEB 2022 16:59
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1468,109 +1468,177 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 [1
 
 ]
-Overfull \hbox (2.09274pt too wide) detected at line 114
+Overfull \hbox (2.09274pt too wide) detected at line 123
 \TU/Roboto(0)/m/n/10 10.10 
  []
 
-)
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/Roboto(0)/m/it' tried instead on input line 165.
+(Font)              Font shape `TU/Roboto(0)/m/it' tried instead on input line 125.
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 165.
-[2]
+(Font)              scaled to size 10.0pt on input line 125.
+[2]) [3] [4
+
+]
 LaTeX Font Info:    Font shape `TU/Clancy(0)/m/n' will be
 (Font)              scaled to size 10.5664pt on input line 168.
-[3
 
-] [4
+Package natbib Warning: Citation `kirkwood_sterne01' on page 5 undefined on input line 195.
+
+
+Package natbib Warning: Citation `bland15' on page 5 undefined on input line 197.
+
+[5] [6
 
 ]
 LaTeX Font Info:    Font shape `TU/RobotoMono(0)/m/n' will be
 (Font)              scaled to size 10.0pt on input line 302.
-[5] [6] [7
+[7] [8]
 
-] [8
+Package natbib Warning: Citation `kirkwood_sterne01' on page 9 undefined on input line 402.
 
-] [9] [10
+
+Package natbib Warning: Citation `bland15' on page 9 undefined on input line 404.
+
+[9
+
+] [10
+
+] [11] [12
 
 ]
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
 (Font)              scaled to size 7.0pt on input line 476.
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
 (Font)              scaled to size 5.0pt on input line 476.
-[11] [12] [13
+[13] [14]
 
-] [14
+Package natbib Warning: Citation `kirkwood_sterne01' on page 15 undefined on input line 538.
 
-] [15] [16
 
-] [17] [18] [19
+Package natbib Warning: Citation `bland15' on page 15 undefined on input line 540.
 
-] [20
+[15
 
-] [21] [22] [23
+] [16
 
-] [24
+] [17] [18
+
+] [19] [20]
+
+Package natbib Warning: Citation `kirkwood_sterne01' on page 21 undefined on input line 675.
+
+
+Package natbib Warning: Citation `bland15' on page 21 undefined on input line 677.
+
+[21
+
+] [22
+
+] [23] [24]
+
+Package natbib Warning: Citation `kirkwood_sterne01' on page 25 undefined on input line 804.
+
+
+Package natbib Warning: Citation `bland15' on page 25 undefined on input line 806.
+
+[25
+
+] [26
 
 ]
 Underfull \hbox (badness 10000) in alignment at lines 889--889
 [][][] 
  []
 
-[25] [26] [27
+[27] [28]
 
-] [28
+Package natbib Warning: Citation `kirkwood_sterne01' on page 29 undefined on input line 963.
+
+
+Package natbib Warning: Citation `bland15' on page 29 undefined on input line 965.
+
+[29
+
+] [30
 
 ]
 Underfull \hbox (badness 10000) in alignment at lines 1089--1089
 [][][] 
  []
 
-[29] [30] [31
+[31] [32]
 
-] [32
+Package natbib Warning: Citation `kirkwood_sterne01' on page 33 undefined on input line 1133.
 
-] [33] [34
+
+Package natbib Warning: Citation `bland15' on page 33 undefined on input line 1135.
+
+[33
+
+] [34
 
 ] [35] [36
 
-] [37] [38] [39
-
-] [40
-
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1487--1487
+
+Package natbib Warning: Citation `kirkwood_sterne01' on page 37 undefined on input line 1215.
+
+
+Package natbib Warning: Citation `bland15' on page 37 undefined on input line 1217.
+
+[37] [38
+
+] [39] [40] [41
+
+] [42] [43]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[44] [45]
+Underfull \hbox (badness 10000) in alignment at lines 1900--1900
+[][][][] 
+ []
+
+[46] [47] [48]
+Underfull \hbox (badness 10000) in alignment at lines 2147--2147
 [][] 
  []
 
 
 Underfull \vbox (badness 2970) has occurred while \output is active []
 
-[41] [42] [43
+[49
+
+] [50]
+
+Package natbib Warning: Citation `kirkwood_sterne01' on page 51 undefined on input line 2210.
+
+
+Package natbib Warning: Citation `bland15' on page 51 undefined on input line 2212.
+
+[51
 
 ]
-
-Package natbib Warning: Citation `freiman_etal78a' on page 44 undefined on input line 1574.
-
-
-Overfull \hbox (17.70624pt too wide) in paragraph at lines 1713--1713
+Overfull \hbox (17.70624pt too wide) in paragraph at lines 2373--2373
 [][]\TU/Roboto(0)/b/n/10 Prevalence[]  
  []
 
-[44] [45]
+[52] [53]
 Missing character: There is no ✔ (U+2714) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ✔ (U+2714) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
-[46] [47] [48] [49] [50] [51] [52
+[54] [55] [56] [57]
+File: _main_files/figure-latex/fig-unequal-controls-1.pdf Graphic file (type pdf)
+<use _main_files/figure-latex/fig-unequal-controls-1.pdf>
+[58] [59] [60] [61
 
-] [53] [54
+] [62
 
-] [55] (./_main.bbl [56])
+] [63] (./_main.bbl [64])
 
 Package natbib Warning: There were undefined citations.
 
-[57
+[65
 
 ]
 \tf@toc=\write6
@@ -1578,15 +1646,15 @@ Package natbib Warning: There were undefined citations.
 
 (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: FE147EE60948E124423E8D7F6D66A8CC;10971.
+(rerunfilecheck)             Checksum: 1EF98BBBB8FC19E266F7EAEB6088B631;12657.
  ) 
 Here is how much of TeX's memory you used:
- 26089 strings out of 478181
- 496862 string characters out of 5854004
- 981765 words of memory out of 5000000
- 46350 multiletter control sequences out of 15000+600000
+ 26115 strings out of 478181
+ 497786 string characters out of 5854004
+ 1010200 words of memory out of 5000000
+ 46373 multiletter control sequences out of 15000+600000
  476017 words of font info for 107 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
  86i,17n,122p,1241b,839s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (57 pages).
+Output written on _main.pdf (65 pages).

@@ -1313,23 +1313,683 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Transform non-normally distributed variables;
 \item
-  blah
+  Explain the purpose of non-parametric statistics and key principles for their use;
 \item
-  blah
+  Calculate ranks for variables;
+\item
+  Conduct and interpret a non-parametric independent samples significance test;
+\item
+  Conduct and interpret a non-parametric paired samples significance test;
+\item
+  Calculate and interpret the Spearman rank correlation coefficient.
 \end{itemize}
 
 \hypertarget{readings-8}{%
 \section*{Readings}\label{readings-8}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citep{kirkwood_sterne01a} Chapter 13.
 
-\citep{bland15}
+\citep{bland15b} Chapter 12.
+
+\citep{juul_frydenberg14} Section 11.5.
+
+\citep{acock10} Section 7.11.
 
 \hypertarget{introduction-5}{%
 \section{Introduction}\label{introduction-5}}
+
+In general, parametric statistics are preferred for reporting data because the summary statistics (mean, standard deviation, standard error of the mean etc) and the tests used (t-tests, correlation, regression etc) are familiar and the results are easy to communicate. However, non-parametric tests can be used if data are not normally distributed. Non-parametric tests make fewer assumptions about the distribution of the data.
+
+\hypertarget{transforming-non-normally-distributed-variables}{%
+\section{Transforming non-normally distributed variables}\label{transforming-non-normally-distributed-variables}}
+
+When a variable has a skewed distribution, one possibility is to transform the data to a new variable to try and obtain a normal or near normal distribution. Methods to transform non-normally distributed data include logarithmic transformation of each data point, or using the square root or the square or the inverse (i.e.~1/x) etc.
+
+\hypertarget{worked-example}{%
+\subsection{Worked Example}\label{worked-example}}
+
+We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example\_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure 9.1. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
+
+\textbf{INSERT FIGURE}
+Figure 9.1 Length of hospital stay in 132 patients
+
+When data are positively skewed, as shown in Figure 9.1, a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.
+In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure 9.2.
+
+\textbf{INSERT FIGURE}
+Figure 9.2 Distribution of log transformed (length of stay + 1)
+
+The distribution now appears much more bell shaped. Output 9.1 shows the descriptive statistics for length of stay before and after logarithmic transformation. Before transformation, the SD is almost as large as the mean value which indicates that the data are skewed and that these statistics are not an accurate description of the centre and spread of the data.
+
+Output
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{                       Length of stay}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Percentiles      Smallest}
+\NormalTok{ 1\%            1              0}
+\NormalTok{ 5\%           13              1}
+\NormalTok{10\%           15              9       Obs                 132}
+\NormalTok{25\%         20.5             11       Sum of Wgt.         132}
+
+\NormalTok{50\%           27                      Mean           38.05303}
+\NormalTok{                        Largest       Std. Dev.      35.78057}
+\NormalTok{75\%           42            138}
+\NormalTok{90\%           60            153       Variance       1280.249}
+\NormalTok{95\%          117            211       Skewness       3.175108}
+\NormalTok{99\%          211            244       Kurtosis       15.15463}
+
+\NormalTok{                   log(Length of stay + 1)}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Percentiles      Smallest}
+\NormalTok{ 1\%     .6931472              0}
+\NormalTok{ 5\%     2.639057       .6931472}
+\NormalTok{10\%     2.772589       2.302585       Obs                 132}
+\NormalTok{25\%     3.067783       2.484907       Sum of Wgt.         132}
+
+\NormalTok{50\%     3.332205                      Mean           3.407232}
+\NormalTok{                        Largest       Std. Dev.      .7149892}
+\NormalTok{75\%       3.7612       4.934474}
+\NormalTok{90\%     4.110874       5.036952       Variance       .5112096}
+\NormalTok{95\%     4.770685       5.356586       Skewness      {-}.4932881}
+\NormalTok{99\%     5.356586       5.501258       Kurtosis       7.847303}
+\end{Highlighting}
+\end{Shaded}
+
+The mean and standard deviation of the transformed length of stay are in log base e (i.e.~ln) units. If we raise the mean of the log of length of stay to the power of \(e\), it returns a value of 30.2 days (\(e^{3.41}=30.2\)). To do this in Stata, you can use the display command that was shown in Module 2 and with the exponential function, exp().
+
+Technically, this is called the geometric mean of the data, and it has a different interpretation to the usual mean, the arithmetic mean. This is a much better estimate in this case of the ``average'' length of stay than the mean of 38.1 days (95\% CI 31.9, 44.2 days) obtained from the non-transformed positively skewed data. Note that, if you have added 1 to your data to deal with 0 values, the back-transformed estimate is \emph{approximately} equal to the geometric mean.
+
+If we were testing the hypothesis that there was a difference in length of stay between groups (status of nosocomial infection), t-tests could not be used with length of stay but could be used for the log transformed variable, which is approximately normally distributed. The output from the t-test of the log-transformed length of stay is shown in Output 9.2. This is done using the t-test shown in Module 5.
+
+{[}Command: \texttt{ttest\ ln\_los,\ by(infect)}{]} How do you interpret the test statistics (i.e.~the t-value and p-value)?
+
+Output 9.2: Independent samples t-test on log-transformed length of stay data
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Two{-}sample t test with equal variances}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      No |     106    3.328976     .068083    .7009579     3.19398    3.463972}
+\NormalTok{     Yes |      26    3.726274    .1363363    .6951816    3.445484    4.007064}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{combined |     132    3.407232    .0622318    .7149892    3.284122    3.530341}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    diff |           {-}.3972974    .1531626               {-}.7003113   {-}.0942835}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    diff = mean(No) {-} mean(Yes)                                   t =  {-}2.5940}
+\NormalTok{Ho: diff = 0                                     degrees of freedom =      130}
+
+\NormalTok{    Ha: diff \textless{} 0                 Ha: diff != 0                 Ha: diff \textgreater{} 0}
+\NormalTok{ Pr(T \textless{} t) = 0.0053         Pr(|T| \textgreater{} |t|) = 0.0106          Pr(T \textgreater{} t) = 0.9947}
+\end{Highlighting}
+\end{Shaded}
+
+As explained above, the estimated statistics would need to be converted back to the units in which the variable was measured. From Output 9.2, we can take the exponential of the corresponding log-transformed values:
+
+\begin{itemize}
+\tightlist
+\item
+  the geometric mean of the infected group is approximately 41.5 days with a 95\% confidence interval from 31.4 to 55.0 days.
+\item
+  the geometric mean of the uninfected group is approximately 27.9 days with a 95\% confidence interval from 24.4 to 31.9 days.
+\end{itemize}
+
+\hypertarget{non-parametric-significance-tests}{%
+\section{Non-parametric significance tests}\label{non-parametric-significance-tests}}
+
+It is often not possible or sensible to transform a non-normal distribution, for example if there are too many zero values or when we simply want to compare groups using the unit in which the measurement was taken (e.g.~length of stay). For this, non-parametric significance tests can be used but the general idea behind these tests is that the data values are replaced by ranks. This also protects against outliers having too much influence.
+
+\hypertarget{ranking-variables}{%
+\subsection{Ranking variables}\label{ranking-variables}}
+
+Table 9.1 shows how ranks are calculated for the first 21 patients in the length-of-stay data (Example\_9.1.dta). First the data are sorted in order of their magnitude (from the lowest value to the highest) ignoring the group variable. Each data point is then assigned a rank. Data points that are equal are assigned the mean of their ranks. Thus, the two lengths of stay of 11 days share the ranks 4 and 5, and have a mean rank of 4.5. Similarly, there are 5 people with a length of stay of 14 days and these share the ranks 9 to 13, the mean of which is 11. Once ranks are computed they are assigned to each of the two groups and summed within each group.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-9-1} Transforming data to ranks: first 21 participants}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.95\textwidth}{p{0.158333333333333\textwidth} p{0.158333333333333\textwidth} p{0.158333333333333\textwidth} p{0.158333333333333\textwidth} p{0.158333333333333\textwidth} p{0.158333333333333\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{ID}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Infection}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Length of stay}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Rank}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Infection=no}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Infection=Yes}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 32\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 33\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 12\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 9\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 22\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 16\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 28\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Yes\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 12\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 27\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 13\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 13\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 24\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 130\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 10\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 25\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 30\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 14\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 15.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 13\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Yes\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.158333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering No\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 20.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.158333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.158333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+By assigning ranks to individuals, we lose information about their actual values and this makes it more difficult to detect a difference. However, outliers and extreme values in the data are brought back closer to the data so that they are less influential. For this reason, non-parametric tests have less power than parametric tests and they require much larger differences in the data to show statistical significance between groups.
+
+\hypertarget{non-parametric-test-for-two-independent-samples-wilcoxon-ranked-sum-test}{%
+\section{Non-parametric test for two independent samples (Wilcoxon ranked sum test)}\label{non-parametric-test-for-two-independent-samples-wilcoxon-ranked-sum-test}}
+
+The non-parametric equivalent to an independent samples t-test (Module 5) is the Wilcoxon ranked sum test, also known as the Mann-Whitney U test. In Stata, this can be obtained using the ranksum command.
+
+The assumption for this test is that the distributions of the two populations have the same general shape. If this assumption is met, then this test evaluates the null hypothesis that the medians of the two populations are equal. This test does not assume that the populations are normally distributed, nor that their variances are equal.
+
+For the length of stay data in the Worked Example 9.1, we first get a ranks table as shown in Output 9.3. The rank sum table gives us a direction of effect that the ranks are higher than expected in patients who had nosocomial infection. While the positive infection group has a lower sum of ranks because there were fewer people who contracted an infection, it is higher than expected, i.e.~they have a longer length of stay compared with the negative infection group. This ranks table does not provide any summary statistics of direction of effect, central tendency or spread that describe the data.
+
+Output 9.3 Results output from Wilcoxon rank-sum test
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Two{-}sample Wilcoxon rank{-}sum (Mann{-}Whitney) test}
+
+\NormalTok{      infect |      obs    rank sum    expected}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{          No |      106        6620        7049}
+\NormalTok{         Yes |       26        2158        1729}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    combined |      132        8778        8778}
+
+\NormalTok{unadjusted variance    30545.67}
+\NormalTok{adjustment for ties      {-}53.87}
+\NormalTok{                     {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{adjusted variance      30491.80}
+
+\NormalTok{Ho: los(infect==No) = los(infect==Yes)}
+\NormalTok{             z =  {-}2.457}
+\NormalTok{    Prob \textgreater{} |z| =   0.0140}
+\NormalTok{    Exact Prob =   0.0135}
+\end{Highlighting}
+\end{Shaded}
+
+The test statistics are shown under the rank sum table in Output 9.3. The variance shown immediately under the table are used to conduct the test, and are not reported on.
+
+From the output 9.3, there are two P-values shown: one assuming normality of the ranks (not the underlying data), and an ``Exact'' P-value. The exact P-value is calculated when the sample size is not too large (less than 200), and is preferred. The rounded exact P value is 0.014 which indicates that the there is evidence of a difference in length of stay between the groups. This P-value should be provided alongside non-parametric summary statistics such as medians and inter-quartile ranges.
+
+Using the summary command with the detail option in Stata and splitting the LOS variable by the Infect variable (as shown in Module 5), we can obtain the median length of stay values of 24 (Interquartile Range: 19 to 40 days) in the group with no infection and 37 (Interquartile Range: 24 to 50 days) in the group with infection.
+
+\hypertarget{non-parametric-test-for-paired-data-wilcoxon-signed-rank-test}{%
+\section{Non-parametric test for paired data (Wilcoxon signed-rank test)}\label{non-parametric-test-for-paired-data-wilcoxon-signed-rank-test}}
+
+There are two types of non-parametric tests for paired data, called the Sign test and the Wilcoxon signed rank test. In practice, the Sign test is rarely used and will not be discussed in this course.
+
+If the differences between two paired measurements are not normally distributed, a non-parametric equivalent of a paired t-test (Module 5) should be used. The equivalent test is the Wilcoxon matched-pairs signed rank test, also simply called the Wilcoxon matched-pairs test. This test is resistant to outliers in the data, however the proportion of outliers in the sample should be small. This test evaluates the null hypothesis that the median of the paired differences is equal to zero.
+
+In this test, the absolute differences between the paired scores are ranked and the difference scores that are equal to zero (i.e.~scores where there is no difference between the pairs) are excluded. Thus, the test is not suitable when a large proportion of the differences are zero because the effective sample size is reduced considerably.
+
+\hypertarget{worked-example-1}{%
+\subsection{Worked Example}\label{worked-example-1}}
+
+A crossover trial is done to compare symptom scores for two drugs in 11 people with arthritis (higher scores indicate more severe symptoms). The data are contained in Stata datafile file Example\_9.2.dta. The data are shown in Table 9.2. The descriptive statistics indicate that the differences are not normally distributed. You can use the Explore function in Stata to determine this.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-9-2} Arthritis symptom scores for 11 patients after administering two drugs}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Patient ID}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Score: Drug 1}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Score: Drug 2}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Difference (Drug 2 – Drug 1)}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 10\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering -5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 9\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 10\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 9\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 10\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Before doing the analysis let us examine the distribution of the difference of symptom scores between the two drugs. As in Module 5, we first need to compute the difference between the symptom scores. To examine the distribution, we plot a histogram as shown in Figure 9.3.
+
+Figure 9.3: Distribution of difference in symptom scores between Drug 1 and Drug 2
+\textbf{UPDATE}
+
+The histogram that the differences are not normally distributed. The data looks negatively skewed with a gap in the histogram between the values of -5 and 0. Therefore, it would not be appropriate to conduct a paired t-test. Hence, we conduct a non-parametric paired test (Wilcoxon matched-pairs signed-rank test).
+
+A non-parametric paired test can be obtained in Stata using the signrank command and the results of the test are shown in Output 9.4.
+
+Output 9.4: Results from Wilcoxon matched-pairs signed-rank test
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Wilcoxon signed{-}rank test}
+
+\NormalTok{        sign |      obs   sum ranks    expected}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    positive |        1        10.5          33}
+\NormalTok{    negative |       10        55.5          33}
+\NormalTok{        zero |        0           0           0}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{         all |       11          66          66}
+
+\NormalTok{unadjusted variance      126.50}
+\NormalTok{adjustment for ties       {-}1.63}
+\NormalTok{adjustment for zeros       0.00}
+\NormalTok{                     {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{adjusted variance        124.88}
+
+\NormalTok{Ho: drug\_1 = drug\_2}
+\NormalTok{             z =  {-}2.013}
+\NormalTok{    Prob \textgreater{} |z| =   0.0441}
+\NormalTok{    Exact Prob =   0.0459}
+\end{Highlighting}
+\end{Shaded}
+
+The table in Output 9.4 shows that there is 1 person who has a positive difference, where the symptom score on drug 2 that is smaller than that for drug 1 (i.e., drug 2 is better than drug 1); and 10 people who have a negative difference. No one has the same score for both drugs. The difference scores are ranked and the observed and expected sum of the ranks are shown in the output. This provides no intuitive summary statistics except to indicate which drug has higher ranks.
+
+The test statistics are also shown under the table in Output 9.4. From the output, the exact P value of 0.046 indicates that there is evidence of a difference in symptom score between the two drugs.
+
+\hypertarget{non-parametric-estimates-of-correlation}{%
+\section{Non-parametric estimates of correlation}\label{non-parametric-estimates-of-correlation}}
+
+Estimating correlation using Pearson's correlation coefficient can be problematic when bivariate Normality cannot be assumed, or in the presence of outliers or skewness. There are two commonly used non-parametric alternatives to Pearson's correlation coefficient: Spearman's rank correlation (\(\rho\) or rho), and Kendall's rank correlation (\(\tau\) or tau).
+
+When estimating the correlation between x and y, Spearman's rank correlation essentially replaces the observations x and y by their ranks, and calculates the correlation between the ranks. Kendall's rank correlation compares the ranks between every possible combination of pairs of data to measure concordance: whether high values for x tend to be associated with high values for y (positively correlated) or low values of y (negatively correlated).
+
+In terms of which is the more appropriate measure to use, the following passage from An Introduction to Medical Statistics, 4th Edition (Bland 2015) provides some guidance:
+
+\begin{quote}
+``Why have two different rank correlation coefficients? Spearman's \(\rho\) is older than Kendall's \(\tau\), and can be thought of as a simple analogue of the product moment correlation coefficient, Pearson's r. Kendall's \(\tau\) is a part of a more general and consistent system of ranking methods, and has a direct interpretation, as the difference between the proportions of concordant and discordant pairs. In general, the numerical value of \(\rho\) is greater than that of \(\tau\). It is not possible to calculate \(\tau\) from \(\rho\) or \(\rho\) from \(\tau\), they measure different sorts of correlation. \(\rho\) gives more weight to reversals of order when data are far apart in rank than when there is a reversal close together in rank, \(\tau\) does not. However, in terms of tests of significance, both have the same power to reject a false null hypothesis, so for this purpose it does not matter which is used.''
+\end{quote}
+
+We will illustrate estimating rank correlation using the Stata file Example\_8.1.dta, which has information about height and lung function collected from a sample of 120 adults.
+
+Output 9.5: Results from rank correlation analysis
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. spearman Height FVC}
+
+\NormalTok{ Number of obs =     120}
+\NormalTok{Spearman\textquotesingle{}s rho =       0.7476}
+
+\NormalTok{Test of Ho: Height and FVC are independent}
+\NormalTok{    Prob \textgreater{} |t| =       0.0000}
+
+\NormalTok{. ktau Height FVC}
+
+\NormalTok{  Number of obs =     120}
+\NormalTok{Kendall\textquotesingle{}s tau{-}a =       0.5431}
+\NormalTok{Kendall\textquotesingle{}s tau{-}b =       0.5609}
+\NormalTok{Kendall\textquotesingle{}s score =    3878}
+\NormalTok{    SE of score =     439.463   (corrected for ties)}
+
+\NormalTok{Test of Ho: Height and FVC are independent}
+\NormalTok{     Prob \textgreater{} |z| =       0.0000  (continuity corrected)}
+\end{Highlighting}
+\end{Shaded}
+
+The Spearman rank correlation coefficient is estimated as 0.75, demonstrating a positive association between height and FVC.
+Stata provides two versions of the Kendall rank correlation coefficient: we would use tau-b (\(\tau_b\)) as it allows for tied observations. The Kendall rank correlation coefficient is estimated as 0.56, again demonstrating a positive association between height and FVC.
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+In this module, we have presented methods to conduct a hypothesis test with data that are not normally distributed. Non-parametric methods do not assume any distribution for the data and use significance tests based on ranks or sign (or both). A non-parametric test is always less powerful than its equivalent parametric test if the data are normally distributed and so whenever possible parametric significance tests should be used. In some cases when data are not normally distributed with a reasonably large sample size, the data can be transformed (most commonly by log transformation) to make the distribution normal. A parametric significance test should then be used with the transformed data to test the hypothesis.
 
 \hypertarget{module-9-learning-activities}{%
 \chapter*{Module 9: Learning Activities}\label{module-9-learning-activities}}
@@ -1716,8 +2376,8 @@ Table 10.1 is an abbreviated look-up table that we can use to estimate the sampl
 \end{table}
  
 
-\hypertarget{worked-example}{%
-\subsection{Worked Example}\label{worked-example}}
+\hypertarget{worked-example-2}{%
+\subsection{Worked Example}\label{worked-example-2}}
 
 A descriptive cross-sectional study is designed to measure the prevalence of bronchitis in children age 0-2 years with a 95\% CI of \(\pm\) 4\%. The prevalence is expected to be 20\%. From the table, a sample size of at least 385 will be required for the width of the 95\% CI to be \(\pm\) 4\% (i.e.~the reported precision of the summary statistic will be 20\% (95\% CI 16\% to 24\%)).
 
@@ -1758,6 +2418,7 @@ Above all, a study has to be practical in terms of the availability of a populat
 The power of a study, which was discussed in Module 4, is the chance of finding a statistically significant difference when one exists, i.e.~the probability of correctly rejecting the null hypothesis. The relationship between the power of a study and statistical significance is shown in Table 10.2.
 
 Table 10.2 Comparison of study results with the truth
+
 Study result Truth
 Effect No effect
 Effect ✔️ α (Type I error)
@@ -1772,8 +2433,8 @@ The significance level, or α level, is the level at which the P value of a test
 
 The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example 10.2.
 
-\hypertarget{worked-example-1}{%
-\subsection{Worked Example}\label{worked-example-1}}
+\hypertarget{worked-example-3}{%
+\subsection{Worked Example}\label{worked-example-3}}
 
 There is a hypothesis that the use of the oral contraceptive (OC) pill in premenopausal women can increase systolic blood pressure. A study was planned to test this hypothesis using a two sided t-test. The investigators are interesting in detecting an increase of at least 5 mm Hg systolic blood pressure in the women using OC compared to the non-OC users with 90\% power at a 5\% significance level. A pilot study shows that the SD of systolic blood pressure in the target group is 25 mm Hg and the mean systolic blood pressure of non-OC user women is 90 mm Hg. What is the minimum number of women in each group that need to be recruited for the study to detect this difference?
 
@@ -1849,8 +2510,8 @@ The statistical test for deciding if there is a significant difference between t
 
 Other than the power and alpha required for the test, the expected prevalence or incidence rate of the outcome factor needs to be estimated for each of the two groups being compared, based on what is known from other studies or what is expected. Occasionally, we may not know the expected proportion in one of the groups, e.g.~in a randomised control trial of a novel intervention. In the sample size calculation for such a study, we should instead justify the minimum expected difference between the proportions based on what is important from a clinical or public health perspective. Based on the minimum difference, we can then derive the expected proportion for both groups. Note that the smaller the difference, the larger the sample size required.
 
-\hypertarget{worked-example-2}{%
-\subsection{Worked Example}\label{worked-example-2}}
+\hypertarget{worked-example-4}{%
+\subsection{Worked Example}\label{worked-example-4}}
 
 If we expect that the prevalence of smoking in two comparison groups (e.g.~males and females) will be 35\% and 20\%. The sample size required in each group to show that the prevalences are significantly different at P\textless0.05 with 80\% power is shown in Output 10.3.
 
@@ -1893,8 +2554,8 @@ The relative risk is used to describe the association between an exposure and an
 
 In general, a RR of 2.0 or greater is considered to be of public health importance. However, a smaller RR can be important when exposure is high, for example say the relative risk of respiratory infection among young children with a parent who smokes is very small at approximately 1.2 but 25\% of children are exposed to smoking in their home. The high exposure rate leads to a very large number of children who have preventable respiratory infections across the community.
 
-\hypertarget{worked-example-3}{%
-\subsection{Worked Example}\label{worked-example-3}}
+\hypertarget{worked-example-5}{%
+\subsection{Worked Example}\label{worked-example-5}}
 
 A study is planned to investigate the effect of an environmental exposure on the incidence of a certain common disease. In the general (unexposed) population the incidence rate of the disease is 50\% and it is assumed that the incidence rate would be 75\% in the exposed population. Thus the relative risk of interest would be 1.5 (i.e.~0.75 / 0.50). We want to detect this effect with 90\% power at a 5\% level of significance. Using the power twoproportions command, Output 10.4 is obtained.
 
@@ -1933,8 +2594,8 @@ If we are designing a case-control study, the appropriate measure of effect is a
 - the desired level of significance (usually 0.05);
 - the desired power of the study (usually 80\% or 90\%).
 
-\hypertarget{worked-example-4}{%
-\subsection{Worked Example}\label{worked-example-4}}
+\hypertarget{worked-example-6}{%
+\subsection{Worked Example}\label{worked-example-6}}
 
 A case-control study is designed to examine an association between an exposure and outcome factor. Existing literature shows that 30\% of the controls are expected to be exposed. We want to detect a minimum OR of 2.0 with 90\% power and 5\% level of significance.
 
@@ -1996,22 +2657,144 @@ In case-control studies, the number of potential case participants available may
 
 However, there is a trade-off between increasing the ratio of group size and the total number that needs to be enrolled. Consider Worked Example 10.5: selecting an equal number of controls and cases would require 188 cases and 188 controls, a total of 376 participants.
 
-Selecting 2 controls (N1) per case (N2) (corresponding to a ratio of N2/N1 0.5 in Stata) would require 140 cases and 280 controls, a total of 420 participants. Following on from these scenarios, the following table can be constructed.
+We may want to reduce the number of cases required, by selecting 2 controls for every case. When performing sample size calculations with unequal groups, Stata refers to cases as N2, and controls as N1. Selecting 2 controls (N1) per case (N2) (corresponding to a ratio of N2/N1 0.5 in Stata) would require 140 cases and 280 controls, a total of 420 participants. We can extend this example and investigate the impact of changing the ratio of controls per case.
 
-Table 10.3: Increasing the number of controls per case in Worked Example 10.5
-Number of controls per case Stata's Allocation ratio (N2/N1) Number of cases required Number of controls required Total number of participants
-1 1 188 188 376
-2 0.5000 140 280 420
-3 0.3333 124 371 495
-4 0.2500 116 462 578
-5 0.2000 111 553 664
-6 0.1666 108 644 752
-7 0.1429 105 734 839
-8 0.1250 104 825 929
-9 0.1111 102 916 1,018
-10 0.1000 101 1,006 1,107
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-unequal-controls} Increasing controls per case}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Controls per case}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Stata's allocation ratio (N2/N1)}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Number of cases required}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Number of controls required}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Total participants required}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 188\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 188\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 376\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 140\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 280\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 420\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.3333\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 124\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 371\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 495\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.25\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 116\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 462\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 578\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 111\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 553\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 664\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.1666\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 108\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 644\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 752\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.1429\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 105\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 734\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 839\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 8\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.125\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 104\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 825\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 929\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 9\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.1111\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 102\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 916\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1,018\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.16\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 10\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 101\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1,006\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.16\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.16\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1,107\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
 This can be visualised graphically, as in Figure 10.1.
-Figure 10.1: Increasing the number of controls per case in Worked Example 10.5
+
+\includegraphics{_main_files/figure-latex/fig-unequal-controls-1.pdf}
 
 We can see that the number of cases required drops off if we go from 1 to 2 controls per case, and again from 2 to 3 controls per case. Once we go from 3 to 4 controls per case, we only reduce the number of cases by 8 (124 vs 116 cases), but at an increase of 91 (371 vs 462) controls. Clearly, this reduction in cases is not offset by the extra controls required.
 
@@ -2022,8 +2805,8 @@ In this module we have seen how to use Stata for estimating the sample size requ
 
 One approach that is increasingly being used is to conduct a blinded interim analysis say when 50\% of the total data that are planned have been collected. In this, a statistician external to the research team who is blinded to the interpretation of the group code is asked to measure the effect size in the data with the sole aim of validating the sample size requirement. It is rarely a good idea to use an interim analysis to reduce the planned sample size and terminate a trial early because the larger the sample size, the greater the precision with which the treatment effect is estimated. However, interim analyses are useful for deciding whether the sample size needs to be increased in order to answer the study question and avoid a Type II error.
 
-\hypertarget{summary}{%
-\section{Summary}\label{summary}}
+\hypertarget{summary-1}{%
+\section{Summary}\label{summary-1}}
 
 In this module we have discussed the importance of conducting a clinical or epidemiological study with enough participants so that an effect or association can be identified if it exists (i.e.~study power), and how this has to be balanced by the need to not enrol more participants than necessary because of resource issues. We have looked at the parameters that need to be considered when estimating the sample size for different studies and have used a look-up table to estimate required sample size for a prevalence study and Stata to estimate appropriate sample sizes in epidemiological research under the most straightforward situations. The common requirement in all the situations is that the researchers need to specify the minimum effect measure (e.g.~difference in means, OR, RR etc) they want to detect with a given probability (usually 80\% to 90\%) at a certain level of significance (usually P\textless0.05). The ultimate decision on the sample size depends on a compromise among different objectives such as power, minimum effect size, and available resources. To make the final decision, it is helpful to do some trial calculations using revised power and the minimum detectable effect measure.
 
@@ -2031,9 +2814,9 @@ In this module we have discussed the importance of conducting a clinical or epid
 \chapter*{Module 10: Stata resources}\label{module-10-stata-resources}}
 \addcontentsline{toc}{chapter}{Module 10: Stata resources}
 
-\hypertarget{module-10-learning-activities}{%
-\chapter*{Module 10: Learning Activities}\label{module-10-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 10: Learning Activities}
+\hypertarget{learning-activities}{%
+\chapter*{\texorpdfstring{\textbf{10} Learning Activities}{10 Learning Activities}}\label{learning-activities}}
+\addcontentsline{toc}{chapter}{\textbf{10} Learning Activities}
 
 \hypertarget{activity-10.1}{%
 \subsection*{Activity 10.1}\label{activity-10.1}}

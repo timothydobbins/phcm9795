@@ -104,6 +104,7 @@ Above all, a study has to be practical in terms of the availability of a populat
 The power of a study, which was discussed in Module 4, is the chance of finding a statistically significant difference when one exists, i.e. the probability of correctly rejecting the null hypothesis. The relationship between the power of a study and statistical significance is shown in Table 10.2.
 
 Table 10.2 Comparison of study results with the truth
+
 Study result	Truth
 	Effect	No effect
 Effect	✔️	α (Type I error)
@@ -305,22 +306,54 @@ In case-control studies, the number of potential case participants available may
 
 However, there is a trade-off between increasing the ratio of group size and the total number that needs to be enrolled. Consider Worked Example 10.5: selecting an equal number of controls and cases would require 188 cases and 188 controls, a total of 376 participants.
 
-Selecting 2 controls (N1) per case (N2) (corresponding to a ratio of N2/N1 0.5 in Stata) would require 140 cases and 280 controls, a total of 420 participants. Following on from these scenarios, the following table can be constructed.
+We may want to reduce the number of cases required, by selecting 2 controls for every case. When performing sample size calculations with unequal groups, Stata refers to cases as N2, and controls as N1. Selecting 2 controls (N1) per case (N2) (corresponding to a ratio of N2/N1 0.5 in Stata) would require 140 cases and 280 controls, a total of 420 participants. We can extend this example and investigate the impact of changing the ratio of controls per case.
 
-Table 10.3: Increasing the number of controls per case in Worked Example 10.5
-Number of controls per case	Stata’s Allocation ratio (N2/N1)	Number of cases required	Number of controls required	Total number of participants
-1	1	188	188	376
-2	0.5000	140	280	420
-3	0.3333	124	371	495
-4	0.2500	116	462	578
-5	0.2000	111	553	664
-6	0.1666	108	644	752
-7	0.1429	105	734	839
-8	0.1250	104	825	929
-9	0.1111	102	916	1,018
-10	0.1000	101	1,006	1,107
+```{r tab-unequal-controls, echo=FALSE}
+tab <- tibble::tribble(
+  ~`Controls per case`, ~`Stata's allocation ratio (N2/N1)`, ~`Number of cases required`, ~`Number of controls required`, ~`Total participants required`,
+    1L,      1,   188L,    188,    376,
+    2L,    0.5,   140L,    280,    420,
+    3L, 0.3333,   124L,    371,    495,
+    4L,   0.25,   116L,    462,    578,
+    5L,    0.2,   111L,    553,    664,
+    6L, 0.1666,   108L,    644,    752,
+    7L, 0.1429,   105L,    734,    839,
+    8L,  0.125,   104L,    825,    929,
+    9L, 0.1111,   102L,    916,   1018,
+   10L,    0.1,   101L,   1006,   1107
+  )
+
+huxtable::huxtable(tab) %>%
+  set_align(everywhere, everywhere, "centre") %>% 
+  theme_article() %>% 
+  set_number_format(everywhere, everywhere, fmt_pretty()) %>% 
+  set_width(0.8) %>% 
+  set_caption("Increasing controls per case")
+```
+
 This can be visualised graphically, as in Figure 10.1.
-Figure 10.1: Increasing the number of controls per case in Worked Example 10.5
+
+```{r fig-unequal-controls, echo=FALSE}
+tab <- tibble::tribble(
+  ~`Controls per case`, ~`Stata's allocation ratio (N2/N1)`, ~`Number of cases required`, ~`Number of controls required`, ~`Total participants required`,
+    1L,      1,   188L,    188,    376,
+    2L,    0.5,   140L,    280,    420,
+    3L, 0.3333,   124L,    371,    495,
+    4L,   0.25,   116L,    462,    578,
+    5L,    0.2,   111L,    553,    664,
+    6L, 0.1666,   108L,    644,    752,
+    7L, 0.1429,   105L,    734,    839,
+    8L,  0.125,   104L,    825,    929,
+    9L, 0.1111,   102L,    916,   1018,
+   10L,    0.1,   101L,   1006,   1107
+  )
+
+ggplot(tab, aes(x=`Controls per case`, y=`Number of cases required`)) +
+  geom_point() +
+  geom_line() +
+  scale_x_continuous(breaks=c(0, 2, 4, 6, 8, 10)) +
+  scale_y_continuous(limits=c(0, 200))
+```
 
 We can see that the number of cases required drops off if we go from 1 to 2 controls per case, and again from 2 to 3 controls per case. Once we go from 3 to 4 controls per case, we only reduce the number of cases by 8 (124 vs 116 cases), but at an increase of 91 (371 vs 462) controls. Clearly, this reduction in cases is not offset by the extra controls required.
 
