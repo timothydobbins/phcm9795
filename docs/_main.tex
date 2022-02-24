@@ -201,9 +201,9 @@ By the end of this module, you will be able to:
 \hypertarget{an-introduction-to-statistics}{%
 \section{An introduction to statistics}\label{an-introduction-to-statistics}}
 
-\hypertarget{module-1-learning-activities}{%
-\chapter*{Module 1: Learning Activities}\label{module-1-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 1: Learning Activities}
+\hypertarget{learning-activities}{%
+\chapter*{\texorpdfstring{\textbf{1} Learning Activities}{1 Learning Activities}}\label{learning-activities}}
+\addcontentsline{toc}{chapter}{\textbf{1} Learning Activities}
 
 \hypertarget{activity-1.1}{%
 \subsection*{Activity 1.1}\label{activity-1.1}}
@@ -410,9 +410,9 @@ By the end of this module you will be able to:
 \chapter*{\texorpdfstring{\textbf{Module 2: Stata notes}}{Module 2: Stata notes}}\label{module-2-stata-notes}}
 \addcontentsline{toc}{chapter}{\textbf{Module 2: Stata notes}}
 
-\hypertarget{module-2-learning-activities}{%
-\chapter*{Module 2: Learning Activities}\label{module-2-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 2: Learning Activities}
+\hypertarget{learning-activities-1}{%
+\chapter*{\texorpdfstring{\textbf{2} Learning Activities}{2 Learning Activities}}\label{learning-activities-1}}
+\addcontentsline{toc}{chapter}{\textbf{2} Learning Activities}
 
 \hypertarget{activity-2.1}{%
 \subsection*{Activity 2.1}\label{activity-2.1}}
@@ -541,16 +541,158 @@ By the end of this module you will be able to:
 
 \citet{juul_frydenberg14}; Sections 11.5 to 11.7.
 
-\hypertarget{section-1}{%
-\section{Section}\label{section-1}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+To describe the characteristics of a population we can gather data about the entire population (as is undertaken in a national census) or we can gather data from a sample of the population. When undertaking a research study, taking a sample from a population is far more cost-effective and less time consuming than collecting information from the entire population. When a sample of a population is selected, summary statistics that describe the sample are used to make inferences about the total population from which the sample was drawn. These are referred to as inferential statistics.
+
+However, for the inferences about the population to be valid, a random sample of the population must be obtained. The goal of using random sampling methods is to obtain a sample that is representative of the target population. In other words, apart from random error, the information derived from the sample is expected to be much the same as the information collected from a complete population census as long as the sample is large enough.
+
+\hypertarget{sampling-methods}{%
+\section{Sampling methods}\label{sampling-methods}}
+
+Methods have been designed to select participants from a population such that each person in the target population has an equal probability of being chosen. Methods that use this approach are called random sampling methods. Examples include simple random sampling and stratified random sampling.
+
+In simple random sampling, every person in the population from which the sample is drawn has the same random chance of being selected into the sample. To implement this method, every person in the population is allocated an ID number and then a random sample of the ID numbers is selected. Software packages can be used to generate a list of random numbers to select the random sample.
+
+In stratified sampling, the population is divided into distinct non-overlapping subgroups (strata) according to an important characteristic (e.g.~age or sex) and then a random sample is selected from each of the strata. This method is used to ensure that sufficient numbers of people are sampled from each stratum and therefore each subgroup of interest is adequately represented in the sample.
+
+The purpose of using random sampling is to minimise selection bias to ensure that the sample enrolled in a study is representative of the population being studied. This is important because the summary statistics that are obtained can then be regarded as valid in that they can be applied (generalised) back to the population.
+
+A non-representative sample can occur when random sampling is used, simply by chance. However, non-random sampling methods, such as using a convenient study population, will often result in a non-representative sample being selected so that the summary statistics from the sample cannot be generalised back to the population from which the participants were drawn. The effects of non-random error are much more serious than the effects of random error. Concepts such as non-random error (i.e.~systematic bias), selection bias, validity and generalisability are discussed in more detail in PHCM9476: Foundations of Epidemiology.
+
+\hypertarget{standard-error-and-precision}{%
+\section{Standard error and precision}\label{standard-error-and-precision}}
+
+Module 1 introduced the mean, variance and standard deviation as measures of central tendency and spread for continuous measurements from a sample or a population. As described in Module 1, we rarely have data on the entire population but we can infer information about the population (e.g.~the mean weight of people in the population) based on a sample. However, a sample taken from a population is usually a small proportion of the total population. If the sample is very small, we would not expect our estimate of the population mean value to be precise. If the sample is very large, we would expect a more precise estimate of the population mean, i.e.~the estimated mean value would be much closer to the true mean value in the population.
+
+\hypertarget{the-standard-error-of-the-mean}{%
+\subsection{The standard error of the mean}\label{the-standard-error-of-the-mean}}
+
+A point estimate is a single best guess of the true value in the population. Instead of trying to guess the true value, it may be preferable to give a range of values in which we think the true value lies. For example, suppose we want to estimate the average weight of a population, and found a sample mean of 65 kg. Rather than saying we believe the true mean to be 65 kg, we could say we believe it is somewhere between, say, 58 kg and 72 kg.
+
+Often in papers, one will see something like ``the mean is 70.24 \(\pm\) 1.78 kg''. The 1.78 is called the standard error of the mean (sometimes shortened to S.E.M. or S.E.). The standard error of the mean measures the extent to which we expect the means from different samples to vary because of chance error in the sampling process. The standard error is a measure of precision of the point estimate. This statistic is directly related to the size of the sample. The standard error of the mean for a continuously distributed measurement for which the SD is an accurate measure of spread is computed as follows:
+
+\[ \text{SE}(\bar{x}) = \frac{\text{SD}}{\sqrt{n}} \]
+For our sample of weight data from 30 patients in Module 1:
+
+\[ \text{SE}(\bar{x}) = \frac{\text{5.04}}{\sqrt{30}} = 0.92 \]
+Because the calculation uses the sample size (n) (i.e.~the number of study participants) in the denominator, the SE will become smaller when the sample size becomes larger. A smaller SE indicates that the estimated mean value is more precise.
+
+The standard error is an important statistic that is related to sampling variation. When a random sample of a population is selected, it is likely to differ in some characteristic compared with another random sample selected from the same population. Also, when a sample of a population is taken, the true population mean is an unknown value.
+
+Just as the standard deviation measures the spread of the data around the population mean, the standard error of the mean measures the spread of the sample means. Note that we do not have different samples, only one. It is a theoretical concept which enables us to conduct various other statistical analyses.
+
+\hypertarget{central-limit-theorem}{%
+\section{Central limit theorem}\label{central-limit-theorem}}
+
+Even though we now have an estimate of the mean and its standard error, we might like to know what the mean from a different random sample of the same size might be. To do this, we need to know how sample means are distributed. In determining the form of the probability distribution of the sample mean (\(\bar{x}\)), we consider two cases:
+
+\hypertarget{when-the-population-distribution-is-unknown}{%
+\subsection{When the population distribution is unknown:}\label{when-the-population-distribution-is-unknown}}
+
+The central limit theorem for this situation states:
+
+\begin{quote}
+In selecting random samples of size \(n\) from a population with mean \(\mu\) and standard deviation \(\sigma\), the sampling distribution of the sample mean \(\bar{x}\) approaches a normal distribution with mean \(\mu\) and standard deviation \(\tfrac{\sigma}{\sqrt{n}}\) as the sample size becomes large.
+\end{quote}
+
+The sample size n = 30 and above is a rule of thumb for the central limit theorem to be used. However, larger sample sizes may be needed if the distribution is highly skewed.
+
+\hypertarget{when-the-population-is-assumed-to-be-normal}{%
+\subsection{When the population is assumed to be normal:}\label{when-the-population-is-assumed-to-be-normal}}
+
+In this case the sampling distribution of \(\bar{x}\) is normal for any sample size.
+
+\hypertarget{confidence-interval-of-the-mean}{%
+\section{95\% confidence interval of the mean}\label{confidence-interval-of-the-mean}}
+
+In Module 2, we showed that the characteristics of a Standard Normal Distribution are that 95\% of the data lie within 1.96 standard deviations from the mean (Figure 2.2). Because the central limit theorem states that the sampling distribution of the mean is approximately Normal in large enough samples, we expect that 95\% of the mean values would fall within 1.96 × SE units above and below the measured mean population value.
+
+For example, if we repeated the study on weight 100 times using 100 different random samples from the population and calculated the mean weight for each of the 100 samples, approximately 95\% of the values for the mean weight calculated for each of the 100 samples would fall within 1.96 × SE of the population mean weight.
+
+This interpretation of the SE is translated into the concept of precision as a 95\% confidence interval (CI). A 95\% CI is a range of values within which we have 95\% confidence that the true population mean lies. If an experiment was conducted a very large number of times, and a 95\%CI was calculated for each experiment, 95\% of the confidence intervals would contain the true population mean.
+
+The calculation of the 95\% CI for a mean is as follows:
+
+\[  \bar{x} \pm 1.96 \times \text{SE}( \bar{x} ) \]
+This is the generic formula for calculating 95\% CI for any summary statistic. In general, the mean value can be replaced by the point estimate of a rate or a proportion and the same formula applies for computing 95\% CIs, i.e.
+
+\[ 95\% \text{ CI} = \text{point estimate} \pm \text{SE}(\text{point estimate)} \]
+
+The main difference in the methods used to calculate the 95\% CI for different point estimates is the way the SE is calculated. The methods for calculating 95\% CI around proportions and other ratio measures will be discussed in Module 6.
+
+The use of 1.96 as a general critical value to compute the 95\% CI is determined by sampling theory. For the confidence interval of the mean, the critical value (1.96) is based on normal distribution (true when the population SD is known). However, in practice, Stata and other statistical packages will provide slightly different confidence intervals because they use a critical value obtained from the t-distribution. The t-distribution approaches a normal distribution when the sample size approaches infinity, and is close to a normal distribution when the sample size is ≥30.The critical values obtained from the t-distribution are always larger than the corresponding critical value from the normal distribution. The difference gets smaller as the sample size becomes larger. For example, when the sample size n=10, the critical value from the t-distribution is 2.26 (rather than 1.96); when n= 30, the value is 2.05; when n=100, the value is 1.98; and when n=1000, the critical value is 1.96.
+
+The critical value multiplied by SE (for normal distribution, 1.96 × SE) is called the maximum likely error for 95\% confidence.
+
+\hypertarget{worked-example-3.1-95-ci-of-a-mean}{%
+\subsection{Worked Example 3.1: 95\% CI of a mean}\label{worked-example-3.1-95-ci-of-a-mean}}
+
+For our sample of weights data with standard error of 0.92:
+
+\[
+\begin{aligned}
+\ 95\% \text{ CI}(\bar{x}) &=  \bar{x} \pm 1.96 \times \text{SE}(\bar{x}) \\
+ &= 70.0 \pm 1.96 \times 0.92 \\
+ &= 68.2 \text{ to } 71.8 \text{kg}
+\end{aligned}
+\]
+We interpret this confidence interval as: we are 95\% confident that the true mean of the population from which our sample was drawn lies between 68.2 kg and 71.8 kg.
+
+This calculation takes into account both the sample mean of 70.0 kg and the sampling error that has arisen by chance due to the sample size of 30 people.
+
+For a 95\% CI to be reported around a mean value, the data values need to be approximately normally distributed, as discussed in Module 2.
+
+Note: Had we used the t-distribution to calculate the critical value, the 95\%CI would have been slightly wider, 68.1 kg to 71.9 kg as shown in Output 3.1 below using Example\_1.3.dta with the ci mean command in Stata.
+
+Output 3.1 Mean and 95\%CI of weight
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    Variable |        Obs        Mean    Std. Err.       [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      weight |         30          70    .9207069        68.11694    71.88306}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{the-t-distribution-and-when-should-i-use-it}{%
+\subsection{The t-distribution and when should I use it?}\label{the-t-distribution-and-when-should-i-use-it}}
+
+The population standard deviation (\(\sigma\)) is required for calculation of the standard error. Often, \(\sigma\) is not known and the sample standard deviation (\(s\)) is used to estimate it. It is known, however, that the sample standard deviation of a normally distributed variable is a downward-biased estimator of \(\sigma\), particularly when the sample size is small.
+
+Someone by the pseudonym of Student came up with the Student's t distribution with (\(n-1\)) degrees of freedom to account for this bias. It looks very much like the standardised normal distribution, only that it has fatter tails (Figure 3.1). As the degrees of freedom increase (i.e.~as \(n\) increases), the t-distribution gradually approaches the standard normal distribution. With a sufficiently large sample size, the Student's t-distribution closely approximates the standardised normal distribution.
+
+Figure 3.1 The normal (Z) and the student's t-distribution with 2, 5 and 30 degrees of freedom
+
+If a variable \(X\) is normally distributed and the population standard deviation \(\sigma\) is known, using the normal distribution is appropriate. However, if \(\sigma\) is not known then one should use the student t-distribution with (\(n – 1\)) degrees of freedom.
+
+\hypertarget{worked-example-3.2}{%
+\subsection{Worked example 3.2}\label{worked-example-3.2}}
+
+The publication of a study using a sample of 30 patients reported a sample mean of 70 kg and a sample standard deviation of 6 kg. Find the 95\% confidence interval estimate for the mean weight from this sample.
+
+In Stata we use the \texttt{cii\ means} command to compute the 95\% confidence interval given the sample mean, sample standard deviation and the sample size (i.e.~without using individual data from a dataset). This command uses the t-distribution, and the output is shown below:
+
+Output 3.2 95\%CI for a given sample mean, sample standard deviation and sample size
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{    Variable |        Obs        Mean    Std. Err.       [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{             |         30          70    1.095445        67.75956    72.24044}
+\end{Highlighting}
+\end{Shaded}
+
+We are 95\% confident that the true mean weight lies between 67.8 kg and 72.2 kg.
 
 \hypertarget{module-3-stata-notes}{%
 \chapter*{Module 3: Stata notes}\label{module-3-stata-notes}}
 \addcontentsline{toc}{chapter}{Module 3: Stata notes}
 
-\hypertarget{module-3-learning-activities}{%
-\chapter*{Module 3: Learning Activities}\label{module-3-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 3: Learning Activities}
+\hypertarget{learning-activities-2}{%
+\chapter*{\texorpdfstring{\textbf{3} Learning Activities}{3 Learning Activities}}\label{learning-activities-2}}
+\addcontentsline{toc}{chapter}{\textbf{3} Learning Activities}
 
 \hypertarget{activity-3.1}{%
 \subsection*{Activity 3.1}\label{activity-3.1}}
@@ -676,12 +818,12 @@ By the end of this module you will be able to:
 
 \citep{bland15}
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
-\hypertarget{module-4-learning-activities}{%
-\chapter*{Module 4: Learning Activities}\label{module-4-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 4: Learning Activities}
+\hypertarget{learning-activities-3}{%
+\chapter*{\texorpdfstring{\textbf{4} Learning Activities}{4 Learning Activities}}\label{learning-activities-3}}
+\addcontentsline{toc}{chapter}{\textbf{4} Learning Activities}
 
 \hypertarget{activity-4.1}{%
 \subsection{Activity 4.1}\label{activity-4.1}}
@@ -790,27 +932,278 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Decide whether to use an independent samples t-test or a paired t-test to compare two groups for a continuous outcome variable;
 \item
-  blah
+  Conduct and interpret the results from an independent samples t-test;
 \item
-  blah
+  Describe the assumptions of an independent samples t-test;
+\item
+  Conduct and interpret the results from a paired t-test;
+\item
+  Describe the assumptions of a paired t-test;
+\item
+  Conduct an independent samples t-test and a paired t-test in Stata;
+\item
+  Report results and provide a concise summary of the findings of statistical analyses.
 \end{itemize}
 
 \hypertarget{readings-4}{%
 \section*{Readings}\label{readings-4}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citep{kirkwood_sterne01}; Sections 7.1 to 7.5.
 
-\citep{bland15}
+\citep{bland15}; Section 10.3.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+Acock A. A Gentle Introduction to Stata, 3rd Edition (2012): Section 7.7, 7.8.
 
-\hypertarget{module-5-learning-activities}{%
-\chapter*{Module 5: Learning Activities}\label{module-5-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 5: Learning Activities}
+Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+In Module 4, a one-sample t-test was used for comparing a mean value with a hypothesised value. In this module, we show how to compare the mean values of two groups for which the outcome variable is normally distributed. In health research, we often want to compare the mean value of a measurement between two groups in an observational study or between a control and intervention group in an experimental study. For example, in an observational study, we may want to compare cholesterol levels in people who are normal weight to the levels in people who are overweight. In a clinical trial, we may want to compare cholesterol levels in people who have been randomised to a dietary modification or to usual care.
+
+From the decision tree presented in the Appendix, we can see that if we have a continuous outcome measure and two categorical groups that are not related, i.e.~a binary exposure measurement, the test for such data is an independent samples t-test. The test is also sometimes called a 2-sample t-test.
+
+However, in research, data are often `paired' or `matched', that is the two data points are related to one another. This occurs when measurements are taken:
+
+\begin{itemize}
+\tightlist
+\item
+  From each participant on two occasions, e.g.~at baseline and follow-up in an experimental study or in a longitudinal cohort study;
+\item
+  From related people, e.g.~a mother and daughter or a child and their sibling;
+\item
+  From related sites in the same person, e.g.~from both limbs, eyes or kidneys;
+\item
+  From matched participants e.g.~in a matched case-control study;
+\item
+  In cross-over clinical trials where the patient receives both drugs, often in random order.
+\end{itemize}
+
+An independent samples t-test cannot be used for analysing paired or matched data because the assumption that the two groups are independent is violated. Treating paired or matched measurements as independent samples would artificially inflate the sample size and lead to inaccurate analyses and biased P values. When the data are related in a paired or matched way and the outcome is continuous, a paired t-test is the appropriate statistic to use if the data are normally distributed.
+
+\hypertarget{independent-samples-t-test}{%
+\section{Independent samples t-test}\label{independent-samples-t-test}}
+
+An independent samples t-test is a parametric test that is used to assess whether the mean values of two groups are different from one another. Thus, the test is used to assess whether two mean values are similar enough to have come from the same population or whether the difference between them is so large that the two groups can be considered to have come from separate populations with different characteristics.
+
+The null hypothesis is that the mean values of the two groups are not different, that is:
+
+H0: (Mean2 -- Mean1) = 0
+
+Rejecting the null hypothesis using an independent samples t-test indicates that the difference between the means of the two groups is large in relation to the variation in the samples and is unlikely to be due to chance or to sampling variation.
+
+\hypertarget{assumptions-for-an-independent-samples-t-test}{%
+\subsection{Assumptions for an independent samples t-test}\label{assumptions-for-an-independent-samples-t-test}}
+
+The assumptions that must be met before an independent samples t-test can be used are:
+
+\begin{itemize}
+\tightlist
+\item
+  The two groups are independent
+\item
+  The measurements are independent
+\item
+  The outcome variable must be continuous and must be normally distributed in each group
+\item
+  The variance in the two groups is similar (homogenous)
+\end{itemize}
+
+The first two assumptions are determined by the study design. The two samples must be independent, i.e.~if a person is in one group then they cannot be included in the other group, and the measurements within a sample must be independent, i.e.~each person must be included in their group once only.
+
+The third assumption of normality is important although t-tests are robust to some degree of non-normality as long as there are no influential outliers and, more importantly, if the sample size is large. We examined how to assess normality in Module 2. If the data are not normally distributed, it may be possible to transform them using a mathematical function such as a logarithmic transformation. If not, then we may need to use non-parametric tests. This is examined in Module 9.
+
+The final assumption is homogeneity of variance between the groups. This can be verified by checking that the standard deviation (square root of the variance) of each group is similar. If the variances are different, then Welch's t-test, an alternative version of the t-test can be used.
+
+\hypertarget{worked-example}{%
+\subsection{Worked Example}\label{worked-example}}
+
+In an observational study of a random sample of 100 full term babies from the community, birth weight and gender were measured. There were 44 male babies and 56 female babies in the sample. The research question asked whether there was a difference in birth weights between boys and girls. The two groups are independent of each other and therefore an independent samples t-test can be used to test the null hypothesis that there is no difference in weight between the genders.
+
+Some preliminary descriptive statistics of the distribution of the variable of interest in each group should always be obtained before a t-test is undertaken to ensure that the assumptions are met. Box plots and histograms are ideal for this. Histrograms and box plots of the data obtained in Stata using \textbf{Graphics \textgreater{} Box plot} is shown in Figure 5.1. The dataset Example\_5.1.dta is available on Moodle.
+
+The plots show that the data are approximately normally distributed: the histograms are relatively bell shaped and symmetric, and the boxes are fairly symmetrical, there are no outliers as indicated by dots, and the spread is similar in both groups as the similar length of the whiskers suggesting that the variance is homogenous.
+
+We can obtain statistics using the summarize command by gender with the detail option to check the data (e.g.~skewness, plausibility of the minimum and maximum values).
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. by gender, sort: summarize birthweight , detail}
+
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{{-}\textgreater{} gender = Female}
+
+\NormalTok{                         Birthweight}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Percentiles      Smallest}
+\NormalTok{ 1\%         2.95           2.95}
+\NormalTok{ 5\%         3.03           2.97}
+\NormalTok{10\%         3.14           3.03       Obs                  56}
+\NormalTok{25\%        3.325           3.07       Sum of Wgt.          56}
+
+\NormalTok{50\%         3.53                      Mean           3.587411}
+\NormalTok{                        Largest       Std. Dev.      .3629788}
+\NormalTok{75\%         3.88            4.2}
+\NormalTok{90\%         4.15            4.2       Variance       .1317536}
+\NormalTok{95\%          4.2            4.2       Skewness       .2453238}
+\NormalTok{99\%         4.25           4.25       Kurtosis       1.962126}
+
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{{-}\textgreater{} gender = Male}
+
+\NormalTok{                         Birthweight}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Percentiles      Smallest}
+\NormalTok{ 1\%         2.75           2.75}
+\NormalTok{ 5\%         2.82           2.79}
+\NormalTok{10\%         2.85           2.82       Obs                  44}
+\NormalTok{25\%         3.15           2.85       Sum of Wgt.          44}
+
+\NormalTok{50\%         3.43                      Mean           3.421364}
+\NormalTok{                        Largest       Std. Dev.      .3536165}
+\NormalTok{75\%        3.635           3.94}
+\NormalTok{90\%          3.9           3.97       Variance       .1250446}
+\NormalTok{95\%         3.97           4.06       Skewness      {-}.0895932}
+\NormalTok{99\%          4.1            4.1       Kurtosis       2.325761}
+\end{Highlighting}
+\end{Shaded}
+
+The table shows that girls have a mean weight of 3.59 kg (SD 0.36) and boys have a mean weight of 3.42 kg (SD 0.35) with females being heavier than males. The variabilities of birth weight, as indicated by the standard deviations, are similar.
+
+\hypertarget{conducting-and-interpreting-an-independent-samples-t-test}{%
+\subsection{Conducting and interpreting an independent samples t-test}\label{conducting-and-interpreting-an-independent-samples-t-test}}
+
+An independent samples t-test provides us with a t statistic from which we can compute a P value. The computation of the t statistic is as follows:
+
+\[t = \frac{{\overline{x}}_{1} - {\overline{x}}_{2}}{SE({\overline{x}}_{1} - {\overline{x}}_{2})}\]
+
+with \emph{n\textsubscript{1} + n\textsubscript{2}} -- 2 degrees of freedom.
+
+Given that the standard error is estimated from the variance, the t value is an estimate of how different the mean values are compared to their variability. Thus, the t value will become larger as the difference in means increases with respect to the variability.
+
+In Stata, both the t and P values are provided. If the t-value falls outside a critical range, the P value will be small and we can reject the null hypothesis of no difference between the groups.
+
+Output 5.3 shows the Stata results of the example dataset obtained using \textbf{Statistics - Summaries, tables, and tests - Classical tests of hypotheses - t test (mean-comparison test)} and choosing the two-sample test in the ttest dialog box.
+
+\hypertarget{output-5.3-independent-samples-t-test-results-from-stata}{%
+\subsubsection{Output 5.3: Independent samples t-test results from Stata}\label{output-5.3-independent-samples-t-test-results-from-stata}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. ttest birthweight, by(gender)}
+
+\NormalTok{Two{-}sample t test with equal variances}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{   Group |     Obs        Mean    Std. Err.   Std. Dev.   [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  Female |      56    3.587411    .0485051    .3629788    3.490204    3.684617}
+\NormalTok{    Male |      44    3.421364    .0533097    .3536165    3.313854    3.528873}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{combined |     100     3.51435    .0366567    .3665666    3.441615    3.587085}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    diff |            .1660471    .0723027                .0225648    .3095293}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    diff = mean(Female) {-} mean(Male)                              t =   2.2966}
+\NormalTok{Ho: diff = 0                                     degrees of freedom =       98}
+
+\NormalTok{    Ha: diff \textless{} 0                 Ha: diff != 0                 Ha: diff \textgreater{} 0}
+\NormalTok{ Pr(T \textless{} t) = 0.9881         Pr(|T| \textgreater{} |t|) = 0.0238          Pr(T \textgreater{} t) = 0.0119}
+\end{Highlighting}
+\end{Shaded}
+
+The output table reports the mean, standard deviation, 95\% confidence interval etc of weights of the two groups separately as well as that of their difference. It shows the mean difference in weights between the genders is 0.17 kg (95\% CI 0.02, 0.31). We are 95\% confident that the true mean difference lies between 0.02 and 0.31, this interval does not contain the null value of 0.
+
+Stata reports 3 different P-values. Among them the middle one reports the P-value for a two-sided test evaluating the null hypothesis ``Difference =0'' and is our desired test. The test has a t-value of 2.297 with 98 degrees of freedom, and a two-sided P value of 0.024 which is less than 0.05 and is statistically significant. Thus, we can reject the null hypothesis of no difference in weights between the genders.
+
+\hypertarget{paired-t-tests}{%
+\section{Paired t-tests}\label{paired-t-tests}}
+
+If the outcome of interest is the difference in the continuously distributed outcome measurement between each pair or between each case and its matched control, i.e.~the within-pair differences a paired t-test is used. In effect, a paired t-test is used to assess whether the mean of the differences between the two related measurements is significantly different from zero. In this sense, a paired t-test is very closely aligned with a one sample t-test.
+
+When using a paired t-test, the variation between the pairs of measurements is the most important statistic and the variation between the participants, which is critical for the interpretation of a two-sample t-test, is of little interest.
+
+For related measurements, the data for each pair of values must be entered on the same row of the spreadsheet. Thus, the number of rows in the data sheet is the number of participants or the number of participant-pairs when cases and controls are matched. Thus, the effective sample size is the total number of pairs and not the total number of measurements.
+
+\hypertarget{assumptions-for-a-paired-t-test}{%
+\subsection{Assumptions for a paired t-test}\label{assumptions-for-a-paired-t-test}}
+
+For a paired samples t-test, it is not important to test whether the measurements are normally distributed for each of the time points in the two matched samples, but it is important to test whether the differences between the two measurements are normally distributed.
+
+The assumptions for a paired t-test are:
+
+\begin{itemize}
+\tightlist
+\item
+  the outcome variable is continuous
+\item
+  the differences between the pair of the measurements are normally distributed
+\end{itemize}
+
+If the assumptions for a paired t-test cannot be met, a non-parametric equivalent is a more appropriate test to use (Module 9).
+
+\hypertarget{computing-a-paired-t-test}{%
+\subsection{Computing a paired t-test}\label{computing-a-paired-t-test}}
+
+The null hypothesis for using a paired t-test is as follows:
+
+H\textsubscript{0}: Mean (Measurement1 -- Measurement2) = 0
+
+To compute a t-value, the size of the mean difference between the two measurements is compared to the standard error of the paired differences, i.e.
+
+\[t = \frac{\overline{d}}{SE(\overline{d})}\]
+
+with \emph{n}--1 degrees of freedom, where \emph{n} is the number of pairs.
+
+Because the standard error becomes smaller as the sample size becomes larger, the t-value increases as the sample size increases for the same mean difference.
+
+\hypertarget{worked-example-5.2}{%
+\subsection{Worked Example 5.2}\label{worked-example-5.2}}
+
+A total of 107 people were recruited into an experimental trial to assess whether ankle blood pressure measured in two different sites would be the same. For each person, systolic blood pressure (SBP) was measured in two sites: dorsalis pedis and tibialis posterior.
+
+The dataset Example\_5.2.dta is available on Moodle. First, we need to compute the pairwise difference between SBP measured in the two sites in Stata using the generate command. This is shown in the Stata manual at the end of this module (Checking the assumptions for a Paired t-test) and in the Foundations module. The distribution of the difference between SBP measured in dorsalis pedis and tibialis posterior is shown in Figure 5.2. It approximates a normal distribution and therefore a paired t-test can be used.
+
+\hypertarget{figure-5.2-distribution-of-differences-in-ankle-sbp-between-two-sites-of-107-participants}{%
+\subsubsection{Figure 5.2: Distribution of differences in ankle SBP between two sites of 107 participants}\label{figure-5.2-distribution-of-differences-in-ankle-sbp-between-two-sites-of-107-participants}}
+
+{[}INSERT FIGURE{]}
+
+The paired t-test is performed using the ttest command in Stata (see the Stata Notes section for details). We specify the data is paired with sbp\_dp as First variable and sbp\_tp as the Second variable. Output 5.4 shows the summary statistics for both sites. From this we can see that the mean SBP is very similar in the two sites.
+
+\hypertarget{output-5.4-paired-t-test-results-from-stata}{%
+\subsubsection{Output 5.4: Paired t-test results from Stata}\label{output-5.4-paired-t-test-results-from-stata}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{Paired t test}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  sbp\_dp |     107     116.729    3.460296    35.79358    109.8686    123.5893}
+\NormalTok{  sbp\_tp |     107    117.9907    3.431356    35.49422    111.1877    124.7937}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    diff |     107   {-}1.261682    1.311368    13.56489   {-}3.861596    1.338232}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{     mean(diff) = mean(sbp\_dp {-} sbp\_tp)                           t =  {-}0.9621}
+\NormalTok{ Ho: mean(diff) = 0                              degrees of freedom =      106}
+
+\NormalTok{ Ha: mean(diff) \textless{} 0           Ha: mean(diff) != 0           Ha: mean(diff) \textgreater{} 0}
+\NormalTok{ Pr(T \textless{} t) = 0.1691         Pr(|T| \textgreater{} |t|) = 0.3382          Pr(T \textgreater{} t) = 0.8309}
+\end{Highlighting}
+\end{Shaded}
+
+The next line for ``diff'' shows the statistics for the mean of within-pair difference. It indicates that average SBP measured in dorsalis pedis is 116.7 mmHg and that in tibialis posterior is 118.0 mmHg. The difference is −1.26 (95\% CI: −3.86 to 1.34).
+
+The t-value of −0.96 yields a two-sided P-value of 0.34 (under Ha: mean(diff) ≠ 0) confirms that these data provide no evidence against the null hypothesis, and conclude that the SBP measured in the two sites are not different.
+
+As with any statistical test, it is important to decide what mean difference between measurements would be considered clinically important in addition to considering statistical significance.
+
+\hypertarget{learning-activities-4}{%
+\chapter*{\texorpdfstring{\textbf{5} Learning Activities}{5 Learning Activities}}\label{learning-activities-4}}
+\addcontentsline{toc}{chapter}{\textbf{5} Learning Activities}
 
 \hypertarget{activity-5.1}{%
 \subsection*{Activity 5.1}\label{activity-5.1}}
@@ -949,27 +1342,359 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Compute and interpret 95\% confidence intervals for proportions;
 \item
-  blah
+  Conduct and interpret a significance test for a one-sample proportion;
 \item
-  blah
+  Use Stata to compute 95\% confidence intervals for a difference in proportions, a relative risk and an odds ratio.
 \end{itemize}
 
 \hypertarget{readings-5}{%
 \section*{Readings}\label{readings-5}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citep{kirkwood_sterne01}; Chapter 16
 
-\citep{bland15}
+\citep{bland15}; Section 8.6, Section 13.7
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\citep{juul_frydenberg14}; Section 11.4.
 
-\hypertarget{module-6-learning-activities}{%
-\chapter*{Module 6: Learning Activities}\label{module-6-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 6: Learning Activities}
+\citep{acock10}; Section 7.5.
+
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
+
+In Modules 4 and 5, we discussed methods used to test hypotheses when the data are continuous. In Modules 6 and 7, we will focus on hypothesis testing for binary categorical data.
+
+In health research, we often collect information that can be put into two categories, e.g.~male and female, disease present or disease absent etc. Binary categorical variables such as these are summarised using proportions.
+
+\hypertarget{calculating-proportions-and-95-confidence-intervals}{%
+\section{Calculating proportions and 95\% confidence intervals}\label{calculating-proportions-and-95-confidence-intervals}}
+
+\hypertarget{calculating-a-proportion}{%
+\subsection{Calculating a proportion}\label{calculating-a-proportion}}
+
+Calculating a proportion is based on the binomial distribution, which was introduced in Module 2. We need two pieces of information to calculate a proportion: \(n\), the number of trials, and \(k\), the number of `successes'. Note that we use the term `success' to describe the outcome of interest, recognising that a success may be a adverse outcome such as death or disease.
+
+The following formula is used to calculate the proportion, \(p\):
+
+\[ p = k / n \]
+
+The proportion, \(p\), is a number that lies between 0 and 1. Proportions and their confidence intervals can easily be converted to percentages by multiplying by 100 once computed.
+
+As for all summary statistics, it is useful to compute the precision of the estimate as a 95\% confidence interval (CI) to indicate the range of values in which are 95\% confident that the true population value lies. In this module, we present two methods for computing a 95\% confidence interval around a proportion.
+
+\hypertarget{calculating-the-95-confidence-interval-of-a-proportion-wald-method}{%
+\subsection{Calculating the 95\% confidence interval of a proportion (Wald method)}\label{calculating-the-95-confidence-interval-of-a-proportion-wald-method}}
+
+The Wald method for calculating the 95\% confidence interval is based on assuming that the proportion, \(p\), is Normally distributed. This assumption is reasonable if the sample is sufficiently large (for example, if \(n>30\)) and if \(n \times (1-p)\) and \(n \times p\) are both larger than 5.
+
+The Wald method for calculating a 95\% confidence interval is given by:
+
+\[\text{95\% CI} = p \pm (1.96 \times \text{SE}(p))\]
+
+where the standard error of a proportion is computed as:
+
+\[\text{SE}(p) = \sqrt{\frac{p \times (1 - p)}{n}}\]
+
+\hypertarget{worked-example-1}{%
+\subsection{Worked Example}\label{worked-example-1}}
+
+In a cross-sectional study of children living in a rural village, 47 children from a random sample of 215 children were found to have scabies. Here \(n=215\) and \(k=47\), so the proportion of children with scabies is estimated as:
+
+\[ p = \frac{47}{215} = 0.2186 \]
+
+Given the large sample size and the number of children with the rarer outcome is larger than 5, the Wald method is used to calculate the standard error of the proportion as:
+
+\[{\text{SE}\left( p \right) = \sqrt{\frac{0.2186 \times (1 - 0.2186)}{215}}
+}{= 0.02819}\]
+
+Then, the 95\% confidence interval is estimated as:
+
+\[\text{95\% CI} = 0.2816 \pm 0.02819\]
+
+\[= 0.1634\ to\ 0.2739\]
+
+The prevalence of scabies among children in the village is 21.9\% (95\% CI 16.3\%, 27.4\%). These values tell us that we are 95\% confident that the true prevalence of scabies among children in the village is between 16.3\% and 27.4\%.
+
+NB: This can also be computed in Stata using the \texttt{cii\ proportions} command as below.
+
+\hypertarget{output-6.1-95-confidence-interval-for-the-prevalence-of-scabies-using-normal-approximation-to-the-binomial-distribution}{%
+\subsubsection{Output 6.1: 95\% confidence interval for the prevalence of scabies using normal approximation to the binomial distribution}\label{output-6.1-95-confidence-interval-for-the-prevalence-of-scabies-using-normal-approximation-to-the-binomial-distribution}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. cii proportions 215 47, wald}
+
+\NormalTok{                                                         {-}{-} Binomial Wald {-}{-}{-}}
+\NormalTok{    Variable |        Obs  Proportion    Std. Err.       [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{             |        215    .2186047    .0281868        .1633595    .2738498}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{calculating-the-95-confidence-interval-of-a-proportion-wilson-method}{%
+\subsection{Calculating the 95\% confidence interval of a proportion (Wilson method)}\label{calculating-the-95-confidence-interval-of-a-proportion-wilson-method}}
+
+Another method to calculate the confidence interval of a proportion is the Wilson (sometimes also called the `score') method. We can use it in situations where it is not appropriate to use the normal approximation to the binomial distribution as described above i.e.~if the sample size is small (\(n < 30\)) or the number of subjects with the rarer outcome is 5 or fewer. This method is a bit more difficult to implement by hand than the standard confidence interval, and so we will not discuss the hand calculation using the mathematical equation in this course. Instead, we will use the Stata command \texttt{cii\ proportions} specifying \texttt{wilson} as an option to do this.
+
+Using the data from the study given in Worked Example 6.1, we obtain the following:
+
+\hypertarget{output-6.2-95-confidence-interval-for-prevalence-of-scabies-using-the-wilson-method}{%
+\subsubsection{Output 6.2: 95\% confidence interval for prevalence of scabies using the Wilson method}\label{output-6.2-95-confidence-interval-for-prevalence-of-scabies-using-the-wilson-method}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. cii proportions 215 47, wilson}
+
+\NormalTok{                                                         {-}{-}{-}{-}{-}{-} Wilson {-}{-}{-}{-}{-}{-}}
+\NormalTok{    Variable |        Obs  Proportion    Std. Err.       [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{             |        215    .2186047    .0281868        .1685637    .2785246}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{wald-vs-wilson-methods}{%
+\subsection{Wald vs Wilson methods}\label{wald-vs-wilson-methods}}
+
+We have presented two methods for calculating the 95\% confidence interval for a proportion. The Wald method, which assumes that the underlying proportion follows a Normal distribution, is easy to calculate and follows the form of other confidence intervals. The Wilson method, which is more difficult to calculate by hand, has nicer mathematical properties. There are also a number of other methods for calculating confidence intervals for proportions, but we do not discuss these in this course.
+
+A paper by Brown, Cai and DasGupta (Statistical Science, 2001) has compared the properties of the Wald and Wilson methods (among others) and concluded that the Wilson method is preferred over the Wald method.
+
+\hypertarget{hypothesis-testing-for-one-sample-proportion}{%
+\section{Hypothesis testing for one sample proportion}\label{hypothesis-testing-for-one-sample-proportion}}
+
+We can carry out a hypothesis test to compare a sample proportion to a hypothesised proportion. In much the same way as a one sample t-test was used in Module 5 to test a sample mean against a hypothesised mean, we can perform a one-sample test to test a sample proportion against a hypothesised proportion. The significance test will provide a P value to assess the evidence against the null hypothesis, while the 95\% confidence interval will provide the range in which we are 95\% confident that the true proportion lies.
+
+For example, we can test the following null hypothesis:
+
+H0: sample proportion is not different from the hypothesised proportion
+
+Much like constructing a 95\% confidence interval, there are two main options when performing a hypothesis test on a single proportion: the first assumes that the proportion follows a Normal distribution, while the second relaxes this assumption.
+
+\hypertarget{z-test-for-testing-one-sample-proportion}{%
+\subsection{z-test for testing one sample proportion}\label{z-test-for-testing-one-sample-proportion}}
+
+The first step in the z-test is to calculate a z-statistic, which is then used to calculate a P-value. The z-statistic is calculated as the difference between the population proportion and the sample proportion divided by the standard error of the population proportion, i.e.
+
+\[
+z = \frac{(p_{population} - p_{sample})}{\text{SE}(p_{population})}
+\]
+
+This z-statistic is then compared to the standard Normal distribution to calculate the P-value.
+
+\hypertarget{worked-example-2}{%
+\subsection{Worked Example}\label{worked-example-2}}
+
+\[
+\begin{aligned}
+z &= \frac{(0.20 - 0.18)}{\sqrt{\frac{0.20 × (1 - 0.20)}{300}}} \\
+ &= 0.87
+\end{aligned}
+\]
+
+This Z value does not meet or exceed the critical value of 1.96 for a two tailed test. This indicates that there is insufficient evidence to conclude that there is a difference between the population proportion of 20\% smokers and the sample proportion of 18\% smokers which is consistent with our hypothesis testing using 95\% CIs.
+
+The P-value for the test above can be obtained from a Normal distribution table as \(P = 2 × 0.192 = 0.38\) (using Table A2.1 in the Appendix), or using the hand-calculator in Stata. \textbf{INCLUDE NORMAL CURVE DIAGRAM TO ILLUSTRATE 2-TAILED TEST}
+
+\hypertarget{binomial-test-for-testing-one-sample-proportion}{%
+\subsection{Binomial test for testing one sample proportion}\label{binomial-test-for-testing-one-sample-proportion}}
+
+We can use the binomial distribution to obtain an exact P-value for testing a single proportion. Historically, this was a time consuming process with much hand calculation. These days, Stata and other statistical software performs the calculations quickly and efficiently, and is the preferred method.
+
+\hypertarget{worked-example-3}{%
+\subsection{Worked example}\label{worked-example-3}}
+
+A national census in a country shows that 20\% of the population are smokers. A survey of a community within the country that has received a public health anti-smoking intervention shows that 54 of 300 people sampled are smokers (18\%). The research question is whether this proportion of smoking in the community is lower than the population prevalence of smoking of 20\%. The Stata file Example\_6.3.dta contains the data for this example. In the data file, smokers are coded as 1 and non-smokers are coded as 0.
+
+In Stata, we can use the \texttt{prtest} command to perform a z-test, or the \texttt{bitest} command to perform the exact binomial test:
+
+\hypertarget{output-6.3-z-test-and-binomial-test-for-prevalence-of-smoking}{%
+\subsubsection{Output 6.3: z-test and binomial test for prevalence of smoking}\label{output-6.3-z-test-and-binomial-test-for-prevalence-of-smoking}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. prtest smoking\_status == 0.2}
+
+\NormalTok{One{-}sample test of proportion                   Number of obs      =       300}
+
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    Variable |       Mean   Std. Err.                     [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{smoking\_st\textasciitilde{}s |        .18   .0221811                      .1365259    .2234741}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    p = proportion(smoking\_st\textasciitilde{}s)                                  z =  {-}0.8660}
+\NormalTok{Ho: p = 0.2}
+
+\NormalTok{     Ha: p \textless{} 0.2                 Ha: p != 0.2                   Ha: p \textgreater{} 0.2}
+\NormalTok{ Pr(Z \textless{} z) = 0.1932         Pr(|Z| \textgreater{} |z|) = 0.3865          Pr(Z \textgreater{} z) = 0.8068}
+
+\NormalTok{bitest smoking\_status == 0.2}
+
+\NormalTok{    Variable |        N   Observed k   Expected k   Assumed p   Observed p}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{smoking\_st\textasciitilde{}s |      300         54           60       0.20000      0.18000}
+
+\NormalTok{  Pr(k \textgreater{}= 54)            = 0.825531  (one{-}sided test)}
+\NormalTok{  Pr(k \textless{}= 54)            = 0.215202  (one{-}sided test)}
+\NormalTok{  Pr(k \textless{}= 54 or k \textgreater{}= 66) = 0.427280  (two{-}sided test)}
+\end{Highlighting}
+\end{Shaded}
+
+The z-test provides a two-sided P-value of 0.39, while the binomial test gives a two-sided P-value of 0.43. Both tests provide little evidence against the hypothesis that the prevalence of smoking in the community is 20\%.
+
+\hypertarget{contingency-tables}{%
+\section{Contingency tables}\label{contingency-tables}}
+
+As introduced in PHCM9794: Foundations of Epidemiology, 2-by-2 contingency tables can be used to examine associations between two binary variables, most commonly an exposure and an outcome. There are two commands in Stata to construct and analyse 2-by-2 contingency tables: \texttt{cs} (for cross-sectional or cohort studies) and \texttt{cc} (for case-control studies).
+
+It is important to note that Stata presents the exposure or intervention (present, absent) in the columns and the outcome or disease (present, absent) in the rows. This is opposite to the way most epidemiological tables are presented, with exposure in rows and outcome in columns. Care must be taken when reading 2-by-2 tables generated from Stata.
+
+\hypertarget{table-6.1-contingency-tables-for-estimating-associations-between-two-binary-variables}{%
+\subsubsection{Table 6.1: Contingency tables for estimating associations between two binary variables}\label{table-6.1-contingency-tables-for-estimating-associations-between-two-binary-variables}}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\textbf{Traditional format} & & & \\
+\midrule
+\endhead
+& Outcome present & Outcome absent & Total \\
+Exposure present & a & b & a+b \\
+Exposure absent & c & d & c+d \\
+Total & a+c & b+d & N \\
+\bottomrule
+\end{longtable}
+
+\begin{longtable}[]{@{}llll@{}}
+\toprule
+\textbf{Stata format} & & & \\
+\midrule
+\endhead
+& Exposure present & Exposure absent & Total \\
+Outcome present & a & c & a+c \\
+Outcome absent & b & d & b+d \\
+Total & a+b & c+d & N \\
+\bottomrule
+\end{longtable}
+
+When using a statistics program such as Stata, it is recommended that the outcome and exposure variables are coded by assigning `absent' as 0 and `present' as 1, for example `No' = 0 and `Yes' = 1. This is needed for some of the commands to work (e.g.~the epidemiology table commands). This coding ensures that measures of association, such as the odds ratio or relative risk, are computed correctly by Stata.
+
+\hypertarget{calculation-of-the-95ci-for-relative-risk-odds-ratio-and-other-measures-of-association}{%
+\section{Calculation of the 95\%CI for relative risk, odds ratio and other measures of association}\label{calculation-of-the-95ci-for-relative-risk-odds-ratio-and-other-measures-of-association}}
+
+We can measure the strength of the association between an exposure and an outcome as either a relative risk or odds ratio. The relative risk is a direct comparison of the risk in the exposed group with the risk in the non-exposed group, and can only be calculated for a cohort study (including a randomised controlled trial) or a cross-sectional study (where it is also called a prevalence ratio).
+
+\hypertarget{worked-example-6.4}{%
+\subsection{Worked Example 6.4}\label{worked-example-6.4}}
+
+A randomised controlled trial was conducted among a group of patients to estimate the side effects of a drug. Fifty patients were randomly allocated to receive the active drug and 50 patients were allocated to receive a placebo drug. The outcome measured was the experience of nausea. The data is given in the file Example\_6.4.dta.
+
+The relative risk (RR=3.75) and its 95\% confidence interval (1.34, 10.51) shown in Output 6.4 can be obtained using the cs command in Stata. This tells us that nausea is 3.75 times more likely to occur in the active drug group compared with the placebo group. Because this is a randomised controlled trial, relative risk would be an appropriate measure of association.
+
+\hypertarget{output-6.4-relative-risk-and-95-ci-from-the-cs-command-in-stata}{%
+\subsubsection{Output 6.4 Relative risk and 95\% CI from the cs command in Stata}\label{output-6.4-relative-risk-and-95-ci-from-the-cs-command-in-stata}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{                 | Group                  |}
+\NormalTok{                 |   Exposed   Unexposed  |      Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Cases |        15           4  |         19}
+\NormalTok{        Noncases |        35          46  |         81}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Total |        50          50  |        100}
+\NormalTok{                 |                        |}
+\NormalTok{            Risk |        .3         .08  |        .19}
+\NormalTok{                 |                        |}
+\NormalTok{                 |      Point estimate    |    [95\% Conf. Interval]}
+\NormalTok{                 |{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{ Risk difference |              .22       |    .0723899    .3676101 }
+\NormalTok{      Risk ratio |             3.75       |     1.33754     10.5137 }
+\NormalTok{ Attr. frac. ex. |         .7333333       |    .2523589     .904886 }
+\NormalTok{ Attr. frac. pop |         .5789474       |}
+\NormalTok{                 +{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{                               chi2(1) =     7.86  Pr\textgreater{}chi2 = 0.0050}
+\end{Highlighting}
+\end{Shaded}
+
+From Output 6.4, you can check the relative risk estimate:
+
+\[
+\begin{aligned}
+\text{RR} &= \frac{a / (a+b)}{c / (c+d)} \\
+  &= \frac{15 / (15+35)}{4 / (4+46)} \\
+  &= \frac{0.3}{0.08} \\
+  &= 3.75
+\end{aligned}
+\]
+
+\hypertarget{worked-example-6.5}{%
+\subsection{Worked Example 6.5}\label{worked-example-6.5}}
+
+A case-control study investigated the association between human papillomavirus and oropharyngeal cancer (D'Souza, et al.~NEJM 2007), and the results appear in Table 6.2.
+
+\hypertarget{table-6.2-association-between-human-papillomavirus-and-oropharyngeal-cancer}{%
+\subsubsection{Table 6.2: Association between human papillomavirus and oropharyngeal cancer}\label{table-6.2-association-between-human-papillomavirus-and-oropharyngeal-cancer}}
+
+\begin{longtable}[]{@{}lccc@{}}
+\toprule
+\endhead
+& Cases & Controls & Total \\
+& (Oropharyngeal cancer) & (No oropharyngeal cancer) & \\
+HPV Positive & 57 & 14 & 71 \\
+HPV Negative & 43 & 186 & 229 \\
+Total & 100 & 200 & 300 \\
+\bottomrule
+\end{longtable}
+
+The odds ratio is the odds of being HPV positive in those with oropharyngeal cancer compared to the odds of being HPV positive in those without oropharyngeal cancer.
+
+You can use the Stata command cci with the Cornfield option to obtain odds ratio and its 95\% CI as shown in Output 6.5. The Cornfield option is used to provide a better estimate of the 95\% confidence interval.
+
+\hypertarget{output-6.5-odds-ratio-and-95-ci-from-the-cc-command-in-stata}{%
+\subsubsection{Output 6.5: Odds ratio and 95\% CI from the cc command in Stata}\label{output-6.5-odds-ratio-and-95-ci-from-the-cc-command-in-stata}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{                                                         Proportion}
+\NormalTok{                 |   Exposed   Unexposed  |      Total      exposed}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Cases |        57          43  |        100       0.5700}
+\NormalTok{        Controls |        14         186  |        200       0.0700}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Total |        71         229  |        300       0.2367}
+\NormalTok{                 |                        |}
+\NormalTok{                 |      Point estimate    |    [95\% Conf. Interval]}
+\NormalTok{                 |{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Odds ratio |          17.6113       |    9.043258    34.25468 (Cornfield)}
+\NormalTok{ Attr. frac. ex. |         .9432183       |    .8894204    .9708069 (Cornfield)}
+\NormalTok{ Attr. frac. pop |         .5376344       |}
+\NormalTok{                 +{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{                               chi2(1) =    92.26  Pr\textgreater{}chi2 = 0.0000}
+\end{Highlighting}
+\end{Shaded}
+
+The odds ratio (OR) and its 95\% CI can be read directly from the output as: OR = 17.6 (95\% CI 9.0, 34.3).
+
+From the cross-tabulated output, you can check the odds ratio estimate as follows:
+
+\[
+\begin{aligned}
+\text{OR} &= \frac{a / c}{b /d)} \\
+  &= \frac{57 / 14}{43 / 186} \\
+  &= 17.6
+\end{aligned}
+\]
+
+Identical Stata output to Outputs 6.4 and 6.5 can be obtained for either individual record data or aggregate data. The steps for computing RR and OR using both individual record and aggregate data is described in the Stata notes section.
+
+Also estimated in Output 6.4 is the risk difference, and in both Outputs 6.4 and 6.5, the population attributable fraction (or proportion) and the attributable fraction among the exposed and their corresponding 95\% CI. While the value of 1 indicates no effect for both OR and RR, the value of 0 indicates no effect for risk difference and the attribution fractions.
+
+Risk statistics are usually only reported with one or two decimal places. The interpretation of the confidence intervals for both the relative risk and the odds ratio is the same as for the confidence intervals around other summary measures in that it shows the region in which we are 95\% confident that the true population estimate lies.
+
+\hypertarget{learning-activities-5}{%
+\chapter*{\texorpdfstring{\textbf{6} Learning Activities}{6 Learning Activities}}\label{learning-activities-5}}
+\addcontentsline{toc}{chapter}{\textbf{6} Learning Activities}
 
 \hypertarget{activity-6.1}{%
 \subsection*{Activity 6.1}\label{activity-6.1}}
@@ -1134,12 +1859,12 @@ By the end of this module you will be able to:
 
 \citep{bland15}
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-4}{%
+\section{Introduction}\label{introduction-4}}
 
-\hypertarget{module-7-learning-activities}{%
-\chapter*{Module 7: Learning Activities}\label{module-7-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 7: Learning Activities}
+\hypertarget{learning-activities-6}{%
+\chapter*{\texorpdfstring{\textbf{7} Learning Activities}{7 Learning Activities}}\label{learning-activities-6}}
+\addcontentsline{toc}{chapter}{\textbf{7} Learning Activities}
 
 \hypertarget{activity-7.1}{%
 \subsection*{Activity 7.1}\label{activity-7.1}}
@@ -1201,27 +1926,422 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Explore the association between two continuous variables using a scatter plot;
 \item
-  blah
+  Estimate and interpret correlation coefficients;
 \item
-  blah
+  Estimate and interpret parameters from a simple linear regression;
+\item
+  Decide whether a regression model is valid;
+\item
+  Test a hypothesis using regression coefficients;
+\item
+  Outline the concept of multiple regression and its role in investigative epidemiology.
 \end{itemize}
 
 \hypertarget{readings-7}{%
 \section*{Readings}\label{readings-7}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citep{kirkwood_sterne01}; Chapter 10
 
-\citep{bland15}
+\citep{bland15}; Chapter 11
 
-\hypertarget{introduction-4}{%
-\section{Introduction}\label{introduction-4}}
+\citep{acock10}; Chapter 8.
 
-\hypertarget{module-8-learning-activities}{%
-\chapter*{Module 8: Learning Activities}\label{module-8-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 8: Learning Activities}
+\citep{juul_frydenberg14}; Section 12.1.
+
+\hypertarget{introduction-5}{%
+\section{Introduction}\label{introduction-5}}
+
+In Module 5, we saw how to test whether a categorical and a continuous variable are related. However, we often want to know how closely two continuous variables are related. For example, we may want to know how closely blood cholesterol levels are related to dietary fat intake in adult men. To measure the strength of association between two continuously distributed variables, a correlation coefficient is used.
+
+We may also want to know how well one continuous measurement predicts the value of another continuous measurement. For example, we may want to know how well height predicts values of lung capacity in a community of adults. A regression model allows us to use one measurement to predict another measurement.
+
+Although both correlation coefficients and regression models can be used to describe the degree of association between two continuous variables, the two methods provide very different statistical information. For both methods, a significant statistical association only implies an association between the variables and does not imply a causal relationship.
+
+\hypertarget{correlation}{%
+\section{Correlation}\label{correlation}}
+
+We use correlation to measure the strength of a linear relationship between two variables. Before calculating a correlation coefficient, a scatter plot should first be obtained to give an understanding of the nature of the relationship between the two variables.
+
+\hypertarget{worked-example-4}{%
+\subsection{Worked Example}\label{worked-example-4}}
+
+The Stata file Example\_8.1.dta has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45\%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure \texttt{\textbackslash{}@ref(fig:scatter-plot))}. This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.
+
+\hypertarget{correlation-coefficients}{%
+\subsection{Correlation coefficients}\label{correlation-coefficients}}
+
+A correlation coefficient (r) describes how closely the variables are related, that is the strength of linear association between two continuous variables. The range of the coefficient is from +1 to −1 where +1 is a perfect positive association, 0 is no association and −1 is a perfect inverse association. In general, an absolute (disregarding the sign) r value below 0.3 indicates a weak association, 0.3 to \textless{} 0.6 is fair association, 0.6 to \textless{} 0.8 is a moderate association, and \(\ge\) 0.8 indicates a strong association.
+
+The coefficient is positive when large values of one variable tend to occur with large values of the other, and small values of one variable (y) tend to occur with small values of the other (x) (Figure \texttt{\textbackslash{}@ref(fig:scatter-plot-four)} (a and b)). For example, height and weight in healthy children or age and blood pressure.
+
+The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure \texttt{\textbackslash{}@ref(fig:scatter-plot-four)} (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.
+
+The P value associated with an r value is an estimate of whether the correlation coefficient is significantly different from zero. However, a correlation coefficient that does not have a significant P value does not imply that there is no relationship because the correlation coefficient only tests for a linear association and there may be a non-linear relationship such as a curved or irregular relationship.
+
+The assumptions for using a Pearson's correlation coefficient are that:
+
+\begin{itemize}
+\tightlist
+\item
+  observations are independent;
+\item
+  both variables are continuous variables;
+\item
+  the relationship between the two variables is linear.
+\end{itemize}
+
+There is a further assumption that the data follow a bivariate normal distribution. This assumes: \emph{y} follows a normal distribution for given values of \emph{x}; and \emph{x} follows a normal distribution for given values of \emph{y}. This is quite a technical assumption that we do not discuss further.
+
+There are two types of correlation coefficients-- the correct one to use is determined by the nature of the variables as shown in Table \ref{tab:setup-data-test}).
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:setup-data-test} A table}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.4\textwidth} p{0.4\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Type.of.correlation.coefficient}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Application}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Pearson’s correlation coefficient: r\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Both variables are continuous and a bivariate normal distribution can be assumed\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Spearman’s rank correlation: rho\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Bivariate normality cannot be assumed. Also useful when at least one of the variables is ordinal\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Spearman's rho is calculated using the ranks of the data, rather than the actual values of the data. We will see further examples of such methods in Module 9, when we consider non-parametric tests, which are often based on ranks.
+
+For the data in the Worked Example 8.1, using the pwcorr command in Stata gives the information shown in Output 8.1.
+
+\hypertarget{stata-output-from-the-pwcorr-command}{%
+\subsubsection{Stata output from the pwcorr command}\label{stata-output-from-the-pwcorr-command}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. pwcorr Height FVC, sig}
+
+\NormalTok{             |   Height      FVC}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Height |   1.0000 }
+\NormalTok{             |}
+\NormalTok{             |}
+\NormalTok{         FVC |   0.6976   1.0000 }
+\NormalTok{             |   0.0000}
+\NormalTok{             |}
+\end{Highlighting}
+\end{Shaded}
+
+This table shows that the Pearson's correlation coefficient between height and lung function is 0.698 with P\textless0.001 indicating very strong evidence of a linear association between height and FVC.
+
+This r value was calculated for the full data set of 120 adults who had heights ranging from 160 to 172cms. If the r value is calculated for the 60 adults with a height less than 165cms, it is much lower at 0.433 although significant at P=0.001. In general, r values are higher for a wider range of values on the x axis even though the relationship between the two variables remains the same.
+
+Correlation coefficients are rarely used as important statistics in their own right because they do not fully explain the relationship between the two variables and the range of the data has an important influence on the size of the coefficient. In addition, the statistical significance of the correlation coefficient is often over interpreted because a small correlation which is of no clinical importance can become statistically significant even with a relatively small sample size. For example, a poor correlation of 0.3 will be statistically significant if the sample size is large enough.
+
+\hypertarget{linear-regression}{%
+\section{Linear regression}\label{linear-regression}}
+
+The nature of a relationship between two variables is more fully described using regression. There are two principal purposes for building a regression model. The most common is to build a predictive model, for example in situations in which age and gender are used to predict normal values of characteristics such as lung size or body mass index. Normal values are the range of values that occur naturally in the general population.
+
+The second purpose for using a regression model is for testing the hypothesis that there is a linear relationship between one or more explanatory variables and an outcome variable. For example, a regression model can be used to test the extent to which age predicts BMI or to test the hypothesis that two groups with a different dietary regime have significantly different BMI values after adjusting for age differences.
+
+From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure \texttt{\textbackslash{}@ref(fig:scatter-plot-line)} shows the data with the line fitted.
+
+The line through the plot is called the line of `best fit' because the size of the deviations between the data points and the line is minimised in the calculation. The distance between each data point and the regression line is called a `residual'.
+
+\hypertarget{regression-equations}{%
+\subsection{Regression equations}\label{regression-equations}}
+
+The mathematical equation for the line explains the relationship between the two variables. The equation of the regression line is as follows:
+
+\[y = \beta_{0} + \beta_{1}x\]
+
+This line is shown in Figure \texttt{\textbackslash{}@ref(fig:regression-parameters)} using the notation shown in Table 8.2.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:regression-notation} Notation for linear regression equation}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.4\textwidth} p{0.4\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Symbol}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Interpretation}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright y\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Observed value of the outcome variable\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright x\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Observed value of the explanatory variable\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright β\_0\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Intercept of the regression line\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright β\_1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Slope of the regression line\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+The intercept is the point at which the regression line intersects with the y-axis when the value of `x' is zero. In most cases, the intercept does not have a biologically meaningful interpretation. The slope of the line is the unit change in the outcome variable `y' with each unit change in the explanatory variable `x'. For any data set, the fitted regression line passes through the mean values of both the explanatory variable `x' and the outcome variable `y'.
+
+When using regression, the research question must be framed so that the explanatory variable `x' and outcome variable `y' are classified correctly. An important concept is that regression predicts a mean value of `y' given an observed value of `x' so that any error around the explanatory variable is not taken into account. For this reason, measurements that can be taken accurately, such as age and height, make good explanatory variables.
+
+\hypertarget{fit-of-a-linear-regression-model}{%
+\subsection{Fit of a linear regression model}\label{fit-of-a-linear-regression-model}}
+
+After fitting a linear regression model, it is important to know how well the model fits the observed data. One way of assessing the model fit is to compute a statistic called coefficient of determination, denoted by \(R^2\). It is the square of the Pearson correlation coefficient \(r: r^2 = R^2\). Since the range of \(r\) is from −1 to 1, \(R^2\) must lie between 0 and 1.
+
+\(R^2\) can be interpreted as the proportion of variability in y that can be explained by variability in x. Hence, the following conditions may arise:
+
+If \(R^2 = 1\), then all variation in y can be explained by variation of x and all data points fall on the regression line.
+
+If \(R^2 = 0\), then none of the variation in y is related to x at all, and the variable x explains none of the variability in y.
+
+If \(0 < R^2 <1\), then the variability of y can be partially explained by the variability in x. The larger the \(R^2\) value, the better is the fit of the regression model.
+
+\hypertarget{assumptions-for-linear-regression}{%
+\subsection{Assumptions for linear regression}\label{assumptions-for-linear-regression}}
+
+Regression is robust to moderate degrees of non-normality in the variables, provided that the sample size is large enough and that there are no influential outliers. Also, the regression equation describes the relationship between the variables and this is not influenced as much by the spread of the data as the correlation coefficient is.
+
+The assumptions that must be met when using linear regression are as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  observations are independent;
+\item
+  the relationship between the explanatory and the outcome variable is linear;
+\item
+  the residuals are normally distributed.
+\end{itemize}
+
+A residual is defined as the difference between the observed and predicted outcome from the regression model. If the predicted value of the outcome variable is denoted by \(\hat y\) then:
+
+\[ \text{Residual} = \text{observed} - \text{predicted} = y - \hat y\]
+
+It is important for regression modelling that the data are collected in a period when the relationship remains constant. For example, in building a model to predict normal values for lung function the data must be collected when the participants have been resting and not exercising and people taking bronchodilator medications that influence lung capacity should be excluded. In regression, it is not so important that the variables themselves are normally distributed, but it is important that the residuals are. Scatter plots and specific diagnostic tests can be used to check the regression assumptions. Some of these will not be covered in this introductory course but will be discussed in detail in the \textbf{Advanced Biostatistics} course.
+
+\hypertarget{obtaining-a-regression-equation-in-stata}{%
+\section{Obtaining a regression equation in Stata}\label{obtaining-a-regression-equation-in-stata}}
+
+To measure whether height is a significant predictor of forced vital capacity (FVC), we use the \texttt{regress} command in Stata.
+
+Output 8.2 shows the model summary in the first part of the Stata output. The R-squared is 0.487, indicating that 48.7\% of the variation in FVC is explained by height. The square root of R-squared gives us the (absolute value of) Pearson's correlation coefficient of 0.698 as obtained in Section 8.2.
+
+\hypertarget{output-8.2-model-summary-from-the-regress-command-in-stata}{%
+\subsubsection{Output 8.2: Model summary from the regress command in Stata}\label{output-8.2-model-summary-from-the-regress-command-in-stata}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. regress FVC Height}
+
+\NormalTok{      Source |       SS           df       MS      Number of obs   =       120}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}   F(1, 118)       =    111.88}
+\NormalTok{       Model |  17.5914327         1  17.5914327   Prob \textgreater{} F        =    0.0000}
+\NormalTok{    Residual |  18.5540027       118  .157237311   R{-}squared       =    0.4867}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}   Adj R{-}squared   =    0.4823}
+\NormalTok{       Total |  36.1454355       119  .303743155   Root MSE        =    .39653}
+
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{         FVC |      Coef.   Std. Err.      t    P\textgreater{}|t|     [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{      Height |   .1407567   .0133075    10.58   0.000     .1144042    .1671092}
+\NormalTok{       \_cons |  {-}18.87347   2.193651    {-}8.60   0.000     {-}23.2175   {-}14.52944}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\end{Highlighting}
+\end{Shaded}
+
+The adjusted R-squared is only used when comparing multivariable models (i.e.~those with different numbers of explanatory variables, including confounders), and will not be used in this course.
+
+The coefficients table, the second part of the Stata output, provide the estimated regression coefficients. Stata labels the regression slope with the name of the explanatory variable and the intercept \texttt{\_cons}.
+
+From this output, we see that the slope is estimated as 0.141 with an estimated intercept of -18.873. Therefore, the regression equation is estimated as:
+
+FVC (L) = − 18.873 + (0.141 \(\times\) Height in cm)
+
+This equation can be used to predict FVC for a person of a given height. For example, the predicted FVC for a person 165 cm tall is estimated as:
+
+FVC = − 18.87347 + (0.1407567 \(\times\) 165.0) = 4.40 L.
+
+Note that for the purpose of prediction we have kept all the decimal places in the coefficients to avoid rounding error in the intermediate calculation.
+
+The t-values are calculated by dividing the coefficients by their SEs and are tests of whether each coefficient is significantly different from zero. A coefficient that is significantly different from zero indicates a significant linear relationship between the variables. In this model, both the intercept and the coefficient are significantly different from zero at P \textless{} 0.001.
+
+In the above example, the response rate for the survey was low and there may be selection bias in that people who were healthier may have been more likely to attend so the predictive equation may not be considered representative of the general population of adults from which the sample was drawn.
+
+The distribution of the residuals should always be checked. Outlying residuals can have a large effect on the slope of the model and need to be censored or brought closer to the remainder of the data to reduce their influence. The residuals can be generated using the predict command in Stata.
+
+The histogram of residuals from the model is shown in Figure 8.5. They are normally distributed and indicate that there are no influential outliers so that the assumptions for regression are met.
+
+\hypertarget{critical-appraisal}{%
+\subsection{Critical appraisal}\label{critical-appraisal}}
+
+When reading the literature, it is important to be critical about how correlation coefficients are interpreted. It is a good idea to check if a scatter plot is shown to help interpret the relationship and to indicate if there are any influential outliers. Also, question whether the correlation coefficient has been calculated from a random sample and if not, what selected samples the value can be generalised to.
+
+When regression is reported it is essential that the axes are correctly presented so that the equation is predictive. Thus, the explanatory variable must be presented on the x axis and the outcome on the y axis. It is also a good idea to check that all the assumptions are met. Outliers which result in a non-normal distribution of the residuals can severely bias the regression coefficients.
+
+\hypertarget{multiple-linear-regression}{%
+\section{Multiple linear regression}\label{multiple-linear-regression}}
+
+In the above example, we have only used a simple linear regression model of two continuous variables. Other more complex models can be built from this e.g.~if we wanted to look at the effect of gender (male vs.~female) as binary indicator in the model while adjusting for the effect of height. In that case we would include both the variables in the model as explanatory variables. In the same way we can include any number of explanatory variables (both continuous and categorical) in the model: this is called a multivariable model. Multivariable models are often used for building predictive equations, for example by using age, height, gender and smoking history to predict lung function, or to adjust for confounding and detect effect modification to investigate the association between an exposure and an outcome factor.
+
+Multiple regression has an important role in investigating causality in epidemiology. The exposure variable under investigation must stay in the model and the effects of other variables which can be confounders or effect-modifiers are tested. The biological, psychological or social meaning of the variables in the model and their interactions are of great importance for interpreting theories of causality.
+
+Other multivariable models include binary logistic regression for use with a binary outcome variable, Cox regression for survival analyses, or Poisson regression for count data. These models, together with multiple regression, will be taught in \emph{PHCM9517: Advanced Biostatistics}.
+
+\hypertarget{stata-notes}{%
+\chapter*{\texorpdfstring{\textbf{8} Stata notes}{8 Stata notes}}\label{stata-notes}}
+\addcontentsline{toc}{chapter}{\textbf{8} Stata notes}
+
+\hypertarget{creating-a-scatter-plot}{%
+\section{Creating a scatter plot}\label{creating-a-scatter-plot}}
+
+We will demonstrate using Stata for correlation and simple linear regression using the dataset \texttt{Example\_8.1.dta}.
+
+To create a scatter plot to explore the association between height and FVC click: \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)}. In the \texttt{twoway} dialog box, click \textbf{Create\ldots{}}
+
+A new dialog box will open. Select the \textbf{Basic plots} radio button and highlight \textbf{Scatter} under \textbf{Basic plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
+
+Click the \textbf{Accept} button in the \textbf{Plot 1} dialog box to return to the \textbf{twoway} dialog box, then click the \textbf{OK} or \textbf{Submit} button to produce the scatter plot shown in \textbf{Figure 8.1}.
+
+{[}Command: \texttt{twoway\ (scatter\ FVC\ Height)}{]}
+
+To add a fitted line, go back to the \texttt{twoway} dialog box. If you clicked the \textbf{OK} button, you can go to \textbf{Graphics} \textbf{\textgreater{} Twoway} \textbf{graph (scatter, line, etc.)} to bring it back again.
+
+Click \textbf{Create\ldots{}}, then select the \textbf{Fit plots} radio button and \textbf{Linear prediction} under \textbf{Fit plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
+
+Click the \textbf{Accept} button, then the \textbf{OK} or \textbf{Submit} button to produce the scatterplot below.
+
+{[}Command: \texttt{twoway\ (scatter\ FVC\ Height)\ (lfit\ FVC\ Height)}{]}
+
+Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the \textbf{Y axis} tab in the \textbf{twoway} dialog box to enter your title as shown below.
+
+You can click the \textbf{Submit} button to check how the scatter plot looks like. Next go the \textbf{Legend} tab and select the \textbf{Hide legend} radio button.
+
+Click the \textbf{OK} or \textbf{Submit} button when you are finished to produce \textbf{Figure 8.3}.
+
+{[}Command: \texttt{twoway\ (scatter\ FVC\ Height)\ (lfit\ FVC\ Height),\ ytitle(Forced\ vital\ capacity\ (L))\ legend(off)}{]}
+
+To save your graph, go to \textbf{File \textgreater{} Save} in the \textbf{Graph} window, and be sure to save your file as a PNG file:
+
+\hypertarget{calculating-a-correlation-coefficient}{%
+\section{Calculating a correlation coefficient}\label{calculating-a-correlation-coefficient}}
+
+To calculate the Pearson's correlation using the dataset \texttt{Example\_8.1.dta} go to: \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Pairwise correlations}
+
+Select the two variables, \textbf{FVC} and \textbf{Height} in the \textbf{Variables} box. You can click the \textbf{Submit} button to check the output. Next, tick the box for \textbf{Print significance level for each entry} to obtain the P-value and the box for \textbf{Print number of observations for each entry} to obtain the number of observations used as shown below.
+
+Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Output 8.1},
+
+{[}Command: \texttt{pwcorr\ Height\ FVC,\ obs\ sig}{]}
+
+\hypertarget{fitting-a-simple-linear-regression-model}{%
+\section{Fitting a simple linear regression model}\label{fitting-a-simple-linear-regression-model}}
+
+We will fit a simple linear regression model with \texttt{Example\_8.1.dta} to quantify the relationship between FVC and height.
+
+Choose \textbf{Statistics \textgreater{} Linear models and related \textgreater{} Linear regression}
+
+In the \texttt{regress} dialog box, select \texttt{FVC} as the \textbf{Dependent variable}, and \texttt{Height} as the \textbf{Independent variable}.
+
+Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Outputs 8.2 and 8.3}.
+
+{[}Command: \texttt{reg\ FVC\ Height}{]}
+
+\hypertarget{plotting-residuals-from-a-simple-linear-regression}{%
+\section{Plotting residuals from a simple linear regression}\label{plotting-residuals-from-a-simple-linear-regression}}
+
+To obtain the residuals, go to \textbf{Statistics \textgreater{} Post estimation after running the regress command.}
+
+{[}Graphical user interface, application Description automatically generated{]}{[}136{]}
+
+\textbf{In the Postestimation Selector dialog box, select Predictions and their SEs, leverage statistics, distance statistics, etc. in the list under Predictions as shown below.}
+
+{[}Graphical user interface, text, application Description automatically generated{]}{[}137{]}
+
+\textbf{In the predict dialog box, choose the Residuals button and enter a New variable name (e.g.~FVC\_resid) for the residuals from the regression model.}
+
+{[}Graphical user interface, application Description automatically generated{]}{[}138{]}
+
+Click the \textbf{OK} button when you are done.
+
+\emph{\[Command: predict FVC_resid, residuals\]}
+
+You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using \textbf{Graphics \textgreater{} Histogram} as shown in \textbf{Stata Notes} section for \textbf{Module 2}. Below is the \textbf{histogram} dialog box used to produce the graph in \textbf{Figure 8.5}.
+
+\emph{\[Command: histogram FVC_resid, bin(12) frequency normal\]}
+
+{[}Graphical user interface, text, application, email Description automatically generated{]}{[}139{]}
+
+\hypertarget{learning-activities-7}{%
+\chapter*{\texorpdfstring{\textbf{8} Learning Activities}{8 Learning Activities}}\label{learning-activities-7}}
+\addcontentsline{toc}{chapter}{\textbf{8} Learning Activities}
 
 \hypertarget{activity-8.1}{%
 \subsection*{Activity 8.1}\label{activity-8.1}}
@@ -1275,7 +2395,7 @@ Which of the following correlation coefficients indicates the weakest linear rel
 \def\labelenumi{\alph{enumi})}
 \tightlist
 \item
-  r = 0.72
+  r = 0.72 {[}SHOULD I INCLUDE P-VALUES AS WELL?{]}
 \item
   r = 0.41
 \item
@@ -1338,8 +2458,8 @@ By the end of this module you will be able to:
 
 \citep{acock10} Section 7.11.
 
-\hypertarget{introduction-5}{%
-\section{Introduction}\label{introduction-5}}
+\hypertarget{introduction-6}{%
+\section{Introduction}\label{introduction-6}}
 
 In general, parametric statistics are preferred for reporting data because the summary statistics (mean, standard deviation, standard error of the mean etc) and the tests used (t-tests, correlation, regression etc) are familiar and the results are easy to communicate. However, non-parametric tests can be used if data are not normally distributed. Non-parametric tests make fewer assumptions about the distribution of the data.
 
@@ -1348,8 +2468,8 @@ In general, parametric statistics are preferred for reporting data because the s
 
 When a variable has a skewed distribution, one possibility is to transform the data to a new variable to try and obtain a normal or near normal distribution. Methods to transform non-normally distributed data include logarithmic transformation of each data point, or using the square root or the square or the inverse (i.e.~1/x) etc.
 
-\hypertarget{worked-example}{%
-\subsection{Worked Example}\label{worked-example}}
+\hypertarget{worked-example-5}{%
+\subsection{Worked Example}\label{worked-example-5}}
 
 We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example\_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure 9.1. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
@@ -1767,8 +2887,8 @@ If the differences between two paired measurements are not normally distributed,
 
 In this test, the absolute differences between the paired scores are ranked and the difference scores that are equal to zero (i.e.~scores where there is no difference between the pairs) are excluded. Thus, the test is not suitable when a large proportion of the differences are zero because the effective sample size is reduced considerably.
 
-\hypertarget{worked-example-1}{%
-\subsection{Worked Example}\label{worked-example-1}}
+\hypertarget{worked-example-6}{%
+\subsection{Worked Example}\label{worked-example-6}}
 
 A crossover trial is done to compare symptom scores for two drugs in 11 people with arthritis (higher scores indicate more severe symptoms). The data are contained in Stata datafile file Example\_9.2.dta. The data are shown in Table 9.2. The descriptive statistics indicate that the differences are not normally distributed. You can use the Explore function in Stata to determine this.
 
@@ -1991,9 +3111,9 @@ Stata provides two versions of the Kendall rank correlation coefficient: we woul
 
 In this module, we have presented methods to conduct a hypothesis test with data that are not normally distributed. Non-parametric methods do not assume any distribution for the data and use significance tests based on ranks or sign (or both). A non-parametric test is always less powerful than its equivalent parametric test if the data are normally distributed and so whenever possible parametric significance tests should be used. In some cases when data are not normally distributed with a reasonably large sample size, the data can be transformed (most commonly by log transformation) to make the distribution normal. A parametric significance test should then be used with the transformed data to test the hypothesis.
 
-\hypertarget{module-9-learning-activities}{%
-\chapter*{Module 9: Learning Activities}\label{module-9-learning-activities}}
-\addcontentsline{toc}{chapter}{Module 9: Learning Activities}
+\hypertarget{learning-activities-8}{%
+\chapter*{\texorpdfstring{\textbf{9} Learning Activities}{9 Learning Activities}}\label{learning-activities-8}}
+\addcontentsline{toc}{chapter}{\textbf{9} Learning Activities}
 
 \hypertarget{activity-9.1}{%
 \subsection*{Activity 9.1}\label{activity-9.1}}
@@ -2217,8 +3337,8 @@ By the end of this module you will be able to:
 
 \citet{woodward13}; Chapter 8.
 
-\hypertarget{introduction-6}{%
-\section{Introduction}\label{introduction-6}}
+\hypertarget{introduction-7}{%
+\section{Introduction}\label{introduction-7}}
 
 Determining the appropriate sample size (the number of participants in a study) is one of the most critical issues when designing a research study. A common question when planning a project is ``How many participants do I need?'' The sample size needs to be large enough to ensure that the results can be generalised to the population and will be accurate, but small enough for the study question to be answered with the resources available. In general, the larger the sample size, the more precise the study results will be.
 
@@ -2376,8 +3496,8 @@ Table 10.1 is an abbreviated look-up table that we can use to estimate the sampl
 \end{table}
  
 
-\hypertarget{worked-example-2}{%
-\subsection{Worked Example}\label{worked-example-2}}
+\hypertarget{worked-example-7}{%
+\subsection{Worked Example}\label{worked-example-7}}
 
 A descriptive cross-sectional study is designed to measure the prevalence of bronchitis in children age 0-2 years with a 95\% CI of \(\pm\) 4\%. The prevalence is expected to be 20\%. From the table, a sample size of at least 385 will be required for the width of the 95\% CI to be \(\pm\) 4\% (i.e.~the reported precision of the summary statistic will be 20\% (95\% CI 16\% to 24\%)).
 
@@ -2433,8 +3553,8 @@ The significance level, or α level, is the level at which the P value of a test
 
 The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example 10.2.
 
-\hypertarget{worked-example-3}{%
-\subsection{Worked Example}\label{worked-example-3}}
+\hypertarget{worked-example-8}{%
+\subsection{Worked Example}\label{worked-example-8}}
 
 There is a hypothesis that the use of the oral contraceptive (OC) pill in premenopausal women can increase systolic blood pressure. A study was planned to test this hypothesis using a two sided t-test. The investigators are interesting in detecting an increase of at least 5 mm Hg systolic blood pressure in the women using OC compared to the non-OC users with 90\% power at a 5\% significance level. A pilot study shows that the SD of systolic blood pressure in the target group is 25 mm Hg and the mean systolic blood pressure of non-OC user women is 90 mm Hg. What is the minimum number of women in each group that need to be recruited for the study to detect this difference?
 
@@ -2510,8 +3630,8 @@ The statistical test for deciding if there is a significant difference between t
 
 Other than the power and alpha required for the test, the expected prevalence or incidence rate of the outcome factor needs to be estimated for each of the two groups being compared, based on what is known from other studies or what is expected. Occasionally, we may not know the expected proportion in one of the groups, e.g.~in a randomised control trial of a novel intervention. In the sample size calculation for such a study, we should instead justify the minimum expected difference between the proportions based on what is important from a clinical or public health perspective. Based on the minimum difference, we can then derive the expected proportion for both groups. Note that the smaller the difference, the larger the sample size required.
 
-\hypertarget{worked-example-4}{%
-\subsection{Worked Example}\label{worked-example-4}}
+\hypertarget{worked-example-9}{%
+\subsection{Worked Example}\label{worked-example-9}}
 
 If we expect that the prevalence of smoking in two comparison groups (e.g.~males and females) will be 35\% and 20\%. The sample size required in each group to show that the prevalences are significantly different at P\textless0.05 with 80\% power is shown in Output 10.3.
 
@@ -2554,8 +3674,8 @@ The relative risk is used to describe the association between an exposure and an
 
 In general, a RR of 2.0 or greater is considered to be of public health importance. However, a smaller RR can be important when exposure is high, for example say the relative risk of respiratory infection among young children with a parent who smokes is very small at approximately 1.2 but 25\% of children are exposed to smoking in their home. The high exposure rate leads to a very large number of children who have preventable respiratory infections across the community.
 
-\hypertarget{worked-example-5}{%
-\subsection{Worked Example}\label{worked-example-5}}
+\hypertarget{worked-example-10}{%
+\subsection{Worked Example}\label{worked-example-10}}
 
 A study is planned to investigate the effect of an environmental exposure on the incidence of a certain common disease. In the general (unexposed) population the incidence rate of the disease is 50\% and it is assumed that the incidence rate would be 75\% in the exposed population. Thus the relative risk of interest would be 1.5 (i.e.~0.75 / 0.50). We want to detect this effect with 90\% power at a 5\% level of significance. Using the power twoproportions command, Output 10.4 is obtained.
 
@@ -2594,8 +3714,8 @@ If we are designing a case-control study, the appropriate measure of effect is a
 - the desired level of significance (usually 0.05);
 - the desired power of the study (usually 80\% or 90\%).
 
-\hypertarget{worked-example-6}{%
-\subsection{Worked Example}\label{worked-example-6}}
+\hypertarget{worked-example-11}{%
+\subsection{Worked Example}\label{worked-example-11}}
 
 A case-control study is designed to examine an association between an exposure and outcome factor. Existing literature shows that 30\% of the controls are expected to be exposed. We want to detect a minimum OR of 2.0 with 90\% power and 5\% level of significance.
 
@@ -2810,12 +3930,12 @@ One approach that is increasingly being used is to conduct a blinded interim ana
 
 In this module we have discussed the importance of conducting a clinical or epidemiological study with enough participants so that an effect or association can be identified if it exists (i.e.~study power), and how this has to be balanced by the need to not enrol more participants than necessary because of resource issues. We have looked at the parameters that need to be considered when estimating the sample size for different studies and have used a look-up table to estimate required sample size for a prevalence study and Stata to estimate appropriate sample sizes in epidemiological research under the most straightforward situations. The common requirement in all the situations is that the researchers need to specify the minimum effect measure (e.g.~difference in means, OR, RR etc) they want to detect with a given probability (usually 80\% to 90\%) at a certain level of significance (usually P\textless0.05). The ultimate decision on the sample size depends on a compromise among different objectives such as power, minimum effect size, and available resources. To make the final decision, it is helpful to do some trial calculations using revised power and the minimum detectable effect measure.
 
-\hypertarget{module-10-stata-resources}{%
-\chapter*{Module 10: Stata resources}\label{module-10-stata-resources}}
-\addcontentsline{toc}{chapter}{Module 10: Stata resources}
+\hypertarget{stata-resources}{%
+\chapter*{\texorpdfstring{\textbf{10} Stata resources}{10 Stata resources}}\label{stata-resources}}
+\addcontentsline{toc}{chapter}{\textbf{10} Stata resources}
 
-\hypertarget{learning-activities}{%
-\chapter*{\texorpdfstring{\textbf{10} Learning Activities}{10 Learning Activities}}\label{learning-activities}}
+\hypertarget{learning-activities-9}{%
+\chapter*{\texorpdfstring{\textbf{10} Learning Activities}{10 Learning Activities}}\label{learning-activities-9}}
 \addcontentsline{toc}{chapter}{\textbf{10} Learning Activities}
 
 \hypertarget{activity-10.1}{%

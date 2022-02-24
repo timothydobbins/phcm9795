@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>PHCM9795 Foundations of Biostatistics</title>
+  <title>8 Learning Activities | PHCM9795 Foundations of Biostatistics</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="PHCM9795 Foundations of Biostatistics" />
+  <meta property="og:title" content="8 Learning Activities | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
@@ -20,7 +20,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="PHCM9795 Foundations of Biostatistics" />
+  <meta name="twitter:title" content="8 Learning Activities | PHCM9795 Foundations of Biostatistics" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="learning-activities.html"/>
+<link rel="prev" href="stata-notes.html"/>
+<link rel="next" href="analysing-non-normal-data.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -227,41 +227,49 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">PHCM9795 Foundations of Biostatistics</h1>
-<p class="author"><em>Course notes</em></p>
-<p class="date"><em>Term 2, 2022</em></p>
+<div id="learning-activities-7" class="section level1 unnumbered">
+<h1><strong>8</strong> Learning Activities</h1>
+<div id="activity-8.1" class="section level3 unnumbered">
+<h3>Activity 8.1</h3>
+<p>To investigate how body weight (kg) effects blood plasma volume (mL), data were collected from 30 participants and a simple linear regression analysis was conducted. The slope of the regression was 68 (95% confidence interval 52 to 84) and the intercept was −1570 (95% confidence interval −2655 to −492).</p>
+<p>[<em>You do not need Stata for this Activity</em>]</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the outcome variable and explanatory (exposure) variable?</li>
+<li>Interpret the regression slope and its 95% CI</li>
+<li>Write the regression equation</li>
+<li>If we randomly sampled a person from the population and found that their weight is 80kg, what would be the predicted value of plasma volume for this person?</li>
+</ol>
 </div>
-<div id="introduction-to-statistics-and-presenting-data" class="section level1" number="1">
-<h1><span class="header-section-number">Module 1</span> Introduction to statistics and presenting data</h1>
-<div id="learning-objectives" class="section level2 unnumbered">
-<h2>Learning objectives</h2>
-<p>By the end of this module, you will be able to:</p>
-<ul>
-<li>Define the term statistics;</li>
-<li>Describe and identify the underpinning concepts of descriptive and inferential statistics;</li>
-<li>Distinguish between different types of variables (i.e. quantitative – discrete and continuous; and qualitative – ordinal and nominal);</li>
-<li>Construct appropriate frequency tables from raw data;</li>
-<li>Compute summary statistics to describe the centre and spread of data;</li>
-<li>Describe the (centre and spread of the) data using appropriate graphs (histogram and box plot);</li>
-<li>Present and interpret graphical summaries of variables using a variety of graphs (bar charts, line-graphs, histograms, boxplots, pie charts and others).</li>
-</ul>
+<div id="activity-8.2" class="section level3 unnumbered">
+<h3>Activity 8.2</h3>
+<p>To examine whether age predicts IQ, data were collected on 104 people. Use the data in the Stata file <code>Activity_8.2.dta</code> to answer the following questions.</p>
+<ol style="list-style-type: lower-alpha">
+<li>What are the outcome variable and the explanatory variable?</li>
+<li>Create a scatter plot with the two variables. What can you infer from the scatter plot?</li>
+<li>Using Stata, obtain the correlation coefficient between age and IQ and interpret it.</li>
+<li>Conduct a simple linear regression using Stata and report the relationship between the two variables including the interpretation of the R2 value. Are the assumptions for linear regression met in this model?</li>
+<li>What could you infer about the association between age and IQ in the population, based on the results of the regression analysis in this sample?</li>
+</ol>
 </div>
-<div id="readings" class="section level2 unnumbered">
-<h2>Readings</h2>
-<p><span class="citation">(<a href="#ref-kirkwood_sterne01" role="doc-biblioref"><strong>kirkwood_sterne01?</strong></a>)</span>; Chapters 2 and 3.</p>
-<p><span class="citation">(<a href="#ref-bland15" role="doc-biblioref"><strong>bland15?</strong></a>)</span>; Chapter 4.</p>
-<p><span class="citation">(<a href="#ref-acock10" role="doc-biblioref">Acock 2010</a>)</span>; Chapter 5.</p>
+<div id="activity-8.3" class="section level3 unnumbered">
+<h3>Activity 8.3</h3>
+<p>Which of the following correlation coefficients indicates the weakest linear relationship and why?</p>
+<ol style="list-style-type: lower-alpha">
+<li>r = 0.72 [SHOULD I INCLUDE P-VALUES AS WELL?]</li>
+<li>r = 0.41</li>
+<li>r = 0.13</li>
+<li>r = −0.33</li>
+<li>r = −0.84</li>
+</ol>
 </div>
-<div id="an-introduction-to-statistics" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> An introduction to statistics</h2>
+<div id="activity-8.4" class="section level3 unnumbered">
+<h3>Activity 8.4</h3>
+<p>Are the following statements true or false?</p>
+<ol style="list-style-type: lower-alpha">
+<li>If a correlation coefficient is closer to 1.00 than to 0.00, this indicates that the outcome is caused by the exposure.</li>
+<li>If a researcher has data on two variables, there will be a higher correlation if the two means are close together and a lower correlation if the two means are far apart.</li>
+</ol>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-acock10" class="csl-entry">
-Acock, Alan C. 2010. <em>A <span>Gentle Introduction</span> to <span>Stata</span>, <span>Third Edition</span></em>. 3rd edition. <span>College Station, Tex</span>: <span>Stata Press</span>.
 </div>
 </div>
             </section>
@@ -269,8 +277,8 @@ Acock, Alan C. 2010. <em>A <span>Gentle Introduction</span> to <span>Stata</span
           </div>
         </div>
       </div>
-
-<a href="learning-activities.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="stata-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="analysing-non-normal-data.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -301,7 +309,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08.2-correlation-and-regression-activities.Rmd",
 "text": "Edit"
 },
 "history": {

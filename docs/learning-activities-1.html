@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>PHCM9795 Foundations of Biostatistics</title>
+  <title>2 Learning Activities | PHCM9795 Foundations of Biostatistics</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="PHCM9795 Foundations of Biostatistics" />
+  <meta property="og:title" content="2 Learning Activities | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
@@ -20,7 +20,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="PHCM9795 Foundations of Biostatistics" />
+  <meta name="twitter:title" content="2 Learning Activities | PHCM9795 Foundations of Biostatistics" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-
-<link rel="next" href="learning-activities.html"/>
+<link rel="prev" href="module-2-stata-notes.html"/>
+<link rel="next" href="precision-standard-errors-and-confidence-intervals.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -227,41 +227,58 @@ div.csl-indent {
           <div class="page-inner">
 
             <section class="normal" id="section-">
-<div id="header">
-<h1 class="title">PHCM9795 Foundations of Biostatistics</h1>
-<p class="author"><em>Course notes</em></p>
-<p class="date"><em>Term 2, 2022</em></p>
+<div id="learning-activities-1" class="section level1 unnumbered">
+<h1><strong>2</strong> Learning Activities</h1>
+<div id="activity-2.1" class="section level3 unnumbered">
+<h3>Activity 2.1</h3>
+<p>In a Randomised Controlled Trial, the preference of a new drug was tested against an established drug by giving both drugs to each of 90 people. Assume that the two drugs are equally preferred, that is, the probability that a patient prefers either of the drugs is equal (50%). Use one of the binomial functions in Stata to compute the probability that 60 or more patients would prefer the new drug. In completing this question, determine:</p>
+<ol style="list-style-type: lower-alpha">
+<li>The number of trials (n)</li>
+<li>The number of successes we are interested in (k)</li>
+<li>The probability of success for each trial (p)</li>
+<li>The form of the Stata function: binomialp, binomial or binomialtail</li>
+<li>The final probability.</li>
+</ol>
 </div>
-<div id="introduction-to-statistics-and-presenting-data" class="section level1" number="1">
-<h1><span class="header-section-number">Module 1</span> Introduction to statistics and presenting data</h1>
-<div id="learning-objectives" class="section level2 unnumbered">
-<h2>Learning objectives</h2>
-<p>By the end of this module, you will be able to:</p>
+<div id="activity-2.2" class="section level3 unnumbered">
+<h3>Activity 2.2</h3>
+<p>A case of Schistosomiasis is identified by the detection of schistosome ova in a faecal sample. In patients with a low level of infection, a field technique of faecal examination has a probability of 0.35 of detecting ova in any one faecal sample. If five samples are routinely examined for each patient, use Stata to compute the probability that a patient with a low level of infection:</p>
+<ol style="list-style-type: lower-alpha">
+<li>Will not be identified?</li>
+<li>Will be identified in two of the samples?</li>
+<li>Will be identified in all the samples?</li>
+<li>Will be identified in at most 3 of the samples?</li>
+</ol>
+</div>
+<div id="activity-2.3" class="section level3 unnumbered">
+<h3>Activity 2.3</h3>
+<p>If weights of men are Normally distributed with a population mean <span class="math inline">\(\mu\)</span> = 87, and a population standard deviation, <span class="math inline">\(\sigma\)</span> = 8 kg:</p>
+<ol style="list-style-type: lower-alpha">
+<li>What is the probability that a man will weigh 95 kg or more? Draw a Normal curve of the area represented by this probability in the population (i.e. with <span class="math inline">\(\mu\)</span> = 87 kg and <span class="math inline">\(\sigma\)</span> = 8 kg).</li>
+<li>What is the probability that a man will weigh more than 75 kg but less than 95 kg? Draw the area represented by this probability on a standardised Normal curve.</li>
+</ol>
+</div>
+<div id="activity-2.4" class="section level3 unnumbered">
+<h3>Activity 2.4</h3>
+<p>Using the health survey data (<code>health-survey.xlsx</code>) described in the Stata notes of this module, create a new variable, BMI, which is equal to a person’s weight (in kg) divided by their height (in metres) squared (i.e. <span class="math inline">\(\text{BMI} = \frac{\text{weight (kg)}}{\text{[height (m)]}^2}\)</span>. Categorise BMI using the WHO categories provided in Section XX. Create a two-way table to display the distribution of BMI categories by sex. Does there appear to be a difference in categorised BMI between males and females?</p>
+</div>
+<div id="activity-2.5" class="section level3 unnumbered">
+<h3>Activity 2.5</h3>
+<p>The data in the file <code>LengthOfStay.dta</code> (available on Moodle) has information about birth weight and length of stay collected from 117 babies admitted consecutively to a hospital for surgery. Complete the following table to make a decision about whether each of the variables is symmetric, and which measures of the centre and spread of the data should be reported.</p>
+</div>
+<div id="activity-2.6" class="section level3 unnumbered">
+<h3>Activity 2.6</h3>
+<p>The data set of hospital stay data for 1323 hypothetical patients is available on Moodle in csv format (<code>activity2.5.csv</code>). Import this dataset into Stata. There are two variables in this dataset:</p>
 <ul>
-<li>Define the term statistics;</li>
-<li>Describe and identify the underpinning concepts of descriptive and inferential statistics;</li>
-<li>Distinguish between different types of variables (i.e. quantitative – discrete and continuous; and qualitative – ordinal and nominal);</li>
-<li>Construct appropriate frequency tables from raw data;</li>
-<li>Compute summary statistics to describe the centre and spread of data;</li>
-<li>Describe the (centre and spread of the) data using appropriate graphs (histogram and box plot);</li>
-<li>Present and interpret graphical summaries of variables using a variety of graphs (bar charts, line-graphs, histograms, boxplots, pie charts and others).</li>
+<li>female: female=1; male=0</li>
+<li>los: length of stay in days</li>
 </ul>
-</div>
-<div id="readings" class="section level2 unnumbered">
-<h2>Readings</h2>
-<p><span class="citation">(<a href="#ref-kirkwood_sterne01" role="doc-biblioref"><strong>kirkwood_sterne01?</strong></a>)</span>; Chapters 2 and 3.</p>
-<p><span class="citation">(<a href="#ref-bland15" role="doc-biblioref"><strong>bland15?</strong></a>)</span>; Chapter 4.</p>
-<p><span class="citation">(<a href="#ref-acock10" role="doc-biblioref">Acock 2010</a>)</span>; Chapter 5.</p>
-</div>
-<div id="an-introduction-to-statistics" class="section level2" number="1.1">
-<h2><span class="header-section-number">1.1</span> An introduction to statistics</h2>
+<ol style="list-style-type: lower-alpha">
+<li>Use Stata to examine the distribution of length of stay: overall; and separately for females and males. Comment on the distributions.</li>
+<li>Use Stata to calculate measures of central tendency for hospital stay to obtain information about the average duration of hospital stay. Which summary statistics should you report and why? Report the appropriate statistics of the spread and measure of central tendency chosen.</li>
+<li>Calculate the measures of central tendency for hospital duration separately for males and females. What can you conclude from comparing these measures for males and females?</li>
+</ol>
 
-</div>
-</div>
-<h3>References</h3>
-<div id="refs" class="references csl-bib-body hanging-indent">
-<div id="ref-acock10" class="csl-entry">
-Acock, Alan C. 2010. <em>A <span>Gentle Introduction</span> to <span>Stata</span>, <span>Third Edition</span></em>. 3rd edition. <span>College Station, Tex</span>: <span>Stata Press</span>.
 </div>
 </div>
             </section>
@@ -269,8 +286,8 @@ Acock, Alan C. 2010. <em>A <span>Gentle Introduction</span> to <span>Stata</span
           </div>
         </div>
       </div>
-
-<a href="learning-activities.html" class="navigation navigation-next navigation-unique" aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="module-2-stata-notes.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="precision-standard-errors-and-confidence-intervals.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -301,7 +318,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/01-intro.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02.2-probability-activities.Rmd",
 "text": "Edit"
 },
 "history": {

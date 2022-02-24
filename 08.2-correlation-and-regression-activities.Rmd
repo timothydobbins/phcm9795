@@ -1,4 +1,4 @@
-# Module 8: Learning Activities {-}
+# **8**    Learning Activities {-}
 
 ### Activity 8.1 {-}
 
@@ -23,7 +23,7 @@ e)	What could you infer about the association between age and IQ in the populati
 ### Activity 8.3 {-}
 Which of the following correlation coefficients indicates the weakest linear relationship and why?
 
-a) r = 0.72
+a) r = 0.72 [SHOULD I INCLUDE P-VALUES AS WELL?]
 b) r = 0.41
 c) r = 0.13
 d) r = −0.33

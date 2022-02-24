@@ -4,14 +4,300 @@
 
 By the end of this module you will be able to:
 
-- blah
-- blah
-- blah
+- Compute and interpret 95% confidence intervals for proportions;
+- Conduct and interpret a significance test for a one-sample proportion;
+- Use Stata to compute 95% confidence intervals for a difference in proportions, a relative risk and an odds ratio.
 
 ## Readings {-}
 
-[@kirkwood_sterne01]
+[@kirkwood_sterne01]; Chapter 16
 
-[@bland15]
+[@bland15]; Section 8.6, Section 13.7
+
+[@juul_frydenberg14]; Section 11.4.
+
+[@acock10]; Section 7.5.
 
 ## Introduction
+
+In Modules 4 and 5, we discussed methods used to test hypotheses when the data are continuous. In Modules 6 and 7, we will focus on hypothesis testing for binary categorical data.
+
+In health research, we often collect information that can be put into two categories, e.g. male and female, disease present or disease absent etc. Binary categorical variables such as these are summarised using proportions.
+
+## Calculating proportions and 95% confidence intervals
+
+### Calculating a proportion
+
+Calculating a proportion is based on the binomial distribution, which was introduced in Module 2. We need two pieces of information to calculate a proportion: $n$, the number of trials, and $k$, the number of 'successes'. Note that we use the term 'success' to describe the outcome of interest, recognising that a success may be a adverse outcome such as death or disease.
+
+The following formula is used to calculate the proportion, $p$:
+
+$$ p = k / n $$
+
+The proportion, $p$, is a number that lies between 0 and 1. Proportions and their confidence intervals can easily be converted to percentages by multiplying by 100 once computed.
+
+As for all summary statistics, it is useful to compute the precision of the estimate as a 95% confidence interval (CI) to indicate the range of values in which are 95% confident that the true population value lies. In this module, we present two methods for computing a 95% confidence interval around a proportion.
+
+### Calculating the 95% confidence interval of a proportion (Wald method)
+
+The Wald method for calculating the 95% confidence interval is based on assuming that the proportion, $p$, is Normally distributed. This assumption is reasonable if the sample is sufficiently large (for example, if $n>30$) and if $n \times (1-p)$ and $n \times p$ are both larger than 5.
+
+The Wald method for calculating a 95% confidence interval is given by:
+
+$$\text{95\% CI} = p \pm (1.96 \times \text{SE}(p))$$
+
+where the standard error of a proportion is computed as:
+
+$$\text{SE}(p) = \sqrt{\frac{p \times (1 - p)}{n}}$$
+
+### Worked Example
+
+In a cross-sectional study of children living in a rural village, 47 children from a random sample of 215 children were found to have scabies. Here $n=215$ and $k=47$, so the proportion of children with scabies is estimated as:
+
+$$ p = \frac{47}{215} = 0.2186 $$
+
+Given the large sample size and the number of children with the rarer outcome is larger than 5, the Wald method is used to calculate the standard error of the proportion as:
+
+$${\text{SE}\left( p \right) = \sqrt{\frac{0.2186 \times (1 - 0.2186)}{215}}
+}{= 0.02819}$$
+
+Then, the 95% confidence interval is estimated as:
+
+$$\text{95\% CI} = 0.2816 \pm 0.02819$$
+
+$$= 0.1634\ to\ 0.2739$$
+
+The prevalence of scabies among children in the village is 21.9% (95% CI 16.3%, 27.4%). These values tell us that we are 95% confident that the true prevalence of scabies among children in the village is between 16.3% and 27.4%.
+
+NB: This can also be computed in Stata using the `cii proportions` command as below.
+
+#### Output 6.1: 95% confidence interval for the prevalence of scabies using normal approximation to the binomial distribution
+
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+. cii proportions 215 47, wald
+
+                                                         -- Binomial Wald ---
+    Variable |        Obs  Proportion    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+             |        215    .2186047    .0281868        .1633595    .2738498
+```
+
+### Calculating the 95% confidence interval of a proportion (Wilson method)
+
+Another method to calculate the confidence interval of a proportion is the Wilson (sometimes also called the 'score') method. We can use it in situations where it is not appropriate to use the normal approximation to the binomial distribution as described above i.e. if the sample size is small ($n < 30$) or the number of subjects with the rarer outcome is 5 or fewer. This method is a bit more difficult to implement by hand than the standard confidence interval, and so we will not discuss the hand calculation using the mathematical equation in this course. Instead, we will use the Stata command `cii proportions` specifying `wilson` as an option to do this.
+
+Using the data from the study given in Worked Example 6.1, we obtain the following:
+
+#### Output 6.2: 95% confidence interval for prevalence of scabies using the Wilson method
+
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+. cii proportions 215 47, wilson
+
+
+                                                         ------ Wilson ------
+    Variable |        Obs  Proportion    Std. Err.       [95% Conf. Interval]
+-------------+---------------------------------------------------------------
+             |        215    .2186047    .0281868        .1685637    .2785246
+
+```
+
+### Wald vs Wilson methods
+
+We have presented two methods for calculating the 95% confidence interval for a proportion. The Wald method, which assumes that the underlying proportion follows a Normal distribution, is easy to calculate and follows the form of other confidence intervals. The Wilson method, which is more difficult to calculate by hand, has nicer mathematical properties. There are also a number of other methods for calculating confidence intervals for proportions, but we do not discuss these in this course.
+
+A paper by Brown, Cai and DasGupta (Statistical Science, 2001) has compared the properties of the Wald and Wilson methods (among others) and concluded that the Wilson method is preferred over the Wald method.
+
+## Hypothesis testing for one sample proportion
+
+We can carry out a hypothesis test to compare a sample proportion to a hypothesised proportion. In much the same way as a one sample t-test was used in Module 5 to test a sample mean against a hypothesised mean, we can perform a one-sample test to test a sample proportion against a hypothesised proportion. The significance test will provide a P value to assess the evidence against the null hypothesis, while the 95% confidence interval will provide the range in which we are 95% confident that the true proportion lies.
+
+For example, we can test the following null hypothesis:
+
+  H<sub>0</sub>: sample proportion is not different from the hypothesised proportion
+
+Much like constructing a 95% confidence interval, there are two main options when performing a hypothesis test on a single proportion: the first assumes that the proportion follows a Normal distribution, while the second relaxes this assumption.
+
+### z-test for testing one sample proportion
+
+The first step in the z-test is to calculate a z-statistic, which is then used to calculate a P-value. The z-statistic is calculated as the difference between the population proportion and the sample proportion divided by the standard error of the population proportion, i.e.
+
+$$
+z = \frac{(p_{population} - p_{sample})}{\text{SE}(p_{population})}
+$$
+
+This z-statistic is then compared to the standard Normal distribution to calculate the P-value.
+
+### Worked Example
+
+$$
+\begin{aligned}
+z &= \frac{(0.20 - 0.18)}{\sqrt{\frac{0.20 × (1 - 0.20)}{300}}} \\
+ &= 0.87
+\end{aligned}
+$$
+
+This Z value does not meet or exceed the critical value of 1.96 for a two tailed test. This indicates that there is insufficient evidence to conclude that there is a difference between the population proportion of 20% smokers and the sample proportion of 18% smokers which is consistent with our hypothesis testing using 95% CIs.
+
+The P-value for the test above can be obtained from a Normal distribution table as $P = 2 × 0.192 = 0.38$ (using Table A2.1 in the Appendix), or using the hand-calculator in Stata. **INCLUDE NORMAL CURVE DIAGRAM TO ILLUSTRATE 2-TAILED TEST**
+
+### Binomial test for testing one sample proportion
+
+We can use the binomial distribution to obtain an exact P-value for testing a single proportion. Historically, this was a time consuming process with much hand calculation. These days, Stata and other statistical software performs the calculations quickly and efficiently, and is the preferred method.
+
+### Worked example
+A national census in a country shows that 20% of the population are smokers. A survey of a community within the country that has received a public health anti-smoking intervention shows that 54 of 300 people sampled are smokers (18%). The research question is whether this proportion of smoking in the community is lower than the population prevalence of smoking of 20%. The Stata file Example_6.3.dta contains the data for this example. In the data file, smokers are coded as 1 and non-smokers are coded as 0.
+
+In Stata, we can use the `prtest` command to perform a z-test, or the `bitest` command to perform the exact binomial test:
+
+#### Output 6.3: z-test and binomial test for prevalence of smoking
+
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+. prtest smoking_status == 0.2
+
+One-sample test of proportion                   Number of obs      =       300
+
+------------------------------------------------------------------------------
+    Variable |       Mean   Std. Err.                     [95% Conf. Interval]
+-------------+----------------------------------------------------------------
+smoking_st~s |        .18   .0221811                      .1365259    .2234741
+------------------------------------------------------------------------------
+    p = proportion(smoking_st~s)                                  z =  -0.8660
+Ho: p = 0.2
+
+     Ha: p < 0.2                 Ha: p != 0.2                   Ha: p > 0.2
+ Pr(Z < z) = 0.1932         Pr(|Z| > |z|) = 0.3865          Pr(Z > z) = 0.8068
+
+bitest smoking_status == 0.2
+
+    Variable |        N   Observed k   Expected k   Assumed p   Observed p
+-------------+------------------------------------------------------------
+smoking_st~s |      300         54           60       0.20000      0.18000
+
+  Pr(k >= 54)            = 0.825531  (one-sided test)
+  Pr(k <= 54)            = 0.215202  (one-sided test)
+  Pr(k <= 54 or k >= 66) = 0.427280  (two-sided test)
+```
+
+The z-test provides a two-sided P-value of 0.39, while the binomial test gives a two-sided P-value of 0.43. Both tests provide little evidence against the hypothesis that the prevalence of smoking in the community is 20%.
+
+## Contingency tables
+
+As introduced in PHCM9794: Foundations of Epidemiology, 2-by-2 contingency tables can be used to examine associations between two binary variables, most commonly an exposure and an outcome. There are two commands in Stata to construct and analyse 2-by-2 contingency tables: `cs` (for cross-sectional or cohort studies) and `cc` (for case-control studies).
+
+It is important to note that Stata presents the exposure or intervention (present, absent) in the columns and the outcome or disease (present, absent) in the rows. This is opposite to the way most epidemiological tables are presented, with exposure in rows and outcome in columns. Care must be taken when reading 2-by-2 tables generated from Stata.
+
+#### Table 6.1: Contingency tables for estimating associations between two binary variables
+
+  **Traditional format**                                                                                          
+  ------------------------ ----------------- ------------------ -------  
+                           Outcome present   Outcome absent     Total      
+  Exposure present         a                 b                  a+b        
+  Exposure absent          c                 d                  c+d        
+  Total                    a+c               b+d                N          
+
+**Stata format**
+----------------- ------------------ ----------------- -------
+                  Exposure present   Exposure absent   Total
+Outcome present   a                  c                 a+c
+Outcome absent    b                  d                 b+d
+Total             a+b                c+d               N
+
+When using a statistics program such as Stata, it is recommended that the outcome and exposure variables are coded by assigning 'absent' as 0 and 'present' as 1, for example 'No' = 0 and 'Yes' = 1. This is needed for some of the commands to work (e.g. the epidemiology table commands). This coding ensures that measures of association, such as the odds ratio or relative risk, are computed correctly by Stata.
+
+## Calculation of the 95%CI for relative risk, odds ratio and other measures of association
+
+We can measure the strength of the association between an exposure and an outcome as either a relative risk or odds ratio. The relative risk is a direct comparison of the risk in the exposed group with the risk in the non-exposed group, and can only be calculated for a cohort study (including a randomised controlled trial) or a cross-sectional study (where it is also called a prevalence ratio).
+
+### Worked Example 6.4
+
+A randomised controlled trial was conducted among a group of patients to estimate the side effects of a drug. Fifty patients were randomly allocated to receive the active drug and 50 patients were allocated to receive a placebo drug. The outcome measured was the experience of nausea. The data is given in the file Example_6.4.dta.
+
+The relative risk (RR=3.75) and its 95% confidence interval (1.34, 10.51) shown in Output 6.4 can be obtained using the cs command in Stata. This tells us that nausea is 3.75 times more likely to occur in the active drug group compared with the placebo group. Because this is a randomised controlled trial, relative risk would be an appropriate measure of association.
+
+#### Output 6.4 Relative risk and 95% CI from the cs command in Stata
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+                 | Group                  |
+                 |   Exposed   Unexposed  |      Total
+-----------------+------------------------+------------
+           Cases |        15           4  |         19
+        Noncases |        35          46  |         81
+-----------------+------------------------+------------
+           Total |        50          50  |        100
+                 |                        |
+            Risk |        .3         .08  |        .19
+                 |                        |
+                 |      Point estimate    |    [95% Conf. Interval]
+                 |------------------------+------------------------
+ Risk difference |              .22       |    .0723899    .3676101 
+      Risk ratio |             3.75       |     1.33754     10.5137 
+ Attr. frac. ex. |         .7333333       |    .2523589     .904886 
+ Attr. frac. pop |         .5789474       |
+                 +-------------------------------------------------
+                               chi2(1) =     7.86  Pr>chi2 = 0.0050
+```
+
+From Output 6.4, you can check the relative risk estimate:
+
+$$
+\begin{aligned}
+\text{RR} &= \frac{a / (a+b)}{c / (c+d)} \\
+  &= \frac{15 / (15+35)}{4 / (4+46)} \\
+  &= \frac{0.3}{0.08} \\
+  &= 3.75
+\end{aligned}
+$$
+
+### Worked Example 6.5
+
+A case-control study investigated the association between human papillomavirus and oropharyngeal cancer (D\'Souza, et al. NEJM 2007), and the results appear in Table 6.2.
+
+#### Table 6.2: Association between human papillomavirus and oropharyngeal cancer
+
+--------------- ------------------------ --------------------------- -------
+                 Cases                    Controls                    Total  
+                 (Oropharyngeal cancer)   (No oropharyngeal cancer)          
+  HPV Positive   57                       14                          71     
+  HPV Negative   43                       186                         229    
+  Total          100                      200                         300    
+--------------- ------------------------ --------------------------- -------
+
+The odds ratio is the odds of being HPV positive in those with oropharyngeal cancer compared to the odds of being HPV positive in those without oropharyngeal cancer.
+
+You can use the Stata command cci with the Cornfield option to obtain odds ratio and its 95% CI as shown in Output 6.5. The Cornfield option is used to provide a better estimate of the 95% confidence interval.
+
+#### Output 6.5: Odds ratio and 95% CI from the cc command in Stata
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+                                                         Proportion
+                 |   Exposed   Unexposed  |      Total      exposed
+-----------------+------------------------+------------------------
+           Cases |        57          43  |        100       0.5700
+        Controls |        14         186  |        200       0.0700
+-----------------+------------------------+------------------------
+           Total |        71         229  |        300       0.2367
+                 |                        |
+                 |      Point estimate    |    [95% Conf. Interval]
+                 |------------------------+------------------------
+      Odds ratio |          17.6113       |    9.043258    34.25468 (Cornfield)
+ Attr. frac. ex. |         .9432183       |    .8894204    .9708069 (Cornfield)
+ Attr. frac. pop |         .5376344       |
+                 +-------------------------------------------------
+                               chi2(1) =    92.26  Pr>chi2 = 0.0000
+```
+
+The odds ratio (OR) and its 95% CI can be read directly from the output as: OR = 17.6 (95% CI 9.0, 34.3).
+
+From the cross-tabulated output, you can check the odds ratio estimate as follows:
+
+$$
+\begin{aligned}
+\text{OR} &= \frac{a / c}{b /d)} \\
+  &= \frac{57 / 14}{43 / 186} \\
+  &= 17.6
+\end{aligned}
+$$
+
+Identical Stata output to Outputs 6.4 and 6.5 can be obtained for either individual record data or aggregate data. The steps for computing RR and OR using both individual record and aggregate data is described in the Stata notes section.
+
+Also estimated in Output 6.4 is the risk difference, and in both Outputs 6.4 and 6.5, the population attributable fraction (or proportion) and the attributable fraction among the exposed and their corresponding 95% CI. While the value of 1 indicates no effect for both OR and RR, the value of 0 indicates no effect for risk difference and the attribution fractions.
+
+Risk statistics are usually only reported with one or two decimal places. The interpretation of the confidence intervals for both the relative risk and the odds ratio is the same as for the confidence intervals around other summary measures in that it shows the region in which we are 95% confident that the true population estimate lies.
