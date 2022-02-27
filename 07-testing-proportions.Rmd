@@ -1,17 +1,260 @@
 # Hypothesis testing for categorical data
 
 ## Learning objectives {-}
-
 By the end of this module you will be able to:
 
-- blah
-- blah
-- blah
+- Use and interpret the appropriate test for testing associations between categorical data;
+- Conduct and interpret an appropriate test for independent proportions;
+- Conduct and interpret a test for paired proportions;
 
 ## Readings {-}
 
-[@kirkwood_sterne01]
-
-[@bland15]
+@kirkwood_sterne01a; Chapter 17.
+@bland15b; Chapter 13.
+@acock10; Section 7.6.
+@juul_frydenberg14; Section 11.3.
 
 ## Introduction
+
+In Module 6, we estimated the 95% confidence intervals of proportions and measures of association for categorical data and conducted a significance test comparing a sample proportion to a known value.
+
+When both the outcome variable and the exposure variable are categorical, a chi-squared test can be used as a formal statistical test to assess whether the exposure and outcome are related. The P-value obtained from a chi-squared test gives the probability of obtaining the observed association (or more extreme) if there is in fact no association between the exposure and outcome.
+
+In this Module, we also include tests for a difference in proportion for paired data.
+
+### Worked Example
+
+We are using the randomised controlled trial as given in Worked Example 6.4 on the nauseating side effect of a drug.
+
+The research question is whether the active drug resulted in a different rate of nausea than the placebo drug. This is equivalent to testing whether there is an association between nausea and type of drug received (active or placebo). Thus, we will test the null hypothesis that the experience of nausea and the treatment are not related to one another. The null hypothesis is:
+
+- $H_0$: The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.
+
+The alternative hypothesis can be stated as:
+
+- $H_a$: The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.
+
+## Chi-squared test for independent proportions
+
+A chi-squared test is used to test the null hypothesis that of no association between two categorical variables. First a contingency table is drawn up and then we estimate the counts of each cell (i.e. a, b, c and d) that would be expected if the null hypothesis was true. The row and column totals are used to calculate expected counts in each cell of the contingency table as follows:
+
+Expected count = (Row count × Column count) / Total count
+
+Stata will do this for us, as described in the Stata Notes section in this Module.
+
+A chi-squared value is then calculated to compare the expected counts (E) in each cell with the observed (actual) cell counts (O). The calculation is as follows:
+
+$\chi ^ 2 = \sum \frac{(O - E)}{E} ^2$
+
+With [Number of rows $-$ 1] $\times$ [Number of columns $-$ 1] degrees of freedom.
+
+As for many statistics, the deviations between the observed and expected values are squared to prevent the negative and positive values balancing one another out.
+
+If the expected counts are close to the observed counts, the chi-squared statistic will be close to zero, and the P-value will be close to 1. The larger the difference between the observed and expected counts, the larger the chi-squared statistic becomes (and the smaller the P-value). A large chi-squared statistic provides more evidence of an association between the exposure and outcome.
+
+A chi-squared test to examine whether two independent proportions are associated can be obtained in Stata using the *Tables for Epidemiologists*: `cc` and `cs` commands. The test can also be conducted using the `tab2` command, with the advantage that the `tab2` command shows the expected counts. We will show why this is important shortly.
+
+The Stata output for Worked Example 7.1 for the study on nausea is shown in Output 7.1a. It is always important to request the percentages using the options in 'Cells' to show the proportion of patients who have the outcome in each exposure group, i.e. the row percents.
+
+### Stata Output: Results output for estimating association between drug and nausea
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
++--------------------+
+| Key                |
+|--------------------|
+|     frequency      |
+| expected frequency |
+|   row percentage   |
++--------------------+
+
+           |      Side effect
+     Group | No nausea     Nausea |     Total
+-----------+----------------------+----------
+   Placebo |        46          4 |        50 
+           |      40.5        9.5 |      50.0 
+           |     92.00       8.00 |    100.00 
+-----------+----------------------+----------
+    Active |        35         15 |        50 
+           |      40.5        9.5 |      50.0 
+           |     70.00      30.00 |    100.00 
+-----------+----------------------+----------
+     Total |        81         19 |       100 
+           |      81.0       19.0 |     100.0 
+           |     81.00      19.00 |    100.00 
+
+          Pearson chi2(1) =   7.8622   Pr = 0.005
+```
+
+(Note: in this table, drug group and nausea outcome are coded 'No' = 0 and 'Yes' = 1, i.e. the 'No' group comes before the Yes' group unlike the table outputs in Module 6. Therefore, cell a = 15; b = 35, c = 4; d = 46.).
+
+In Output 7.1a, we can see from the row percentages that 8% of patients in the placebo group experienced nausea compared to 30% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The 'Expected' counts are higher for the groups with 'No nausea' because 'No nausea' is more prevalent in the sample than 'Nausea'.
+
+While the `tab2` command will perform the chi-square test, the measure of effect is best obtained using the `cs` or `cc` commands, as discussed in Module 6. Using the relative risk obtained from Module 6, a conclusion from the above test can be written as:
+
+The proportion with nausea in those who received the active drug is 30%, compared to 8% in those who received the placebo drug. Nausea was more frequent in those who received the active drug (Relative Risk = 3.75, 95% CI: 1.34 to 10.51). There is strong evidence that the proportion with nausea differs between the two groups ($\chi ^2$ = 7.86 with 1 df, P=0.005).
+
+### Assumptions for using a Pearson's chi-squared test
+
+The assumptions that must be met when using Pearson's chi-squared test are that:
+
+- each observation must be independent;
+- each participant is represented in the table once only;
+- at least 80% of the expected cell counts should exceed a value of five;
+- all expected cell counts should exceed a value of one.
+
+The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher's exact test can be used instead. More information on Fisher's exact test can be found in Chapter 13 of An Introduction to Medical Statistics, M Bland.
+
+### Interpreting chi-squared tests
+
+For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson's Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher's exact test should be used (specified using the exact option in the tabulate command in Stata -- see Stata Notes). The P value associated with the Pearson's chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.
+
+## Chi-squared tests for larger than 2×2 table
+
+Chi-squared tests can also be used for tables larger than a 2×2 dimension. When a contingency table larger than 2×2 is used, say a 4×2 table if there were 4 exposure groups, the Pearson's chi-squared can still be used.
+
+### Worked Example
+
+The Stata file Example_7.2.dta contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. [Command: tab allergy_severity sex, col]
+
+#### Cross-tabulation for severity of allergy by gender
+
+```{r, tidy=FALSE, eval=FALSE, highlight=FALSE }
+. tabulate allergy_severity sex, column expected
+
++--------------------+
+| Key                |
+|--------------------|
+|     frequency      |
+| expected frequency |
+| column percentage  |
++--------------------+
+
+     Severity of |          Sex
+         allergy |    Female       Male |     Total
+-----------------+----------------------+----------
+    Non-allergic |       150        137 |       287 
+                 |     138.9      148.1 |     287.0 
+                 |     61.98      53.10 |     57.40 
+-----------------+----------------------+----------
+  Slight allergy |        50         70 |       120 
+                 |      58.1       61.9 |     120.0 
+                 |     20.66      27.13 |     24.00 
+-----------------+----------------------+----------
+Moderate allergy |        27         32 |        59 
+                 |      28.6       30.4 |      59.0 
+                 |     11.16      12.40 |     11.80 
+-----------------+----------------------+----------
+  Severe allergy |        15         19 |        34 
+                 |      16.5       17.5 |      34.0 
+                 |      6.20       7.36 |      6.80 
+-----------------+----------------------+----------
+           Total |       242        258 |       500 
+                 |     242.0      258.0 |     500.0 
+                 |    100.00     100.00 |    100.00
+
+          Pearson chi2(3) =   4.3089   Pr = 0.230
+```
+
+The Pearson chi-squared statistic provides a P-value of 0.23. Therefore, there is little evidence of an association between gender and the severity of allergy.
+
+## McNemar's test for categorical paired data
+
+If a binary categorical outcome is measured in a paired study design, McNemar's statistic is used. This statistic is a form of chi-square applied to a paired situation. A Pearson's chi-squared test cannot be used because the measurements are not independent. However, McNemar's test can be used to assess whether there is a significant change in proportions between two time points or between two conditions, or whether there is a significant difference in proportions between matched cases and controls.
+
+For McNemar's test, the data are displayed as shown in Table 7.1. Cells 'a' and 'd' called concordant cells because the response was the same at both baseline and follow-up or between matched cases and controls. Cells 'b' and 'c' are called discordant cells because the responses between the pairs were different. For a follow-up study, the participants in cell 'c' had a positive response at baseline and a negative response at follow-up. Conversely, the participants in cell 'b' had a negative response at baseline and a positive response at follow-up.
+
+For other types of paired data such as twins or matched cases and controls, the data are similarly displayed with the responses of one of the pairs in the columns and the responses for the other of the pairs in the rows. For paired data, the grand total 'N' is always the number of pairs and not the total number of participants.
+
+```{r tab-7-1, echo=FALSE}
+tab7_1 <- tibble::tribble(
+  ~` `, ~`Negative at follow-up`, ~`Positive at follow-up`, ~Total,
+  "Negative at baseline", "a", "b", "a + b",
+  "Positive at baseline",  "c", "d", "c + d",
+  "Total", "a + c", "b + d", "N")
+
+huxtable(tab7_1) %>%
+  set_align(everywhere, everywhere, "centre") %>% 
+  theme_article() %>% 
+  set_width(0.8) %>% 
+  set_caption("Table layout for testing matched proportions")
+```
+
+### Worked Example 7.3
+Two drugs labelled A and B have been administered to patients in random order so that each patient acts as their own control. The dataset Example_7.3.dta is available on Moodle. The null hypothesis is as follows:
+
+- $H_0$: The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B
+
+Using the `tabulate2` command, observed count and cell percentages were obtained in Table 7.2. From the "Total" row in the table, we can see that the number of patients who respond to drug A is 41 (68.3%) and from the "Total" column the number who respond to drug B is less at 35 (58.3%), that is there is a difference of 10.0%.
+
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+. tabulate druga drugb, cell
+
++-----------------+
+| Key             |
+|-----------------|
+|    frequency    |
+| cell percentage |
++-----------------+
+
+  Response |  Response to Drug B
+ to Drug A |        No        Yes |     Total
+-----------+----------------------+----------
+        No |         5         14 |        19 
+           |      8.33      23.33 |     31.67 
+-----------+----------------------+----------
+       Yes |        20         21 |        41 
+           |     33.33      35.00 |     68.33 
+-----------+----------------------+----------
+     Total |        25         35 |        60 
+           |     41.67      58.33 |    100.00 
+```
+
+The difference in the paired proportions is calculated using the simple equation:
+
+$$ p_{A} - p_{B} = \frac{(b - c)}{N} $$
+
+Here, $p_{A} - p_{B} = \frac{(20 - 14)}{60} = 0.1$
+
+
+The cell counts show that 20 patients responded to Drug A but not to drug B, and 14 patients responded to Drug B but not to drug A. McNemar's statistic is computed from these two discordant pairs (labelled as 'b' and 'c') as follows:
+
+$$ X^2 = \frac{(b-c)^2}{b+c} $$
+
+with 1 degree of freedom.
+
+In computing this statistic, the counts in the concordant cells ('a' and 'd') are not used and only the information from the discordant cells 'b' and 'c' is of interest.
+
+The `mcc` command in Stata is used to perform the McNemar's test. Its output is shown in Output 7.3. The number of patients who have a response to each drug is labelled as Exposed in the output.
+
+#### Output 7.3 McNemar's test
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+. mcc druga drugb
+
+                 |        Controls        |
+Cases            |   Exposed   Unexposed  |      Total
+-----------------+------------------------+-----------
+         Exposed |        21          20  |         41
+       Unexposed |        14           5  |         19
+-----------------+------------------------+-----------
+           Total |        35          25  |         60
+
+McNemar's chi2(1) =      1.06    Prob > chi2 = 0.3035
+Exact McNemar significance probability       = 0.3915
+
+Proportion with factor
+        Cases       .6833333
+        Controls    .5833333     [95% Conf. Interval]
+                   ---------     --------------------
+        difference        .1     -.1054528   .3054528
+        ratio       1.171429      .8663498   1.583939
+        rel. diff.       .24     -.1585239   .6385239
+
+        odds ratio  1.428571      .6862537   3.057277   (exact)
+```
+
+Two versions of the McNemar's test are given in the output. The exact version is generally recommended. The P value for the exact McNemar's test is 0.39, providing no evidence against the null hyopthesis.
+
+In this study of 60 participants, where each participant received both drugs, 41 (68%) responded to Drug A and 35 (58%) responded to Drug B. The difference in the proportions responding is estimated as 10.0% (95% CI -10.5% to 30.5%). There is no evidence that the response differed between the two drugs (exact McNemar's P=0.39).
+
+## Summary
+
+In Module 6, we estimated proportions and measures of association for categorical data and conducted a one-sample test of proportions. In this module, we conduct significance tests for two or more independent proportions using the chi-squared test. The chi-squared test can also be used to conduct a significance test when there are more than two categories in both variables. The McNemar's test is used when we have paired data.

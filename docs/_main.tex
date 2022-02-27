@@ -403,8 +403,923 @@ By the end of this module you will be able to:
 
 \citet{bland15}; Chapters 6 and 7.
 
-\hypertarget{section}{%
-\section{Section}\label{section}}
+\hypertarget{introduction}{%
+\section{Introduction}\label{introduction}}
+
+In Module 1, we looked at how to summarise data numerically and graphically. In this module, we will introduce the concept of probability which underpins the theoretical basis of statistics, and then introduce the concept of probability distributions. We will look at the binomial distribution, and then look at the most important distribution in statistics: the Normal distribution. Finally, we introduce some other probability distributions commonly used in biostatistics.
+
+\hypertarget{probability}{%
+\section{Probability}\label{probability}}
+
+Probability is defined as:
+
+\begin{quote}
+the chance of an event occurring, where an event is the result of an observation or experiment, or the description of some potential outcome.
+\end{quote}
+
+Probabilities range from 0 (where the event will never occur) to 1 (where the event will always occur). For example, tossing a coin is an experiment; one event is the coin landing with head up, while the other event is the coin landing tails up. The set of all possible outcomes in an experiment is called the sample space. For example, by tossing a coin you can get either a head or a tail (called mutually exclusive events); and by rolling a die you can get any of the six sides. Thus, for a die the sampling space is: S = \{1, 2, 3, 4, 5, 6\}
+
+With a fair (unbiased) die, the probability of each outcome occurring is 1/6 and its probability distribution is simply a probability of 1/6 for each of the six numbers on a die.
+
+\hypertarget{additive-law-of-probability}{%
+\subsection{Additive law of probability}\label{additive-law-of-probability}}
+
+How do we work out the probability that one roll of a die will turn out to be a 3 or a 6? To do that, we first need to work out whether the events (3 or 6 on the roll of a die) are mutually exclusive. Events are mutually exclusive if they are events which cannot occur at the same time. For example, rolling a die once and getting a 3 and 6 are mutually exclusive events (you can roll one or the other but not both in a single roll).
+
+To obtain the probability of one or the other of two mutually exclusive events occurring, the sum of the probabilities of each is taken. For example, the probability of the roll of a die being a 3 or a 6 is the sum of the probability of the die being 3 (i.e.~1/6) and the probability of the die being 6 (also 1/6). With a fair die:
+
+Probability of a die roll being 3 or 6 = \(1/6 + 1/6 = 1/3\)
+
+Another way of putting it is:
+
+P(die roll =3 or die roll =6) = P(die roll=3) + P(die roll=6) = \(1/6 + 1/6 = 1/3\)
+
+\hypertarget{example-additive-law-for-mutually-exclusive-events}{%
+\subsubsection{Example: Additive law for mutually exclusive events}\label{example-additive-law-for-mutually-exclusive-events}}
+
+Consider that blood type can be organised into the ABO system (blood types A, B, AB or O) An individual may only have one blood type.
+
+Using the information from \url{https://www.donateblood.com.au/learn/about-blood} let's consider the ABO blood type system. The frequency distribution (prevalence) of the ABO blood type system in the population represents the probability of each of the outcomes. If we consider all possible blood type outcomes, then the total of the probabilities will sum to 1 (100\%).
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-1} Frequency of blood types}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.6\textwidth}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Blood Type}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{\% of population}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Probability\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 38\%\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.38\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft B\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 10\%\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.1\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft AB\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\%\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.03\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft O\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 49\%\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.49\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 100\%\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 1\hphantom{0}\hphantom{0}\hphantom{0}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+In this example we consider: What is the probability that an individual will have either blood group O or A?
+
+Since blood type is mutually exclusive, the probability that either one or the other occurs is the sum of the individual probabilities. These are mutually exclusive events so we can say P(O or A) = P(O) + P(A)
+
+Thus, the answer is: P(Blood type O) + P(Blood type A) = 0.49 + 0.38 = 0.87
+
+\hypertarget{multiplicative-law-of-probability}{%
+\subsection{Multiplicative law of probability}\label{multiplicative-law-of-probability}}
+
+The additive law of probability lets us consider the probability of different outcomes in a single experiment. The multiplicative law lets us consider the probability of multiple events occurring in a particular order. For example: if I roll a die twice, what is the probability of rolling a 3 and \emph{then} a 6?
+
+These events are independent: the probability of rolling a 6 on the second roll is not affected by the first roll.
+
+The multiplicative law of probability states:
+
+\begin{quote}
+If A and B are independent, then P(A and B) = P(A) \(\times\) P(B).
+\end{quote}
+
+So, the probability of rolling a 3 and then a 6 is: P(3 and 6) = \(1/6 \times 1/6 = 1/36\).
+
+Note here that the order matters -- we are considering the probability of rolling a 3 and then a 6, not the probability of rolling a 6 and then a 3.
+
+\hypertarget{probability-distributions}{%
+\section{Probability distributions}\label{probability-distributions}}
+
+A probability distribution is a table or a function that provides the probabilities of all possible outcomes for a random variable (a variable whose outcome depends on a random process). For example, the probability distribution for a single coin toss is straightforward: the probability of obtaining a head is 0.5, and the probability of obtaining a tail is 0.5. Similarly, the probability distribution for a single roll of a die is straightforward: each face has a probability of 1/6.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-2} Probability distributions for (a) a single coin toss and (b) a single roll of a die}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.95\textwidth}{p{0.19\textwidth} p{0.19\textwidth} p{0.19\textwidth} p{0.19\textwidth} p{0.19\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Coin face}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Probability}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{ }\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Face of a die}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Probability}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Heads\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Tails\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 0.5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.19\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.19\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.19\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/6\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Things become more complicated when we consider a series of coin-tosses, or rolls of a die. These series of events can be summarised by considering the number of times a certain outcome is observed. For example, the probability of obtaining three heads from five coin tosses.
+
+Probability distributions can be used in two main ways:
+1. To calculate the probability of an event occurring. This seems trivial for the coin-toss and die-roll examples above. However, we can consider more complex events, as below.
+1. To understand the behaviour of a sample statistic. We will see in Modules 3 and 4 that the mean of a sample follows a probability distribution. We can obtain useful information about a sample mean by using properties of the probability distribution.
+
+\hypertarget{discrete-variables-and-their-probability-distributions}{%
+\section{Discrete variables and their probability distributions}\label{discrete-variables-and-their-probability-distributions}}
+
+A discrete random variable is a random variable that has countable values (non-negative integers). An example of a discrete random variable is the number of heads observed in a series of coin tosses.
+
+A discrete random variable can be summarised by listing all the possible values that the variable can take. As defined earlier, a table, formula or graph that presents these possible values, and their associated probabilities, is called a probability distribution.
+
+Example: let's consider the number of heads in a series of three coin tosses. We might observe 0 heads, or 1 head, or 2, or 3 heads. If we let X denote the number of heads in a series of three coin tosses, then possible values of X are 0, 1, 2 or 3.
+
+We write the probability of observing x heads as P(X=x). So P(X=0) is the probability that the three tosses has no heads. Similarly, P(X=1) is the probability of observing one head.
+The possible combinations for three coin tosses are as follows:
+
+There are eight possible outcomes from three coin tosses (permutations). If we assume an equal chance of observing a head or a tail, each permutation above is equally likely, and so has a probability of 1/8.
+
+However, if we consider the possibility of observing just one head out of the three tosses, this can happen in three ways (HTT, THT, TTH). So the probability of observing one head is calculated using the additive law: P(X=1) = \(\tfrac{1}{8} + \tfrac{1}{8} + \tfrac{1}{8} = \tfrac{3}{8}\).
+
+Therefore, the probability distribution for X, the number of heads from three coin tosses, is as follows:
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:act-2-4} BLAH}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.4\textwidth} p{0.4\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{x (number of heads observed)}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{P(X=x)}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 0\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/8\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/8 + 1/8 + 1/8 = 3/8\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/8 + 1/8 + 1/8 = 3/8\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 1/8\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Note that the probabilities sum to 1.
+
+The above example was based on a coin toss, where flipping a head or a tail is equally likely (both have probabilities of 0.5). Let's consider a case where the probability of an event is not equal to 0.5: having blood type A.
+
+From Table 2.1, the probability that a person has Type A blood is 0.38, and therefore, the probability that a person does not have Type A blood is 0.62 (1--0.38). If we considered taking a random sample of three people, the probability that all three would have Type A blood is 0.38 × 0.38 × 0.38 (using the multiplicative rule above) -- and there is only one way this could happen.
+
+The number of ways two people out of three could have Type A blood is 3, and each permutation is listed in Table X. The probability of observing each of the three patterns is the same, and can be calculated using the multiplicative rule: 0.38 × 0.38 × 0.62 = 0.0895.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-5} BLAH}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Person.1}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Person.2}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Person.3}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Probability}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.38 × 0.38 × 0.38 = 0.0549\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.38 × 0.38 × 0.62 = 0.0895\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.38 × 0.62 × 0.38 = 0.0895\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.62 × 0.38 × 0.38 = 0.0895\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.38 × 0.62 × 0.62 = 0.1461\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.62 × 0.38 × 0.62 = 0.1461\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.62 × 0.62 × 0.38 = 0.1461\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering Not A\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering 0.62 × 0.62 × 0.62 = 0.2383\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+The table above gives the probability of each of the blood type combinations we could observe in three people. The probability of observing a certain number of people (say, k) with Type A blood from a sample of three people can be calculated by summing the combinations:
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-6} Probabilities of observing numbers of people with Type A blood in a sample of three people}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.4\textwidth} p{0.4\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Number of people with Type A blood}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Probability of each pattern\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}\hphantom{0}}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.0549\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.0895 + 0.0895 + 0.0895 = 0.2689\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.1461 + 0.1461 + 0.1461 = 0.4382\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 0.2383\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+\hypertarget{binomial-distribution}{%
+\section{Binomial distribution}\label{binomial-distribution}}
+
+The above are examples of the binomial distribution. The binomial distribution is used when we have a collection of random events, where each random event is binary (e.g.~Heads vs Tails, Type A blood vs Not Type A blood, Infected vs Not infected). The binomial distribution calculates (in general terms):
+
+\begin{itemize}
+\tightlist
+\item
+  the probability of observing k successes
+\item
+  from a collection of n trials
+\item
+  where the probability of a success in one trial is p.
+\end{itemize}
+
+The terms used here can be defined as:
+- a success is simply an event of interest from a binary random event. In the coin-toss example, ``success'' was tossing a Head. In the blood type example, we were only interested in whether someone was Type A or not Type A, so ``success'' was a blood of Type A. We tend to use the word ``success'' to mean ``an event of interest'', and ``failure'' as ``an event not of interest''.
+- the number of trials refers to the number of random events observed. In both examples, we observed three events (three coin tosses, three people).
+- the probability of a success (p) simply refers to the probability of the event of interest. In the coin toss example, this was the probability of tossing a Heads (=0.5); for the blood-type example, this was the probability of having Type A blood (0.38).
+
+Putting all this together, we say that we have a binomial experiment. To satisfy the assumptions of a binomial distribution, our experiment must satisfy the following criteria:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  The experiment consists of fixed number (n) of trials.
+\item
+  The result of each trial falls into only one of two categories -- the event occurred (``success'') or the event did not occur (``failure'').
+\item
+  The probability, p, of the event occurring remains constant for each trial.
+\item
+  Each trial of the experiment is independent of the other trials.
+\end{enumerate}
+
+We have shown in the examples above how we can calculate the probabilities for small experiments (n=3). Once n becomes large, constructing such probability distribution tables becomes difficult. The general formula for calculating the probability of observing k successes from n trials, where each trial has a probability of success of p is given by:
+
+\[ P(X=k) = \frac{n!}{k! (n-k)!} \times p^k \times (1-p)^{n-k} \]
+
+where \$ n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1\$.
+
+\emph{This formula is almost never calculated by hand.} Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.
+
+\hypertarget{mean-and-variance-of-a-binomial-variable}{%
+\subsection{Mean and variance of a binomial variable}\label{mean-and-variance-of-a-binomial-variable}}
+
+The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If X has a binomial distribution, then the mean of X is:
+
+\[ E(X) = n \times p\]
+and the variance is:
+
+\[ var(X) = n \times p \times (1-p) \]
+where n = the number of trials, and p = the probability of the event occurring (or success).
+
+\hypertarget{worked-example}{%
+\subsubsection{Worked example}\label{worked-example}}
+
+A population-based survey conducted by the AIHW (2008) of a random sample of the Australian population estimated that in 2007, 19.8\% of the Australian population were current smokers.
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  From a random sample of 6 people from the Australian population in 2007, what is the probability that 3 of them will be smokers?
+\item
+  What is the probability that among the six persons, at least 4 will be smokers?
+\item
+  What is the probability that at most, 2 will be smokers?
+\end{enumerate}
+
+\hypertarget{solution}{%
+\subsubsection{Solution}\label{solution}}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\tightlist
+\item
+  The computation for binomial probabilities can be done using Stata from the main menu \textbf{Data \textgreater{} Other utilities \textgreater{} Hand calculator} as shown in the Stata Notes section.
+\end{enumerate}
+
+Of the three binomial functions in the Hand Calculator, we choose the binomialp function, which gives ``the probability of observing k successes in n trials when the probability of a success on one trial is p''.
+
+We complete the function using n=6, k=3, and p=0.198. This gives an answer of 0.08.
+{[}Command: \texttt{display\ binomialp(6,\ 4,\ 0.198)}{]}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{1}
+\tightlist
+\item
+  In common language, getting ``at least 4'' smokers means getting 4, 5 or 6 smokers. Since these are mutually exclusive events, we can apply the additive law to find the probability of getting at least 4 smokers:
+\end{enumerate}
+
+\[ P(X \ge 4) = P(X=4) + P(X=5) + P(X=6) \]
+Using the same binomial probability function as in the previous question,
+
+\begin{itemize}
+\tightlist
+\item
+  P(X=4) = 0.015 {[}Command: \texttt{display\ binomialp(6,\ 4,\ 0.198)}{]}
+\item
+  P(X=5) = 0.001 {[}Command: \texttt{display\ binomialp(6,\ 5,\ 0.198)}{]}
+\item
+  P(X=6) = 0.00006 {[}Command: \texttt{display\ binomialp(6,\ 6,\ 0.198)}{]}
+\end{itemize}
+
+Answer: \$ P(X \ge 4) = 0.00006025+0.00146437+0.0148282 = 0.016 \$
+
+Alternatively, we can use the \texttt{binomialtail} function (which gives ``the probability of observing k or more successes in n trials when the probability of a success on one trial is p'').
+
+Here, n=6, k=4 and p=0.198, giving the same answer as above: 0.016.
+{[}Command: \texttt{display\ binomialtail(6,\ 4,\ 0.198)}{]}
+
+\begin{enumerate}
+\def\labelenumi{\alph{enumi})}
+\setcounter{enumi}{2}
+\tightlist
+\item
+  Observing at most two means observing 0, 1 or 2 smokers. Therefore, the probability of observing at most 2 smokers is:
+\end{enumerate}
+
+\begin{itemize}
+\tightlist
+\item
+  P(X \(\le\) 2) = P(X=0) + P(X=1) + P(X=2)
+\item
+  P(X=0) = 0.266 {[}Command: \texttt{display\ binomialp(6,0,.198)}{]}
+\item
+  P(X=1) = 0.394 {[}Command: \texttt{display\ binomialp(6,1,.198)}{]}
+\item
+  P(X=2) = 0.243 {[}Command: \texttt{display\ binomialp(6,2,.198)}{]}
+\end{itemize}
+
+Answer: P(X \(\le\) 2) = 0.266+0.394+0.243=0.903
+
+This can also be done by using the \texttt{binomial} function (which gives ``the probability of observing k or fewer successes in n trials when the probability of a success on one trial is p'').
+
+Here, n=6, k=2 and p=0.198, giving the same answer as above: 0.903.
+{[}Command: \texttt{display\ binomial(6,\ 2,\ 0.198)}{]}
+
+\hypertarget{normal-distribution}{%
+\section{Normal distribution}\label{normal-distribution}}
+
+The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \ref{fig:fig-2-1} and \ref{fig:fig-2-2} demonstrate this type of distribution.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/dbp} \caption{Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey}\label{fig:fig-2-1}
+\end{figure}
+
+Source: \url{https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure} (accessed March 2021)
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/heights} \caption{Distribution of male and female heights}\label{fig:fig-2-2}
+\end{figure}
+
+Source: \url{https://ourworldindata.org/human-height} (accessed March 2021)
+
+The Normal distribution, also called the Gaussian distribution (named after Johann Carl Friedrich Gauss, 1777--1855), has been shown to fit the frequency distribution of many naturally occurring variables. It is characterised by its bell-shaped, symmetric curve and its tails that approach zero on either side.
+
+There are two reasons for the importance of the Normal distribution in biostatistics (Kirkwood and Sterne, 2003). The first is that many variables can be modelled reasonably well using the Normal distribution. Even if the observed data were not Normally distributed, it can often be made reasonably Normal after applying some transformation of the data. The second (and possible most important) reason, is based on the central limit theorem and will be discussed in Module 3.
+
+The Normal distribution is characterised by two parameters: the mean (\(\mu\)) and the standard deviation (\(\sigma\)). The mean defines where the middle of the Normal distribution is located, and the standard deviation defines how wide the tails of the distribution are.
+
+For a Normal distribution, about 68\% of the observations lie between \(- \sigma\) and \(\sigma\) of the mean; 95\% of the observations lie between \(−1.96 \times \sigma\) and \(1.96 \times \sigma\) from the mean; and almost all the observations (99.7\%) lie between \(-3 \times \sigma\) and \(3 \times \sigma\) (Figure \ref{fig:fig-2-3}). Also note that the mean is the same as the median, as the curve is symmetric about its mean.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/normal-curve} \caption{Characteristics of a Normal distribution}\label{fig:fig-2-3}
+\end{figure}
+
+\hypertarget{the-standard-normal-distribution}{%
+\section{The Standard Normal distribution}\label{the-standard-normal-distribution}}
+
+As each Normal distribution is defined by its mean and standard deviation, there are an infinite number of possible Normal distributions. However, every Normal distribution can be transformed to what we call the Standard Normal distribution, which has a mean of zero (\(\mu = 0\)) and a standard deviation of one (\(\sigma = 1\)). The Standard Normal distribution is so important that it has been assigned its own symbol: Z.
+
+Every observation from a Normal distribution \(X\) with a mean \(\mu\) and a standard deviation \(\sigma\) can be transformed to a z-score (also called a Standard Normal deviate) by the formula:
+
+\[ z = \frac{x - \mu}{\sigma} \]
+
+The z-score is simply how far an observation lies from the population mean value, scaled by the population standard deviation.
+
+We can use z-scores to estimate probabilities, as shown in Worked Example 2.2.
+
+\hypertarget{worked-example-1}{%
+\subsubsection{Worked Example}\label{worked-example-1}}
+
+This example extends the example of diastolic blood pressure shown in Figure 2.1. Assume that the mean diastolic blood pressure for men is 77.9 mmHg, with a standard deviation of 11. What is the probability that a man selected at random will have high blood pressure (i.e.~diastolic blood pressure ≥ 90)?
+
+To estimate the probability that diastolic blood pressure ≥ 90 (i.e.~the upper tail probability), we first need to calculate the z-score that corresponds to 90 mmHg.
+
+Using the z-score formula, with x=90, \(\mu\)=77.9 and \(\sigma\)=11:
+
+\[ z = \frac{90 - 77.9}{11} = 1.1 \]
+Thus, a blood pressure of 90 mmHg corresponds to a z-score of 1.1, or a value 1.1 \(\times \sigma\) above the mean weight of the population.
+
+Using a table of Z-scores (Appendix Table 1), we find the probability that a person has a diastolic blood pressure of 90 mmHg or more as P(Z ≥ 1.1) = 0.136.
+
+An extract from Appendix Table 1 is shown in Figure \ref{fig:fig-2-4} to demonstrate how to find the probability from the look-up table.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/z-table-extract} \caption{Obtaining a probability from a table of Standard Normal distribution}\label{fig:fig-2-4}
+\end{figure}
+
+Figure \ref{fig:fig-2-5} shows the probability of a diastolic blood pressure of 90 mmHg or more in the population for a Z-score of greater than 1.1 on a Standard Normal distribution.
+
+\begin{figure}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/z-dist-shaded} \caption{Area under the Standard Normal curve (as probability) for Z > 1.1}\label{fig:fig-2-5}
+\end{figure}
+
+Apart from calculating probabilities, Z-scores are most useful for comparing measurements taken from a sample to a known population distribution. It allows measurements to be compared to one another despite being on different scales or having different predicted values.
+
+For example, if we take a sample of children and measure their weights, it is useful to describe those weights as Z-scores from the population weight distribution for each age and gender. Such distributions from large population samples are widely available. This allows us to describe a child's weight in terms of how much it is above or below the population average. For example, if mean weights were compared, children aged 5 years would be on average heavier than the children aged 3 years simply because they are older and therefore larger. To make a valid comparison, we could use the Z-scores to say that children aged 3 years tend to be more overweight than children aged 5 years because they have a higher mean Z-score for weight.
+
+\hypertarget{assessing-normality}{%
+\section{Assessing Normality}\label{assessing-normality}}
+
+There are several ways to assess whether a continuous variable is Normally distributed. The simple process of plotting a histogram and boxplot and comparing estimates of the centre of the data (mean and median) provide valuable information about the way in which the data are distributed.
+
+Other more formal measures of Normality such as skewness (whether the distribution is symmetrical or asymmetrical) and kurtosis (whether the distribution is flat or peaked) can be obtained from Stata (see Stata Notes section on Producing summary statistics in Module 1).
+
+\hypertarget{skewness-and-kurtosis}{%
+\subsection{Skewness and kurtosis}\label{skewness-and-kurtosis}}
+
+Skewness is a measure of the lack of symmetry of a distribution. If the distribution is symmetric, the coefficient of skewness is 0. If the coefficient is negative, the median is usually greater than the mean and the distribution is said to be skewed left. If the coefficient is positive, the median is usually less than the mean and the distribution is said to be skewed right.
+
+Kurtosis (from the Greek kyrtosis, meaning curvature) is a measure of peakiness of a distribution. The smaller the coefficient of kurtosis, the flatter the distribution. The Normal distribution has a coefficient of kurtosis of 3 and provides a convenient benchmark. If the distribution is more spread out, then the kurtosis will be greater than 3.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-skew} Interpretation of skewness statistics}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.95\textwidth}{p{0.475\textwidth} p{0.475\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Skewness}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Interpretation}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright The distribution is symmetric\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\multirow[t]{-2}{*}[0ex]{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright 0\huxbpad{6pt}}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright If skewness is between -0.5 and 0.5, the distribution is approximately symmetric\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Distribution is skewed to the left (mean is usually less than the median) – aka negative skew (longer tail to the left)\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright If it is less than −1, the distribution is highly skewed to the left\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\multirow[t]{-3}{*}[0ex]{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Negative\huxbpad{6pt}}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright If it is between −1 and −0.5, the distribution is moderately skewed to the left\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Distribution is skewed to the right (mean is usually greater than the median) – aka positive skew (longer tail to the right)\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright If it is greater than 1, the distribution is highly skewed to the right\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\multirow[t]{-3}{*}[0ex]{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Positive\huxbpad{6pt}}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright If it is between 1 and 0.5, the distribution is moderately skewed to the right\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+For your information: There are formal tests in Stata that test for Normality. These tests are beyond the scope of this course and will be discussed in the Advanced course.
+
+The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure \ref{fig:fig-2-6}) for symmetry and outliers at either end of the distribution.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/weights-hist-boxplot} \caption{Histogram and boxplot of weight of 30 students attending a gym}\label{fig:fig-2-6}
+\end{figure}
+
+A summary of how to explore Normality is shown in Table 2.5.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-2-examine-normality} Methods to assess Normality}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.95\textwidth}{p{0.475\textwidth} p{0.475\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Method}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Indication of Normality}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Examine histogram\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Approximately bell shaped and symmetrical; may be difficult to determine if the sample size is small\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Compare mean and median values\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Values are approximately equal\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Compute skewness and kurtosis\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright A Normal distribution would have a skewness of 0 and a kurtosis of 3\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.475\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright Examine box plot\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.475\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.475\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Box plot symmetrical with no outliers\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+It is important to look at all these measures together, and not rely on a single measure when assessing whether a sample is approximately Normally distributed. For small samples, it can be very difficult to determine whether the data are approximately Normally distributed.
+
+\hypertarget{non-normally-distributed-measurements}{%
+\section{Non-Normally distributed measurements}\label{non-normally-distributed-measurements}}
+
+In the above example, diastolic blood pressure was Normally distributed with an approximately bell-shaped frequency histogram. However, not all measurements are Normally distributed, and the symmetry of the bell shape may be distorted by the presence of some very small or very large values. Non-Normal distributions such as this are called skewed distributions.
+
+When there are some very large values, the distribution is said to be positively skewed.This often occurs when measuring variables related to time, such as days of hospital stay, where most patients have short stays (say 1 - 5 days) but a few patients with serious medical conditions have very long lengths of hospital stay (say 20 - 100 days).
+
+In practice, most parametric summary statistics are quite robust to minor deviations from Normality and non-parametric statistical methods are only required when the sample size is small and/or the data are obviously skewed with some influential outliers.
+
+When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure \ref{fig:fig-2-7}.
+
+\begin{figure}
+\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/los-hist-boxplot} \caption{Histogram and boxplot of length of stay}\label{fig:fig-2-7}
+\end{figure}
+
+In the histogram of Figure \ref{fig:fig-2-7}, there is a tail of values to the right, so we would conclude that the distribution is skewed to the right. In the boxplot, the whiskers appear to be fairly symmetric, but there are some unusual values (denoted by dots) above the box and its whiskers. Stata defines these unusual values as being more than 1.5 times the IQR from the edge of the box.
+
+The presence of unusual values may be an indication that the data are not Normally distributed. Both the histogram and the box plot show that the distribution has a marked tail towards high values and that non-parametric statistics should be used to generate summary statistics and analyse the data.
+
+Note that Stata has defined points as being unusual, or outliers. Outliers can be problematic and the decision to include them or omit them from further analyses can be difficult. After detecting any outliers or extreme values, you should not automatically exclude them from the analysis, particularly if the sample was selected randomly from a population. First, it is important to check the original data collection form or questionnaire to rule out the possibility of a data entry error. If the outlier is not a data entry error, it is then important to decide whether the observation is biologically plausible and, if it is, it should be included in the analysis.
+
+\hypertarget{which-measure-of-central-tendency-to-use}{%
+\subsection{Which measure of central tendency to use}\label{which-measure-of-central-tendency-to-use}}
+
+It is most appropriate to use the mean when the data exhibit a symmetric or bell-shaped distribution. For skewed distributions (where there are more values on the higher (negative skew) or lower side (positive skew) of the scale) the mean is not a good measure of the centre, as the calculation will be influenced by the extreme values. The median is the preferred statistic for describing central tendency in a skewed distribution.
+
+If the data exhibits a Normal distribution, we use the standard deviation as the measure of spread. Otherwise, the interquartile range is preferred.
+
+\hypertarget{parametric-and-non-parametric-statistical-methods}{%
+\section{Parametric and non-parametric statistical methods}\label{parametric-and-non-parametric-statistical-methods}}
+
+Many statistical methods are based on assumptions about the distribution of the variable -- these methods are known as parametric statistical methods. Many methods of statistical inferences based on theoretical sampling properties that are derived from a Normal distribution with the characteristics described above. Thus, it is important that measurements approximate to a Normal distribution before these parametric methods are used. The methods are called `parametric' because they are based on the parameters -- the mean and standard deviation - that underlie a Normal distribution. Statistics which do not assume a particular distribution are called distribution-free statistics, or `non-parametric statistics'.
+
+In this course, you will learn about both parametric and non-parametric statistical methods. Parametric summary statistical methods include those based on the mean, standard deviation and range (Module 1), and standard error and 95\% confidence interval (Module 3). Parametric statistical tests also include t-tests which will be covered in Modules 4 and 5, and correlation and regression described in Module 8.
+
+Non-parametric summary statistical methods are often based on ranks, and may use such statistics as the median, mode and inter-quartile range (Module 1). Non-parametric statistical tests that use ranking are described in Module 9.
+
+\hypertarget{other-types-of-probability-distributions}{%
+\section{Other types of probability distributions}\label{other-types-of-probability-distributions}}
+
+In this module we have considered a Normal probability distribution and how to use it to measure the precision of continuously distributed measurements. Data also follow other types of distributions which are briefly described below. In other modules in this course, we will be looking at a range of methods to analyse health data and will refer back to these different distributions.
+
+Normal approximation of binomial: When the sample size becomes large, it becomes cumbersome to calculate the exact probability of an event using the binomial distribution. Conveniently, with large sample sizes, the binomial distribution approximates a Normal distribution. The mean and SD of a binomial distribution can be used to calculate the probability of the event as though it was from a Normal distribution.
+
+Poisson distribution: is another distribution which is often used in health research for modelling count data. The Poisson distribution is followed when a number of events happen in a fixed time interval. This distribution is useful for describing data such as deaths in the population in a time period. For example, the number of deaths from breast cancer in one year in women over 50 years old will be an observation from a Poisson distribution. We can also use this to make comparisons of mortality rates between populations.
+
+Many other probability distributions can be derived for functions which arise in statistical analyses but the chi-squared, t and F distributions are the three distributions that are most widely used. These have many applications, some of which are described in later modules.
+
+The chi-squared distribution is a skewed distribution which allows us to determine the probability of a deviation between a count that we observe and a count that we expect for categorical data. One use of this is in conducting statistical tests for categorical data. See Module 7.
+
+A t-distribution is used when the population standard deviation is not known. The t-distribution is appropriate for small samples (\textless30) and its distribution is bell shaped similar to a Normal distribution but slightly flatter. The t-distribution is useful for comparing mean values. See Module 4 and Module 5.
 
 \hypertarget{module-2-stata-notes}{%
 \chapter*{\texorpdfstring{\textbf{Module 2: Stata notes}}{Module 2: Stata notes}}\label{module-2-stata-notes}}
@@ -541,8 +1456,8 @@ By the end of this module you will be able to:
 
 \citet{juul_frydenberg14}; Sections 11.5 to 11.7.
 
-\hypertarget{introduction}{%
-\section{Introduction}\label{introduction}}
+\hypertarget{introduction-1}{%
+\section{Introduction}\label{introduction-1}}
 
 To describe the characteristics of a population we can gather data about the entire population (as is undertaken in a national census) or we can gather data from a sample of the population. When undertaking a research study, taking a sample from a population is far more cost-effective and less time consuming than collecting information from the entire population. When a sample of a population is selected, summary statistics that describe the sample are used to make inferences about the total population from which the sample was drawn. These are referred to as inferential statistics.
 
@@ -803,23 +1718,291 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Formulate a research question as a hypothesis;
 \item
-  blah
+  Understand the concepts of a hypothesis test;
 \item
-  blah
+  Consider the difference between statistical significance and clinical importance;
+\item
+  Use 95\% confidence intervals to conduct an informal hypothesis test;
+\item
+  Perform and interpret a one-sample t-test;
+\item
+  Explain the concept of one and two tailed statistical tests.
 \end{itemize}
 
 \hypertarget{readings-3}{%
 \section*{Readings}\label{readings-3}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citep{kirkwood_sterne01a}; Chapter 8.
 
-\citep{bland15}
+\citep{bland15b}; Sections 9.1 to 9.7; Sections 10.1 and 10.2.
 
-\hypertarget{introduction-1}{%
-\section{Introduction}\label{introduction-1}}
+\citep{acock10}; Section 7.4.
+
+\hypertarget{introduction-2}{%
+\section{Introduction}\label{introduction-2}}
+
+In earlier modules, we examined sampling and how summary statistics can be used to make inferences about a population from which a sample is drawn. In this module, we introduce hypothesis testing as the basis of the statistical tests that are important for reporting results from research and surveillance studies, and that you will be learning in the remainder of this course.
+
+We use hypothesis testing to answer questions such as whether two groups have different health outcomes or whether there is an association between a treatment and a health outcome. For example, we may want to know:
+
+\begin{itemize}
+\tightlist
+\item
+  whether a safety program has been effective in reducing injuries in a factory, i.e.~whether the frequency of injuries in the group who attended a safety program is lower than in the group who did not receive the safety program;
+\item
+  whether a new drug is more effective in reducing blood pressure than a conventional drug, i.e.~whether the mean blood pressure in the group receiving the new drug is lower than the mean blood pressure in the group receiving the conventional medication;
+\item
+  whether an environmental exposure increases the risk of a disease, i.e.~whether the frequency of disease is higher in the group who have been exposed to an environmental factor than in the non-exposed group.
+\end{itemize}
+
+We may also want to know something about a single group. For example:
+- whether the mean blood pressure of a sample is the same as the general population.
+
+These questions can be answered by setting up a null hypothesis and an alternative hypothesis, and performing a hypothesis test (also known as a significance test).
+
+\hypertarget{hypothesis-testing-1}{%
+\section{Hypothesis testing}\label{hypothesis-testing-1}}
+
+Hypothesis testing is a statistical technique that is used to quantify the evidence against a null hypothesis. A null hypothesis (H\textsubscript{0}) is a statement that there is no difference in a summary statistic between groups. For example, a null hypothesis may be stated as follows:
+
+H\textsubscript{0} = there is no difference in mean systolic blood pressure between a group taking a conventional drug and a group taking a newly developed drug
+
+We also have an alternative hypothesis that is opposite or contrasting to the null hypothesis. In our example above, the alternative hypothesis above we be that there is a difference between groups. The alternative hypothesis is usually of most interest to the researcher but in practice, formal statistical tests are used to test the null hypothesis (not the alternative hypothesis). The hypotheses are always in reference to the population not the sample.
+
+After setting up our null and alternative hypotheses, we use the data to generate a test statistic. The particular test statistic differs depending on the type of data being analyses (e.g.~continuous or categorical), the study design (e.g.~paired or independent) and the question being asked.
+
+The test statistic is then compared to a known distribution to calculate the probability of observing a test statistic which is as large or larger than the observed test statistic, if the null hypothesis was true. The probability is known as the P-value.
+Informally, the P-value can be interpreted as the probability of observing data like ours, or more extreme, if the null hypothesis was true.
+
+If the P-value is small, it is unlikely that we would observe data like ours or more extreme if the null hypothesis was true. In other words, our data are not consistent with the null hypothesis, and we conclude that we have evidence against the null hypothesis. If the P-value is not small, the probability of observing data like ours or more extreme is not unlikely. We therefore have little or no evidence against the null hypothesis. In hypothesis testing, the null hypothesis cannot be proven or accepted; we can only find evidence to refute the null hypothesis.
+
+To summarise:
+- a small P-value gives us evidence against the null hypothesis;
+- a P-value that is not small provides little or no evidence against null hypothesis;
+- the smaller the P-value, the stronger the evidence against the null hypothesis.
+
+Historically, a value of 0.05 has been used as a cut-point for finding evidence against the null hypothesis. A P-value less than 0.05 would be interpreted as ``statistically significant'', and would allow us to ``reject the null hypothesis''. A P-value greater than 0.05 would be interpreted as ``not significant'', and we would ``fail to reject the null hypothesis''. This arbitrary dichotomy is overly simplistic, and a more nuanced view is now recommended. Possible interpretations for P-values are given in Table 4.1.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-4-1} Interpretation of P-values}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.4\textwidth} p{0.4\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Size of P value}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Strength of evidence}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright $<$0.001\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Very strong evidence\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright 0.001 to $<$0.01\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Strong evidence\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright 0.01 to $<$0.05\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Evidence\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright 0.05 to $<$0.1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Weak evidence\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.4\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedright ≥0.1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.4\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.4\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedright Little or no evidence\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+P-values are usually generated using statistical software although other methods such as statistical tables or Excel functions can be used to generate test statistics and determine the P-value. In traditional statistics, the probability level was described as a lower-case p but in many journals today, probability is commonly described by upper case P. Both have the same meaning.
+
+\hypertarget{effect-size}{%
+\section{Effect size}\label{effect-size}}
+
+In hypothesis testing, P values convey only part of the information about the hypothesis and need to be accompanied by an estimation of the effect size, that is, a description of the magnitude of the difference between the study groups. The effect size is a summary statistic that conveys the size of the difference between two groups. For continuous variables, it is usually calculated as the difference between two mean values.
+
+If the variable is binary, the effect size can be expressed as the absolute difference between two proportions (attributable risk), or as an odds ratio or relative risk.
+
+Reporting the effect size enables clinicians and other researchers to judge whether a statistically significant result is also a clinically important finding. The size of the difference or the risk statistic provides information to help health professionals decide whether the observed effect is large and important enough to warrant a change in current health care practice, is equivocal and suggests a need for further research, or is small and clinically unimportant.
+
+\hypertarget{statistical-significance-and-clinical-importance}{%
+\section{Statistical significance and clinical importance}\label{statistical-significance-and-clinical-importance}}
+
+When applying statistical methods in health and medical research, we need to make an informed decision about whether the effect size that led to a statistically significant finding is also clinically important (see Figure 4.2). The decision about whether a statistically significant result is also clinically important depends on expert knowledge and is best made by practitioners with experience in the field.
+
+It is possible when conducting significance tests, particularly in very large studies, that a small effect is found to be statistically significant. For example, say in a large study of over 1000 patients, a new medication was found to lower blood pressure on average by 1 mmHg more than a currently accepted drug and this was statistically significant (P \textless{} 0.05). However, such a small decrease in blood pressure would probably not be considered clinically important. The cost and side effects of prescribing the new medication would need to be weighed against the very small average benefit that would be expected. In this case, although the null hypothesis would be rejected (i.e.~the result is statistically significant), the result would not be clinically important. This is the situation described in scenario (c) of Figure 4.2.
+
+Conversely, it is possible to obtain a large, clinically important difference between groups, but a P value that does not demonstrate a statistically significant difference.
+
+For example, consider a study to measure the rate of hospital admissions. We may find that 80\% of children who present to the Emergency Department are admitted before an intervention is introduced compared to only 65\% of children after the intervention. However, the P value may be calculated as 0.11 and is non-significant. This is because only 60 children were surveyed in each period. Here, the reduction in the admission rate by 15\% represents a clinically important difference, but not statistically significant. This situation is represented in scenario (d) of Figure 4.2
+
+The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/practical-vs-statistical-sig} \caption{Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)}\label{fig:practical-importance}
+\end{figure}
+
+\hypertarget{errors-in-significance-testing}{%
+\section{Errors in significance testing}\label{errors-in-significance-testing}}
+
+There are two conclusions we can draw when conducting a hypothesis test: if the P-value is small, there is strong evidence against the null hypothesis and we reject the null hypothesis. If the P-value is not small, there is little evidence against the null hypothesis and we fail to reject the null hypothesis. As discussed above, the ``small'' cut-point for the P-value is often taken as 0.05. We refer to this value as \(\alpha\) (alpha).
+
+We can conduct a thought experiment and compare our hypothesis test conclusion to reality. In reality, either the null hypothesis is true, or it is false. Of course, if we knew what reality was, we would not need to conduct a hypothesis test. But we can compare our possible hypothesis test conclusions to the true (unobserved) reality.
+
+If the null hypothesis was true in reality, our hypothesis test can fail to reject the null hypothesis -- this would be a correct conclusion. However, the hypothesis test could lead us to rejecting the null hypothesis -- this would be an incorrect conclusion. We call this scenario a Type I error, and it has a probability of \(\alpha\).
+
+The other situation is where, in reality, the null hypothesis is false. A correct conclusion would be where our hypothesis test rejects the null hypothesis. However, if our hypothesis test fails to reject the null hypothesis, we have made a Type II error. The probability of making a Type II error is denoted \(\beta\) (beta). We will see in Module 10 that \(\beta\) is determined by the size of the study.
+
+The error in falsely rejecting the null hypothesis when it is true (type I error), or in falsely accepting the null hypothesis when it is not true (type II error) is summarised in Table 4.2. We will return to these concepts in Module 10, when discussing how to determine the appropriate sample size of a study.
+
+Table 4.2 Type I and Type II errors in hypothesis tests
+Study result Reality
+Null hypothesis is true Null hypothesis is false
+Reject null hypothesis Type I error (ɑ) Correct conclusion
+Do not reject null hypothesis Correct conclusion Type II error (β)
+
+\hypertarget{confidence-intervals-in-hypothesis-testing}{%
+\section{Confidence intervals in hypothesis testing}\label{confidence-intervals-in-hypothesis-testing}}
+
+In Module 3, the 95\% confidence interval around a mean value was calculated to show the precision of the summary statistic. The 95\% confidence intervals around other summary statistics can also be calculated.
+
+For example, if we were comparing the means of two groups, we would want to test the null hypothesis that the difference in means is zero, that there is no true difference between the groups.
+
+From the data from the two groups, we could estimate the difference in means, the standard error of the difference in means and the 95\% confidence interval around the difference. To estimate the 95\% confidence interval, we use the formula given in Module 3, that is:
+
+\[ 95\% \text{ CI} = \text{Difference in means} \pm 1.96 \times \text{SE}(\text{Difference in means)} \]
+
+It is important to remember that the 95\% CI is estimated from the standard error, and that the standard error has a direct relationship to the sample size. For small sample sizes, the standard error is large and the 95\% CI becomes wider. Conversely, the larger the sample size, the smaller the standard error and the narrower the 95\% CI becomes indicating a more precise estimate of the mean difference.
+
+The 95\% CI tells us the region in which we are 95\% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95\% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure 4.2. If the zero value lies outside the 95\% confidence interval, we can conclude that there is a true difference between the groups because we are 95\% confident that the difference does not encompass a zero value as shown in the lower two estimates in Figure 4.2.
+
+\textbackslash begin\{figure\}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/cis-overlapping-null} \textbackslash caption\{Using 95\% CIs as informal hypothesis tests\}\label{fig:cis-overlapping-null}
+\textbackslash end\{figure\}
+
+For relative risk and odds ratio measures, when the 95\% CI includes the value of 1 it indicates that we can be 95\% confident that the true RR or OR of the association between the study factor and outcome factor includes 1.0 in the source population. This indicates little evidence of an association between the study factor and the outcome factor, e.g.~if the results of a study were reported as RR = 1.10 (95\% CI 0.95 to 1.25). The P-value can be calculated to assess this (discussed in Module 7).
+
+\textbf{Table 4.3 Values that indicate no effect}
+
+\hypertarget{one-sample-t-test}{%
+\section{One-sample t-test}\label{one-sample-t-test}}
+
+A one-sample t-test tests whether a sample mean is different to a hypothesised value. The t-distribution and its relation to normal distribution has been discussed in detailed in Module 3.
+
+In a one-sample t-test, a t-value is computed as the sample mean divided by the standard error of the mean. The significance of the t-value is then computed in Stata or can be obtained from a statistical table.
+
+The principles of this test can be used for applications such as testing whether the mean of a sample is different from a known population mean, for example testing whether the IQ of a group of children is different from the population mean of 100 IQ points or testing whether the number of average hours worked in an adult sample is different from the population mean of 38 hours.
+
+\hypertarget{worked-example-2}{%
+\subsection{Worked Example}\label{worked-example-2}}
+
+The mean diastolic blood pressure (BP) of the general US population is known to be 71 mm Hg. The diastolic blood pressure of 733 female Pima native Americans was measured and a histogram showed that the data were approximately normally distributed. The mean diastolic blood pressure in the sample was 72.4 mm Hg with a standard deviation of 12.4 mm Hg.
+
+Data for this Worked Example is available on Moodle, file name Example\_4.1.dta. We can use Stata to compute the significance test for a one sample t-test. The Stata results from this test is given below.
+
+Stata Output 4.1: Results from one-sample t-test
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{One{-}sample t test}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95\% Conf. Interval]}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{     dbp |     733    72.40518    .4573454    12.38216    71.50732    73.30305}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    mean = mean(dbp)                                              t =   3.0725}
+\NormalTok{Ho: mean = 71                                    degrees of freedom =      732}
+
+\NormalTok{    Ha: mean \textless{} 71               Ha: mean != 71                 Ha: mean \textgreater{} 71}
+\NormalTok{ Pr(T \textless{} t) = 0.9989         Pr(|T| \textgreater{} |t|) = 0.0022          Pr(T \textgreater{} t) = 0.0011}
+\end{Highlighting}
+\end{Shaded}
+
+The table shows the number of observations, mean, standard error of the mean, standard deviation and 95\% confidence interval of the mean. The mean diastolic blood pressure of females from Pima is estimated as 72.4 mmHg (95\% CI: 71.5 to 73.3 mmHg), which is higher than that of the general US population. This interval does not contain the mean 71 mm Hg value for the general US population providing evidence that the mean diastolic blood pressure of female Pima people is higher than that of the general US population (of 71mmHg) at the 0.05 significance level.
+
+Under the table, the test value of 71 (mean of the US general population) is given as the Ho (null hypothesis). Here the two-sided P-value (under Ha: mean !=71 (the alternative hypothesis) is 0.002 for a t-value of 3.0725 with 732 degrees of freedom. (In the section below, we will discuss which p-value to use from the Stata output.)
+
+Therefore, we can conclude that the mean diastolic BP of the female Pima people is higher than that of the general US population.
+
+\hypertarget{one-and-two-tailed-tests}{%
+\section{One and two tailed tests}\label{one-and-two-tailed-tests}}
+
+Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05.
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/two-tailed-test} \caption{P-value for a 2-tailed test}\label{fig:two-tailed-test}
+\end{figure}
+
+Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e.~a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved. The P value for a one tailed test would be 0.025 i.e.~the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4.
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/one-tailed-tests} \caption{P-value for 1-tailed tests}\label{fig:one-tailed-tests}
+\end{figure}
+
+If a one tailed P value is reported, and is considered to be an invalid decision, it is usually easily converted to a two tailed value by doubling its numeric value. For example, for the same test statistic and sample size:
+
+\begin{itemize}
+\tightlist
+\item
+  One tailed P value = 0.042 i.e.~statistically significant
+\item
+  Two tailed P value = 0.084 i.e.~non-significant
+\end{itemize}
+
+Obviously, the choice of whether to use a one or two tailed test is not as important when the P value is highly significant or clearly non-significant but can make a difference to the conclusions when the P value is on the margins of significance.
+
+In most health research, the use of a one tailed test is rarely justified because it is unusual to be certain of the direction of effect prior to the research study being undertaken. It has been suggested that if the researchers were sure enough to consider using a one-tailed test, the research study would not be needed.
+
+In most studies, two tailed tests of significance are used to allow for the possibility that the effect size could occur in either direction. In clinical trials, this would mean allowing for a result that can indicate a benefit or an adverse effect in response to a new treatment. In epidemiological studies, two tailed tests are used to allow for the fact that exposure to a factor of interest may be adverse or may be beneficial. This conservative approach is usually adopted to prevent missing important effects that occur in the opposite direction to that expected by the researchers.
+
+\hypertarget{a-note-on-p-values-displayed-by-software}{%
+\section{A note on P-values displayed by software}\label{a-note-on-p-values-displayed-by-software}}
+
+You will often find P-values generated by statistical software (including Stata) presented as 0.000 or 0.0000. As P-values can never be equal to zero, any P-value displayed in this way should be converted to \textless0.001 or \textless0.0001 respectively (i.e.~replace the last 0 with a 1, and use the less-than symbol).
+
+\hypertarget{decision-tree}{%
+\section{Decision Tree}\label{decision-tree}}
+
+In the following modules in this course, several formal statistical tests will be described to analyse different types of data sets that have been collected to test set null hypotheses. It is important that the correct statistical test is selected to generate P-values and estimate effect size. If an incorrect statistical test is used, the assumptions of the test may be violated, the effect size may be biased and the P value generated may be incorrect.
+
+Selecting the correct test to use in each situation depends on the study design and the nature of the variables collected. Figure 1 in the Appendix shows a decision tree which enables you to decide the type of test to select based on the nature of the data.
 
 \hypertarget{learning-activities-3}{%
 \chapter*{\texorpdfstring{\textbf{4} Learning Activities}{4 Learning Activities}}\label{learning-activities-3}}
@@ -959,8 +2142,8 @@ Acock A. A Gentle Introduction to Stata, 3rd Edition (2012): Section 7.7, 7.8.
 
 Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
 
-\hypertarget{introduction-2}{%
-\section{Introduction}\label{introduction-2}}
+\hypertarget{introduction-3}{%
+\section{Introduction}\label{introduction-3}}
 
 In Module 4, a one-sample t-test was used for comparing a mean value with a hypothesised value. In this module, we show how to compare the mean values of two groups for which the outcome variable is normally distributed. In health research, we often want to compare the mean value of a measurement between two groups in an observational study or between a control and intervention group in an experimental study. For example, in an observational study, we may want to compare cholesterol levels in people who are normal weight to the levels in people who are overweight. In a clinical trial, we may want to compare cholesterol levels in people who have been randomised to a dietary modification or to usual care.
 
@@ -1018,8 +2201,8 @@ The third assumption of normality is important although t-tests are robust to so
 
 The final assumption is homogeneity of variance between the groups. This can be verified by checking that the standard deviation (square root of the variance) of each group is similar. If the variances are different, then Welch's t-test, an alternative version of the t-test can be used.
 
-\hypertarget{worked-example}{%
-\subsection{Worked Example}\label{worked-example}}
+\hypertarget{worked-example-3}{%
+\subsection{Worked Example}\label{worked-example-3}}
 
 In an observational study of a random sample of 100 full term babies from the community, birth weight and gender were measured. There were 44 male babies and 56 female babies in the sample. The research question asked whether there was a difference in birth weights between boys and girls. The two groups are independent of each other and therefore an independent samples t-test can be used to test the null hypothesis that there is no difference in weight between the genders.
 
@@ -1361,8 +2544,8 @@ By the end of this module you will be able to:
 
 \citep{acock10}; Section 7.5.
 
-\hypertarget{introduction-3}{%
-\section{Introduction}\label{introduction-3}}
+\hypertarget{introduction-4}{%
+\section{Introduction}\label{introduction-4}}
 
 In Modules 4 and 5, we discussed methods used to test hypotheses when the data are continuous. In Modules 6 and 7, we will focus on hypothesis testing for binary categorical data.
 
@@ -1397,8 +2580,8 @@ where the standard error of a proportion is computed as:
 
 \[\text{SE}(p) = \sqrt{\frac{p \times (1 - p)}{n}}\]
 
-\hypertarget{worked-example-1}{%
-\subsection{Worked Example}\label{worked-example-1}}
+\hypertarget{worked-example-4}{%
+\subsection{Worked Example}\label{worked-example-4}}
 
 In a cross-sectional study of children living in a rural village, 47 children from a random sample of 215 children were found to have scabies. Here \(n=215\) and \(k=47\), so the proportion of children with scabies is estimated as:
 
@@ -1483,8 +2666,8 @@ z = \frac{(p_{population} - p_{sample})}{\text{SE}(p_{population})}
 
 This z-statistic is then compared to the standard Normal distribution to calculate the P-value.
 
-\hypertarget{worked-example-2}{%
-\subsection{Worked Example}\label{worked-example-2}}
+\hypertarget{worked-example-5}{%
+\subsection{Worked Example}\label{worked-example-5}}
 
 \[
 \begin{aligned}
@@ -1502,8 +2685,8 @@ The P-value for the test above can be obtained from a Normal distribution table 
 
 We can use the binomial distribution to obtain an exact P-value for testing a single proportion. Historically, this was a time consuming process with much hand calculation. These days, Stata and other statistical software performs the calculations quickly and efficiently, and is the preferred method.
 
-\hypertarget{worked-example-3}{%
-\subsection{Worked example}\label{worked-example-3}}
+\hypertarget{worked-example-6}{%
+\subsection{Worked example}\label{worked-example-6}}
 
 A national census in a country shows that 20\% of the population are smokers. A survey of a community within the country that has received a public health anti-smoking intervention shows that 54 of 300 people sampled are smokers (18\%). The research question is whether this proportion of smoking in the community is lower than the population prevalence of smoking of 20\%. The Stata file Example\_6.3.dta contains the data for this example. In the data file, smokers are coded as 1 and non-smokers are coded as 0.
 
@@ -1844,23 +3027,353 @@ By the end of this module you will be able to:
 \begin{itemize}
 \tightlist
 \item
-  blah
+  Use and interpret the appropriate test for testing associations between categorical data;
 \item
-  blah
+  Conduct and interpret an appropriate test for independent proportions;
 \item
-  blah
+  Conduct and interpret a test for paired proportions;
 \end{itemize}
 
 \hypertarget{readings-6}{%
 \section*{Readings}\label{readings-6}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}
+\citet{kirkwood_sterne01a}; Chapter 17.
+\citet{bland15b}; Chapter 13.
+\citet{acock10}; Section 7.6.
+\citet{juul_frydenberg14}; Section 11.3.
 
-\citep{bland15}
+\hypertarget{introduction-5}{%
+\section{Introduction}\label{introduction-5}}
 
-\hypertarget{introduction-4}{%
-\section{Introduction}\label{introduction-4}}
+In Module 6, we estimated the 95\% confidence intervals of proportions and measures of association for categorical data and conducted a significance test comparing a sample proportion to a known value.
+
+When both the outcome variable and the exposure variable are categorical, a chi-squared test can be used as a formal statistical test to assess whether the exposure and outcome are related. The P-value obtained from a chi-squared test gives the probability of obtaining the observed association (or more extreme) if there is in fact no association between the exposure and outcome.
+
+In this Module, we also include tests for a difference in proportion for paired data.
+
+\hypertarget{worked-example-7}{%
+\subsection{Worked Example}\label{worked-example-7}}
+
+We are using the randomised controlled trial as given in Worked Example 6.4 on the nauseating side effect of a drug.
+
+The research question is whether the active drug resulted in a different rate of nausea than the placebo drug. This is equivalent to testing whether there is an association between nausea and type of drug received (active or placebo). Thus, we will test the null hypothesis that the experience of nausea and the treatment are not related to one another. The null hypothesis is:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_0\): The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.
+\end{itemize}
+
+The alternative hypothesis can be stated as:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_a\): The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.
+\end{itemize}
+
+\hypertarget{chi-squared-test-for-independent-proportions}{%
+\section{Chi-squared test for independent proportions}\label{chi-squared-test-for-independent-proportions}}
+
+A chi-squared test is used to test the null hypothesis that of no association between two categorical variables. First a contingency table is drawn up and then we estimate the counts of each cell (i.e.~a, b, c and d) that would be expected if the null hypothesis was true. The row and column totals are used to calculate expected counts in each cell of the contingency table as follows:
+
+Expected count = (Row count × Column count) / Total count
+
+Stata will do this for us, as described in the Stata Notes section in this Module.
+
+A chi-squared value is then calculated to compare the expected counts (E) in each cell with the observed (actual) cell counts (O). The calculation is as follows:
+
+\(\chi ^ 2 = \sum \frac{(O - E)}{E} ^2\)
+
+With {[}Number of rows \(-\) 1{]} \(\times\) {[}Number of columns \(-\) 1{]} degrees of freedom.
+
+As for many statistics, the deviations between the observed and expected values are squared to prevent the negative and positive values balancing one another out.
+
+If the expected counts are close to the observed counts, the chi-squared statistic will be close to zero, and the P-value will be close to 1. The larger the difference between the observed and expected counts, the larger the chi-squared statistic becomes (and the smaller the P-value). A large chi-squared statistic provides more evidence of an association between the exposure and outcome.
+
+A chi-squared test to examine whether two independent proportions are associated can be obtained in Stata using the \emph{Tables for Epidemiologists}: \texttt{cc} and \texttt{cs} commands. The test can also be conducted using the \texttt{tab2} command, with the advantage that the \texttt{tab2} command shows the expected counts. We will show why this is important shortly.
+
+The Stata output for Worked Example 7.1 for the study on nausea is shown in Output 7.1a. It is always important to request the percentages using the options in `Cells' to show the proportion of patients who have the outcome in each exposure group, i.e.~the row percents.
+
+\hypertarget{stata-output-results-output-for-estimating-association-between-drug-and-nausea}{%
+\subsection{Stata Output: Results output for estimating association between drug and nausea}\label{stata-output-results-output-for-estimating-association-between-drug-and-nausea}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+\NormalTok{| Key                |}
+\NormalTok{|{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}|}
+\NormalTok{|     frequency      |}
+\NormalTok{| expected frequency |}
+\NormalTok{|   row percentage   |}
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+
+\NormalTok{           |      Side effect}
+\NormalTok{     Group | No nausea     Nausea |     Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{   Placebo |        46          4 |        50 }
+\NormalTok{           |      40.5        9.5 |      50.0 }
+\NormalTok{           |     92.00       8.00 |    100.00 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    Active |        35         15 |        50 }
+\NormalTok{           |      40.5        9.5 |      50.0 }
+\NormalTok{           |     70.00      30.00 |    100.00 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{     Total |        81         19 |       100 }
+\NormalTok{           |      81.0       19.0 |     100.0 }
+\NormalTok{           |     81.00      19.00 |    100.00 }
+
+\NormalTok{          Pearson chi2(1) =   7.8622   Pr = 0.005}
+\end{Highlighting}
+\end{Shaded}
+
+(Note: in this table, drug group and nausea outcome are coded `No' = 0 and `Yes' = 1, i.e.~the `No' group comes before the Yes' group unlike the table outputs in Module 6. Therefore, cell a = 15; b = 35, c = 4; d = 46.).
+
+In Output 7.1a, we can see from the row percentages that 8\% of patients in the placebo group experienced nausea compared to 30\% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The `Expected' counts are higher for the groups with `No nausea' because `No nausea' is more prevalent in the sample than `Nausea'.
+
+While the \texttt{tab2} command will perform the chi-square test, the measure of effect is best obtained using the \texttt{cs} or \texttt{cc} commands, as discussed in Module 6. Using the relative risk obtained from Module 6, a conclusion from the above test can be written as:
+
+The proportion with nausea in those who received the active drug is 30\%, compared to 8\% in those who received the placebo drug. Nausea was more frequent in those who received the active drug (Relative Risk = 3.75, 95\% CI: 1.34 to 10.51). There is strong evidence that the proportion with nausea differs between the two groups (\(\chi ^2\) = 7.86 with 1 df, P=0.005).
+
+\hypertarget{assumptions-for-using-a-pearsons-chi-squared-test}{%
+\subsection{Assumptions for using a Pearson's chi-squared test}\label{assumptions-for-using-a-pearsons-chi-squared-test}}
+
+The assumptions that must be met when using Pearson's chi-squared test are that:
+
+\begin{itemize}
+\tightlist
+\item
+  each observation must be independent;
+\item
+  each participant is represented in the table once only;
+\item
+  at least 80\% of the expected cell counts should exceed a value of five;
+\item
+  all expected cell counts should exceed a value of one.
+\end{itemize}
+
+The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher's exact test can be used instead. More information on Fisher's exact test can be found in Chapter 13 of An Introduction to Medical Statistics, M Bland.
+
+\hypertarget{interpreting-chi-squared-tests}{%
+\subsection{Interpreting chi-squared tests}\label{interpreting-chi-squared-tests}}
+
+For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson's Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher's exact test should be used (specified using the exact option in the tabulate command in Stata -- see Stata Notes). The P value associated with the Pearson's chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5\% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.
+
+\hypertarget{chi-squared-tests-for-larger-than-22-table}{%
+\section{Chi-squared tests for larger than 2×2 table}\label{chi-squared-tests-for-larger-than-22-table}}
+
+Chi-squared tests can also be used for tables larger than a 2×2 dimension. When a contingency table larger than 2×2 is used, say a 4×2 table if there were 4 exposure groups, the Pearson's chi-squared can still be used.
+
+\hypertarget{worked-example-8}{%
+\subsection{Worked Example}\label{worked-example-8}}
+
+The Stata file Example\_7.2.dta contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. {[}Command: tab allergy\_severity sex, col{]}
+
+\hypertarget{cross-tabulation-for-severity-of-allergy-by-gender}{%
+\subsubsection{Cross-tabulation for severity of allergy by gender}\label{cross-tabulation-for-severity-of-allergy-by-gender}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. tabulate allergy\_severity sex, column expected}
+
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+\NormalTok{| Key                |}
+\NormalTok{|{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}|}
+\NormalTok{|     frequency      |}
+\NormalTok{| expected frequency |}
+\NormalTok{| column percentage  |}
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+
+\NormalTok{     Severity of |          Sex}
+\NormalTok{         allergy |    Female       Male |     Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    Non{-}allergic |       150        137 |       287 }
+\NormalTok{                 |     138.9      148.1 |     287.0 }
+\NormalTok{                 |     61.98      53.10 |     57.40 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  Slight allergy |        50         70 |       120 }
+\NormalTok{                 |      58.1       61.9 |     120.0 }
+\NormalTok{                 |     20.66      27.13 |     24.00 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{Moderate allergy |        27         32 |        59 }
+\NormalTok{                 |      28.6       30.4 |      59.0 }
+\NormalTok{                 |     11.16      12.40 |     11.80 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  Severe allergy |        15         19 |        34 }
+\NormalTok{                 |      16.5       17.5 |      34.0 }
+\NormalTok{                 |      6.20       7.36 |      6.80 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Total |       242        258 |       500 }
+\NormalTok{                 |     242.0      258.0 |     500.0 }
+\NormalTok{                 |    100.00     100.00 |    100.00}
+
+\NormalTok{          Pearson chi2(3) =   4.3089   Pr = 0.230}
+\end{Highlighting}
+\end{Shaded}
+
+The Pearson chi-squared statistic provides a P-value of 0.23. Therefore, there is little evidence of an association between gender and the severity of allergy.
+
+\hypertarget{mcnemars-test-for-categorical-paired-data}{%
+\section{McNemar's test for categorical paired data}\label{mcnemars-test-for-categorical-paired-data}}
+
+If a binary categorical outcome is measured in a paired study design, McNemar's statistic is used. This statistic is a form of chi-square applied to a paired situation. A Pearson's chi-squared test cannot be used because the measurements are not independent. However, McNemar's test can be used to assess whether there is a significant change in proportions between two time points or between two conditions, or whether there is a significant difference in proportions between matched cases and controls.
+
+For McNemar's test, the data are displayed as shown in Table 7.1. Cells `a' and `d' called concordant cells because the response was the same at both baseline and follow-up or between matched cases and controls. Cells `b' and `c' are called discordant cells because the responses between the pairs were different. For a follow-up study, the participants in cell `c' had a positive response at baseline and a negative response at follow-up. Conversely, the participants in cell `b' had a negative response at baseline and a positive response at follow-up.
+
+For other types of paired data such as twins or matched cases and controls, the data are similarly displayed with the responses of one of the pairs in the columns and the responses for the other of the pairs in the rows. For paired data, the grand total `N' is always the number of pairs and not the total number of participants.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-7-1} Table layout for testing matched proportions}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth} p{0.2\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{ }\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Negative at follow-up}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering \textbf{Positive at follow-up}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering \textbf{Total}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Negative at baseline\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering a\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering b\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering a + b\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Positive at baseline\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering c\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering d\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering c + d\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\centering Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering a + c\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\centering b + d\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\centering N\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+\hypertarget{worked-example-7.3}{%
+\subsection{Worked Example 7.3}\label{worked-example-7.3}}
+
+Two drugs labelled A and B have been administered to patients in random order so that each patient acts as their own control. The dataset Example\_7.3.dta is available on Moodle. The null hypothesis is as follows:
+
+\begin{itemize}
+\tightlist
+\item
+  \(H_0\): The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B
+\end{itemize}
+
+Using the \texttt{tabulate2} command, observed count and cell percentages were obtained in Table 7.2. From the ``Total'' row in the table, we can see that the number of patients who respond to drug A is 41 (68.3\%) and from the ``Total'' column the number who respond to drug B is less at 35 (58.3\%), that is there is a difference of 10.0\%.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. tabulate druga drugb, cell}
+
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+\NormalTok{| Key             |}
+\NormalTok{|{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}|}
+\NormalTok{|    frequency    |}
+\NormalTok{| cell percentage |}
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+
+\NormalTok{  Response |  Response to Drug B}
+\NormalTok{ to Drug A |        No        Yes |     Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{        No |         5         14 |        19 }
+\NormalTok{           |      8.33      23.33 |     31.67 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{       Yes |        20         21 |        41 }
+\NormalTok{           |     33.33      35.00 |     68.33 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{     Total |        25         35 |        60 }
+\NormalTok{           |     41.67      58.33 |    100.00 }
+\end{Highlighting}
+\end{Shaded}
+
+The difference in the paired proportions is calculated using the simple equation:
+
+\[ p_{A} - p_{B} = \frac{(b - c)}{N} \]
+
+Here, \(p_{A} - p_{B} = \frac{(20 - 14)}{60} = 0.1\)
+
+The cell counts show that 20 patients responded to Drug A but not to drug B, and 14 patients responded to Drug B but not to drug A. McNemar's statistic is computed from these two discordant pairs (labelled as `b' and `c') as follows:
+
+\[ X^2 = \frac{(b-c)^2}{b+c} \]
+
+with 1 degree of freedom.
+
+In computing this statistic, the counts in the concordant cells (`a' and `d') are not used and only the information from the discordant cells `b' and `c' is of interest.
+
+The \texttt{mcc} command in Stata is used to perform the McNemar's test. Its output is shown in Output 7.3. The number of patients who have a response to each drug is labelled as Exposed in the output.
+
+\hypertarget{output-7.3-mcnemars-test}{%
+\subsubsection{Output 7.3 McNemar's test}\label{output-7.3-mcnemars-test}}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{. mcc druga drugb}
+
+\NormalTok{                 |        Controls        |}
+\NormalTok{Cases            |   Exposed   Unexposed  |      Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{         Exposed |        21          20  |         41}
+\NormalTok{       Unexposed |        14           5  |         19}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Total |        35          25  |         60}
+
+\NormalTok{McNemar\textquotesingle{}s chi2(1) =      1.06    Prob \textgreater{} chi2 = 0.3035}
+\NormalTok{Exact McNemar significance probability       = 0.3915}
+
+\NormalTok{Proportion with factor}
+\NormalTok{        Cases       .6833333}
+\NormalTok{        Controls    .5833333     [95\% Conf. Interval]}
+\NormalTok{                   {-}{-}{-}{-}{-}{-}{-}{-}{-}     {-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{        difference        .1     {-}.1054528   .3054528}
+\NormalTok{        ratio       1.171429      .8663498   1.583939}
+\NormalTok{        rel. diff.       .24     {-}.1585239   .6385239}
+
+\NormalTok{        odds ratio  1.428571      .6862537   3.057277   (exact)}
+\end{Highlighting}
+\end{Shaded}
+
+Two versions of the McNemar's test are given in the output. The exact version is generally recommended. The P value for the exact McNemar's test is 0.39, providing no evidence against the null hyopthesis.
+
+In this study of 60 participants, where each participant received both drugs, 41 (68\%) responded to Drug A and 35 (58\%) responded to Drug B. The difference in the proportions responding is estimated as 10.0\% (95\% CI -10.5\% to 30.5\%). There is no evidence that the response differed between the two drugs (exact McNemar's P=0.39).
+
+\hypertarget{summary}{%
+\section{Summary}\label{summary}}
+
+In Module 6, we estimated proportions and measures of association for categorical data and conducted a one-sample test of proportions. In this module, we conduct significance tests for two or more independent proportions using the chi-squared test. The chi-squared test can also be used to conduct a significance test when there are more than two categories in both variables. The McNemar's test is used when we have paired data.
 
 \hypertarget{learning-activities-6}{%
 \chapter*{\texorpdfstring{\textbf{7} Learning Activities}{7 Learning Activities}}\label{learning-activities-6}}
@@ -1951,8 +3464,8 @@ By the end of this module you will be able to:
 
 \citep{juul_frydenberg14}; Section 12.1.
 
-\hypertarget{introduction-5}{%
-\section{Introduction}\label{introduction-5}}
+\hypertarget{introduction-6}{%
+\section{Introduction}\label{introduction-6}}
 
 In Module 5, we saw how to test whether a categorical and a continuous variable are related. However, we often want to know how closely two continuous variables are related. For example, we may want to know how closely blood cholesterol levels are related to dietary fat intake in adult men. To measure the strength of association between two continuously distributed variables, a correlation coefficient is used.
 
@@ -1965,8 +3478,8 @@ Although both correlation coefficients and regression models can be used to desc
 
 We use correlation to measure the strength of a linear relationship between two variables. Before calculating a correlation coefficient, a scatter plot should first be obtained to give an understanding of the nature of the relationship between the two variables.
 
-\hypertarget{worked-example-4}{%
-\subsection{Worked Example}\label{worked-example-4}}
+\hypertarget{worked-example-9}{%
+\subsection{Worked Example}\label{worked-example-9}}
 
 The Stata file Example\_8.1.dta has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45\%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure \texttt{\textbackslash{}@ref(fig:scatter-plot))}. This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.
 
@@ -2458,8 +3971,8 @@ By the end of this module you will be able to:
 
 \citep{acock10} Section 7.11.
 
-\hypertarget{introduction-6}{%
-\section{Introduction}\label{introduction-6}}
+\hypertarget{introduction-7}{%
+\section{Introduction}\label{introduction-7}}
 
 In general, parametric statistics are preferred for reporting data because the summary statistics (mean, standard deviation, standard error of the mean etc) and the tests used (t-tests, correlation, regression etc) are familiar and the results are easy to communicate. However, non-parametric tests can be used if data are not normally distributed. Non-parametric tests make fewer assumptions about the distribution of the data.
 
@@ -2468,8 +3981,8 @@ In general, parametric statistics are preferred for reporting data because the s
 
 When a variable has a skewed distribution, one possibility is to transform the data to a new variable to try and obtain a normal or near normal distribution. Methods to transform non-normally distributed data include logarithmic transformation of each data point, or using the square root or the square or the inverse (i.e.~1/x) etc.
 
-\hypertarget{worked-example-5}{%
-\subsection{Worked Example}\label{worked-example-5}}
+\hypertarget{worked-example-10}{%
+\subsection{Worked Example}\label{worked-example-10}}
 
 We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example\_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure 9.1. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
@@ -2887,8 +4400,8 @@ If the differences between two paired measurements are not normally distributed,
 
 In this test, the absolute differences between the paired scores are ranked and the difference scores that are equal to zero (i.e.~scores where there is no difference between the pairs) are excluded. Thus, the test is not suitable when a large proportion of the differences are zero because the effective sample size is reduced considerably.
 
-\hypertarget{worked-example-6}{%
-\subsection{Worked Example}\label{worked-example-6}}
+\hypertarget{worked-example-11}{%
+\subsection{Worked Example}\label{worked-example-11}}
 
 A crossover trial is done to compare symptom scores for two drugs in 11 people with arthritis (higher scores indicate more severe symptoms). The data are contained in Stata datafile file Example\_9.2.dta. The data are shown in Table 9.2. The descriptive statistics indicate that the differences are not normally distributed. You can use the Explore function in Stata to determine this.
 
@@ -3106,8 +4619,8 @@ Output 9.5: Results from rank correlation analysis
 The Spearman rank correlation coefficient is estimated as 0.75, demonstrating a positive association between height and FVC.
 Stata provides two versions of the Kendall rank correlation coefficient: we would use tau-b (\(\tau_b\)) as it allows for tied observations. The Kendall rank correlation coefficient is estimated as 0.56, again demonstrating a positive association between height and FVC.
 
-\hypertarget{summary}{%
-\section{Summary}\label{summary}}
+\hypertarget{summary-1}{%
+\section{Summary}\label{summary-1}}
 
 In this module, we have presented methods to conduct a hypothesis test with data that are not normally distributed. Non-parametric methods do not assume any distribution for the data and use significance tests based on ranks or sign (or both). A non-parametric test is always less powerful than its equivalent parametric test if the data are normally distributed and so whenever possible parametric significance tests should be used. In some cases when data are not normally distributed with a reasonably large sample size, the data can be transformed (most commonly by log transformation) to make the distribution normal. A parametric significance test should then be used with the transformed data to test the hypothesis.
 
@@ -3337,8 +4850,8 @@ By the end of this module you will be able to:
 
 \citet{woodward13}; Chapter 8.
 
-\hypertarget{introduction-7}{%
-\section{Introduction}\label{introduction-7}}
+\hypertarget{introduction-8}{%
+\section{Introduction}\label{introduction-8}}
 
 Determining the appropriate sample size (the number of participants in a study) is one of the most critical issues when designing a research study. A common question when planning a project is ``How many participants do I need?'' The sample size needs to be large enough to ensure that the results can be generalised to the population and will be accurate, but small enough for the study question to be answered with the resources available. In general, the larger the sample size, the more precise the study results will be.
 
@@ -3496,8 +5009,8 @@ Table 10.1 is an abbreviated look-up table that we can use to estimate the sampl
 \end{table}
  
 
-\hypertarget{worked-example-7}{%
-\subsection{Worked Example}\label{worked-example-7}}
+\hypertarget{worked-example-12}{%
+\subsection{Worked Example}\label{worked-example-12}}
 
 A descriptive cross-sectional study is designed to measure the prevalence of bronchitis in children age 0-2 years with a 95\% CI of \(\pm\) 4\%. The prevalence is expected to be 20\%. From the table, a sample size of at least 385 will be required for the width of the 95\% CI to be \(\pm\) 4\% (i.e.~the reported precision of the summary statistic will be 20\% (95\% CI 16\% to 24\%)).
 
@@ -3553,8 +5066,8 @@ The significance level, or α level, is the level at which the P value of a test
 
 The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example 10.2.
 
-\hypertarget{worked-example-8}{%
-\subsection{Worked Example}\label{worked-example-8}}
+\hypertarget{worked-example-13}{%
+\subsection{Worked Example}\label{worked-example-13}}
 
 There is a hypothesis that the use of the oral contraceptive (OC) pill in premenopausal women can increase systolic blood pressure. A study was planned to test this hypothesis using a two sided t-test. The investigators are interesting in detecting an increase of at least 5 mm Hg systolic blood pressure in the women using OC compared to the non-OC users with 90\% power at a 5\% significance level. A pilot study shows that the SD of systolic blood pressure in the target group is 25 mm Hg and the mean systolic blood pressure of non-OC user women is 90 mm Hg. What is the minimum number of women in each group that need to be recruited for the study to detect this difference?
 
@@ -3630,8 +5143,8 @@ The statistical test for deciding if there is a significant difference between t
 
 Other than the power and alpha required for the test, the expected prevalence or incidence rate of the outcome factor needs to be estimated for each of the two groups being compared, based on what is known from other studies or what is expected. Occasionally, we may not know the expected proportion in one of the groups, e.g.~in a randomised control trial of a novel intervention. In the sample size calculation for such a study, we should instead justify the minimum expected difference between the proportions based on what is important from a clinical or public health perspective. Based on the minimum difference, we can then derive the expected proportion for both groups. Note that the smaller the difference, the larger the sample size required.
 
-\hypertarget{worked-example-9}{%
-\subsection{Worked Example}\label{worked-example-9}}
+\hypertarget{worked-example-14}{%
+\subsection{Worked Example}\label{worked-example-14}}
 
 If we expect that the prevalence of smoking in two comparison groups (e.g.~males and females) will be 35\% and 20\%. The sample size required in each group to show that the prevalences are significantly different at P\textless0.05 with 80\% power is shown in Output 10.3.
 
@@ -3674,8 +5187,8 @@ The relative risk is used to describe the association between an exposure and an
 
 In general, a RR of 2.0 or greater is considered to be of public health importance. However, a smaller RR can be important when exposure is high, for example say the relative risk of respiratory infection among young children with a parent who smokes is very small at approximately 1.2 but 25\% of children are exposed to smoking in their home. The high exposure rate leads to a very large number of children who have preventable respiratory infections across the community.
 
-\hypertarget{worked-example-10}{%
-\subsection{Worked Example}\label{worked-example-10}}
+\hypertarget{worked-example-15}{%
+\subsection{Worked Example}\label{worked-example-15}}
 
 A study is planned to investigate the effect of an environmental exposure on the incidence of a certain common disease. In the general (unexposed) population the incidence rate of the disease is 50\% and it is assumed that the incidence rate would be 75\% in the exposed population. Thus the relative risk of interest would be 1.5 (i.e.~0.75 / 0.50). We want to detect this effect with 90\% power at a 5\% level of significance. Using the power twoproportions command, Output 10.4 is obtained.
 
@@ -3714,8 +5227,8 @@ If we are designing a case-control study, the appropriate measure of effect is a
 - the desired level of significance (usually 0.05);
 - the desired power of the study (usually 80\% or 90\%).
 
-\hypertarget{worked-example-11}{%
-\subsection{Worked Example}\label{worked-example-11}}
+\hypertarget{worked-example-16}{%
+\subsection{Worked Example}\label{worked-example-16}}
 
 A case-control study is designed to examine an association between an exposure and outcome factor. Existing literature shows that 30\% of the controls are expected to be exposed. We want to detect a minimum OR of 2.0 with 90\% power and 5\% level of significance.
 
@@ -3925,8 +5438,8 @@ In this module we have seen how to use Stata for estimating the sample size requ
 
 One approach that is increasingly being used is to conduct a blinded interim analysis say when 50\% of the total data that are planned have been collected. In this, a statistician external to the research team who is blinded to the interpretation of the group code is asked to measure the effect size in the data with the sole aim of validating the sample size requirement. It is rarely a good idea to use an interim analysis to reduce the planned sample size and terminate a trial early because the larger the sample size, the greater the precision with which the treatment effect is estimated. However, interim analyses are useful for deciding whether the sample size needs to be increased in order to answer the study question and avoid a Type II error.
 
-\hypertarget{summary-1}{%
-\section{Summary}\label{summary-1}}
+\hypertarget{summary-2}{%
+\section{Summary}\label{summary-2}}
 
 In this module we have discussed the importance of conducting a clinical or epidemiological study with enough participants so that an effect or association can be identified if it exists (i.e.~study power), and how this has to be balanced by the need to not enrol more participants than necessary because of resource issues. We have looked at the parameters that need to be considered when estimating the sample size for different studies and have used a look-up table to estimate required sample size for a prevalence study and Stata to estimate appropriate sample sizes in epidemiological research under the most straightforward situations. The common requirement in all the situations is that the researchers need to specify the minimum effect measure (e.g.~difference in means, OR, RR etc) they want to detect with a given probability (usually 80\% to 90\%) at a certain level of significance (usually P\textless0.05). The ultimate decision on the sample size depends on a compromise among different objectives such as power, minimum effect size, and available resources. To make the final decision, it is helpful to do some trial calculations using revised power and the minimum detectable effect measure.
 

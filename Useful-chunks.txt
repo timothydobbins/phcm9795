@@ -1,0 +1,26 @@
+Table chunk
+```{r act-1-1, echo=FALSE}
+tab1_1 <- tibble::tribble(
+  ~v1, ~v2, ~v3, ~v4, ~v5,
+  255L, 198L, 283L, 312L, 283L,
+  57L,  85L, 312L, 142L, 113L,
+  227L, 283L, 255L, 340L, 142L,
+  113L, 312L, 227L,  85L, 170L,
+  255L, 198L, 113L, 227L, 255L)
+
+huxtable::huxtable(tab1_1, add_colnames = FALSE) %>%
+  set_align(everywhere, everywhere, ".") %>% 
+  theme_article() %>% 
+  set_width(0.8) %>% 
+  set_caption("Weight loss (g) for 25 participants")
+```
+
+
+Output chunk
+```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
+Performing iteration ...
+
+Estimated sample sizes for a two-sample means test
+t test assuming sd1 = sd2 = sd
+Ho: m2 = m1 versus  Ha: m2 != m1
+```
