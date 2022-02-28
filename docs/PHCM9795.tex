@@ -192,14 +192,1035 @@ By the end of this module, you will be able to:
 \section*{Readings}\label{readings}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}; Chapters 2 and 3.
+\citet{kirkwood_sterne01a}; Chapters 2 and 3.
 
-\citep{bland15}; Chapter 4.
+\citet{bland15b}; Chapter 4.
 
-\citep{acock10}; Chapter 5.
+\citet{acock10}; Chapter 5.
 
 \hypertarget{an-introduction-to-statistics}{%
 \section{An introduction to statistics}\label{an-introduction-to-statistics}}
+
+The dictionary of statistics (Upton and Cook, 2008) defines statistics simply as: ``The science of collecting, displaying, and analysing data.''
+
+Statistics is a branch of mathematics, together with theoretical/pure mathematics and applied mathematics. Within the field of statistics, there are two main divisions: mathematical statistics and applied statistics. Mathematical statistics deals with development of new methods of statistical inference and requires detailed knowledge of abstract mathematics for its implementation. Applied statistics applies the methods of mathematical statistics to specific subject areas, such as business, psychology, medicine and sociology.
+
+Biostatistics can be considered as the ``application of statistical techniques to the medical and health fields''. However, biostatistics sometimes overlaps with mathematical statistics. For instance, given a certain biostatistical problem, if the standard methods do not apply then existing methods must be modified to develop a new method.
+
+\hypertarget{scope-of-biostatistics}{%
+\subsection{Scope of Biostatistics}\label{scope-of-biostatistics}}
+
+Research is essential in the practice of health care. Biostatistical knowledge helps health professionals in deciding whether to prescribe a new drug for the treatment of a disease or to advise a patient to give up drinking alcohol. To practice evidence-based healthcare, health professionals must keep abreast of the latest research, which requires understanding how the studies were designed, how data were collected and analysed, and how the results were interpreted. In clinical medicine, biostatistical methods are used to determine the accuracy of a measurement, the efficacy of a drug in treating a disease, in comparing different measurement techniques, assessing diagnostic tests, determining normal values, estimating prognosis and monitoring patients. Public health professionals are concerned about the administration of medical services or ensuring that an intervention program reduces exposure to certain risk factors for disease such as life-style factors (e.g.~smoking, obesity) or environmental contaminants. Knowledge of biostatistics helps determine them make decisions by understanding, from research findings, whether the prevalence of a disease is increasing or whether there is a causal association between an environmental factor and a disease.
+
+The value of biostatistics is to transform (sometimes vast amounts of) data into meaningful information, that can be used to solve problems, and then be translated into practice (i.e.~to inform public health policy and decision making). When undertaking research having a biostatistician as part of a multidisciplinary team from the outset, together with scientists, clinicians, epidemiologists, healthcare specialists is vital, to ensure the validity of the research being undertaken and that information is interpreted appropriately.
+
+\hypertarget{descriptive-and-inferential-statistics}{%
+\section{Descriptive and inferential statistics}\label{descriptive-and-inferential-statistics}}
+
+To understand the concepts of statistics, it is important to realise there are two ways of using data: one is via descriptive statistics and the other is via inferential statistics.
+
+\hypertarget{descriptive-statistics}{%
+\subsection{Descriptive statistics}\label{descriptive-statistics}}
+
+Descriptive statistics provide a `picture' of the characteristics of a population. Examples of descriptive statistics based on the population are given below.
+
+\hypertarget{births}{%
+\subsubsection{Births}\label{births}}
+
+These examples on descriptive statistics consider all the births in Australia in 2016 (Australia's mothers and babies 2016). The Australian Institute of Health and Welfare produce comprehensive reports annually on the characteristics of Australia's mothers and babies of the most recent year of data from the National Perinatal Data Collection (NPDC).
+
+The headline from the report is ``More women are giving birth'', which is then evidenced by the statement: In 2016, 310,247 women gave birth in Australia---an increase of 12\% since 2006 (277,440 women). This example shows descriptive statistics that are presented as the actual number of women giving birth in 2016, together with a comparison with 2006.
+
+Further descriptive statistics provide summary information, about the average (mean) age of women giving birth in 2016 (30.5 years) and the median age (31 years).
+
+\begin{quote}
+``Women are giving birth later in life''
+\end{quote}
+
+The average age of all women who gave birth continues to rise. It was 30.5 in 2016, compared with 29.8 in 2006. The median age was slightly higher, at 31 years in 2016.
+
+\hypertarget{deaths}{%
+\subsubsection{Deaths}\label{deaths}}
+
+In another example, consider characteristics of all the deaths in Australia in a year (Australia's health 2018).
+
+\begin{quote}
+``In 2016, there were 158,504 deaths registered in Australia''
+\end{quote}
+
+The following table, from the Australia's health 2018 report, presents the leading causes of death, by sex in 2016 \footnote{This is Table S3.2.1 in the Australia's health 2018 report}. The information from the table was also presented as a visualisation / infographic, demonstrating a simplistic, yet valuable way of presenting data and enabling comparison of causes of death for males and females. Noting that the leading cause of death for males in 2016 was coronary heart disease and, dementia and Alzheimer disease for females.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab-1-1} Leading causes of death, by sex, 2016}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.95\textwidth}{p{0.2375\textwidth} p{0.2375\textwidth} p{0.2375\textwidth} p{0.2375\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Rank}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright \textbf{Leading causes of death}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Males}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Females}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Coronary heart disease\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 10,870\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 8,207\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Dementia and Alzheimer disease\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 4,679\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 8,447\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Cerebrovascular disease\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 4,239\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 6,212\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Lung cancer\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 5,023\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 3,387\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright COPD\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3,903\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 3,309\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.2375\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 81,867\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.2375\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.2375\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 76,637\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+Note: Leading causes of death are based on underlying causes of death and classified using an AIHW-modified version of Becker et al.~2006. Source: AIHW National Mortality Database.
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod01/cause-death} \caption{Leading cause of death, by sex, 2016}\label{fig:fig1-1}
+\end{figure}
+
+\hypertarget{inferential-statistics}{%
+\subsection{Inferential statistics}\label{inferential-statistics}}
+
+Inferential statistics use data collected from a sample of the population, to make conclusions (inferences) about the whole population (that the sample was drawn from).
+
+The following example is about a sample of prisoners, from the National Prisoner Health Data Collection (NPHDC). The NPHDC is the main source of national data about the health of prisoners in Australia. It gathers information over a 2-week period from prison entrants, dischargees, prisoners visiting the prison health clinic, and prisoners taking prescribed medication.
+
+We have information about the population of prisoners, given as the number of prisoners in Australia's prisons from the ABS website: \footnote{\url{http://www.abs.gov.au/ausstats/abs@.nsf/Lookup/by\%20Subject/4517.0~2015~Main\%20Features~Prisoner\%20characteristics,\%20Australia~28}}
+
+\begin{quote}
+At 30 June 2015: There were 36,134 prisoners in Australian prisons, an increase of 7\% (2,345 prisoners) from 30 June 2014.
+\end{quote}
+
+Characteristics (sex, age group and Indigenous status) of the sample of prisoners from the NPHDC are given in the following table. We can use this information to make inferences about the whole population of prisoners that the sample was drawn from (The health of Australia's prisoners 2015).
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-health} \caption{Characteristics of the sample of prisoners from the NPHDC}\label{fig:fig1-2}
+\end{figure}
+
+\hypertarget{variables}{%
+\section{Variables}\label{variables}}
+
+A variable is simply a characteristic that is being measured or observed. For example, height, weight, eye colour, income, country of birth are all types of variables.
+
+When we are examining associations between variables, we may also use the terms: outcome variable (sometimes called a dependent variable) and explanatory variable (sometimes called an independent variable).
+
+For example, some rural areas of Bangladesh have a very high concentration of arsenic in the drinking water. Children who consume arsenic-contaminated water become malnourished. In this example, being malnourished is the outcome variable which is being caused, or influenced, by the exposure variable: arsenic-contaminated water. Thus, the outcome variable is the variable of interest which may change in response to some exposure.
+
+\hypertarget{types-of-data}{%
+\subsection{Types of data}\label{types-of-data}}
+
+Data are groups of information that represent the qualitative or quantitative attributes of variables or a group of variables. For example, the ages of students attending a university gym in a particular hour were recorded. The thirty ages are given below:
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab1-ages} Age of 30 gym attendees}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.8\textwidth}{p{0.133333333333333\textwidth} p{0.133333333333333\textwidth} p{0.133333333333333\textwidth} p{0.133333333333333\textwidth} p{0.133333333333333\textwidth} p{0.133333333333333\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.133333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.133333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.133333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.133333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 22\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 22\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.133333333333333\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 24\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.133333333333333\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.133333333333333\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+The variable here is age and there are 30 observations recorded.
+
+\textbf{Quantitative} data are numerical data that can be measured or counted such as age, weight, height, etc. These data can be discrete or continuous. Biostatistics mostly deals with quantitative variables or numerical data.
+
+A \textbf{discrete} variable can have only one of a distinct set of values. For a discrete variable, observations are based on a count where both ordering and magnitude are important, such that numbers represent actual measurable quantities rather than mere labels.
+
+For example, the number of cancer cases in a specified area emerging over a certain period, the number of motorbike accidents in Sydney, the number of times a woman has given birth, the number of beds in a hospital. It is noteworthy that natural ordering exists among the data points, that is, a hospital with 100 beds has more beds than a hospital with 75 beds. Moreover, a difference between 40 and 50 beds is the same as the difference between 80 and 90 beds. A discrete variable can take only non-negative integer values: a woman cannot have 5.7 births. However, we can calculate summaries of discrete variables that are not necessarily discrete. For instance, if one woman has given birth four times and another woman 5 times, then on average, these two women have 4.5 births.
+
+\textbf{Continuous} data can take any values within a defined range.
+
+For example, age, height, weight or blood pressure, are continuous variables because we can make any divisions we want on them, and they can be measured as small as the instrument allows. As an illustration, if two people have the same blood pressure measured to the nearest millimetre of mercury, we may get a difference between them if the blood pressure is measured to the nearest tenth of millimetre. If they are still the same (to the nearest tenth of a millimetre), we can measure them with even finer gradations until we can see a difference.
+
+\textbf{Qualitative} data have values that describe a `quality' or `characteristic'. Categorical data are qualitative data and do not have measurable numeric values. These data can be nominal or ordinal.
+
+A \textbf{nominal} variable consists of unordered categories. For example, gender, race, ethnic group, religion, eye colour etc. Both the order and magnitude of a nominal variable are unimportant. If a nominal variable takes on one of two distinct categories, such as black or white then it is called dichotomous or binary variable. Other examples would be male or female; smoker or non-smoker; exposed to arsenic or not exposed. A number is often used to represent (label) each of the categories; for example, males could be assigned the value 1 and females 0; in the case of exposed and unexposed, exposed could be assigned 1 and unexposed 0. A nominal variable can also have more than two categories, such as blood group, with labels and categories as follows (1=Group A, 2=Group B, 3=Group AB, 4=Group O). Numbers are used for the sake of convenience of analysis when using a computer package.
+
+\textbf{Ordinal} data consist of ordered categories where differences between categories are important, such as socioeconomic status (low, medium, high) or student evaluation rating could be classified according to their level of satisfaction, where 1 represents excellent, 2 is satisfactory and 3 is unsatisfactory. Here natural order exists among the categories, where a smaller number represents higher satisfaction.
+
+\hypertarget{presenting-data}{%
+\section{Presenting data}\label{presenting-data}}
+
+We will now look at ways to present frequency information numerically in tables and graphs.
+
+\hypertarget{frequency-tables}{%
+\subsection{Frequency tables}\label{frequency-tables}}
+
+\hypertarget{worked-example}{%
+\subsubsection{Worked example}\label{worked-example}}
+
+Consider the ages of 30 students visiting a university gym in a particular hour presented in Table \ref{tab:tab1-ages}. This information is difficult to interpret in its raw form, but becomes more clear if the ages are grouped in a frequency table as shown in Table \ref{tab:tab1-ages-freq1}.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab1-ages-freq1} Frequency of ages of students visiting a gym}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.6\textwidth}{p{0.3\textwidth} p{0.3\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Age}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Frequency}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 7\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 22\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 2\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 4\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 24\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 30\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+The frequency is a count of the number of individuals of each age in the corresponding row. Three more columns can be added to the frequency table to give further insight: relative frequency, cumulative frequency and cumulative relative frequency (Table \ref{tab:tab1-ages-freq2}).
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab1-ages-freq2} Frequency of ages of students visiting a gym}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.9\textwidth}{p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Age}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Frequency}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Relative frequency (\%)}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Cumulative frequency}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Cumulative relative frequency (\%)}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 19\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 37\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 20\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 60\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 21\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 5\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 77\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 22\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 7\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 25\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 83\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 23\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 4\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 13\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 29\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 97\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 24\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 30\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 100\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 30\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 100\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+The relative frequency is the frequency expressed as a proportion or percentage of the total frequency. For example, 5 out of 30 students are aged 21, so the relative frequency is (5/30) \(\times\) 100 = 16.7\%.
+
+The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age. For example, the cumulative frequency of students at the medical centre aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) \(\times\) 100 = 36.7\%.
+
+The information presented in Table \ref{tab:tab1-ages-freq2} is called the frequency distribution of the variable age. Frequency distributions can also be presented for qualitative (categorical) data.
+
+For example, if we know that there are 12 males and 18 females in our data, this can be presented as in Table 1.4. We should not interpret the cumulative frequency for nominal data (e.g.~gender, eye colour or cancer types) as these data cannot be ranked. However, we can calculate the cumulative frequency for ordinal data (e.g.~student satisfaction level, cancer stage).
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab1-sex-freq} Frequency of sex of students visiting a gym}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.9\textwidth}{p{0.3\textwidth} p{0.3\textwidth} p{0.3\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Sex}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Frequency}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Relative frequency (\%)}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Male\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 12\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 40\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Female\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 18\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 60\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.3\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 30\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.3\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.3\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 100\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+\hypertarget{tables-with-more-than-one-variable}{%
+\subsection{Tables with more than one variable}\label{tables-with-more-than-one-variable}}
+
+So far, we have discussed one-way frequency tables, that is, tables that summarise one variable. We can summarise more than one variable in a table -- called a cross tabulation, or a two-way (summarising two variables) table or multi-way (summarising more than two variables) table. However, tables become complex when more than two variables are incorporated (you may need to present the information as two tables or incorporate additional rows and columns).
+
+In our example above, if we have two categorical variables (e.g.~sex with two categories male and female and BMI status with three categories Normal, Overweight and Obese) measured on each subject (student), we can classify the two variables simultaneously using two-way tables of frequency as shown in Table 1.5.
+
+ 
+  \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
+  \providecommand{\huxvb}[2]{\color[RGB]{#1}\vrule width #2pt}
+  \providecommand{\huxtpad}[1]{\rule{0pt}{#1}}
+  \providecommand{\huxbpad}[1]{\rule[-#1]{0pt}{#1}}
+
+\begin{table}[ht]
+\begin{centerbox}
+\begin{threeparttable}
+\captionsetup{justification=centering,singlelinecheck=off}
+\caption{\label{tab:tab1-sex-bmi-freq} Frequency of students visiting a gym by sex and BMI status*}
+ \setlength{\tabcolsep}{0pt}
+\begin{tabularx}{0.9\textwidth}{p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth} p{0.18\textwidth}}
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Sex}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Not overweight}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Overweight}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Obese}\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft \textbf{Total}\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}->{\huxb{0, 0, 0}{0.4}}-}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Male\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 1\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 9\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 2\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 12\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Female\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 11\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 6\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 0\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 17\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+
+\multicolumn{1}{!{\huxvb{0, 0, 0}{0}}p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{0pt}\parbox[b]{0.18\textwidth-0pt-6pt}{\huxtpad{6pt + 1em}\raggedleft Total\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 12\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 15\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-6pt}{\huxtpad{6pt + 1em}\raggedleft 3\huxbpad{6pt}}} &
+\multicolumn{1}{p{0.18\textwidth}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.18\textwidth-6pt-0pt}{\huxtpad{6pt + 1em}\raggedleft 29\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{>{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}->{\huxb{0, 0, 0}{0.8}}-}
+\arrayrulecolor{black}
+
+\multicolumn{5}{!{\huxvb{0, 0, 0}{0}}p{0.9\textwidth+8\tabcolsep}!{\huxvb{0, 0, 0}{0}}}{\hspace{6pt}\parbox[b]{0.9\textwidth+8\tabcolsep-6pt-6pt}{\huxtpad{6pt + 1em}\raggedright *BMI was missing for 1 student\huxbpad{6pt}}} \tabularnewline[-0.5pt]
+
+
+\hhline{}
+\arrayrulecolor{black}
+\end{tabularx}
+\end{threeparttable}\par\end{centerbox}
+
+\end{table}
+ 
+
+\hypertarget{tables-containing-more-than-two-variables}{%
+\subsection{Tables containing more than two variables}\label{tables-containing-more-than-two-variables}}
+
+In Section 1.2.2 {[}REF{]}, characteristics of the sample of prisoners from the NPHDC were presented. This table contains information about sex, age group and Indigenous status from different groups of prisoners; prison entrants, discharges, and prisoners in custody. This type of condensed information is often found in reports and journal articles giving demographic information, by different groups considered in the study.
+
+We might also consider a table containing further pieces of information. The table presented in Figure X.X (from the health of Australia's prisoners 2015 report) compares prison entrants and the general community by three variables: age group, Indigenous status, and highest level of completed education.
+
+Can you see any issues with the presentation of this table?
+
+\begin{figure}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-education} \caption{Highest level of completed education in prison entrants and the general community}\label{fig:fig-prison-education}
+\end{figure}
+
+Source: Australian Institute of Health and Welfare 2015. The health of Australia's prisoners 2015. Cat. no. PHE 207. Canberra: AIHW.
+
+Some issues in this table:
+
+\begin{itemize}
+\tightlist
+\item
+  The title of the table does not contain full information about the variables in the table;
+\item
+  It is unclear how the percentages were calculated (which groupings added to 100\%);
+\item
+  The ages are not labelled as such, thus without reading the text in report it is unclear that these are age groupings.
+\end{itemize}
+
+\hypertarget{table-presentation-guidelines-woodward-2013}{%
+\subsection{Table presentation guidelines (Woodward, 2013)}\label{table-presentation-guidelines-woodward-2013}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  Each table (and figure) should be self-explanatory, i.e.~the reader should be able to understand it without reference to the text in the body of the report.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    This can be achieved by using complete, meaningful labels for the rows and columns and giving a complete, meaningful title.
+  \item
+    Footnotes can be used to enhance the explanation.
+  \end{itemize}
+\item
+  Units of the variables (and if needed, method of calculation or derivation) should be given and missing records should be noted (e.g.~in a footnote).
+\item
+  A table should be visually uncluttered.
+
+  \begin{itemize}
+  \tightlist
+  \item
+    Avoid use of vertical lines.
+  \item
+    Horizontal lines should not be used in every single row, but they can be used to group parts of the table.
+  \item
+    Sensible use of white space also helps enormously; use equal spacing except where large spaces are left to separate distinct parts of the table.
+  \item
+    Different typefaces (or fonts) may be used to provide discrimination, e.g.~use of bold type and/or italics.
+  \end{itemize}
+\item
+  The rows and columns of each table should be arranged in a natural order to help interpretation. For instance, when rows are ordered by the size of the numbers they contain for a nominal variable, it is immediately obvious where relatively big and small contributions come from.
+\item
+  Tables should have a consistent appearance throughout the report so that the paper is easy to follow (and also for an aesthetic appearance). Conventions for labelling and ordering should be the same (for both tables as well as figures) for ease of comparison of different tables (and figures).
+\item
+  Consider if there is a particular table orientation that makes a table easier to read.
+\end{enumerate}
+
+Given the different possible formats of tables and their complexity, some further guidelines are given in this excellent reference: Boers M, Graphics and statistics for cardiology: designing effective tables for presentation and publication. Heart Published Online First: 13 October 2017. doi: 10.1136/heartjnl-2017-311581
+
+\hypertarget{graphical-presentation}{%
+\section{Graphical presentation}\label{graphical-presentation}}
+
+\hypertarget{bar-graphs}{%
+\subsection{Bar graphs}\label{bar-graphs}}
+
+Using the PBC data from the Introduction to Stata exercise, we can present the distribution of Stage of Disease graphically using a bar graph. Bar graphs, which are suitable for plotting discrete or categorical variables, are defined by the fact that the bars do not touch.
+
+\begin{figure}
+\includegraphics[width=11.89in]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar} \caption{Bar graph of stage of disease from PBC study}\label{fig:fig-1-1}
+\end{figure}
+
+Information from more than one variable can be presented as clustered or multiple bar chart (bars side-by-side) (Figure X.X). This type of graph is useful when examining changes in the categories separately, but also comparing the grouping variable between the main bar variable. Here we can see that Stage 3 and Stage 4 disease is the most common for both males and females, but there are many more females within each stage of disease.
+
+\begin{figure}
+\includegraphics[width=11.89in]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex} \caption{Bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-2}
+\end{figure}
+
+An alternative bar graph is a stacked or composite bar graph, which retains the overall height for each category, but differentiates the bars by another variable (Figure 1.3).
+
+\begin{figure}
+\includegraphics[width=11.86in]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked} \caption{Stacked bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-3}
+\end{figure}
+
+Finally, a stacked relative bar chart (Figure 1.4) displays the proportion of grouping variable for each bar, where each overall bar represents 100\%. These graphs allow the reader to compare the proportions between categories. We can easily see from Figure 1.4 that the distribution of sex is similar across each stage of disease.
+
+\begin{figure}
+\includegraphics[width=11.89in]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked-relative} \caption{Relative frequency of sex within stage of disease from PBC study}\label{fig:fig-1-4}
+\end{figure}
+
+\hypertarget{line-graphs}{%
+\subsection{Line graphs}\label{line-graphs}}
+
+A line graph is effective to illustrate trends over time (e.g.~change over several years). Let's look at an example from cancer epidemiology.
+
+Cancer incidence is the number of new cases of cancer diagnosed in a population in a given time period. A useful comparison with the incidence rate is the mortality rate, revealing information about the deaths from cancer in the same period. Figure 1.5 shows the prostate cancer trend in the NSW male population in the period 1972-2014, specifically the age-standardised incidence and mortality rate per 100,000.
+
+\begin{figure}
+\includegraphics[width=20.36in]{/Users/td/Documents/Repos/phcm9795/img/mod01/line-graph-prostate-cancer} \caption{Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014}\label{fig:fig-1-5}
+\end{figure}
+
+Source: The Cancer Institute NSW (2018) Cancer statistics NSW. \url{https://www.cancer.nsw.gov.au/cancer-statistics-nsw} (Accessed: 24 Jan 2019).
+
+The age standardised incidence rate for prostate cancer increased steadily in the period 1972 -- 1991, from 55.2 cases per 100,00 to 109.3 cases per 100,000. There were two notable peaks in incidence in the period 1972-2014. In particular, there was an increase between 1992-1994, and also between 2002-2009. Since 2009 (to 2014) the rates decreased from 198.9 per 100,000 to 148.2 per 100,000. Whilst the incidence rate for prostate cancer has fluctuated over the period, the age standardised mortality rate remained relatively stable (around 35 deaths per 100,000). Since 2009 the mortality rate appears to be decreasing and was at its lowest in 2014 at 22.1 per 100,000.
+
+{[}The increase in prostate cancer incidence in the early 1990's occurred at a time when blood testing of men for Prostate Specific Antigen (PSA) became more widespread. The more recent peak in incidence in the early 2000's maybe explained by PSA being increasingly used as a screening test for men who did not have symptoms of prostate cancer.{]}
+
+\hypertarget{pie-charts}{%
+\subsection{Pie charts}\label{pie-charts}}
+
+An example of graphical presentation that we would recommend avoiding, is a pie chart. These are often used to present the proportion of each category that contributed to the total. However, their use is limited and sometimes misleading, and the same information can be presented as a stacked bar chart of proportions. Here are some reasons why not to use pie charts:
+
+\begin{itemize}
+\tightlist
+\item
+  Not ideal when there are many categories to compare
+\item
+  The use of percentages is not appropriate when the sample size is small
+\item
+  Can be misleading by using different size pies, different rotations and different colours to draw attention to specific groups
+\item
+  3D and exploding bar charts further distort the effect of perspective and may confuse the reader
+\end{itemize}
+
+\hypertarget{graphical-presentation-guidelines}{%
+\subsection{Graphical presentation guidelines}\label{graphical-presentation-guidelines}}
+
+Consider the following guidelines for the appropriate presentation of graphs in scientific journals and reports (Woodward, 2013).
+- Figures should be self-explanatory and have consistent appearance through the report.
+- A title should give complete information. Note that figure titles are usually placed below the figure, whereas for tables titles are given above the table.
+- Axes should be labelled appropriately
+- Units of the variables should be given in the labelling of the axes. Use footnotes to indicate any calculation or derivation of variables and to indicate missing values
+- If the Y-axis has a natural origin, it should be included, or emphasised if it is not included.
+- If graphs are being compared, the Y-axis should be the same across the graphs to enable fair comparison
+- Columns of bar charts should be separated by a space
+- Three dimensional graphs should be avoided unless the third dimension adds additional information
+
+\hypertarget{summary-statistics-and-variation-in-data}{%
+\section{Summary statistics and variation in data}\label{summary-statistics-and-variation-in-data}}
+
+We often collect measurements that are continuous in nature, that is measurements such as height, weight, time, blood pressure etc which can be measured accurately to one or more decimal places. A useful way of describing the continuous data is via summary statistics. These include measures to describe the distribution of data points via the central tendency (e.g.~mean, median) and spread (e.g.~standard deviation and inter quartile range). We also examine the data visually by graphing it using histograms and box plots.
+
+\hypertarget{mathematical-and-statistical-notation}{%
+\subsection{Mathematical and statistical notation}\label{mathematical-and-statistical-notation}}
+
+When computing summary statistics or using more formal statistical methods, mathematical and statistical notation is often used. Below are some of the common statistical terms and interpretation that will be used in the course and which are seen in many text books.
+
+\begin{longtable}[]{@{}ll@{}}
+\toprule
+Notation & Interpretation \\
+\midrule
+\endhead
+\(x\) & An observation in your sample \\
+\(\sum x\) & Sum of all the observations \\
+\(N\) & Total population size \\
+\(n\) & Sample size \\
+\(\mu\) (mu) & Population mean \\
+\(\sigma^2\) & Population variance \\
+\(\sigma\) & Population standard deviation \\
+\(\bar{x}\) & Sample mean \\
+\(s^2\) & Sample variance \\
+\(s\) & Sample standard deviation \\
+\bottomrule
+\end{longtable}
+
+\hypertarget{measures-of-central-tendency}{%
+\subsection{Measures of central tendency}\label{measures-of-central-tendency}}
+
+\hypertarget{worked-example-1}{%
+\subsubsection{Worked example}\label{worked-example-1}}
+
+In our random sample of 30 students attending a university gym on a given day, their weight in kilograms was measured (see below). Weight is a continuous measurement (similar to height, blood pressure etc) that in theory can be measured to infinitely small units, though in practice they can be measured accurately to one or two decimal places.
+
+We will use these data to look at measures of central tendency and spread of the data and other summary statistics.
+
+60.0\\
+62.5 62.5 62.5\\
+65.0 65.0 65.0\\
+67.5 67.5 67.5 67.5 67.5\\
+70.0 70.0 70.0 70.0 70.0 70.0
+72.5 72.5 72.5 72.5\\
+75.0 75.0 75.0 75.0 75.0\\
+77.5 77.5\\
+80.0
+
+\hypertarget{mean}{%
+\subsubsection{Mean}\label{mean}}
+
+The most commonly used measure of the central tendency of the data is the mean value. The mean of a set of values is often referred to as the average of all the values. The mean (\(\bar{x}\)) of a sample dataset is calculated using the following formula:
+
+\[\bar{x} = \frac{\sum x}{n}\]
+
+From the weights example: \(\bar{x}\) = 2100/30 = 70.0. Thus, the mean weight of this sample is 70.0 kg
+
+\hypertarget{median-and-mode}{%
+\subsubsection{Median and mode}\label{median-and-mode}}
+
+Other measures of central tendency include the median and mode. The median is the true centre of the data, the value at which half of the measurements lie above it and half of the measurements lie below it.
+
+To estimate the median, the data are ordered from the lowest to highest values, and the middle value is used. If the middle value is between two data points (if there are an even number of observations), the median is an average of the two values.
+Using the weight example, the median would be 70.0 kg.
+
+For a set of eight exam results ranked in order:
+
+48 51 55 59 63 64 69 75
+
+The median is the average of the two middle observations: 59 and 63. So the median is (59+63)/2 = 61
+
+The mode is the most frequent value in the distribution, in the weight example this would be 70.0 kg as this value features most frequently. The mode is not used frequently.
+
+\hypertarget{describing-the-spread-of-the-data}{%
+\subsection{Describing the spread of the data}\label{describing-the-spread-of-the-data}}
+
+In addition to measuring the centre of the data, we also need a robust estimate of the spread of the data points.
+
+\hypertarget{range}{%
+\subsubsection{Range}\label{range}}
+
+The absolute measure of the spread of the data is the range, that is the difference between the highest and lowest values in the dataset.
+
+Range = highest data value -- lowest data value
+
+Using the weights example, Range = 80.0 - 60.0 = 20.0 kg
+
+Note that while the range is 20.0 kg, the range is often reported as the actual lowest and highest values e.g.~Range 60 to 80 kg.
+
+The range is not always ideal as it only describes the extreme values, without considering how the bulk of the data is distributed between them.
+
+\hypertarget{variance-and-standard-deviation}{%
+\subsubsection{Variance and standard deviation}\label{variance-and-standard-deviation}}
+
+More useful statistics to describe the spread of the data around a mean value are the variance and standard deviation. These measures of variability depend on the difference between individual observations and the mean value (deviations). If all values are equal to the mean there would be no variability at all, all deviations would be zero; conversely large deviations indicate greater variability.
+
+One way of combining deviations in a single measure is to first square the deviations and then average the squares. Squaring is done because we are equally interested in negative deviations and positive deviations; if we averaged without squaring, negative and positive deviations would `cancel out'. This measure is called the variance of the set of observations. It is `the average squared deviation from the mean'. Because the variance is in `square' units and not in the units of the measurement, a second measure is derived by taking the square root of the variance. This is the standard deviation (SD), and is the most commonly used measure of variability in practice, as it is a more intuitive interpretation since it is in the same units as the units of measurement (adapted from: Williams, 2015).
+
+The formula for the variance of a sample (\(s^2\)) is:
+
+\[ s^2 = \frac{\sum(x - \bar{x})^2}{n-1} \]
+
+Note that the deviations are first squared before they are summed to remove the negative values; once summed they are divided by the sample size minus 1.
+
+The sample standard deviation is the square root of the of the sample variance:
+
+\[s = \sqrt{s^2}\]
+For the worked weights example, we would calculate the sample variance:
+
+\[\begin{aligned}
+  s^2 &= \frac{(60.0 - 70.0)^2 + (62.5 - 70.0)^2 + \dots + (80.0 - 70.0)^2}{30-1} \\
+      &= \frac{737.5}{29} \\
+      &= 25.43 \text{ kg}^2
+  \end{aligned}\]
+
+with a sample standard deviation: \(s = \sqrt{25.43} = 5.04 \text{ kg}\).
+
+Thus, in our sample of 30 students, we have an estimated mean weight of 70.0 kg, with a variance of 25.43 kg\textsuperscript{2} and a standard deviation of 5.04 kg.
+
+Characteristics of the standard deviation
+- It is affected by every measurement
+- It is in the same units as the measurements
+- It can be converted to measures of precision (standard error and 95\% confidence intervals) (Module 3)
+
+Interquartile range
+The inter-quartile range (IQR) describes the range of measurements in the central 50\% of values around the median i.e.~the bottom 25\% and top 25\% of values are discarded and only the values in the 25\%-75\% range are quoted. The IQR is the preferred measure of spread when the median has been used to describe central tendency.
+
+In the weights example the IQR would be 67.5 -- 75.0 (i.e.~the middle 50\% of values).
+
+\hypertarget{population-values-mean-variance-and-standard-deviation}{%
+\section{Population values: mean, variance and standard deviation}\label{population-values-mean-variance-and-standard-deviation}}
+
+The examples above show how the sample mean, range, variance and standard deviation are calculated from the sample of weight measures from 30 people. If we had information on the weight of the total population that the sample was drawn from, we could calculate all the summary statistics described above (for the sample) for the population.
+
+The equation for calculating the population mean is the same as that of sample mean, though now we denote the population mean as μ:
+
+\[ \mu = \frac{\sum{x}}{N} \]
+
+Where \(\sum{x}\) represents the sum of the values in the population, and \(N\) represents the total number of measurements in the population.
+
+To calculate the population variance (\(\sigma^2\)) and standard deviation(\(\sigma\)), we use a slightly modified version of the equation for \(s^2\):
+
+\[ \sigma^2 = \frac{\sum(x - \bar{x})^2}{N} \]
+
+with a population standard deviation of: \(\sigma = \sqrt{\sigma^2}\).
+
+In practice, we rarely have the information for the entire population to be able to calculate the population mean and standard deviation. Theoretically, however, these statistics are important for two main purposes:
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\tightlist
+\item
+  the characteristics of the normal distribution (the most important probability distribution discussed in later modules) are defined by the population mean and standard deviation;
+\item
+  while calculating sample sizes (discussed in later modules) we need information about the population standard deviation, which is usually obtained from the existing literature.
+\end{enumerate}
+
+\hypertarget{using-graphs-to-display-the-centre-and-spread-of-the-data}{%
+\section{Using graphs to display the centre and spread of the data}\label{using-graphs-to-display-the-centre-and-spread-of-the-data}}
+
+As well as calculating measures of central tendency and spread to describe the characteristics of the data, a graphical plot is very helpful to better understand the characteristics and distribution of the measurements obtained. \emph{Histograms} and \emph{box plots} are excellent ways to graphically display continuous data.
+
+\hypertarget{frequency-histograms}{%
+\subsection{Frequency histograms}\label{frequency-histograms}}
+
+A histogram that plots the frequency of the grouped observations is called a frequency histogram. Some features of a frequency histogram:
+
+\begin{itemize}
+\tightlist
+\item
+  The area under each rectangle is proportional to the frequency
+\item
+  The rectangles are drawn without gaps between them (unlike a bar graph)
+\item
+  The data are `binned' into discrete intervals (of (usually of equal width)
+\item
+  The mid-point of the histogram represents the centre (mean, median) of the data
+\end{itemize}
+
+If the rectangles are symmetrically distributed about the middle of the histogram, we say that the data are symmetric, and the mean and median will be approximately equal.
+
+If the histogram has a longer tail to the right, then the data are said to be positively skewed (or skewed to the right), and the mean will be greater than the median.
+
+If the histogram has an extended tail to the left, then the data are negatively skewed (or skewed to the left) and the mean will be smaller than the median.
+
+\begin{quote}
+The skewness of a distribution is defined by the location of the longer tail, not the location of the peak of the data.
+\end{quote}
+
+Figure 1.X presents two histograms from the PBC data from the Introduction to Stata exercise: for age and serum bilirubin. We can see that the distribution for age is roughly symmetric, while the distribution for serum bilirubin is highly positively skewed (or skewed to the right).
+
+\begin{figure}
+\includegraphics[width=20.14in]{/Users/td/Documents/Repos/phcm9795/img/mod01/hist-symmetric-skewed} \caption{Histogram of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-6}
+\end{figure}
+
+\hypertarget{boxplots}{%
+\subsection{Boxplots}\label{boxplots}}
+
+Another useful way to inspect the distribution of data is by using a box plot. In a box plot:
+
+\begin{itemize}
+\tightlist
+\item
+  the line across the box shows the median value
+\item
+  the limits of the box show the 25-75\% range (i.e.~the inter-quartile range (IQR) where the middle 50\% of the data lie)
+\item
+  the bars (or whiskers) indicate the most extreme values (highest and lowest) that fall within 1.5 times the interquartile range from each end of the box
+
+  \begin{itemize}
+  \tightlist
+  \item
+    the upper whisker is the highest value falling within 75th percentile plus 1.5 × IQR
+  \item
+    the lower whisker is the lowest value falling within 25th percentile minus 1.5 × IQR
+  \end{itemize}
+\item
+  any values in the dataset lying outside the whiskers are plotted individually.
+\end{itemize}
+
+If the data are symmetric, the line across the box (the median value) will be in the centre of the box, and the tails will be roughly equal.
+
+Figure 1.X presents two boxplots from the PBC data: for age and serum bilirubin. We can see that the boxplot for age has roughly equal tails, and the median (the horizontal line) lies roughly in the middle of the interquartile range (the shaded box). It would be reasonable to assume that age follows a symmetric distribution from this plot. The boxplot for serum bilirubin shows a much longer upper tail, and a median much closer to the bottom of the shaded box than the middle. The boxplot also shows a number of points above the 75th percentile plus 1.5 × IQR. As the upper tail is longer than the lower tail, this distribution is positively skewed.
+
+\begin{figure}
+\includegraphics[width=20.14in]{/Users/td/Documents/Repos/phcm9795/img/mod01/hist-symmetric-skewed} \caption{Box plot of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-7}
+\end{figure}
+
+\hypertarget{how-to-report-summary-statistics---update}{%
+\section{How to report summary statistics - UPDATE}\label{how-to-report-summary-statistics---update}}
+
+When reporting summary statistics there are some formal rules regarding how they should be reported, regarding the number of decimal places that are used. The most important rule to follow is not to imply that there is a greater precision than can be measured by the instrument used to collect the information e.g.~we cannot say that the mean blood pressure is 100.24 mmHg if the machine only measures in 1 mmHg intervals. Note that units of variables should be given (and if needed method of calculation or derivation).
+
+When reporting a mean, median or IQR, we would use the same number of decimal places as the measurements themselves. But when reporting variance or a standard deviation, it is acceptable to report these statistics with one decimal place more than the basic unit of the measurement. For example, we would report that the mean weight of the sample was 70.0 kg (SD 5.05). For skewness and kurtosis two decimal places are enough regardless of the decimal places in the original observations.
 
 \hypertarget{learning-activities}{%
 \chapter*{\texorpdfstring{\textbf{1} Learning Activities}{1 Learning Activities}}\label{learning-activities}}
@@ -399,9 +1420,9 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-1}}
 \addcontentsline{toc}{section}{Readings}
 
-\citet{kirkwood_sterne01}; Chapters 5, 14 and 15.
+\citet{kirkwood_sterne01a}; Chapters 5, 14 and 15.
 
-\citet{bland15}; Chapters 6 and 7.
+\citet{bland15b}; Chapters 6 and 7.
 
 \hypertarget{introduction}{%
 \section{Introduction}\label{introduction}}
@@ -941,8 +1962,8 @@ and the variance is:
 \[ var(X) = n \times p \times (1-p) \]
 where n = the number of trials, and p = the probability of the event occurring (or success).
 
-\hypertarget{worked-example}{%
-\subsubsection{Worked example}\label{worked-example}}
+\hypertarget{worked-example-2}{%
+\subsubsection{Worked example}\label{worked-example-2}}
 
 A population-based survey conducted by the AIHW (2008) of a random sample of the Australian population estimated that in 2007, 19.8\% of the Australian population were current smokers.
 
@@ -1033,13 +2054,13 @@ Here, n=6, k=2 and p=0.198, giving the same answer as above: 0.903.
 The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \ref{fig:fig-2-1} and \ref{fig:fig-2-2} demonstrate this type of distribution.
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/dbp} \caption{Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey}\label{fig:fig-2-1}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/dbp} \caption{Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey}\label{fig:fig-2-1}
 \end{figure}
 
 Source: \url{https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure} (accessed March 2021)
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/heights} \caption{Distribution of male and female heights}\label{fig:fig-2-2}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/heights} \caption{Distribution of male and female heights}\label{fig:fig-2-2}
 \end{figure}
 
 Source: \url{https://ourworldindata.org/human-height} (accessed March 2021)
@@ -1053,7 +2074,7 @@ The Normal distribution is characterised by two parameters: the mean (\(\mu\)) a
 For a Normal distribution, about 68\% of the observations lie between \(- \sigma\) and \(\sigma\) of the mean; 95\% of the observations lie between \(−1.96 \times \sigma\) and \(1.96 \times \sigma\) from the mean; and almost all the observations (99.7\%) lie between \(-3 \times \sigma\) and \(3 \times \sigma\) (Figure \ref{fig:fig-2-3}). Also note that the mean is the same as the median, as the curve is symmetric about its mean.
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/normal-curve} \caption{Characteristics of a Normal distribution}\label{fig:fig-2-3}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/normal-curve} \caption{Characteristics of a Normal distribution}\label{fig:fig-2-3}
 \end{figure}
 
 \hypertarget{the-standard-normal-distribution}{%
@@ -1069,8 +2090,8 @@ The z-score is simply how far an observation lies from the population mean value
 
 We can use z-scores to estimate probabilities, as shown in Worked Example 2.2.
 
-\hypertarget{worked-example-1}{%
-\subsubsection{Worked Example}\label{worked-example-1}}
+\hypertarget{worked-example-3}{%
+\subsubsection{Worked Example}\label{worked-example-3}}
 
 This example extends the example of diastolic blood pressure shown in Figure 2.1. Assume that the mean diastolic blood pressure for men is 77.9 mmHg, with a standard deviation of 11. What is the probability that a man selected at random will have high blood pressure (i.e.~diastolic blood pressure ≥ 90)?
 
@@ -1086,13 +2107,13 @@ Using a table of Z-scores (Appendix Table 1), we find the probability that a per
 An extract from Appendix Table 1 is shown in Figure \ref{fig:fig-2-4} to demonstrate how to find the probability from the look-up table.
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/z-table-extract} \caption{Obtaining a probability from a table of Standard Normal distribution}\label{fig:fig-2-4}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/z-table-extract} \caption{Obtaining a probability from a table of Standard Normal distribution}\label{fig:fig-2-4}
 \end{figure}
 
 Figure \ref{fig:fig-2-5} shows the probability of a diastolic blood pressure of 90 mmHg or more in the population for a Z-score of greater than 1.1 on a Standard Normal distribution.
 
 \begin{figure}
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/z-dist-shaded} \caption{Area under the Standard Normal curve (as probability) for Z > 1.1}\label{fig:fig-2-5}
+\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/z-dist-shaded} \caption{Area under the Standard Normal curve (as probability) for Z > 1.1}\label{fig:fig-2-5}
 \end{figure}
 
 Apart from calculating probabilities, Z-scores are most useful for comparing measurements taken from a sample to a known population distribution. It allows measurements to be compared to one another despite being on different scales or having different predicted values.
@@ -1204,7 +2225,7 @@ For your information: There are formal tests in Stata that test for Normality. T
 The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure \ref{fig:fig-2-6}) for symmetry and outliers at either end of the distribution.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/weights-hist-boxplot} \caption{Histogram and boxplot of weight of 30 students attending a gym}\label{fig:fig-2-6}
+\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/weights-hist-boxplot} \caption{Histogram and boxplot of weight of 30 students attending a gym}\label{fig:fig-2-6}
 \end{figure}
 
 A summary of how to explore Normality is shown in Table 2.5.
@@ -1281,7 +2302,7 @@ In practice, most parametric summary statistics are quite robust to minor deviat
 When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure \ref{fig:fig-2-7}.
 
 \begin{figure}
-\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod2/los-hist-boxplot} \caption{Histogram and boxplot of length of stay}\label{fig:fig-2-7}
+\includegraphics[width=0.8\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/los-hist-boxplot} \caption{Histogram and boxplot of length of stay}\label{fig:fig-2-7}
 \end{figure}
 
 In the histogram of Figure \ref{fig:fig-2-7}, there is a tail of values to the right, so we would conclude that the distribution is skewed to the right. In the boxplot, the whiskers appear to be fairly symmetric, but there are some unusual values (denoted by dots) above the box and its whiskers. Stata defines these unusual values as being more than 1.5 times the IQR from the edge of the box.
@@ -1450,9 +2471,9 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-2}}
 \addcontentsline{toc}{section}{Readings}
 
-\citet{kirkwood_sterne01}; Chapters 4 and 6.
+\citet{kirkwood_sterne01a}; Chapters 4 and 6.
 
-\citet{bland15}; Sections 3.3 and 3.4, 8.1 to 8.3.
+\citet{bland15b}; Sections 3.3 and 3.4, 8.1 to 8.3.
 
 \citet{juul_frydenberg14}; Sections 11.5 to 11.7.
 
@@ -1735,11 +2756,11 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-3}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01a}; Chapter 8.
+\citet{kirkwood_sterne01a}; Chapter 8.
 
-\citep{bland15b}; Sections 9.1 to 9.7; Sections 10.1 and 10.2.
+\citet{bland15b}; Sections 9.1 to 9.7; Sections 10.1 and 10.2.
 
-\citep{acock10}; Section 7.4.
+\citet{acock10}; Section 7.4.
 
 \hypertarget{introduction-2}{%
 \section{Introduction}\label{introduction-2}}
@@ -1876,7 +2897,7 @@ For example, consider a study to measure the rate of hospital admissions. We may
 The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.
 
 \begin{figure}
-\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/practical-vs-statistical-sig} \caption{Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)}\label{fig:practical-importance}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod04/practical-vs-statistical-sig} \caption{Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)}\label{fig:practical-importance}
 \end{figure}
 
 \hypertarget{errors-in-significance-testing}{%
@@ -1914,7 +2935,7 @@ It is important to remember that the 95\% CI is estimated from the standard erro
 The 95\% CI tells us the region in which we are 95\% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95\% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure 4.2. If the zero value lies outside the 95\% confidence interval, we can conclude that there is a true difference between the groups because we are 95\% confident that the difference does not encompass a zero value as shown in the lower two estimates in Figure 4.2.
 
 \textbackslash begin\{figure\}
-\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/cis-overlapping-null} \textbackslash caption\{Using 95\% CIs as informal hypothesis tests\}\label{fig:cis-overlapping-null}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod04/cis-overlapping-null} \textbackslash caption\{Using 95\% CIs as informal hypothesis tests\}\label{fig:cis-overlapping-null}
 \textbackslash end\{figure\}
 
 For relative risk and odds ratio measures, when the 95\% CI includes the value of 1 it indicates that we can be 95\% confident that the true RR or OR of the association between the study factor and outcome factor includes 1.0 in the source population. This indicates little evidence of an association between the study factor and the outcome factor, e.g.~if the results of a study were reported as RR = 1.10 (95\% CI 0.95 to 1.25). The P-value can be calculated to assess this (discussed in Module 7).
@@ -1930,8 +2951,8 @@ In a one-sample t-test, a t-value is computed as the sample mean divided by the 
 
 The principles of this test can be used for applications such as testing whether the mean of a sample is different from a known population mean, for example testing whether the IQ of a group of children is different from the population mean of 100 IQ points or testing whether the number of average hours worked in an adult sample is different from the population mean of 38 hours.
 
-\hypertarget{worked-example-2}{%
-\subsection{Worked Example}\label{worked-example-2}}
+\hypertarget{worked-example-4}{%
+\subsection{Worked Example}\label{worked-example-4}}
 
 The mean diastolic blood pressure (BP) of the general US population is known to be 71 mm Hg. The diastolic blood pressure of 733 female Pima native Americans was measured and a histogram showed that the data were approximately normally distributed. The mean diastolic blood pressure in the sample was 72.4 mm Hg with a standard deviation of 12.4 mm Hg.
 
@@ -1967,13 +2988,13 @@ Therefore, we can conclude that the mean diastolic BP of the female Pima people 
 Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05.
 
 \begin{figure}
-\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/two-tailed-test} \caption{P-value for a 2-tailed test}\label{fig:two-tailed-test}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod04/two-tailed-test} \caption{P-value for a 2-tailed test}\label{fig:two-tailed-test}
 \end{figure}
 
 Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e.~a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved. The P value for a one tailed test would be 0.025 i.e.~the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4.
 
 \begin{figure}
-\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod4/one-tailed-tests} \caption{P-value for 1-tailed tests}\label{fig:one-tailed-tests}
+\includegraphics[width=400pt]{/Users/td/Documents/Repos/phcm9795/img/mod04/one-tailed-tests} \caption{P-value for 1-tailed tests}\label{fig:one-tailed-tests}
 \end{figure}
 
 If a one tailed P value is reported, and is considered to be an invalid decision, it is usually easily converted to a two tailed value by doubling its numeric value. For example, for the same test statistic and sample size:
@@ -2134,13 +3155,13 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-4}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}; Sections 7.1 to 7.5.
+\citet{kirkwood_sterne01a}; Sections 7.1 to 7.5.
 
-\citep{bland15}; Section 10.3.
+\citet{bland15b}; Section 10.3.
 
-Acock A. A Gentle Introduction to Stata, 3rd Edition (2012): Section 7.7, 7.8.
+\citet{acock10}; Section 7.7, 7.8.
 
-Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
+\citet{juul_frydenberg14}; Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
 
 \hypertarget{introduction-3}{%
 \section{Introduction}\label{introduction-3}}
@@ -2201,8 +3222,8 @@ The third assumption of normality is important although t-tests are robust to so
 
 The final assumption is homogeneity of variance between the groups. This can be verified by checking that the standard deviation (square root of the variance) of each group is similar. If the variances are different, then Welch's t-test, an alternative version of the t-test can be used.
 
-\hypertarget{worked-example-3}{%
-\subsection{Worked Example}\label{worked-example-3}}
+\hypertarget{worked-example-5}{%
+\subsection{Worked Example}\label{worked-example-5}}
 
 In an observational study of a random sample of 100 full term babies from the community, birth weight and gender were measured. There were 44 male babies and 56 female babies in the sample. The research question asked whether there was a difference in birth weights between boys and girls. The two groups are independent of each other and therefore an independent samples t-test can be used to test the null hypothesis that there is no difference in weight between the genders.
 
@@ -2536,13 +3557,13 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-5}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}; Chapter 16
+\citet{kirkwood_sterne01a}; Chapter 16
 
-\citep{bland15}; Section 8.6, Section 13.7
+\citet{bland15b}; Section 8.6, Section 13.7
 
-\citep{juul_frydenberg14}; Section 11.4.
+\citet{juul_frydenberg14}; Section 11.4.
 
-\citep{acock10}; Section 7.5.
+\citet{acock10}; Section 7.5.
 
 \hypertarget{introduction-4}{%
 \section{Introduction}\label{introduction-4}}
@@ -2580,8 +3601,8 @@ where the standard error of a proportion is computed as:
 
 \[\text{SE}(p) = \sqrt{\frac{p \times (1 - p)}{n}}\]
 
-\hypertarget{worked-example-4}{%
-\subsection{Worked Example}\label{worked-example-4}}
+\hypertarget{worked-example-6}{%
+\subsection{Worked Example}\label{worked-example-6}}
 
 In a cross-sectional study of children living in a rural village, 47 children from a random sample of 215 children were found to have scabies. Here \(n=215\) and \(k=47\), so the proportion of children with scabies is estimated as:
 
@@ -2666,8 +3687,8 @@ z = \frac{(p_{population} - p_{sample})}{\text{SE}(p_{population})}
 
 This z-statistic is then compared to the standard Normal distribution to calculate the P-value.
 
-\hypertarget{worked-example-5}{%
-\subsection{Worked Example}\label{worked-example-5}}
+\hypertarget{worked-example-7}{%
+\subsection{Worked Example}\label{worked-example-7}}
 
 \[
 \begin{aligned}
@@ -2685,8 +3706,8 @@ The P-value for the test above can be obtained from a Normal distribution table 
 
 We can use the binomial distribution to obtain an exact P-value for testing a single proportion. Historically, this was a time consuming process with much hand calculation. These days, Stata and other statistical software performs the calculations quickly and efficiently, and is the preferred method.
 
-\hypertarget{worked-example-6}{%
-\subsection{Worked example}\label{worked-example-6}}
+\hypertarget{worked-example-8}{%
+\subsection{Worked example}\label{worked-example-8}}
 
 A national census in a country shows that 20\% of the population are smokers. A survey of a community within the country that has received a public health anti-smoking intervention shows that 54 of 300 people sampled are smokers (18\%). The research question is whether this proportion of smoking in the community is lower than the population prevalence of smoking of 20\%. The Stata file Example\_6.3.dta contains the data for this example. In the data file, smokers are coded as 1 and non-smokers are coded as 0.
 
@@ -3052,8 +4073,8 @@ When both the outcome variable and the exposure variable are categorical, a chi-
 
 In this Module, we also include tests for a difference in proportion for paired data.
 
-\hypertarget{worked-example-7}{%
-\subsection{Worked Example}\label{worked-example-7}}
+\hypertarget{worked-example-9}{%
+\subsection{Worked Example}\label{worked-example-9}}
 
 We are using the randomised controlled trial as given in Worked Example 6.4 on the nauseating side effect of a drug.
 
@@ -3165,8 +4186,8 @@ For the data being considered from Worked Example 7.1 all cells have an expected
 
 Chi-squared tests can also be used for tables larger than a 2×2 dimension. When a contingency table larger than 2×2 is used, say a 4×2 table if there were 4 exposure groups, the Pearson's chi-squared can still be used.
 
-\hypertarget{worked-example-8}{%
-\subsection{Worked Example}\label{worked-example-8}}
+\hypertarget{worked-example-10}{%
+\subsection{Worked Example}\label{worked-example-10}}
 
 The Stata file Example\_7.2.dta contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. {[}Command: tab allergy\_severity sex, col{]}
 
@@ -3456,13 +4477,10 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-7}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}; Chapter 10
-
-\citep{bland15}; Chapter 11
-
-\citep{acock10}; Chapter 8.
-
-\citep{juul_frydenberg14}; Section 12.1.
+\citet{kirkwood_sterne01a}; Chapter 10
+\citet{bland15b}; Chapter 11
+\citet{acock10}; Chapter 8.
+\citet{juul_frydenberg14}; Section 12.1.
 
 \hypertarget{introduction-6}{%
 \section{Introduction}\label{introduction-6}}
@@ -3478,8 +4496,8 @@ Although both correlation coefficients and regression models can be used to desc
 
 We use correlation to measure the strength of a linear relationship between two variables. Before calculating a correlation coefficient, a scatter plot should first be obtained to give an understanding of the nature of the relationship between the two variables.
 
-\hypertarget{worked-example-9}{%
-\subsection{Worked Example}\label{worked-example-9}}
+\hypertarget{worked-example-11}{%
+\subsection{Worked Example}\label{worked-example-11}}
 
 The Stata file Example\_8.1.dta has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45\%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure \texttt{\textbackslash{}@ref(fig:scatter-plot))}. This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.
 
@@ -3963,13 +4981,10 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-8}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01a} Chapter 13.
-
-\citep{bland15b} Chapter 12.
-
-\citep{juul_frydenberg14} Section 11.5.
-
-\citep{acock10} Section 7.11.
+\citet{kirkwood_sterne01a}; Chapter 13.
+\citet{bland15b}; Chapter 12.
+\citet{juul_frydenberg14}; Section 11.5.
+\citet{acock10}; Section 7.11.
 
 \hypertarget{introduction-7}{%
 \section{Introduction}\label{introduction-7}}
@@ -3981,8 +4996,8 @@ In general, parametric statistics are preferred for reporting data because the s
 
 When a variable has a skewed distribution, one possibility is to transform the data to a new variable to try and obtain a normal or near normal distribution. Methods to transform non-normally distributed data include logarithmic transformation of each data point, or using the square root or the square or the inverse (i.e.~1/x) etc.
 
-\hypertarget{worked-example-10}{%
-\subsection{Worked Example}\label{worked-example-10}}
+\hypertarget{worked-example-12}{%
+\subsection{Worked Example}\label{worked-example-12}}
 
 We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example\_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure 9.1. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
@@ -4400,8 +5415,8 @@ If the differences between two paired measurements are not normally distributed,
 
 In this test, the absolute differences between the paired scores are ranked and the difference scores that are equal to zero (i.e.~scores where there is no difference between the pairs) are excluded. Thus, the test is not suitable when a large proportion of the differences are zero because the effective sample size is reduced considerably.
 
-\hypertarget{worked-example-11}{%
-\subsection{Worked Example}\label{worked-example-11}}
+\hypertarget{worked-example-13}{%
+\subsection{Worked Example}\label{worked-example-13}}
 
 A crossover trial is done to compare symptom scores for two drugs in 11 people with arthritis (higher scores indicate more severe symptoms). The data are contained in Stata datafile file Example\_9.2.dta. The data are shown in Table 9.2. The descriptive statistics indicate that the differences are not normally distributed. You can use the Explore function in Stata to determine this.
 
@@ -4840,9 +5855,8 @@ By the end of this module you will be able to:
 \section*{Readings}\label{readings-9}}
 \addcontentsline{toc}{section}{Readings}
 
-\citep{kirkwood_sterne01}; Chapter 35.
-
-\citep{bland15}; Chapter 18.
+\citet{kirkwood_sterne01a}; Chapter 35.
+\citet{bland15b}; Chapter 18.
 
 \hypertarget{further-readings-for-interest}{%
 \subsection*{Further readings (for interest)}\label{further-readings-for-interest}}
@@ -5009,8 +6023,8 @@ Table 10.1 is an abbreviated look-up table that we can use to estimate the sampl
 \end{table}
  
 
-\hypertarget{worked-example-12}{%
-\subsection{Worked Example}\label{worked-example-12}}
+\hypertarget{worked-example-14}{%
+\subsection{Worked Example}\label{worked-example-14}}
 
 A descriptive cross-sectional study is designed to measure the prevalence of bronchitis in children age 0-2 years with a 95\% CI of \(\pm\) 4\%. The prevalence is expected to be 20\%. From the table, a sample size of at least 385 will be required for the width of the 95\% CI to be \(\pm\) 4\% (i.e.~the reported precision of the summary statistic will be 20\% (95\% CI 16\% to 24\%)).
 
@@ -5066,8 +6080,8 @@ The significance level, or α level, is the level at which the P value of a test
 
 The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example 10.2.
 
-\hypertarget{worked-example-13}{%
-\subsection{Worked Example}\label{worked-example-13}}
+\hypertarget{worked-example-15}{%
+\subsection{Worked Example}\label{worked-example-15}}
 
 There is a hypothesis that the use of the oral contraceptive (OC) pill in premenopausal women can increase systolic blood pressure. A study was planned to test this hypothesis using a two sided t-test. The investigators are interesting in detecting an increase of at least 5 mm Hg systolic blood pressure in the women using OC compared to the non-OC users with 90\% power at a 5\% significance level. A pilot study shows that the SD of systolic blood pressure in the target group is 25 mm Hg and the mean systolic blood pressure of non-OC user women is 90 mm Hg. What is the minimum number of women in each group that need to be recruited for the study to detect this difference?
 
@@ -5143,8 +6157,8 @@ The statistical test for deciding if there is a significant difference between t
 
 Other than the power and alpha required for the test, the expected prevalence or incidence rate of the outcome factor needs to be estimated for each of the two groups being compared, based on what is known from other studies or what is expected. Occasionally, we may not know the expected proportion in one of the groups, e.g.~in a randomised control trial of a novel intervention. In the sample size calculation for such a study, we should instead justify the minimum expected difference between the proportions based on what is important from a clinical or public health perspective. Based on the minimum difference, we can then derive the expected proportion for both groups. Note that the smaller the difference, the larger the sample size required.
 
-\hypertarget{worked-example-14}{%
-\subsection{Worked Example}\label{worked-example-14}}
+\hypertarget{worked-example-16}{%
+\subsection{Worked Example}\label{worked-example-16}}
 
 If we expect that the prevalence of smoking in two comparison groups (e.g.~males and females) will be 35\% and 20\%. The sample size required in each group to show that the prevalences are significantly different at P\textless0.05 with 80\% power is shown in Output 10.3.
 
@@ -5187,8 +6201,8 @@ The relative risk is used to describe the association between an exposure and an
 
 In general, a RR of 2.0 or greater is considered to be of public health importance. However, a smaller RR can be important when exposure is high, for example say the relative risk of respiratory infection among young children with a parent who smokes is very small at approximately 1.2 but 25\% of children are exposed to smoking in their home. The high exposure rate leads to a very large number of children who have preventable respiratory infections across the community.
 
-\hypertarget{worked-example-15}{%
-\subsection{Worked Example}\label{worked-example-15}}
+\hypertarget{worked-example-17}{%
+\subsection{Worked Example}\label{worked-example-17}}
 
 A study is planned to investigate the effect of an environmental exposure on the incidence of a certain common disease. In the general (unexposed) population the incidence rate of the disease is 50\% and it is assumed that the incidence rate would be 75\% in the exposed population. Thus the relative risk of interest would be 1.5 (i.e.~0.75 / 0.50). We want to detect this effect with 90\% power at a 5\% level of significance. Using the power twoproportions command, Output 10.4 is obtained.
 
@@ -5227,8 +6241,8 @@ If we are designing a case-control study, the appropriate measure of effect is a
 - the desired level of significance (usually 0.05);
 - the desired power of the study (usually 80\% or 90\%).
 
-\hypertarget{worked-example-16}{%
-\subsection{Worked Example}\label{worked-example-16}}
+\hypertarget{worked-example-18}{%
+\subsection{Worked Example}\label{worked-example-18}}
 
 A case-control study is designed to examine an association between an exposure and outcome factor. Existing literature shows that 30\% of the controls are expected to be exposed. We want to detect a minimum OR of 2.0 with 90\% power and 5\% level of significance.
 
@@ -5427,7 +6441,7 @@ We may want to reduce the number of cases required, by selecting 2 controls for 
 
 This can be visualised graphically, as in Figure 10.1.
 
-\includegraphics{_main_files/figure-latex/fig-unequal-controls-1.pdf}
+\includegraphics{PHCM9795_files/figure-latex/fig-unequal-controls-1.pdf}
 
 We can see that the number of cases required drops off if we go from 1 to 2 controls per case, and again from 2 to 3 controls per case. Once we go from 3 to 4 controls per case, we only reduce the number of cases by 8 (124 vs 116 cases), but at an increase of 91 (371 vs 462) controls. Clearly, this reduction in cases is not offset by the extra controls required.
 

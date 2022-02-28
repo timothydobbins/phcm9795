@@ -105,6 +105,14 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
 <li class="chapter" data-level="" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#readings"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="1.1" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#an-introduction-to-statistics"><i class="fa fa-check"></i><b>1.1</b> An introduction to statistics</a></li>
+<li class="chapter" data-level="1.2" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#descriptive-and-inferential-statistics"><i class="fa fa-check"></i><b>1.2</b> Descriptive and inferential statistics</a></li>
+<li class="chapter" data-level="1.3" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#variables"><i class="fa fa-check"></i><b>1.3</b> Variables</a></li>
+<li class="chapter" data-level="1.4" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#presenting-data"><i class="fa fa-check"></i><b>1.4</b> Presenting data</a></li>
+<li class="chapter" data-level="1.5" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#graphical-presentation"><i class="fa fa-check"></i><b>1.5</b> Graphical presentation</a></li>
+<li class="chapter" data-level="1.6" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#summary-statistics-and-variation-in-data"><i class="fa fa-check"></i><b>1.6</b> Summary statistics and variation in data</a></li>
+<li class="chapter" data-level="1.7" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#population-values-mean-variance-and-standard-deviation"><i class="fa fa-check"></i><b>1.7</b> Population values: mean, variance and standard deviation</a></li>
+<li class="chapter" data-level="1.8" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#using-graphs-to-display-the-centre-and-spread-of-the-data"><i class="fa fa-check"></i><b>1.8</b> Using graphs to display the centre and spread of the data</a></li>
+<li class="chapter" data-level="1.9" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#how-to-report-summary-statistics---update"><i class="fa fa-check"></i><b>1.9</b> How to report summary statistics - UPDATE</a></li>
 </ul></li>
 <li><a href="learning-activities.html#learning-activities"><strong>1</strong> Learning Activities</a></li>
 <li class="chapter" data-level="2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>2</b> Probability and probability distributions</a>
@@ -272,12 +280,517 @@ div.csl-indent {
 </div>
 <div id="readings" class="section level2 unnumbered">
 <h2>Readings</h2>
-<p><span class="citation">(<a href="#ref-kirkwood_sterne01" role="doc-biblioref"><strong>kirkwood_sterne01?</strong></a>)</span>; Chapters 2 and 3.</p>
-<p><span class="citation">(<a href="#ref-bland15" role="doc-biblioref"><strong>bland15?</strong></a>)</span>; Chapter 4.</p>
-<p><span class="citation">(<a href="#ref-acock10" role="doc-biblioref">Acock 2010</a>)</span>; Chapter 5.</p>
+<p><span class="citation">Kirkwood and Sterne (<a href="#ref-kirkwood_sterne01a" role="doc-biblioref">2001</a>)</span>; Chapters 2 and 3.</p>
+<p><span class="citation">Bland (<a href="#ref-bland15b" role="doc-biblioref">2015</a>)</span>; Chapter 4.</p>
+<p><span class="citation">Acock (<a href="#ref-acock10" role="doc-biblioref">2010</a>)</span>; Chapter 5.</p>
 </div>
 <div id="an-introduction-to-statistics" class="section level2" number="1.1">
 <h2><span class="header-section-number">1.1</span> An introduction to statistics</h2>
+<p>The dictionary of statistics (Upton and Cook, 2008) defines statistics simply as: “The science of collecting, displaying, and analysing data.”</p>
+<p>Statistics is a branch of mathematics, together with theoretical/pure mathematics and applied mathematics. Within the field of statistics, there are two main divisions: mathematical statistics and applied statistics. Mathematical statistics deals with development of new methods of statistical inference and requires detailed knowledge of abstract mathematics for its implementation. Applied statistics applies the methods of mathematical statistics to specific subject areas, such as business, psychology, medicine and sociology.</p>
+<p>Biostatistics can be considered as the “application of statistical techniques to the medical and health fields”. However, biostatistics sometimes overlaps with mathematical statistics. For instance, given a certain biostatistical problem, if the standard methods do not apply then existing methods must be modified to develop a new method.</p>
+<div id="scope-of-biostatistics" class="section level3" number="1.1.1">
+<h3><span class="header-section-number">1.1.1</span> Scope of Biostatistics</h3>
+<p>Research is essential in the practice of health care. Biostatistical knowledge helps health professionals in deciding whether to prescribe a new drug for the treatment of a disease or to advise a patient to give up drinking alcohol. To practice evidence-based healthcare, health professionals must keep abreast of the latest research, which requires understanding how the studies were designed, how data were collected and analysed, and how the results were interpreted. In clinical medicine, biostatistical methods are used to determine the accuracy of a measurement, the efficacy of a drug in treating a disease, in comparing different measurement techniques, assessing diagnostic tests, determining normal values, estimating prognosis and monitoring patients. Public health professionals are concerned about the administration of medical services or ensuring that an intervention program reduces exposure to certain risk factors for disease such as life-style factors (e.g. smoking, obesity) or environmental contaminants. Knowledge of biostatistics helps determine them make decisions by understanding, from research findings, whether the prevalence of a disease is increasing or whether there is a causal association between an environmental factor and a disease.</p>
+<p>The value of biostatistics is to transform (sometimes vast amounts of) data into meaningful information, that can be used to solve problems, and then be translated into practice (i.e. to inform public health policy and decision making). When undertaking research having a biostatistician as part of a multidisciplinary team from the outset, together with scientists, clinicians, epidemiologists, healthcare specialists is vital, to ensure the validity of the research being undertaken and that information is interpreted appropriately.</p>
+</div>
+</div>
+<div id="descriptive-and-inferential-statistics" class="section level2" number="1.2">
+<h2><span class="header-section-number">1.2</span> Descriptive and inferential statistics</h2>
+<p>To understand the concepts of statistics, it is important to realise there are two ways of using data: one is via descriptive statistics and the other is via inferential statistics.</p>
+<div id="descriptive-statistics" class="section level3" number="1.2.1">
+<h3><span class="header-section-number">1.2.1</span> Descriptive statistics</h3>
+<p>Descriptive statistics provide a ‘picture’ of the characteristics of a population. Examples of descriptive statistics based on the population are given below.</p>
+<div id="births" class="section level4" number="1.2.1.1">
+<h4><span class="header-section-number">1.2.1.1</span> Births</h4>
+<p>These examples on descriptive statistics consider all the births in Australia in 2016 (Australia’s mothers and babies 2016). The Australian Institute of Health and Welfare produce comprehensive reports annually on the characteristics of Australia’s mothers and babies of the most recent year of data from the National Perinatal Data Collection (NPDC).</p>
+<p>The headline from the report is “More women are giving birth”, which is then evidenced by the statement: In 2016, 310,247 women gave birth in Australia—an increase of 12% since 2006 (277,440 women). This example shows descriptive statistics that are presented as the actual number of women giving birth in 2016, together with a comparison with 2006.</p>
+<p>Further descriptive statistics provide summary information, about the average (mean) age of women giving birth in 2016 (30.5 years) and the median age (31 years).</p>
+<blockquote>
+<p>“Women are giving birth later in life”</p>
+</blockquote>
+<p>The average age of all women who gave birth continues to rise. It was 30.5 in 2016, compared with 29.8 in 2006. The median age was slightly higher, at 31 years in 2016.</p>
+</div>
+<div id="deaths" class="section level4" number="1.2.1.2">
+<h4><span class="header-section-number">1.2.1.2</span> Deaths</h4>
+<p>In another example, consider characteristics of all the deaths in Australia in a year (Australia’s health 2018).</p>
+<blockquote>
+<p>“In 2016, there were 158,504 deaths registered in Australia”</p>
+</blockquote>
+<p>The following table, from the Australia’s health 2018 report, presents the leading causes of death, by sex in 2016 <a href="references.html#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. The information from the table was also presented as a visualisation / infographic, demonstrating a simplistic, yet valuable way of presenting data and enabling comparison of causes of death for males and females. Noting that the leading cause of death for males in 2016 was coronary heart disease and, dementia and Alzheimer disease for females.</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 95%; margin-left: auto; margin-right: auto;  " id="tab:tab-1-1">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab-1-1">Table 1.1: </span> Leading causes of death, by sex, 2016</caption><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Rank</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Leading causes of death</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Males</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Females</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Coronary heart disease</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">10,870</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">8,207</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Dementia and Alzheimer disease</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4,679</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">8,447</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Cerebrovascular disease</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4,239</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">6,212</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Lung cancer</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5,023</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">3,387</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">5</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">COPD</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3,903</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">3,309</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Total</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">81,867</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">76,637</td></tr>
+</table>
+
+<p>Note: Leading causes of death are based on underlying causes of death and classified using an AIHW-modified version of Becker et al. 2006. Source: AIHW National Mortality Database.</p>
+<div class="figure"><span style="display:block;" id="fig:fig1-1"></span>
+<img src="img/mod01/cause-death.png" alt="Leading cause of death, by sex, 2016" width="400pt" />
+<p class="caption">
+Figure 1.1: Leading cause of death, by sex, 2016
+</p>
+</div>
+</div>
+</div>
+<div id="inferential-statistics" class="section level3" number="1.2.2">
+<h3><span class="header-section-number">1.2.2</span> Inferential statistics</h3>
+<p>Inferential statistics use data collected from a sample of the population, to make conclusions (inferences) about the whole population (that the sample was drawn from).</p>
+<p>The following example is about a sample of prisoners, from the National Prisoner Health Data Collection (NPHDC). The NPHDC is the main source of national data about the health of prisoners in Australia. It gathers information over a 2-week period from prison entrants, dischargees, prisoners visiting the prison health clinic, and prisoners taking prescribed medication.</p>
+<p>We have information about the population of prisoners, given as the number of prisoners in Australia’s prisons from the ABS website: <a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a></p>
+<blockquote>
+<p>At 30 June 2015: There were 36,134 prisoners in Australian prisons, an increase of 7% (2,345 prisoners) from 30 June 2014.</p>
+</blockquote>
+<p>Characteristics (sex, age group and Indigenous status) of the sample of prisoners from the NPHDC are given in the following table. We can use this information to make inferences about the whole population of prisoners that the sample was drawn from (The health of Australia’s prisoners 2015).</p>
+<div class="figure"><span style="display:block;" id="fig:fig1-2"></span>
+<img src="img/mod01/prisoner-health.png" alt="Characteristics of the sample of prisoners from the NPHDC" width="400pt" />
+<p class="caption">
+Figure 1.2: Characteristics of the sample of prisoners from the NPHDC
+</p>
+</div>
+</div>
+</div>
+<div id="variables" class="section level2" number="1.3">
+<h2><span class="header-section-number">1.3</span> Variables</h2>
+<p>A variable is simply a characteristic that is being measured or observed. For example, height, weight, eye colour, income, country of birth are all types of variables.</p>
+<p>When we are examining associations between variables, we may also use the terms: outcome variable (sometimes called a dependent variable) and explanatory variable (sometimes called an independent variable).</p>
+<p>For example, some rural areas of Bangladesh have a very high concentration of arsenic in the drinking water. Children who consume arsenic-contaminated water become malnourished. In this example, being malnourished is the outcome variable which is being caused, or influenced, by the exposure variable: arsenic-contaminated water. Thus, the outcome variable is the variable of interest which may change in response to some exposure.</p>
+<div id="types-of-data" class="section level3" number="1.3.1">
+<h3><span class="header-section-number">1.3.1</span> Types of data</h3>
+<p>Data are groups of information that represent the qualitative or quantitative attributes of variables or a group of variables. For example, the ages of students attending a university gym in a particular hour were recorded. The thirty ages are given below:</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:tab1-ages">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab1-ages">Table 1.2: </span> Age of 30 gym attendees</caption><col><col><col><col><col><col><tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">21</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">19</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">21</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">23</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">21</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">20</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">21</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">24</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">21</td></tr>
+</table>
+
+<p>The variable here is age and there are 30 observations recorded.</p>
+<p><strong>Quantitative</strong> data are numerical data that can be measured or counted such as age, weight, height, etc. These data can be discrete or continuous. Biostatistics mostly deals with quantitative variables or numerical data.</p>
+<p>A <strong>discrete</strong> variable can have only one of a distinct set of values. For a discrete variable, observations are based on a count where both ordering and magnitude are important, such that numbers represent actual measurable quantities rather than mere labels.</p>
+<p>For example, the number of cancer cases in a specified area emerging over a certain period, the number of motorbike accidents in Sydney, the number of times a woman has given birth, the number of beds in a hospital. It is noteworthy that natural ordering exists among the data points, that is, a hospital with 100 beds has more beds than a hospital with 75 beds. Moreover, a difference between 40 and 50 beds is the same as the difference between 80 and 90 beds. A discrete variable can take only non-negative integer values: a woman cannot have 5.7 births. However, we can calculate summaries of discrete variables that are not necessarily discrete. For instance, if one woman has given birth four times and another woman 5 times, then on average, these two women have 4.5 births.</p>
+<p><strong>Continuous</strong> data can take any values within a defined range.</p>
+<p>For example, age, height, weight or blood pressure, are continuous variables because we can make any divisions we want on them, and they can be measured as small as the instrument allows. As an illustration, if two people have the same blood pressure measured to the nearest millimetre of mercury, we may get a difference between them if the blood pressure is measured to the nearest tenth of millimetre. If they are still the same (to the nearest tenth of a millimetre), we can measure them with even finer gradations until we can see a difference.</p>
+<p><strong>Qualitative</strong> data have values that describe a ‘quality’ or ‘characteristic’. Categorical data are qualitative data and do not have measurable numeric values. These data can be nominal or ordinal.</p>
+<p>A <strong>nominal</strong> variable consists of unordered categories. For example, gender, race, ethnic group, religion, eye colour etc. Both the order and magnitude of a nominal variable are unimportant. If a nominal variable takes on one of two distinct categories, such as black or white then it is called dichotomous or binary variable. Other examples would be male or female; smoker or non-smoker; exposed to arsenic or not exposed. A number is often used to represent (label) each of the categories; for example, males could be assigned the value 1 and females 0; in the case of exposed and unexposed, exposed could be assigned 1 and unexposed 0. A nominal variable can also have more than two categories, such as blood group, with labels and categories as follows (1=Group A, 2=Group B, 3=Group AB, 4=Group O). Numbers are used for the sake of convenience of analysis when using a computer package.</p>
+<p><strong>Ordinal</strong> data consist of ordered categories where differences between categories are important, such as socioeconomic status (low, medium, high) or student evaluation rating could be classified according to their level of satisfaction, where 1 represents excellent, 2 is satisfactory and 3 is unsatisfactory. Here natural order exists among the categories, where a smaller number represents higher satisfaction.</p>
+</div>
+</div>
+<div id="presenting-data" class="section level2" number="1.4">
+<h2><span class="header-section-number">1.4</span> Presenting data</h2>
+<p>We will now look at ways to present frequency information numerically in tables and graphs.</p>
+<div id="frequency-tables" class="section level3" number="1.4.1">
+<h3><span class="header-section-number">1.4.1</span> Frequency tables</h3>
+<div id="worked-example" class="section level4" number="1.4.1.1">
+<h4><span class="header-section-number">1.4.1.1</span> Worked example</h4>
+<p>Consider the ages of 30 students visiting a university gym in a particular hour presented in Table <a href="introduction-to-statistics-and-presenting-data.html#tab:tab1-ages">1.2</a>. This information is difficult to interpret in its raw form, but becomes more clear if the ages are grouped in a frequency table as shown in Table <a href="introduction-to-statistics-and-presenting-data.html#tab:tab1-ages-freq1">1.3</a>.</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 60%; margin-left: auto; margin-right: auto;  " id="tab:tab1-ages-freq1">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab1-ages-freq1">Table 1.3: </span> Frequency of ages of students visiting a gym</caption><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Age</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Frequency</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">1</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">5</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">5</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">7</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">21</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">5</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">2</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">4</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">24</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">1</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Total</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">30</td></tr>
+</table>
+
+<p>The frequency is a count of the number of individuals of each age in the corresponding row. Three more columns can be added to the frequency table to give further insight: relative frequency, cumulative frequency and cumulative relative frequency (Table <a href="introduction-to-statistics-and-presenting-data.html#tab:tab1-ages-freq2">1.4</a>).</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tab1-ages-freq2">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab1-ages-freq2">Table 1.4: </span> Frequency of ages of students visiting a gym</caption><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Age</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Frequency</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Relative frequency (%)</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Cumulative frequency</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Cumulative relative frequency (%)</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">3</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">20</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">19</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">37</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">20</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">7</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">60</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">21</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">5</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">17</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">77</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">22</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">7</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">25</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">83</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">23</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">4</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">13</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">29</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">97</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">24</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">30</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">100</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Total</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">30</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">100</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;"></td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;"></td></tr>
+</table>
+
+<p>The relative frequency is the frequency expressed as a proportion or percentage of the total frequency. For example, 5 out of 30 students are aged 21, so the relative frequency is (5/30) <span class="math inline">\(\times\)</span> 100 = 16.7%.</p>
+<p>The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age. For example, the cumulative frequency of students at the medical centre aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) <span class="math inline">\(\times\)</span> 100 = 36.7%.</p>
+<p>The information presented in Table <a href="introduction-to-statistics-and-presenting-data.html#tab:tab1-ages-freq2">1.4</a> is called the frequency distribution of the variable age. Frequency distributions can also be presented for qualitative (categorical) data.</p>
+<p>For example, if we know that there are 12 males and 18 females in our data, this can be presented as in Table 1.4. We should not interpret the cumulative frequency for nominal data (e.g. gender, eye colour or cancer types) as these data cannot be ranked. However, we can calculate the cumulative frequency for ordinal data (e.g. student satisfaction level, cancer stage).</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tab1-sex-freq">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab1-sex-freq">Table 1.5: </span> Frequency of sex of students visiting a gym</caption><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Sex</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Frequency</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Relative frequency (%)</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">12</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">40</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">18</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">60</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Total</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">30</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">100</td></tr>
+</table>
+
+</div>
+</div>
+<div id="tables-with-more-than-one-variable" class="section level3" number="1.4.2">
+<h3><span class="header-section-number">1.4.2</span> Tables with more than one variable</h3>
+<p>So far, we have discussed one-way frequency tables, that is, tables that summarise one variable. We can summarise more than one variable in a table – called a cross tabulation, or a two-way (summarising two variables) table or multi-way (summarising more than two variables) table. However, tables become complex when more than two variables are incorporated (you may need to present the information as two tables or incorporate additional rows and columns).</p>
+<p>In our example above, if we have two categorical variables (e.g. sex with two categories male and female and BMI status with three categories Normal, Overweight and Obese) measured on each subject (student), we can classify the two variables simultaneously using two-way tables of frequency as shown in Table 1.5.</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 90%; margin-left: auto; margin-right: auto;  " id="tab:tab1-sex-bmi-freq">
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab1-sex-bmi-freq">Table 1.6: </span> Frequency of students visiting a gym by sex and BMI status*</caption><col><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Sex</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Not overweight</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Overweight</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Obese</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Total</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Male</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">1</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">9</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">2</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">12</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Female</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">11</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">6</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: right; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">17</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Total</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">12</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">15</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">3</td><td style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.8pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">29</td></tr>
+<tr>
+<td colspan="5" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.8pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">*BMI was missing for 1 student</td></tr>
+</table>
+
+</div>
+<div id="tables-containing-more-than-two-variables" class="section level3" number="1.4.3">
+<h3><span class="header-section-number">1.4.3</span> Tables containing more than two variables</h3>
+<p>In Section 1.2.2 [REF], characteristics of the sample of prisoners from the NPHDC were presented. This table contains information about sex, age group and Indigenous status from different groups of prisoners; prison entrants, discharges, and prisoners in custody. This type of condensed information is often found in reports and journal articles giving demographic information, by different groups considered in the study.</p>
+<p>We might also consider a table containing further pieces of information. The table presented in Figure X.X (from the health of Australia’s prisoners 2015 report) compares prison entrants and the general community by three variables: age group, Indigenous status, and highest level of completed education.</p>
+<p>Can you see any issues with the presentation of this table?</p>
+<div class="figure"><span style="display:block;" id="fig:fig-prison-education"></span>
+<img src="img/mod01/prisoner-education.png" alt="Highest level of completed education in prison entrants and the general community" width="400pt" />
+<p class="caption">
+Figure 1.3: Highest level of completed education in prison entrants and the general community
+</p>
+</div>
+<p>Source: Australian Institute of Health and Welfare 2015. The health of Australia’s prisoners 2015. Cat. no. PHE 207. Canberra: AIHW.</p>
+<p>Some issues in this table:</p>
+<ul>
+<li>The title of the table does not contain full information about the variables in the table;</li>
+<li>It is unclear how the percentages were calculated (which groupings added to 100%);</li>
+<li>The ages are not labelled as such, thus without reading the text in report it is unclear that these are age groupings.</li>
+</ul>
+</div>
+<div id="table-presentation-guidelines-woodward-2013" class="section level3" number="1.4.4">
+<h3><span class="header-section-number">1.4.4</span> Table presentation guidelines (Woodward, 2013)</h3>
+<ol style="list-style-type: decimal">
+<li>Each table (and figure) should be self-explanatory, i.e. the reader should be able to understand it without reference to the text in the body of the report.
+<ul>
+<li>This can be achieved by using complete, meaningful labels for the rows and columns and giving a complete, meaningful title.</li>
+<li>Footnotes can be used to enhance the explanation.</li>
+</ul></li>
+<li>Units of the variables (and if needed, method of calculation or derivation) should be given and missing records should be noted (e.g. in a footnote).</li>
+<li>A table should be visually uncluttered.
+<ul>
+<li>Avoid use of vertical lines.</li>
+<li>Horizontal lines should not be used in every single row, but they can be used to group parts of the table.</li>
+<li>Sensible use of white space also helps enormously; use equal spacing except where large spaces are left to separate distinct parts of the table.</li>
+<li>Different typefaces (or fonts) may be used to provide discrimination, e.g. use of bold type and/or italics.</li>
+</ul></li>
+<li>The rows and columns of each table should be arranged in a natural order to help interpretation. For instance, when rows are ordered by the size of the numbers they contain for a nominal variable, it is immediately obvious where relatively big and small contributions come from.</li>
+<li>Tables should have a consistent appearance throughout the report so that the paper is easy to follow (and also for an aesthetic appearance). Conventions for labelling and ordering should be the same (for both tables as well as figures) for ease of comparison of different tables (and figures).</li>
+<li>Consider if there is a particular table orientation that makes a table easier to read.</li>
+</ol>
+<p>Given the different possible formats of tables and their complexity, some further guidelines are given in this excellent reference: Boers M, Graphics and statistics for cardiology: designing effective tables for presentation and publication. Heart Published Online First: 13 October 2017. doi: 10.1136/heartjnl-2017-311581</p>
+</div>
+</div>
+<div id="graphical-presentation" class="section level2" number="1.5">
+<h2><span class="header-section-number">1.5</span> Graphical presentation</h2>
+<div id="bar-graphs" class="section level3" number="1.5.1">
+<h3><span class="header-section-number">1.5.1</span> Bar graphs</h3>
+<p>Using the PBC data from the Introduction to Stata exercise, we can present the distribution of Stage of Disease graphically using a bar graph. Bar graphs, which are suitable for plotting discrete or categorical variables, are defined by the fact that the bars do not touch.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-1"></span>
+<img src="img/mod01/pbc-bar.png" alt="Bar graph of stage of disease from PBC study" width="428" />
+<p class="caption">
+Figure 1.4: Bar graph of stage of disease from PBC study
+</p>
+</div>
+<p>Information from more than one variable can be presented as clustered or multiple bar chart (bars side-by-side) (Figure X.X). This type of graph is useful when examining changes in the categories separately, but also comparing the grouping variable between the main bar variable. Here we can see that Stage 3 and Stage 4 disease is the most common for both males and females, but there are many more females within each stage of disease.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-2"></span>
+<img src="img/mod01/pbc-bar-stage-sex.png" alt="Bar graph of stage of disease by sex from PBC study" width="428" />
+<p class="caption">
+Figure 1.5: Bar graph of stage of disease by sex from PBC study
+</p>
+</div>
+<p>An alternative bar graph is a stacked or composite bar graph, which retains the overall height for each category, but differentiates the bars by another variable (Figure 1.3).</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-3"></span>
+<img src="img/mod01/pbc-bar-stage-sex-stacked.png" alt="Stacked bar graph of stage of disease by sex from PBC study" width="427" />
+<p class="caption">
+Figure 1.6: Stacked bar graph of stage of disease by sex from PBC study
+</p>
+</div>
+<p>Finally, a stacked relative bar chart (Figure 1.4) displays the proportion of grouping variable for each bar, where each overall bar represents 100%. These graphs allow the reader to compare the proportions between categories. We can easily see from Figure 1.4 that the distribution of sex is similar across each stage of disease.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-4"></span>
+<img src="img/mod01/pbc-bar-stage-sex-stacked-relative.png" alt="Relative frequency of sex within stage of disease from PBC study" width="428" />
+<p class="caption">
+Figure 1.7: Relative frequency of sex within stage of disease from PBC study
+</p>
+</div>
+</div>
+<div id="line-graphs" class="section level3" number="1.5.2">
+<h3><span class="header-section-number">1.5.2</span> Line graphs</h3>
+<p>A line graph is effective to illustrate trends over time (e.g. change over several years). Let’s look at an example from cancer epidemiology.</p>
+<p>Cancer incidence is the number of new cases of cancer diagnosed in a population in a given time period. A useful comparison with the incidence rate is the mortality rate, revealing information about the deaths from cancer in the same period. Figure 1.5 shows the prostate cancer trend in the NSW male population in the period 1972-2014, specifically the age-standardised incidence and mortality rate per 100,000.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-5"></span>
+<img src="img/mod01/line-graph-prostate-cancer.png" alt="Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014" width="733" />
+<p class="caption">
+Figure 1.8: Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014
+</p>
+</div>
+<p>Source: The Cancer Institute NSW (2018) Cancer statistics NSW. <a href="https://www.cancer.nsw.gov.au/cancer-statistics-nsw" class="uri">https://www.cancer.nsw.gov.au/cancer-statistics-nsw</a> (Accessed: 24 Jan 2019).</p>
+<p>The age standardised incidence rate for prostate cancer increased steadily in the period 1972 – 1991, from 55.2 cases per 100,00 to 109.3 cases per 100,000. There were two notable peaks in incidence in the period 1972-2014. In particular, there was an increase between 1992-1994, and also between 2002-2009. Since 2009 (to 2014) the rates decreased from 198.9 per 100,000 to 148.2 per 100,000. Whilst the incidence rate for prostate cancer has fluctuated over the period, the age standardised mortality rate remained relatively stable (around 35 deaths per 100,000). Since 2009 the mortality rate appears to be decreasing and was at its lowest in 2014 at 22.1 per 100,000.</p>
+<p>[The increase in prostate cancer incidence in the early 1990’s occurred at a time when blood testing of men for Prostate Specific Antigen (PSA) became more widespread. The more recent peak in incidence in the early 2000’s maybe explained by PSA being increasingly used as a screening test for men who did not have symptoms of prostate cancer.]</p>
+</div>
+<div id="pie-charts" class="section level3" number="1.5.3">
+<h3><span class="header-section-number">1.5.3</span> Pie charts</h3>
+<p>An example of graphical presentation that we would recommend avoiding, is a pie chart. These are often used to present the proportion of each category that contributed to the total. However, their use is limited and sometimes misleading, and the same information can be presented as a stacked bar chart of proportions. Here are some reasons why not to use pie charts:</p>
+<ul>
+<li>Not ideal when there are many categories to compare</li>
+<li>The use of percentages is not appropriate when the sample size is small</li>
+<li>Can be misleading by using different size pies, different rotations and different colours to draw attention to specific groups</li>
+<li>3D and exploding bar charts further distort the effect of perspective and may confuse the reader</li>
+</ul>
+</div>
+<div id="graphical-presentation-guidelines" class="section level3" number="1.5.4">
+<h3><span class="header-section-number">1.5.4</span> Graphical presentation guidelines</h3>
+<p>Consider the following guidelines for the appropriate presentation of graphs in scientific journals and reports (Woodward, 2013).
+- Figures should be self-explanatory and have consistent appearance through the report.
+- A title should give complete information. Note that figure titles are usually placed below the figure, whereas for tables titles are given above the table.
+- Axes should be labelled appropriately
+- Units of the variables should be given in the labelling of the axes. Use footnotes to indicate any calculation or derivation of variables and to indicate missing values
+- If the Y-axis has a natural origin, it should be included, or emphasised if it is not included.
+- If graphs are being compared, the Y-axis should be the same across the graphs to enable fair comparison
+- Columns of bar charts should be separated by a space
+- Three dimensional graphs should be avoided unless the third dimension adds additional information</p>
+</div>
+</div>
+<div id="summary-statistics-and-variation-in-data" class="section level2" number="1.6">
+<h2><span class="header-section-number">1.6</span> Summary statistics and variation in data</h2>
+<p>We often collect measurements that are continuous in nature, that is measurements such as height, weight, time, blood pressure etc which can be measured accurately to one or more decimal places. A useful way of describing the continuous data is via summary statistics. These include measures to describe the distribution of data points via the central tendency (e.g. mean, median) and spread (e.g. standard deviation and inter quartile range). We also examine the data visually by graphing it using histograms and box plots.</p>
+<div id="mathematical-and-statistical-notation" class="section level3" number="1.6.1">
+<h3><span class="header-section-number">1.6.1</span> Mathematical and statistical notation</h3>
+<p>When computing summary statistics or using more formal statistical methods, mathematical and statistical notation is often used. Below are some of the common statistical terms and interpretation that will be used in the course and which are seen in many text books.</p>
+<table>
+<thead>
+<tr class="header">
+<th align="left">Notation</th>
+<th align="left">Interpretation</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left"><span class="math inline">\(x\)</span></td>
+<td align="left">An observation in your sample</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\sum x\)</span></td>
+<td align="left">Sum of all the observations</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(N\)</span></td>
+<td align="left">Total population size</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(n\)</span></td>
+<td align="left">Sample size</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\mu\)</span> (mu)</td>
+<td align="left">Population mean</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\sigma^2\)</span></td>
+<td align="left">Population variance</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(\sigma\)</span></td>
+<td align="left">Population standard deviation</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(\bar{x}\)</span></td>
+<td align="left">Sample mean</td>
+</tr>
+<tr class="odd">
+<td align="left"><span class="math inline">\(s^2\)</span></td>
+<td align="left">Sample variance</td>
+</tr>
+<tr class="even">
+<td align="left"><span class="math inline">\(s\)</span></td>
+<td align="left">Sample standard deviation</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="measures-of-central-tendency" class="section level3" number="1.6.2">
+<h3><span class="header-section-number">1.6.2</span> Measures of central tendency</h3>
+<div id="worked-example-1" class="section level4" number="1.6.2.1">
+<h4><span class="header-section-number">1.6.2.1</span> Worked example</h4>
+<p>In our random sample of 30 students attending a university gym on a given day, their weight in kilograms was measured (see below). Weight is a continuous measurement (similar to height, blood pressure etc) that in theory can be measured to infinitely small units, though in practice they can be measured accurately to one or two decimal places.</p>
+<p>We will use these data to look at measures of central tendency and spread of the data and other summary statistics.</p>
+<p>60.0<br />
+62.5 62.5 62.5<br />
+65.0 65.0 65.0<br />
+67.5 67.5 67.5 67.5 67.5<br />
+70.0 70.0 70.0 70.0 70.0 70.0
+72.5 72.5 72.5 72.5<br />
+75.0 75.0 75.0 75.0 75.0<br />
+77.5 77.5<br />
+80.0</p>
+</div>
+<div id="mean" class="section level4" number="1.6.2.2">
+<h4><span class="header-section-number">1.6.2.2</span> Mean</h4>
+<p>The most commonly used measure of the central tendency of the data is the mean value. The mean of a set of values is often referred to as the average of all the values. The mean (<span class="math inline">\(\bar{x}\)</span>) of a sample dataset is calculated using the following formula:</p>
+<p><span class="math display">\[\bar{x} = \frac{\sum x}{n}\]</span></p>
+<p>From the weights example: <span class="math inline">\(\bar{x}\)</span> = 2100/30 = 70.0. Thus, the mean weight of this sample is 70.0 kg</p>
+</div>
+<div id="median-and-mode" class="section level4" number="1.6.2.3">
+<h4><span class="header-section-number">1.6.2.3</span> Median and mode</h4>
+<p>Other measures of central tendency include the median and mode. The median is the true centre of the data, the value at which half of the measurements lie above it and half of the measurements lie below it.</p>
+<p>To estimate the median, the data are ordered from the lowest to highest values, and the middle value is used. If the middle value is between two data points (if there are an even number of observations), the median is an average of the two values.
+Using the weight example, the median would be 70.0 kg.</p>
+<p>For a set of eight exam results ranked in order:</p>
+<p>48 51 55 59 63 64 69 75</p>
+<p>The median is the average of the two middle observations: 59 and 63. So the median is (59+63)/2 = 61</p>
+<p>The mode is the most frequent value in the distribution, in the weight example this would be 70.0 kg as this value features most frequently. The mode is not used frequently.</p>
+</div>
+</div>
+<div id="describing-the-spread-of-the-data" class="section level3" number="1.6.3">
+<h3><span class="header-section-number">1.6.3</span> Describing the spread of the data</h3>
+<p>In addition to measuring the centre of the data, we also need a robust estimate of the spread of the data points.</p>
+<div id="range" class="section level4" number="1.6.3.1">
+<h4><span class="header-section-number">1.6.3.1</span> Range</h4>
+<p>The absolute measure of the spread of the data is the range, that is the difference between the highest and lowest values in the dataset.</p>
+<p>Range = highest data value – lowest data value</p>
+<p>Using the weights example, Range = 80.0 - 60.0 = 20.0 kg</p>
+<p>Note that while the range is 20.0 kg, the range is often reported as the actual lowest and highest values e.g. Range 60 to 80 kg.</p>
+<p>The range is not always ideal as it only describes the extreme values, without considering how the bulk of the data is distributed between them.</p>
+</div>
+<div id="variance-and-standard-deviation" class="section level4" number="1.6.3.2">
+<h4><span class="header-section-number">1.6.3.2</span> Variance and standard deviation</h4>
+<p>More useful statistics to describe the spread of the data around a mean value are the variance and standard deviation. These measures of variability depend on the difference between individual observations and the mean value (deviations). If all values are equal to the mean there would be no variability at all, all deviations would be zero; conversely large deviations indicate greater variability.</p>
+<p>One way of combining deviations in a single measure is to first square the deviations and then average the squares. Squaring is done because we are equally interested in negative deviations and positive deviations; if we averaged without squaring, negative and positive deviations would ‘cancel out’. This measure is called the variance of the set of observations. It is ‘the average squared deviation from the mean’. Because the variance is in ‘square’ units and not in the units of the measurement, a second measure is derived by taking the square root of the variance. This is the standard deviation (SD), and is the most commonly used measure of variability in practice, as it is a more intuitive interpretation since it is in the same units as the units of measurement (adapted from: Williams, 2015).</p>
+<p>The formula for the variance of a sample (<span class="math inline">\(s^2\)</span>) is:</p>
+<p><span class="math display">\[ s^2 = \frac{\sum(x - \bar{x})^2}{n-1} \]</span></p>
+<p>Note that the deviations are first squared before they are summed to remove the negative values; once summed they are divided by the sample size minus 1.</p>
+<p>The sample standard deviation is the square root of the of the sample variance:</p>
+<p><span class="math display">\[s = \sqrt{s^2}\]</span>
+For the worked weights example, we would calculate the sample variance:</p>
+<p><span class="math display">\[\begin{aligned}
+  s^2 &amp;= \frac{(60.0 - 70.0)^2 + (62.5 - 70.0)^2 + \dots + (80.0 - 70.0)^2}{30-1} \\
+      &amp;= \frac{737.5}{29} \\
+      &amp;= 25.43 \text{ kg}^2
+  \end{aligned}\]</span></p>
+<p>with a sample standard deviation: <span class="math inline">\(s = \sqrt{25.43} = 5.04 \text{ kg}\)</span>.</p>
+<p>Thus, in our sample of 30 students, we have an estimated mean weight of 70.0 kg, with a variance of 25.43 kg<sup>2</sup> and a standard deviation of 5.04 kg.</p>
+<p>Characteristics of the standard deviation
+- It is affected by every measurement
+- It is in the same units as the measurements
+- It can be converted to measures of precision (standard error and 95% confidence intervals) (Module 3)</p>
+<p>Interquartile range
+The inter-quartile range (IQR) describes the range of measurements in the central 50% of values around the median i.e. the bottom 25% and top 25% of values are discarded and only the values in the 25%-75% range are quoted. The IQR is the preferred measure of spread when the median has been used to describe central tendency.</p>
+<p>In the weights example the IQR would be 67.5 – 75.0 (i.e. the middle 50% of values).</p>
+</div>
+</div>
+</div>
+<div id="population-values-mean-variance-and-standard-deviation" class="section level2" number="1.7">
+<h2><span class="header-section-number">1.7</span> Population values: mean, variance and standard deviation</h2>
+<p>The examples above show how the sample mean, range, variance and standard deviation are calculated from the sample of weight measures from 30 people. If we had information on the weight of the total population that the sample was drawn from, we could calculate all the summary statistics described above (for the sample) for the population.</p>
+<p>The equation for calculating the population mean is the same as that of sample mean, though now we denote the population mean as μ:</p>
+<p><span class="math display">\[ \mu = \frac{\sum{x}}{N} \]</span></p>
+<p>Where <span class="math inline">\(\sum{x}\)</span> represents the sum of the values in the population, and <span class="math inline">\(N\)</span> represents the total number of measurements in the population.</p>
+<p>To calculate the population variance (<span class="math inline">\(\sigma^2\)</span>) and standard deviation(<span class="math inline">\(\sigma\)</span>), we use a slightly modified version of the equation for <span class="math inline">\(s^2\)</span>:</p>
+<p><span class="math display">\[ \sigma^2 = \frac{\sum(x - \bar{x})^2}{N} \]</span></p>
+<p>with a population standard deviation of: <span class="math inline">\(\sigma = \sqrt{\sigma^2}\)</span>.</p>
+<p>In practice, we rarely have the information for the entire population to be able to calculate the population mean and standard deviation. Theoretically, however, these statistics are important for two main purposes:</p>
+<ol style="list-style-type: decimal">
+<li>the characteristics of the normal distribution (the most important probability distribution discussed in later modules) are defined by the population mean and standard deviation;</li>
+<li>while calculating sample sizes (discussed in later modules) we need information about the population standard deviation, which is usually obtained from the existing literature.</li>
+</ol>
+</div>
+<div id="using-graphs-to-display-the-centre-and-spread-of-the-data" class="section level2" number="1.8">
+<h2><span class="header-section-number">1.8</span> Using graphs to display the centre and spread of the data</h2>
+<p>As well as calculating measures of central tendency and spread to describe the characteristics of the data, a graphical plot is very helpful to better understand the characteristics and distribution of the measurements obtained. <em>Histograms</em> and <em>box plots</em> are excellent ways to graphically display continuous data.</p>
+<div id="frequency-histograms" class="section level3" number="1.8.1">
+<h3><span class="header-section-number">1.8.1</span> Frequency histograms</h3>
+<p>A histogram that plots the frequency of the grouped observations is called a frequency histogram. Some features of a frequency histogram:</p>
+<ul>
+<li>The area under each rectangle is proportional to the frequency</li>
+<li>The rectangles are drawn without gaps between them (unlike a bar graph)</li>
+<li>The data are ‘binned’ into discrete intervals (of (usually of equal width)</li>
+<li>The mid-point of the histogram represents the centre (mean, median) of the data</li>
+</ul>
+<p>If the rectangles are symmetrically distributed about the middle of the histogram, we say that the data are symmetric, and the mean and median will be approximately equal.</p>
+<p>If the histogram has a longer tail to the right, then the data are said to be positively skewed (or skewed to the right), and the mean will be greater than the median.</p>
+<p>If the histogram has an extended tail to the left, then the data are negatively skewed (or skewed to the left) and the mean will be smaller than the median.</p>
+<blockquote>
+<p>The skewness of a distribution is defined by the location of the longer tail, not the location of the peak of the data.</p>
+</blockquote>
+<p>Figure 1.X presents two histograms from the PBC data from the Introduction to Stata exercise: for age and serum bilirubin. We can see that the distribution for age is roughly symmetric, while the distribution for serum bilirubin is highly positively skewed (or skewed to the right).</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-6"></span>
+<img src="img/mod01/hist-symmetric-skewed.png" alt="Histogram of age (left) and serum bilirubin (right) from PBC study data" width="725" />
+<p class="caption">
+Figure 1.9: Histogram of age (left) and serum bilirubin (right) from PBC study data
+</p>
+</div>
+</div>
+<div id="boxplots" class="section level3" number="1.8.2">
+<h3><span class="header-section-number">1.8.2</span> Boxplots</h3>
+<p>Another useful way to inspect the distribution of data is by using a box plot. In a box plot:</p>
+<ul>
+<li>the line across the box shows the median value</li>
+<li>the limits of the box show the 25-75% range (i.e. the inter-quartile range (IQR) where the middle 50% of the data lie)</li>
+<li>the bars (or whiskers) indicate the most extreme values (highest and lowest) that fall within 1.5 times the interquartile range from each end of the box
+<ul>
+<li>the upper whisker is the highest value falling within 75th percentile plus 1.5 × IQR</li>
+<li>the lower whisker is the lowest value falling within 25th percentile minus 1.5 × IQR</li>
+</ul></li>
+<li>any values in the dataset lying outside the whiskers are plotted individually.</li>
+</ul>
+<p>If the data are symmetric, the line across the box (the median value) will be in the centre of the box, and the tails will be roughly equal.</p>
+<p>Figure 1.X presents two boxplots from the PBC data: for age and serum bilirubin. We can see that the boxplot for age has roughly equal tails, and the median (the horizontal line) lies roughly in the middle of the interquartile range (the shaded box). It would be reasonable to assume that age follows a symmetric distribution from this plot. The boxplot for serum bilirubin shows a much longer upper tail, and a median much closer to the bottom of the shaded box than the middle. The boxplot also shows a number of points above the 75th percentile plus 1.5 × IQR. As the upper tail is longer than the lower tail, this distribution is positively skewed.</p>
+<div class="figure"><span style="display:block;" id="fig:fig-1-7"></span>
+<img src="img/mod01/hist-symmetric-skewed.png" alt="Box plot of age (left) and serum bilirubin (right) from PBC study data" width="725" />
+<p class="caption">
+Figure 1.10: Box plot of age (left) and serum bilirubin (right) from PBC study data
+</p>
+</div>
+</div>
+</div>
+<div id="how-to-report-summary-statistics---update" class="section level2" number="1.9">
+<h2><span class="header-section-number">1.9</span> How to report summary statistics - UPDATE</h2>
+<p>When reporting summary statistics there are some formal rules regarding how they should be reported, regarding the number of decimal places that are used. The most important rule to follow is not to imply that there is a greater precision than can be measured by the instrument used to collect the information e.g. we cannot say that the mean blood pressure is 100.24 mmHg if the machine only measures in 1 mmHg intervals. Note that units of variables should be given (and if needed method of calculation or derivation).</p>
+<p>When reporting a mean, median or IQR, we would use the same number of decimal places as the measurements themselves. But when reporting variance or a standard deviation, it is acceptable to report these statistics with one decimal place more than the basic unit of the measurement. For example, we would report that the mean weight of the sample was 70.0 kg (SD 5.05). For skewness and kurtosis two decimal places are enough regardless of the decimal places in the original observations.</p>
 
 </div>
 </div>
@@ -285,6 +798,12 @@ div.csl-indent {
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-acock10" class="csl-entry">
 Acock, Alan C. 2010. <em>A <span>Gentle Introduction</span> to <span>Stata</span>, <span>Third Edition</span></em>. 3rd edition. <span>College Station, Tex</span>: <span>Stata Press</span>.
+</div>
+<div id="ref-bland15b" class="csl-entry">
+Bland, Martin. 2015. <em>An <span>Introduction</span> to <span>Medical Statistics</span></em>. Fourth Edition. <span>Oxford, New York</span>: <span>Oxford University Press</span>.
+</div>
+<div id="ref-kirkwood_sterne01a" class="csl-entry">
+Kirkwood, Betty, and Jonathan Sterne. 2001. <em>Essentials of <span>Medical Statistics</span></em>. 2nd edition. <span>Malden, Mass</span>: <span>Wiley-Blackwell</span>.
 </div>
 </div>
             </section>
@@ -335,7 +854,7 @@ gitbook.start({
 "link": null,
 "text": null
 },
-"download": ["_main.pdf"],
+"download": ["PHCM9795.pdf"],
 "search": {
 "engine": "fuse",
 "options": null

@@ -14,13 +14,13 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-[@kirkwood_sterne01]; Sections 7.1 to 7.5.
+@kirkwood_sterne01a; Sections 7.1 to 7.5.
 
-[@bland15]; Section 10.3.
+@bland15b; Section 10.3.
 
-Acock A. A Gentle Introduction to Stata, 3rd Edition (2012): Section 7.7, 7.8.
+@acock10; Section 7.7, 7.8.
 
-Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
+@juul_frydenberg14; Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
 
 ## Introduction
 

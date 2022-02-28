@@ -24,3 +24,6 @@ Estimated sample sizes for a two-sample means test
 t test assuming sd1 = sd2 = sd
 Ho: m2 = m1 versus  Ha: m2 != m1
 ```
+@acock10
+@bland15b
+@kirkwood_sterne01a

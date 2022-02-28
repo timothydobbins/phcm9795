@@ -11,9 +11,8 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-[@kirkwood_sterne01]; Chapter 35.
-
-[@bland15]; Chapter 18.
+@kirkwood_sterne01a; Chapter 35.
+@bland15b; Chapter 18.
 
 ### Further readings (for interest) {-}
 @woodward13; Chapter 8.

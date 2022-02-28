@@ -10,13 +10,13 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-[@kirkwood_sterne01]; Chapter 16
+@kirkwood_sterne01a; Chapter 16
 
-[@bland15]; Section 8.6, Section 13.7
+@bland15b; Section 8.6, Section 13.7
 
-[@juul_frydenberg14]; Section 11.4.
+@juul_frydenberg14; Section 11.4.
 
-[@acock10]; Section 7.5.
+@acock10; Section 7.5.
 
 ## Introduction
 

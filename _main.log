@@ -1,4 +1,4 @@
-This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.24)  27 FEB 2022 16:47
+This is XeTeX, Version 3.141592653-2.6-0.999993 (TeX Live 2021) (preloaded format=xelatex 2022.2.24)  28 FEB 2022 12:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1453,62 +1453,147 @@ LaTeX Font Info:    Font shape `TU/latinmodern-math.otf(3)/m/n' will be
 
 ]
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/sl' in size <10> not available
-(Font)              Font shape `TU/Roboto(0)/m/it' tried instead on input line 154.
+(Font)              Font shape `TU/Roboto(0)/m/it' tried instead on input line 175.
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/it' will be
-(Font)              scaled to size 10.0pt on input line 154.
+(Font)              scaled to size 10.0pt on input line 175.
 [2]
-Overfull \hbox (1.34567pt too wide) detected at line 212
- \TU/Roboto(0)/m/n/10 100
+Overfull \hbox (1.71188pt too wide) detected at line 206
+ \TU/Roboto(0)/b/n/10 101
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 214
+Overfull \hbox (1.34567pt too wide) detected at line 207
  \TU/Roboto(0)/m/n/10 101
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 216
- \TU/Roboto(0)/m/n/10 102
+Overfull \hbox (1.34567pt too wide) detected at line 208
+ \TU/Roboto(0)/m/n/10 101
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 218
+Overfull \hbox (1.34567pt too wide) detected at line 209
+ \TU/Roboto(0)/m/n/10 101
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 210
+ \TU/Roboto(0)/m/n/10 101
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 212
  \TU/Roboto(0)/m/n/10 103
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 220
- \TU/Roboto(0)/m/n/10 104
+Overfull \hbox (1.34567pt too wide) detected at line 214
+ \TU/Roboto(0)/m/n/10 105
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 223
- \TU/Roboto(0)/m/n/10 106
+Overfull \hbox (1.34567pt too wide) detected at line 215
+ \TU/Roboto(0)/m/n/10 105
  []
 
 
-Overfull \hbox (2.09274pt too wide) detected at line 224
-\TU/Roboto(0)/m/n/10 10.10 
+Overfull \hbox (1.34567pt too wide) detected at line 217
+ \TU/Roboto(0)/m/n/10 107
  []
 
 
-Overfull \hbox (1.34567pt too wide) detected at line 224
- \TU/Roboto(0)/m/n/10 106
+Overfull \hbox (1.34567pt too wide) detected at line 218
+ \TU/Roboto(0)/m/n/10 108
  []
 
 
-Overfull \hbox (1.71188pt too wide) detected at line 225
- \TU/Roboto(0)/b/n/10 107
- []
-
-
-Overfull \hbox (1.71188pt too wide) detected at line 226
+Overfull \hbox (1.71188pt too wide) detected at line 219
  \TU/Roboto(0)/b/n/10 109
  []
 
 
-Overfull \hbox (1.71188pt too wide) detected at line 231
+Overfull \hbox (1.71188pt too wide) detected at line 222
  \TU/Roboto(0)/b/n/10 111
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 223
+ \TU/Roboto(0)/m/n/10 111
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 224
+ \TU/Roboto(0)/m/n/10 111
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 226
+ \TU/Roboto(0)/m/n/10 111
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 228
+ \TU/Roboto(0)/m/n/10 112
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 230
+ \TU/Roboto(0)/m/n/10 113
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 233
+ \TU/Roboto(0)/m/n/10 114
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 235
+ \TU/Roboto(0)/m/n/10 115
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 237
+ \TU/Roboto(0)/m/n/10 116
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 239
+ \TU/Roboto(0)/m/n/10 117
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 241
+ \TU/Roboto(0)/m/n/10 118
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 244
+ \TU/Roboto(0)/m/n/10 120
+ []
+
+
+Overfull \hbox (2.09274pt too wide) detected at line 245
+\TU/Roboto(0)/m/n/10 10.10 
+ []
+
+
+Overfull \hbox (1.34567pt too wide) detected at line 245
+ \TU/Roboto(0)/m/n/10 120
+ []
+
+
+Overfull \hbox (1.71188pt too wide) detected at line 246
+ \TU/Roboto(0)/b/n/10 121
+ []
+
+
+Overfull \hbox (1.71188pt too wide) detected at line 247
+ \TU/Roboto(0)/b/n/10 123
+ []
+
+
+Overfull \hbox (1.71188pt too wide) detected at line 252
+ \TU/Roboto(0)/b/n/10 125
  []
 
 ) [3] [4
@@ -1522,257 +1607,309 @@ Package natbib Warning: Citation `kirkwood_sterne01' on page 5 undefined on inpu
 
 Package natbib Warning: Citation `bland15' on page 5 undefined on input line 197.
 
-[5] [6
+[5] [6]
+LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
+(Font)              scaled to size 7.0pt on input line 251.
+LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
+(Font)              scaled to size 8.0pt on input line 251.
+LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
+(Font)              scaled to size 6.0pt on input line 251.
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/cause-death.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/cause-death.png>
+
+Underfull \hbox (badness 10000) in paragraph at lines 352--352
+[][] [][][][]$[][][][] [] [] [] [][][] [] [][][] [] [][][] [] [][] [] [][][][][][][][] [] [][][] [] [][][][] [] [][][][][][] [] [][] [] [][][][][][][][][] [] [][][][] [] [][][][][][][][][][][] [] [][][][][][][][][][][][][][][][][][][] []
+ []
+
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-health.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-health.png>
+[7]
+Underfull \hbox (badness 10000) in alignment at lines 450--450
+[][][][][][] 
+ []
+
+[8] [9]
+Underfull \vbox (badness 4859) has occurred while \output is active []
+
+[10]
+Underfull \hbox (badness 10000) in alignment at lines 699--699
+[][][][][] 
+ []
+
+
+Underfull \vbox (badness 1831) has occurred while \output is active []
+
+[11] [12]
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-education.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-education.png>
+[13]
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar.png>
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex.png>
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked.png>
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked-relative.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked-relative.png>
+File: /Users/td/Documents/Repos/phcm9795/img/mod01/line-graph-prostate-cancer.png Graphic file (type bmp)
+</Users/td/Documents/Repos/phcm9795/img/mod01/line-graph-prostate-cancer.png>
+
+Overfull \hbox (292.78476pt too wide) in paragraph at lines 951--951
+[][] 
+ []
+
+[14] [15]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[16] [17] [18] [19] [20
 
 ]
 LaTeX Font Info:    Font shape `TU/RobotoMono(0)/m/n' will be
-(Font)              scaled to size 10.0pt on input line 302.
-[7] [8]
+(Font)              scaled to size 10.0pt on input line 1123.
+[21] [22]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 9 undefined on input line 402.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 23 undefined on input line 1223.
 
 
-Package natbib Warning: Citation `bland15' on page 9 undefined on input line 404.
+Package natbib Warning: Citation `bland15' on page 23 undefined on input line 1225.
 
-[9
+[23
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 509--509
+Underfull \hbox (badness 10000) in alignment at lines 1330--1330
 [][][] 
  []
 
-[10] [11]
-Underfull \hbox (badness 10000) in alignment at lines 712--712
+[24] [25]
+Underfull \hbox (badness 10000) in alignment at lines 1533--1533
 [][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 824--824
+Underfull \hbox (badness 10000) in alignment at lines 1645--1645
 [][][][] 
  []
 
 
-Underfull \hbox (badness 10000) in alignment at lines 884--884
+Underfull \hbox (badness 10000) in alignment at lines 1705--1705
 [][] 
  []
 
-[12] [13] [14]
+[26] [27] [28]
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/dbp.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/dbp.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1039--1040
+Underfull \hbox (badness 10000) in paragraph at lines 1860--1861
 []\TU/Roboto(0)/m/n/10 Source: []$[][][][][] [] [] [] [][][] [] [][][][] [] [][][] [] [][] [] [][][][][][][] [] [][][][] [][] [][][][][][][] [] [][][][] [][] [][][][][] [][] [][][][][][][][] [] [][][][][][][][] [] [][][][] [][] [][][][][] [][]
  []
 
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/heights.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/heights.png>
-[15] [16]
+[29] [30]
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/normal-curve.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/normal-curve.png>
-[17]
+[31]
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/z-table-extract.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/z-table-extract.png>
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/z-dist-shaded.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/z-dist-shaded.png>
-[18]
+[32]
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/weights-hist-boxplot.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/weights-hist-boxplot.png>
-[19] [20]
+[33] [34]
 File: /Users/td/Documents/Repos/phcm9795/img/mod2/los-hist-boxplot.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod2/los-hist-boxplot.png>
-[21] [22] [23
+[35] [36] [37
 
-] [24
+] [38
 
 ]
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
-(Font)              scaled to size 7.0pt on input line 1391.
-LaTeX Font Info:    Font shape `TU/Roboto(0)/m/n' will be
-(Font)              scaled to size 5.0pt on input line 1391.
-[25] [26]
+(Font)              scaled to size 5.0pt on input line 2212.
+[39] [40]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 27 undefined on input line 1453.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 41 undefined on input line 2274.
 
 
-Package natbib Warning: Citation `bland15' on page 27 undefined on input line 1455.
+Package natbib Warning: Citation `bland15' on page 41 undefined on input line 2276.
 
-[27
+[41
 
-] [28] [29] [30] [31] [32
+] [42] [43] [44] [45] [46
 
-] [33] [34
+] [47] [48
 
-] [35] [36] [37
+] [49] [50] [51
 
 ]
-Underfull \hbox (badness 10000) in alignment at lines 1848--1848
+Underfull \hbox (badness 10000) in alignment at lines 2669--2669
 [][] 
  []
 
-[38]
+[52]
 File: /Users/td/Documents/Repos/phcm9795/img/mod4/practical-vs-statistical-sig.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod4/practical-vs-statistical-sig.png>
 
 Underfull \vbox (badness 2903) has occurred while \output is active []
 
-[39]
+[53]
 Missing character: There is no ɑ (U+0251) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
-[40]
+[54]
 File: /Users/td/Documents/Repos/phcm9795/img/mod4/cis-overlapping-null.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod4/cis-overlapping-null.png>
 
-Underfull \hbox (badness 10000) in paragraph at lines 1916--1919
+Underfull \hbox (badness 10000) in paragraph at lines 2737--2740
 []\TU/Roboto(0)/m/n/10 \begin{figure} []
  []
 
-[41]
-Underfull \hbox (badness 1043) in paragraph at lines 1927--1928
+[55]
+Underfull \hbox (badness 1043) in paragraph at lines 2748--2749
 \TU/Roboto(0)/m/n/10 A one-sample t-test tests whether a sample mean is different to a hypothesised value. The
  []
 
-[42]
+[56]
 File: /Users/td/Documents/Repos/phcm9795/img/mod4/two-tailed-test.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod4/two-tailed-test.png>
 File: /Users/td/Documents/Repos/phcm9795/img/mod4/one-tailed-tests.png Graphic file (type bmp)
 </Users/td/Documents/Repos/phcm9795/img/mod4/one-tailed-tests.png>
-[43] [44] [45
+[57] [58] [59
 
-] [46]
+] [60]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 47 undefined on input line 2137.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 61 undefined on input line 2958.
 
 
-Package natbib Warning: Citation `bland15' on page 47 undefined on input line 2139.
+Package natbib Warning: Citation `bland15' on page 61 undefined on input line 2960.
 
-[47
+[61
 
-] [48] [49]
+] [62] [63]
 LaTeX Font Info:    Font shape `TU/Roboto(0)/m/it' will be
-(Font)              scaled to size 7.0pt on input line 2266.
-[50] [51] [52]
-Underfull \hbox (badness 10000) in alignment at lines 2465--2465
+(Font)              scaled to size 7.0pt on input line 3087.
+[64] [65] [66]
+Underfull \hbox (badness 10000) in alignment at lines 3286--3286
 [][][] 
  []
 
-[53
+[67
 
-] [54]
+] [68]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 55 undefined on input line 2539.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 69 undefined on input line 3360.
 
 
-Package natbib Warning: Citation `bland15' on page 55 undefined on input line 2541.
+Package natbib Warning: Citation `bland15' on page 69 undefined on input line 3362.
 
-[55
+[69
 
-] [56] [57] [58] [59] [60]
+] [70] [71] [72] [73] [74]
 
 Class memoir Warning: The material used in the headers is too large
 (24.0pt) for the given head height (12.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 2870.
+(in both cases you will find help in the memoir manual). on input line 3691.
 
 
 Overfull \vbox (12.0pt too high) has occurred while \output is active []
 
-[61] [62]
-Underfull \hbox (badness 10000) in alignment at lines 2997--2997
+[75] [76]
+Underfull \hbox (badness 10000) in alignment at lines 3818--3818
 [][][] 
  []
 
-[63
+[77
 
-] [64] [65
+] [78] [79
 
-] [66]
+] [80]
 Missing character: There is no × (U+00D7) in font Clancy Regular/OT:script=DFLT;language=dflt;mapping=tex-text;!
-[67] [68]
-Underfull \hbox (badness 10000) in alignment at lines 3279--3279
+[81] [82]
+Underfull \hbox (badness 10000) in alignment at lines 4100--4100
 [][][][] 
  []
 
-[69] [70] [71] [72
+[83] [84] [85] [86
 
-] [73] [74
+] [87] [88
 
 ]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 75 undefined on input line 3459.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 89 undefined on input line 4280.
 
 
-Package natbib Warning: Citation `bland15' on page 75 undefined on input line 3461.
+Package natbib Warning: Citation `bland15' on page 89 undefined on input line 4282.
 
-[75]
-Underfull \hbox (badness 10000) in alignment at lines 3551--3551
+[89]
+Underfull \hbox (badness 10000) in alignment at lines 4372--4372
 [][] 
  []
-
-[76] [77]
-Underfull \hbox (badness 10000) in alignment at lines 3657--3657
-[][] 
- []
-
-[78] [79] [80] [81] [82
-
-] [83] [84] [85
-
-] [86] [87
-
-] [88] [89]
-Underfull \vbox (badness 10000) has occurred while \output is active []
 
 [90] [91]
-Underfull \hbox (badness 10000) in alignment at lines 4533--4533
+Underfull \hbox (badness 10000) in alignment at lines 4478--4478
+[][] 
+ []
+
+[92] [93] [94] [95] [96
+
+] [97] [98] [99
+
+] [100] [101
+
+] [102] [103]
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+[104] [105]
+Underfull \hbox (badness 10000) in alignment at lines 5354--5354
 [][][][] 
  []
 
-[92] [93] [94]
-Underfull \hbox (badness 10000) in alignment at lines 4780--4780
+[106] [107] [108]
+Underfull \hbox (badness 10000) in alignment at lines 5601--5601
 [][] 
  []
 
 
 Underfull \vbox (badness 2970) has occurred while \output is active []
 
-[95
+[109
 
-] [96]
+] [110]
 
-Package natbib Warning: Citation `kirkwood_sterne01' on page 97 undefined on input line 4843.
+Package natbib Warning: Citation `kirkwood_sterne01' on page 111 undefined on input line 5664.
 
 
-Package natbib Warning: Citation `bland15' on page 97 undefined on input line 4845.
+Package natbib Warning: Citation `bland15' on page 111 undefined on input line 5666.
 
-[97
+[111
 
 ]
-Overfull \hbox (17.70624pt too wide) in paragraph at lines 5006--5006
+Overfull \hbox (17.70624pt too wide) in paragraph at lines 5827--5827
 [][]\TU/Roboto(0)/b/n/10 Prevalence[]  
  []
 
-[98] [99]
+[112] [113]
 Missing character: There is no ✔ (U+2714) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ✔ (U+2714) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
 Missing character: There is no ️ (U+FE0F) in font Roboto/OT:script=latn;language=dflt;mapping=tex-text;!
-[100] [101] [102] [103]
+[114] [115] [116] [117]
 File: _main_files/figure-latex/fig-unequal-controls-1.pdf Graphic file (type pdf)
 <use _main_files/figure-latex/fig-unequal-controls-1.pdf>
-[104] [105] [106] [107
+[118] [119] [120] [121
 
-] [108
+] [122
 
-] [109] (./_main.bbl [110])
+] [123] (./_main.bbl [124])
 
 Class memoir Warning: The material used in the headers is too large
 (24.0pt) for the given head height (12.0pt), it is recommended to
 either increase the head height or redesign the header
-(in both cases you will find help in the memoir manual). on input line 5547.
+(in both cases you will find help in the memoir manual). on input line 6368.
 
 
 Package natbib Warning: There were undefined citations.
 
-[111
+[125
 
 ]
 \tf@toc=\write6
@@ -1780,15 +1917,15 @@ Package natbib Warning: There were undefined citations.
 
 (./_main.aux)
 Package rerunfilecheck Info: File `_main.out' has not changed.
-(rerunfilecheck)             Checksum: 4522E812D91B4447230776D89F391CC9;21428.
+(rerunfilecheck)             Checksum: 7E69C7DAAA5682CFA58E0DF6FE775469;22370.
  ) 
 Here is how much of TeX's memory you used:
- 26462 strings out of 478181
- 515428 string characters out of 5854004
- 1027361 words of memory out of 5000000
- 46705 multiletter control sequences out of 15000+600000
- 476025 words of font info for 108 fonts, out of 8000000 for 9000
+ 26648 strings out of 478181
+ 526492 string characters out of 5854004
+ 1032767 words of memory out of 5000000
+ 46880 multiletter control sequences out of 15000+600000
+ 476041 words of font info for 110 fonts, out of 8000000 for 9000
  14 hyphenation exceptions out of 8191
- 86i,18n,122p,1241b,885s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 86i,18n,122p,1299b,897s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on _main.pdf (111 pages).
+Output written on _main.pdf (125 pages).
