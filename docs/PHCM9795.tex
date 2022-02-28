@@ -161,6 +161,10 @@
 \setcounter{tocdepth}{1}
 \tableofcontents
 }
+\hypertarget{blah}{%
+\chapter*{Blah}\label{blah}}
+\addcontentsline{toc}{chapter}{Blah}
+
 \hypertarget{introduction-to-statistics-and-presenting-data}{%
 \chapter{Introduction to statistics and presenting data}\label{introduction-to-statistics-and-presenting-data}}
 
@@ -4396,6 +4400,129 @@ In this study of 60 participants, where each participant received both drugs, 41
 
 In Module 6, we estimated proportions and measures of association for categorical data and conducted a one-sample test of proportions. In this module, we conduct significance tests for two or more independent proportions using the chi-squared test. The chi-squared test can also be used to conduct a significance test when there are more than two categories in both variables. The McNemar's test is used when we have paired data.
 
+\hypertarget{stata-resources}{%
+\chapter*{\texorpdfstring{\textbf{7} Stata resources}{7 Stata resources}}\label{stata-resources}}
+\addcontentsline{toc}{chapter}{\textbf{7} Stata resources}
+
+\hypertarget{pearsons-chi-squared-test}{%
+\section{Pearson's chi-squared test}\label{pearsons-chi-squared-test}}
+
+To use Stata to perform the Chi-squared test on the data in \texttt{Example\_7.1.dta} we need to have individual record data for the treatment group and presence of side effects.
+
+As discussed in Module 7 course notes, in this dataset \texttt{group} is coded as ``1=Active'' and ``0 = Placebo'' and \texttt{side\_effect} is coded as ``1 = Nausea'' and ``0 = No nausea''.
+
+Follow the steps: \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Two-way table with measures of association} (as shown in the Introductory Stata workshop). In the \texttt{tabulate2} dialog box, select the variable \texttt{group} in the \textbf{Row} variable box, and the variable \texttt{side\_effect} in the \textbf{Column} variable box as shown below. Tick \textbf{Pearson's chi-squared} to obtain the Pearson's chi-squared test or tick \textbf{Fisher's exact test} if you have small expected cell counts (see Course Notes).
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-1}
+
+{[}Command: \texttt{tab\ group\ side\_effect,\ chi2\ expected\ row}{]}
+
+To request for expected frequencies, tick the box for \textbf{Expected frequencies} and to request for the row percentage tick the box for \textbf{Within-row relative frequencies}.
+
+Click \textbf{OK} or \textbf{Submit} to obtain the Output 7.1 in the course notes.
+
+The last line labelled Pearson chi2(1) reports the appropriate Chi-squared test statistic which has a value of 7.862 with 1 degree of freedom and a P value of 0.005.
+
+When you only have the cross-tabulated data, you can use the \texttt{tabi} command from \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Table calculator}. In the \texttt{tabi} dialog box, enter the table in the \textbf{User-supplied cell frequencies} box as \texttt{46\ 4\ \textbackslash{}\ 35\ 15} to obtain the same table as in the Output 7.1. As explained in the dialog box, each row of frequencies is separated by the backslash ``\,''. You can tick the same additional outputs and tests as in the tab2 command above.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabi-1}
+
+{[}Command: \texttt{tabi\ 46\ 4\ \textbackslash{}\ 35\ 15,\ chi2\ exp\ row}{]}
+
+When you are done, click OK or Submit.
+
+\hypertarget{chi-squared-test-for-tables-larger-than-2-by-2}{%
+\section{Chi-squared test for tables larger than 2-by-2}\label{chi-squared-test-for-tables-larger-than-2-by-2}}
+
+Use the data in \texttt{Example\_7.2.dta}. We use similar steps as described above for a 2-by-2 table. Here we have defined the column based on sex, and we would like to obtain allergy severity by sex, so we choose ``Within-column relative frequencies''. We also request the expected cell counts to check the Pearson chi-squared test assumption that \textless20\% of cells have expected cell count \textless5 and the minimum expected cell count is \textgreater1.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-2}
+
+{[}Command: \texttt{tab\ allergy\_severity\ sex,\ chi2\ col\ exp}{]}
+
+Click \textbf{OK} or \textbf{Submit} to obtain the output below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+\NormalTok{| Key                |}
+\NormalTok{|{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}|}
+\NormalTok{|     frequency      |}
+\NormalTok{| expected frequency |}
+\NormalTok{| column percentage  |}
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+
+\NormalTok{     Severity of |          Sex}
+\NormalTok{         allergy |    Female       Male |     Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{    Non{-}allergic |       150        137 |       287 }
+\NormalTok{                 |     138.9      148.1 |     287.0 }
+\NormalTok{                 |     61.98      53.10 |     57.40 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  Slight allergy |        50         70 |       120 }
+\NormalTok{                 |      58.1       61.9 |     120.0 }
+\NormalTok{                 |     20.66      27.13 |     24.00 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{Moderate allergy |        27         32 |        59 }
+\NormalTok{                 |      28.6       30.4 |      59.0 }
+\NormalTok{                 |     11.16      12.40 |     11.80 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{  Severe allergy |        15         19 |        34 }
+\NormalTok{                 |      16.5       17.5 |      34.0 }
+\NormalTok{                 |      6.20       7.36 |      6.80 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{           Total |       242        258 |       500 }
+\NormalTok{                 |     242.0      258.0 |     500.0 }
+\NormalTok{                 |    100.00     100.00 |    100.00 }
+
+\NormalTok{          Pearson chi2(3) =   4.3089   Pr = 0.230}
+\end{Highlighting}
+\end{Shaded}
+
+\hypertarget{mcnemars-test-for-paired-proportions}{%
+\section{McNemar's test for paired proportions}\label{mcnemars-test-for-paired-proportions}}
+
+To perform this test in Stata, we will use the dataset \texttt{Example\_7.3.dta}. Responses to each drug should be in separate variables in the dataset as shown in Table 7.2 using the \texttt{tabulate2} command (\textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Two-way table with measures of association}). In the tabulate2 dialog box, tick \textbf{Relative frequencies} under \textbf{Cell contents} as shown below.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-3}
+
+{[}Command: \texttt{tab2\ drugb\ druga\ ,\ cell}{]}
+
+Click \textbf{OK} or \textbf{Submit} to obtain the output for Table 7.2.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{{-}\textgreater{} tabulation of drugb by druga  }
+
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+\NormalTok{| Key             |}
+\NormalTok{|{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}|}
+\NormalTok{|    frequency    |}
+\NormalTok{| cell percentage |}
+\NormalTok{+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+}
+
+\NormalTok{  Response |  Response to Drug A}
+\NormalTok{ to Drug B |        No        Yes |     Total}
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{        No |         5         20 |        25 }
+\NormalTok{           |      8.33      33.33 |     41.67 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{       Yes |        14         21 |        35 }
+\NormalTok{           |     23.33      35.00 |     58.33 }
+\NormalTok{{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}+{-}{-}{-}{-}{-}{-}{-}{-}{-}{-}}
+\NormalTok{     Total |        19         41 |        60 }
+\NormalTok{           |     31.67      68.33 |    100.00 }
+\end{Highlighting}
+\end{Shaded}
+
+To perform the McNemar's test, go to \textbf{Statistics \textgreater{} Epidemiology and related \textgreater{} Tables for epidemiologists \textgreater{} Matched case-control studies}. In the \texttt{mcc} dialog box, select the variable \texttt{drugb} as the \textbf{Exposed case variable} and \texttt{druga} as the \textbf{Exposed control variable} as shown below.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/mcc-1}
+
+{[}Command: \texttt{mcc\ drugb\ druga}{]}
+
+Click \textbf{OK} or \textbf{Submit} when you are done to obtain Output 7.3.
+
 \hypertarget{learning-activities-6}{%
 \chapter*{\texorpdfstring{\textbf{7} Learning Activities}{7 Learning Activities}}\label{learning-activities-6}}
 \addcontentsline{toc}{chapter}{\textbf{7} Learning Activities}
@@ -4797,7 +4924,11 @@ We will demonstrate using Stata for correlation and simple linear regression usi
 
 To create a scatter plot to explore the association between height and FVC click: \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)}. In the \texttt{twoway} dialog box, click \textbf{Create\ldots{}}
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-1}
+
 A new dialog box will open. Select the \textbf{Basic plots} radio button and highlight \textbf{Scatter} under \textbf{Basic plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-2}
 
 Click the \textbf{Accept} button in the \textbf{Plot 1} dialog box to return to the \textbf{twoway} dialog box, then click the \textbf{OK} or \textbf{Submit} button to produce the scatter plot shown in \textbf{Figure 8.1}.
 
@@ -4805,15 +4936,25 @@ Click the \textbf{Accept} button in the \textbf{Plot 1} dialog box to return to 
 
 To add a fitted line, go back to the \texttt{twoway} dialog box. If you clicked the \textbf{OK} button, you can go to \textbf{Graphics} \textbf{\textgreater{} Twoway} \textbf{graph (scatter, line, etc.)} to bring it back again.
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-3}
+
 Click \textbf{Create\ldots{}}, then select the \textbf{Fit plots} radio button and \textbf{Linear prediction} under \textbf{Fit plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-4}
 
 Click the \textbf{Accept} button, then the \textbf{OK} or \textbf{Submit} button to produce the scatterplot below.
 
 {[}Command: \texttt{twoway\ (scatter\ FVC\ Height)\ (lfit\ FVC\ Height)}{]}
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/scatter-1}
+
 Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the \textbf{Y axis} tab in the \textbf{twoway} dialog box to enter your title as shown below.
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-5}
+
 You can click the \textbf{Submit} button to check how the scatter plot looks like. Next go the \textbf{Legend} tab and select the \textbf{Hide legend} radio button.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-6}
 
 Click the \textbf{OK} or \textbf{Submit} button when you are finished to produce \textbf{Figure 8.3}.
 
@@ -4821,12 +4962,16 @@ Click the \textbf{OK} or \textbf{Submit} button when you are finished to produce
 
 To save your graph, go to \textbf{File \textgreater{} Save} in the \textbf{Graph} window, and be sure to save your file as a PNG file:
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-7}
+
 \hypertarget{calculating-a-correlation-coefficient}{%
 \section{Calculating a correlation coefficient}\label{calculating-a-correlation-coefficient}}
 
 To calculate the Pearson's correlation using the dataset \texttt{Example\_8.1.dta} go to: \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Pairwise correlations}
 
 Select the two variables, \textbf{FVC} and \textbf{Height} in the \textbf{Variables} box. You can click the \textbf{Submit} button to check the output. Next, tick the box for \textbf{Print significance level for each entry} to obtain the P-value and the box for \textbf{Print number of observations for each entry} to obtain the number of observations used as shown below.
+
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/corr-1}
 
 Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Output 8.1},
 
@@ -4841,6 +4986,8 @@ Choose \textbf{Statistics \textgreater{} Linear models and related \textgreater{
 
 In the \texttt{regress} dialog box, select \texttt{FVC} as the \textbf{Dependent variable}, and \texttt{Height} as the \textbf{Independent variable}.
 
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/regr-1}
+
 Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Outputs 8.2 and 8.3}.
 
 {[}Command: \texttt{reg\ FVC\ Height}{]}
@@ -4848,27 +4995,25 @@ Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce
 \hypertarget{plotting-residuals-from-a-simple-linear-regression}{%
 \section{Plotting residuals from a simple linear regression}\label{plotting-residuals-from-a-simple-linear-regression}}
 
-To obtain the residuals, go to \textbf{Statistics \textgreater{} Post estimation after running the regress command.}
+To obtain the residuals, go to \textbf{Statistics \textgreater{} Post estimation} after running the regress command.
 
-{[}Graphical user interface, application Description automatically generated{]}{[}136{]}
+In the \texttt{Postestimation\ Selector} dialog box, select \textbf{Predictions and their SEs, leverage statistics, distance statistics, etc.} in the list under Predictions as shown below.
 
-\textbf{In the Postestimation Selector dialog box, select Predictions and their SEs, leverage statistics, distance statistics, etc. in the list under Predictions as shown below.}
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-1}
 
-{[}Graphical user interface, text, application Description automatically generated{]}{[}137{]}
+In the \texttt{predict} dialog box, choose the \textbf{Residuals} button and enter a New variable name (e.g.~\texttt{FVC\_resid}) for the residuals from the regression model.
 
-\textbf{In the predict dialog box, choose the Residuals button and enter a New variable name (e.g.~FVC\_resid) for the residuals from the regression model.}
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-2}
 
-{[}Graphical user interface, application Description automatically generated{]}{[}138{]}
+Click \textbf{OK} button when you are done.
 
-Click the \textbf{OK} button when you are done.
-
-\emph{\[Command: predict FVC_resid, residuals\]}
+{[}Command: \texttt{predict\ FVC\_resid,\ residuals}{]}
 
 You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using \textbf{Graphics \textgreater{} Histogram} as shown in \textbf{Stata Notes} section for \textbf{Module 2}. Below is the \textbf{histogram} dialog box used to produce the graph in \textbf{Figure 8.5}.
 
-\emph{\[Command: histogram FVC_resid, bin(12) frequency normal\]}
+\includegraphics[width=500pt]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-3}
 
-{[}Graphical user interface, text, application, email Description automatically generated{]}{[}139{]}
+{[}Command: \texttt{histogram\ FVC\_resid,\ bin(12)\ frequency\ normal}{]}
 
 \hypertarget{learning-activities-7}{%
 \chapter*{\texorpdfstring{\textbf{8} Learning Activities}{8 Learning Activities}}\label{learning-activities-7}}
@@ -6457,8 +6602,8 @@ One approach that is increasingly being used is to conduct a blinded interim ana
 
 In this module we have discussed the importance of conducting a clinical or epidemiological study with enough participants so that an effect or association can be identified if it exists (i.e.~study power), and how this has to be balanced by the need to not enrol more participants than necessary because of resource issues. We have looked at the parameters that need to be considered when estimating the sample size for different studies and have used a look-up table to estimate required sample size for a prevalence study and Stata to estimate appropriate sample sizes in epidemiological research under the most straightforward situations. The common requirement in all the situations is that the researchers need to specify the minimum effect measure (e.g.~difference in means, OR, RR etc) they want to detect with a given probability (usually 80\% to 90\%) at a certain level of significance (usually P\textless0.05). The ultimate decision on the sample size depends on a compromise among different objectives such as power, minimum effect size, and available resources. To make the final decision, it is helpful to do some trial calculations using revised power and the minimum detectable effect measure.
 
-\hypertarget{stata-resources}{%
-\chapter*{\texorpdfstring{\textbf{10} Stata resources}{10 Stata resources}}\label{stata-resources}}
+\hypertarget{stata-resources-1}{%
+\chapter*{\texorpdfstring{\textbf{10} Stata resources}{10 Stata resources}}\label{stata-resources-1}}
 \addcontentsline{toc}{chapter}{\textbf{10} Stata resources}
 
 \hypertarget{learning-activities-9}{%
