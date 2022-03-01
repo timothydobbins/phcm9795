@@ -13,8 +13,8 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01a; Chapter 10
-@bland15b; Chapter 11
+@kirkwood_sterne01; Chapter 10
+@bland15; Chapter 11
 @acock10; Chapter 8.
 @juul_frydenberg14; Section 12.1.
 

@@ -11,8 +11,8 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01a; Chapter 35.
-@bland15b; Chapter 18.
+@kirkwood_sterne01; Chapter 35.
+@bland15; Chapter 18.
 
 ### Further readings (for interest) {-}
 @woodward13; Chapter 8.
@@ -28,7 +28,7 @@ In health research, there are different implications for interpreting the result
 
 An under-sized study is one which lacks the power to find an effect or association when, in truth, one exists. If the sample size is too small, an important difference between groups may not be statistically significant and so will not be detected by the study. In fact, it is considered unethical to conduct a health study which is poorly designed so that it is not possible to detect an effect or association if it exists. Often, Ethics Committees request evidence of sample size calculations before a study is approved.
 
-A classic paper by Freiman et al examined 71 randomised controlled trials which reported an absence of clinical effect between two treatments.[@freiman_etal78a] Many of the trials were too small to show that a clinically important difference was statistically significant. If the sample size of an analytic study is too small, then only very limited conclusions can be drawn about the results.
+A classic paper by Freiman et al examined 71 randomised controlled trials which reported an absence of clinical effect between two treatments.[@freiman_etal78] Many of the trials were too small to show that a clinically important difference was statistically significant. If the sample size of an analytic study is too small, then only very limited conclusions can be drawn about the results.
 
 In general, the larger the sample size the more precise the estimates will be. However, large sample sizes have their own effect on the interpretation of the results. An over-sized study is one in which a small difference between groups, which is not important in clinical or public health terms, is statistically significant. When the study sample is large, the null hypothesis could be rejected in error and research resources may be wasted. This type of study may be unethical due to the unnecessary enrolment of a large number of people.
 

@@ -14,9 +14,9 @@ By the end of this module, you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01a; Chapters 2 and 3.
+@kirkwood_sterne01; Chapters 2 and 3.
 
-@bland15b; Chapter 4.
+@bland15; Chapter 4.
 
 @acock10; Chapter 5.
 

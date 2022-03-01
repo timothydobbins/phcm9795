@@ -15,6 +15,11 @@ huxtable::huxtable(tab1_1, add_colnames = FALSE) %>%
   set_caption("Weight loss (g) for 25 participants")
 ```
 
+Image chunk
+```{r twoway-2, echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
+```
+
 
 Output chunk
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
@@ -25,5 +30,5 @@ t test assuming sd1 = sd2 = sd
 Ho: m2 = m1 versus  Ha: m2 != m1
 ```
 @acock10
-@bland15b
-@kirkwood_sterne01a
+@bland15
+@kirkwood_sterne01

@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>8 Stata notes | PHCM9795 Foundations of Biostatistics</title>
+  <title>4 Stata notes | PHCM9795 Foundations of Biostatistics</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="8 Stata notes | PHCM9795 Foundations of Biostatistics" />
+  <meta property="og:title" content="4 Stata notes | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
@@ -20,7 +20,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="8 Stata notes | PHCM9795 Foundations of Biostatistics" />
+  <meta name="twitter:title" content="4 Stata notes | PHCM9795 Foundations of Biostatistics" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="correlation-and-linear-regression.html"/>
-<link rel="next" href="learning-activities-7.html"/>
+<link rel="prev" href="hypothesis-testing.html"/>
+<link rel="next" href="learning-activities-3.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -144,7 +144,10 @@ div.csl-indent {
 <li class="chapter" data-level="3.4" data-path="precision-standard-errors-and-confidence-intervals.html"><a href="precision-standard-errors-and-confidence-intervals.html#central-limit-theorem"><i class="fa fa-check"></i><b>3.4</b> Central limit theorem</a></li>
 <li class="chapter" data-level="3.5" data-path="precision-standard-errors-and-confidence-intervals.html"><a href="precision-standard-errors-and-confidence-intervals.html#confidence-interval-of-the-mean"><i class="fa fa-check"></i><b>3.5</b> 95% confidence interval of the mean</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="module-3-stata-notes.html"><a href="module-3-stata-notes.html"><i class="fa fa-check"></i>Module 3: Stata notes</a></li>
+<li class="chapter" data-level="" data-path="module-3-stata-notes.html"><a href="module-3-stata-notes.html"><i class="fa fa-check"></i>Module 3: Stata notes</a>
+<ul>
+<li class="chapter" data-level="3.6" data-path="module-3-stata-notes.html"><a href="module-3-stata-notes.html#calculating-a-95-confidence-interval-of-a-mean"><i class="fa fa-check"></i><b>3.6</b> Calculating a 95% confidence interval of a mean</a></li>
+</ul></li>
 <li><a href="learning-activities-2.html#learning-activities-2"><strong>3</strong> Learning Activities</a></li>
 <li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis testing</a>
 <ul>
@@ -161,6 +164,10 @@ div.csl-indent {
 <li class="chapter" data-level="4.9" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#a-note-on-p-values-displayed-by-software"><i class="fa fa-check"></i><b>4.9</b> A note on P-values displayed by software</a></li>
 <li class="chapter" data-level="4.10" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#decision-tree"><i class="fa fa-check"></i><b>4.10</b> Decision Tree</a></li>
 </ul></li>
+<li><a href="stata-notes.html#stata-notes"><strong>4</strong> Stata notes</a>
+<ul>
+<li class="chapter" data-level="4.11" data-path="stata-notes.html"><a href="stata-notes.html"><i class="fa fa-check"></i><b>4.11</b> One sample t-test</a></li>
+</ul></li>
 <li><a href="learning-activities-3.html#learning-activities-3"><strong>4</strong> Learning Activities</a></li>
 <li class="chapter" data-level="5" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html"><i class="fa fa-check"></i><b>5</b> Comparing the means of two groups</a>
 <ul>
@@ -169,6 +176,13 @@ div.csl-indent {
 <li class="chapter" data-level="5.1" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html#introduction-3"><i class="fa fa-check"></i><b>5.1</b> Introduction</a></li>
 <li class="chapter" data-level="5.2" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html#independent-samples-t-test"><i class="fa fa-check"></i><b>5.2</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="5.3" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html#paired-t-tests"><i class="fa fa-check"></i><b>5.3</b> Paired t-tests</a></li>
+</ul></li>
+<li><a href="stata-notes-1.html#stata-notes-1"><strong>5</strong> Stata notes</a>
+<ul>
+<li class="chapter" data-level="5.4" data-path="stata-notes-1.html"><a href="stata-notes-1.html"><i class="fa fa-check"></i><b>5.4</b> Checking data for the independent samples t-test</a></li>
+<li class="chapter" data-level="5.5" data-path="stata-notes-1.html"><a href="stata-notes-1.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>5.5</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="5.6" data-path="stata-notes-1.html"><a href="stata-notes-1.html#checking-the-assumptions-for-a-paired-t-test"><i class="fa fa-check"></i><b>5.6</b> Checking the assumptions for a Paired t-test</a></li>
+<li class="chapter" data-level="5.7" data-path="stata-notes-1.html"><a href="stata-notes-1.html#paired-t-test"><i class="fa fa-check"></i><b>5.7</b> Paired t-Test</a></li>
 </ul></li>
 <li><a href="learning-activities-4.html#learning-activities-4"><strong>5</strong> Learning Activities</a></li>
 <li class="chapter" data-level="6" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html"><i class="fa fa-check"></i><b>6</b> Summary statistics for binary data</a>
@@ -180,6 +194,13 @@ div.csl-indent {
 <li class="chapter" data-level="6.3" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#hypothesis-testing-for-one-sample-proportion"><i class="fa fa-check"></i><b>6.3</b> Hypothesis testing for one sample proportion</a></li>
 <li class="chapter" data-level="6.4" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#contingency-tables"><i class="fa fa-check"></i><b>6.4</b> Contingency tables</a></li>
 <li class="chapter" data-level="6.5" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#calculation-of-the-95ci-for-relative-risk-odds-ratio-and-other-measures-of-association"><i class="fa fa-check"></i><b>6.5</b> Calculation of the 95%CI for relative risk, odds ratio and other measures of association</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html"><i class="fa fa-check"></i>Module 6: Stata notes</a>
+<ul>
+<li class="chapter" data-level="6.6" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#confidence-intervals-for-proportions"><i class="fa fa-check"></i><b>6.6</b> 95% confidence intervals for proportions</a></li>
+<li class="chapter" data-level="6.7" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#significance-test-for-single-proportion"><i class="fa fa-check"></i><b>6.7</b> Significance test for single proportion</a></li>
+<li class="chapter" data-level="6.8" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#computing-a-relative-risk-and-its-95-confidence-interval"><i class="fa fa-check"></i><b>6.8</b> Computing a relative risk and its 95% confidence interval</a></li>
+<li class="chapter" data-level="6.9" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#computing-an-odds-ratio-and-its-95ci"><i class="fa fa-check"></i><b>6.9</b> Computing an odds ratio and its 95%CI</a></li>
 </ul></li>
 <li><a href="learning-activities-5.html#learning-activities-5"><strong>6</strong> Learning Activities</a></li>
 <li class="chapter" data-level="7" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html"><i class="fa fa-check"></i><b>7</b> Hypothesis testing for categorical data</a>
@@ -209,12 +230,12 @@ div.csl-indent {
 <li class="chapter" data-level="8.4" data-path="correlation-and-linear-regression.html"><a href="correlation-and-linear-regression.html#obtaining-a-regression-equation-in-stata"><i class="fa fa-check"></i><b>8.4</b> Obtaining a regression equation in Stata</a></li>
 <li class="chapter" data-level="8.5" data-path="correlation-and-linear-regression.html"><a href="correlation-and-linear-regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>8.5</b> Multiple linear regression</a></li>
 </ul></li>
-<li><a href="stata-notes.html#stata-notes"><strong>8</strong> Stata notes</a>
+<li><a href="stata-notes-2.html#stata-notes-2"><strong>8</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="8.6" data-path="stata-notes.html"><a href="stata-notes.html"><i class="fa fa-check"></i><b>8.6</b> Creating a scatter plot</a></li>
-<li class="chapter" data-level="8.7" data-path="stata-notes.html"><a href="stata-notes.html#calculating-a-correlation-coefficient"><i class="fa fa-check"></i><b>8.7</b> Calculating a correlation coefficient</a></li>
-<li class="chapter" data-level="8.8" data-path="stata-notes.html"><a href="stata-notes.html#fitting-a-simple-linear-regression-model"><i class="fa fa-check"></i><b>8.8</b> Fitting a simple linear regression model</a></li>
-<li class="chapter" data-level="8.9" data-path="stata-notes.html"><a href="stata-notes.html#plotting-residuals-from-a-simple-linear-regression"><i class="fa fa-check"></i><b>8.9</b> Plotting residuals from a simple linear regression</a></li>
+<li class="chapter" data-level="8.6" data-path="stata-notes-2.html"><a href="stata-notes-2.html"><i class="fa fa-check"></i><b>8.6</b> Creating a scatter plot</a></li>
+<li class="chapter" data-level="8.7" data-path="stata-notes-2.html"><a href="stata-notes-2.html#calculating-a-correlation-coefficient"><i class="fa fa-check"></i><b>8.7</b> Calculating a correlation coefficient</a></li>
+<li class="chapter" data-level="8.8" data-path="stata-notes-2.html"><a href="stata-notes-2.html#fitting-a-simple-linear-regression-model"><i class="fa fa-check"></i><b>8.8</b> Fitting a simple linear regression model</a></li>
+<li class="chapter" data-level="8.9" data-path="stata-notes-2.html"><a href="stata-notes-2.html#plotting-residuals-from-a-simple-linear-regression"><i class="fa fa-check"></i><b>8.9</b> Plotting residuals from a simple linear regression</a></li>
 </ul></li>
 <li><a href="learning-activities-7.html#learning-activities-7"><strong>8</strong> Learning Activities</a></li>
 <li class="chapter" data-level="9" data-path="analysing-non-normal-data.html"><a href="analysing-non-normal-data.html"><i class="fa fa-check"></i><b>9</b> Analysing non-normal data</a>
@@ -228,6 +249,13 @@ div.csl-indent {
 <li class="chapter" data-level="9.5" data-path="analysing-non-normal-data.html"><a href="analysing-non-normal-data.html#non-parametric-test-for-paired-data-wilcoxon-signed-rank-test"><i class="fa fa-check"></i><b>9.5</b> Non-parametric test for paired data (Wilcoxon signed-rank test)</a></li>
 <li class="chapter" data-level="9.6" data-path="analysing-non-normal-data.html"><a href="analysing-non-normal-data.html#non-parametric-estimates-of-correlation"><i class="fa fa-check"></i><b>9.6</b> Non-parametric estimates of correlation</a></li>
 <li class="chapter" data-level="9.7" data-path="analysing-non-normal-data.html"><a href="analysing-non-normal-data.html#summary-1"><i class="fa fa-check"></i><b>9.7</b> Summary</a></li>
+</ul></li>
+<li><a href="stata-resources-1.html#stata-resources-1"><strong>9</strong> Stata resources</a>
+<ul>
+<li class="chapter" data-level="9.8" data-path="stata-resources-1.html"><a href="stata-resources-1.html"><i class="fa fa-check"></i><b>9.8</b> Transforming non-normally distributed variables</a></li>
+<li class="chapter" data-level="9.9" data-path="stata-resources-1.html"><a href="stata-resources-1.html#wilcoxon-ranked-sum-test"><i class="fa fa-check"></i><b>9.9</b> Wilcoxon ranked-sum test</a></li>
+<li class="chapter" data-level="9.10" data-path="stata-resources-1.html"><a href="stata-resources-1.html#wilcoxon-matched-pairs-signed-rank-test"><i class="fa fa-check"></i><b>9.10</b> Wilcoxon matched-pairs signed-rank test</a></li>
+<li class="chapter" data-level="9.11" data-path="stata-resources-1.html"><a href="stata-resources-1.html#estimating-rank-correlation-coefficients"><i class="fa fa-check"></i><b>9.11</b> Estimating rank correlation coefficients</a></li>
 </ul></li>
 <li><a href="learning-activities-8.html#learning-activities-8"><strong>9</strong> Learning Activities</a></li>
 <li class="chapter" data-level="10" data-path="sample-size-estimation.html"><a href="sample-size-estimation.html"><i class="fa fa-check"></i><b>10</b> Sample size estimation</a>
@@ -245,7 +273,7 @@ div.csl-indent {
 <li class="chapter" data-level="10.9" data-path="sample-size-estimation.html"><a href="sample-size-estimation.html#limitations-in-sample-size-estimations"><i class="fa fa-check"></i><b>10.9</b> Limitations in sample size estimations</a></li>
 <li class="chapter" data-level="10.10" data-path="sample-size-estimation.html"><a href="sample-size-estimation.html#summary-2"><i class="fa fa-check"></i><b>10.10</b> Summary</a></li>
 </ul></li>
-<li><a href="stata-resources-1.html#stata-resources-1"><strong>10</strong> Stata resources</a></li>
+<li><a href="stata-resources-2.html#stata-resources-2"><strong>10</strong> Stata resources</a></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -266,61 +294,28 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="stata-notes" class="section level1 unnumbered">
-<h1><strong>8</strong> Stata notes</h1>
-<div id="creating-a-scatter-plot" class="section level2" number="8.6">
-<h2><span class="header-section-number">8.6</span> Creating a scatter plot</h2>
-<p>We will demonstrate using Stata for correlation and simple linear regression using the dataset <code>Example_8.1.dta</code>.</p>
-<p>To create a scatter plot to explore the association between height and FVC click: <strong>Graphics &gt; Twoway graph (scatter, line, etc.)</strong>. In the <code>twoway</code> dialog box, click <strong>Create…</strong></p>
-<p><img src="img/mod08/stata/twoway-1.png" width="500pt" /></p>
-<p>A new dialog box will open. Select the <strong>Basic plots</strong> radio button and highlight <strong>Scatter</strong> under <strong>Basic plots: (select type)</strong>. Choose <strong>FVC</strong> for the <strong>Y variable</strong> and <strong>Height</strong> for the <strong>X variable</strong>.</p>
-<p><img src="img/mod08/stata/twoway-2.png" width="500pt" /></p>
-<p>Click the <strong>Accept</strong> button in the <strong>Plot 1</strong> dialog box to return to the <strong>twoway</strong> dialog box, then click the <strong>OK</strong> or <strong>Submit</strong> button to produce the scatter plot shown in <strong>Figure 8.1</strong>.</p>
-<p>[Command: <code>twoway (scatter FVC Height)</code>]</p>
-<p>To add a fitted line, go back to the <code>twoway</code> dialog box. If you clicked the <strong>OK</strong> button, you can go to <strong>Graphics</strong> <strong>&gt; Twoway</strong> <strong>graph (scatter, line, etc.)</strong> to bring it back again.</p>
-<p><img src="img/mod08/stata/twoway-3.png" width="500pt" /></p>
-<p>Click <strong>Create…</strong>, then select the <strong>Fit plots</strong> radio button and <strong>Linear prediction</strong> under <strong>Fit plots: (select type)</strong>. Choose <strong>FVC</strong> for the <strong>Y variable</strong> and <strong>Height</strong> for the <strong>X variable</strong>.</p>
-<p><img src="img/mod08/stata/twoway-4.png" width="500pt" /></p>
-<p>Click the <strong>Accept</strong> button, then the <strong>OK</strong> or <strong>Submit</strong> button to produce the scatterplot below.</p>
-<p>[Command: <code>twoway (scatter FVC Height) (lfit FVC Height)</code>]</p>
-<p><img src="img/mod08/stata/scatter-1.png" width="500pt" /></p>
-<p>Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the <strong>Y axis</strong> tab in the <strong>twoway</strong> dialog box to enter your title as shown below.</p>
-<p><img src="img/mod08/stata/twoway-5.png" width="500pt" /></p>
-<p>You can click the <strong>Submit</strong> button to check how the scatter plot looks like. Next go the <strong>Legend</strong> tab and select the <strong>Hide legend</strong> radio button.</p>
-<p><img src="img/mod08/stata/twoway-6.png" width="500pt" /></p>
-<p>Click the <strong>OK</strong> or <strong>Submit</strong> button when you are finished to produce <strong>Figure 8.3</strong>.</p>
-<p>[Command: <code>twoway (scatter FVC Height) (lfit FVC Height), ytitle(Forced vital capacity (L)) legend(off)</code>]</p>
-<p>To save your graph, go to <strong>File &gt; Save</strong> in the <strong>Graph</strong> window, and be sure to save your file as a PNG file:</p>
-<p><img src="img/mod08/stata/twoway-7.png" width="500pt" /></p>
-</div>
-<div id="calculating-a-correlation-coefficient" class="section level2" number="8.7">
-<h2><span class="header-section-number">8.7</span> Calculating a correlation coefficient</h2>
-<p>To calculate the Pearson’s correlation using the dataset <code>Example_8.1.dta</code> go to: <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Pairwise correlations</strong></p>
-<p>Select the two variables, <strong>FVC</strong> and <strong>Height</strong> in the <strong>Variables</strong> box. You can click the <strong>Submit</strong> button to check the output. Next, tick the box for <strong>Print significance level for each entry</strong> to obtain the P-value and the box for <strong>Print number of observations for each entry</strong> to obtain the number of observations used as shown below.</p>
-<p><img src="img/mod08/stata/corr-1.png" width="500pt" /></p>
-<p>Click the <strong>OK</strong> or the <strong>Submit</strong> button when you are done to produce <strong>Output 8.1</strong>,</p>
-<p>[Command: <code>pwcorr Height FVC, obs sig</code>]</p>
-</div>
-<div id="fitting-a-simple-linear-regression-model" class="section level2" number="8.8">
-<h2><span class="header-section-number">8.8</span> Fitting a simple linear regression model</h2>
-<p>We will fit a simple linear regression model with <code>Example_8.1.dta</code> to quantify the relationship between FVC and height.</p>
-<p>Choose <strong>Statistics &gt; Linear models and related &gt; Linear regression</strong></p>
-<p>In the <code>regress</code> dialog box, select <code>FVC</code> as the <strong>Dependent variable</strong>, and <code>Height</code> as the <strong>Independent variable</strong>.</p>
-<p><img src="img/mod08/stata/regr-1.png" width="500pt" /></p>
-<p>Click the <strong>OK</strong> or the <strong>Submit</strong> button when you are done to produce <strong>Outputs 8.2 and 8.3</strong>.</p>
-<p>[Command: <code>reg FVC Height</code>]</p>
-</div>
-<div id="plotting-residuals-from-a-simple-linear-regression" class="section level2" number="8.9">
-<h2><span class="header-section-number">8.9</span> Plotting residuals from a simple linear regression</h2>
-<p>To obtain the residuals, go to <strong>Statistics &gt; Post estimation</strong> after running the regress command.</p>
-<p>In the <code>Postestimation Selector</code> dialog box, select <strong>Predictions and their SEs, leverage statistics, distance statistics, etc.</strong> in the list under Predictions as shown below.</p>
-<p><img src="img/mod08/stata/postest-1.png" width="500pt" /></p>
-<p>In the <code>predict</code> dialog box, choose the <strong>Residuals</strong> button and enter a New variable name (e.g. <code>FVC_resid</code>) for the residuals from the regression model.</p>
-<p><img src="img/mod08/stata/postest-2.png" width="500pt" /></p>
-<p>Click <strong>OK</strong> button when you are done.</p>
-<p>[Command: <code>predict FVC_resid, residuals</code>]</p>
-<p>You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using <strong>Graphics &gt; Histogram</strong> as shown in <strong>Stata Notes</strong> section for <strong>Module 2</strong>. Below is the <strong>histogram</strong> dialog box used to produce the graph in <strong>Figure 8.5</strong>.</p>
-<p><img src="img/mod08/stata/postest-3.png" width="500pt" /></p>
-<p>[Command: <code>histogram FVC_resid, bin(12) frequency normal</code>]</p>
+<h1><strong>4</strong> Stata notes</h1>
+<div id="one-sample-t-test-1" class="section level2" number="4.11">
+<h2><span class="header-section-number">4.11</span> One sample t-test</h2>
+<p>We will use data from <code>Example_4.1.dta</code> to demonstrate how a one-sample t-test is conducted in Stata. To perform the test, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; t test (mean-comparison test)</strong>.</p>
+<p>Ensure that the <strong>One-sample</strong> option is selected, then choose <code>dbp</code> as the <strong>Variable name</strong> from the drop-down list. Enter the <strong>Hypothesised mean</strong> value (<code>71</code> in this example) as shown below.</p>
+<p><img src="img/mod04/stata/mod4-ttest.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
+<p>[Command: <code>ttest dbp == 71</code>]</p>
+<pre class="text"><code>. ttest dbp == 71
+
+One-sample t test
+------------------------------------------------------------------------------
+Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
+---------+--------------------------------------------------------------------
+     dbp |     733    72.40518    .4573454    12.38216    71.50732    73.30305
+------------------------------------------------------------------------------
+    mean = mean(dbp)                                              t =   3.0725
+Ho: mean = 71                                    degrees of freedom =      732
+
+    Ha: mean &lt; 71               Ha: mean != 71                 Ha: mean &gt; 71
+ Pr(T &lt; t) = 0.9989         Pr(|T| &gt; |t|) = 0.0022          Pr(T &gt; t) = 0.0011</code></pre>
+<p>The table gives the sample mean and standard deviation, as well as the standard error and 95% confidence interval of the mean. The test statistics are given under the table: t and the degrees of freedom as well as the P values from two-sided (Ha: mean != 71) and one-sided (Ha: mean &lt;71 and Ha: mean &gt; 71) tests. Refer to the previous sections of this module on the appropriate test to use.</p>
 
 </div>
 </div>
@@ -329,8 +324,8 @@ div.csl-indent {
           </div>
         </div>
       </div>
-<a href="correlation-and-linear-regression.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="learning-activities-7.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="learning-activities-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -361,7 +356,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/08.1-correlation-and-regression-stata.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04.1-hypothesis-testing-stata.Rmd",
 "text": "Edit"
 },
 "history": {

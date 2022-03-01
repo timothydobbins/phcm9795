@@ -13,9 +13,9 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01a; Chapters 5, 14 and 15.
+@kirkwood_sterne01; Chapters 5, 14 and 15.
 
-@bland15b; Chapters 6 and 7.
+@bland15; Chapters 6 and 7.
 
 ## Introduction
 

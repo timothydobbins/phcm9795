@@ -9,8 +9,8 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01a; Chapter 17.
-@bland15b; Chapter 13.
+@kirkwood_sterne01; Chapter 17.
+@bland15; Chapter 13.
 @acock10; Section 7.6.
 @juul_frydenberg14; Section 11.3.
 
