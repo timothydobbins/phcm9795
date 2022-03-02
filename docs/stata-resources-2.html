@@ -60,6 +60,70 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -184,6 +248,11 @@ div.csl-indent {
 <li class="chapter" data-level="5.6" data-path="stata-notes-1.html"><a href="stata-notes-1.html#checking-the-assumptions-for-a-paired-t-test"><i class="fa fa-check"></i><b>5.6</b> Checking the assumptions for a Paired t-test</a></li>
 <li class="chapter" data-level="5.7" data-path="stata-notes-1.html"><a href="stata-notes-1.html#paired-t-test"><i class="fa fa-check"></i><b>5.7</b> Paired t-Test</a></li>
 </ul></li>
+<li><a href="r-notes.html#r-notes"><strong>5</strong> R notes</a>
+<ul>
+<li class="chapter" data-level="5.8" data-path="r-notes.html"><a href="r-notes.html"><i class="fa fa-check"></i><b>5.8</b> Setup</a></li>
+<li class="chapter" data-level="5.9" data-path="r-notes.html"><a href="r-notes.html#checking-data-for-the-independent-samples-t-test-1"><i class="fa fa-check"></i><b>5.9</b> Checking data for the independent samples t-test</a></li>
+</ul></li>
 <li><a href="learning-activities-4.html#learning-activities-4"><strong>5</strong> Learning Activities</a></li>
 <li class="chapter" data-level="6" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html"><i class="fa fa-check"></i><b>6</b> Summary statistics for binary data</a>
 <ul>
@@ -273,7 +342,13 @@ div.csl-indent {
 <li class="chapter" data-level="10.9" data-path="sample-size-estimation.html"><a href="sample-size-estimation.html#limitations-in-sample-size-estimations"><i class="fa fa-check"></i><b>10.9</b> Limitations in sample size estimations</a></li>
 <li class="chapter" data-level="10.10" data-path="sample-size-estimation.html"><a href="sample-size-estimation.html#summary-2"><i class="fa fa-check"></i><b>10.10</b> Summary</a></li>
 </ul></li>
-<li><a href="stata-resources-2.html#stata-resources-2"><strong>10</strong> Stata resources</a></li>
+<li><a href="stata-resources-2.html#stata-resources-2"><strong>10</strong> Stata resources</a>
+<ul>
+<li class="chapter" data-level="10.11" data-path="stata-resources-2.html"><a href="stata-resources-2.html"><i class="fa fa-check"></i><b>10.11</b> Sample size calculation for two independent samples t-test</a></li>
+<li class="chapter" data-level="10.12" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-for-paired-samples-t-test"><i class="fa fa-check"></i><b>10.12</b> Sample size calculation for paired samples t-test</a></li>
+<li class="chapter" data-level="10.13" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-for-difference-between-two-independent-proportions"><i class="fa fa-check"></i><b>10.13</b> Sample size calculation for difference between two independent proportions</a></li>
+<li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
+</ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
@@ -295,7 +370,62 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="stata-resources-2" class="section level1 unnumbered">
 <h1><strong>10</strong> Stata resources</h1>
+<p>To access the Power and sample size menu item, you may need to point your mouse to the down arrow on the Stata menu to scroll down as shown below.</p>
+<p><img src="img/mod10/stata/mod10-menu-1.png" width="400pt" /></p>
+<p>You should now be able to find and select Power and sample size in the menu as shown below.</p>
+<p><img src="img/mod10/stata/mod10-menu-1.png" width="400pt" /></p>
+<p>The Power and sample-size analysis dialog box appears as shown below.</p>
+<p><img src="img/mod10/stata/mod10-menu-3.png" width="400pt" /></p>
+<div id="sample-size-calculation-for-two-independent-samples-t-test" class="section level2" number="10.11">
+<h2><span class="header-section-number">10.11</span> Sample size calculation for two independent samples t-test</h2>
+<p>To do the problem discussed in Worked Example 10.2, you can expand the <strong>Means</strong> item under <strong>Population parameter</strong> on the left-hand-side of the <strong>Power and sample-size analysis</strong> dialog box, then choose <strong>Two independent</strong> samples. On the right-hand-side of the dialog box, choose <strong>Test comparing two independent means</strong>.</p>
+<p><img src="img/mod10/stata/mod10-twomeans-1.png" width="400pt" /></p>
+<p>The <strong>power twomeans</strong> dialog box will appear. Based on the information in Worked Example 10.2, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong>. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is <code>90</code> mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg. We use equal numbers in each group (allocation ratio of <code>1</code> which is the default) because that would give us the smallest total sample size required.</p>
+<p><img src="img/mod10/stata/mod10-twomeans-2.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.1.</p>
+<p>[Command: <code>power twomeans 90 95, sd(25) power(0.9)</code>]</p>
+</div>
+<div id="sample-size-calculation-for-paired-samples-t-test" class="section level2" number="10.12">
+<h2><span class="header-section-number">10.12</span> Sample size calculation for paired samples t-test</h2>
+<p>For a paired sample t-test, go back to the <strong>Power and sample-size analysis</strong> dialog box and click on <strong>Two paired samples</strong> under <strong>Means</strong> on the left-hand-side, then choose <strong>Paired test comparing two correlated means, specify correlation between paired observations</strong> as shown below.</p>
+<p><img src="img/mod10/stata/mod10-pairedmeans-1.png" width="400pt" /></p>
+<p>In the <strong>power pairedmeans</strong> dialog box, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong> as shown below. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is 90 mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg as we had for the independent samples.</p>
+<p><img src="img/mod10/stata/mod10-pairedmeans-2.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.2.</p>
+<p>[Command: <code>power pairedmeans 90 95, corr(0) power(0.9) sd(25)</code>]</p>
+</div>
+<div id="sample-size-calculation-for-difference-between-two-independent-proportions" class="section level2" number="10.13">
+<h2><span class="header-section-number">10.13</span> Sample size calculation for difference between two independent proportions</h2>
+<p>To do the problem discussed in Worked Example 10.3, you can expand the <strong>Proportions</strong> item under <strong>Population parameter</strong> on the left-hand-side of the Power and sample-size analysis dialog box, then choose <strong>Two independent samples</strong>. On the right-hand-side of the dialog box, choose <strong>Chi-squared test comparing two independent proportions</strong>.</p>
+<p><img src="img/mod10/stata/mod10-twoprop-1.png" width="400pt" /></p>
+<p>The <strong>power twoproportions</strong> dialog box will appear. Based on the information in Worked Example 10.3, check the <strong>Power</strong> is <code>0.8</code> and <strong>Significance level</strong> is <code>0.05</code> (these are the default values), then enter <code>0.35</code> and <code>0.2</code> as the <strong>Proportions</strong> as shown below. As with the two independent samples example, we can assume equal numbers in each group (<strong>Allocation ratio</strong> of <code>1</code> which is the default).</p>
+<p><img src="img/mod10/stata/mod10-twoprop-2.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.3.</p>
+<p>[Command: <code>power twoproportions .35 .2, test(chi2)</code>]</p>
+<p>Note: It doesn’t matter if you swap the proportions for the <strong>Control</strong> and <strong>Experimental</strong> group, i.e. the command <code>power twoproportions .2 .35 , test(chi2)</code> gives the same results.</p>
+<p>If you had difference in proportion, relative risk or odds ratio for the sample size calculation, you can choose them from the drop-down list under Experimental as shown below.</p>
+<p><img src="img/mod10/stata/mod10-twoprop-3.png" width="400pt" /></p>
+</div>
+<div id="sample-size-calculation-with-relative-risk-and-odds-ratio" class="section level2" number="10.14">
+<h2><span class="header-section-number">10.14</span> Sample size calculation with relative risk and odds ratio</h2>
+<p>Using information from Worked Example 10.4, we change <strong>Power</strong> to <code>0.9</code>, enter <code>0.5</code> as the <strong>Control Proportion</strong> and <code>1.5</code> as the <strong>Relative risk</strong> as shown below. [CHECK THE FOLLOWING: Note that when choosing “Relative Risk” in the “Effect size” section, the “Reported effect size” menu automatically changes to Relative risk. Due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
+<p><img src="img/mod10/stata/mod10-RR-1.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.4.</p>
+<p>Now we calculate the sample size for Worked Example 10.5. Enter <code>0.3</code> as the <strong>Control Proportion</strong>, choose <strong>Odds ratio</strong> as the estimate from the dropdown list and enter <code>2</code> as the <strong>Odds ratio.</strong> In this example, you can also try entering two values for <strong>Power</strong>: <code>0.9</code> and <code>0.8</code> as shown below. [CHECK: As before, due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
+<p><img src="img/mod10/stata/mod10-OR-1.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
+<pre class="text"><code>Estimated sample sizes for a two-sample proportions test
+Pearson&#39;s chi-squared test 
+Ho: p2 = p1  versus  Ha: p2 != p1
 
+  +-------------------------------------------------------------------------+
+  |   alpha   power       N      N1      N2   delta      p1      p2  oratio |
+  |-------------------------------------------------------------------------|
+  |     .05      .9     376     188     188   .1615      .3   .4615       2 |
+  |     .05      .8     282     141     141   .1615      .3   .4615       2 |
+  +-------------------------------------------------------------------------+</code></pre>
+
+</div>
 </div>
             </section>
 
