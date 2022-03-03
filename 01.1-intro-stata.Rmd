@@ -1,0 +1,127 @@
+# **1** An introduction to Stata {-}
+
+## Learning outcomes {-}
+
+By the end of these notes, you will be able to:
+
+- navigate the Stata interface
+- input and import data into Stata
+- use Stata menus to summarise data
+- perform basic data transformations
+- assign variable and value labels
+- understand the difference between saving data and saving Stata output
+- copy Stata output to a standard word processing package
+
+## Introduction
+Stata is a powerful statistical package that is relatively easy to use. It is commonly used in health research, as well as in other fields such as econometrics and social science. The aim of these notes is to introduce the Stata environment, and to introduce the commands and procedures that are directly relevant to this course. There is much more to Stata that we will cover in these notes, and more information will be provided throughout the course.
+
+## Part 1: A simple Stata analysis
+
+In this very brief section, we will introduce Stata by calculating the average of six ages. If you are using Windows, open Stata by clicking:	**Start > Stata 16 > Stata SE**
+
+If you are using MacOS, open Stata from the Applications folder. Note that while Stata is available for Windows and MacOS, most of the screenshots in these notes will be based on the Windows version.
+
+When you first open Stata, it will look something like the following.
+
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "simple-01.png"))
+```
+
+Each Stata session has a number of windows, which we will discuss later. For now, look in the top row of icons and find the icons that look like two grids: one with a pencil, and one with a magnifying glass: ![](img/mod01/stata/data-browser-icons.png). Click the left icon, the one with the pencil. The following window will appear.
+
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "simple-02.png"))
+```
+
+This window is known as the **Data Editor**, and is where data can be entered or changed. Enter the following six ages into Stata, starting at the top-left cell, by typing each number and then hitting Enter.
+
+	20	25	23	29	21	27
+
+If you make a mistake, simply click the incorrect cell, and enter the correct value. Your screen should look like this:
+
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "simple-03.png"))
+```
+ 
+There are two things to note here:
+
+1.	Data in Stata are entered down a column. In Stata, columns represent variables, and rows represent observations. So our six observations of age are entered in one column.
+2.	Stata has given the name of `var1` to our column of ages. We will fix this in a moment.
+
+Close the **Data Editor** window to return to the main Stata window. You will notice that the main Stata window now has some text that you might not understand. We will explain why shortly.
+
+Let's rename our variable from `var1` to `age`. There are a few ways you can do this in Stata, but one of the most convenient is to use the **Variables Manager** which can be accessed via **Data > Variables Manager**:
+
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "variables-manager-01.png"))
+```
+
+The **Variables Manager** is where you can change many variable properties, such as variable names or apply meaningful variable labels. Each variable is listed on a separate row, with aspects about each variable listed in the columns. To change the variable name, click `var1` in the **Name** column. Notice that information about that variable appears to the right of the window, in the **Variable properties** section.
+
+In the **Name** section within **Variable properties**, click `var1` and replace it with `age`. Click **Apply** and notice that the variable's name has been changed:
+
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "variables-manager-02.png"))
+```
+
+Close the **Variables manager** window.
+
+Some important points about variable names in Stata: 
+- any name you choose must be no more than 32 characters long;
+- variable names must contain only letters, numbers and the underscore (_);
+- variable names should start with a letter;
+- variable names are case-sensitive (so age, Age and AGE could represent three different variables)
+
+Now that we have entered our six ages, let's calculate the mean age. Choose **Statistics > Summaries, tables and tests > Summary and descriptive statistics > Summary statistics**. The **summarize** dialog box will appear. From the **Variables** drop-down box, select `age` as below:
+ 
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "simple-05.png"))
+```
+
+Click **OK**, and the main Stata screen will appear as below.
+ 
+```{r , echo=FALSE, out.width = "400pt",}
+knitr::include_graphics(here::here("img", "mod01", "stata", "simple-06.png"))
+```
+
+The final text in the main window provides a summary of `age`: there are 6 observations, with a mean age of 24.2 years, a standard deviation of 3.49 years, a minimum of 20 and a maximum of 29 years.
+
+## The Stata environment
+Now that we have seen a simple example of how to use Stata, let's describe the Stata environment. The largest window in Stata is the **Results** window. This is where the results of your analyses appear, as well as any information, warnings or error messages. You may have noticed that the **Results** window also contains commands used to conduct analyses. For example, there is a command above summary output for age:
+
+`. summarize age`
+
+This command is generated by Stata based on the entries in the **summarize** dialog box. Stata is inherently a command-driven program: the menus and dialog boxes simply generate commands that Stata interprets, and these commands (and their results) are included in the Results window. While most menu items and dialog boxes can be replicated using commands, it is easier to learn Stata using the menus and dialog boxes. In later Modules, we will include the commands that can be used as alternatives to using the Stata menus.
+
+The Stata windows are summarised below.
+
+| Window | Purpose |
+|---|---|
+| Results | Shows your issued commands, results output (e.g. tables) and error messages or warnings. |
+| Command | Where you can type in a command you want to run. The command window need not be used in this course |
+| Variables |     Gives a list of the variables in your currently opened dataset.    |
+| Properties |     Shows the properties of your currently selected variable (selected from the Variables window) and of your currently opened   dataset.    |
+| History |     Shows the history of your issued commands in your current session.    |
+| Data Editor (Edit) |     A separate window that allows you to edit or enter   data.    |
+| Data Editor (Browse) |     A separate window that allows you to view data: data   cannot be edited.    |
+
+
+Stata allows you to perform most of your work by selecting options from the appropriate menus at the top of the main Stata window. A brief description of the main menu bar options follows.
+
+**File** includes all the options you typically use in other programs, such as Open, Save, Exit. Note, that you can open or create various types of new files. The main type of file we open or create in this course is a Stata data file (.dta). In the Advanced Biostatistics and Statistical Computing course (PHCM9517), we will also use other file types such as a .do file for scripting (or writing) Stata commands.
+
+**Edit** includes the typical Copy, and Paste commands.
+
+**Data** allows you to open the **Data Editor**. You can also create new variables and change current variables using **Data > Create or change data**.
+
+**Graphics** includes the commands to create various types of graphs including box plots, histograms, scatterplots, line graphs, and bar charts.
+
+**Statistics** includes all the commands to carry out statistical analyses and perform power and sample size calculations. Much of this course will focus on using commands located in this menu.
+
+**User** is for saved files from other windows (e.g. saved graphs). You will not need to use this option in this course.
+
+**Window** can be used to select which window you want to view (e.g. Results, Data Editor).
+
+**Help** has many useful options including the viewing the PDF documentation, a Search function and other resources for using Stata. We will also demonstrate how to use helpful resources later in this introductory manual. Another useful Stata resource is the video tutorials produced by Stata: https://www.stata.com/links/video-tutorials/
+
+
