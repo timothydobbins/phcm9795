@@ -32,3 +32,9 @@ Ho: m2 = m1 versus  Ha: m2 != m1
 @acock10
 @bland15
 @kirkwood_sterne01
+
+
+Script to generate code to import sequentially numbered image files:
+names <- sprintf('"bar-%02d.png"',seq(1:12))
+commands <- (paste('knitr::include_graphics(here::here("img", "mod01", "stata",', names, ')'))
+cat(commands)

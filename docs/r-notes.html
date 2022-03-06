@@ -183,9 +183,10 @@ div.csl-indent {
 <li><a href="an-introduction-to-stata.html#an-introduction-to-stata"><strong>1</strong> An introduction to Stata</a>
 <ul>
 <li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html"><i class="fa fa-check"></i>Learning outcomes</a></li>
-<li class="chapter" data-level="1.10" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#introduction"><i class="fa fa-check"></i><b>1.10</b> Introduction</a></li>
-<li class="chapter" data-level="1.11" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-1-a-simple-stata-analysis"><i class="fa fa-check"></i><b>1.11</b> Part 1: A simple Stata analysis</a></li>
-<li class="chapter" data-level="1.12" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#the-stata-environment"><i class="fa fa-check"></i><b>1.12</b> The Stata environment</a></li>
+<li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#introduction"><i class="fa fa-check"></i>Introduction</a></li>
+<li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-1-a-simple-stata-analysis"><i class="fa fa-check"></i>Part 1: A simple Stata analysis</a></li>
+<li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-2-obtaining-basic-descriptive-statistics"><i class="fa fa-check"></i>Part 2: Obtaining basic descriptive statistics</a></li>
+<li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-3-creating-other-types-of-graphs"><i class="fa fa-check"></i>Part 3: Creating other types of graphs</a></li>
 </ul></li>
 <li class="chapter" data-level="2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>2</b> Probability and probability distributions</a>
 <ul>
@@ -392,38 +393,38 @@ div.csl-indent {
 <div id="setup" class="section level2" number="5.8">
 <h2><span class="header-section-number">5.8</span> Setup</h2>
 <p>For this module, we will use the <code>tidyverse</code>, <code>haven</code>, <code>skimr</code> and <code>moments</code> packages:</p>
-<div class="sourceCode" id="cb12"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb12-1"><a href="r-notes.html#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb12-2"><a href="r-notes.html#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
-<span id="cb12-3"><a href="r-notes.html#cb12-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
-<span id="cb12-4"><a href="r-notes.html#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code></pre></div>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-notes.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb16-2"><a href="r-notes.html#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(haven)</span>
+<span id="cb16-3"><a href="r-notes.html#cb16-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(skimr)</span>
+<span id="cb16-4"><a href="r-notes.html#cb16-4" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(moments)</span></code></pre></div>
 </div>
 <div id="checking-data-for-the-independent-samples-t-test-1" class="section level2" number="5.9">
 <h2><span class="header-section-number">5.9</span> Checking data for the independent samples t-test</h2>
 <p>We import the <code>Example_5.1.dta</code> dataset using the <code>haven</code> package, and inspect it using the <code>skim</code> function within the <code>skimr</code> package:</p>
-<div class="sourceCode" id="cb13"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb13-1"><a href="r-notes.html#cb13-1" aria-hidden="true" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">&quot;data/examples/Example_5.1.dta&quot;</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb13-2"><a href="r-notes.html#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
-<span id="cb13-3"><a href="r-notes.html#cb13-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-4"><a href="r-notes.html#cb13-4" aria-hidden="true" tabindex="-1"></a><span class="co"># skim(babies)</span></span></code></pre></div>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-notes.html#cb17-1" aria-hidden="true" tabindex="-1"></a>babies <span class="ot">&lt;-</span> <span class="fu">read_stata</span>(<span class="st">&quot;data/examples/Example_5.1.dta&quot;</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb17-2"><a href="r-notes.html#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">gender =</span> <span class="fu">factor</span>(gender, <span class="at">levels=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>), <span class="at">labels=</span><span class="fu">c</span>(<span class="st">&quot;Male&quot;</span>, <span class="st">&quot;Female&quot;</span>)))</span>
+<span id="cb17-3"><a href="r-notes.html#cb17-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb17-4"><a href="r-notes.html#cb17-4" aria-hidden="true" tabindex="-1"></a><span class="co"># skim(babies)</span></span></code></pre></div>
 <div id="producing-histograms-and-boxplots-by-a-second-variable-1" class="section level3" number="5.9.1">
 <h3><span class="header-section-number">5.9.1</span> Producing histograms and boxplots by a second variable</h3>
 <p>To obtain histograms for separate variables in <code>ggplot2</code>, we defined a variable as a <em>facet</em>.</p>
-<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb14-1"><a href="r-notes.html#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">x =</span> birthweight)) <span class="sc">+</span></span>
-<span id="cb14-2"><a href="r-notes.html#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">binwidth=</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="r-notes.html#cb14-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(gender <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb18-1"><a href="r-notes.html#cb18-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">x =</span> birthweight)) <span class="sc">+</span></span>
+<span id="cb18-2"><a href="r-notes.html#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">&quot;white&quot;</span>, <span class="at">colour =</span> <span class="st">&quot;black&quot;</span>, <span class="at">binwidth=</span><span class="fl">0.25</span>) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="r-notes.html#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(gender <span class="sc">~</span> .)</span></code></pre></div>
 <p><img src="PHCM9795_files/figure-html/mod5-r-plot-babies-1.png" width="672" /></p>
-<div class="sourceCode" id="cb15"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb15-1"><a href="r-notes.html#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">x =</span> birthweight)) <span class="sc">+</span></span>
-<span id="cb15-2"><a href="r-notes.html#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
-<span id="cb15-3"><a href="r-notes.html#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(gender <span class="sc">~</span> .)</span></code></pre></div>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb19-1"><a href="r-notes.html#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">x =</span> birthweight)) <span class="sc">+</span></span>
+<span id="cb19-2"><a href="r-notes.html#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_density</span>() <span class="sc">+</span></span>
+<span id="cb19-3"><a href="r-notes.html#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">facet_wrap</span>(gender <span class="sc">~</span> .)</span></code></pre></div>
 <p><img src="PHCM9795_files/figure-html/mod5-r-plot-babies-2.png" width="672" /></p>
-<div class="sourceCode" id="cb16"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb16-1"><a href="r-notes.html#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">y =</span> birthweight, <span class="at">x=</span>gender)) <span class="sc">+</span></span>
-<span id="cb16-2"><a href="r-notes.html#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb20-1"><a href="r-notes.html#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(babies, <span class="fu">aes</span>(<span class="at">y =</span> birthweight, <span class="at">x=</span>gender)) <span class="sc">+</span></span>
+<span id="cb20-2"><a href="r-notes.html#cb20-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>()</span></code></pre></div>
 <p><img src="PHCM9795_files/figure-html/mod5-r-plot-babies-3.png" width="672" /></p>
 <p>This looks like a cool HTML way to hide solutions:</p>
 <details>
 <summary>
 <p>Solution:</p>
-<div class="sourceCode" id="cb17"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb17-1"><a href="r-notes.html#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
-<span id="cb17-2"><a href="r-notes.html#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb21-1"><a href="r-notes.html#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">&quot;tidyverse&quot;</span>)</span>
+<span id="cb21-2"><a href="r-notes.html#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span></code></pre></div>
 </details>
 </div>
 <div id="producing-split-summary-statistics-1" class="section level3" number="5.9.2">
