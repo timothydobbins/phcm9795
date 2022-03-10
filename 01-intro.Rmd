@@ -1,3 +1,8 @@
+---
+output:
+  pdf_document: default
+  html_document: default
+---
 # Introduction to statistics and presenting data
 
 ## Learning objectives {-}
@@ -284,25 +289,25 @@ Given the different possible formats of tables and their complexity, some furthe
 
 Using the PBC data from the Introduction to Stata exercise, we can present the distribution of Stage of Disease graphically using a bar graph. Bar graphs, which are suitable for plotting discrete or categorical variables, are defined by the fact that the bars do not touch.
 
-```{r fig-1-1, echo=FALSE, fig.cap="Bar graph of stage of disease from PBC study"}
+```{r fig-1-1, echo=FALSE, out.width = "75%", fig.cap="Bar graph of stage of disease from PBC study"}
 knitr::include_graphics(here::here("img", "mod01", "pbc-bar.png"))
 ```
 
 Information from more than one variable can be presented as clustered or multiple bar chart (bars side-by-side) (Figure X.X). This type of graph is useful when examining changes in the categories separately, but also comparing the grouping variable between the main bar variable. Here we can see that Stage 3 and Stage 4 disease is the most common for both males and females, but there are many more females within each stage of disease.
 
-```{r fig-1-2, echo=FALSE, fig.cap="Bar graph of stage of disease by sex from PBC study"}
+```{r fig-1-2, echo=FALSE, out.width = "75%", fig.cap="Bar graph of stage of disease by sex from PBC study"}
 knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-sex.png"))
 ```
 
 An alternative bar graph is a stacked or composite bar graph, which retains the overall height for each category, but differentiates the bars by another variable (Figure 1.3).
 
-```{r fig-1-3, echo=FALSE, fig.cap="Stacked bar graph of stage of disease by sex from PBC study"}
+```{r fig-1-3, echo=FALSE, out.width = "75%", fig.cap="Stacked bar graph of stage of disease by sex from PBC study"}
 knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-sex-stacked.png"))
 ```
 
 Finally, a stacked relative bar chart (Figure 1.4) displays the proportion of grouping variable for each bar, where each overall bar represents 100%. These graphs allow the reader to compare the proportions between categories. We can easily see from Figure 1.4 that the distribution of sex is similar across each stage of disease.
 
-```{r fig-1-4, echo=FALSE, fig.cap="Relative frequency of sex within stage of disease from PBC study"}
+```{r fig-1-4, echo=FALSE, out.width = "75%", fig.cap="Relative frequency of sex within stage of disease from PBC study"}
 knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-sex-stacked-relative.png"))
 ```
 
@@ -489,7 +494,7 @@ If the histogram has an extended tail to the left, then the data are negatively 
 
 Figure 1.X presents two histograms from the PBC data from the Introduction to Stata exercise: for age and serum bilirubin. We can see that the distribution for age is roughly symmetric, while the distribution for serum bilirubin is highly positively skewed (or skewed to the right).
 
-```{r fig-1-6, echo=FALSE, fig.cap="Histogram of age (left) and serum bilirubin (right) from PBC study data"}
+```{r fig-1-6, echo=FALSE, out.width = "75%", fig.cap="Histogram of age (left) and serum bilirubin (right) from PBC study data"}
 knitr::include_graphics(here::here("img", "mod01", "hist-symmetric-skewed.png"))
 ```
 
@@ -508,7 +513,7 @@ If the data are symmetric, the line across the box (the median value) will be in
 Figure 1.X presents two boxplots from the PBC data: for age and serum bilirubin. We can see that the boxplot for age has roughly equal tails, and the median (the horizontal line) lies roughly in the middle of the interquartile range (the shaded box). It would be reasonable to assume that age follows a symmetric distribution from this plot. The boxplot for serum bilirubin shows a much longer upper tail, and a median much closer to the bottom of the shaded box than the middle. The boxplot also shows a number of points above the 75th percentile plus 1.5 × IQR. As the upper tail is longer than the lower tail, this distribution is positively skewed.
 
 
-```{r fig-1-7, echo=FALSE, fig.cap="Box plot of age (left) and serum bilirubin (right) from PBC study data"}
+```{r fig-1-7, echo=FALSE, out.width = "75%", fig.cap="Box plot of age (left) and serum bilirubin (right) from PBC study data"}
 knitr::include_graphics(here::here("img", "mod01", "hist-symmetric-skewed.png"))
 ```
 
