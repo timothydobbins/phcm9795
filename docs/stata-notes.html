@@ -4,13 +4,13 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>4 Stata notes | PHCM9795 Foundations of Biostatistics</title>
+  <title>2 Stata notes | PHCM9795 Foundations of Biostatistics</title>
   <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
 set in the _output.yml file.</p>" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="4 Stata notes | PHCM9795 Foundations of Biostatistics" />
+  <meta property="og:title" content="2 Stata notes | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
@@ -20,7 +20,7 @@ set in the _output.yml file.</p>" />
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="4 Stata notes | PHCM9795 Foundations of Biostatistics" />
+  <meta name="twitter:title" content="2 Stata notes | PHCM9795 Foundations of Biostatistics" />
   
   <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
 The HTML output format for this example is bookdown::gitbook,
@@ -36,8 +36,8 @@ set in the _output.yml file.</p>" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="hypothesis-testing.html"/>
-<link rel="next" href="learning-activities-3.html"/>
+<link rel="prev" href="probability-and-probability-distributions.html"/>
+<link rel="next" href="learning-activities-1.html"/>
 <script src="libs/header-attrs-2.11/header-attrs.js"></script>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -60,70 +60,6 @@ set in the _output.yml file.</p>" />
 <script src="libs/anchor-sections-1.0.1/anchor-sections.js"></script>
 
 
-<style type="text/css">
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-    color: #aaaaaa;
-  }
-pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-code span.al { color: #ff0000; font-weight: bold; } /* Alert */
-code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { color: #7d9029; } /* Attribute */
-code span.bn { color: #40a070; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #4070a0; } /* Char */
-code span.cn { color: #880000; } /* Constant */
-code span.co { color: #60a0b0; font-style: italic; } /* Comment */
-code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
-code span.do { color: #ba2121; font-style: italic; } /* Documentation */
-code span.dt { color: #902000; } /* DataType */
-code span.dv { color: #40a070; } /* DecVal */
-code span.er { color: #ff0000; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #40a070; } /* Float */
-code span.fu { color: #06287e; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #007020; font-weight: bold; } /* Keyword */
-code span.op { color: #666666; } /* Operator */
-code span.ot { color: #007020; } /* Other */
-code span.pp { color: #bc7a00; } /* Preprocessor */
-code span.sc { color: #4070a0; } /* SpecialChar */
-code span.ss { color: #bb6688; } /* SpecialString */
-code span.st { color: #4070a0; } /* String */
-code span.va { color: #19177c; } /* Variable */
-code span.vs { color: #4070a0; } /* VerbatimString */
-code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
-</style>
 
 <style type="text/css">
 /* Used with Pandoc 2.11+ new --citeproc when CSL is used */
@@ -164,7 +100,7 @@ div.csl-indent {
 <li><a href="./">PHCM9795 Foundations of Biostatistics</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Blah</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to statistics and presenting data</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
@@ -177,9 +113,8 @@ div.csl-indent {
 <li class="chapter" data-level="1.6" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#summary-statistics-and-variation-in-data"><i class="fa fa-check"></i><b>1.6</b> Summary statistics and variation in data</a></li>
 <li class="chapter" data-level="1.7" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#population-values-mean-variance-and-standard-deviation"><i class="fa fa-check"></i><b>1.7</b> Population values: mean, variance and standard deviation</a></li>
 <li class="chapter" data-level="1.8" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#using-graphs-to-display-the-centre-and-spread-of-the-data"><i class="fa fa-check"></i><b>1.8</b> Using graphs to display the centre and spread of the data</a></li>
-<li class="chapter" data-level="1.9" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#how-to-report-summary-statistics---update"><i class="fa fa-check"></i><b>1.9</b> How to report summary statistics - UPDATE</a></li>
+<li class="chapter" data-level="1.9" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#how-to-report-summary-statistics"><i class="fa fa-check"></i><b>1.9</b> How to report summary statistics</a></li>
 </ul></li>
-<li><a href="learning-activities.html#learning-activities"><strong>1</strong> Learning Activities</a></li>
 <li><a href="an-introduction-to-stata.html#an-introduction-to-stata"><strong>1</strong> An introduction to Stata</a>
 <ul>
 <li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html"><i class="fa fa-check"></i>Learning outcomes</a></li>
@@ -188,6 +123,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-2-obtaining-basic-descriptive-statistics"><i class="fa fa-check"></i>Part 2: Obtaining basic descriptive statistics</a></li>
 <li class="chapter" data-level="" data-path="an-introduction-to-stata.html"><a href="an-introduction-to-stata.html#part-3-creating-other-types-of-graphs"><i class="fa fa-check"></i>Part 3: Creating other types of graphs</a></li>
 </ul></li>
+<li><a href="learning-activities.html#learning-activities"><strong>1</strong> Learning Activities</a></li>
 <li class="chapter" data-level="2" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html"><i class="fa fa-check"></i><b>2</b> Probability and probability distributions</a>
 <ul>
 <li class="chapter" data-level="" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#learning-objectives-1"><i class="fa fa-check"></i>Learning objectives</a></li>
@@ -204,18 +140,18 @@ div.csl-indent {
 <li class="chapter" data-level="2.10" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#parametric-and-non-parametric-statistical-methods"><i class="fa fa-check"></i><b>2.10</b> Parametric and non-parametric statistical methods</a></li>
 <li class="chapter" data-level="2.11" data-path="probability-and-probability-distributions.html"><a href="probability-and-probability-distributions.html#other-types-of-probability-distributions"><i class="fa fa-check"></i><b>2.11</b> Other types of probability distributions</a></li>
 </ul></li>
-<li><a href="module-2-stata-notes.html#module-2-stata-notes"><strong>Module 2: Stata notes</strong></a>
+<li><a href="stata-notes.html#stata-notes"><strong>2</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="2.12" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html"><i class="fa fa-check"></i><b>2.12</b> Importing data into Stata</a></li>
-<li class="chapter" data-level="2.13" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#checking-your-data-for-errors-in-stata"><i class="fa fa-check"></i><b>2.13</b> Checking your data for errors in Stata</a></li>
-<li class="chapter" data-level="2.14" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#overlaying-a-normal-curve-on-a-histogram"><i class="fa fa-check"></i><b>2.14</b> Overlaying a Normal curve on a Histogram</a></li>
-<li class="chapter" data-level="2.15" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#descriptive-statistics-for-checking-normality"><i class="fa fa-check"></i><b>2.15</b> Descriptive statistics for checking normality</a></li>
-<li class="chapter" data-level="2.16" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#importing-excel-data-into-stata"><i class="fa fa-check"></i><b>2.16</b> Importing Excel data into Stata</a></li>
-<li class="chapter" data-level="2.17" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#generating-new-variables"><i class="fa fa-check"></i><b>2.17</b> Generating new variables</a></li>
-<li class="chapter" data-level="2.18" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#summarising-data-by-another-variable"><i class="fa fa-check"></i><b>2.18</b> Summarising data by another variable</a></li>
-<li class="chapter" data-level="2.19" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#recoding-data"><i class="fa fa-check"></i><b>2.19</b> Recoding data</a></li>
-<li class="chapter" data-level="2.20" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#computing-binomial-probabilities-using-the-hand-calculator-in-stata"><i class="fa fa-check"></i><b>2.20</b> Computing binomial probabilities using the Hand calculator in Stata</a></li>
-<li class="chapter" data-level="2.21" data-path="module-2-stata-notes.html"><a href="module-2-stata-notes.html#computing-probabilities-from-the-normal-distribution-using-the-hand-calculator-in-stata"><i class="fa fa-check"></i><b>2.21</b> Computing probabilities from the normal distribution using the Hand calculator in Stata</a></li>
+<li class="chapter" data-level="2.12" data-path="stata-notes.html"><a href="stata-notes.html"><i class="fa fa-check"></i><b>2.12</b> Importing data into Stata</a></li>
+<li class="chapter" data-level="2.13" data-path="stata-notes.html"><a href="stata-notes.html#checking-your-data-for-errors-in-stata"><i class="fa fa-check"></i><b>2.13</b> Checking your data for errors in Stata</a></li>
+<li class="chapter" data-level="2.14" data-path="stata-notes.html"><a href="stata-notes.html#overlaying-a-normal-curve-on-a-histogram"><i class="fa fa-check"></i><b>2.14</b> Overlaying a Normal curve on a Histogram</a></li>
+<li class="chapter" data-level="2.15" data-path="stata-notes.html"><a href="stata-notes.html#descriptive-statistics-for-checking-normality"><i class="fa fa-check"></i><b>2.15</b> Descriptive statistics for checking normality</a></li>
+<li class="chapter" data-level="2.16" data-path="stata-notes.html"><a href="stata-notes.html#importing-excel-data-into-stata"><i class="fa fa-check"></i><b>2.16</b> Importing Excel data into Stata</a></li>
+<li class="chapter" data-level="2.17" data-path="stata-notes.html"><a href="stata-notes.html#generating-new-variables"><i class="fa fa-check"></i><b>2.17</b> Generating new variables</a></li>
+<li class="chapter" data-level="2.18" data-path="stata-notes.html"><a href="stata-notes.html#summarising-data-by-another-variable"><i class="fa fa-check"></i><b>2.18</b> Summarising data by another variable</a></li>
+<li class="chapter" data-level="2.19" data-path="stata-notes.html"><a href="stata-notes.html#recoding-data"><i class="fa fa-check"></i><b>2.19</b> Recoding data</a></li>
+<li class="chapter" data-level="2.20" data-path="stata-notes.html"><a href="stata-notes.html#computing-binomial-probabilities-using-the-hand-calculator-in-stata"><i class="fa fa-check"></i><b>2.20</b> Computing binomial probabilities using the Hand calculator in Stata</a></li>
+<li class="chapter" data-level="2.21" data-path="stata-notes.html"><a href="stata-notes.html#computing-probabilities-from-the-normal-distribution-using-the-hand-calculator-in-stata"><i class="fa fa-check"></i><b>2.21</b> Computing probabilities from the normal distribution using the Hand calculator in Stata</a></li>
 </ul></li>
 <li><a href="learning-activities-1.html#learning-activities-1"><strong>2</strong> Learning Activities</a></li>
 <li class="chapter" data-level="3" data-path="precision-standard-errors-and-confidence-intervals.html"><a href="precision-standard-errors-and-confidence-intervals.html"><i class="fa fa-check"></i><b>3</b> Precision, standard errors and confidence intervals</a>
@@ -228,9 +164,9 @@ div.csl-indent {
 <li class="chapter" data-level="3.4" data-path="precision-standard-errors-and-confidence-intervals.html"><a href="precision-standard-errors-and-confidence-intervals.html#central-limit-theorem"><i class="fa fa-check"></i><b>3.4</b> Central limit theorem</a></li>
 <li class="chapter" data-level="3.5" data-path="precision-standard-errors-and-confidence-intervals.html"><a href="precision-standard-errors-and-confidence-intervals.html#confidence-interval-of-the-mean"><i class="fa fa-check"></i><b>3.5</b> 95% confidence interval of the mean</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="module-3-stata-notes.html"><a href="module-3-stata-notes.html"><i class="fa fa-check"></i>Module 3: Stata notes</a>
+<li><a href="stata-notes-1.html#stata-notes-1"><strong>3</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="3.6" data-path="module-3-stata-notes.html"><a href="module-3-stata-notes.html#calculating-a-95-confidence-interval-of-a-mean"><i class="fa fa-check"></i><b>3.6</b> Calculating a 95% confidence interval of a mean</a></li>
+<li class="chapter" data-level="3.6" data-path="stata-notes-1.html"><a href="stata-notes-1.html"><i class="fa fa-check"></i><b>3.6</b> Calculating a 95% confidence interval of a mean</a></li>
 </ul></li>
 <li><a href="learning-activities-2.html#learning-activities-2"><strong>3</strong> Learning Activities</a></li>
 <li class="chapter" data-level="4" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html"><i class="fa fa-check"></i><b>4</b> Hypothesis testing</a>
@@ -248,9 +184,9 @@ div.csl-indent {
 <li class="chapter" data-level="4.9" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#a-note-on-p-values-displayed-by-software"><i class="fa fa-check"></i><b>4.9</b> A note on P-values displayed by software</a></li>
 <li class="chapter" data-level="4.10" data-path="hypothesis-testing.html"><a href="hypothesis-testing.html#decision-tree"><i class="fa fa-check"></i><b>4.10</b> Decision Tree</a></li>
 </ul></li>
-<li><a href="stata-notes.html#stata-notes"><strong>4</strong> Stata notes</a>
+<li><a href="stata-notes-2.html#stata-notes-2"><strong>4</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="4.11" data-path="stata-notes.html"><a href="stata-notes.html"><i class="fa fa-check"></i><b>4.11</b> One sample t-test</a></li>
+<li class="chapter" data-level="4.11" data-path="stata-notes-2.html"><a href="stata-notes-2.html"><i class="fa fa-check"></i><b>4.11</b> One sample t-test</a></li>
 </ul></li>
 <li><a href="learning-activities-3.html#learning-activities-3"><strong>4</strong> Learning Activities</a></li>
 <li class="chapter" data-level="5" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html"><i class="fa fa-check"></i><b>5</b> Comparing the means of two groups</a>
@@ -261,17 +197,12 @@ div.csl-indent {
 <li class="chapter" data-level="5.2" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html#independent-samples-t-test"><i class="fa fa-check"></i><b>5.2</b> Independent samples t-test</a></li>
 <li class="chapter" data-level="5.3" data-path="comparing-the-means-of-two-groups.html"><a href="comparing-the-means-of-two-groups.html#paired-t-tests"><i class="fa fa-check"></i><b>5.3</b> Paired t-tests</a></li>
 </ul></li>
-<li><a href="stata-notes-1.html#stata-notes-1"><strong>5</strong> Stata notes</a>
+<li><a href="stata-notes-3.html#stata-notes-3"><strong>5</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="5.4" data-path="stata-notes-1.html"><a href="stata-notes-1.html"><i class="fa fa-check"></i><b>5.4</b> Checking data for the independent samples t-test</a></li>
-<li class="chapter" data-level="5.5" data-path="stata-notes-1.html"><a href="stata-notes-1.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>5.5</b> Independent samples t-test</a></li>
-<li class="chapter" data-level="5.6" data-path="stata-notes-1.html"><a href="stata-notes-1.html#checking-the-assumptions-for-a-paired-t-test"><i class="fa fa-check"></i><b>5.6</b> Checking the assumptions for a Paired t-test</a></li>
-<li class="chapter" data-level="5.7" data-path="stata-notes-1.html"><a href="stata-notes-1.html#paired-t-test"><i class="fa fa-check"></i><b>5.7</b> Paired t-Test</a></li>
-</ul></li>
-<li><a href="r-notes.html#r-notes"><strong>5</strong> R notes</a>
-<ul>
-<li class="chapter" data-level="5.8" data-path="r-notes.html"><a href="r-notes.html"><i class="fa fa-check"></i><b>5.8</b> Setup</a></li>
-<li class="chapter" data-level="5.9" data-path="r-notes.html"><a href="r-notes.html#checking-data-for-the-independent-samples-t-test-1"><i class="fa fa-check"></i><b>5.9</b> Checking data for the independent samples t-test</a></li>
+<li class="chapter" data-level="5.4" data-path="stata-notes-3.html"><a href="stata-notes-3.html"><i class="fa fa-check"></i><b>5.4</b> Checking data for the independent samples t-test</a></li>
+<li class="chapter" data-level="5.5" data-path="stata-notes-3.html"><a href="stata-notes-3.html#independent-samples-t-test-1"><i class="fa fa-check"></i><b>5.5</b> Independent samples t-test</a></li>
+<li class="chapter" data-level="5.6" data-path="stata-notes-3.html"><a href="stata-notes-3.html#checking-the-assumptions-for-a-paired-t-test"><i class="fa fa-check"></i><b>5.6</b> Checking the assumptions for a Paired t-test</a></li>
+<li class="chapter" data-level="5.7" data-path="stata-notes-3.html"><a href="stata-notes-3.html#paired-t-test"><i class="fa fa-check"></i><b>5.7</b> Paired t-Test</a></li>
 </ul></li>
 <li><a href="learning-activities-4.html#learning-activities-4"><strong>5</strong> Learning Activities</a></li>
 <li class="chapter" data-level="6" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html"><i class="fa fa-check"></i><b>6</b> Summary statistics for binary data</a>
@@ -282,14 +213,15 @@ div.csl-indent {
 <li class="chapter" data-level="6.2" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#calculating-proportions-and-95-confidence-intervals"><i class="fa fa-check"></i><b>6.2</b> Calculating proportions and 95% confidence intervals</a></li>
 <li class="chapter" data-level="6.3" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#hypothesis-testing-for-one-sample-proportion"><i class="fa fa-check"></i><b>6.3</b> Hypothesis testing for one sample proportion</a></li>
 <li class="chapter" data-level="6.4" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#contingency-tables"><i class="fa fa-check"></i><b>6.4</b> Contingency tables</a></li>
-<li class="chapter" data-level="6.5" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#calculation-of-the-95ci-for-relative-risk-odds-ratio-and-other-measures-of-association"><i class="fa fa-check"></i><b>6.5</b> Calculation of the 95%CI for relative risk, odds ratio and other measures of association</a></li>
+<li class="chapter" data-level="6.5" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#a-brief-summary-of-epidemiological-study-types"><i class="fa fa-check"></i><b>6.5</b> A brief summary of epidemiological study types</a></li>
+<li class="chapter" data-level="6.6" data-path="summary-statistics-for-binary-data.html"><a href="summary-statistics-for-binary-data.html#measures-of-effect-for-epidemiological-studies"><i class="fa fa-check"></i><b>6.6</b> Measures of effect for epidemiological studies</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html"><i class="fa fa-check"></i>Module 6: Stata notes</a>
+<li><a href="stata-notes-4.html#stata-notes-4"><strong>6</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="6.6" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#confidence-intervals-for-proportions"><i class="fa fa-check"></i><b>6.6</b> 95% confidence intervals for proportions</a></li>
-<li class="chapter" data-level="6.7" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#significance-test-for-single-proportion"><i class="fa fa-check"></i><b>6.7</b> Significance test for single proportion</a></li>
-<li class="chapter" data-level="6.8" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#computing-a-relative-risk-and-its-95-confidence-interval"><i class="fa fa-check"></i><b>6.8</b> Computing a relative risk and its 95% confidence interval</a></li>
-<li class="chapter" data-level="6.9" data-path="module-6-stata-notes.html"><a href="module-6-stata-notes.html#computing-an-odds-ratio-and-its-95ci"><i class="fa fa-check"></i><b>6.9</b> Computing an odds ratio and its 95%CI</a></li>
+<li class="chapter" data-level="6.7" data-path="stata-notes-4.html"><a href="stata-notes-4.html"><i class="fa fa-check"></i><b>6.7</b> 95% confidence intervals for proportions</a></li>
+<li class="chapter" data-level="6.8" data-path="stata-notes-4.html"><a href="stata-notes-4.html#significance-test-for-single-proportion"><i class="fa fa-check"></i><b>6.8</b> Significance test for single proportion</a></li>
+<li class="chapter" data-level="6.9" data-path="stata-notes-4.html"><a href="stata-notes-4.html#computing-a-relative-risk-and-its-95-confidence-interval"><i class="fa fa-check"></i><b>6.9</b> Computing a relative risk and its 95% confidence interval</a></li>
+<li class="chapter" data-level="6.10" data-path="stata-notes-4.html"><a href="stata-notes-4.html#computing-an-odds-ratio-and-its-95ci"><i class="fa fa-check"></i><b>6.10</b> Computing an odds ratio and its 95%CI</a></li>
 </ul></li>
 <li><a href="learning-activities-5.html#learning-activities-5"><strong>6</strong> Learning Activities</a></li>
 <li class="chapter" data-level="7" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html"><i class="fa fa-check"></i><b>7</b> Hypothesis testing for categorical data</a>
@@ -319,12 +251,12 @@ div.csl-indent {
 <li class="chapter" data-level="8.4" data-path="correlation-and-linear-regression.html"><a href="correlation-and-linear-regression.html#obtaining-a-regression-equation-in-stata"><i class="fa fa-check"></i><b>8.4</b> Obtaining a regression equation in Stata</a></li>
 <li class="chapter" data-level="8.5" data-path="correlation-and-linear-regression.html"><a href="correlation-and-linear-regression.html#multiple-linear-regression"><i class="fa fa-check"></i><b>8.5</b> Multiple linear regression</a></li>
 </ul></li>
-<li><a href="stata-notes-2.html#stata-notes-2"><strong>8</strong> Stata notes</a>
+<li><a href="stata-notes-5.html#stata-notes-5"><strong>8</strong> Stata notes</a>
 <ul>
-<li class="chapter" data-level="8.6" data-path="stata-notes-2.html"><a href="stata-notes-2.html"><i class="fa fa-check"></i><b>8.6</b> Creating a scatter plot</a></li>
-<li class="chapter" data-level="8.7" data-path="stata-notes-2.html"><a href="stata-notes-2.html#calculating-a-correlation-coefficient"><i class="fa fa-check"></i><b>8.7</b> Calculating a correlation coefficient</a></li>
-<li class="chapter" data-level="8.8" data-path="stata-notes-2.html"><a href="stata-notes-2.html#fitting-a-simple-linear-regression-model"><i class="fa fa-check"></i><b>8.8</b> Fitting a simple linear regression model</a></li>
-<li class="chapter" data-level="8.9" data-path="stata-notes-2.html"><a href="stata-notes-2.html#plotting-residuals-from-a-simple-linear-regression"><i class="fa fa-check"></i><b>8.9</b> Plotting residuals from a simple linear regression</a></li>
+<li class="chapter" data-level="8.6" data-path="stata-notes-5.html"><a href="stata-notes-5.html"><i class="fa fa-check"></i><b>8.6</b> Creating a scatter plot</a></li>
+<li class="chapter" data-level="8.7" data-path="stata-notes-5.html"><a href="stata-notes-5.html#calculating-a-correlation-coefficient"><i class="fa fa-check"></i><b>8.7</b> Calculating a correlation coefficient</a></li>
+<li class="chapter" data-level="8.8" data-path="stata-notes-5.html"><a href="stata-notes-5.html#fitting-a-simple-linear-regression-model"><i class="fa fa-check"></i><b>8.8</b> Fitting a simple linear regression model</a></li>
+<li class="chapter" data-level="8.9" data-path="stata-notes-5.html"><a href="stata-notes-5.html#plotting-residuals-from-a-simple-linear-regression"><i class="fa fa-check"></i><b>8.9</b> Plotting residuals from a simple linear regression</a></li>
 </ul></li>
 <li><a href="learning-activities-7.html#learning-activities-7"><strong>8</strong> Learning Activities</a></li>
 <li class="chapter" data-level="9" data-path="analysing-non-normal-data.html"><a href="analysing-non-normal-data.html"><i class="fa fa-check"></i><b>9</b> Analysing non-normal data</a>
@@ -389,28 +321,207 @@ div.csl-indent {
 
             <section class="normal" id="section-">
 <div id="stata-notes" class="section level1 unnumbered">
-<h1><strong>4</strong> Stata notes</h1>
-<div id="one-sample-t-test-1" class="section level2" number="4.11">
-<h2><span class="header-section-number">4.11</span> One sample t-test</h2>
-<p>We will use data from <code>Example_4.1.dta</code> to demonstrate how a one-sample t-test is conducted in Stata. To perform the test, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; t test (mean-comparison test)</strong>.</p>
-<p>Ensure that the <strong>One-sample</strong> option is selected, then choose <code>dbp</code> as the <strong>Variable name</strong> from the drop-down list. Enter the <strong>Hypothesised mean</strong> value (<code>71</code> in this example) as shown below.</p>
-<p><img src="img/mod04/stata/mod4-ttest.png" width="400pt" /></p>
-<p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
-<p>[Command: <code>ttest dbp == 71</code>]</p>
-<pre class="text"><code>. ttest dbp == 71
+<h1><strong>2</strong> Stata notes</h1>
+<div id="importing-data-into-stata" class="section level2" number="2.12">
+<h2><span class="header-section-number">2.12</span> Importing data into Stata</h2>
+<p>We have described previously how to open data that have been saved as Stata .dta files. It is quite common to have data saved in other file types, such as Microsoft Excel, or plain text files. In this section, we will demonstrate how to import data from other packages into Stata using commands in the <strong>File &gt; Import</strong> menu.</p>
+<div id="importing-plain-text-data-into-stata" class="section level3" number="2.12.1">
+<h3><span class="header-section-number">2.12.1</span> Importing plain text data into Stata</h3>
+<p>A <code>csv</code> file, or a “comma separated variables” file is commonly used to store data. These files have a very simple structure: they are plain text files, where data are separated by commas. csv files have the advantage that, as they are plain text files, they can be opened by a large number of programs (such as Notepad in Windows, TextEdit in MacOS, Microsoft Excel - even Microsoft Word). While they can be opened by Microsoft Excel, they can be opened by many other programs: the csv file can be thought of as the lingua-franca of data.</p>
+<p>In this demonstration, we will use data on the weight of 1000 people entered in a csv file called <code>weight_s2.csv</code> available on Moodle.
+To confirm that the file is readable by any text editor, here are the first ten lines of the file, opened in Notepad on Microsoft Windows, and TextEdit on MacOS.</p>
+<p><img src="img/mod02/stata/import-01.png" width="400pt" /></p>
+<p>To import it into Stata, use **File &gt; Import &gt; Text data (delimited, *.csv, …)<strong> to bring up the import delimited text data dialog box. Click the </strong>Open** button (the folder icon on the right-hand side of the window) and select the csv file you downloaded. The dialog box should look like below:</p>
+<p><img src="img/mod02/stata/import-02.png" width="400pt" /></p>
+<p>Here, Stata has (correctly) decided that the first row of the dataset contains the variable names. You may need to change this if the Preview window does not look correct. Click <strong>OK</strong> or <strong>Submit</strong> button to import the data.</p>
+</div>
+</div>
+<div id="checking-your-data-for-errors-in-stata" class="section level2" number="2.13">
+<h2><span class="header-section-number">2.13</span> Checking your data for errors in Stata</h2>
+<p>Before you start describing and analysing your data, it is important to make sure that no errors have been made during the data entry process. Basically, you are looking for values that are outside the range of possible or plausible values for that variable.</p>
+<p>If an error is found, the best method for correcting the error is to go back to the original data e.g. the hard copy questionnaire, to obtain the original value, entering the correct value into Stata. If the original data is not available or the original data is also incorrect, the erroneous value is often excluded from the dataset.</p>
+<p>For continuous variables, the easiest methods are to examine a boxplot and histogram. For example, a boxplot and histogram for the weight variable we just imported appear as:</p>
+<p><img src="img/mod02/stata/check-01.png" width="400pt" /></p>
+<p>There is a clear outlying point shown in the boxplot. Although not obvious, the same point is shown in the histogram as a bar around 700 with a very short height.</p>
+<p>To identify the outlying observation in the dataset, we can sort your data in ascending order and check the minimum and maximum values in the Data Editor. You will need to decide if these values are a data entry error or are biologically plausible. If an extreme value or “outlier”, is biologically plausible, it should be included in all analyses.</p>
+<p>To sort data, you must be in the <strong>Data Editor (Edit)</strong> window. Select <strong>Data &gt; Sort data…</strong> and choose <code>weight</code> as shown in the <strong>sort</strong> dialog box below. Click <strong>OK</strong> to do an <em>ascending</em> sort (arranging weight from smallest to largest). [Command: <code>sort weight</code>]</p>
+<p><img src="img/mod02/stata/check-02.png" width="400pt" /></p>
+<p>By scrolling through the data, you will see that the values range from 53.8kg to 85.8kg with a very high value of 700.2kg. A value as high as 700kg is likely to be a data entry error (e.g. error in entering an extra zero) and is not a plausible weight value. Here, <strong>you should check your original data</strong>. You might find that the original weight was recorded as 70.2kg. You can change this in Stata by deleting a zero from cell with 700.2 in the <strong>Data Editor (Edit)</strong> window.</p>
+<p>[Command: <code>replace weight = 70.2 in 1000</code>]</p>
+<p><strong>Note:</strong> if an extreme value lies within the range of biological plausibility it should not be removed from analysis.</p>
+<p>Once you have checked your data for errors, you are ready to start analysing your data.</p>
+</div>
+<div id="overlaying-a-normal-curve-on-a-histogram" class="section level2" number="2.14">
+<h2><span class="header-section-number">2.14</span> Overlaying a Normal curve on a Histogram</h2>
+<p>It can be useful to produce a histogram with an overlayed Normal curve to assess whether our sample appears approximately Normally distributed. First go to menu <strong>Graphics &gt; Histogram</strong>. In the <strong>Histogram</strong> dialog box, select <code>weight</code> into the <strong>variable</strong> box and choose the <strong>Frequency</strong> radio button for ease of interpretation.</p>
+<p><img src="img/mod02/stata/hist-01.png" width="400pt" /></p>
+<p>You can click the <strong>Submit</strong> button to check how the plot looks like. To superimpose the normal curve, go to the <strong>Density plots</strong> and tick <strong>Add normal-density plot</strong>, then click the <strong>Submit</strong> or <strong>OK</strong> button. You can change the X-axis label in the <strong>X axis</strong> tab, e.g. to <code>Weight (kg)</code>.</p>
+<p><img src="img/mod02/stata/hist-02.png" width="400pt" /></p>
+<p>[Command: <code>histogram weight, frequency normal xtitle(Weight (kg))</code>]</p>
+<p>Your histogram should look like this:</p>
+<p><img src="img/mod02/stata/hist-03.png" width="400pt" /></p>
+</div>
+<div id="descriptive-statistics-for-checking-normality" class="section level2" number="2.15">
+<h2><span class="header-section-number">2.15</span> Descriptive statistics for checking normality</h2>
+<p>All the descriptive statistics including Skewness and Kurtosis discussed in this module can be obtained using the <code>summarize</code> command from <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong> and specifying <strong>detail</strong> as an option in Stata (as shown in the Stata Notes for Module 1).</p>
+<p>[Command: <code>summarize weight, detail</code>]</p>
+<p><img src="img/mod02/stata/desc-01.png" width="400pt" /></p>
+<p>You can similarly repeat this using the dataset <code>Example_1.3.dta</code> used for creating these in the course notes for this module.</p>
+</div>
+<div id="importing-excel-data-into-stata" class="section level2" number="2.16">
+<h2><span class="header-section-number">2.16</span> Importing Excel data into Stata</h2>
+<p>Another common type of file that data are stored in is a Microsoft Excel file (.xls or .xlsx). In this demonstration, we will import a selection of records from a large health survey, stored in the file <code>health-survey.xlsx</code>.</p>
+<p>The health survey data contains 1140 records, comprising:</p>
+<ul>
+<li>sex: 1 = respondent identifies as male; 2 = respondent identifies as female</li>
+<li>height: height in meters</li>
+<li>weight: weight in kilograms</li>
+</ul>
+<p>To import data from Microsoft Excel, we use <strong>File &gt; Import &gt; Excel spreadsheet</strong>. First click <strong>Browse</strong> to locate the file to be imported:</p>
+<p><img src="img/mod02/stata/import-excel-01.png" width="400pt" /></p>
+<p>Take special note of the <strong>Preview</strong> at the bottom of the dialog box. Our dataset has the variable names listed in the first row of the spreadsheet, so we tick the <strong>Import first row as variable names</strong> checkbox. We don’t want to <strong>Import all data as strings</strong> (strings are character, or text variables), so we leave this unchecked. We finalise the process by clicking <strong>OK</strong>.</p>
+<p>As always, check the Data Browser to confirm that the data were imported successfully.</p>
+</div>
+<div id="generating-new-variables" class="section level2" number="2.17">
+<h2><span class="header-section-number">2.17</span> Generating new variables</h2>
+<p>Our health survey data contains information on height and weight. We often summarise body size using BMI: body mass index which is calculated as: <span class="math inline">\(\frac{\text{weight (kg)}}{(\text{height (m)})^2}\)</span></p>
+<p>To generate a new variable, we use <strong>Data &gt; Create or change data &gt; Create new variable</strong>.</p>
+<p><img src="img/mod02/stata/gen-01.png" width="400pt" /></p>
+<ol style="list-style-type: decimal">
+<li>type the name of the new variable, BMI, in the Variable name box.</li>
+<li>enter the formula to calculate the variable in “Specify a value or an expression”. This can be done in one of two ways:</li>
+</ol>
+<p><strong>Option 1:</strong> click <strong>Create</strong> to open the Expression Builder dialog box. This box allows you to build the formula interactively:</p>
+<p><img src="img/mod02/stata/gen-02.png" width="400pt" /></p>
+<p>Clicking <strong>Variables</strong> in the lower-left-hand pane shows a list of variables in the lower-middle pane of the window. We want to create a new formula of <span class="math inline">\(\text{weight } \div \text{ height} ^2\)</span>. Double-clicking a variable name moves that variable into the formula builder. To build our BMI formula:</p>
+<ol style="list-style-type: lower-roman">
+<li>double-click <code>weight</code></li>
+<li>click the <strong>/</strong> button (to represent <span class="math inline">\(\div\)</span>). Note that you can type the <strong>/</strong> symbol instead of clicking the button</li>
+<li>double-click <code>height</code></li>
+<li>click the <strong>^</strong> button (to represent “to the power of”) - again you can type the <strong>^</strong> symbol</li>
+<li>enter <code>2</code> (as ^2 represents “to the power of 2”, or “squared”</li>
+</ol>
+<p>Your completed window should look like:</p>
+<p><img src="img/mod02/stata/gen-03.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> to return to the generate dialog box, which now should appear as:</p>
+<p><img src="img/mod02/stata/gen-04.png" width="400pt" /></p>
+<p><strong>Option 2:</strong> if you are entering a simple formula, you can type the formula directly into the expression using your keyboard.</p>
+<p>Click <strong>OK</strong> to generate your new variable.</p>
+<p>[Command: <code>generate BMI = weight / height ^ 2</code>]</p>
+<p>We should check the construction of the new variable by examining the Data Browser:</p>
+<p><img src="img/mod02/stata/gen-05.png" width="400pt" /></p>
+<p>In the general population, BMI ranges between about 15 to 30. It appears that BMI has been correctly generated in this example.</p>
+</div>
+<div id="summarising-data-by-another-variable" class="section level2" number="2.18">
+<h2><span class="header-section-number">2.18</span> Summarising data by another variable</h2>
+<p>We will often want to calculate the same summary statistics by another variable. For example, we might want to calculate summary statistics for BMI for males and females separately. We can do this in Stata by defining sex as a <em>by-variable</em>.
+Many Stata commands (and dialog boxes) allow for a by-variable. For example, to obtain summary statistics for BMI by sex (note that sex has been given a value label, as described in Module 1):</p>
+<ol style="list-style-type: decimal">
+<li>Define <code>BMI</code> as our <strong>Variable</strong> in the <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong> dialog box.</li>
+</ol>
+<p><img src="img/mod02/stata/summ-by-01.png" width="400pt" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Click the <strong>by/if/in</strong> tab, tick <strong>Repeat command by groups</strong>, and select the variable you want to be the <em>by-variable</em>. In this case, we choose <code>sex</code> and then click <strong>OK</strong>.</li>
+</ol>
+<p><img src="img/mod02/stata/summ-by-02.png" width="400pt" /></p>
+<p>[Command: <code>by sex, sort : summarize BMI</code>]</p>
+<p>The by-variable will tell Stata to repeat the <code>summarize</code> command for each distinct value of <code>sex</code>. Hence, your by-variable must be a discrete variable with only a relatively small number of categories.</p>
+<p>The following results appear:</p>
+<pre class="text"><code>. by sex, sort : summarize BMI
 
-One-sample t test
-------------------------------------------------------------------------------
-Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
----------+--------------------------------------------------------------------
-     dbp |     733    72.40518    .4573454    12.38216    71.50732    73.30305
-------------------------------------------------------------------------------
-    mean = mean(dbp)                                              t =   3.0725
-Ho: mean = 71                                    degrees of freedom =      732
+-----------------------------------------------------------------------------------
+-&gt; sex = Male
 
-    Ha: mean &lt; 71               Ha: mean != 71                 Ha: mean &gt; 71
- Pr(T &lt; t) = 0.9989         Pr(|T| &gt; |t|) = 0.0022          Pr(T &gt; t) = 0.0011</code></pre>
-<p>The table gives the sample mean and standard deviation, as well as the standard error and 95% confidence interval of the mean. The test statistics are given under the table: t and the degrees of freedom as well as the P values from two-sided (Ha: mean != 71) and one-sided (Ha: mean &lt;71 and Ha: mean &gt; 71) tests. Refer to the previous sections of this module on the appropriate test to use.</p>
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         BMI |        513    28.29561    5.204975   16.47519   57.23643
+
+-----------------------------------------------------------------------------------
+-&gt; sex = Female
+
+    Variable |        Obs        Mean    Std. Dev.       Min        Max
+-------------+---------------------------------------------------------
+         BMI |        627    27.81434    6.380523   9.209298   52.59515</code></pre>
+<p>Here, we have calculated summary statistics separately for Males and Females.
+A form of the <strong>by</strong> tab appears in many Stata windows. For example, we can create separate histograms for males and females using the same two-step process:</p>
+<ol style="list-style-type: decimal">
+<li>Define <code>BMI</code> as the variable to be plotted</li>
+</ol>
+<p><img src="img/mod02/stata/hist-by-01.png" width="400pt" /></p>
+<ol start="2" style="list-style-type: decimal">
+<li>Define <code>sex</code> as a <em>by-variable</em> by completing the <strong>By</strong> tab:</li>
+</ol>
+<p><img src="img/mod02/stata/hist-by-02.png" width="400pt" /></p>
+<p>This produces the following graph:</p>
+<p><img src="img/mod02/stata/hist-by-03.png" width="400pt" /></p>
+</div>
+<div id="recoding-data" class="section level2" number="2.19">
+<h2><span class="header-section-number">2.19</span> Recoding data</h2>
+<p>One task that is common in statistical computing is to recode variables. For example, we might want to group some categories of a categorical variable, or to present a continuous variable in a categorical way.</p>
+<p>In this example, we can recode BMI into the following categories as suggested by the World Health Organisation [footnote]:</p>
+<ul>
+<li>Underweight: BMI &lt; 18.5</li>
+<li>Normal weight: 18.5 <span class="math inline">\(\le\)</span> BMI &lt; 25</li>
+<li>Pre-obesity: 25 <span class="math inline">\(\le\)</span> BMI &lt; 30</li>
+<li>Obesity Class I: 30 <span class="math inline">\(\le\)</span> BMI &lt; 35</li>
+<li>Obesity Class II: 35 <span class="math inline">\(\le\)</span> BMI &lt; 40</li>
+<li>Obesity Class III: BMI <span class="math inline">\(\ge\)</span> 40</li>
+</ul>
+<p>To recode data in Stata, we use the <strong>Recode categorical variable</strong> command. It may seem odd to use a command called <strong>Recode categorical variable</strong> to recode BMI, a continuous variable, but that is just the name Stata uses for its recode command.</p>
+<ol style="list-style-type: decimal">
+<li>Click <strong>Data &gt; Create or change data &gt; Other variable-transformation commands &gt; Recode categorical variable</strong> to open the <strong>recode</strong> dialog box.</li>
+<li>Choose <code>BMI</code> as the variable to be recoded from.</li>
+<li>Enter the recoding rules. To recode from a range of values to a new category while assigning a value label, we enter the recoding rule in the following form:</li>
+</ol>
+<p>(<em>a</em> / <em>b</em> = <em>c</em> “label”) where:</p>
+<ul>
+<li><em>a</em> is the lower limit of the range to be recoded from</li>
+<li><em>b</em> is the upper limit of the range to be recoded from</li>
+<li><em>c</em> is the value of the new category to be recoded to</li>
+<li><em>label</em> is the label to assign to the category <em>c</em></li>
+</ul>
+<p>It is important to note that the values of <em>a</em> and <em>b</em> are inclusive; and we can use the words <code>min</code> and <code>max</code> to represent the smallest and largest values respectively.</p>
+<p>So to recode the underweight category, we would enter: <code>(min / 18.4999 = 1 "Underweight")</code>
+Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.4999 = 1 "Normal weight")</code></p>
+<p>Your completed recode dialog box should look as follows:</p>
+<p><img src="img/mod02/stata/recode-01.png" width="400pt" /></p>
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Do not forget this step!</strong> To recode into a new variable, we <strong>must</strong> click the options tab to give the name of the new variable. If this step is not performed, Stata will overwrite the initial variable with the recoded version. Here, we tell Stata to generate a new variable called bmi_category:</li>
+</ol>
+<p><img src="img/mod02/stata/recode-02.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> to complete the recoding.</p>
+<p>Note that the default label for the new recoded variable <code>bmi_category</code> is <code>RECODE of BMI</code>. This can be relabelled in the usual way: click on <code>bmi_category</code> in the <strong>Variables</strong> window, then enter a name such as <code>BMI Category</code> in the <strong>Label</strong> box in the <strong>Properties</strong> window.</p>
+</div>
+<div id="computing-binomial-probabilities-using-the-hand-calculator-in-stata" class="section level2" number="2.20">
+<h2><span class="header-section-number">2.20</span> Computing binomial probabilities using the Hand calculator in Stata</h2>
+<p>To do the computation for part (a) in Worked Example 2.1, go to <strong>Data &gt; Other utilities &gt; Hand calculator</strong> from the main menu in Stata.</p>
+<p><img src="img/mod02/stata/binomial-01.png" width="400pt" /></p>
+<p>In the dialog box, click <strong>Create…</strong> to bring up the <strong>Expression Builder</strong> dialog box. In the <strong>Categories</strong> box, click on <strong>Functions</strong> to expand the list, then scroll down to <strong>Statistical</strong>, expand the list again and select <strong>Binomial</strong>.</p>
+<p><img src="img/mod02/stata/binomial-02.png" width="400pt" /></p>
+<p>A list of functions will pop up to the right of the <strong>Categories</strong> box. Double click on <strong>binomialp()</strong> which will populate the top of the expression builder box with <code>binomialp(n,k,p)</code>. Following the instructions at the bottom of the box:</p>
+<ul>
+<li><em>k</em> is the number of successes, here, the number of smokers (i.e. k=3);</li>
+<li><em>n</em> is the number of trials (i.e. n=6);</li>
+<li>and <em>p</em> is probability of drawing a smoker from the population, which is 19.8% (i.e. p=0.198).</li>
+</ul>
+<p>Replace each of these with the appropriate number into the box as shown below.</p>
+<p><img src="img/mod02/stata/binomial-03.png" width="400pt" /></p>
+<p>Click the <strong>OK</strong> button in the Expression Builder box, then click <strong>OK</strong> or <strong>Submit</strong> in the main dialog box. The probability is now displayed on your Results screen as <code>.08008454</code> which rounds off to 0.08 as shown in part (a) of Worked Example 2.1. (Note that Stata doesn’t print the 0 in front of the decimal point in the output.)</p>
+<p>[Command: <code>display binomialp(6, 3, 0.198)</code>]</p>
+<p>To calculate the upper tail of probability in part (b), go to <strong>Data &gt; Other utilities &gt; Hand calculator</strong> from the main menu and bring up the <strong>Expression Builder</strong> box again. You may need to clear the text in your Expression box from your previous display command.</p>
+<p>In the <strong>Categories</strong> box, navigate to <strong>Binomial</strong> and select it as you had before. Now double click on <strong>binomialtail()</strong> which will populate the top of the expression builder box with <code>binomialtail(n,k,p)</code>. To obtain P(X <span class="math inline">\(\ge\)</span> 4) from 6 trials, <em>n</em>=6, <em>k</em>=4 and <em>p</em>=0.198. When you are done, click the <strong>OK</strong> button in the <strong>Expression Builder</strong> box to get the below in the display dialog box:</p>
+<p><img src="img/mod02/stata/binomial-04.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomialtail(6, 4, 0.198)</code>]</p>
+<p>For the lower tail for part (c), choose or double-click on <strong>binomial()</strong> from the list of functions. To obtain P(X$$2) from 6 trials, enter <em>n</em>=6, <em>k</em>=2 and <em>p</em>=0.198.</p>
+<p><img src="img/mod02/stata/binomial-05.png" width="400pt" /></p>
+<p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomial(6, 2, 0.198)</code>]</p>
+</div>
+<div id="computing-probabilities-from-the-normal-distribution-using-the-hand-calculator-in-stata" class="section level2" number="2.21">
+<h2><span class="header-section-number">2.21</span> Computing probabilities from the normal distribution using the Hand calculator in Stata</h2>
+<p>From Stata, the probability using a normal distribution can be obtained from the display command via <strong>Data &gt; Other utilities &gt; Hand calculator</strong> as shown in Worked example 2.1. In the dialog box, click the <strong>Create…</strong> button to bring up the <strong>Expression Builder</strong> dialog box. In the <strong>Categories</strong> box, click on <strong>Functions</strong> to expand the list, then scroll down to <strong>Statistical</strong> and expand the list again and select <strong>Normal</strong> this time. Double-click on <strong>normal()</strong> to populate the top of the expression builder box with <code>normal(z)</code>.</p>
+<p>The instructions at the bottom of the box explain that this is the cumulative standard normal distribution which means it gives P(Z&lt;z) in Stata. In other words, the normal() function gives you the <strong>lower tail</strong> probability from the standard normal distribution. To obtain P(Z&gt;0.5), edit the box to <code>1-normal(0.5)</code> as shown below.</p>
+<p><img src="img/mod02/stata/normal-01.png" width="400pt" /></p>
+<p>Click <strong>OK</strong>, then <strong>Submit</strong> to obtain the same value as from the table. [Command: <code>display 1-normal(0.5)</code>]</p>
 
 </div>
 </div>
@@ -419,8 +530,8 @@ Ho: mean = 71                                    degrees of freedom =      732
           </div>
         </div>
       </div>
-<a href="hypothesis-testing.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="learning-activities-3.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="probability-and-probability-distributions.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="learning-activities-1.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>
@@ -451,7 +562,7 @@ gitbook.start({
 "size": 2
 },
 "edit": {
-"link": "https://github.com/USERNAME/REPO/edit/BRANCH/04.1-hypothesis-testing-stata.Rmd",
+"link": "https://github.com/USERNAME/REPO/edit/BRANCH/02.1-probability-stata.Rmd",
 "text": "Edit"
 },
 "history": {

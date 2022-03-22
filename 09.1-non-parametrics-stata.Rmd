@@ -47,7 +47,7 @@ The Wilcoxon ranked-sum test will be demonstrated using the length of stay data 
 
 In the **ranksum** dialog box, select `los` as the **Variable** and select `infect` as the **Grouping variable** as shown below.
 
-```{r mod09-ranksum, echo=FALSE, out.width = "400pt",}
+```{r mod09-ranksum, echo=FALSE, out.width = "75%",}
 knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-ranksum.png"))
 ```
 
@@ -60,7 +60,7 @@ The Wilcoxon matched-pairs signed-rank test in Stata will be demonstrated using 
 
 To do the analysis, go to: **Statistics > Summaries, tables, and tests > Nonparametric tests of hypotheses > Wilcoxon matched-pairs sign-rank test**. In the **signrank** dialog box, select `drug_1` in the **Variable** box and type `drug_2` in the **Expression** box. The dialog box will look like: 
 
-```{r mod09-signrank, echo=FALSE, out.width = "400pt",}
+```{r mod09-signrank, echo=FALSE, out.width = "75%",}
 knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-signrank.png"))
 ```
 
@@ -73,12 +73,12 @@ The analyses for Spearman's and Kendall's rank correlation are conducted in simi
 
 **Statistics > Nonparametric analysis > Tests of hypotheses > Spearman's rank correlation**
 
-```{r mod09-spearman, echo=FALSE, out.width = "400pt",}
+```{r mod09-spearman, echo=FALSE, out.width = "75%",}
 knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-spearman.png"))
 ```
 
 **Statistics > Nonparametric analysis > Tests of hypotheses > Kendall's rank correlation**
 
-```{r mod09-kendall, echo=FALSE, out.width = "400pt",}
+```{r mod09-kendall, echo=FALSE, out.width = "75%",}
 knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-kendall.png"))
 ```

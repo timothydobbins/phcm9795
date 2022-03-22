@@ -25,5 +25,7 @@ library(here)
 library(knitr)
 library(huxtable)
 ```
-# Blah {-}
 
+# Preface {-}
+
+Welcome to **PHCM9795: Foundations of Biostatistics**.

@@ -19,7 +19,7 @@ Image chunk
 ```{r twoway-2, echo=FALSE, out.width = "400pt",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
 ```
-
+\@ref(fig:twoway-2)
 
 Output chunk
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}

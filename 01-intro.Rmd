@@ -515,22 +515,22 @@ knitr::include_graphics(here::here("img", "mod01", "hist-symmetric-skewed.png"))
 ## How to report summary statistics
 When reporting summary statistics, it is important not to present results with too many decimal places. Doing so implies that your data have a higher level of precision than they do. For example, presenting a mean blood pressure of 100.2487 mmHg implies that blood pressure can be measured accurately to at least three decimal places.
 
-There are a number of guidelines that have been written to help in the presentation of numerical data. Many of these guidelines are based on the number of decimal places, while others are based on the number of significant figures. Briefly, the number of significant figures are "the number of digits from the first non-zero digit to the last meaningful digit, irrespective of the position of the decimal point. Thus, 1.002, 10.02, 100200 (if this number is expressed to the nearest 100) all have four significant digits." [Armitage, Berry, Matthews]
+There are a number of guidelines that have been written to help in the presentation of numerical data. Many of these guidelines are based on the number of decimal places, while others are based on the number of significant figures. Briefly, the number of significant figures are "the number of digits from the first non-zero digit to the last meaningful digit, irrespective of the position of the decimal point. Thus, 1.002, 10.02, 100200 (if this number is expressed to the nearest 100) all have four significant digits." @armitage_etal13
 
 A summary of these guidelines that will be used in this course appear below. Examples are provided, and for continuous data these examples are assuming the original data are from a sample of ages, measured to the nearest whole year.
 
-| Summary statistic                     | Guideline (reference)    |     Example    |
-|---------------------------------------|---|---|
-| Mean                                  | It is usually appropriate to quote the mean to one extra decimal place compared with the raw data (Altman)    | Mean age: 37.8 years |
-| Median, Interquartile range, Range    | As medians, interquartile ranges and ranges are based on individual data points, these values should be presented with the same precision as the original data.    | Median age: 36 years, Range: 18 to 93 years |
-| Percentage                            | Percentages do not need to be given with more than one decimal place at most. When the sample size is less than 100, no decimal places should be given (Altman) |  "Large" (n>=100) studies: 0.7%, 3.4%, 75.5%. "Small" (n<100) studies: 1%, 3%, 89% |
-| Standard deviation                    | “The standard deviation should usually be given to the same accuracy as the mean, or with one extra decimal place.” Altman    |  Age SD: 6.4 years |
-| Standard error                        | As per Standard Deviation    |          |
-| Confidence interval                   | Use the same rule as for the corresponding effect size (be it mean, percentage, mean difference, regression coefficient, correlation coefficient or risk ratio) (Cole)    |          |
-| Test statistic                        |          |          |
-| P-value                               | Report p values to a single significant   figure unless the p value is close to 0.05 (say, 0.01 –   0.2), in which case, report two significant figures. Do not report “not   significant” for p values of 0.05 or higher. Very low p values   can be reported as p < 0.001 or similar. A p value   can indeed be 1, although some investigators prefer to report this as   >0.9. (Assel et al)    |          |
-| Difference in means                   | As for the estimated means    |          |
-| Difference in proportions             | As for the estimated proportions    |          |
-| Odds ratio / Relative risk            | Hazard and odds ratios are normally reported to two   decimal places, although this can be avoided for high odds ratios (Assel et   al)    |          |
-| Correlation coefficient               | One or two decimal places, or more when very close to ±1   (Cole)    |     0.03     −0.7     0.89     0.999    |
-| Regression coefficient                | Use one more significant figure than the underlying data   (adapted from Cole: the same number of significant figures as for the mean)    |          |
+| Summary statistic                       | Guideline (reference)                                                                              |     Example                             |
+|-----------------------------------------|----------------------------------------------------------------------------------------------------|-----------------------------------------|
+| Mean                                    | It is usually appropriate to quote the mean to one extra decimal place compared with the raw data (Altman)    | Mean age: 37.8 years |
+| Median, Interquartile range, Range      | As medians, interquartile ranges and ranges are based on individual data points, these values should be presented with the same precision as the original data.    | Median age: 36 years, Range: 18 to 93 years |
+| Percentage                              | Percentages do not need to be given with more than one decimal place at most. When the sample size is less than 100, no decimal places should be given (Altman) |  "Large" (n>=100) studies: 0.7%, 3.4%, 75.5%. "Small" (n<100) studies: 1%, 3%, 89% |
+| Standard deviation                      | “The standard deviation should usually be given to the same accuracy as the mean, or with one extra decimal place.” Altman    |  Age SD: 6.4 years |
+| Standard error                          | As per Standard Deviation    |          |
+| Confidence interval                     | Use the same rule as for the corresponding effect size (be it mean, percentage, mean difference, regression coefficient, correlation coefficient or risk ratio) (Cole)    |          |
+| Test statistic                          |          |          |
+| P-value                                 | Report p values to a single significant   figure unless the p value is close to 0.05 (say, 0.01 –   0.2), in which case, report two significant figures. Do not report “not   significant” for p values of 0.05 or higher. Very low p values   can be reported as p < 0.001 or similar. A p value   can indeed be 1, although some investigators prefer to report this as   >0.9. (Assel et al)    |          |
+| Difference in means                     | As for the estimated means    |          |
+| Difference in proportions               | As for the estimated proportions    |          |
+| Odds ratio / Relative risk              | Hazard and odds ratios are normally reported to two   decimal places, although this can be avoided for high odds ratios (Assel et   al)    |          |
+| Correlation coefficient                 | One or two decimal places, or more when very close to ±1   (Cole)    |     0.03     −0.7     0.89     0.999    |
+| Regression coefficient                  | Use one more significant figure than the underlying data   (adapted from Cole: the same number of significant figures as for the mean)    |          |

@@ -102,12 +102,43 @@ Above all, a study has to be practical in terms of the availability of a populat
 
 The power of a study, which was discussed in Module 4, is the chance of finding a statistically significant difference when one exists, i.e. the probability of correctly rejecting the null hypothesis. The relationship between the power of a study and statistical significance is shown in Table 10.2.
 
-Table 10.2 Comparison of study results with the truth
+```{r, eval=knitr::is_html_output(), echo=FALSE}
+df <- tibble::tribble(
+  ~` `, ~Effect, ~`No effect`,
+  "Evidence", "✓", "ɑ",
+  "No evidence", "β", "✓"
+)
 
-Study result	Truth
-	Effect	No effect
-Effect	✔️	α (Type I error)
-No effect	β (Type II error)	✔️
+huxtable(df) %>%
+  insert_row("Study result", "Truth", "", after=0) %>% 
+  merge_cells(1, 2:3) %>% 
+  theme_article() %>% 
+  set_align(everywhere, 2:3, "center") %>% 
+  set_width(0.8) %>% 
+  set_bold(1, everywhere, TRUE) %>% 
+  set_bold(2, everywhere, FALSE) %>% 
+  set_caption("Comparison of study result with the truth") %>% 
+  set_escape_contents(everywhere, everywhere, FALSE)
+```
+
+```{r, eval=knitr::is_latex_output(), echo=FALSE}
+df <- tibble::tribble(
+  ~` `, ~Effect, ~`No effect`,
+  "Evidence", "$\\checkmark$", "$\\alpha$",
+  "No evidence", "$\\beta$", "$\\checkmark$"
+)
+
+huxtable(df) %>%
+  insert_row("Study result", "Truth", "", after=0) %>% 
+  merge_cells(1, 2:3) %>% 
+  theme_article() %>% 
+  set_align(everywhere, 2:3, "center") %>% 
+  set_width(0.8) %>% 
+  set_bold(1, everywhere, TRUE) %>% 
+  set_bold(2, everywhere, FALSE) %>% 
+  set_caption("Comparison of study result with the truth") %>% 
+  set_escape_contents(everywhere, everywhere, FALSE)
+```
 
 The power of a study is expressed as 1– β where β is the probability of a false negative (that is, the probability of a Type II error - incorrectly not rejecting the null hypothesis. In most research, power is generally set to 80% (a Type II error rate of 20%). However, in some studies, especially in some clinical trials where rigorous results are required, power is set to 90% (a Type II error rate of 10%).
 

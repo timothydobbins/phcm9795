@@ -1,4 +1,4 @@
-# **8**    Stata notes {-}
+# **8** Stata notes {-}
 
 ## Creating a scatter plot
 

@@ -126,25 +126,32 @@ Stata allows you to perform most of your work by selecting options from the appr
 
 ## Part 2: Obtaining basic descriptive statistics {-}
 
-In this exercise, we will analyse data to complete a descriptive table from a research study. The data come from a study in primary biliary cirrhosis, a condition of the liver, from T Therneau and P Grambsch (2000), Modeling Survival Data: Extending the Cox Model, Springer-Verlag, New York. By the end of this exercise, we will have completed the following table.
+In this exercise, we will analyse data to complete a descriptive table from a research study. The data come from a study in primary biliary cirrhosis, a condition of the liver, from @therneau_grambsch10, Modeling Survival Data: Extending the Cox Model. By the end of this exercise, we will have completed the following table.
 
-Table 1: Summary of 418 participants from the PBC study (Therneau and Grambsch, 2000)
+```{r echo=FALSE}
+tab <- tibble::tribble(
+                     ~Characteristic,                   ~` `,                    ~Summary,
+                       "Age (years)",                     NA, "Mean (SD) or Median [IQR]",
+                               "Sex",                 "Male",                     "n (%)",
+                               "Sex",               "Female",                     "n (%)",
+                       "AST* (U/ml)",                     NA, "Mean (SD) or Median [IQR]",
+                   "Serum bilirubin",                     NA, "Mean (SD) or Median [IQR]",
+                             "Stage",                    "I",                     "n (%)",
+                             "Stage",                   "II",                     "n (%)",
+                             "Stage",                  "III",                     "n (%)",
+                             "Stage",                 "IIIV",                     "n (%)",
+         "Vital status at study end", "Alive: no transplant",                     "n (%)",
+         "Vital status at study end",    "Alive: transplant",                     "n (%)",
+         "Vital status at study end",             "Deceased",                     "n (%)"
+         )
 
-| Age |             | Mean (SD) or Median [IQR] |
-| Sex | Male        | n (%) |
-|     | Female      | n (%) |
-| AST* (U/ml) |  |  |
-| Serum bilirubin |  |  |
-| Stage | I         | n (%) |
-|       | II        | n (%) |
-|       | III       | n (%) |
-|       | IV        | n (%) |
-| Vital status at study end      | Alive: no transplant        | n (%) |
-|       | Alive: transplant        | n (%) |
-|       | Deceased        | n (%) |
-
-* asparate aminotransferase
-
+huxtable(tab) %>% 
+  theme_article() %>% 
+  merge_repeated_rows(everywhere, 1) %>% 
+  set_width(0.95) %>% 
+  set_caption("Summary of 418 participants from the PBC study (Therneau and Grambsch, 2000)") %>% 
+  add_footnote("* asparate aminotransferase")
+```
 This table is available in Table1.docx, saved on Moodle.
 
 ### Opening a Stata data file

@@ -26,20 +26,22 @@ In general, parametric statistics are preferred for reporting data because the s
 When a variable has a skewed distribution, one possibility is to transform the data to a new variable to try and obtain a normal or near normal distribution. Methods to transform non-normally distributed data include logarithmic transformation of each data point, or using the square root or the square or the inverse (i.e. 1/x) etc. 
 
 ### Worked Example
-We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure 9.1. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
+We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure \@ref(fig:mod09-los). As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
-**INSERT FIGURE**
-Figure 9.1 Length of hospital stay in 132 patients
+```{r mod09-los, echo=FALSE, out.width = "400pt", fig.cap="Length of hospital stay for 132 patients"}
+knitr::include_graphics(here::here("img", "mod09", "mod09-los.png"))
+```
 
-When data are positively skewed, as shown in Figure 9.1, a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.
-In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure 9.2.
+When data are positively skewed, as shown in Figure \@ref(fig:mod09-los), a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.
 
-**INSERT FIGURE**
-Figure 9.2 Distribution of log transformed (length of stay + 1)
-   
+In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure \@ref(fig:mod09-lnlos).
+
+```{r mod09-lnlos, echo=FALSE, out.width = "400pt", fig.cap="istribution of log transformed (length of stay + 1)"}
+knitr::include_graphics(here::here("img", "mod09", "mod09-lnlos.png"))
+```
+
 The distribution now appears much more bell shaped. Output 9.1 shows the descriptive statistics for length of stay before and after logarithmic transformation. Before transformation, the SD is almost as large as the mean value which indicates that the data are skewed and that these statistics are not an accurate description of the centre and spread of the data.
 
-Output
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
                        Length of stay
 -------------------------------------------------------------

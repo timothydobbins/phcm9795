@@ -1,4 +1,4 @@
-# **Module 2: Stata notes** {-}
+# **2** Stata notes {-}
 
 ## Importing data into Stata
 We have described previously how to open data that have been saved as Stata .dta files. It is quite common to have data saved in other file types, such as Microsoft Excel, or plain text files. In this section, we will demonstrate how to import data from other packages into Stata using commands in the **File > Import** menu.
