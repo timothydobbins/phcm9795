@@ -16,7 +16,7 @@ huxtable::huxtable(tab1_1, add_colnames = FALSE) %>%
 ```
 
 Image chunk
-```{r twoway-2, echo=FALSE, out.width = "400pt",}
+```{r twoway-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
 ```
 \@ref(fig:twoway-2)

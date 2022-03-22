@@ -5,7 +5,7 @@ We will use data from `Example_4.1.dta` to demonstrate how a one-sample t-test i
 
 Ensure that the **One-sample** option is selected, then choose `dbp` as the **Variable name** from the drop-down list. Enter the **Hypothesised mean** value (`71` in this example) as shown below. 
 
-```{r mod4-ttest, echo=FALSE, out.width = "400pt",}
+```{r mod4-ttest, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod04", "stata", "mod4-ttest.png"))
 ```
  

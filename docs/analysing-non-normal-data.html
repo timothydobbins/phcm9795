@@ -5,26 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 9 Analysing non-normal data | PHCM9795 Foundations of Biostatistics</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Module 9 Analysing non-normal data | PHCM9795 Foundations of Biostatistics" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 9 Analysing non-normal data | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Module 9 Analysing non-normal data | PHCM9795 Foundations of Biostatistics" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Course notes" />
@@ -352,7 +346,7 @@ div.csl-indent {
 <h3><span class="header-section-number">9.2.1</span> Worked Example</h3>
 <p>We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure <a href="analysing-non-normal-data.html#fig:mod09-los">9.1</a>. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.</p>
 <div class="figure"><span style="display:block;" id="fig:mod09-los"></span>
-<img src="img/mod09/mod09-los.png" alt="Length of hospital stay for 132 patients" width="400pt" />
+<img src="img/mod09/mod09-los.png" alt="Length of hospital stay for 132 patients" width="66%" />
 <p class="caption">
 Figure 9.1: Length of hospital stay for 132 patients
 </p>
@@ -360,7 +354,7 @@ Figure 9.1: Length of hospital stay for 132 patients
 <p>When data are positively skewed, as shown in Figure <a href="analysing-non-normal-data.html#fig:mod09-los">9.1</a>, a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.</p>
 <p>In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure <a href="analysing-non-normal-data.html#fig:mod09-lnlos">9.2</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:mod09-lnlos"></span>
-<img src="img/mod09/mod09-lnlos.png" alt="istribution of log transformed (length of stay + 1)" width="400pt" />
+<img src="img/mod09/mod09-lnlos.png" alt="istribution of log transformed (length of stay + 1)" width="66%" />
 <p class="caption">
 Figure 9.2: istribution of log transformed (length of stay + 1)
 </p>

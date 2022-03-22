@@ -6,13 +6,13 @@ We will demonstrate using Stata for correlation and simple linear regression usi
 
 To create a scatter plot to explore the association between height and FVC click: **Graphics > Twoway graph (scatter, line, etc.)**. In the `twoway` dialog box, click **Create...**
 
-```{r twoway-1, echo=FALSE, out.width = "400pt",}
+```{r twoway-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-1.png"))
 ```
 
 A new dialog box will open. Select the **Basic plots** radio button and highlight **Scatter** under **Basic plots: (select type)**. Choose **FVC** for the **Y variable** and **Height** for the **X variable**.
 
-```{r twoway-2, echo=FALSE, out.width = "400pt",}
+```{r twoway-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
 ```
 
@@ -22,13 +22,13 @@ Click the **Accept** button in the **Plot 1** dialog box to return to the **twow
 
 To add a fitted line, go back to the `twoway` dialog box. If you clicked the **OK** button, you can go to **Graphics** **> Twoway** **graph (scatter, line, etc.)** to bring it back again.
 
-```{r twoway-3, echo=FALSE, out.width = "400pt",}
+```{r twoway-3, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-3.png"))
 ```
 
 Click **Create...**, then select the **Fit plots** radio button and **Linear prediction** under **Fit plots: (select type)**. Choose **FVC** for the **Y variable** and **Height** for the **X variable**.
 
-```{r twoway-4, echo=FALSE, out.width = "400pt",}
+```{r twoway-4, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-4.png"))
 ```
 
@@ -36,19 +36,19 @@ Click the **Accept** button, then the **OK** or **Submit** button to produce the
 
 [Command: `twoway (scatter FVC Height) (lfit FVC Height)`]
 
-```{r scatter-1, echo=FALSE, out.width = "400pt",}
+```{r scatter-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "scatter-1.png"))
 ```
 
 Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the **Y axis** tab in the **twoway** dialog box to enter your title as shown below.
 
-```{r twoway-5, echo=FALSE, out.width = "400pt",}
+```{r twoway-5, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-5.png"))
 ```
 
 You can click the **Submit** button to check how the scatter plot looks like. Next go the **Legend** tab and select the **Hide legend** radio button.
 
-```{r twoway-6, echo=FALSE, out.width = "400pt",}
+```{r twoway-6, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-6.png"))
 ```
 
@@ -58,7 +58,7 @@ Click the **OK** or **Submit** button when you are finished to produce **Figure 
 
 To save your graph, go to **File > Save** in the **Graph** window, and be sure to save your file as a PNG file:
 
-```{r twoway-7, echo=FALSE, out.width = "400pt",}
+```{r twoway-7, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-7.png"))
 ```
 
@@ -68,7 +68,7 @@ To calculate the Pearson's correlation using the dataset `Example_8.1.dta` go to
 
 Select the two variables, **FVC** and **Height** in the **Variables** box. You can click the **Submit** button to check the output. Next, tick the box for **Print significance level for each entry** to obtain the P-value and the box for **Print number of observations for each entry** to obtain the number of observations used as shown below.
 
-```{r corr-1, echo=FALSE, out.width = "400pt",}
+```{r corr-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "corr-1.png"))
 ```
 
@@ -84,7 +84,7 @@ Choose **Statistics > Linear models and related > Linear regression**
 
 In the `regress` dialog box, select `FVC` as the **Dependent variable**, and `Height` as the **Independent variable**.
 
-```{r regr-1, echo=FALSE, out.width = "400pt",}
+```{r regr-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "regr-1.png"))
 ```
 
@@ -98,13 +98,13 @@ To obtain the residuals, go to **Statistics > Post estimation** after running th
 
 In the `Postestimation Selector` dialog box, select **Predictions and their SEs, leverage statistics, distance statistics, etc.** in the list under Predictions as shown below.
 
-```{r postest-1, echo=FALSE, out.width = "400pt",}
+```{r postest-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "postest-1.png"))
 ```
 
 In the `predict` dialog box, choose the **Residuals** button and enter a New variable name (e.g. `FVC_resid`) for the residuals from the regression model.
 
-```{r postest-2, echo=FALSE, out.width = "400pt",}
+```{r postest-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "postest-2.png"))
 ```
 
@@ -114,7 +114,7 @@ Click **OK** button when you are done.
 
 You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using **Graphics > Histogram** as shown in **Stata Notes** section for **Module 2**. Below is the **histogram** dialog box used to produce the graph in **Figure 8.5**.
 
-```{r postest-3, echo=FALSE, out.width = "400pt",}
+```{r postest-3, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod08", "stata", "postest-3.png"))
 ```
 

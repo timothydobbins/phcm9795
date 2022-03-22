@@ -92,7 +92,7 @@ For example, consider a study to measure the rate of hospital admissions. We may
 
 The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.
 
-```{r practical-importance, echo=FALSE, out.width = "400pt", fig.cap="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)"}
+```{r practical-importance, echo=FALSE, out.width = "66%", fig.cap="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)"}
 knitr::include_graphics(here::here("img", "mod04", "practical-vs-statistical-sig.png"))
 ```
 
@@ -126,7 +126,7 @@ It is important to remember that the 95% CI is estimated from the standard error
 
 The 95% CI tells us the region in which we are 95% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure 4.2. If the zero value lies outside the 95% confidence interval, we can conclude that there is a true difference between the groups because we are 95% confident that the difference does not encompass a zero value as shown in the lower two estimates in Figure 4.2.
 
-```{r cis-overlapping-null, echo=FALSE, out.width = "400pt", fig.cap="Using 95% CIs as informal hypothesis tests"}
+```{r cis-overlapping-null, echo=FALSE, out.width = "66%", fig.cap="Using 95% CIs as informal hypothesis tests"}
 knitr::include_graphics(here::here("img", "mod04", "cis-overlapping-null.png"))
 ```
 
@@ -170,13 +170,13 @@ Therefore, we can conclude that the mean diastolic BP of the female Pima people 
 ## One and two tailed tests
 Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05. 
 
-```{r two-tailed-test, echo=FALSE, out.width = "400pt", fig.cap="P-value for a 2-tailed test"}
+```{r two-tailed-test, echo=FALSE, out.width = "66%", fig.cap="P-value for a 2-tailed test"}
 knitr::include_graphics(here::here("img", "mod04", "two-tailed-test.png"))
 ```
 
 Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e. a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved.  The P value for a one tailed test would be 0.025 i.e. the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4. 
 
-```{r one-tailed-tests, echo=FALSE, out.width = "400pt", fig.cap="P-value for 1-tailed tests"}
+```{r one-tailed-tests, echo=FALSE, out.width = "66%", fig.cap="P-value for 1-tailed tests"}
 knitr::include_graphics(here::here("img", "mod04", "one-tailed-tests.png"))
 ```
 

@@ -146,7 +146,7 @@ This z-statistic does not meet or exceed the critical value of 1.96 for a two ta
 
 The P-value for the test above can be obtained from a Normal distribution table as $P = 2 × 0.192 = 0.38$ (using Table A2.1 in the Appendix), or using the hand-calculator in Stata.
 
-```{r, echo=FALSE, out.width = "75%",}
+```{r, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod06", "z-curve.png"))
 ```
 
@@ -238,7 +238,7 @@ In this section, we wil present a very brief summary of three study types common
 
 A randomised controlled trial addresses the research question: what is the effect of an intervention on an outcome. In the simplest form of a randomised controlled trial, a group of participants is randomly allocated to a group that receives the treatment of interest or to a control group that does not receive the treatment of interest. Participants are followed up over time, and the outcome is measured at the conclusion of the study.
 
-```{r ee-fig-rct, echo=FALSE, out.width = "75%", fig.cap="The design of a randomised controlled trial [Figure 4.1, Essential Epidemiology]"}
+```{r ee-fig-rct, echo=FALSE, out.width = "66%", fig.cap="The design of a randomised controlled trial [Figure 4.1, Essential Epidemiology]"}
 knitr::include_graphics(here::here("img", "mod06", "ee-rct.jpg"))
 ```
 
@@ -246,7 +246,7 @@ knitr::include_graphics(here::here("img", "mod06", "ee-rct.jpg"))
 
 A cohort study is an *observational study* that addresses the research question: what is the effect of an exposure on an outcome. This research question is similar to that studied in a randomised controlled trial, but the exposure is defined by the participants' circumstances, and not manipulated by the researchers. In a cohort study, participants without the outcome of interest are enrolled, followed over time, and information on their exposure to a factor is measured (either at baseline or over time). At the conclusion of the study, information on the outcome is measured to identify new (incident) cases.
 
-```{r ee-fig-cohort, echo=FALSE, out.width = "75%", fig.cap="The design of a cohort study [Figure 4.2, Essential Epidemiology]"}
+```{r ee-fig-cohort, echo=FALSE, out.width = "66%", fig.cap="The design of a cohort study [Figure 4.2, Essential Epidemiology]"}
 knitr::include_graphics(here::here("img", "mod06", "ee-cohort.jpg"))
 ```
 
@@ -254,7 +254,7 @@ knitr::include_graphics(here::here("img", "mod06", "ee-cohort.jpg"))
 
 While the randomised controlled trial and cohort study begin with a population without the outcome, a case-control study begins by assembling a group with the outcome of interest (cases), and a group without the outcome of interest (controls). The researchers then ask the cases and controls about their previous exposures.
 
-```{r ee-fig-cc, echo=FALSE, out.width = "75%", fig.cap="The design of a case-control trial [Figure 4.3, Essential Epidemiology]"}
+```{r ee-fig-cc, echo=FALSE, out.width = "66%", fig.cap="The design of a case-control trial [Figure 4.3, Essential Epidemiology]"}
 knitr::include_graphics(here::here("img", "mod06", "ee-cc.jpg"))
 ```
 
@@ -262,7 +262,7 @@ knitr::include_graphics(here::here("img", "mod06", "ee-cc.jpg"))
 
 In a cross-sectional study, the exposure and the outcome are measured at the same time. While this results in a study that is relatively quick to conduct, it does not allow for any temporal relationships to be assessed.
 
-```{r ee-fig-cs, echo=FALSE, out.width = "75%", fig.cap="The design of a cross-sectional study [Figure 4.4, Essential Epidemiology]"}
+```{r ee-fig-cs, echo=FALSE, out.width = "66%", fig.cap="The design of a cross-sectional study [Figure 4.4, Essential Epidemiology]"}
 knitr::include_graphics(here::here("img", "mod06", "ee-cs.jpg"))
 ```
 

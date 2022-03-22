@@ -278,12 +278,12 @@ Here, n=6, k=2 and p=0.198, giving the same answer as above: 0.903.
 
 The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \@ref(fig:fig-2-1) and \@ref(fig:fig-2-2) demonstrate this type of distribution.
 
-```{r fig-2-1, echo=FALSE, out.width = "75%", fig.cap="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey"}
+```{r fig-2-1, echo=FALSE, out.width = "66%", fig.cap="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey"}
 knitr::include_graphics(here::here("img", "mod02", "dbp.png"))
 ```
 Source: https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure (accessed March 2021)
 
-```{r fig-2-2, echo=FALSE, out.width = "75%", fig.cap="Distribution of male and female heights"}
+```{r fig-2-2, echo=FALSE, out.width = "66%", fig.cap="Distribution of male and female heights"}
 knitr::include_graphics(here::here("img", "mod02", "heights.png"))
 ```
 Source: https://ourworldindata.org/human-height (accessed March 2021)
@@ -296,7 +296,7 @@ The Normal distribution is characterised by two parameters: the mean ($\mu$) and
 
 For a Normal distribution, about 68% of the observations lie between $- \sigma$ and $\sigma$ of the mean; 95% of the observations lie between $−1.96 \times \sigma$ and $1.96 \times \sigma$ from the mean; and almost all the observations (99.7%) lie between $-3 \times \sigma$ and $3 \times \sigma$ (Figure \@ref(fig:fig-2-3)). Also note that the mean is the same as the median, as the curve is symmetric about its mean.
 
-```{r fig-2-3, echo=FALSE, out.width = "75%", fig.cap="Characteristics of a Normal distribution"}
+```{r fig-2-3, echo=FALSE, out.width = "66%", fig.cap="Characteristics of a Normal distribution"}
 knitr::include_graphics(here::here("img", "mod02", "normal-curve.png"))
 ```
 
@@ -326,13 +326,13 @@ Using a table of Z-scores (Appendix Table 1), we find the probability that a per
 
 An extract from Appendix Table 1 is shown in Figure \@ref(fig:fig-2-4) to demonstrate how to find the probability from the look-up table.
 
-```{r fig-2-4, echo=FALSE, out.width = "75%", fig.cap="Obtaining a probability from a table of Standard Normal distribution"}
+```{r fig-2-4, echo=FALSE, out.width = "66%", fig.cap="Obtaining a probability from a table of Standard Normal distribution"}
 knitr::include_graphics(here::here("img", "mod02", "z-table-extract.png"))
 ```
 
 Figure \@ref(fig:fig-2-5) shows the probability of a diastolic blood pressure of 90 mmHg or more in the population for a Z-score of greater than 1.1 on a Standard Normal distribution.
 
-```{r fig-2-5, echo=FALSE, out.width = "75%", fig.cap="Area under the Standard Normal curve (as probability) for Z > 1.1"}
+```{r fig-2-5, echo=FALSE, out.width = "66%", fig.cap="Area under the Standard Normal curve (as probability) for Z > 1.1"}
 knitr::include_graphics(here::here("img", "mod02", "z-dist-shaded.png"))
 ```
 
@@ -375,7 +375,7 @@ For your information: There are formal tests in Stata that test for Normality. T
 
 The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure \@ref(fig:fig-2-6)) for symmetry and outliers at either end of the distribution.
 
-```{r fig-2-6, echo=FALSE, out.width = "80%", fig.cap="Histogram and boxplot of weight of 30 students attending a gym"}
+```{r fig-2-6, echo=FALSE, out.width = "66%", fig.cap="Histogram and boxplot of weight of 30 students attending a gym"}
 knitr::include_graphics(here::here("img", "mod02", "weights-hist-boxplot.png"))
 ```
 
@@ -409,7 +409,7 @@ In practice, most parametric summary statistics are quite robust to minor deviat
 
 When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure \@ref(fig:fig-2-7).
 
-```{r fig-2-7, echo=FALSE, out.width = "80%", fig.cap="Histogram and boxplot of length of stay"}
+```{r fig-2-7, echo=FALSE, out.width = "66%", fig.cap="Histogram and boxplot of length of stay"}
 knitr::include_graphics(here::here("img", "mod02", "los-hist-boxplot.png"))
 ```
 

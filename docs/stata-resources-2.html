@@ -5,26 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>10 Stata resources | PHCM9795 Foundations of Biostatistics</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="10 Stata resources | PHCM9795 Foundations of Biostatistics" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="10 Stata resources | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="10 Stata resources | PHCM9795 Foundations of Biostatistics" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Course notes" />
@@ -323,48 +317,48 @@ div.csl-indent {
 <div id="stata-resources-2" class="section level1 unnumbered">
 <h1><strong>10</strong> Stata resources</h1>
 <p>To access the Power and sample size menu item, you may need to point your mouse to the down arrow on the Stata menu to scroll down as shown below.</p>
-<p><img src="img/mod10/stata/mod10-menu-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-menu-1.png" width="66%" /></p>
 <p>You should now be able to find and select Power and sample size in the menu as shown below.</p>
-<p><img src="img/mod10/stata/mod10-menu-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-menu-1.png" width="66%" /></p>
 <p>The Power and sample-size analysis dialog box appears as shown below.</p>
-<p><img src="img/mod10/stata/mod10-menu-3.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-menu-3.png" width="66%" /></p>
 <div id="sample-size-calculation-for-two-independent-samples-t-test" class="section level2" number="10.11">
 <h2><span class="header-section-number">10.11</span> Sample size calculation for two independent samples t-test</h2>
 <p>To do the problem discussed in Worked Example 10.2, you can expand the <strong>Means</strong> item under <strong>Population parameter</strong> on the left-hand-side of the <strong>Power and sample-size analysis</strong> dialog box, then choose <strong>Two independent</strong> samples. On the right-hand-side of the dialog box, choose <strong>Test comparing two independent means</strong>.</p>
-<p><img src="img/mod10/stata/mod10-twomeans-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-twomeans-1.png" width="66%" /></p>
 <p>The <strong>power twomeans</strong> dialog box will appear. Based on the information in Worked Example 10.2, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong>. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is <code>90</code> mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg. We use equal numbers in each group (allocation ratio of <code>1</code> which is the default) because that would give us the smallest total sample size required.</p>
-<p><img src="img/mod10/stata/mod10-twomeans-2.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-twomeans-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.1.</p>
 <p>[Command: <code>power twomeans 90 95, sd(25) power(0.9)</code>]</p>
 </div>
 <div id="sample-size-calculation-for-paired-samples-t-test" class="section level2" number="10.12">
 <h2><span class="header-section-number">10.12</span> Sample size calculation for paired samples t-test</h2>
 <p>For a paired sample t-test, go back to the <strong>Power and sample-size analysis</strong> dialog box and click on <strong>Two paired samples</strong> under <strong>Means</strong> on the left-hand-side, then choose <strong>Paired test comparing two correlated means, specify correlation between paired observations</strong> as shown below.</p>
-<p><img src="img/mod10/stata/mod10-pairedmeans-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-pairedmeans-1.png" width="66%" /></p>
 <p>In the <strong>power pairedmeans</strong> dialog box, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong> as shown below. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is 90 mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg as we had for the independent samples.</p>
-<p><img src="img/mod10/stata/mod10-pairedmeans-2.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-pairedmeans-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.2.</p>
 <p>[Command: <code>power pairedmeans 90 95, corr(0) power(0.9) sd(25)</code>]</p>
 </div>
 <div id="sample-size-calculation-for-difference-between-two-independent-proportions" class="section level2" number="10.13">
 <h2><span class="header-section-number">10.13</span> Sample size calculation for difference between two independent proportions</h2>
 <p>To do the problem discussed in Worked Example 10.3, you can expand the <strong>Proportions</strong> item under <strong>Population parameter</strong> on the left-hand-side of the Power and sample-size analysis dialog box, then choose <strong>Two independent samples</strong>. On the right-hand-side of the dialog box, choose <strong>Chi-squared test comparing two independent proportions</strong>.</p>
-<p><img src="img/mod10/stata/mod10-twoprop-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-twoprop-1.png" width="66%" /></p>
 <p>The <strong>power twoproportions</strong> dialog box will appear. Based on the information in Worked Example 10.3, check the <strong>Power</strong> is <code>0.8</code> and <strong>Significance level</strong> is <code>0.05</code> (these are the default values), then enter <code>0.35</code> and <code>0.2</code> as the <strong>Proportions</strong> as shown below. As with the two independent samples example, we can assume equal numbers in each group (<strong>Allocation ratio</strong> of <code>1</code> which is the default).</p>
-<p><img src="img/mod10/stata/mod10-twoprop-2.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-twoprop-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.3.</p>
 <p>[Command: <code>power twoproportions .35 .2, test(chi2)</code>]</p>
 <p>Note: It doesn’t matter if you swap the proportions for the <strong>Control</strong> and <strong>Experimental</strong> group, i.e. the command <code>power twoproportions .2 .35 , test(chi2)</code> gives the same results.</p>
 <p>If you had difference in proportion, relative risk or odds ratio for the sample size calculation, you can choose them from the drop-down list under Experimental as shown below.</p>
-<p><img src="img/mod10/stata/mod10-twoprop-3.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-twoprop-3.png" width="66%" /></p>
 </div>
 <div id="sample-size-calculation-with-relative-risk-and-odds-ratio" class="section level2" number="10.14">
 <h2><span class="header-section-number">10.14</span> Sample size calculation with relative risk and odds ratio</h2>
 <p>Using information from Worked Example 10.4, we change <strong>Power</strong> to <code>0.9</code>, enter <code>0.5</code> as the <strong>Control Proportion</strong> and <code>1.5</code> as the <strong>Relative risk</strong> as shown below. [CHECK THE FOLLOWING: Note that when choosing “Relative Risk” in the “Effect size” section, the “Reported effect size” menu automatically changes to Relative risk. Due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
-<p><img src="img/mod10/stata/mod10-RR-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-RR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.4.</p>
 <p>Now we calculate the sample size for Worked Example 10.5. Enter <code>0.3</code> as the <strong>Control Proportion</strong>, choose <strong>Odds ratio</strong> as the estimate from the dropdown list and enter <code>2</code> as the <strong>Odds ratio.</strong> In this example, you can also try entering two values for <strong>Power</strong>: <code>0.9</code> and <code>0.8</code> as shown below. [CHECK: As before, due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
-<p><img src="img/mod10/stata/mod10-OR-1.png" width="400pt" /></p>
+<p><img src="img/mod10/stata/mod10-OR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
 <pre class="text"><code>Estimated sample sizes for a two-sample proportions test
 Pearson&#39;s chi-squared test 

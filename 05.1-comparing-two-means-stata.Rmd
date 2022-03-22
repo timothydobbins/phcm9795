@@ -6,19 +6,19 @@
 
 To obtain the histograms in Figure 5.1, go to **Graphics > Histogram**. Select `birthweight` as the **Variable** in the **Main** tab. Next go to the **By** tab, tick **Draw subgraphs for unique values of variable** and select `gender` as the **variable** as shown below:
 
-```{r hist-by-1, echo=FALSE, out.width = "400pt",}
+```{r hist-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "hist-by-1.png"))
 ```
 
 Note that we have also improved the basic histogram definition on the **Main** tab, by defining the **Lower limit of first bin** to be 2.5, and the **Bin width** to be 0.25kg:
 
-```{r hist-by-2, echo=FALSE, out.width = "400pt",}
+```{r hist-by-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "hist-by-2.png"))
 ```
 
 A similar process is used to obtain the boxplots shown in Figure 5.1: go to **Graphics > Box plot**. In the **graph box – Box plots** dialog box, select `birthweight` as the **Variable** in the **Main** tab. Next go to the **Categories** tab, tick **Group 1** and select `gender` as the **Grouping variable** as shown below.
  
-```{r box-by-1, echo=FALSE, out.width = "400pt",}
+```{r box-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "box-by-1.png"))
 ```
 
@@ -30,7 +30,7 @@ Click **OK** or **Submit** to produce the box plot.
 
 To produce summary statistics for a continuous variable, split by a second binary categorical variable, as in Worked Example 5.1 using `Example_5.1.dta`, go to **Statistics > Summaries, tables, and tests > Summary and descriptive statistics > Summary statistics** . In the **summarize** dialog box, select `birthweight` as the **Variable** in the **Main** tab of the dialog box. Next go to the **by/if/in** tab, tick **Repeat command by groups** and select `gender` as the **Variable that define groups** as shown below.
  
-```{r summ-by-1, echo=FALSE, out.width = "400pt",}
+```{r summ-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "summ-by-1.png"))
 ```
 
@@ -104,7 +104,7 @@ The output above is easy for copying into a report. You could also submit the su
 
 To carry out an independent sample t-test, go to **Statistics > Summaries, tables, and tests > Classical tests of hypotheses > t test (mean-comparison test)**. In the **ttest** dialog box, choose the **Two-sample using groups** button, then select `birthweight` as the **Variable** name and `gender` as the **Group** variable name as shown below. Because the variances of `birthweight` are similar for males and females, we can leave the **Unequal variances** box unchecked.
 
-```{r ttest-1, echo=FALSE, out.width = "400pt",}
+```{r ttest-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-1.png"))
 ```
 
@@ -120,7 +120,7 @@ Go to **Data > Create new variable**.
 
 In the **generate – Create a new variable** dialog box, assign a name (e.g. `difference`) to your new variable in the **Variable name** box. We want to compute difference as sbp_dp − sbp_tp, so we enter this in the **Specify a value or an expression** box as shown below.
 
-```{r ttest-2, echo=FALSE, out.width = "400pt",}
+```{r ttest-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-2.png"))
 ```
 
@@ -132,7 +132,7 @@ Check that the new variable appears in your Data Editor window.
 
 Create a histogram with a normal curve under **Graphics > Histogram**, as shown previously in Module 2. You might want to vary the minimum bar value and the bar width: for example, Figure 5.2 was defined to have a lower limit of -40 and a bin width of 10. We have also requested a Normal curve be plotted in the **Density plots** tab.
 
-```{r ttest-3, echo=FALSE, out.width = "400pt",}
+```{r ttest-3, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-3.png"))
 ```
 
@@ -144,7 +144,7 @@ knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-3.png"))
 
 To perform a paired t-test we will use the dataset `Example_5.2.dta`. For a paired t-test, data must be organised into two variables (i.e. two columns). Go to **Statistics > Summaries, tables, and tests > Classical tests of hypotheses > t test (mean-comparison test)** as you had for the Independent samples t-test. In the **ttest** dialog box, choose the **Paired** button then Select `sbp_dp` from the dropdown list under **First variable** and select `sbp_tp` from the dropdown list under **Second variable**. The dialog box will look like: 
 
-```{r ttest-4, echo=FALSE, out.width = "400pt",}
+```{r ttest-4, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-4.png"))
 ```
 

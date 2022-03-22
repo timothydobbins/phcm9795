@@ -5,26 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>9 Stata resources | PHCM9795 Foundations of Biostatistics</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="9 Stata resources | PHCM9795 Foundations of Biostatistics" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="9 Stata resources | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="9 Stata resources | PHCM9795 Foundations of Biostatistics" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Course notes" />
@@ -331,15 +325,15 @@ div.csl-indent {
 <li>simply type <code>ln(los + 1)</code> directly into the <strong>Specify a value or an expression</strong> text box, or;</li>
 <li>click the <strong>Create</strong> button to bring up the <strong>Expression Builder</strong> dialog box. Double click on <strong>Functions</strong> to expand the list in the <strong>Categories</strong> box, then click on <strong>Mathematical</strong> to display the list of mathematical functions in the box on the right. Scroll down to the <strong>ln()</strong> function and double click on it to bring it to the main text box. Next scroll down the <strong>Categories</strong> box to <strong>Variables</strong> and click on it to check the variables you have in the dataset. In the text box, replace <code>x</code> with <code>los + 1</code> as shown below.</li>
 </ol>
-<p><img src="img/mod09/stata/mod09-gen-1.png" width="400pt" /></p>
+<p><img src="img/mod09/stata/mod09-gen-1.png" width="66%" /></p>
 <p>Click the <strong>OK</strong> button when you are done to transfer the expression to the <strong>Specify a value or an expression</strong> box in the generate dialog box as shown below.</p>
-<p><img src="img/mod09/stata/mod09-gen-2.png" width="400pt" /></p>
+<p><img src="img/mod09/stata/mod09-gen-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> and the new variable will appear in your dataset. You can check in your Variables window or your Data Editor window.</p>
 <p>[Command: <code>gen ln_los=ln(los + 1)</code>]</p>
 <p>You can now check whether this variable is normally distributed as described in Module 2, for example with the <code>histogram</code> command as shown in Figure 9.2.</p>
 <p>To obtain the back-transformed mean shown in Output 9.1, go to <strong>Data &gt; Other Utilities &gt; Hand calculator</strong>. In the <strong>display</strong> dialog box, expand the <strong>Functions</strong> list in the <strong>Categories</strong> box and select <strong>Mathematical</strong>. On the right-hand-side box, double-click on <strong>exp()</strong>. Replace <code>x</code> with the mean, <code>3.407232</code> as shown below.</p>
 <p>Click <strong>OK</strong> when you are done, then <strong>OK</strong> or <strong>Submit</strong> in the <strong>display</strong> dialog box.</p>
-<p><img src="img/mod09/stata/mod09-calc.png" width="400pt" /></p>
+<p><img src="img/mod09/stata/mod09-calc.png" width="66%" /></p>
 <p>[Command: <code>di exp(3.407232)</code>]</p>
 <p>If your transformed variable is approximately normally distributed, you can apply parametric tests such as the t-test. In the Worked Example 9.1 dataset, the variable <code>infect</code> (presence of nosocomial infection) is a binary categorical variable. To test the hypothesis that patients with nosocomial infection have a different length of stay to patients without infection, you can conduct a t-test on the <code>ln_los</code> variable. You will need to back transform your mean values, as shown in Worked Example 9.1 in the course notes when reporting your results.</p>
 </div>
@@ -347,7 +341,7 @@ div.csl-indent {
 <h2><span class="header-section-number">9.9</span> Wilcoxon ranked-sum test</h2>
 <p>The Wilcoxon ranked-sum test will be demonstrated using the length of stay data in <code>Example_9.1.dta</code>. To perform the Wilcoxon ranked-sum test go to: <strong>Statistics &gt; Summaries, tables, and tests &gt; Nonparametric tests of hypotheses &gt; Wilcoxon ranked-sum test</strong>.</p>
 <p>In the <strong>ranksum</strong> dialog box, select <code>los</code> as the <strong>Variable</strong> and select <code>infect</code> as the <strong>Grouping variable</strong> as shown below.</p>
-<p><img src="img/mod09/stata/mod09-ranksum.png" width="75%" /></p>
+<p><img src="img/mod09/stata/mod09-ranksum.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 9.3.</p>
 <p>[Command: <code>ranksum los, by(infect)</code>]</p>
 </div>
@@ -355,7 +349,7 @@ div.csl-indent {
 <h2><span class="header-section-number">9.10</span> Wilcoxon matched-pairs signed-rank test</h2>
 <p>The Wilcoxon matched-pairs signed-rank test in Stata will be demonstrated using the dataset on the arthritis drug cross-over trial (<code>Example_9.2.dta</code>). Like the paired t-test the paired data need to be in separate columns.</p>
 <p>To do the analysis, go to: <strong>Statistics &gt; Summaries, tables, and tests &gt; Nonparametric tests of hypotheses &gt; Wilcoxon matched-pairs sign-rank test</strong>. In the <strong>signrank</strong> dialog box, select <code>drug_1</code> in the <strong>Variable</strong> box and type <code>drug_2</code> in the <strong>Expression</strong> box. The dialog box will look like:</p>
-<p><img src="img/mod09/stata/mod09-signrank.png" width="75%" /></p>
+<p><img src="img/mod09/stata/mod09-signrank.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 9.4.
 [Command: <code>signrank drug_1 = drug_2</code>]</p>
 </div>
@@ -363,9 +357,9 @@ div.csl-indent {
 <h2><span class="header-section-number">9.11</span> Estimating rank correlation coefficients</h2>
 <p>The analyses for Spearman’s and Kendall’s rank correlation are conducted in similar ways.</p>
 <p><strong>Statistics &gt; Nonparametric analysis &gt; Tests of hypotheses &gt; Spearman’s rank correlation</strong></p>
-<p><img src="img/mod09/stata/mod09-spearman.png" width="75%" /></p>
+<p><img src="img/mod09/stata/mod09-spearman.png" width="66%" /></p>
 <p><strong>Statistics &gt; Nonparametric analysis &gt; Tests of hypotheses &gt; Kendall’s rank correlation</strong></p>
-<p><img src="img/mod09/stata/mod09-kendall.png" width="75%" /></p>
+<p><img src="img/mod09/stata/mod09-kendall.png" width="66%" /></p>
 
 </div>
 </div>

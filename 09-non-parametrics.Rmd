@@ -28,7 +28,7 @@ When a variable has a skewed distribution, one possibility is to transform the d
 ### Worked Example
 We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure \@ref(fig:mod09-los). As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
-```{r mod09-los, echo=FALSE, out.width = "400pt", fig.cap="Length of hospital stay for 132 patients"}
+```{r mod09-los, echo=FALSE, out.width = "66%", fig.cap="Length of hospital stay for 132 patients"}
 knitr::include_graphics(here::here("img", "mod09", "mod09-los.png"))
 ```
 
@@ -36,7 +36,7 @@ When data are positively skewed, as shown in Figure \@ref(fig:mod09-los), a loga
 
 In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure \@ref(fig:mod09-lnlos).
 
-```{r mod09-lnlos, echo=FALSE, out.width = "400pt", fig.cap="istribution of log transformed (length of stay + 1)"}
+```{r mod09-lnlos, echo=FALSE, out.width = "66%", fig.cap="istribution of log transformed (length of stay + 1)"}
 knitr::include_graphics(here::here("img", "mod09", "mod09-lnlos.png"))
 ```
 

@@ -79,7 +79,7 @@ huxtable::huxtable(tab1_1) %>%
 
 Note: Leading causes of death are based on underlying causes of death and classified using an AIHW-modified version of Becker et al. 2006. Source: AIHW National Mortality Database.
 
-```{r fig1-1, echo=FALSE, out.width = "400pt", fig.cap="Leading cause of death, by sex, 2016"}
+```{r fig1-1, echo=FALSE, out.width = "66%", fig.cap="Leading cause of death, by sex, 2016"}
 knitr::include_graphics(here::here("img", "mod01", "cause-death.png"))
 ```
 
@@ -94,7 +94,7 @@ We have information about the population of prisoners, given as the number of pr
 
 Characteristics (sex, age group and Indigenous status) of the sample of prisoners from the NPHDC are given in the following table. We can use this information to make inferences about the whole population of prisoners that the sample was drawn from (The health of Australia’s prisoners 2015). 
 
-```{r fig1-2, echo=FALSE, out.width = "400pt", fig.cap="Characteristics of the sample of prisoners from the NPHDC"}
+```{r fig1-2, echo=FALSE, out.width = "66%", fig.cap="Characteristics of the sample of prisoners from the NPHDC"}
 knitr::include_graphics(here::here("img", "mod01", "prisoner-health.png"))
 ```
 
@@ -249,7 +249,7 @@ We might also consider a table containing further pieces of information. The tab
 
 Can you see any issues with the presentation of this table?
 
-```{r fig-prison-education, echo=FALSE, out.width = "400pt", fig.cap="Highest level of completed education in prison entrants and the general community"}
+```{r fig-prison-education, echo=FALSE, out.width = "66%", fig.cap="Highest level of completed education in prison entrants and the general community"}
 knitr::include_graphics(here::here("img", "mod01", "prisoner-education.png"))
 ```
 
@@ -311,7 +311,7 @@ A line graph is effective to illustrate trends over time (e.g. change over sever
 
 Cancer incidence is the number of new cases of cancer diagnosed in a population in a given time period. A useful comparison with the incidence rate is the mortality rate, revealing information about the deaths from cancer in the same period. Figure 1.5 shows the prostate cancer trend in the NSW male population in the period 1972-2014, specifically the age-standardised incidence and mortality rate per 100,000.
 
-```{r fig-1-5, echo=FALSE, fig.cap="Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014"}
+```{r fig-1-5, echo=FALSE, out.width="66%", fig.cap="Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014"}
 knitr::include_graphics(here::here("img", "mod01", "line-graph-prostate-cancer.png"))
 ```
 Source: The Cancer Institute NSW (2018) Cancer statistics NSW. https://www.cancer.nsw.gov.au/cancer-statistics-nsw (Accessed: 24 Jan 2019).

@@ -5,26 +5,20 @@
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>Module 4 Hypothesis testing | PHCM9795 Foundations of Biostatistics</title>
-  <meta name="description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  <meta name="description" content="Module 4 Hypothesis testing | PHCM9795 Foundations of Biostatistics" />
   <meta name="generator" content="bookdown 0.24 and GitBook 2.6.7" />
 
   <meta property="og:title" content="Module 4 Hypothesis testing | PHCM9795 Foundations of Biostatistics" />
   <meta property="og:type" content="book" />
   
   
-  <meta property="og:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   <meta name="github-repo" content="rstudio/bookdown-demo" />
 
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Module 4 Hypothesis testing | PHCM9795 Foundations of Biostatistics" />
   
-  <meta name="twitter:description" content="<p>This is a minimal example of using the bookdown package to write a book.
-The HTML output format for this example is bookdown::gitbook,
-set in the _output.yml file.</p>" />
+  
   
 
 <meta name="author" content="Course notes" />
@@ -398,7 +392,7 @@ Informally, the P-value can be interpreted as the probability of observing data 
 <p>For example, consider a study to measure the rate of hospital admissions. We may find that 80% of children who present to the Emergency Department are admitted before an intervention is introduced compared to only 65% of children after the intervention. However, the P value may be calculated as 0.11 and is non-significant. This is because only 60 children were surveyed in each period. Here, the reduction in the admission rate by 15% represents a clinically important difference, but not statistically significant. This situation is represented in scenario (d) of Figure 4.2</p>
 <p>The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.</p>
 <div class="figure"><span style="display:block;" id="fig:practical-importance"></span>
-<img src="img/mod04/practical-vs-statistical-sig.png" alt="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)" width="400pt" />
+<img src="img/mod04/practical-vs-statistical-sig.png" alt="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)" width="66%" />
 <p class="caption">
 Figure 4.1: Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)
 </p>
@@ -426,7 +420,7 @@ Do not reject null hypothesis Correct conclusion Type II error (β)</p>
 <p>It is important to remember that the 95% CI is estimated from the standard error, and that the standard error has a direct relationship to the sample size. For small sample sizes, the standard error is large and the 95% CI becomes wider. Conversely, the larger the sample size, the smaller the standard error and the narrower the 95% CI becomes indicating a more precise estimate of the mean difference.</p>
 <p>The 95% CI tells us the region in which we are 95% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure 4.2. If the zero value lies outside the 95% confidence interval, we can conclude that there is a true difference between the groups because we are 95% confident that the difference does not encompass a zero value as shown in the lower two estimates in Figure 4.2.</p>
 <div class="figure"><span style="display:block;" id="fig:cis-overlapping-null"></span>
-<img src="img/mod04/cis-overlapping-null.png" alt="Using 95% CIs as informal hypothesis tests" width="400pt" />
+<img src="img/mod04/cis-overlapping-null.png" alt="Using 95% CIs as informal hypothesis tests" width="66%" />
 <p class="caption">
 Figure 4.2: Using 95% CIs as informal hypothesis tests
 </p>
@@ -464,14 +458,14 @@ Ho: mean = 71                                    degrees of freedom =      732
 <h2><span class="header-section-number">4.8</span> One and two tailed tests</h2>
 <p>Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05.</p>
 <div class="figure"><span style="display:block;" id="fig:two-tailed-test"></span>
-<img src="img/mod04/two-tailed-test.png" alt="P-value for a 2-tailed test" width="400pt" />
+<img src="img/mod04/two-tailed-test.png" alt="P-value for a 2-tailed test" width="66%" />
 <p class="caption">
 Figure 4.3: P-value for a 2-tailed test
 </p>
 </div>
 <p>Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e. a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved. The P value for a one tailed test would be 0.025 i.e. the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4.</p>
 <div class="figure"><span style="display:block;" id="fig:one-tailed-tests"></span>
-<img src="img/mod04/one-tailed-tests.png" alt="P-value for 1-tailed tests" width="400pt" />
+<img src="img/mod04/one-tailed-tests.png" alt="P-value for 1-tailed tests" width="66%" />
 <p class="caption">
 Figure 4.4: P-value for 1-tailed tests
 </p>

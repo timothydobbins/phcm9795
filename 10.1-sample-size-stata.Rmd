@@ -2,32 +2,32 @@
 
 To access the Power and sample size menu item, you may need to point your mouse to the down arrow on the Stata menu to scroll down as shown below. 
 
-```{r mod10-menu-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-menu-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-1.png"))
 ```
 
 You should now be able to find and select Power and sample size in the menu as shown below.
 
-```{r mod10-menu-2, echo=FALSE, out.width = "400pt"}
+```{r mod10-menu-2, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-1.png"))
 ```
 
 The Power and sample-size analysis dialog box appears as shown below.
 
-```{r mod10-menu-3, echo=FALSE, out.width = "400pt"}
+```{r mod10-menu-3, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-3.png"))
 ```
 
 ## Sample size calculation for two independent samples t-test
 To do the problem discussed in Worked Example 10.2, you can expand the **Means** item under **Population parameter** on the left-hand-side of the **Power and sample-size analysis** dialog box, then choose **Two independent** samples. On the right-hand-side of the dialog box, choose **Test comparing two independent means**.
 
-```{r mod10-twomeans-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-twomeans-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twomeans-1.png"))
 ```
 
 The **power twomeans** dialog box will appear. Based on the information in Worked Example 10.2, change **Power** to `0.9` and enter `25` as the **Common standard deviation**. For the means, we can assume that **Control** mean systolic blood pressure is `90` mmHg and the the **Experimental** mean systolic blood pressure is 5 mmHg higher at `95` mmHg. We use equal numbers in each group (allocation ratio of `1` which is the default) because that would give us the smallest total sample size required.
 
-```{r mod10-twomeans-2, echo=FALSE, out.width = "400pt"}
+```{r mod10-twomeans-2, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twomeans-2.png"))
 ```
 
@@ -38,13 +38,13 @@ Click **OK** or **Submit** to produce Output 10.1.
 ## Sample size calculation for paired samples t-test
 For a paired sample t-test, go back to the **Power and sample-size analysis** dialog box and click on **Two paired samples** under **Means** on the left-hand-side, then choose **Paired test comparing two correlated means, specify correlation between paired observations** as shown below.
  
-```{r mod10-pairedmeans-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-pairedmeans-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-pairedmeans-1.png"))
 ```
 
 In the **power pairedmeans** dialog box, change **Power** to `0.9` and enter `25` as the **Common standard deviation** as shown below. For the means, we can assume that **Control**  mean systolic blood pressure is 90 mmHg and the the **Experimental** mean systolic blood pressure is 5 mmHg higher at `95` mmHg as we had for the independent samples.
 
-```{r mod10-pairedmeans-2, echo=FALSE, out.width = "400pt"}
+```{r mod10-pairedmeans-2, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-pairedmeans-2.png"))
 ```
  
@@ -56,13 +56,13 @@ Click **OK** or **Submit** to produce Output 10.2.
 
 To do the problem discussed in Worked Example 10.3, you can expand the **Proportions** item under **Population parameter** on the left-hand-side of the Power and sample-size analysis dialog box, then choose **Two independent samples**. On the right-hand-side of the dialog box, choose **Chi-squared test comparing two independent proportions**.
  
-```{r mod10-twoprop-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-twoprop-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twoprop-1.png"))
 ```
  
 The **power twoproportions** dialog box will appear. Based on the information in Worked Example 10.3, check the **Power** is `0.8` and **Significance level** is `0.05` (these are the default values), then enter `0.35` and `0.2` as the **Proportions** as shown below. As with the two independent samples example, we can assume equal numbers in each group (**Allocation ratio** of `1` which is the default).
 
-```{r mod10-twoprop-2, echo=FALSE, out.width = "400pt"}
+```{r mod10-twoprop-2, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twoprop-2.png"))
 ```
 
@@ -74,7 +74,7 @@ Note: It doesn’t matter if you swap the proportions for the **Control** and **
 
 If you had difference in proportion, relative risk or odds ratio for the sample size calculation, you can choose them from the drop-down list under Experimental as shown below.
 
-```{r mod10-twoprop-3, echo=FALSE, out.width = "400pt"}
+```{r mod10-twoprop-3, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twoprop-3.png"))
 ```
  
@@ -82,7 +82,7 @@ knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twoprop-3.png
 
 Using information from Worked Example 10.4, we change **Power** to `0.9`, enter `0.5` as the **Control Proportion** and `1.5` as the **Relative risk** as shown below. [CHECK THE FOLLOWING: Note that when choosing "Relative Risk" in the "Effect size" section, the "Reported effect size" menu automatically changes to Relative risk. Due to an error in Stata, the "Reported effect size" must be changed to "Difference".]
 
-```{r mod10-RR-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-RR-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-RR-1.png"))
 ```
 
@@ -90,7 +90,7 @@ Click **OK** or **Submit** to obtain Output 10.4.
 
 Now we calculate the sample size for Worked Example 10.5. Enter `0.3` as the **Control Proportion**, choose **Odds ratio** as the estimate from the dropdown list and enter `2` as the **Odds ratio.** In this example, you can also try entering two values for **Power**: `0.9` and `0.8` as shown below. [CHECK: As before, due to an error in Stata, the "Reported effect size" must be changed to "Difference".]
 
-```{r mod10-OR-1, echo=FALSE, out.width = "400pt"}
+```{r mod10-OR-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-OR-1.png"))
 ```
 

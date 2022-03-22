@@ -34,7 +34,7 @@ We use correlation to measure the strength of a linear relationship between two 
 
 The Stata file Example_8.1.dta has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure `\@ref(fig:scatter-plot))`. This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.
 
-<!-- ```{r scatter-plot, echo=FALSE, out.width = "400pt", fig.cap="Association between height and lung function in 120 adults"} -->
+<!-- ```{r scatter-plot, echo=FALSE, out.width = "66%", fig.cap="Association between height and lung function in 120 adults"} -->
 <!-- knitr::include_graphics(here::here("img", "mod08", "scatterpng.png")) -->
 <!-- ``` -->
 
@@ -46,7 +46,7 @@ The coefficient is positive when large values of one variable tend to occur with
 
 The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure `\@ref(fig:scatter-plot-four)` (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.
 
-<!-- ```{r scatter-plot-four, echo=FALSE, out.width = "400pt", fig.cap="Scatter plots demonstrating strong and weak, positive and negative associations"} -->
+<!-- ```{r scatter-plot-four, echo=FALSE, out.width = "66%", fig.cap="Scatter plots demonstrating strong and weak, positive and negative associations"} -->
 <!-- knitr::include_graphics(here::here("img", "mod08", "scatterplot-four-plots.png")) -->
 <!-- ``` -->
 
@@ -109,7 +109,7 @@ The second purpose for using a regression model is for testing the hypothesis th
 
 From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure `\@ref(fig:scatter-plot-line)` shows the data with the line fitted.
 
-<!-- ```{r scatter-plot-line, echo=FALSE, out.width = "400pt", fig.cap="Association between height and lung function in 120 adults"} -->
+<!-- ```{r scatter-plot-line, echo=FALSE, out.width = "66%", fig.cap="Association between height and lung function in 120 adults"} -->
 <!-- knitr::include_graphics(here::here("img", "mod08", "scatterplot-line-fvc-height.png")) -->
 <!-- ``` -->
 
@@ -123,7 +123,7 @@ $$y = \beta_{0} + \beta_{1}x$$
 
 This line is shown in Figure `\@ref(fig:regression-parameters)` using the notation shown in Table 8.2.
 
-<!-- ```{r regression-parameters, echo=FALSE, out.width = "400pt", fig.cap="Coefficients of a linear regression equation"} -->
+<!-- ```{r regression-parameters, echo=FALSE, out.width = "66%", fig.cap="Coefficients of a linear regression equation"} -->
 <!-- knitr::include_graphics(here::here("img", "mod08", "regression-line-parameters.png")) -->
 <!-- ``` -->
 
@@ -222,7 +222,7 @@ The distribution of the residuals should always be checked. Outlying residuals c
 
 The histogram of residuals from the model is shown in Figure 8.5. They are normally distributed and indicate that there are no influential outliers so that the assumptions for regression are met.
 
-<!-- ```{r residual-hist, echo=FALSE, out.width = "400pt", fig.cap="Histogram of regression residuals"} -->
+<!-- ```{r residual-hist, echo=FALSE, out.width = "66%", fig.cap="Histogram of regression residuals"} -->
 <!-- knitr::include_graphics(here::here("img", "mod08", "regression-residual-histogram.png")) -->
 <!-- ``` -->
 
