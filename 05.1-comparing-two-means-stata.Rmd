@@ -4,7 +4,7 @@
 
 ### Producing histograms and boxplots by a second variable
 
-To obtain the histograms in Figure 5.1, go to **Graphics > Histogram**. Select `birthweight` as the **Variable** in the **Main** tab. Next go to the **By** tab, tick **Draw subgraphs for unique values of variable** and select `gender` as the **variable** as shown below:
+To obtain the histograms in Figure \@ref(fig:mod05-bwt-gender), go to **Graphics > Histogram**. Select `birthweight` as the **Variable** in the **Main** tab. Next go to the **By** tab, tick **Draw subgraphs for unique values of variable** and select `gender` as the **variable** as shown below:
 
 ```{r hist-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "hist-by-1.png"))
@@ -16,7 +16,7 @@ Note that we have also improved the basic histogram definition on the **Main** t
 knitr::include_graphics(here::here("img", "mod05", "stata", "hist-by-2.png"))
 ```
 
-A similar process is used to obtain the boxplots shown in Figure 5.1: go to **Graphics > Box plot**. In the **graph box – Box plots** dialog box, select `birthweight` as the **Variable** in the **Main** tab. Next go to the **Categories** tab, tick **Group 1** and select `gender` as the **Grouping variable** as shown below.
+A similar process is used to obtain the boxplots shown in Figure \@ref(fig:mod05-bwt-gender): go to **Graphics > Box plot**. In the **graph box – Box plots** dialog box, select `birthweight` as the **Variable** in the **Main** tab. Next go to the **Categories** tab, tick **Group 1** and select `gender` as the **Grouping variable** as shown below.
  
 ```{r box-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "box-by-1.png"))
@@ -108,7 +108,7 @@ To carry out an independent sample t-test, go to **Statistics > Summaries, table
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-1.png"))
 ```
 
-Click **OK** or **Submit** to obtain Output 5.3. 
+Click **OK** or **Submit** to obtain Output 5.2. 
 
 [Command: `ttest birthweight, by(gender)`]
 
@@ -130,13 +130,11 @@ Click **Submit** or **OK**.
 
 Check that the new variable appears in your Data Editor window. 
 
-Create a histogram with a normal curve under **Graphics > Histogram**, as shown previously in Module 2. You might want to vary the minimum bar value and the bar width: for example, Figure 5.2 was defined to have a lower limit of -40 and a bin width of 10. We have also requested a Normal curve be plotted in the **Density plots** tab.
+Create a histogram with a normal curve under **Graphics > Histogram**, as shown previously in Module 2. You might want to vary the minimum bar value and the bar width: for example, Figure \@ref(fig:mod05-sbpdiff) was defined to have a lower limit of -40 and a bin width of 10. We have also requested a Normal curve be plotted in the **Density plots** tab.
 
 ```{r ttest-3, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-3.png"))
 ```
-
-[ FIX CAPITALISATION OF "DIFFERENCE"]
 
 [Command: `histogram difference, width(10) start(-40) frequency normal`]
  

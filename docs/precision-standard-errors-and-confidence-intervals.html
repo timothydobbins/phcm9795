@@ -404,28 +404,37 @@ We interpret this confidence interval as: we are 95% confident that the true mea
 <p>This calculation takes into account both the sample mean of 70.0 kg and the sampling error that has arisen by chance due to the sample size of 30 people.</p>
 <p>For a 95% CI to be reported around a mean value, the data values need to be approximately normally distributed, as discussed in Module 2.</p>
 <p>Note: Had we used the t-distribution to calculate the critical value, the 95%CI would have been slightly wider, 68.1 kg to 71.9 kg as shown in Output 3.1 below using Example_1.3.dta with the ci mean command in Stata.</p>
-<p>Output 3.1 Mean and 95%CI of weight</p>
+<div id="stata-output-3.1-mean-and-95ci-of-weight" class="section level4 unnumbered">
+<h4>Stata Output 3.1: Mean and 95%CI of weight</h4>
 <pre class="text"><code>    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
 -------------+---------------------------------------------------------------
       weight |         30          70    .9207069        68.11694    71.88306</code></pre>
 </div>
+</div>
 <div id="the-t-distribution-and-when-should-i-use-it" class="section level3" number="3.5.2">
 <h3><span class="header-section-number">3.5.2</span> The t-distribution and when should I use it?</h3>
 <p>The population standard deviation (<span class="math inline">\(\sigma\)</span>) is required for calculation of the standard error. Often, <span class="math inline">\(\sigma\)</span> is not known and the sample standard deviation (<span class="math inline">\(s\)</span>) is used to estimate it. It is known, however, that the sample standard deviation of a normally distributed variable is a downward-biased estimator of <span class="math inline">\(\sigma\)</span>, particularly when the sample size is small.</p>
-<p>Someone by the pseudonym of Student came up with the Student’s t distribution with (<span class="math inline">\(n-1\)</span>) degrees of freedom to account for this bias. It looks very much like the standardised normal distribution, only that it has fatter tails (Figure 3.1). As the degrees of freedom increase (i.e. as <span class="math inline">\(n\)</span> increases), the t-distribution gradually approaches the standard normal distribution. With a sufficiently large sample size, the Student’s t-distribution closely approximates the standardised normal distribution.</p>
-<p>Figure 3.1 The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom</p>
+<p>Someone by the pseudonym of Student came up with the Student’s t distribution with (<span class="math inline">\(n-1\)</span>) degrees of freedom to account for this bias. It looks very much like the standardised normal distribution, only that it has fatter tails (Figure <a href="precision-standard-errors-and-confidence-intervals.html#fig:mod03-z-t-dist">3.1</a>. As the degrees of freedom increase (i.e. as <span class="math inline">\(n\)</span> increases), the t-distribution gradually approaches the standard normal distribution. With a sufficiently large sample size, the Student’s t-distribution closely approximates the standardised normal distribution.</p>
+<div class="figure"><span style="display:block;" id="fig:mod03-z-t-dist"></span>
+<img src="img/mod03/mod03-z-t-dist.png" alt="The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom" width="100%" />
+<p class="caption">
+Figure 3.1: The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom
+</p>
+</div>
 <p>If a variable <span class="math inline">\(X\)</span> is normally distributed and the population standard deviation <span class="math inline">\(\sigma\)</span> is known, using the normal distribution is appropriate. However, if <span class="math inline">\(\sigma\)</span> is not known then one should use the student t-distribution with (<span class="math inline">\(n – 1\)</span>) degrees of freedom.</p>
 </div>
 <div id="worked-example-3.2" class="section level3" number="3.5.3">
-<h3><span class="header-section-number">3.5.3</span> Worked example 3.2</h3>
+<h3><span class="header-section-number">3.5.3</span> Worked Example 3.2</h3>
 <p>The publication of a study using a sample of 30 patients reported a sample mean of 70 kg and a sample standard deviation of 6 kg. Find the 95% confidence interval estimate for the mean weight from this sample.</p>
 <p>In Stata we use the <code>cii means</code> command to compute the 95% confidence interval given the sample mean, sample standard deviation and the sample size (i.e. without using individual data from a dataset). This command uses the t-distribution, and the output is shown below:</p>
-<p>Output 3.2 95%CI for a given sample mean, sample standard deviation and sample size</p>
+<div id="stata-output-3.2-95ci-for-a-given-sample-mean-sample-standard-deviation-and-sample-size" class="section level4 unnumbered">
+<h4>Stata Output 3.2: 95%CI for a given sample mean, sample standard deviation and sample size</h4>
 <pre class="text"><code>    Variable |        Obs        Mean    Std. Err.       [95% Conf. Interval]
 -------------+---------------------------------------------------------------
              |         30          70    1.095445        67.75956    72.24044</code></pre>
 <p>We are 95% confident that the true mean weight lies between 67.8 kg and 72.2 kg.</p>
 
+</div>
 </div>
 </div>
 </div>

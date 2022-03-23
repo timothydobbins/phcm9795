@@ -16,10 +16,10 @@ huxtable::huxtable(tab1_1, add_colnames = FALSE) %>%
 ```
 
 Image chunk
-```{r twoway-2, echo=FALSE, out.width = "66%",}
+```{r twoway-2, echo=FALSE, out.width = "66%", fig.cap="A title"}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
 ```
-\@ref(fig:twoway-2)
+Refer to Figure \@ref(fig:twoway-2)
 
 Output chunk
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
@@ -38,3 +38,6 @@ Script to generate code to import sequentially numbered image files:
 names <- sprintf('"bar-%02d.png"',seq(1:12))
 commands <- (paste('knitr::include_graphics(here::here("img", "mod01", "stata",', names, ')'))
 cat(commands)
+
+
+#### Stata Output 5.1: Summary statistics by gender {-}

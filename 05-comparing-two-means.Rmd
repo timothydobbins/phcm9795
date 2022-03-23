@@ -4,7 +4,7 @@
 
 By the end of this module you will be able to:
 
-- Decide whether to use an independent samples t-test or a paired t-test to compare two groups for a continuous outcome variable;
+- Decide whether to use an independent samples t-test or a paired t-test to compare two the means of two groups;
 - Conduct and interpret the results from an independent samples t-test;
 - Describe the assumptions of an independent samples t-test;
 - Conduct and interpret the results from a paired t-test;
@@ -20,11 +20,11 @@ By the end of this module you will be able to:
 
 @acock10; Section 7.7, 7.8.
 
-@juul_frydenberg14; Juul S and Frydenberg M, An Introduction to Stata for Health Researchers, 4th Edition (2014): Section 11.5.
+@juul_frydenberg14; Section 11.5.
 
 ## Introduction
 
-In Module 4, a one-sample t-test was used for comparing a mean value with a hypothesised value. In this module, we show how to compare the mean values of two groups for which the outcome variable is normally distributed. In health research, we often want to compare the mean value of a measurement between two groups in an observational study or between a control and intervention group in an experimental study. For example, in an observational study, we may want to compare cholesterol levels in people who are normal weight to the levels in people who are overweight. In a clinical trial, we may want to compare cholesterol levels in people who have been randomised to a dietary modification or to usual care.
+In Module 4, a one-sample t-test was used for comparing a single mean to a hypothesised value. In health research, we often want to compare the means between two groups. For example, in an observational study, we may want to compare cholesterol levels in people who are normal weight to the levels in people who are overweight. In a clinical trial, we may want to compare cholesterol levels in people who have been randomised to a dietary modification or to usual care. In this module, we show how to compare the means of two groups where the analysis variable is normally distributed. 
 
 From the decision tree presented in the Appendix, we can see that if we have a continuous outcome measure and two categorical groups that are not related, i.e. a binary exposure measurement, the test for such data is an independent samples t-test. The test is also sometimes called a 2-sample t-test.
 
@@ -36,7 +36,7 @@ However, in research, data are often 'paired' or 'matched', that is the two data
 - From matched participants e.g. in a matched case-control study;
 - In cross-over clinical trials where the patient receives both drugs, often in random order.
 
-An independent samples t-test cannot be used for analysing paired or matched data because the assumption that the two groups are independent is violated. Treating paired or matched measurements as independent samples would artificially inflate the sample size and lead to inaccurate analyses and biased P values. When the data are related in a paired or matched way and the outcome is continuous, a paired t-test is the appropriate statistic to use if the data are normally distributed.
+An independent samples t-test cannot be used for analysing paired or matched data because the assumption that the two groups are independent is violated. Treating paired or matched measurements as independent samples would artificially inflate the sample size and lead to inaccurate P values. When the data are related in a paired or matched way and the outcome is continuous, a paired t-test is the appropriate statistic to use if the data are normally distributed.
 
 ## Independent samples t-test
 
@@ -44,9 +44,9 @@ An independent samples t-test is a parametric test that is used to assess whethe
 
 The null hypothesis is that the mean values of the two groups are not different, that is:
 
-H<sub>0</sub>: (Mean2 -- Mean1) = 0
+H~0~: (Mean~2~ - Mean~1~) = 0
 
-Rejecting the null hypothesis using an independent samples t-test indicates that the difference between the means of the two groups is large in relation to the variation in the samples and is unlikely to be due to chance or to sampling variation.
+Rejecting the null hypothesis using an independent samples t-test indicates that the difference between the means of the two groups is large in relation to the variability in the samples and is unlikely to be due to chance or to sampling variation.
 
 ### Assumptions for an independent samples t-test
 
@@ -67,13 +67,16 @@ The final assumption is homogeneity of variance between the groups. This can be 
 
 In an observational study of a random sample of 100 full term babies from the community, birth weight and gender were measured. There were 44 male babies and 56 female babies in the sample. The research question asked whether there was a difference in birth weights between boys and girls. The two groups are independent of each other and therefore an independent samples t-test can be used to test the null hypothesis that there is no difference in weight between the genders.
 
-Some preliminary descriptive statistics of the distribution of the variable of interest in each group should always be obtained before a t-test is undertaken to ensure that the assumptions are met. Box plots and histograms are ideal for this. Histrograms and box plots of the data obtained in Stata using **Graphics > Box plot** is shown in Figure 5.1. The dataset Example_5.1.dta is available on Moodle.
+Some preliminary descriptive statistics of the distribution of the variable of interest in each group should always be obtained before a t-test is undertaken to ensure that the assumptions are met. Box plots and histograms are ideal for this. Histrograms and box plots of the data obtained in Stata using **Graphics > Box plot** is shown in Figure \@ref(fig:mod05-bwt-gender). The dataset Example_5.1.dta is available on Moodle.
 
-<!-- INSERT FIGURE -->
-
+```{r mod05-bwt-gender, echo=FALSE, out.width = "100%", fig.cap="Histograms and box plots of birth weight by gender"}
+knitr::include_graphics(here::here("img", "mod05", "mod05-bwt-gender.png"))
+```
 The plots show that the data are approximately normally distributed: the histograms are relatively bell shaped and symmetric, and the boxes are fairly symmetrical, there are no outliers as indicated by dots, and the spread is similar in both groups as the similar length of the whiskers suggesting that the variance is homogenous.
 
 We can obtain statistics using the summarize command by gender with the detail option to check the data (e.g. skewness, plausibility of the minimum and maximum values).
+
+#### Stata Output 5.1: Summary statistics by gender {-}
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . by gender, sort: summarize birthweight , detail
@@ -129,9 +132,9 @@ Given that the standard error is estimated from the variance, the t value is an 
 
 In Stata, both the t and P values are provided. If the t-value falls outside a critical range, the P value will be small and we can reject the null hypothesis of no difference between the groups.
 
-Output 5.3 shows the Stata results of the example dataset obtained using **Statistics - Summaries, tables, and tests - Classical tests of hypotheses - t test (mean-comparison test)** and choosing the two-sample test in the ttest dialog box.
+Stata Output 5.2 shows the results of an independent samples t-test using Example_5.1.dta, obtained using **Statistics - Summaries, tables, and tests - Classical tests of hypotheses - t test (mean-comparison test)** and choosing the two-sample test in the ttest dialog box.
 
-#### Output 5.3: Independent samples t-test results from Stata
+#### Stata Output 5.2: Independent samples t-test {-}
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . ttest birthweight, by(gender)
@@ -160,22 +163,20 @@ Stata reports 3 different P-values. Among them the middle one reports the P-valu
 
 ## Paired t-tests
 
-If the outcome of interest is the difference in the continuously distributed outcome measurement between each pair or between each case and its matched control, i.e. the within-pair differences a paired t-test is used. In effect, a paired t-test is used to assess whether the mean of the differences between the two related measurements is significantly different from zero. In this sense, a paired t-test is very closely aligned with a one sample t-test.
+If the outcome of interest is the difference in the continuously outcome measurement between each pair of observations, a paired t-test is used. In effect, a paired t-test is used to assess whether the mean of the differences between the two related measurements is significantly different from zero. In this sense, a paired t-test is very closely aligned with a one sample t-test.
 
-When using a paired t-test, the variation between the pairs of measurements is the most important statistic and the variation between the participants, which is critical for the interpretation of a two-sample t-test, is of little interest.
+When using a paired t-test, the variation *between* the pairs of measurements is the most important statistic. The variation *between* the participants is of little interest.
 
-For related measurements, the data for each pair of values must be entered on the same row of the spreadsheet. Thus, the number of rows in the data sheet is the number of participants or the number of participant-pairs when cases and controls are matched. Thus, the effective sample size is the total number of pairs and not the total number of measurements.
+For related measurements, the data for each pair of values must be entered on the same row of the spreadsheet. Thus, the number of rows in the data sheet is the number of pairs of observations. Thus, the effective sample size is the total number of pairs and not the total number of measurements.
 
 ### Assumptions for a paired t-test
-
-For a paired samples t-test, it is not important to test whether the measurements are normally distributed for each of the time points in the two matched samples, but it is important to test whether the differences between the two measurements are normally distributed.
 
 The assumptions for a paired t-test are:
 
 -   the outcome variable is continuous
 -   the differences between the pair of the measurements are normally distributed
 
-If the assumptions for a paired t-test cannot be met, a non-parametric equivalent is a more appropriate test to use (Module 9).
+For a paired samples t-test, it is important to test whether the *differences* between the two measurements are normally distributed. If the assumptions for a paired t-test cannot be met, a non-parametric equivalent is a more appropriate test to use (Module 9).
 
 ### Computing a paired t-test
 
@@ -193,17 +194,18 @@ Because the standard error becomes smaller as the sample size becomes larger, th
 
 ### Worked Example 5.2
 
-A total of 107 people were recruited into an experimental trial to assess whether ankle blood pressure measured in two different sites would be the same. For each person, systolic blood pressure (SBP) was measured in two sites: dorsalis pedis and tibialis posterior.
+A total of 107 people were recruited into a study to assess whether ankle blood pressure measured in two different sites would be the same. For each person, systolic blood pressure (SBP) was measured in two sites: dorsalis pedis and tibialis posterior.
 
-The dataset Example_5.2.dta is available on Moodle. First, we need to compute the pairwise difference between SBP measured in the two sites in Stata using the generate command. This is shown in the Stata manual at the end of this module (Checking the assumptions for a Paired t-test) and in the Foundations module. The distribution of the difference between SBP measured in dorsalis pedis and tibialis posterior is shown in Figure 5.2. It approximates a normal distribution and therefore a paired t-test can be used.
+The dataset Example_5.2.dta is available on Moodle. First, we need to compute the pairwise difference between SBP measured in the two sites in Stata using the `generate` command. This is shown in the Stata manual at the end of this module (Checking the assumptions for a Paired t-test). The distribution of the difference between SBP measured in dorsalis pedis and tibialis posterior is shown in Figure \@ref(fig:mod05-sbpdiff). It approximates a normal distribution and therefore a paired t-test can be used.
 
-#### Figure 5.2: Distribution of differences in ankle SBP between two sites of 107 participants
+```{r mod05-sbpdiff, echo=FALSE, out.width = "100%", fig.cap="Distribution of differences in ankle SBP between two sites of 107 participants"}
+knitr::include_graphics(here::here("img", "mod05", "mod05-sbpdiff.png"))
+```
 
-[INSERT FIGURE]
+The paired t-test is performed using the `ttest` command in Stata (see the Stata Notes section for details). We specify the data is paired with `sbp_dp` as First variable and `sbp_tp` as the Second variable. Output 5.3 shows the summary statistics for both sites. From this we can see that the mean SBP is very similar in the two sites.
 
-The paired t-test is performed using the ttest command in Stata (see the Stata Notes section for details). We specify the data is paired with sbp_dp as First variable and sbp_tp as the Second variable. Output 5.4 shows the summary statistics for both sites. From this we can see that the mean SBP is very similar in the two sites.
+#### Stata Output 5.3: Paired t-test {-}
 
-#### Output 5.4: Paired t-test results from Stata
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Paired t test
 ------------------------------------------------------------------------------
@@ -221,7 +223,7 @@ Variable |     Obs        Mean    Std. Err.   Std. Dev.   [95% Conf. Interval]
  Pr(T < t) = 0.1691         Pr(|T| > |t|) = 0.3382          Pr(T > t) = 0.8309
 ```
 
-The next line for "diff" shows the statistics for the mean of within-pair difference. It indicates that average SBP measured in dorsalis pedis is 116.7 mmHg and that in tibialis posterior is 118.0 mmHg. The difference is −1.26 (95% CI: −3.86 to 1.34).
+We can see that the average SBP measured in dorsalis pedis is 116.7 mmHg and that in tibialis posterior is 118.0 mmHg. The difference is −1.3 (95% CI: −3.9 to 1.3).
 
 The t-value of −0.96 yields a two-sided P-value of 0.34 (under Ha: mean(diff) ≠ 0) confirms that these data provide no evidence against the null hypothesis, and conclude that the SBP measured in the two sites are not different.
 

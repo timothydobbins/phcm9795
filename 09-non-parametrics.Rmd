@@ -14,8 +14,11 @@ By the end of this module you will be able to:
 ## Readings {-}
 
 @kirkwood_sterne01; Chapter 13.
+
 @bland15; Chapter 12.
+
 @juul_frydenberg14; Section 11.5.
+
 @acock10; Section 7.11.
 
 ## Introduction
@@ -42,6 +45,7 @@ knitr::include_graphics(here::here("img", "mod09", "mod09-lnlos.png"))
 
 The distribution now appears much more bell shaped. Output 9.1 shows the descriptive statistics for length of stay before and after logarithmic transformation. Before transformation, the SD is almost as large as the mean value which indicates that the data are skewed and that these statistics are not an accurate description of the centre and spread of the data.
 
+#### Stata Output 9.1: Summary statistics for untransformed and transformed length of stay {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
                        Length of stay
 -------------------------------------------------------------
@@ -74,7 +78,7 @@ The distribution now appears much more bell shaped. Output 9.1 shows the descrip
 99%     5.356586       5.501258       Kurtosis       7.847303
 ```
 
-The mean and standard deviation of the transformed length of stay are in log base e (i.e. ln) units. If we raise the mean of the log of length of stay to the power of $e$, it returns a value of 30.2 days ($e^{3.41}=30.2$). To do this in Stata, you can use the display command that was shown in Module 2 and with the exponential function, exp().
+The mean and standard deviation of the transformed length of stay are in log base e (i.e. ln) units. If we raise the mean of the log of length of stay to the power of $e$, it returns a value of 30.2 days ($e^{3.41}=30.2$). To do this in Stata, you can use the display command that was shown in Module 2 and with the exponential function, `exp()`.
 
 Technically, this is called the geometric mean of the data, and it has a different interpretation to the usual mean, the arithmetic mean. This is a much better estimate in this case of the “average” length of stay than the mean of 38.1 days (95% CI 31.9, 44.2 days) obtained from the non-transformed positively skewed data. Note that, if you have added 1 to your data to deal with 0 values, the back-transformed estimate is *approximately* equal to the geometric mean.
 
@@ -82,7 +86,7 @@ If we were testing the hypothesis that there was a difference in length of stay 
 
 [Command: `ttest ln_los, by(infect)`] How do you interpret the test statistics (i.e. the t-value and p-value)?
 
-Output 9.2: Independent samples t-test on log-transformed length of stay data
+#### Stata Output 9.2: Independent samples t-test on log-transformed length of stay data {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Two-sample t test with equal variances
 ------------------------------------------------------------------------------
@@ -157,7 +161,7 @@ The assumption for this test is that the distributions of the two populations ha
 
 For the length of stay data in the Worked Example 9.1, we first get a ranks table as shown in Output 9.3. The rank sum table gives us a direction of effect that the ranks are higher than expected in patients who had nosocomial infection. While the positive infection group has a lower sum of ranks because there were fewer people who contracted an infection, it is higher than expected, i.e. they have a longer length of stay compared with the negative infection group. This ranks table does not provide any summary statistics of direction of effect, central tendency or spread that describe the data.
 
-Output 9.3 Results output from Wilcoxon rank-sum test
+#### Stata Output 9.3: Wilcoxon rank-sum test {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Two-sample Wilcoxon rank-sum (Mann-Whitney) test
 
@@ -181,7 +185,7 @@ Ho: los(infect==No) = los(infect==Yes)
 
 The test statistics are shown under the rank sum table in Output 9.3. The variance shown immediately under the table are used to conduct the test, and are not reported on. 
 
-From the output 9.3, there are two P-values shown: one assuming normality of the ranks (not the underlying data), and an "Exact" P-value. The exact P-value is calculated when the sample size is not too large (less than 200), and is preferred. The rounded exact P value is 0.014 which indicates that the there is evidence of a difference in length of stay between the groups. This P-value should be provided alongside non-parametric summary statistics such as medians and inter-quartile ranges.
+From Output 9.3, there are two P-values shown: one assuming normality of the ranks (not the underlying data), and an "Exact" P-value. The exact P-value is calculated when the sample size is not too large (less than 200), and is preferred. The rounded exact P value is 0.014 which indicates that the there is evidence of a difference in length of stay between the groups. This P-value should be provided alongside non-parametric summary statistics such as medians and inter-quartile ranges.
 
 Using the summary command with the detail option in Stata and splitting the LOS variable by the Infect variable (as shown in Module 5), we can obtain the median length of stay values of 24 (Interquartile Range: 19 to 40 days) in the group with no infection and 37 (Interquartile Range: 24 to 50 days) in the group with infection.
 
@@ -221,16 +225,17 @@ huxtable(df) %>%
   set_caption("Arthritis symptom scores for 11 patients after administering two drugs")
 ```
 
-Before doing the analysis let us examine the distribution of the difference of symptom scores between the two drugs. As in Module 5, we first need to compute the difference between the symptom scores. To examine the distribution, we plot a histogram as shown in Figure 9.3. 
+Before doing the analysis let us examine the distribution of the difference of symptom scores between the two drugs. As in Module 5, we first need to compute the difference between the symptom scores. To examine the distribution, we plot a histogram as shown in Figure \@ref(fig:mod09-diff-hist).
 
-Figure 9.3: Distribution of difference in symptom scores between Drug 1 and Drug 2
-**UPDATE**
+```{r mod09-diff-hist, echo=FALSE, out.width = "66%", fig.cap="Distribution of difference in symptom scores between Drug 1 and Drug 2"}
+knitr::include_graphics(here::here("img", "mod09", "mod09-diff-hist.png"))
+```
 
-The histogram that the differences are not normally distributed. The data looks negatively skewed with a gap in the histogram between the values of -5 and 0. Therefore, it would not be appropriate to conduct a paired t-test. Hence, we conduct a non-parametric paired test (Wilcoxon matched-pairs signed-rank test).
+The histogram shows that the differences are not normally distributed. The data looks negatively skewed with a gap in the histogram between the values of -5 and 0. Therefore, it would not be appropriate to conduct a paired t-test. Hence, we conduct a non-parametric paired test (Wilcoxon matched-pairs signed-rank test).
 
 A non-parametric paired test can be obtained in Stata using the signrank command and the results of the test are shown in Output 9.4.
 
-Output 9.4: Results from Wilcoxon matched-pairs signed-rank test
+#### Stata Output 9.4: Wilcoxon matched-pairs signed-rank test {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Wilcoxon signed-rank test
 
@@ -264,13 +269,13 @@ Estimating correlation using Pearson's correlation coefficient can be problemati
 
 When estimating the correlation between x and y, Spearman's rank correlation essentially replaces the observations x and y by their ranks, and calculates the correlation between the ranks. Kendall's rank correlation compares the ranks between every possible combination of pairs of data to measure concordance: whether high values for x tend to be associated with high values for y (positively correlated) or low values of y (negatively correlated).
 
-In terms of which is the more appropriate measure to use, the following passage from An Introduction to Medical Statistics, 4th Edition (Bland 2015) provides some guidance:
+In terms of which is the more appropriate measure to use, the following passage from An Introduction to Medical Statistics (@bland15) provides some guidance:
 
 > "Why have two different rank correlation coefficients? Spearman’s $\rho$ is older than Kendall’s $\tau$, and can be thought of as a simple analogue of the product moment correlation coefficient, Pearson’s r. Kendall’s $\tau$ is a part of a more general and consistent system of ranking methods, and has a direct interpretation, as the difference between the proportions of concordant and discordant pairs. In general, the numerical value of $\rho$ is greater than that of $\tau$. It is not possible to calculate $\tau$ from $\rho$ or $\rho$ from $\tau$, they measure different sorts of correlation. $\rho$ gives more weight to reversals of order when data are far apart in rank than when there is a reversal close together in rank, $\tau$ does not. However, in terms of tests of significance, both have the same power to reject a false null hypothesis, so for this purpose it does not matter which is used."
 
-We will illustrate estimating rank correlation using the Stata file Example_8.1.dta, which has information about height and lung function collected from a sample of 120 adults.
+We will illustrate estimating rank correlation using the Stata file `Example_8.1.dta`, which has information about height and lung function collected from a sample of 120 adults.
 
-Output 9.5: Results from rank correlation analysis
+#### Stata Output 9.5: Results from rank correlation analysis {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . spearman Height FVC
 

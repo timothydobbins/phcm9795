@@ -12,6 +12,7 @@ By the end of this module you will be able to:
 ## Readings {-}
 
 @kirkwood_sterne01; Chapter 35.
+
 @bland15; Chapter 18.
 
 ### Further readings (for interest) {-}
@@ -88,6 +89,7 @@ Analytical study designs are used to compare characteristics between different g
 The first important decision in estimating a required sample size for an analytic study is to select the type of statistical test that will be used to report or analyse the data. Each type of test is associated with a different method of sample size estimation.
 
 Once the statistical method has been determined, the following issues need to be decided:
+
 - Statistical power – the chance of finding a difference if one exists, e.g. 80%; 
 - Level of significance – the P value that will be considered significant, e.g. P<0.05;
 - Minimum effect size of interest – the size of the difference between groups e.g. the difference in the proportion of parents who oppose immunisation in two different regions or the difference in mean values of blood pressure in two groups of people with different types of cardiac disease; 

@@ -330,35 +330,41 @@ div.csl-indent {
 </div>
 <div id="readings-7" class="section level2 unnumbered">
 <h2>Readings</h2>
-<p><span class="citation">Kirkwood and Sterne (<a href="#ref-kirkwood_sterne01" role="doc-biblioref">2001</a>)</span>; Chapter 10
-<span class="citation">Bland (<a href="#ref-bland15" role="doc-biblioref">2015</a>)</span>; Chapter 11
-<span class="citation">Acock (<a href="#ref-acock10" role="doc-biblioref">2010</a>)</span>; Chapter 8.
-<span class="citation">Juul and Frydenberg (<a href="#ref-juul_frydenberg14" role="doc-biblioref">2014</a>)</span>; Section 12.1.</p>
+<p><span class="citation">Kirkwood and Sterne (<a href="#ref-kirkwood_sterne01" role="doc-biblioref">2001</a>)</span>; Chapter 10.</p>
+<p><span class="citation">Bland (<a href="#ref-bland15" role="doc-biblioref">2015</a>)</span>; Chapter 11.</p>
+<p><span class="citation">Acock (<a href="#ref-acock10" role="doc-biblioref">2010</a>)</span>; Chapter 8.</p>
+<p><span class="citation">Juul and Frydenberg (<a href="#ref-juul_frydenberg14" role="doc-biblioref">2014</a>)</span>; Section 12.1.</p>
 </div>
 <div id="introduction-7" class="section level2" number="8.1">
 <h2><span class="header-section-number">8.1</span> Introduction</h2>
-<p>In Module 5, we saw how to test whether a categorical and a continuous variable are related. However, we often want to know how closely two continuous variables are related. For example, we may want to know how closely blood cholesterol levels are related to dietary fat intake in adult men. To measure the strength of association between two continuously distributed variables, a correlation coefficient is used.</p>
+<p>In Module 5, we saw how to test whether the means from two groups are equal - in other words, whether a continuous variable is related to a categorical variable. We often want to know how closely two continuous variables are related. For example, we may want to know how closely blood cholesterol levels are related to dietary fat intake in adult men. To measure the strength of association between two continuously distributed variables, a correlation coefficient is used.</p>
 <p>We may also want to know how well one continuous measurement predicts the value of another continuous measurement. For example, we may want to know how well height predicts values of lung capacity in a community of adults. A regression model allows us to use one measurement to predict another measurement.</p>
-<p>Although both correlation coefficients and regression models can be used to describe the degree of association between two continuous variables, the two methods provide very different statistical information. For both methods, a significant statistical association only implies an association between the variables and does not imply a causal relationship.</p>
+<p>Although both correlation coefficients and regression models can be used to describe the degree of association between two continuous variables, the two methods provide very different statistical information. It is important to note that both methods only measures the strengths of an association between variables and does not imply a causal relationship.</p>
 </div>
 <div id="correlation" class="section level2" number="8.2">
 <h2><span class="header-section-number">8.2</span> Correlation</h2>
 <p>We use correlation to measure the strength of a linear relationship between two variables. Before calculating a correlation coefficient, a scatter plot should first be obtained to give an understanding of the nature of the relationship between the two variables.</p>
 <div id="worked-example-11" class="section level3" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Worked Example</h3>
-<p>The Stata file Example_8.1.dta has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure <code>\@ref(fig:scatter-plot))</code>. This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.</p>
-<!-- ```{r scatter-plot, echo=FALSE, out.width = "66%", fig.cap="Association between height and lung function in 120 adults"} -->
-<!-- knitr::include_graphics(here::here("img", "mod08", "scatterpng.png")) -->
-<!-- ``` -->
+<p>The Stata file <code>Example_8.1.dta</code> has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot">8.1</a>). This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.</p>
+<div class="figure"><span style="display:block;" id="fig:scatter-plot"></span>
+<img src="img/mod08/scatterpng.png" alt="Association between height and lung function in 120 adults" width="66%" />
+<p class="caption">
+Figure 8.1: Association between height and lung function in 120 adults
+</p>
+</div>
 </div>
 <div id="correlation-coefficients" class="section level3" number="8.2.2">
 <h3><span class="header-section-number">8.2.2</span> Correlation coefficients</h3>
 <p>A correlation coefficient (r) describes how closely the variables are related, that is the strength of linear association between two continuous variables. The range of the coefficient is from +1 to −1 where +1 is a perfect positive association, 0 is no association and −1 is a perfect inverse association. In general, an absolute (disregarding the sign) r value below 0.3 indicates a weak association, 0.3 to &lt; 0.6 is fair association, 0.6 to &lt; 0.8 is a moderate association, and <span class="math inline">\(\ge\)</span> 0.8 indicates a strong association.</p>
-<p>The coefficient is positive when large values of one variable tend to occur with large values of the other, and small values of one variable (y) tend to occur with small values of the other (x) (Figure <code>\@ref(fig:scatter-plot-four)</code> (a and b)). For example, height and weight in healthy children or age and blood pressure.</p>
-<p>The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure <code>\@ref(fig:scatter-plot-four)</code> (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.</p>
-<!-- ```{r scatter-plot-four, echo=FALSE, out.width = "66%", fig.cap="Scatter plots demonstrating strong and weak, positive and negative associations"} -->
-<!-- knitr::include_graphics(here::here("img", "mod08", "scatterplot-four-plots.png")) -->
-<!-- ``` -->
+<p>The coefficient is positive when large values of one variable tend to occur with large values of the other, and small values of one variable (y) tend to occur with small values of the other (x) (Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-four">8.2</a> (a and b)). For example, height and weight in healthy children or age and blood pressure.</p>
+<p>The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-four">8.2</a> (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.</p>
+<div class="figure"><span style="display:block;" id="fig:scatter-plot-four"></span>
+<img src="img/mod08/scatterplot-four-plots.png" alt="Scatter plots demonstrating strong and weak, positive and negative associations" width="66%" />
+<p class="caption">
+Figure 8.2: Scatter plots demonstrating strong and weak, positive and negative associations
+</p>
+</div>
 <p>The P value associated with an r value is an estimate of whether the correlation coefficient is significantly different from zero. However, a correlation coefficient that does not have a significant P value does not imply that there is no relationship because the correlation coefficient only tests for a linear association and there may be a non-linear relationship such as a curved or irregular relationship.</p>
 <p>The assumptions for using a Pearson’s correlation coefficient are that:</p>
 <ul>
@@ -367,20 +373,20 @@ div.csl-indent {
 <li>the relationship between the two variables is linear.</li>
 </ul>
 <p>There is a further assumption that the data follow a bivariate normal distribution. This assumes: <em>y</em> follows a normal distribution for given values of <em>x</em>; and <em>x</em> follows a normal distribution for given values of <em>y</em>. This is quite a technical assumption that we do not discuss further.</p>
-<p>There are two types of correlation coefficients– the correct one to use is determined by the nature of the variables as shown in Table <a href="correlation-and-linear-regression.html#tab:setup-data-test">8.1</a>).</p>
-<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:setup-data-test">
-<caption style="caption-side: top; text-align: center;"><span id="tab:setup-data-test">Table 8.1: </span> A table</caption><col><col><tr>
-<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Type.of.correlation.coefficient</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Application</th></tr>
+<p>There are two types of correlation coefficients– the correct one to use is determined by the nature of the variables as shown in Table <a href="correlation-and-linear-regression.html#tab:mod08-correlation-coefficients">8.1</a>).</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 95%; margin-left: auto; margin-right: auto;  " id="tab:mod08-correlation-coefficients">
+<caption style="caption-side: top; text-align: center;"><span id="tab:mod08-correlation-coefficients">Table 8.1: </span> Correlation coefficients and their application</caption><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Correlation coefficient</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Application</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Pearson’s correlation coefficient: r</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Both variables are continuous and a bivariate normal distribution can be assumed</td></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Spearman’s rank correlation: rho</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Bivariate normality cannot be assumed. Also useful when at least one of the variables is ordinal</td></tr>
 </table>
 
-<p>Spearman’s rho is calculated using the ranks of the data, rather than the actual values of the data. We will see further examples of such methods in Module 9, when we consider non-parametric tests, which are often based on ranks.</p>
+<p>Spearman’s <span class="math inline">\(\rho\)</span> is calculated using the ranks of the data, rather than the actual values of the data. We will see further examples of such methods in Module 9, when we consider non-parametric tests, which are often based on ranks.</p>
 <p>For the data in the Worked Example 8.1, using the pwcorr command in Stata gives the information shown in Output 8.1.</p>
-<div id="stata-output-from-the-pwcorr-command" class="section level4" number="8.2.2.1">
-<h4><span class="header-section-number">8.2.2.1</span> Stata output from the pwcorr command</h4>
+<div id="stata-output-8.1-pwcorr-command" class="section level4" number="8.2.2.1">
+<h4><span class="header-section-number">8.2.2.1</span> Stata Output 8.1: pwcorr command</h4>
 <pre class="text"><code>. pwcorr Height FVC, sig
 
              |   Height      FVC
@@ -401,19 +407,25 @@ div.csl-indent {
 <h2><span class="header-section-number">8.3</span> Linear regression</h2>
 <p>The nature of a relationship between two variables is more fully described using regression. There are two principal purposes for building a regression model. The most common is to build a predictive model, for example in situations in which age and gender are used to predict normal values of characteristics such as lung size or body mass index. Normal values are the range of values that occur naturally in the general population.</p>
 <p>The second purpose for using a regression model is for testing the hypothesis that there is a linear relationship between one or more explanatory variables and an outcome variable. For example, a regression model can be used to test the extent to which age predicts BMI or to test the hypothesis that two groups with a different dietary regime have significantly different BMI values after adjusting for age differences.</p>
-<p>From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure <code>\@ref(fig:scatter-plot-line)</code> shows the data with the line fitted.</p>
-<!-- ```{r scatter-plot-line, echo=FALSE, out.width = "66%", fig.cap="Association between height and lung function in 120 adults"} -->
-<!-- knitr::include_graphics(here::here("img", "mod08", "scatterplot-line-fvc-height.png")) -->
-<!-- ``` -->
+<p>From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-line">8.3</a> shows the data with the line fitted.</p>
+<div class="figure"><span style="display:block;" id="fig:scatter-plot-line"></span>
+<img src="img/mod08/scatterplot-line-fvc-height.png" alt="Association between height and lung function in 120 adults" width="66%" />
+<p class="caption">
+Figure 8.3: Association between height and lung function in 120 adults
+</p>
+</div>
 <p>The line through the plot is called the line of ‘best fit’ because the size of the deviations between the data points and the line is minimised in the calculation. The distance between each data point and the regression line is called a ‘residual’.</p>
 <div id="regression-equations" class="section level3" number="8.3.1">
 <h3><span class="header-section-number">8.3.1</span> Regression equations</h3>
 <p>The mathematical equation for the line explains the relationship between the two variables. The equation of the regression line is as follows:</p>
 <p><span class="math display">\[y = \beta_{0} + \beta_{1}x\]</span></p>
-<p>This line is shown in Figure <code>\@ref(fig:regression-parameters)</code> using the notation shown in Table 8.2.</p>
-<!-- ```{r regression-parameters, echo=FALSE, out.width = "66%", fig.cap="Coefficients of a linear regression equation"} -->
-<!-- knitr::include_graphics(here::here("img", "mod08", "regression-line-parameters.png")) -->
-<!-- ``` -->
+<p>This line is shown in Figure <a href="correlation-and-linear-regression.html#fig:regression-parameters">8.4</a> using the notation shown in Table <a href="correlation-and-linear-regression.html#tab:regression-notation">8.2</a>.</p>
+<div class="figure"><span style="display:block;" id="fig:regression-parameters"></span>
+<img src="img/mod08/regression-line-parameters.png" alt="Coefficients of a linear regression equation" width="66%" />
+<p class="caption">
+Figure 8.4: Coefficients of a linear regression equation
+</p>
+</div>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:regression-notation">
 <caption style="caption-side: top; text-align: center;"><span id="tab:regression-notation">Table 8.2: </span> Notation for linear regression equation</caption><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Symbol</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Interpretation</th></tr>
@@ -484,9 +496,12 @@ div.csl-indent {
 <p>In the above example, the response rate for the survey was low and there may be selection bias in that people who were healthier may have been more likely to attend so the predictive equation may not be considered representative of the general population of adults from which the sample was drawn.</p>
 <p>The distribution of the residuals should always be checked. Outlying residuals can have a large effect on the slope of the model and need to be censored or brought closer to the remainder of the data to reduce their influence. The residuals can be generated using the predict command in Stata.</p>
 <p>The histogram of residuals from the model is shown in Figure 8.5. They are normally distributed and indicate that there are no influential outliers so that the assumptions for regression are met.</p>
-<!-- ```{r residual-hist, echo=FALSE, out.width = "66%", fig.cap="Histogram of regression residuals"} -->
-<!-- knitr::include_graphics(here::here("img", "mod08", "regression-residual-histogram.png")) -->
-<!-- ``` -->
+<div class="figure"><span style="display:block;" id="fig:residual-hist"></span>
+<img src="img/mod08/regression-residual-histogram.png" alt="Histogram of regression residuals" width="66%" />
+<p class="caption">
+Figure 8.5: Histogram of regression residuals
+</p>
+</div>
 </div>
 <div id="critical-appraisal" class="section level3" number="8.4.1">
 <h3><span class="header-section-number">8.4.1</span> Critical appraisal</h3>
@@ -498,7 +513,7 @@ div.csl-indent {
 <h2><span class="header-section-number">8.5</span> Multiple linear regression</h2>
 <p>In the above example, we have only used a simple linear regression model of two continuous variables. Other more complex models can be built from this e.g. if we wanted to look at the effect of gender (male vs. female) as binary indicator in the model while adjusting for the effect of height. In that case we would include both the variables in the model as explanatory variables. In the same way we can include any number of explanatory variables (both continuous and categorical) in the model: this is called a multivariable model. Multivariable models are often used for building predictive equations, for example by using age, height, gender and smoking history to predict lung function, or to adjust for confounding and detect effect modification to investigate the association between an exposure and an outcome factor.</p>
 <p>Multiple regression has an important role in investigating causality in epidemiology. The exposure variable under investigation must stay in the model and the effects of other variables which can be confounders or effect-modifiers are tested. The biological, psychological or social meaning of the variables in the model and their interactions are of great importance for interpreting theories of causality.</p>
-<p>Other multivariable models include binary logistic regression for use with a binary outcome variable, Cox regression for survival analyses, or Poisson regression for count data. These models, together with multiple regression, will be taught in <em>PHCM9517: Advanced Biostatistics</em>.</p>
+<p>Other multivariable models include binary logistic regression for use with a binary outcome variable, Cox regression for survival analyses, or Poisson regression for count data. These models, together with multiple regression, will be taught in <strong>PHCM9517: Advanced Biostatistics</strong>.</p>
 
 </div>
 </div>
