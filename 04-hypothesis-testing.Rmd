@@ -29,8 +29,7 @@ We use hypothesis testing to answer questions such as whether two groups have di
 -	whether a new drug is more effective in reducing blood pressure than a conventional drug, i.e. whether the mean blood pressure in the group receiving the new drug is lower than the mean blood pressure in the group receiving the conventional medication;
 -	whether an environmental exposure increases the risk of a disease, i.e. whether the frequency of disease is higher in the group who have been exposed to an environmental factor than in the non-exposed group.
 
-We may also want to know something about a single group. For example:
--	whether the mean blood pressure of a sample is the same as the general population.
+We may also want to know something about a single group. For example, whether the mean blood pressure of a sample is the same as the general population.
 
 These questions can be answered by setting up a null hypothesis and an alternative hypothesis, and performing a hypothesis test (also known as a significance test).
 
@@ -39,7 +38,7 @@ Hypothesis testing is a statistical technique that is used to quantify the evide
 
 H~0~ = there is no difference in mean systolic blood pressure between a group taking a conventional drug and a group taking a newly developed drug
 
-We also have an alternative hypothesis that is opposite or contrasting to the null hypothesis. In our example above, the alternative hypothesis above we be that there is a difference between groups. The alternative hypothesis is usually of most interest to the researcher but in practice, formal statistical tests are used to test the null hypothesis (not the alternative hypothesis). The hypotheses are always in reference to the population not the sample.
+We also have an alternative hypothesis that is opposite or contrasting to the null hypothesis. In our example above, the alternative hypothesis above we be that there is a difference between groups. The alternative hypothesis is usually of most interest to the researcher but in practice, formal statistical tests are used to test the null hypothesis (not the alternative hypothesis). The hypotheses are always in reference to the population from which the sample is drawn, not the sample itself.
 
 After setting up our null and alternative hypotheses, we use the data to generate a test statistic. The particular test statistic differs depending on the type of data being analyses (e.g. continuous or categorical), the study design (e.g. paired or independent) and the question being asked.
 
@@ -49,6 +48,7 @@ Informally, the P-value can be interpreted as the probability of observing data 
 If the P-value is small, it is unlikely that we would observe data like ours or more extreme if the null hypothesis was true. In other words, our data are not consistent with the null hypothesis, and we conclude that we have evidence against the null hypothesis. If the P-value is not small, the probability of observing data like ours or more extreme is not unlikely. We therefore have little or no evidence against the null hypothesis. In hypothesis testing, the null hypothesis cannot be proven or accepted; we can only find evidence to refute the null hypothesis.
 
 To summarise: 
+
 -	a small P-value gives us evidence against the null hypothesis;
 -	a P-value that is not small provides little or no evidence against null hypothesis;
 -	the smaller the P-value, the stronger the evidence against the null hypothesis.
@@ -74,7 +74,7 @@ P-values are usually generated using statistical software although other methods
 
 ## Effect size
 
-In hypothesis testing, P values convey only part of the information about the hypothesis and need to be accompanied by an estimation of the effect size, that is, a description of the magnitude of the difference between the study groups. The effect size is a summary statistic that conveys the size of the difference between two groups. For continuous variables, it is usually calculated as the difference between two mean values.
+In hypothesis testing, P-values convey only part of the information about the hypothesis and need to be accompanied by an estimation of the effect size, that is, a description of the magnitude of the difference between the study groups. The effect size is a summary statistic that conveys the size of the difference between two groups. For continuous variables, it is usually calculated as the difference between two mean values.
 
 If the variable is binary, the effect size can be expressed as the absolute difference between two proportions (attributable risk), or as an odds ratio or relative risk. 
 
@@ -82,19 +82,19 @@ Reporting the effect size enables clinicians and other researchers to judge whet
 
 ## Statistical significance and clinical importance
 
-When applying statistical methods in health and medical research, we need to make an informed decision about whether the effect size that led to a statistically significant finding is also clinically important (see Figure 4.2). The decision about whether a statistically significant result is also clinically important depends on expert knowledge and is best made by practitioners with experience in the field.
-
-It is possible when conducting significance tests, particularly in very large studies, that a small effect is found to be statistically significant. For example, say in a large study of over 1000 patients, a new medication was found to lower blood pressure on average by 1 mmHg more than a currently accepted drug and this was statistically significant (P < 0.05). However, such a small decrease in blood pressure would probably not be considered clinically important. The cost and side effects of prescribing the new medication would need to be weighed against the very small average benefit that would be expected. In this case, although the null hypothesis would be rejected (i.e. the result is statistically significant), the result would not be clinically important. This is the situation described in scenario (c) of Figure 4.2.
-
-Conversely, it is possible to obtain a large, clinically important difference between groups, but a P value that does not demonstrate a statistically significant difference. 
-
-For example, consider a study to measure the rate of hospital admissions. We may find that 80% of children who present to the Emergency Department are admitted before an intervention is introduced compared to only 65% of children after the intervention. However, the P value may be calculated as 0.11 and is non-significant. This is because only 60 children were surveyed in each period. Here, the reduction in the admission rate by 15% represents a clinically important difference, but not statistically significant. This situation is represented in scenario (d) of Figure 4.2
-
-The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.
+When applying statistical methods in health and medical research, we need to make an informed decision about whether the effect size that led to a statistically significant finding is also clinically important (see Figure \@ref(fig:practical-importance)). The decision about whether a statistically significant result is also clinically important depends on expert knowledge and is best made by practitioners with experience in the field.
 
 ```{r practical-importance, echo=FALSE, out.width = "66%", fig.cap="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)"}
 knitr::include_graphics(here::here("img", "mod04", "practical-vs-statistical-sig.png"))
 ```
+
+It is possible when conducting significance tests, particularly in very large studies, that a small effect is found to be statistically significant. For example, say in a large study of over 1000 patients, a new medication was found to lower blood pressure on average by 1 mmHg more than a currently accepted drug and this was statistically significant (P < 0.05). However, such a small decrease in blood pressure would probably not be considered clinically important. The cost and side effects of prescribing the new medication would need to be weighed against the very small average benefit that would be expected. In this case, although the null hypothesis would be rejected (i.e. the result is statistically significant), the result would not be clinically important. This is the situation described in scenario (c) of Figure \@ref(fig:practical-importance).
+
+Conversely, it is possible to obtain a large, clinically important difference between groups, but a P value that does not demonstrate a statistically significant difference. 
+
+For example, consider a study to measure the rate of hospital admissions. We may find that 80% of children who present to the Emergency Department are admitted before an intervention is introduced compared to only 65% of children after the intervention. However, the P value may be calculated as 0.11 and is non-significant. This is because only 60 children were surveyed in each period. Here, the reduction in the admission rate by 15% represents a clinically important difference, but not statistically significant. This situation is represented in scenario (d) of Figure \@ref(fig:practical-importance).
+
+The important thing to remember is that statistical significance does not always correspond to clinical importance. A statistically significant result may be clinically unimportant, and a statistically non-significant results may be clinically important.
 
 ## Errors in significance testing
 There are two conclusions we can draw when conducting a hypothesis test: if the P-value is small, there is strong evidence against the null hypothesis and we reject the null hypothesis. If the P-value is not small, there is little evidence against the null hypothesis and we fail to reject the null hypothesis. As discussed above, the “small” cut-point for the P-value is often taken as 0.05. We refer to this value as $\alpha$ (alpha).
@@ -105,13 +105,47 @@ If the null hypothesis was true in reality, our hypothesis test can fail to reje
 
 The other situation is where, in reality, the null hypothesis is false. A correct conclusion would be where our hypothesis test rejects the null hypothesis. However, if our hypothesis test fails to reject the null hypothesis, we have made a Type II error. The probability of making a Type II error is denoted $\beta$ (beta). We will see in Module 10 that $\beta$ is determined by the size of the study.
 
-The error in falsely rejecting the null hypothesis when it is true (type I error), or in falsely accepting the null hypothesis when it is not true (type II error) is summarised in Table 4.2. We will return to these concepts in Module 10, when discussing how to determine the appropriate sample size of a study.
+The error in falsely rejecting the null hypothesis when it is true (type I error), or in falsely accepting the null hypothesis when it is not true (type II error) is summarised in Table \@ref(tab:tab4-alpha-beta). We will return to these concepts in Module 10, when discussing how to determine the appropriate sample size of a study.
 
-Table 4.2 Type I and Type II errors in hypothesis tests
-    Study result                                Reality
-        	                      Null hypothesis is true	    Null hypothesis is false
-Reject null hypothesis	        Type I error (ɑ)	          Correct conclusion
-Do not reject null hypothesis	  Correct conclusion	        Type II error (β)
+```{r tab4-alpha-beta, echo=FALSE}
+if (knitr::is_html_output()) {
+  df <- tibble::tribble(
+    ~` `, ~Effect, ~`No effect`,
+    "Evidence", "✓", "ɑ",
+    "No evidence", "β", "✓"
+  )
+  
+  huxtable(df) %>%
+    insert_row("Study result", "Truth", "", after=0) %>% 
+    merge_cells(1, 2:3) %>% 
+    theme_article() %>% 
+    set_align(everywhere, 2:3, "center") %>% 
+    set_width(0.8) %>% 
+    set_bold(1, everywhere, TRUE) %>% 
+    set_bold(2, everywhere, FALSE) %>% 
+    set_caption("Comparison of study result with the truth") %>% 
+    set_escape_contents(everywhere, everywhere, FALSE)
+}
+
+if (knitr::is_latex_output()) {
+  df <- tibble::tribble(
+    ~` `, ~Effect, ~`No effect`,
+    "Evidence", "$\\checkmark$", "$\\alpha$",
+    "No evidence", "$\\beta$", "$\\checkmark$"
+  )
+  
+  huxtable(df) %>%
+    insert_row("Study result", "Truth", "", after=0) %>% 
+    merge_cells(1, 2:3) %>% 
+    theme_article() %>% 
+    set_align(everywhere, 2:3, "center") %>% 
+    set_width(0.8) %>% 
+    set_bold(1, everywhere, TRUE) %>% 
+    set_bold(2, everywhere, FALSE) %>% 
+    set_caption("Comparison of study result with the truth") %>% 
+    set_escape_contents(everywhere, everywhere, FALSE)
+}
+```
 
 ## Confidence intervals in hypothesis testing
 In Module 3, the 95% confidence interval around a mean value was calculated to show the precision of the summary statistic. The 95% confidence intervals around other summary statistics can also be calculated. 
@@ -124,15 +158,31 @@ $$ 95\% \text{ CI} = \text{Difference in means} \pm 1.96 \times \text{SE}(\text{
 
 It is important to remember that the 95% CI is estimated from the standard error, and that the standard error has a direct relationship to the sample size. For small sample sizes, the standard error is large and the 95% CI becomes wider. Conversely, the larger the sample size, the smaller the standard error and the narrower the 95% CI becomes indicating a more precise estimate of the mean difference. 
 
-The 95% CI tells us the region in which we are 95% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure 4.2. If the zero value lies outside the 95% confidence interval, we can conclude that there is a true difference between the groups because we are 95% confident that the difference does not encompass a zero value as shown in the lower two estimates in Figure 4.2.
+The 95% CI tells us the region in which we are 95% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure \@ref(fig:cis-overlapping-null). If the zero value lies outside the 95% confidence interval, we can conclude that there is evidence of a difference between the groups because we are 95% confident that the difference does not encompass a zero value (as shown in the lower two estimates in Figure \@ref(fig:cis-overlapping-null)).
 
-```{r cis-overlapping-null, echo=FALSE, out.width = "66%", fig.cap="Using 95% CIs as informal hypothesis tests"}
+```{r cis-overlapping-null, echo=FALSE, out.width = "66%", fig.cap="Using confidence intervals as informal hypothesis tests"}
 knitr::include_graphics(here::here("img", "mod04", "cis-overlapping-null.png"))
 ```
 
 For relative risk and odds ratio measures, when the 95% CI includes the value of 1 it indicates that we can be 95% confident that the true RR or OR of the association between the study factor and outcome factor includes 1.0 in the source population. This indicates little evidence of an association between the study factor and the outcome factor, e.g. if the results of a study were reported as RR = 1.10 (95% CI 0.95 to 1.25). The P-value can be calculated to assess this (discussed in Module 7).
 
 **Table 4.3 Values that indicate no effect**
+
+```{r tab4-null-values, echo=FALSE}
+df <- tibble::tribble(
+ ~`Type of outcome`, ~`Measure of effect`, ~`Null value`,
+ "Continuous", "Difference in means", 0L,
+ "Binary", "Difference in proportions", 0L,
+ "Binary", "Relative risk", 1L,
+ "Binary", "Odds ratio", 1L
+)
+
+huxtable(df) %>%
+add_rows(c(NA, NA, "(indicating no difference)"), after=1) %>%
+  merge_repeated_rows(everywhere, 1) %>% 
+  theme_article() %>% 
+  set_caption("Values indicating no effect")
+```
 
 ## One-sample t-test
 A one-sample t-test tests whether a sample mean is different to a hypothesised value. The t-distribution and its relation to normal distribution has been discussed in detailed in Module 3.
@@ -142,11 +192,11 @@ In a one-sample t-test, a t-value is computed as the sample mean divided by the 
 The principles of this test can be used for applications such as testing whether the mean of a sample is different from a known population mean, for example testing whether the IQ of a group of children is different from the population mean of 100 IQ points or testing whether the number of average hours worked in an adult sample is different from the population mean of 38 hours.
 
 ### Worked Example
-The mean diastolic blood pressure (BP) of the general US population is known to be 71 mm Hg. The diastolic blood pressure of 733 female Pima native Americans was measured and a histogram showed that the data were approximately normally distributed. The mean diastolic blood pressure in the sample was 72.4 mm Hg with a standard deviation of 12.4 mm Hg.
+The mean diastolic blood pressure (BP) of the general US population is known to be 71 mm Hg. The diastolic blood pressure of 733 female Pima native Americans was measured and a histogram showed that the data were approximately normally distributed. The mean diastolic blood pressure in the sample was 72.4 mm Hg with a standard deviation of 12.38 mm Hg.
 
-Data for this Worked Example is available on Moodle, file name Example_4.1.dta. We can use Stata to compute the significance test for a one sample t-test. The Stata results from this test is given below.
+Data for this Worked Example is available on Moodle, file name `Example_4.1.dta`. We can use Stata to compute the significance test for a one sample t-test. The Stata results from this test is given below.
 
-Stata Output 4.1: Results from one-sample t-test
+#### Stata Output 4.1: Results from one-sample t-test {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 One-sample t test
 ------------------------------------------------------------------------------
@@ -176,7 +226,7 @@ knitr::include_graphics(here::here("img", "mod04", "two-tailed-test.png"))
 
 Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e. a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved.  The P value for a one tailed test would be 0.025 i.e. the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4. 
 
-```{r one-tailed-tests, echo=FALSE, out.width = "66%", fig.cap="P-value for 1-tailed tests"}
+```{r one-tailed-tests, echo=FALSE, out.width = "90%", fig.cap="P-value for 1-tailed tests"}
 knitr::include_graphics(here::here("img", "mod04", "one-tailed-tests.png"))
 ```
 

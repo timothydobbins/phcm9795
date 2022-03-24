@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -325,7 +328,7 @@ div.csl-indent {
 <p>In this demonstration, we will use data on the weight of 1000 people entered in a csv file called <code>weight_s2.csv</code> available on Moodle.
 To confirm that the file is readable by any text editor, here are the first ten lines of the file, opened in Notepad on Microsoft Windows, and TextEdit on MacOS.</p>
 <p><img src="img/mod02/stata/import-01.png" width="66%" /></p>
-<p>To import it into Stata, use **File &gt; Import &gt; Text data (delimited, *.csv, …)<strong> to bring up the import delimited text data dialog box. Click the </strong>Open** button (the folder icon on the right-hand side of the window) and select the csv file you downloaded. The dialog box should look like below:</p>
+<p>To import it into Stata, use <strong>File &gt; Import &gt; Text data (delimited, .csv, …)</strong> to bring up the import delimited text data dialog box. Click the <strong>Open</strong> button (the folder icon on the right-hand side of the window) and select the csv file you downloaded. The dialog box should look like below:</p>
 <p><img src="img/mod02/stata/import-02.png" width="66%" /></p>
 <p>Here, Stata has (correctly) decided that the first row of the dataset contains the variable names. You may need to change this if the Preview window does not look correct. Click <strong>OK</strong> or <strong>Submit</strong> button to import the data.</p>
 </div>
@@ -476,18 +479,30 @@ A form of the <strong>by</strong> tab appears in many Stata windows. For example
 </ul>
 <p>It is important to note that the values of <em>a</em> and <em>b</em> are inclusive; and we can use the words <code>min</code> and <code>max</code> to represent the smallest and largest values respectively.</p>
 <p>So to recode the underweight category, we would enter: <code>(min / 18.4999 = 1 "Underweight")</code>
-Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.4999 = 1 "Normal weight")</code></p>
+Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.9999 = 2 "Normal weight")</code></p>
 <p>Your completed recode dialog box should look as follows:</p>
-<p><img src="img/mod02/stata/recode-01.png" width="66%" /></p>
+<p><img src="img/mod02/stata/recode-01.png" width="75%" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Do not forget this step!</strong> To recode into a new variable, we <strong>must</strong> click the options tab to give the name of the new variable. If this step is not performed, Stata will overwrite the initial variable with the recoded version. Here, we tell Stata to generate a new variable called bmi_category:</li>
 </ol>
-<p><img src="img/mod02/stata/recode-02.png" width="66%" /></p>
+<p><img src="img/mod02/stata/recode-02.png" width="75%" /></p>
 <p>Click <strong>OK</strong> to complete the recoding.</p>
 <p>Note that the default label for the new recoded variable <code>bmi_category</code> is <code>RECODE of BMI</code>. This can be relabelled in the usual way: click on <code>bmi_category</code> in the <strong>Variables</strong> window, then enter a name such as <code>BMI Category</code> in the <strong>Label</strong> box in the <strong>Properties</strong> window.</p>
 </div>
 <div id="computing-binomial-probabilities-using-the-hand-calculator-in-stata" class="section level2" number="2.20">
 <h2><span class="header-section-number">2.20</span> Computing binomial probabilities using the Hand calculator in Stata</h2>
+<p>There are three Stata functions that we can use to calculate probabilities based on the binomial distribution: <code>binomialp</code>, <code>binomial</code> and <code>binomialtail</code>. Stata provides a description of the function in the <strong>Expression Builder</strong>, summarised below.</p>
+<table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 95%; margin-left: auto; margin-right: auto;  " id="tab:binfuns">
+<caption style="caption-side: top; text-align: center;"><span id="tab:binfuns">Table 2.8: </span> Summary of Stata's binomial functions</caption><col><col><col><tr>
+<th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Function</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Description</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Example</th></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">binomialp(n,k,p)</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">The probability of observing k successes in n trials when the probability of a success on one trial is p</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Probability of observing 3 smokers from 6 people</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">binomial(n,k,p)</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">The probability of observing k or fewer successes in n trials when the probability of a success on one trial is p</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Probability of observing 2 or fewer smokers from 6 people</td></tr>
+<tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">binomialtail(n,k,p)</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">The probability of observing k or more successes in n trials when the probability of a success on one trial is p</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Probability of observing 4 or more smokers from 6 people</td></tr>
+</table>
+
 <p>To do the computation for part (a) in Worked Example 2.1, go to <strong>Data &gt; Other utilities &gt; Hand calculator</strong> from the main menu in Stata.</p>
 <p><img src="img/mod02/stata/binomial-01.png" width="66%" /></p>
 <p>In the dialog box, click <strong>Create…</strong> to bring up the <strong>Expression Builder</strong> dialog box. In the <strong>Categories</strong> box, click on <strong>Functions</strong> to expand the list, then scroll down to <strong>Statistical</strong>, expand the list again and select <strong>Binomial</strong>.</p>
@@ -506,7 +521,7 @@ Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.4999
 <p>In the <strong>Categories</strong> box, navigate to <strong>Binomial</strong> and select it as you had before. Now double click on <strong>binomialtail()</strong> which will populate the top of the expression builder box with <code>binomialtail(n,k,p)</code>. To obtain P(X <span class="math inline">\(\ge\)</span> 4) from 6 trials, <em>n</em>=6, <em>k</em>=4 and <em>p</em>=0.198. When you are done, click the <strong>OK</strong> button in the <strong>Expression Builder</strong> box to get the below in the display dialog box:</p>
 <p><img src="img/mod02/stata/binomial-04.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomialtail(6, 4, 0.198)</code>]</p>
-<p>For the lower tail for part (c), choose or double-click on <strong>binomial()</strong> from the list of functions. To obtain P(X$$2) from 6 trials, enter <em>n</em>=6, <em>k</em>=2 and <em>p</em>=0.198.</p>
+<p>For the lower tail for part (c), choose or double-click on <strong>binomial()</strong> from the list of functions. To obtain P(X <span class="math inline">\(\le\)</span> 2) from 6 trials, enter <em>n</em>=6, <em>k</em>=2 and <em>p</em>=0.198.</p>
 <p><img src="img/mod02/stata/binomial-05.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomial(6, 2, 0.198)</code>]</p>
 </div>

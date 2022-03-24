@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -327,10 +330,10 @@ div.csl-indent {
 </div>
 <div id="readings-6" class="section level2 unnumbered">
 <h2>Readings</h2>
-<p><span class="citation">Kirkwood and Sterne (<a href="#ref-kirkwood_sterne01" role="doc-biblioref">2001</a>)</span>; Chapter 17.
-<span class="citation">Bland (<a href="#ref-bland15" role="doc-biblioref">2015</a>)</span>; Chapter 13.
-<span class="citation">Acock (<a href="#ref-acock10" role="doc-biblioref">2010</a>)</span>; Section 7.6.
-<span class="citation">Juul and Frydenberg (<a href="#ref-juul_frydenberg14" role="doc-biblioref">2014</a>)</span>; Section 11.3.</p>
+<p><span class="citation">Kirkwood and Sterne (<a href="#ref-kirkwood_sterne01" role="doc-biblioref">2001</a>)</span>; Chapter 17.</p>
+<p><span class="citation">Bland (<a href="#ref-bland15" role="doc-biblioref">2015</a>)</span>; Chapter 13.</p>
+<p><span class="citation">Acock (<a href="#ref-acock10" role="doc-biblioref">2010</a>)</span>; Section 7.6.</p>
+<p><span class="citation">Juul and Frydenberg (<a href="#ref-juul_frydenberg14" role="doc-biblioref">2014</a>)</span>; Section 11.3.</p>
 </div>
 <div id="introduction-6" class="section level2" number="7.1">
 <h2><span class="header-section-number">7.1</span> Introduction</h2>
@@ -342,11 +345,11 @@ div.csl-indent {
 <p>We are using the randomised controlled trial as given in Worked Example 6.4 on the nauseating side effect of a drug.</p>
 <p>The research question is whether the active drug resulted in a different rate of nausea than the placebo drug. This is equivalent to testing whether there is an association between nausea and type of drug received (active or placebo). Thus, we will test the null hypothesis that the experience of nausea and the treatment are not related to one another. The null hypothesis is:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.</li>
+<li>H<sub>0</sub>: The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.</li>
 </ul>
 <p>The alternative hypothesis can be stated as:</p>
 <ul>
-<li><span class="math inline">\(H_a\)</span>: The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.</li>
+<li>H<sub>a</sub>: The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.</li>
 </ul>
 </div>
 </div>
@@ -362,8 +365,8 @@ div.csl-indent {
 <p>If the expected counts are close to the observed counts, the chi-squared statistic will be close to zero, and the P-value will be close to 1. The larger the difference between the observed and expected counts, the larger the chi-squared statistic becomes (and the smaller the P-value). A large chi-squared statistic provides more evidence of an association between the exposure and outcome.</p>
 <p>A chi-squared test to examine whether two independent proportions are associated can be obtained in Stata using the <em>Tables for Epidemiologists</em>: <code>cc</code> and <code>cs</code> commands. The test can also be conducted using the <code>tab2</code> command, with the advantage that the <code>tab2</code> command shows the expected counts. We will show why this is important shortly.</p>
 <p>The Stata output for Worked Example 7.1 for the study on nausea is shown in Output 7.1a. It is always important to request the percentages using the options in ‘Cells’ to show the proportion of patients who have the outcome in each exposure group, i.e. the row percents.</p>
-<div id="stata-output-results-output-for-estimating-association-between-drug-and-nausea" class="section level3" number="7.2.1">
-<h3><span class="header-section-number">7.2.1</span> Stata Output: Results output for estimating association between drug and nausea</h3>
+<div id="stata-output-7.1-results-output-for-estimating-association-between-drug-and-nausea" class="section level4 unnumbered">
+<h4>Stata Output 7.1: Results output for estimating association between drug and nausea</h4>
 <pre class="text"><code>+--------------------+
 | Key                |
 |--------------------|
@@ -389,12 +392,12 @@ div.csl-indent {
 
           Pearson chi2(1) =   7.8622   Pr = 0.005</code></pre>
 <p>(Note: in this table, drug group and nausea outcome are coded ‘No’ = 0 and ‘Yes’ = 1, i.e. the ‘No’ group comes before the Yes’ group unlike the table outputs in Module 6. Therefore, cell a = 15; b = 35, c = 4; d = 46.).</p>
-<p>In Output 7.1a, we can see from the row percentages that 8% of patients in the placebo group experienced nausea compared to 30% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The ‘Expected’ counts are higher for the groups with ‘No nausea’ because ‘No nausea’ is more prevalent in the sample than ‘Nausea’.</p>
+<p>In Output 7.1, we can see from the row percentages that 8% of patients in the placebo group experienced nausea compared to 30% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The ‘Expected’ counts are higher for the groups with ‘No nausea’ because ‘No nausea’ is more prevalent in the sample than ‘Nausea’.</p>
 <p>While the <code>tab2</code> command will perform the chi-square test, the measure of effect is best obtained using the <code>cs</code> or <code>cc</code> commands, as discussed in Module 6. Using the relative risk obtained from Module 6, a conclusion from the above test can be written as:</p>
 <p>The proportion with nausea in those who received the active drug is 30%, compared to 8% in those who received the placebo drug. Nausea was more frequent in those who received the active drug (Relative Risk = 3.75, 95% CI: 1.34 to 10.51). There is strong evidence that the proportion with nausea differs between the two groups (<span class="math inline">\(\chi ^2\)</span> = 7.86 with 1 df, P=0.005).</p>
 </div>
-<div id="assumptions-for-using-a-pearsons-chi-squared-test" class="section level3" number="7.2.2">
-<h3><span class="header-section-number">7.2.2</span> Assumptions for using a Pearson’s chi-squared test</h3>
+<div id="assumptions-for-using-a-pearsons-chi-squared-test" class="section level3" number="7.2.1">
+<h3><span class="header-section-number">7.2.1</span> Assumptions for using a Pearson’s chi-squared test</h3>
 <p>The assumptions that must be met when using Pearson’s chi-squared test are that:</p>
 <ul>
 <li>each observation must be independent;</li>
@@ -402,21 +405,21 @@ div.csl-indent {
 <li>at least 80% of the expected cell counts should exceed a value of five;</li>
 <li>all expected cell counts should exceed a value of one.</li>
 </ul>
-<p>The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher’s exact test can be used instead. More information on Fisher’s exact test can be found in Chapter 13 of An Introduction to Medical Statistics, M Bland.</p>
+<p>The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher’s exact test can be used instead. More information on Fisher’s exact test can be found in Chapter 13 of An Introduction to Medical Statistics, <span class="citation">Bland (<a href="#ref-bland15" role="doc-biblioref">2015</a>)</span>.</p>
 </div>
-<div id="interpreting-chi-squared-tests" class="section level3" number="7.2.3">
-<h3><span class="header-section-number">7.2.3</span> Interpreting chi-squared tests</h3>
-<p>For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson’s Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher’s exact test should be used (specified using the exact option in the tabulate command in Stata – see Stata Notes). The P value associated with the Pearson’s chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.</p>
+<div id="interpreting-chi-squared-tests" class="section level3" number="7.2.2">
+<h3><span class="header-section-number">7.2.2</span> Interpreting chi-squared tests</h3>
+<p>For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson’s Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher’s exact test should be used. The P value associated with the Pearson’s chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.</p>
 </div>
 </div>
-<div id="chi-squared-tests-for-larger-than-22-table" class="section level2" number="7.3">
-<h2><span class="header-section-number">7.3</span> Chi-squared tests for larger than 2×2 table</h2>
-<p>Chi-squared tests can also be used for tables larger than a 2×2 dimension. When a contingency table larger than 2×2 is used, say a 4×2 table if there were 4 exposure groups, the Pearson’s chi-squared can still be used.</p>
+<div id="chi-squared-tests-for-tables-larger-than-2-by-2" class="section level2" number="7.3">
+<h2><span class="header-section-number">7.3</span> Chi-squared tests for tables larger than 2-by-2</h2>
+<p>Chi-squared tests can also be used for tables larger than a 2-by-2 dimension. When a contingency table larger than 2-by-2 is used, say a 4-by-2 table if there were 4 exposure groups, the Pearson’s chi-squared can still be used.</p>
 <div id="worked-example-10" class="section level3" number="7.3.1">
 <h3><span class="header-section-number">7.3.1</span> Worked Example</h3>
-<p>The Stata file Example_7.2.dta contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. [Command: tab allergy_severity sex, col]</p>
-<div id="cross-tabulation-for-severity-of-allergy-by-gender" class="section level4" number="7.3.1.1">
-<h4><span class="header-section-number">7.3.1.1</span> Cross-tabulation for severity of allergy by gender</h4>
+<p>The Stata file <code>Example_7.2.dta</code> contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Stata Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. [Command: <code>tab allergy_severity sex, col</code>]</p>
+<div id="stata-output-7.2-cross-tabulation-for-severity-of-allergy-by-gender" class="section level4 unnumbered">
+<h4>Stata Output 7.2: Cross-tabulation for severity of allergy by gender</h4>
 <pre class="text"><code>. tabulate allergy_severity sex, column expected
 
 +--------------------+
@@ -475,9 +478,11 @@ Moderate allergy |        27         32 |        59
 <h3><span class="header-section-number">7.4.1</span> Worked Example 7.3</h3>
 <p>Two drugs labelled A and B have been administered to patients in random order so that each patient acts as their own control. The dataset Example_7.3.dta is available on Moodle. The null hypothesis is as follows:</p>
 <ul>
-<li><span class="math inline">\(H_0\)</span>: The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B</li>
+<li>H<sub>0</sub>: The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B</li>
 </ul>
 <p>Using the <code>tabulate2</code> command, observed count and cell percentages were obtained in Table 7.2. From the “Total” row in the table, we can see that the number of patients who respond to drug A is 41 (68.3%) and from the “Total” column the number who respond to drug B is less at 35 (58.3%), that is there is a difference of 10.0%.</p>
+<div id="stata-output-7.3-cell-percentages-for-paired-data" class="section level4 unnumbered">
+<h4>Stata Output 7.3: cell percentages for paired data</h4>
 <pre class="text"><code>. tabulate druga drugb, cell
 
 +-----------------+
@@ -505,9 +510,10 @@ Moderate allergy |        27         32 |        59
 <p><span class="math display">\[ X^2 = \frac{(b-c)^2}{b+c} \]</span></p>
 <p>with 1 degree of freedom.</p>
 <p>In computing this statistic, the counts in the concordant cells (‘a’ and ‘d’) are not used and only the information from the discordant cells ‘b’ and ‘c’ is of interest.</p>
-<p>The <code>mcc</code> command in Stata is used to perform the McNemar’s test. Its output is shown in Output 7.3. The number of patients who have a response to each drug is labelled as Exposed in the output.</p>
-<div id="output-7.3-mcnemars-test" class="section level4" number="7.4.1.1">
-<h4><span class="header-section-number">7.4.1.1</span> Output 7.3 McNemar’s test</h4>
+<p>The <code>mcc</code> command in Stata is used to perform the McNemar’s test. Its output is shown in Stata Output 7.4. The number of patients who have a response to each drug is labelled as Exposed in the output.</p>
+</div>
+<div id="stata-output-7.4-mcnemars-test" class="section level4 unnumbered">
+<h4>Stata Output 7.4: McNemar’s test</h4>
 <pre class="text"><code>. mcc druga drugb
 
                  |        Controls        |

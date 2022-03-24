@@ -72,7 +72,7 @@ huxtable(select(tab10_1, -P)) %>%
   set_caption("Sample size required to calculate a 95\\% confidence interval with a given precision")
 ```
 
-### Worked Example
+### Worked Example {#wex10-1}
 A descriptive cross-sectional study is designed to measure the prevalence of bronchitis in children age 0-2 years with a 95% CI of $\pm$ 4%. The prevalence is expected to be 20%. From the table, a sample size of at least 385 will be required for the width of the 95% CI to be $\pm$ 4% (i.e. the reported precision of the summary statistic will be 20% (95% CI 16% to  24%)).
 
 If the prevalence turns out to be higher than the researchers expected or if they decided that they wanted a narrower 95% CI (i.e. increase precision), a larger sample size would be required.
@@ -90,11 +90,11 @@ The first important decision in estimating a required sample size for an analyti
 
 Once the statistical method has been determined, the following issues need to be decided:
 
-- Statistical power – the chance of finding a difference if one exists, e.g. 80%; 
-- Level of significance – the P value that will be considered significant, e.g. P<0.05;
-- Minimum effect size of interest – the size of the difference between groups e.g. the difference in the proportion of parents who oppose immunisation in two different regions or the difference in mean values of blood pressure in two groups of people with different types of cardiac disease; 
-- Variability – the spread of the measurements, e.g. the expected standard deviation of the main outcome variable (if continuous), or the expected proportions;
-- Resources – an estimate of the number of participants available and amount of funding to run the study.
+- Statistical power: the chance of finding a difference if one exists, e.g. 80%; 
+- Level of significance: the P value that will be considered significant, e.g. P<0.05;
+- Minimum effect size of interest: the size of the difference between groups e.g. the difference in the proportion of parents who oppose immunisation in two different regions or the difference in mean values of blood pressure in two groups of people with different types of cardiac disease; 
+- Variability: the spread of the measurements, e.g. the expected standard deviation of the main outcome variable (if continuous), or the expected proportions;
+- Resources: an estimate of the number of participants available and amount of funding to run the study.
 
 In addition to deciding the level of power and probability that will be used, the difference between groups that is regarded as being important has to be estimated. The smallest difference between study groups that we want to detect is described as the minimum expected effect size. This is determined on the basis of clinical judgement, public health importance and expertise in the condition being researched, or may it be need to be determined from a pilot study or a literature review. The smaller the expected effect or association, the larger the sample size will need to obtain statistical significance. 
 We also need some knowledge of how variable the measurement is expected to be. For this we often use the standard deviation for a continuous measure. As measurement variability increases, the sample size will need to increase in order to detect the expected difference between the groups.
@@ -147,15 +147,15 @@ The power of a study is expressed as 1– β where β is the probability of a fa
 The significance level, or α level, is the level at which the P value of a test is considered to be statistically significant. The α level is usually set at 5% indicating a probability of <0.05 will be regarded as statistically significant. Occasionally, especially if several outcome measures are being compared, the α level is set at 1% indicating a probability of <0.01 will be regarded as statistically significant.
 
 ## Detecting the difference between two means
-The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example 10.2.
+The test that is used to show that two mean values are significantly different from one another is the independent samples t-test (Module 5). The sample size needed for this test to have sufficient power can be calculated using Stata as shown in Worked Example \@ref(wex10-2).
 
-### Worked Example
+### Worked Example {#wex10-2}
 There is a hypothesis that the use of the oral contraceptive (OC) pill in premenopausal women can increase systolic blood pressure. A study was planned to test this hypothesis using a two sided t-test. The investigators are interesting in detecting an increase of at least 5 mm Hg systolic blood pressure in the women using OC compared to the non-OC users with 90% power at a 5% significance level. A pilot study shows that the SD of systolic blood pressure in the target group is 25 mm Hg and the mean systolic blood pressure of non-OC user women is 90 mm Hg. What is the minimum number of women in each group that need to be recruited for the study to detect this difference?
 
 **Solution**
 The effect size of interest is 5 mm Hg and the associated standard deviation is 25 mm Hg. For power of 90% and alpha of 5%, the sample size calculation using the `power twomeans` command in Stata is shown in Output 10.1.
 
-Output 10.1: Two independent samples t-test sample size calculation
+#### Stata Output 10.1: Two independent samples t-test sample size calculation {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . power twomeans 90 95, sd(25) power(0.9)
 
@@ -183,7 +183,7 @@ Estimated sample sizes:
 From the output, we can see that with 90% power we will need 527 participants in each group, i.e., 1054 participants in total.
 If the above were carried out by taking baseline measures of systolic blood pressure, and then again when the women were taking the OC pills, it would be a matched-pair study. We can compute the required sample size using the power pairedmeans command.
 
-Output 10.2: Paired samples t-test sample size using Worked Example 10.2
+#### Output 10.2: Paired samples t-test sample size using Worked Example 10.2 {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . power pairedmeans 90 95, corr(0) power(0.9) sd(25)
 
@@ -217,11 +217,11 @@ The statistical test for deciding if there is a significant difference between t
 
 Other than the power and alpha required for the test, the expected prevalence or incidence rate of the outcome factor needs to be estimated for each of the two groups being compared, based on what is known from other studies or what is expected. Occasionally, we may not know the expected proportion in one of the groups, e.g. in a randomised control trial of a novel intervention. In the sample size calculation for such a study, we should instead justify the minimum expected difference between the proportions based on what is important from a clinical or public health perspective. Based on the minimum difference, we can then derive the expected proportion for both groups. Note that the smaller the difference, the larger the sample size required. 
 
-### Worked Example
+### Worked Example {#wex10-3}
 
 If we expect that the prevalence of smoking in two comparison groups (e.g. males and females) will be 35% and 20%. The sample size required in each group to show that the prevalences are significantly different at P<0.05 with 80% power is shown in Output 10.3.
 
-Output 10.3:   Sample size calculation for two independent proportions
+#### Stata Output 10.3: Sample size calculation for two independent proportions {-}
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Estimated sample sizes for a two-sample proportions test
@@ -243,9 +243,12 @@ Estimated sample sizes:
 ```
 
 From Output 10.3, we see that we would need 138 males and 138 females (i.e. a total sample size of 276 participants).
+
 What sample size would be required if the prevalence of smoking among men was 30%?
+
 Answer = 294 men and 294 women would be needed. 
-[Command: power twoproportions .3 .2, test(chi2)]
+
+[Command: `power twoproportions .3 .2, test(chi2)`]
 
 ## Detecting an association using a relative risk
 The relative risk is used to describe the association between an exposure and an outcome variable if the sample has been randomly selected from the population. This statistic is often used to describe the effect or association of an exposure in a cross-sectional or cohort study or the effect/association of a treatment in an randomised controlled trial. To estimate the sample size required for the RR to have a statistically significant P value, i.e. to show a significant association, we need to define:
@@ -254,12 +257,12 @@ The relative risk is used to describe the association between an exposure and an
 - the desired level of significance (usually 0.05); 
 - the desired power of the study (usually 80% or 90%). 
 
-In general, a RR of 2.0 or greater is considered to be of public health importance. However, a smaller RR can be important when exposure is high, for example say the relative risk of respiratory infection among young children with a parent who smokes is very small at approximately 1.2 but 25% of children are exposed to smoking in their home. The high exposure rate leads to a very large number of children who have preventable respiratory infections across the community. 
+In general, a RR of 2.0 or greater is considered to be of public health importance, however, a smaller RR can be important when exposure is high. For example, there may be a relatively small risk of respiratory infection among young children with a parent who smokes (RR ~ 1.2). If 25% of children are exposed to smoking in their home, then the high exposure rate leads to a very large number of children who have preventable respiratory infections across the community. 
 
-### Worked Example
+### Worked Example {#wex10-4}
 A study is planned to investigate the effect of an environmental exposure on the incidence of a certain common disease. In the general (unexposed) population the incidence rate of the disease is 50% and it is assumed that the incidence rate would be 75% in the exposed population. Thus the relative risk of interest would be 1.5 (i.e. 0.75 / 0.50). We want to detect this effect with 90% power at a 5% level of significance. Using the power twoproportions command, Output 10.4 is obtained.
 
-Output 10.4: Sample size calculation for relative risk
+#### Stata Output 10.4: Sample size calculation for relative risk
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 Estimated sample sizes for a two-sample proportions test
 Pearson's chi-squared test 
@@ -283,12 +286,13 @@ From Output 10.4, we can see that for a control proportion of 0.5 and RR of 1.5,
 
 ## Detecting an association using an odds ratio
 If we are designing a case-control study, the appropriate measure of effect is an odds ratio. The method for estimating the sample size required to detect an odds ratio of interest is slightly different to that for the relative risk. However, the same parameters are required for the estimation:
+
 - the minimum OR to be considered clinically important;
 - the proportion of exposed among the control group;
 - the desired level of significance (usually 0.05);
 - the desired power of the study (usually 80% or 90%). 
 
-### Worked Example
+### Worked Example {#wex10-5}
 A case-control study is designed to examine an association between an exposure and outcome factor. Existing literature shows that 30% of the controls are expected to be exposed. We want to detect a minimum OR of 2.0 with 90% power and 5% level of significance.
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
@@ -336,7 +340,7 @@ Many factors that come into play in a study can reduce the estimated power of a 
 
 In case-control studies, the number of potential case participants available may be limited but study power can be maintained by enrolling a greater number of controls than cases. Or in an experimental study, more participants may be randomised to the new treatment group to test its effects accurately when much is known about the effect of standard care and a more precise estimate of the new treatment effect is required.
 
-However, there is a trade-off between increasing the ratio of group size and the total number that needs to be enrolled. Consider Worked Example 10.5: selecting an equal number of controls and cases would require 188 cases and 188 controls, a total of 376 participants.
+However, there is a trade-off between increasing the ratio of group size and the total number that needs to be enrolled. Consider Worked Example \@ref(wex10-5): selecting an equal number of controls and cases would require 188 cases and 188 controls, a total of 376 participants.
 
 We may want to reduce the number of cases required, by selecting 2 controls for every case. When performing sample size calculations with unequal groups, Stata refers to cases as N2, and controls as N1. Selecting 2 controls (N1) per case (N2) (corresponding to a ratio of N2/N1 0.5 in Stata) would require 140 cases and 280 controls, a total of 420 participants. We can extend this example and investigate the impact of changing the ratio of controls per case.
 
@@ -356,16 +360,16 @@ tab <- tibble::tribble(
   )
 
 huxtable::huxtable(tab) %>%
-  set_align(everywhere, everywhere, "centre") %>% 
+  set_align(everywhere, everywhere, ".") %>% 
   theme_article() %>% 
   set_number_format(everywhere, everywhere, fmt_pretty()) %>% 
   set_width(0.8) %>% 
-  set_caption("Increasing controls per case")
+  set_caption("Increasing the number of controls per case")
 ```
 
-This can be visualised graphically, as in Figure 10.1.
+This can be visualised graphically, as in Figure \@ref(fig:fig-unequal-controls).
 
-```{r fig-unequal-controls, echo=FALSE}
+```{r fig-unequal-controls, echo=FALSE, fig.cap="Increasing the number of controls per case", out.width="66%"}
 tab <- tibble::tribble(
   ~`Controls per case`, ~`Stata's allocation ratio (N2/N1)`, ~`Number of cases required`, ~`Number of controls required`, ~`Total participants required`,
     1L,      1,   188L,    188,    376,

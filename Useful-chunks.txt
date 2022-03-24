@@ -14,12 +14,17 @@ huxtable::huxtable(tab1_1, add_colnames = FALSE) %>%
   set_width(0.8) %>% 
   set_caption("Weight loss (g) for 25 participants")
 ```
+Refer to Table \@ref(tab:act-1-1)
+Table \@ref(tab:
+
 
 Image chunk
 ```{r twoway-2, echo=FALSE, out.width = "66%", fig.cap="A title"}
 knitr::include_graphics(here::here("img", "mod08", "stata", "twoway-2.png"))
 ```
 Refer to Figure \@ref(fig:twoway-2)
+Figure \@ref(fig:
+
 
 Output chunk
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}

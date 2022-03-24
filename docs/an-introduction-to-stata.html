@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -338,13 +341,13 @@ div.csl-indent {
 <p>In this very brief section, we will introduce Stata by calculating the average of six ages. If you are using Windows, open Stata by clicking: <strong>Start &gt; Stata 16 &gt; Stata SE</strong></p>
 <p>If you are using MacOS, open Stata from the Applications folder. Note that while Stata is available for Windows and MacOS, most of the screenshots in these notes will be based on the Windows version.</p>
 <p>When you first open Stata, it will look something like the following.</p>
-<p><img src="img/mod01/stata/simple-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/simple-01.png" width="75%" /></p>
 <p>Each Stata session has a number of windows, which we will discuss later. For now, look in the top row of icons and find the icons that look like two grids: one with a pencil, and one with a magnifying glass: <img src="img/mod01/stata/data-browser-icons.png" />. Click the left icon, the one with the pencil. The following window will appear.</p>
-<p><img src="img/mod01/stata/simple-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/simple-02.png" width="75%" /></p>
 <p>This window is known as the <strong>Data Editor</strong>, and is where data can be entered or changed. Enter the following six ages into Stata, starting at the top-left cell, by typing each number and then hitting Enter.</p>
 <pre><code>20  25  23  29  21  27</code></pre>
 <p>If you make a mistake, simply click the incorrect cell, and enter the correct value. Your screen should look like this:</p>
-<p><img src="img/mod01/stata/simple-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/simple-03.png" width="75%" /></p>
 <p>There are two things to note here:</p>
 <ol style="list-style-type: decimal">
 <li>Data in Stata are entered down a column. In Stata, columns represent variables, and rows represent observations. So our six observations of age are entered in one column.</li>
@@ -352,10 +355,10 @@ div.csl-indent {
 </ol>
 <p>Close the <strong>Data Editor</strong> window to return to the main Stata window. You will notice that the main Stata window now has some text that you might not understand. We will explain why shortly.</p>
 <p>Let’s rename our variable from <code>var1</code> to <code>age</code>. There are a few ways you can do this in Stata, but one of the most convenient is to use the <strong>Variables Manager</strong> which can be accessed via <strong>Data &gt; Variables Manager</strong>:</p>
-<p><img src="img/mod01/stata/variables-manager-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/variables-manager-01.png" width="75%" /></p>
 <p>The <strong>Variables Manager</strong> is where you can change many variable properties, such as variable names or apply meaningful variable labels. Each variable is listed on a separate row, with aspects about each variable listed in the columns. To change the variable name, click <code>var1</code> in the <strong>Name</strong> column. Notice that information about that variable appears to the right of the window, in the <strong>Variable properties</strong> section.</p>
 <p>In the <strong>Name</strong> section within <strong>Variable properties</strong>, click <code>var1</code> and replace it with <code>age</code>. Click <strong>Apply</strong> and notice that the variable’s name has been changed:</p>
-<p><img src="img/mod01/stata/variables-manager-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/variables-manager-02.png" width="75%" /></p>
 <p>Close the <strong>Variables manager</strong> window.</p>
 <p>Some important points about variable names in Stata:
 - any name you choose must be no more than 32 characters long;
@@ -363,9 +366,9 @@ div.csl-indent {
 - variable names should start with a letter;
 - variable names are case-sensitive (so age, Age and AGE could represent three different variables)</p>
 <p>Now that we have entered our six ages, let’s calculate the mean age. Choose <strong>Statistics &gt; Summaries, tables and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong>. The <strong>summarize</strong> dialog box will appear. From the <strong>Variables</strong> drop-down box, select <code>age</code> as below:</p>
-<p><img src="img/mod01/stata/simple-05.png" width="66%" /></p>
+<p><img src="img/mod01/stata/simple-05.png" width="75%" /></p>
 <p>Click <strong>OK</strong>, and the main Stata screen will appear as below.</p>
-<p><img src="img/mod01/stata/simple-06.png" width="66%" /></p>
+<p><img src="img/mod01/stata/simple-06.png" width="75%" /></p>
 <p>The final text in the main window provides a summary of <code>age</code>: there are 6 observations, with a mean age of 24.2 years, a standard deviation of 3.49 years, a minimum of 20 and a maximum of 29 years.</p>
 <div id="the-stata-environment" class="section level3" number="1.9.1">
 <h3><span class="header-section-number">1.9.1</span> The Stata environment</h3>
@@ -475,7 +478,7 @@ This table is available in Table1.docx, saved on Moodle.</p>
 <h3><span class="header-section-number">1.9.3</span> Assigning variable labels</h3>
 <p>As we saw earlier, Stata has specific rules about variable names. Variable labels can be used to obtain more descriptive output. For example, the variable entered as bili can be labelled “Serum bilirubin (mg/dl)”.</p>
 <p>To apply a variable label, open the Variables Manager: <strong>Data &gt; Variables Manager</strong>. Here we can click the variable to be labelled, and enter the new variable label and click <strong>Apply</strong>:</p>
-<p><img src="img/mod01/stata/label-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/label-01.png" width="75%" /></p>
 <p>The variable label will now be used in place of the variable name in most output:</p>
 <pre class="text"><code>. summarize bili, detail
 
@@ -498,25 +501,25 @@ This table is available in Table1.docx, saved on Moodle.</p>
 <div id="summarising-continuous-variables" class="section level3" number="1.9.4">
 <h3><span class="header-section-number">1.9.4</span> Summarising continuous variables</h3>
 <p>As we saw in Part 1, continuous variables can be summarised using <strong>Statistics &gt; Summaries, tables and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong>. There are three continuous variables that we would like to summarise: age, AST and serum bilirubin. Each of these can be listed in the <strong>summarize</strong> dialog box, as shown below.</p>
-<p><img src="img/mod01/stata/summ-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/summ-01.png" width="75%" /></p>
 <p>By default, the summarize command calculates the mean, standard deviation, minimum and maximum. We may be interested in obtaining the median and interquartile ranges, so we select the <strong>Display additional statistics</strong> option:</p>
-<p><img src="img/mod01/stata/summ-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/summ-02.png" width="75%" /></p>
 <p>Summary statistics are produced for each of the three variables. We will use describe the output for age:</p>
-<p><img src="img/mod01/stata/summ-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/summ-03.png" width="75%" /></p>
 <p>The output for a detailed summary in Stata should be read as three separate columns. The right-most column lists the number of observations, the mean and standard deviation and other numeric statistics. The left-most column contains the Percentiles: median (50%), lower quartile (25%) and upper quartile (75%). The middle column lists the four smallest and four largest observations, so that we can assess whether the smallest and largest observations are plausible.</p>
 <p>For each of our three continuous variables, we need to decide whether to present the mean and standard deviation, or the median and interquartile range. This decision can be made after examining a histogram and boxplot for each variable.</p>
 </div>
 <div id="producing-a-histogram" class="section level3" number="1.9.5">
 <h3><span class="header-section-number">1.9.5</span> Producing a histogram</h3>
 <p>To produce a histogram, go to menu <strong>Graphics &gt; Histogram</strong>. Choose the variable to be plotted in the <strong>Variable</strong> box, and choose the <strong>Frequency</strong> radio button so that a frequency histogram is produced. Note that only one variable can be plotted at a time, so this procedure will need to be repeated for each continuous variable.</p>
-<p><img src="img/mod01/stata/hist-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/hist-01.png" width="75%" /></p>
 <p>The default histogram for age appears below.</p>
-<p><img src="img/mod01/stata/hist-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/hist-02.png" width="75%" /></p>
 <p>Stata will automatically choose the number of bins and the width of each bin, however these decisions may not always produce the most optimal histogram. These options can be altered by defining either: the number of bins, or the bin width (but not both); and/or the lower limit of the first bin.</p>
 <p>Looking at the command window, Stata has used the following parameters to define the histogram: bin=20, start=26.277892, width=2.6080767. This means that Stata has chosen 20 bins to represent the data, with the first bin starting at 26.2 years and each bin representing 2.6 years. A more easily read histogram might have a bin-width of 5, starting at 25 years of age, so that age categories represent 25 to less than 30, 30 to less than 35 etc, as defined below:</p>
-<p><img src="img/mod01/stata/hist-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/hist-03.png" width="75%" /></p>
 <p>This results in a histogram with fewer bars and more sensible cut-points:
-<img src="img/mod01/stata/hist-04.png" width="66%" /></p>
+<img src="img/mod01/stata/hist-04.png" width="75%" /></p>
 </div>
 <div id="producing-a-boxplot" class="section level3" number="1.9.6">
 <h3><span class="header-section-number">1.9.6</span> Producing a boxplot</h3>
@@ -527,7 +530,7 @@ This table is available in Table1.docx, saved on Moodle.</p>
 <h3><span class="header-section-number">1.9.7</span> Producing a one-way frequency table</h3>
 <p>We have three categorical variables to summarise in Table 1: sex, stage and vital status. These variables are best summarised using one-way frequency tables.</p>
 <p>Choose <strong>Statistics &gt; Summaries, tables, and tests &gt; Frequency tables &gt; One-way table</strong>. Choose the variable to be summarised as the <strong>Categorical variable</strong>, and leave all other options unchanged:</p>
-<p><img src="img/mod01/stata/tab-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/tab-01.png" width="75%" /></p>
 <p>Click <strong>OK</strong> to obtain the following table:</p>
 <pre class="text"><code>        sex |      Freq.     Percent        Cum.
 ------------+-----------------------------------
@@ -545,21 +548,21 @@ This table is available in Table1.docx, saved on Moodle.</p>
 <li>Open the Variables Manager: <strong>Data &gt; Variables Manager</strong> and select the variable you want to assign labels to (in this case, <code>sex</code>). You will see that the <strong>Variable label</strong> in the <strong>Properties</strong> section is blank. To create a value label, click <strong>Manage</strong>.</li>
 </ol>
 <p>Alternatively, choose <strong>Data &gt; Data utilities &gt; Label utilities &gt; Manage value labels</strong>.</p>
-<p><img src="img/mod01/stata/value-labels-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/value-labels-01.png" width="75%" /></p>
 <p>In the <strong>Manage value labels</strong> dialog box, click the <strong>Create label</strong> button.</p>
 <ol start="2" style="list-style-type: decimal">
 <li><p>In the next dialog box, enter a name for the value label such as <code>sex_label</code> in the <strong>Label name:</strong> box. You can use the same name of the variable for the label, or choose a different name. Note: as for variables, the value label name is case-sensitive.</p></li>
 <li><p>Next, we specify what each category (i.e. 1 and 2) represents. By checking the metadata document, we see that <code>1</code> represents “Male” and <code>2</code> represents “Female”. Type the number <code>1</code> in the <strong>Value:</strong> box and the word <code>Male</code> in the <strong>Label:</strong> box; then click the <strong>Add</strong> button. Then type the number <code>2</code> in the <strong>Value:</strong> box and the word <code>Female</code> in the <strong>Label:</strong> box; click the <strong>Add</strong> button again. The defined value labels for males and females should appear in the box on the left-hand side. When you are done, click the <strong>OK</strong> button.</p></li>
 </ol>
-<p><img src="img/mod01/stata/value-labels-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/value-labels-02.png" width="75%" /></p>
 <p>You will be returned to the <strong>Manage value labels</strong> dialog box, which will now have a record for <code>sex_label</code>. By clicking the arrow next to the label name, you will see the codes that you have defined:</p>
-<p><img src="img/mod01/stata/value-labels-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/value-labels-03.png" width="75%" /></p>
 <p>At this point, you can close the <strong>Manage value labels</strong> dialog box by clicking <strong>Close</strong>.</p>
 <p><strong>Part 2:</strong> Applying the value labels to a variable</p>
 <p>Now that the labels are defined, we need to attach them to the relevant variables. Within the Variables Manager, click the variable to be labelled (here, <code>sex</code>). The previously defined label can be assigned to this variable by clicking the <strong>Value label</strong> drop-down menu, and choosing the appropriate label (here, <code>sex_label</code>), and clicking <strong>Apply</strong>:</p>
-<p><img src="img/mod01/stata/value-labels-04-1.png" width="66%" /></p>
+<p><img src="img/mod01/stata/value-labels-04-1.png" width="75%" /></p>
 <p>Alternatively, go to <strong>Data &gt; Data utilities &gt; Label utilities &gt; Assign value label to variables</strong>. Select <code>sex</code> from the <strong>Variables:</strong> dropdown box, and select <code>sex_label</code> from the <strong>Value label:</strong> dropdown box. Click <strong>OK</strong>.</p>
-<p><img src="img/mod01/stata/value-labels-04.png" width="66%" /></p>
+<p><img src="img/mod01/stata/value-labels-04.png" width="75%" /></p>
 <p>There are a number of ways that we can confirm that the labelling has been done correctly. One of the easiest ways is to use the <code>codebook</code> command to investigate the coding of sex: <strong>Data &gt; Describe data &gt; Describe data contents (codebook)</strong>.</p>
 <pre class="text"><code>. codebook sex
 
@@ -588,13 +591,53 @@ sex                                                                          (un
       Total |        418      100.00</code></pre>
 <p><strong>TASK:</strong> produce one-way frequency tables for the other categorical variables in Table 1 (stage and vital status).</p>
 </div>
-<div id="saving-data-from-stata" class="section level3" number="1.9.9">
-<h3><span class="header-section-number">1.9.9</span> Saving data from Stata</h3>
+<div id="producing-a-two-way-frequency-table" class="section level3" number="1.9.9">
+<h3><span class="header-section-number">1.9.9</span> Producing a two-way frequency table</h3>
+<p>To produce tables summarising two categorical variables, go to <strong>Statistics - Summaries, tables, and tests - Frequency tables - Two-way table with measures of association</strong>.</p>
+<p>To produce a two-way table showing stage of disease by sex using the pbc.dta data, do the following. In the <strong>tabulate2 – two way table with measures of association dialog box</strong>, select the variable <code>sex</code> as the <strong>Row variable:</strong>, and <code>stage</code> as the <strong>Column variable:</strong> as shown below.</p>
+<p><img src="img/mod01/stata/mod01-twoway.png" width="75%" /></p>
+<p>Click <strong>OK</strong> to obtain the output below.</p>
+<pre class="text"><code>. tabulate sex stage
+
+           |                    stage
+       sex |   Stage 1    Stage 2    Stage 3    Stage 4 |     Total
+-----------+--------------------------------------------+----------
+      Male |         3          8         16         17 |        44 
+    Female |        18         84        139        127 |       368 
+-----------+--------------------------------------------+----------
+     Total |        21         92        155        144 |       412 </code></pre>
+<p>You may notice in the above that the number of observations is now 412. This is because there are missing observations for either sex or stage: which is it, and how would you determine this?</p>
+<p>From the cross-tabulation, you can see the individual frequencies of participants in each of the categories in each cell. For example, there are 3 male participants who have Stage 1 disease. You can also read the totals for each row and column. For example, there are 44 males, and 144 participants have Stage 4 disease.</p>
+<p>You can also add percentages into your table. For example, in the <strong>tabulate2 – two way table with measures of association</strong> dialog box tick the box <strong>Within-column relative frequencies</strong> for separate percentages of sex within each stage.</p>
+<pre class="text"><code>. tabulate sex stage, column
+
++-------------------+
+| Key               |
+|-------------------|
+|     frequency     |
+| column percentage |
++-------------------+
+
+           |                    stage
+       sex |   Stage 1    Stage 2    Stage 3    Stage 4 |     Total
+-----------+--------------------------------------------+----------
+      Male |         3          8         16         17 |        44 
+           |     14.29       8.70      10.32      11.81 |     10.68 
+-----------+--------------------------------------------+----------
+    Female |        18         84        139        127 |       368 
+           |     85.71      91.30      89.68      88.19 |     89.32 
+-----------+--------------------------------------------+----------
+     Total |        21         92        155        144 |       412 
+           |    100.00     100.00     100.00     100.00 |    100.00 </code></pre>
+<p>We can see that the 3 male participants with Stage 1 disease made up 14% of those with Stage 1 disease.</p>
+</div>
+<div id="saving-data-from-stata" class="section level3" number="1.9.10">
+<h3><span class="header-section-number">1.9.10</span> Saving data from Stata</h3>
 <p>Now that you have made some changes to the pbc data, it is good practice to save the dataset. Stata uses its own file format to save data. Data saved from Stata will end with the .dta suffix, and will contain useful information such as variable labels and value labels, as well as any new variables created. However, data saved by Stata will only be able to be opened by Stata - you will not easily be able to share your data with colleagues who do not have Stata. To save a Stata dataset, choose <strong>File &gt; Save</strong>.</p>
 <p>If you want to share data with colleagues who do not have Stata, you can use <strong>File &gt; Export</strong> to save your data in another file format (recognising that variable and value labels will not be exported.)</p>
 </div>
-<div id="copying-output-from-stata" class="section level3" number="1.9.10">
-<h3><span class="header-section-number">1.9.10</span> Copying output from Stata</h3>
+<div id="copying-output-from-stata" class="section level3" number="1.9.11">
+<h3><span class="header-section-number">1.9.11</span> Copying output from Stata</h3>
 <p>It is important to note that <em>saving data in Stata will not save your output</em>. Stata data and output are completely separate to one another. The easiest way to retain the output of your analyses is to copy the output into a word processor package (e.g. Microsoft Word) before closing Stata. Once Stata is closed, all the output (that is, all your hard work!) is lost.</p>
 <p>To copy output from Stata, you can select the output and choose <strong>Edit &gt; Copy</strong>. This will copy the output as plain text for pasting into a Word document. If you select a single table for copying, you can also <strong>Copy table</strong> or <strong>Copy table as HTML</strong>. Whichever way you copy output into Word, you will need to make sure you reformat the table and relabel your header row and column properly for your assignments as described in Module 1. Alternatively, you can copy with the Copy table option for pasting into an Excel worksheet and reformat your table in Excel before pasting into Word.</p>
 <p>Copying output from Stata can get a little complicated to explain. We have included a video on Moodle to summarise the different ways output can be copied.</p>
@@ -603,105 +646,105 @@ sex                                                                          (un
 </div>
 <div id="part-3-creating-other-types-of-graphs" class="section level2 unnumbered">
 <h2>Part 3: Creating other types of graphs</h2>
-<div id="bar-graphs-1" class="section level3" number="1.9.11">
-<h3><span class="header-section-number">1.9.11</span> Bar graphs</h3>
+<div id="bar-graphs-1" class="section level3" number="1.9.12">
+<h3><span class="header-section-number">1.9.12</span> Bar graphs</h3>
 <p>Here we will create the bar chart shown in Figure 1.1 using the <code>pbc.dta</code> dataset. The x-axis of this graph will be the stage of disease, and the y-axis will show the number of participants in each category.</p>
 <p>To create a Bar chart, go to the Stata menu Graphics &gt; Bar chart and the bar-chart dialog box will appear.</p>
-<div id="simple-bar-graph" class="section level4" number="1.9.11.1">
-<h4><span class="header-section-number">1.9.11.1</span> Simple bar graph</h4>
+<div id="simple-bar-graph" class="section level4" number="1.9.12.1">
+<h4><span class="header-section-number">1.9.12.1</span> Simple bar graph</h4>
 <p>For most of our bar graphs, we will be plotting frequencies, so we choose <strong>Graph of frequencies within categories</strong></p>
-<p><img src="img/mod01/stata/bar-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-01.png" width="75%" /></p>
 <p>For a simple bar graph, go to the <strong>Categories</strong> tab, tick the <strong>Group 1</strong> box and choose <code>stage</code> as your first grouping variable:</p>
-<p><img src="img/mod01/stata/bar-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-02.png" width="75%" /></p>
 <p>Click the <strong>Y axis</strong> tab to include a more meaningful label for the y axis:</p>
-<p><img src="img/mod01/stata/bar-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-03.png" width="75%" /></p>
 <p>Click <strong>Submit</strong> or <strong>OK</strong>, and the following graph will appear:</p>
-<p><img src="img/mod01/stata/bar-04.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-04.png" width="75%" /></p>
 <p>Note: Value labels have been assigned to stage to create more meaningful output, and bar colours have been changed to allow for grey-scale printing.</p>
 </div>
 </div>
-<div id="submit-vs-ok-button" class="section level3" number="1.9.12">
-<h3><span class="header-section-number">1.9.12</span> Submit vs OK button</h3>
+<div id="submit-vs-ok-button" class="section level3" number="1.9.13">
+<h3><span class="header-section-number">1.9.13</span> Submit vs OK button</h3>
 <p>You may note that most dialog boxes in Stata have two choices: the <strong>Submit</strong> button, and the <strong>OK</strong> button. Both buttons will submit the command to be run, and both will produce a graph. The <strong>Submit</strong> button will submit the command but leave the dialog box open, while the <strong>OK</strong> button will submit the command and close the dialog box. Given the building a graph often involves many incremental changes, the <strong>Submit</strong> button is a useful option.</p>
 </div>
-<div id="clustered-bar-graph" class="section level3" number="1.9.13">
-<h3><span class="header-section-number">1.9.13</span> Clustered bar graph</h3>
+<div id="clustered-bar-graph" class="section level3" number="1.9.14">
+<h3><span class="header-section-number">1.9.14</span> Clustered bar graph</h3>
 <p>To create a clustered bar chart as shown in Figure 1.2, go to: <strong>Graphics &gt; Bar chart</strong> again. With the previous settings in place (i.e. stage as grouping variable and with appropriate axes labels), now choose <code>sex</code> as the <strong>Group 1</strong> variable, and tick <strong>Group 2</strong> and choose <code>stage</code> as the second grouping variable.</p>
-<p><img src="img/mod01/stata/bar-05.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-05.png" width="75%" /></p>
 <p>In the <strong>Options</strong> tab, tick <strong>Treat first category grouping as y variables</strong>. When you are done, click <strong>OK</strong> or <strong>Submit</strong>.</p>
-<p><img src="img/mod01/stata/bar-06.png" width="66%" /></p>
-<p><img src="img/mod01/stata/bar-07.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-06.png" width="75%" /></p>
+<p><img src="img/mod01/stata/bar-07.png" width="75%" /></p>
 <p>In a clustered bar chart, the <strong>Group 2</strong> variable is the main variable grouping (here, <code>stage</code>), and each of the <strong>Group 2</strong> categories is split by the <strong>Group 1</strong> variable (here, <code>sex</code>).</p>
 </div>
-<div id="stacked-bar-graph" class="section level3" number="1.9.14">
-<h3><span class="header-section-number">1.9.14</span> Stacked bar graph</h3>
+<div id="stacked-bar-graph" class="section level3" number="1.9.15">
+<h3><span class="header-section-number">1.9.15</span> Stacked bar graph</h3>
 <p>To create a stacked bar chart shown in Figure 1.4, bring up the <strong>Bar chart</strong> dialog box, go to the <strong>Options</strong> tab and tick <strong>Stack bars on y variables</strong>.</p>
-<p><img src="img/mod01/stata/bar-08.png" width="66%" /></p>
-<p><img src="img/mod01/stata/bar-10.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-08.png" width="75%" /></p>
+<p><img src="img/mod01/stata/bar-10.png" width="75%" /></p>
 </div>
-<div id="stacked-bar-graph-of-relative-frequencies" class="section level3" number="1.9.15">
-<h3><span class="header-section-number">1.9.15</span> Stacked bar graph of relative frequencies</h3>
+<div id="stacked-bar-graph-of-relative-frequencies" class="section level3" number="1.9.16">
+<h3><span class="header-section-number">1.9.16</span> Stacked bar graph of relative frequencies</h3>
 <p>If one wants to compare the sex distribution across the stage categories, it would be convenient if all the bars have the same height (100%). To generate such a bar chart in Stata, tick <strong>Base bar heights on percentages</strong> in the <strong>Options</strong> tab of the <strong>Bar charts</strong> dialog box. Change the y-axis title in the <strong>Y axis</strong> tab to <code>Percentage of students in each age group</code>.</p>
-<p><img src="img/mod01/stata/bar-11.png" width="66%" /></p>
-<p><img src="img/mod01/stata/bar-12.png" width="66%" /></p>
+<p><img src="img/mod01/stata/bar-11.png" width="75%" /></p>
+<p><img src="img/mod01/stata/bar-12.png" width="75%" /></p>
 </div>
-<div id="editing-graphs-in-stata" class="section level3" number="1.9.16">
-<h3><span class="header-section-number">1.9.16</span> Editing graphs in Stata</h3>
+<div id="editing-graphs-in-stata" class="section level3" number="1.9.17">
+<h3><span class="header-section-number">1.9.17</span> Editing graphs in Stata</h3>
 <p>There are two main approaches of editing many aspects of a graph (such as colours, labels, font-size etc). The first approach is to use options within the dialog boxes. For example, if we wanted to use a grey-and-white colour scheme for Figure X, we can define the colours of the bars in the Bars tab of the bar chart dialog box.</p>
 <p>Here, we will define Bar 1 to be <code>White</code>:</p>
-<p><img src="img/mod01/stata/edit-01.png" width="66%" /></p>
-<p><img src="img/mod01/stata/edit-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/edit-01.png" width="75%" /></p>
+<p><img src="img/mod01/stata/edit-02.png" width="75%" /></p>
 <p>Bar 2 can be defined to be <code>Gray</code>, resulting in the graph below:</p>
-<p><img src="img/mod01/stata/edit-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/edit-03.png" width="75%" /></p>
 <p>The second approach to customising graphs is to use the <strong>Graph Editor</strong>. Each Stata graph window includes a Graph Editor button:</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-41"></span>
-<img src="img/mod01/stata/edit-04.png" alt="Graph editor button on Stata for Windows" width="66%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-44"></span>
+<img src="img/mod01/stata/edit-04.png" alt="Graph editor button on Stata for Windows" width="75%" />
 <p class="caption">
 Figure 1.11: Graph editor button on Stata for Windows
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-42"></span>
-<img src="img/mod01/stata/edit-05.png" alt="Graph editor button on Stata for MacOS" width="66%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-45"></span>
+<img src="img/mod01/stata/edit-05.png" alt="Graph editor button on Stata for MacOS" width="75%" />
 <p class="caption">
 Figure 1.12: Graph editor button on Stata for MacOS
 </p>
 </div>
 <p>The <strong>Graph Editor</strong> window comprises two main sections: the graph that can be edited on the left, and a list of elements of the graph on the right. Most aspects of a graph’s appearance can be edited in the Graph Editor, usually by double-clicking an element (e.g. a bar, or a bar segment) and changing its properties. There are too many ways to change a graph’s appearance to document here: feel free to explore and experiment!</p>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-43"></span>
-<img src="img/mod01/stata/edit-06.png" alt="Graph editor window: Windows" width="66%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-46"></span>
+<img src="img/mod01/stata/edit-06.png" alt="Graph editor window: Windows" width="75%" />
 <p class="caption">
 Figure 1.13: Graph editor window: Windows
 </p>
 </div>
-<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-44"></span>
-<img src="img/mod01/stata/edit-07.png" alt="Graph editor window: MacOS" width="66%" />
+<div class="figure"><span style="display:block;" id="fig:unnamed-chunk-47"></span>
+<img src="img/mod01/stata/edit-07.png" alt="Graph editor window: MacOS" width="75%" />
 <p class="caption">
 Figure 1.14: Graph editor window: MacOS
 </p>
 </div>
 <p>When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the <strong>Save</strong> button, choose <strong>Save as</strong> and choose to save using the **PNG (*.png)** format. You can then insert your saved PNG file into your word processing package as usual.</p>
 </div>
-<div id="creating-line-graphs" class="section level3" number="1.9.17">
-<h3><span class="header-section-number">1.9.17</span> Creating line graphs</h3>
+<div id="creating-line-graphs" class="section level3" number="1.9.18">
+<h3><span class="header-section-number">1.9.18</span> Creating line graphs</h3>
 <p>To demonstrate the graphing of aggregate data with Stata, we use the data on new cases and deaths from prostate cancer in males in NSW. This data has been entered into Stata as <code>Example_1.2.dta</code>.</p>
 <p>If you look at the data in the <strong>Data Editor</strong> window, you will see that there are 20 rows - a row for each year of data. Each row contains the number of new cases (<code>NCases</code>), number of deaths (<code>NDeaths</code>), the incidence rate (<code>RCases</code>) and death rate (<code>RDeaths</code>).</p>
 <p>To create a line graph as in Figure 1.5 select <strong>Graphics &gt; Twoway graph (scatter, line, etc.)</strong> and click the <strong>Create…</strong> button in the <strong>twoway – Twoway graphs</strong> dialog box to bring up a dialog box for defining Plot 1.</p>
-<p><img src="img/mod01/stata/line-01.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-01.png" width="75%" /></p>
 <p>Choose <strong>Line</strong> as the plot type, <code>rcases</code> as the <strong>Y variable</strong> and <code>year</code> as the <strong>X variable</strong> as shown below.</p>
-<p><img src="img/mod01/stata/line-02.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-02.png" width="75%" /></p>
 <p>Click <strong>Accept</strong>, and then click <strong>Submit</strong> to check how the graph looks.</p>
-<p><img src="img/mod01/stata/line-03.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-03.png" width="75%" /></p>
 <p>This looks ok, but we want to add the death rate to the plot. Click <strong>Create…</strong> again and add a Plot 2 for mortality rate:</p>
-<p><img src="img/mod01/stata/line-03-1.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-03-1.png" width="75%" /></p>
 <p>Choose <strong>Line</strong> as the plot type again, <code>rdeaths</code> as the <strong>Y</strong> variable and <code>year</code> as the <strong>X variable</strong>. Click <strong>Accept</strong>, and then <strong>Submit</strong> to check how the graph looks like now. You should see both variables plotted:</p>
-<p><img src="img/mod01/stata/line-04.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-04.png" width="75%" /></p>
 <p>To change the format of either line, click the relevant plot definition in the main <strong>twoway</strong> dialog box and click <strong>Edit</strong>. Click the <strong>Line properties</strong> button and choose a <strong>Pattern</strong> (e.g. Short-dash), then click <strong>Submit</strong> again.</p>
-<p><img src="img/mod01/stata/line-05.png" width="66%" /></p>
-<p><img src="img/mod01/stata/line-06.png" width="66%" /></p>
-<p><img src="img/mod01/stata/line-07.png" width="66%" /></p>
-<p><img src="img/mod01/stata/line-08.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-05.png" width="75%" /></p>
+<p><img src="img/mod01/stata/line-06.png" width="75%" /></p>
+<p><img src="img/mod01/stata/line-07.png" width="75%" /></p>
+<p><img src="img/mod01/stata/line-08.png" width="75%" /></p>
 <p>Next, we need an appropriate label for the y-axis. In the main <strong>twoway</strong> dialog box, click on the <strong>Y axis</strong> tab and label the title appropriately (e.g. <code>Age-standardardised rate</code> and then click <strong>OK</strong> or <strong>Submit</strong>. The graph below should be produced.</p>
-<p><img src="img/mod01/stata/line-09.png" width="66%" /></p>
+<p><img src="img/mod01/stata/line-09.png" width="75%" /></p>
 <p>[Command: <code>twoway (line rcases year) (line rdeaths year, lpattern(shortdash)), ytitle(Age-standardised rate)</code>]</p>
 
 </div>

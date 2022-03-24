@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -320,14 +323,14 @@ div.csl-indent {
 <h2><span class="header-section-number">3.6</span> Calculating a 95% confidence interval of a mean</h2>
 <div id="individual-data" class="section level3" number="3.6.1">
 <h3><span class="header-section-number">3.6.1</span> Individual data</h3>
-<p>To demonstrate the computation of the 95% confidence interval of a mean we have used data from <code>Example_1.3.dta</code>. To calculate the 95% confidence interval, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Confidence intervals</strong>. In the <strong>ci</strong> dialog box, select <code>weight</code> as the <strong>Variable</strong>.</p>
+<p>To demonstrate the computation of the 95% confidence interval of a mean we have used data from <code>Example_1.3.dta</code>. To calculate the 95% confidence interval, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Confidence intervals</strong>. In the <strong>ci</strong> dialog box, select <code>weight</code> as the <strong>Variable</strong>.</p>
 <p><img src="img/mod03/stata/mod3-ci.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 3.1.</p>
 <p>[Command: <code>ci means weight</code>]</p>
 </div>
 <div id="summarised-data" class="section level3" number="3.6.2">
 <h3><span class="header-section-number">3.6.2</span> Summarised data</h3>
-<p>For Worked Example 3.2 where we are given the sample mean, sample standard deviation and sample size, we use the <code>cii means</code> command. To calculate the 95% CI, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Normal mean CI calculator</strong>. In the <strong>cii</strong> dialog box, check that the <strong>Normal mean</strong> button is selected, and enter <code>30</code> as the <strong>Sample size</strong>, <code>70</code> as the <strong>Sample mean</strong>, <code>6</code> as the <strong>Sample standard deviation</strong> and check that <code>95</code> in entered as the <strong>Confidence level</strong>.</p>
+<p>For Worked Example 3.2 where we are given the sample mean, sample standard deviation and sample size, we use the <code>cii means</code> command. To calculate the 95% CI, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Normal mean CI calculator</strong>. In the <strong>cii</strong> dialog box, check that the <strong>Normal mean</strong> button is selected, and enter <code>30</code> as the <strong>Sample size</strong>, <code>70</code> as the <strong>Sample mean</strong>, <code>6</code> as the <strong>Sample standard deviation</strong> and check that <code>95</code> in entered as the <strong>Confidence level</strong>.</p>
 <p><img src="img/mod03/stata/mod3-cii.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 3.2.</p>
 <p>[Command: <code>cii means 30 70 6</code>]</p>

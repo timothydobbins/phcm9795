@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -318,12 +321,12 @@ div.csl-indent {
 <h1><strong>6</strong> Stata notes</h1>
 <div id="confidence-intervals-for-proportions" class="section level2" number="6.7">
 <h2><span class="header-section-number">6.7</span> 95% confidence intervals for proportions</h2>
-<p>To compute the 95% confidence interval for proportions, go to Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt;Proportion CI calculator. In the cii dialog box as shown below, key in 215 as the Sample size and 47 as the number of Successes. Choose Wald for the normal approximation to binomial distribution CI [Command: cii 215 47, wald] or Wilson for Wilson CI [Command: cii 215 47, wilson]. Click OK or Submit when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.</p>
+<p>To compute the 95% confidence interval for proportions, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt;Proportion CI calculator</strong>. In the <code>cii</code> dialog box as shown below, key in <code>215</code> as the <strong>Sample size</strong> and <code>47</code> as the number of <strong>Successes</strong>. Choose <strong>Wald</strong> for the normal approximation to binomial distribution CI [Command: cii 215 47, wald] or <strong>Wilson</strong> for Wilson CI [Command: cii 215 47, wilson]. Click <strong>OK</strong> or <strong>Submit</strong> when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.</p>
 <p><img src="img/mod06/stata/cii.png" width="66%" /></p>
 </div>
 <div id="significance-test-for-single-proportion" class="section level2" number="6.8">
 <h2><span class="header-section-number">6.8</span> Significance test for single proportion</h2>
-<p>To perform a binomial test using the data from Example_6.3.dta, it would be a good idea to check that the variable is dichotomous and numerically coded in 0 and 1 by using the codebook command. [Command: codebook smoking_status]</p>
+<p>To perform a binomial test using the data from <code>Example_6.3.dta</code>, it is a good idea to check that the variable is dichotomous and numerically coded in 0 and 1 by using the <code>codebook</code> command. [Command: codebook smoking_status]</p>
 <pre class="text"><code>. codebook smoking_status 
 
 --------------------------------------------------------------------------------
@@ -343,8 +346,7 @@ smoking_status                                                    Smoking status
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 6.3.</p>
 <p><img src="img/mod06/stata/bitest.png" width="66%" /></p>
 <p>[Command: <code>bitest smoking_status == 0.2</code>]</p>
-<p>If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial
-probability test by going to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; Binomial probability test calculator</strong>. Enter the numbers in the appropriate fields as shown below.</p>
+<p>If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial probability test by going to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; Binomial probability test calculator</strong>. Enter the numbers in the appropriate fields as shown below.</p>
 <p><img src="img/mod06/stata/bitesti.png" width="66%" /></p>
 <p>[Command: bitesti 300 54 0.2]</p>
 </div>
@@ -362,9 +364,9 @@ probability test by going to <strong>Statistics &gt; Summaries, tables, and test
 <div id="computing-an-odds-ratio-and-its-95ci" class="section level2" number="6.10">
 <h2><span class="header-section-number">6.10</span> Computing an odds ratio and its 95%CI</h2>
 <p>To obtain an odds ratio and its 95% CI, go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Case-control odds ratio</strong>. The <strong>cc</strong> dialog box is completed as for the <strong>cs</strong> dialog box.</p>
-<p>To obtain the Cornfield confidence interval, click on the Options tab and select the Cornfield approximation radio button.</p>
+<p>To obtain the Cornfield confidence interval, click on the <strong>Options</strong> tab and select the <strong>Cornfield approximation</strong> radio button.</p>
 <p><img src="img/mod06/stata/cc-1.png" width="66%" /></p>
-<p>If you only have the cross-tabulated data (i.e. aggregated), you can go to Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Case-control odds ratio calculator. In the cci dialog box, enter the numbers from the cross-tabulated data and select the Cornfield approximation radio button. For example, Worked example 6.5 would be entered as:</p>
+<p>If you only have the cross-tabulated data (i.e. aggregated), you can go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Case-control odds ratio calculator</strong>. In the <code>cci</code> dialog box, enter the numbers from the cross-tabulated data and select the <strong>Cornfield approximation</strong> radio button. For example, Worked example 6.5 would be entered as:</p>
 <p><img src="img/mod06/stata/cc-2.png" width="66%" /></p>
 
 </div>

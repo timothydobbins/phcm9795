@@ -1,0 +1,13 @@
+# (APPENDIX) Appendix {-}
+
+# z-table
+
+```{r , echo=FALSE, out.width = "100%", fig.cap="Areas in the upper tail of the standard normal distribution"}
+knitr::include_graphics(here::here("img", "misc", "z-table.png"))
+```
+
+# Analysis summary
+
+```{r , echo=FALSE, out.width = "100%", fig.cap="Flowchart to determine which statistical test to use"}
+knitr::include_graphics(here::here("img", "misc", "analysis-flowchart.png"))
+```

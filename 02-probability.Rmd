@@ -42,7 +42,7 @@ Another way of putting it is:
 
 P(die roll =3 or die roll =6) = P(die roll=3) + P(die roll=6) = $1/6 + 1/6 = 1/3$
 
-#### Example: Additive law for mutually exclusive events 
+#### Example: Additive law for mutually exclusive events {-}
 Consider that blood type can be organised into the ABO system (blood types A, B, AB or O) An individual may only have one blood type. 
 
 Using the information from https://www.donateblood.com.au/learn/about-blood let’s consider the ABO blood type system. The frequency distribution (prevalence) of the ABO blood type system in the population represents the probability of each of the outcomes. If we consider all possible blood type outcomes, then the total of the probabilities will sum to 1 (100%).
@@ -85,7 +85,6 @@ Note here that the order matters – we are considering the probability of rolli
 
 ## Probability distributions
 A probability distribution is a table or a function that provides the probabilities of all possible outcomes for a random variable (a variable whose outcome depends on a random process). For example, the probability distribution for a single coin toss is straightforward: the probability of obtaining a head is 0.5, and the probability of obtaining a tail is 0.5. Similarly, the probability distribution for a single roll of a die is straightforward: each face has a probability of 1/6.
-
 
 ```{r tab-2-2, echo=FALSE}
 tab2_2 <- tibble::tribble(
@@ -143,7 +142,7 @@ huxtable::huxtable(tab2_4) %>%
   set_align(everywhere, everywhere, "centre") %>% 
   theme_article() %>% 
   set_width(0.8) %>% 
-  set_caption("BLAH")
+  set_caption("Probability distribution for the number of heads from three coin tosses")
 ```
 
 Note that the probabilities sum to 1.
@@ -152,11 +151,11 @@ The above example was based on a coin toss, where flipping a head or a tail is e
 
 From Table 2.1, the probability that a person has Type A blood is 0.38, and therefore, the probability that a person does not have Type A blood is 0.62 (1–0.38). If we considered taking a random sample of three people, the probability that all three would have Type A blood is 0.38 × 0.38 × 0.38 (using the multiplicative rule above) – and there is only one way this could happen.
 
-The number of ways two people out of three could have Type A blood is 3, and each permutation is listed in Table X. The probability of observing each of the three patterns is the same, and can be calculated using the multiplicative rule: 0.38 × 0.38 × 0.62 = 0.0895.
+The number of ways two people out of three could have Type A blood is 3, and each permutation is listed in Table \@ref(tab:tab-2-5). The probability of observing each of the three patterns is the same, and can be calculated using the multiplicative rule: 0.38 × 0.38 × 0.62 = 0.0895.
 
-```{r tab-2-5, echo=FALSE}
+```{r tab-2-5, echo=FALSE, fig.pos="H"}
 tab2_5 <- tibble::tribble(
-            ~Person.1, ~Person.2, ~Person.3,                  ~Probability,
+        ~`Person 1`, ~`Person 2`, ~`Person 3`,                  ~Probability,
                   "A",       "A",       "A", "0.38 × 0.38 × 0.38 = 0.0549",
                   "A",       "A",   "Not A", "0.38 × 0.38 × 0.62 = 0.0895",
                   "A",   "Not A",       "A", "0.38 × 0.62 × 0.38 = 0.0895",
@@ -170,13 +169,14 @@ tab2_5 <- tibble::tribble(
 huxtable(tab2_5) %>%
   set_align(everywhere, everywhere, "centre") %>% 
   theme_article() %>% 
+  set_bottom_border(c(2, 5, 8), everywhere, value = 0.4) %>% 
   set_width(0.8) %>% 
-  set_caption("BLAH")
+  set_caption("Combinations and probabilities of Type A blood in three people")
 ```
 
-The table above gives the probability of each of the blood type combinations we could observe in three people. The probability of observing a certain number of people (say, k) with Type A blood from a sample of three people can be calculated by summing the combinations:
+Table \@ref(tab:tab-2-5) above gives the probability of each of the blood type combinations we could observe in three people. The probability of observing a certain number of people (say, k) with Type A blood from a sample of three people can be calculated by summing the combinations:
 
-```{r tab-2-6, echo=FALSE}
+```{r tab-2-6, echo=FALSE, fig.pos="H"}
 tab2_6 <- tibble::tribble(
         ~`Number of people with Type A blood`,        ~`Probability of each pattern`,
                                          3L,                            "0.0549",
@@ -186,7 +186,7 @@ tab2_6 <- tibble::tribble(
         )
 
 huxtable::huxtable(tab2_6) %>%
-  set_align(everywhere, everywhere, ".") %>% 
+  set_align(everywhere, 2, ".") %>% 
   theme_article() %>% 
   set_width(0.8) %>% 
   set_caption("Probabilities of observing numbers of people with Type A blood in a sample of three people")
@@ -217,25 +217,25 @@ $$ P(X=k) = \frac{n!}{k! (n-k)!} \times p^k \times (1-p)^{n-k} $$
 
 where $ n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1$.
 
-*This formula is almost never calculated by hand.* Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.
+**Note that this formula is almost never calculated by hand.**Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.
 
 ### Mean and variance of a binomial variable
-The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If X has a binomial distribution, then the mean of X is:
+The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If *X* has a binomial distribution, then the mean of *X* is:
 
 $$ E(X) = n \times p$$
 and the variance is:
 
 $$ var(X) = n \times p \times (1-p) $$
-where n = the number of trials, and p = the probability of the event occurring (or success).
+where *n* = the number of trials, and *p* = the probability of the event occurring (or success).
 
-#### Worked example
+#### Worked example {-}
 A population-based survey conducted by the AIHW (2008) of a random sample of the Australian population estimated that in 2007, 19.8% of the Australian population were current smokers.
 
 a) From a random sample of 6 people from the Australian population in 2007, what is the probability that 3 of them will be smokers? 
 b) What is the probability that among the six persons, at least 4 will be smokers? 
 c) What is the probability that at most, 2 will be smokers?
 
-#### Solution
+#### Solution {-}
 
 a) The computation for binomial probabilities can be done using Stata from the main menu **Data > Other utilities > Hand calculator** as shown in the Stata Notes section.
 
@@ -253,7 +253,7 @@ Using the same binomial probability function as in the previous question,
 -	P(X=5) = 0.001 [Command: `display binomialp(6, 5, 0.198)`]
 -	P(X=6) = 0.00006 [Command: `display binomialp(6, 6, 0.198)`]
 
-Answer: $ P(X \ge 4) = 0.00006025+0.00146437+0.0148282 = 0.016 $
+Answer: $P(X \ge 4) = 0.00006025 + 0.00146437 + 0.0148282 = 0.016$
 
 Alternatively, we can use the `binomialtail` function (which gives “the probability of observing k or more successes in n trials when the probability of a success on one trial is p”). 
 
@@ -276,17 +276,15 @@ Here, n=6, k=2 and p=0.198, giving the same answer as above: 0.903.
 
 ## Normal distribution
 
-The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \@ref(fig:fig-2-1) and \@ref(fig:fig-2-2) demonstrate this type of distribution.
+The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \@ref(fig:fig-2-1) ^[Source: https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure (accessed March 2021)] and \@ref(fig:fig-2-2) ^[Source: https://ourworldindata.org/human-height (accessed March 2021)] demonstrate this type of distribution.
 
 ```{r fig-2-1, echo=FALSE, out.width = "66%", fig.cap="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey"}
 knitr::include_graphics(here::here("img", "mod02", "dbp.png"))
 ```
-Source: https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure (accessed March 2021)
 
 ```{r fig-2-2, echo=FALSE, out.width = "66%", fig.cap="Distribution of male and female heights"}
 knitr::include_graphics(here::here("img", "mod02", "heights.png"))
 ```
-Source: https://ourworldindata.org/human-height (accessed March 2021)
 
 The Normal distribution, also called the Gaussian distribution (named after Johann Carl Friedrich Gauss, 1777–1855), has been shown to fit the frequency distribution of many naturally occurring variables. It is characterised by its bell-shaped, symmetric curve and its tails that approach zero on either side.
 
@@ -312,7 +310,7 @@ The z-score is simply how far an observation lies from the population mean value
 
 We can use z-scores to estimate probabilities, as shown in Worked Example 2.2.
 
-#### Worked Example
+#### Worked Example {-}
 This example extends the example of diastolic blood pressure shown in Figure 2.1. Assume that the mean diastolic blood pressure for men is 77.9 mmHg, with a standard deviation of 11. What is the probability that a man selected at random will have high blood pressure (i.e. diastolic blood pressure ≥ 90)?
 
 To estimate the probability that diastolic blood pressure ≥ 90 (i.e. the upper tail probability), we first need to calculate the z-score that corresponds to 90 mmHg.
@@ -368,6 +366,7 @@ huxtable::huxtable(tab2_skew) %>%
   theme_article() %>% 
   set_width(0.95) %>% 
   merge_repeated_rows() %>% 
+  set_bottom_border(c(3,6,9), everywhere) %>% 
   set_caption("Interpretation of skewness statistics")
 ```
 
@@ -375,11 +374,11 @@ For your information: There are formal tests in Stata that test for Normality. T
 
 The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure \@ref(fig:fig-2-6)) for symmetry and outliers at either end of the distribution.
 
-```{r fig-2-6, echo=FALSE, out.width = "66%", fig.cap="Histogram and boxplot of weight of 30 students attending a gym"}
+```{r fig-2-6, echo=FALSE, out.width = "90%", fig.cap="Histogram and boxplot of weight of 30 students attending a gym"}
 knitr::include_graphics(here::here("img", "mod02", "weights-hist-boxplot.png"))
 ```
 
-A summary of how to explore Normality is shown in Table 2.5.
+A summary of how to explore Normality is shown in Table \@ref(tab:tab-2-examine-normality).
 
 ```{r tab-2-examine-normality, echo=FALSE}
 tab2_norm <- tibble::tribble(
@@ -409,7 +408,7 @@ In practice, most parametric summary statistics are quite robust to minor deviat
 
 When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure \@ref(fig:fig-2-7).
 
-```{r fig-2-7, echo=FALSE, out.width = "66%", fig.cap="Histogram and boxplot of length of stay"}
+```{r fig-2-7, echo=FALSE, out.width = "90%", fig.cap="Histogram and boxplot of length of stay"}
 knitr::include_graphics(here::here("img", "mod02", "los-hist-boxplot.png"))
 ```
 

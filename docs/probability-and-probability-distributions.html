@@ -224,7 +224,7 @@ div.csl-indent {
 <li class="chapter" data-level="" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#readings-6"><i class="fa fa-check"></i>Readings</a></li>
 <li class="chapter" data-level="7.1" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#introduction-6"><i class="fa fa-check"></i><b>7.1</b> Introduction</a></li>
 <li class="chapter" data-level="7.2" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-test-for-independent-proportions"><i class="fa fa-check"></i><b>7.2</b> Chi-squared test for independent proportions</a></li>
-<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-larger-than-22-table"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for larger than 2×2 table</a></li>
+<li class="chapter" data-level="7.3" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#chi-squared-tests-for-tables-larger-than-2-by-2"><i class="fa fa-check"></i><b>7.3</b> Chi-squared tests for tables larger than 2-by-2</a></li>
 <li class="chapter" data-level="7.4" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#mcnemars-test-for-categorical-paired-data"><i class="fa fa-check"></i><b>7.4</b> McNemar’s test for categorical paired data</a></li>
 <li class="chapter" data-level="7.5" data-path="hypothesis-testing-for-categorical-data.html"><a href="hypothesis-testing-for-categorical-data.html#summary"><i class="fa fa-check"></i><b>7.5</b> Summary</a></li>
 </ul></li>
@@ -296,6 +296,9 @@ div.csl-indent {
 <li class="chapter" data-level="10.14" data-path="stata-resources-2.html"><a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio"><i class="fa fa-check"></i><b>10.14</b> Sample size calculation with relative risk and odds ratio</a></li>
 </ul></li>
 <li><a href="learning-activities-9.html#learning-activities-9"><strong>10</strong> Learning Activities</a></li>
+<li class="appendix"><span><b>Appendix</b></span></li>
+<li class="chapter" data-level="A" data-path="z-table.html"><a href="z-table.html"><i class="fa fa-check"></i><b>A</b> z-table</a></li>
+<li class="chapter" data-level="B" data-path="analysis-summary.html"><a href="analysis-summary.html"><i class="fa fa-check"></i><b>B</b> Analysis summary</a></li>
 <li class="chapter" data-level="" data-path="references.html"><a href="references.html"><i class="fa fa-check"></i>References</a></li>
 </ul>
 
@@ -352,8 +355,8 @@ div.csl-indent {
 <p>Probability of a die roll being 3 or 6 = <span class="math inline">\(1/6 + 1/6 = 1/3\)</span></p>
 <p>Another way of putting it is:</p>
 <p>P(die roll =3 or die roll =6) = P(die roll=3) + P(die roll=6) = <span class="math inline">\(1/6 + 1/6 = 1/3\)</span></p>
-<div id="example-additive-law-for-mutually-exclusive-events" class="section level4" number="2.2.1.1">
-<h4><span class="header-section-number">2.2.1.1</span> Example: Additive law for mutually exclusive events</h4>
+<div id="example-additive-law-for-mutually-exclusive-events" class="section level4 unnumbered">
+<h4>Example: Additive law for mutually exclusive events</h4>
 <p>Consider that blood type can be organised into the ABO system (blood types A, B, AB or O) An individual may only have one blood type.</p>
 <p>Using the information from <a href="https://www.donateblood.com.au/learn/about-blood" class="uri">https://www.donateblood.com.au/learn/about-blood</a> let’s consider the ABO blood type system. The frequency distribution (prevalence) of the ABO blood type system in the population represents the probability of each of the outcomes. If we consider all possible blood type outcomes, then the total of the probabilities will sum to 1 (100%).</p>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 60%; margin-left: auto; margin-right: auto;  " id="tab:tab-2-1">
@@ -424,7 +427,7 @@ The possible combinations for three coin tosses are as follows:</p>
 <p>However, if we consider the possibility of observing just one head out of the three tosses, this can happen in three ways (HTT, THT, TTH). So the probability of observing one head is calculated using the additive law: P(X=1) = <span class="math inline">\(\tfrac{1}{8} + \tfrac{1}{8} + \tfrac{1}{8} = \tfrac{3}{8}\)</span>.</p>
 <p>Therefore, the probability distribution for X, the number of heads from three coin tosses, is as follows:</p>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:act-2-4">
-<caption style="caption-side: top; text-align: center;"><span id="tab:act-2-4">Table 2.3: </span> BLAH</caption><col><col><tr>
+<caption style="caption-side: top; text-align: center;"><span id="tab:act-2-4">Table 2.3: </span> Probability distribution for the number of heads from three coin tosses</caption><col><col><tr>
 <th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">x (number of heads observed)</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">P(X=x)</th></tr>
 <tr>
 <td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">1/8</td></tr>
@@ -439,29 +442,29 @@ The possible combinations for three coin tosses are as follows:</p>
 <p>Note that the probabilities sum to 1.</p>
 <p>The above example was based on a coin toss, where flipping a head or a tail is equally likely (both have probabilities of 0.5). Let’s consider a case where the probability of an event is not equal to 0.5: having blood type A.</p>
 <p>From Table 2.1, the probability that a person has Type A blood is 0.38, and therefore, the probability that a person does not have Type A blood is 0.62 (1–0.38). If we considered taking a random sample of three people, the probability that all three would have Type A blood is 0.38 × 0.38 × 0.38 (using the multiplicative rule above) – and there is only one way this could happen.</p>
-<p>The number of ways two people out of three could have Type A blood is 3, and each permutation is listed in Table X. The probability of observing each of the three patterns is the same, and can be calculated using the multiplicative rule: 0.38 × 0.38 × 0.62 = 0.0895.</p>
+<p>The number of ways two people out of three could have Type A blood is 3, and each permutation is listed in Table <a href="probability-and-probability-distributions.html#tab:tab-2-5">2.4</a>. The probability of observing each of the three patterns is the same, and can be calculated using the multiplicative rule: 0.38 × 0.38 × 0.62 = 0.0895.</p>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:tab-2-5">
-<caption style="caption-side: top; text-align: center;"><span id="tab:tab-2-5">Table 2.4: </span> BLAH</caption><col><col><col><col><tr>
-<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Person.1</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Person.2</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Person.3</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Probability</th></tr>
+<caption style="caption-side: top; text-align: center;"><span id="tab:tab-2-5">Table 2.4: </span> Combinations and probabilities of Type A blood in three people</caption><col><col><col><col><tr>
+<th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Person 1</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Person 2</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: bold;">Person 3</th><th style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Probability</th></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.38 × 0.38 = 0.0549</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.38 × 0.38 = 0.0549</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.38 × 0.62 = 0.0895</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.38 × 0.62 = 0.0895</td></tr>
 <tr>
 <td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.62 × 0.38 = 0.0895</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.38 × 0.38 = 0.0895</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.38 × 0.38 = 0.0895</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.62 × 0.62 = 0.1461</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.38 × 0.62 × 0.62 = 0.1461</td></tr>
 <tr>
 <td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.38 × 0.62 = 0.1461</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.62 × 0.38 = 0.1461</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.62 × 0.38 = 0.1461</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.62 × 0.62 = 0.2383</td></tr>
+<td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 6pt; font-weight: normal;">Not A</td><td style="vertical-align: top; text-align: center; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">0.62 × 0.62 × 0.62 = 0.2383</td></tr>
 </table>
 
-<p>The table above gives the probability of each of the blood type combinations we could observe in three people. The probability of observing a certain number of people (say, k) with Type A blood from a sample of three people can be calculated by summing the combinations:</p>
+<p>Table <a href="probability-and-probability-distributions.html#tab:tab-2-5">2.4</a> above gives the probability of each of the blood type combinations we could observe in three people. The probability of observing a certain number of people (say, k) with Type A blood from a sample of three people can be calculated by summing the combinations:</p>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 80%; margin-left: auto; margin-right: auto;  " id="tab:tab-2-6">
 <caption style="caption-side: top; text-align: center;"><span id="tab:tab-2-6">Table 2.5: </span> Probabilities of observing numbers of people with Type A blood in a sample of three people</caption><col><col><tr>
 <th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Number of people with Type A blood</th><th style="vertical-align: top; text-align: right; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Probability of each pattern&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th></tr>
@@ -498,16 +501,16 @@ The possible combinations for three coin tosses are as follows:</p>
 <p>We have shown in the examples above how we can calculate the probabilities for small experiments (n=3). Once n becomes large, constructing such probability distribution tables becomes difficult. The general formula for calculating the probability of observing k successes from n trials, where each trial has a probability of success of p is given by:</p>
 <p><span class="math display">\[ P(X=k) = \frac{n!}{k! (n-k)!} \times p^k \times (1-p)^{n-k} \]</span></p>
 <p>where $ n! = n (n-1) (n-2) $.</p>
-<p><em>This formula is almost never calculated by hand.</em> Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.</p>
+<p><strong>Note that this formula is almost never calculated by hand.</strong>Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.</p>
 <div id="mean-and-variance-of-a-binomial-variable" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Mean and variance of a binomial variable</h3>
-<p>The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If X has a binomial distribution, then the mean of X is:</p>
+<p>The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If <em>X</em> has a binomial distribution, then the mean of <em>X</em> is:</p>
 <p><span class="math display">\[ E(X) = n \times p\]</span>
 and the variance is:</p>
 <p><span class="math display">\[ var(X) = n \times p \times (1-p) \]</span>
-where n = the number of trials, and p = the probability of the event occurring (or success).</p>
-<div id="worked-example-2" class="section level4" number="2.5.1.1">
-<h4><span class="header-section-number">2.5.1.1</span> Worked example</h4>
+where <em>n</em> = the number of trials, and <em>p</em> = the probability of the event occurring (or success).</p>
+<div id="worked-example-2" class="section level4 unnumbered">
+<h4>Worked example</h4>
 <p>A population-based survey conducted by the AIHW (2008) of a random sample of the Australian population estimated that in 2007, 19.8% of the Australian population were current smokers.</p>
 <ol style="list-style-type: lower-alpha">
 <li>From a random sample of 6 people from the Australian population in 2007, what is the probability that 3 of them will be smokers?</li>
@@ -515,8 +518,8 @@ where n = the number of trials, and p = the probability of the event occurring (
 <li>What is the probability that at most, 2 will be smokers?</li>
 </ol>
 </div>
-<div id="solution" class="section level4" number="2.5.1.2">
-<h4><span class="header-section-number">2.5.1.2</span> Solution</h4>
+<div id="solution" class="section level4 unnumbered">
+<h4>Solution</h4>
 <ol style="list-style-type: lower-alpha">
 <li>The computation for binomial probabilities can be done using Stata from the main menu <strong>Data &gt; Other utilities &gt; Hand calculator</strong> as shown in the Stata Notes section.</li>
 </ol>
@@ -533,7 +536,7 @@ Using the same binomial probability function as in the previous question,</p>
 <li>P(X=5) = 0.001 [Command: <code>display binomialp(6, 5, 0.198)</code>]</li>
 <li>P(X=6) = 0.00006 [Command: <code>display binomialp(6, 6, 0.198)</code>]</li>
 </ul>
-<p>Answer: $ P(X ) = 0.00006025+0.00146437+0.0148282 = 0.016 $</p>
+<p>Answer: <span class="math inline">\(P(X \ge 4) = 0.00006025 + 0.00146437 + 0.0148282 = 0.016\)</span></p>
 <p>Alternatively, we can use the <code>binomialtail</code> function (which gives “the probability of observing k or more successes in n trials when the probability of a success on one trial is p”).</p>
 <p>Here, n=6, k=4 and p=0.198, giving the same answer as above: 0.016.
 [Command: <code>display binomialtail(6, 4, 0.198)</code>]</p>
@@ -555,21 +558,19 @@ Using the same binomial probability function as in the previous question,</p>
 </div>
 <div id="normal-distribution" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Normal distribution</h2>
-<p>The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures <a href="probability-and-probability-distributions.html#fig:fig-2-1">2.1</a> and <a href="probability-and-probability-distributions.html#fig:fig-2-2">2.2</a> demonstrate this type of distribution.</p>
+<p>The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures <a href="probability-and-probability-distributions.html#fig:fig-2-1">2.1</a> <a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and <a href="probability-and-probability-distributions.html#fig:fig-2-2">2.2</a> <a href="references.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> demonstrate this type of distribution.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-2-1"></span>
 <img src="img/mod02/dbp.png" alt="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey" width="66%" />
 <p class="caption">
 Figure 2.1: Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey
 </p>
 </div>
-<p>Source: <a href="https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure" class="uri">https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure</a> (accessed March 2021)</p>
 <div class="figure"><span style="display:block;" id="fig:fig-2-2"></span>
 <img src="img/mod02/heights.png" alt="Distribution of male and female heights" width="66%" />
 <p class="caption">
 Figure 2.2: Distribution of male and female heights
 </p>
 </div>
-<p>Source: <a href="https://ourworldindata.org/human-height" class="uri">https://ourworldindata.org/human-height</a> (accessed March 2021)</p>
 <p>The Normal distribution, also called the Gaussian distribution (named after Johann Carl Friedrich Gauss, 1777–1855), has been shown to fit the frequency distribution of many naturally occurring variables. It is characterised by its bell-shaped, symmetric curve and its tails that approach zero on either side.</p>
 <p>There are two reasons for the importance of the Normal distribution in biostatistics (Kirkwood and Sterne, 2003). The first is that many variables can be modelled reasonably well using the Normal distribution. Even if the observed data were not Normally distributed, it can often be made reasonably Normal after applying some transformation of the data. The second (and possible most important) reason, is based on the central limit theorem and will be discussed in Module 3.</p>
 <p>The Normal distribution is characterised by two parameters: the mean (<span class="math inline">\(\mu\)</span>) and the standard deviation (<span class="math inline">\(\sigma\)</span>). The mean defines where the middle of the Normal distribution is located, and the standard deviation defines how wide the tails of the distribution are.</p>
@@ -588,8 +589,8 @@ Figure 2.3: Characteristics of a Normal distribution
 <p><span class="math display">\[ z = \frac{x - \mu}{\sigma} \]</span></p>
 <p>The z-score is simply how far an observation lies from the population mean value, scaled by the population standard deviation.</p>
 <p>We can use z-scores to estimate probabilities, as shown in Worked Example 2.2.</p>
-<div id="worked-example-3" class="section level4" number="2.7.0.1">
-<h4><span class="header-section-number">2.7.0.1</span> Worked Example</h4>
+<div id="worked-example-3" class="section level4 unnumbered">
+<h4>Worked Example</h4>
 <p>This example extends the example of diastolic blood pressure shown in Figure 2.1. Assume that the mean diastolic blood pressure for men is 77.9 mmHg, with a standard deviation of 11. What is the probability that a man selected at random will have high blood pressure (i.e. diastolic blood pressure ≥ 90)?</p>
 <p>To estimate the probability that diastolic blood pressure ≥ 90 (i.e. the upper tail probability), we first need to calculate the z-score that corresponds to 90 mmHg.</p>
 <p>Using the z-score formula, with x=90, <span class="math inline">\(\mu\)</span>=77.9 and <span class="math inline">\(\sigma\)</span>=11:</p>
@@ -626,17 +627,17 @@ Figure 2.5: Area under the Standard Normal curve (as probability) for Z &gt; 1.1
 <caption style="caption-side: top; text-align: center;"><span id="tab:tab-2-skew">Table 2.6: </span> Interpretation of skewness statistics</caption><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Skewness</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Interpretation</th></tr>
 <tr>
-<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">The distribution is symmetric</td></tr>
+<td rowspan="2" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">0</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">The distribution is symmetric</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If skewness is between -0.5 and 0.5, the distribution is approximately symmetric</td></tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If skewness is between -0.5 and 0.5, the distribution is approximately symmetric</td></tr>
 <tr>
-<td rowspan="3" style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Negative</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Distribution is skewed to the left (mean is usually less than the median) – aka negative skew (longer tail to the left)</td></tr>
+<td rowspan="3" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Negative</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Distribution is skewed to the left (mean is usually less than the median) – aka negative skew (longer tail to the left)</td></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If it is less than −1, the distribution is highly skewed to the left</td></tr>
 <tr>
-<td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If it is between −1 and −0.5, the distribution is moderately skewed to the left</td></tr>
+<td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If it is between −1 and −0.5, the distribution is moderately skewed to the left</td></tr>
 <tr>
-<td rowspan="3" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Positive</td><td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Distribution is skewed to the right (mean is usually greater than the median) – aka positive skew (longer tail to the right)</td></tr>
+<td rowspan="3" style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: normal;">Positive</td><td style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: normal;">Distribution is skewed to the right (mean is usually greater than the median) – aka positive skew (longer tail to the right)</td></tr>
 <tr>
 <td style="vertical-align: top; text-align: left; white-space: normal; padding: 6pt 0pt 6pt 6pt; font-weight: normal;">If it is greater than 1, the distribution is highly skewed to the right</td></tr>
 <tr>
@@ -646,12 +647,12 @@ Figure 2.5: Area under the Standard Normal curve (as probability) for Z &gt; 1.1
 <p>For your information: There are formal tests in Stata that test for Normality. These tests are beyond the scope of this course and will be discussed in the Advanced course.</p>
 <p>The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure <a href="probability-and-probability-distributions.html#fig:fig-2-6">2.6</a>) for symmetry and outliers at either end of the distribution.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-2-6"></span>
-<img src="img/mod02/weights-hist-boxplot.png" alt="Histogram and boxplot of weight of 30 students attending a gym" width="66%" />
+<img src="img/mod02/weights-hist-boxplot.png" alt="Histogram and boxplot of weight of 30 students attending a gym" width="90%" />
 <p class="caption">
 Figure 2.6: Histogram and boxplot of weight of 30 students attending a gym
 </p>
 </div>
-<p>A summary of how to explore Normality is shown in Table 2.5.</p>
+<p>A summary of how to explore Normality is shown in Table <a href="probability-and-probability-distributions.html#tab:tab-2-examine-normality">2.7</a>.</p>
 <table class="huxtable" style="border-collapse: collapse; border: 0px; margin-bottom: 2em; margin-top: 2em; width: 95%; margin-left: auto; margin-right: auto;  " id="tab:tab-2-examine-normality">
 <caption style="caption-side: top; text-align: center;"><span id="tab:tab-2-examine-normality">Table 2.7: </span> Methods to assess Normality</caption><col><col><tr>
 <th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 6pt 6pt 0pt; font-weight: bold;">Method</th><th style="vertical-align: top; text-align: left; white-space: normal; border-style: solid solid solid solid; border-width: 0.4pt 0pt 0.4pt 0pt;    padding: 6pt 0pt 6pt 6pt; font-weight: bold;">Indication of Normality</th></tr>
@@ -675,7 +676,7 @@ Figure 2.6: Histogram and boxplot of weight of 30 students attending a gym
 <p>In practice, most parametric summary statistics are quite robust to minor deviations from Normality and non-parametric statistical methods are only required when the sample size is small and/or the data are obviously skewed with some influential outliers.</p>
 <p>When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure <a href="probability-and-probability-distributions.html#fig:fig-2-7">2.7</a>.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-2-7"></span>
-<img src="img/mod02/los-hist-boxplot.png" alt="Histogram and boxplot of length of stay" width="66%" />
+<img src="img/mod02/los-hist-boxplot.png" alt="Histogram and boxplot of length of stay" width="90%" />
 <p class="caption">
 Figure 2.7: Histogram and boxplot of length of stay
 </p>

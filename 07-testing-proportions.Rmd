@@ -10,8 +10,11 @@ By the end of this module you will be able to:
 ## Readings {-}
 
 @kirkwood_sterne01; Chapter 17.
+
 @bland15; Chapter 13.
+
 @acock10; Section 7.6.
+
 @juul_frydenberg14; Section 11.3.
 
 ## Introduction
@@ -28,11 +31,11 @@ We are using the randomised controlled trial as given in Worked Example 6.4 on t
 
 The research question is whether the active drug resulted in a different rate of nausea than the placebo drug. This is equivalent to testing whether there is an association between nausea and type of drug received (active or placebo). Thus, we will test the null hypothesis that the experience of nausea and the treatment are not related to one another. The null hypothesis is:
 
-- $H_0$: The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.
+- H~0~: The proportion with nausea in the active drug group is the same as the proportion with nausea in the placebo drug group.
 
 The alternative hypothesis can be stated as:
 
-- $H_a$: The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.
+- H~a~: The proportion with nausea in the active drug group is different to the proportion with nausea in the placebo drug group.
 
 ## Chi-squared test for independent proportions
 
@@ -56,7 +59,7 @@ A chi-squared test to examine whether two independent proportions are associated
 
 The Stata output for Worked Example 7.1 for the study on nausea is shown in Output 7.1a. It is always important to request the percentages using the options in 'Cells' to show the proportion of patients who have the outcome in each exposure group, i.e. the row percents.
 
-### Stata Output: Results output for estimating association between drug and nausea
+#### Stata Output 7.1: Results output for estimating association between drug and nausea {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 +--------------------+
 | Key                |
@@ -86,7 +89,7 @@ The Stata output for Worked Example 7.1 for the study on nausea is shown in Outp
 
 (Note: in this table, drug group and nausea outcome are coded 'No' = 0 and 'Yes' = 1, i.e. the 'No' group comes before the Yes' group unlike the table outputs in Module 6. Therefore, cell a = 15; b = 35, c = 4; d = 46.).
 
-In Output 7.1a, we can see from the row percentages that 8% of patients in the placebo group experienced nausea compared to 30% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The 'Expected' counts are higher for the groups with 'No nausea' because 'No nausea' is more prevalent in the sample than 'Nausea'.
+In Output 7.1, we can see from the row percentages that 8% of patients in the placebo group experienced nausea compared to 30% of patients in the active group. If no association existed, we would expect to find approximately the same percent of patients with nausea in each group. The 'Expected' counts are higher for the groups with 'No nausea' because 'No nausea' is more prevalent in the sample than 'Nausea'.
 
 While the `tab2` command will perform the chi-square test, the measure of effect is best obtained using the `cs` or `cc` commands, as discussed in Module 6. Using the relative risk obtained from Module 6, a conclusion from the above test can be written as:
 
@@ -101,21 +104,21 @@ The assumptions that must be met when using Pearson's chi-squared test are that:
 - at least 80% of the expected cell counts should exceed a value of five;
 - all expected cell counts should exceed a value of one.
 
-The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher's exact test can be used instead. More information on Fisher's exact test can be found in Chapter 13 of An Introduction to Medical Statistics, M Bland.
+The first two assumptions are dictated by the study design. The last two assumptions relate to the numbers in the cells and can be explored when running the test. There should not be too many cells with low expected counts. Sometimes, the only way to avoid small cell counts is to recruit a much larger sample size. If small cell counts cannot be avoided, Fisher's exact test can be used instead. More information on Fisher's exact test can be found in Chapter 13 of An Introduction to Medical Statistics, @bland15.
 
 ### Interpreting chi-squared tests
 
-For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson's Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher's exact test should be used (specified using the exact option in the tabulate command in Stata -- see Stata Notes). The P value associated with the Pearson's chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.
+For the data being considered from Worked Example 7.1 all cells have an expected count greater than 5 and that the minimum cell count is 9.5. Therefore, it is appropriate to use the Pearson's Chi-Squared test. If one or more cells have an expected cell count less than 5, then the Fisher's exact test should be used. The P value associated with the Pearson's chi-squared test is 0.005 indicating that we can reject the null hypothesis at a 5% level of significance. Thus, we can conclude that there is strong evidence that more patients who were randomised to receive the active treatment experienced nausea than patients randomised to the control (placebo) group.
 
-## Chi-squared tests for larger than 2×2 table
+## Chi-squared tests for tables larger than 2-by-2
 
-Chi-squared tests can also be used for tables larger than a 2×2 dimension. When a contingency table larger than 2×2 is used, say a 4×2 table if there were 4 exposure groups, the Pearson's chi-squared can still be used.
+Chi-squared tests can also be used for tables larger than a 2-by-2 dimension. When a contingency table larger than 2-by-2 is used, say a 4-by-2 table if there were 4 exposure groups, the Pearson's chi-squared can still be used.
 
 ### Worked Example
 
-The Stata file Example_7.2.dta contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. [Command: tab allergy_severity sex, col]
+The Stata file `Example_7.2.dta` contains information about the severity of allergic reaction, coded as absent, slight, moderate or severe. We can test the hypothesis that the severity of allergy is not different between males and females. To do this we can use a two-way tabulation in Stata to obtain Stata Output 7.2 which shows the percent of females and males who fall into each severity group for allergy. The table shows that the percentage of males is higher in each of the categories of severity (slight, moderate, severe) than the percentage of females. [Command: `tab allergy_severity sex, col`]
 
-#### Cross-tabulation for severity of allergy by gender
+#### Stata Output 7.2: Cross-tabulation for severity of allergy by gender {-}
 
 ```{r, tidy=FALSE, eval=FALSE, highlight=FALSE }
 . tabulate allergy_severity sex, column expected
@@ -181,10 +184,11 @@ huxtable(tab7_1) %>%
 ### Worked Example 7.3
 Two drugs labelled A and B have been administered to patients in random order so that each patient acts as their own control. The dataset Example_7.3.dta is available on Moodle. The null hypothesis is as follows:
 
-- $H_0$: The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B
+- H~0~: The proportion of patients who do better on drug A is the same as the proportion of patients who do better on drug B
 
 Using the `tabulate2` command, observed count and cell percentages were obtained in Table 7.2. From the "Total" row in the table, we can see that the number of patients who respond to drug A is 41 (68.3%) and from the "Total" column the number who respond to drug B is less at 35 (58.3%), that is there is a difference of 10.0%.
 
+#### Stata Output 7.3: cell percentages for paired data {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . tabulate druga drugb, cell
 
@@ -223,9 +227,9 @@ with 1 degree of freedom.
 
 In computing this statistic, the counts in the concordant cells ('a' and 'd') are not used and only the information from the discordant cells 'b' and 'c' is of interest.
 
-The `mcc` command in Stata is used to perform the McNemar's test. Its output is shown in Output 7.3. The number of patients who have a response to each drug is labelled as Exposed in the output.
+The `mcc` command in Stata is used to perform the McNemar's test. Its output is shown in Stata Output 7.4. The number of patients who have a response to each drug is labelled as Exposed in the output.
 
-#### Output 7.3 McNemar's test
+#### Stata Output 7.4: McNemar's test {-}
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . mcc druga drugb
 

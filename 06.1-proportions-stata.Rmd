@@ -1,14 +1,14 @@
 # **6** Stata notes {-}
 
 ## 95% confidence intervals for proportions
-To compute the 95% confidence interval for proportions, go to Statistics > Summaries, tables, and tests > Summary and descriptive statistics >Proportion CI calculator. In the cii dialog box as shown below, key in 215 as the Sample size and 47 as the number of Successes. Choose Wald for the normal approximation to binomial distribution CI [Command: cii 215 47, wald] or Wilson for Wilson CI [Command: cii 215 47, wilson]. Click OK or Submit when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.
+To compute the 95% confidence interval for proportions, go to **Statistics > Summaries, tables, and tests > Summary and descriptive statistics >Proportion CI calculator**. In the `cii` dialog box as shown below, key in `215` as the **Sample size** and `47` as the number of **Successes**. Choose **Wald** for the normal approximation to binomial distribution CI [Command: cii 215 47, wald] or **Wilson** for Wilson CI [Command: cii 215 47, wilson]. Click **OK** or **Submit** when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.
 
 ```{r s-cii, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod06", "stata", "cii.png"))
 ```
 
 ## Significance test for single proportion
-To perform a binomial test using the data from Example_6.3.dta, it would be a good idea to check that the variable is dichotomous and numerically coded in 0 and 1 by using the codebook command. [Command: codebook smoking_status]
+To perform a binomial test using the data from `Example_6.3.dta`, it is a good idea to check that the variable is dichotomous and numerically coded in 0 and 1 by using the `codebook` command. [Command: codebook smoking_status]
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . codebook smoking_status 
@@ -38,8 +38,7 @@ knitr::include_graphics(here::here("img", "mod06", "stata", "bitest.png"))
 
 [Command: `bitest smoking_status == 0.2`]
 
-If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial 
-probability test by going to **Statistics > Summaries, tables, and tests > Classical tests of hypotheses > Binomial probability test calculator**. Enter the numbers in the appropriate fields as shown below.
+If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial probability test by going to **Statistics > Summaries, tables, and tests > Classical tests of hypotheses > Binomial probability test calculator**. Enter the numbers in the appropriate fields as shown below.
 
 ```{r s-bitesti, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod06", "stata", "bitesti.png"))
@@ -76,13 +75,13 @@ knitr::include_graphics(here::here("img", "mod06", "stata", "cs-3.png"))
 
 To obtain an odds ratio and its 95% CI, go to **Statistics > Epidemiology and related > Tables for epidemiologists > Case-control odds ratio**. The **cc** dialog box is completed as for the **cs** dialog box.
 
-To obtain the Cornfield confidence interval, click on the Options tab and select the Cornfield approximation radio button.
+To obtain the Cornfield confidence interval, click on the **Options** tab and select the **Cornfield approximation** radio button.
 
 ```{r s-cc-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod06", "stata", "cc-1.png"))
 ```
 
-If you only have the cross-tabulated data (i.e. aggregated), you can go to Statistics > Epidemiology and related > Tables for epidemiologists > Case-control odds ratio calculator. In the cci dialog box, enter the numbers from the cross-tabulated data and select the Cornfield approximation radio button. For example, Worked example 6.5 would be entered as:
+If you only have the cross-tabulated data (i.e. aggregated), you can go to **Statistics > Epidemiology and related > Tables for epidemiologists > Case-control odds ratio calculator**. In the `cci` dialog box, enter the numbers from the cross-tabulated data and select the **Cornfield approximation** radio button. For example, Worked example 6.5 would be entered as:
 
 ```{r s-cc-2, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod06", "stata", "cc-2.png"))
