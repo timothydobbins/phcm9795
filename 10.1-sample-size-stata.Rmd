@@ -1,18 +1,12 @@
 # **10** Stata resources {-}
 
-To access the Power and sample size menu item, you may need to point your mouse to the down arrow on the Stata menu to scroll down as shown below. 
+The **Power, precision and sample size** menu item is located at the very bottom of the **Statistics** menu. **You may need to scroll down the menu to locate the item.**
 
-```{r mod10-menu-1, echo=FALSE, out.width = "66%"}
+```{r mod10-menu-1, echo=FALSE, out.width = "100%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-1.png"))
 ```
 
-You should now be able to find and select Power and sample size in the menu as shown below.
-
-```{r mod10-menu-2, echo=FALSE, out.width = "66%"}
-knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-1.png"))
-```
-
-The Power and sample-size analysis dialog box appears as shown below.
+The **Power, precision and sample-size** analysis dialog box appears as shown below.
 
 ```{r mod10-menu-3, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-menu-3.png"))
@@ -80,7 +74,7 @@ knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-twoprop-3.png
  
 ## Sample size calculation with relative risk and odds ratio
 
-Using information from Worked Example 10.4, we change **Power** to `0.9`, enter `0.5` as the **Control Proportion** and `1.5` as the **Relative risk** as shown below. [CHECK THE FOLLOWING: Note that when choosing "Relative Risk" in the "Effect size" section, the "Reported effect size" menu automatically changes to Relative risk. Due to an error in Stata, the "Reported effect size" must be changed to "Difference".]
+Using information from Worked Example 10.4, we change **Power** to `0.9`, enter `0.5` as the **Control Proportion**. As we are working with a relative risk, choose **Relative risk** as the effect size, and enter `1.5` as shown below.
 
 ```{r mod10-RR-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-RR-1.png"))
@@ -88,7 +82,7 @@ knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-RR-1.png"))
 
 Click **OK** or **Submit** to obtain Output 10.4.
 
-Now we calculate the sample size for Worked Example 10.5. Enter `0.3` as the **Control Proportion**, choose **Odds ratio** as the estimate from the dropdown list and enter `2` as the **Odds ratio.** In this example, you can also try entering two values for **Power**: `0.9` and `0.8` as shown below. [CHECK: As before, due to an error in Stata, the "Reported effect size" must be changed to "Difference".]
+Now we calculate the sample size for Worked Example 10.5. Enter `0.3` as the **Control Proportion**, choose **Odds ratio** as the estimate from the dropdown list and enter `2` as the **Odds ratio.** In this example, you can also try entering two values for **Power**: `0.9` and `0.8` as shown below.
 
 ```{r mod10-OR-1, echo=FALSE, out.width = "66%"}
 knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-OR-1.png"))
@@ -104,7 +98,7 @@ Ho: p2 = p1  versus  Ha: p2 != p1
   +-------------------------------------------------------------------------+
   |   alpha   power       N      N1      N2   delta      p1      p2  oratio |
   |-------------------------------------------------------------------------|
-  |     .05      .9     376     188     188   .1615      .3   .4615       2 |
-  |     .05      .8     282     141     141   .1615      .3   .4615       2 |
+  |     .05      .8     282     141     141       2      .3   .4615       2 |
+  |     .05      .9     376     188     188       2      .3   .4615       2 |
   +-------------------------------------------------------------------------+
 ```

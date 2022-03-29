@@ -272,7 +272,7 @@ Study parameters:
 
         alpha =    0.0500
         power =    0.9000
-        delta =    0.2500  (difference)
+        delta =    1.5000  (relative risk)
            p1 =    0.5000
            p2 =    0.7500
         rrisk =    1.5000
@@ -305,7 +305,7 @@ Study parameters:
 
         alpha =    0.0500
         power =    0.9000
-        delta =    0.1615  (difference)
+        delta =    2.0000  (odds ratio)
            p1 =    0.3000
            p2 =    0.4615
    odds ratio =    2.0000

@@ -4,7 +4,7 @@
 
 ### Producing histograms and boxplots by a second variable
 
-To obtain the histograms in Figure \@ref(fig:mod05-bwt-gender), go to **Graphics > Histogram**. Select `birthweight` as the **Variable** in the **Main** tab. Next go to the **By** tab, tick **Draw subgraphs for unique values of variable** and select `gender` as the **variable** as shown below:
+To obtain the histograms in Figure \@ref(fig:mod05-bwt-gender) using the `Example_5.1.dta` data, go to **Graphics > Histogram**. Select `birthweight` as the **Variable** in the **Main** tab. Next go to the **By** tab, tick **Draw subgraphs for unique values of variable** and select `gender` as the **variable** as shown below:
 
 ```{r hist-by-1, echo=FALSE, out.width = "66%",}
 knitr::include_graphics(here::here("img", "mod05", "stata", "hist-by-1.png"))

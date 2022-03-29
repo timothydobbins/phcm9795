@@ -319,11 +319,9 @@ div.csl-indent {
             <section class="normal" id="section-">
 <div id="stata-resources-2" class="section level1 unnumbered">
 <h1><strong>10</strong> Stata resources</h1>
-<p>To access the Power and sample size menu item, you may need to point your mouse to the down arrow on the Stata menu to scroll down as shown below.</p>
-<p><img src="img/mod10/stata/mod10-menu-1.png" width="66%" /></p>
-<p>You should now be able to find and select Power and sample size in the menu as shown below.</p>
-<p><img src="img/mod10/stata/mod10-menu-1.png" width="66%" /></p>
-<p>The Power and sample-size analysis dialog box appears as shown below.</p>
+<p>The <strong>Power, precision and sample size</strong> menu item is located at the very bottom of the <strong>Statistics</strong> menu. <strong>You may need to scroll down the menu to locate the item.</strong></p>
+<p><img src="img/mod10/stata/mod10-menu-1.png" width="100%" /></p>
+<p>The <strong>Power, precision and sample-size</strong> analysis dialog box appears as shown below.</p>
 <p><img src="img/mod10/stata/mod10-menu-3.png" width="66%" /></p>
 <div id="sample-size-calculation-for-two-independent-samples-t-test" class="section level2" number="10.11">
 <h2><span class="header-section-number">10.11</span> Sample size calculation for two independent samples t-test</h2>
@@ -357,10 +355,10 @@ div.csl-indent {
 </div>
 <div id="sample-size-calculation-with-relative-risk-and-odds-ratio" class="section level2" number="10.14">
 <h2><span class="header-section-number">10.14</span> Sample size calculation with relative risk and odds ratio</h2>
-<p>Using information from Worked Example 10.4, we change <strong>Power</strong> to <code>0.9</code>, enter <code>0.5</code> as the <strong>Control Proportion</strong> and <code>1.5</code> as the <strong>Relative risk</strong> as shown below. [CHECK THE FOLLOWING: Note that when choosing “Relative Risk” in the “Effect size” section, the “Reported effect size” menu automatically changes to Relative risk. Due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
+<p>Using information from Worked Example 10.4, we change <strong>Power</strong> to <code>0.9</code>, enter <code>0.5</code> as the <strong>Control Proportion</strong>. As we are working with a relative risk, choose <strong>Relative risk</strong> as the effect size, and enter <code>1.5</code> as shown below.</p>
 <p><img src="img/mod10/stata/mod10-RR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.4.</p>
-<p>Now we calculate the sample size for Worked Example 10.5. Enter <code>0.3</code> as the <strong>Control Proportion</strong>, choose <strong>Odds ratio</strong> as the estimate from the dropdown list and enter <code>2</code> as the <strong>Odds ratio.</strong> In this example, you can also try entering two values for <strong>Power</strong>: <code>0.9</code> and <code>0.8</code> as shown below. [CHECK: As before, due to an error in Stata, the “Reported effect size” must be changed to “Difference”.]</p>
+<p>Now we calculate the sample size for Worked Example 10.5. Enter <code>0.3</code> as the <strong>Control Proportion</strong>, choose <strong>Odds ratio</strong> as the estimate from the dropdown list and enter <code>2</code> as the <strong>Odds ratio.</strong> In this example, you can also try entering two values for <strong>Power</strong>: <code>0.9</code> and <code>0.8</code> as shown below.</p>
 <p><img src="img/mod10/stata/mod10-OR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
 <pre class="text"><code>Estimated sample sizes for a two-sample proportions test
@@ -370,8 +368,8 @@ Ho: p2 = p1  versus  Ha: p2 != p1
   +-------------------------------------------------------------------------+
   |   alpha   power       N      N1      N2   delta      p1      p2  oratio |
   |-------------------------------------------------------------------------|
-  |     .05      .9     376     188     188   .1615      .3   .4615       2 |
-  |     .05      .8     282     141     141   .1615      .3   .4615       2 |
+  |     .05      .8     282     141     141       2      .3   .4615       2 |
+  |     .05      .9     376     188     188       2      .3   .4615       2 |
   +-------------------------------------------------------------------------+</code></pre>
 
 </div>
