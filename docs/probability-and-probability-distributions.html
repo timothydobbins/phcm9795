@@ -94,7 +94,6 @@ div.csl-indent {
 <li><a href="./">PHCM9795 Foundations of Biostatistics</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Preface</a></li>
 <li class="chapter" data-level="1" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html"><i class="fa fa-check"></i><b>1</b> Introduction to statistics and presenting data</a>
 <ul>
 <li class="chapter" data-level="" data-path="introduction-to-statistics-and-presenting-data.html"><a href="introduction-to-statistics-and-presenting-data.html#learning-objectives"><i class="fa fa-check"></i>Learning objectives</a></li>
@@ -500,8 +499,8 @@ The possible combinations for three coin tosses are as follows:</p>
 </ol>
 <p>We have shown in the examples above how we can calculate the probabilities for small experiments (n=3). Once n becomes large, constructing such probability distribution tables becomes difficult. The general formula for calculating the probability of observing k successes from n trials, where each trial has a probability of success of p is given by:</p>
 <p><span class="math display">\[ P(X=k) = \frac{n!}{k! (n-k)!} \times p^k \times (1-p)^{n-k} \]</span></p>
-<p>where $ n! = n (n-1) (n-2) $.</p>
-<p><strong>Note that this formula is almost never calculated by hand.</strong>Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.</p>
+<p>where <span class="math inline">\(n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1\)</span>.</p>
+<p><strong>Note that this formula is almost never calculated by hand.</strong> Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.</p>
 <div id="mean-and-variance-of-a-binomial-variable" class="section level3" number="2.5.1">
 <h3><span class="header-section-number">2.5.1</span> Mean and variance of a binomial variable</h3>
 <p>The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If <em>X</em> has a binomial distribution, then the mean of <em>X</em> is:</p>
@@ -558,7 +557,7 @@ Using the same binomial probability function as in the previous question,</p>
 </div>
 <div id="normal-distribution" class="section level2" number="2.6">
 <h2><span class="header-section-number">2.6</span> Normal distribution</h2>
-<p>The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures <a href="probability-and-probability-distributions.html#fig:fig-2-1">2.1</a> <a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> and <a href="probability-and-probability-distributions.html#fig:fig-2-2">2.2</a> <a href="references.html#fn4" class="footnote-ref" id="fnref4"><sup>4</sup></a> demonstrate this type of distribution.</p>
+<p>The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures <a href="probability-and-probability-distributions.html#fig:fig-2-1">2.1</a> <a href="references.html#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and <a href="probability-and-probability-distributions.html#fig:fig-2-2">2.2</a> <a href="references.html#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> demonstrate this type of distribution.</p>
 <div class="figure"><span style="display:block;" id="fig:fig-2-1"></span>
 <img src="img/mod02/dbp.png" alt="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey" width="66%" />
 <p class="caption">
@@ -710,10 +709,10 @@ Figure 2.7: Histogram and boxplot of length of stay
 <h3>References</h3>
 <div id="refs" class="references csl-bib-body hanging-indent">
 <div id="ref-bland15" class="csl-entry">
-Bland, Martin. 2015. <em>An <span>Introduction</span> to <span>Medical Statistics</span></em>. Fourth Edition. <span>Oxford, New York</span>: <span>Oxford University Press</span>.
+Bland, Martin. 2015. <em>An <span>Introduction</span> to <span>Medical Statistics</span></em>. 4th ed. <span>Oxford, New York</span>: <span>Oxford University Press</span>.
 </div>
 <div id="ref-kirkwood_sterne01" class="csl-entry">
-Kirkwood, Betty, and Jonathan Sterne. 2001. <em>Essentials of <span>Medical Statistics</span></em>. 2nd edition. <span>Malden, Mass</span>: <span>Wiley-Blackwell</span>.
+Kirkwood, Betty, and Jonathan Sterne. 2001. <em>Essentials of <span>Medical Statistics</span></em>. 2nd ed. <span>Malden, Mass</span>: <span>Wiley-Blackwell</span>.
 </div>
 </div>
             </section>

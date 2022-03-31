@@ -43,47 +43,28 @@ To understand the concepts of statistics, it is important to realise there are t
 Descriptive statistics provide a ‘picture’ of the characteristics of a population. Examples of descriptive statistics based on the population are given below.
 
 #### Births
-These examples on descriptive statistics consider all the births in Australia in 2016 (Australia’s mothers and babies 2016). The Australian Institute of Health and Welfare produce comprehensive reports annually on the characteristics of Australia’s mothers and babies of the most recent year of data from the National Perinatal Data Collection (NPDC).
+These examples on descriptive statistics consider all the births in Australia in 2019 (@australianinstituteofhealthandwelfare21). The Australian Institute of Health and Welfare produce comprehensive reports annually on the characteristics of Australia’s mothers and babies of the most recent year of data from the National Perinatal Data Collection (NPDC).
 
-The headline from the report is “More women are giving birth”, which is then evidenced by the statement: In 2016, 310,247 women gave birth in Australia—an increase of 12% since 2006 (277,440 women). This example shows descriptive statistics that are presented as the actual number of women giving birth in 2016, together with a comparison with 2006. 
+One headline from the report is “Nearly two thirds of mothers were aged between 25 and 34 years (185,958 women in 2019)”, which is accompanied by a figure illustrating the age distribution of mothers in Australia giving birth in 2019. This example shows descriptive statistics that are presented as the actual number of women giving birth in 2019, together with a comparison of age distributions across Australian states. 
 
-Further descriptive statistics provide summary information, about the average (mean) age of women giving birth in 2016 (30.5 years) and the median age (31 years). 
-
->	“Women are giving birth later in life”
-
-The average age of all women who gave birth continues to rise. It was 30.5 in 2016, compared with 29.8 in 2006. The median age was slightly higher, at 31 years in 2016. 
+Further descriptive statistics provide summary information, about the average (mean) age of women giving birth in 2019 (30.8 years) and the proportion of mothers who were Indigenous (4.8%). 
 
 #### Deaths
-In another example, consider characteristics of all the deaths in Australia in a year (Australia’s health 2018). 
+In another example, consider characteristics of all the deaths in Australia in 2020 (@australianbureauofstatistics21). 
 
-> 	“In 2016, there were 158,504 deaths registered in Australia”
+> 	“During the pandemic many countries saw a change in mortality patterns, including COVID-19 becoming a leading cause of death.”
 
-The following table, from the Australia’s health 2018 report, presents the leading causes of death, by sex in 2016 ^[This is Table S3.2.1 in the Australia’s health 2018 report]. The information from the table was also presented as a visualisation / infographic, demonstrating a simplistic, yet valuable way of presenting data and enabling comparison of causes of death for males and females. Noting that the leading cause of death for males in 2016 was coronary heart disease and, dementia and Alzheimer disease for females.
+The report presents the leading causes of death in 2020, comparing the age-standardised rates between 2019 and 2020:
 
-```{r tab-1-1, echo=FALSE, fig.pos="H"}
-tab1_1 <- tibble::tribble(
-  ~Rank,	~`Leading causes of death`,	~Males, ~Females,
-  1, "Coronary heart disease",	10870, 8207,
-  2, "Dementia and Alzheimer disease",	4679,	8447,
-  3, "Cerebrovascular disease",	4239,	6212,
-  4, "Lung cancer",	5023, 3387,
-  5, "COPD",	3903,	3309,
-  NA,	"Total",	81867,	76637
-  )
+- "The top five leading causes of death remained the same as in 2019 (Ischaemic heart disease, Dementia including Alzheimer's disease, Cerebrovascular diseases, Lung cancer and Chronic lower respiratory diseases).
+- The age-standardised death rate decreased for all top five leading causes of death from 2019. 
+- Deaths due to chronic lower respiratory diseases (including emphysema) had the highest proportional rate decrease from 2019 at 17.8%.
+- The reduction in acute respiratory conditions such as pneumonia contributed to a decrease in the top five leading causes of death.
+- All top five leading causes of death are non-communicable diseases (they are not passed from person to person)."
 
+The information was also presented as a visualisation / infographic, demonstrating a simplistic, yet valuable way of presenting data and enabling rates of death for 2019 and 2020.
 
-huxtable::huxtable(tab1_1) %>%
-  set_align(everywhere, c(3,4), ".") %>% 
-  theme_article() %>% 
-  set_width(0.95) %>% 
-  merge_repeated_rows() %>% 
-  set_number_format(everywhere, c(3,4), fmt_pretty()) %>% 
-  set_caption("Leading causes of death, by sex, 2016")
-```
-
-Note: Leading causes of death are based on underlying causes of death and classified using an AIHW-modified version of Becker et al. 2006. Source: AIHW National Mortality Database.
-
-```{r fig1-1, echo=FALSE, out.width = "66%", fig.cap="Leading cause of death, by sex, 2016", fig.pos="H"}
+```{r fig1-1, echo=FALSE, out.width = "100%"}
 knitr::include_graphics(here::here("img", "mod01", "cause-death.png"))
 ```
 

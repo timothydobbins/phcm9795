@@ -8,7 +8,7 @@ mainfont: Roboto
 sansfont: Clancy
 monofontoptions: 'Scale=0.9'
 monofont: Roboto Mono
-bibliography: [book.bib, PHCM9795.bib]
+bibliography: [PHCM9795.bib]
 # url: your book url like https://bookdown.org/yihui/bookdown
 # cover-image: path to the social sharing image like images/cover.jpg
 link-citations: yes
@@ -22,7 +22,3 @@ library(here)
 library(knitr)
 library(huxtable)
 ```
-
-# Preface {-}
-
-Welcome to **PHCM9795: Foundations of Biostatistics**.

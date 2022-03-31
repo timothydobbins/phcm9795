@@ -215,9 +215,9 @@ We have shown in the examples above how we can calculate the probabilities for s
 
 $$ P(X=k) = \frac{n!}{k! (n-k)!} \times p^k \times (1-p)^{n-k} $$
 
-where $ n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1$.
+where $n! = n \times (n-1) \times (n-2) \times \dots \times 2 \times 1$.
 
-**Note that this formula is almost never calculated by hand.**Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.
+**Note that this formula is almost never calculated by hand.** Instructions for calculating binomial probabilities are given in the Stata notes at the end of this Module.
 
 ### Mean and variance of a binomial variable
 The properties of the binomial distribution are useful in the statistical modelling of prevalence data. If *X* has a binomial distribution, then the mean of *X* is:
