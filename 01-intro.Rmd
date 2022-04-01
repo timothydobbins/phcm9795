@@ -14,15 +14,15 @@ By the end of this module, you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01; Chapters 2 and 3.
+@kirkwood_sterne01; Chapters 2 and 3. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=624728)
 
-@bland15; Chapter 4.
+@bland15; Chapter 4. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=5891730)
 
 @acock10; Chapter 5.
 
-Graphics and statistics for cardiology: designing effective tables for presentation and publication, @boers18
+Graphics and statistics for cardiology: designing effective tables for presentation and publication, @boers18 [[UNSW Library Link]](https://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://dx.doi.org/10.1136/heartjnl-2017-311581)
 
-Guidelines for Reporting of Figures and Tables for Clinical Research in Urology, @vickers_etal20
+Guidelines for Reporting of Figures and Tables for Clinical Research in Urology, @vickers_etal20 [[UNSW Library Link]](https://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=http://dx.doi.org/10.1016/j.eururo.2020.04.048)
 
 ## An introduction to statistics
 The dictionary of statistics (Upton and Cook, 2008) defines statistics simply as: “The science of collecting, displaying, and analysing data.”

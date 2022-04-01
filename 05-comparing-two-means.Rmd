@@ -14,13 +14,11 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01; Sections 7.1 to 7.5.
+@kirkwood_sterne01; Sections 7.1 to 7.5. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=624728)
 
-@bland15; Section 10.3.
+@bland15; Section 10.3. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=5891730)
 
 @acock10; Section 7.7, 7.8.
-
-@juul_frydenberg14; Section 11.5.
 
 ## Introduction
 

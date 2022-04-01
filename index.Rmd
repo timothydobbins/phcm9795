@@ -9,10 +9,7 @@ sansfont: Clancy
 monofontoptions: 'Scale=0.9'
 monofont: Roboto Mono
 bibliography: [PHCM9795.bib]
-# url: your book url like https://bookdown.org/yihui/bookdown
-# cover-image: path to the social sharing image like images/cover.jpg
 link-citations: yes
-github-repo: rstudio/bookdown-demo
 ---
 
 ```{r setup, include=FALSE}

@@ -11,12 +11,11 @@ By the end of this module you will be able to:
 
 ## Readings {-}
 
-@kirkwood_sterne01; Chapter 35.
+@kirkwood_sterne01; Chapter 35. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=624728)
 
-@bland15; Chapter 18.
+@bland15; Chapter 18. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=5891730)
 
-### Further readings (for interest) {-}
-@woodward13; Chapter 8.
+For interest: @woodward13; Chapter 8. [[UNSW Library Link]](http://er1.library.unsw.edu.au/er/cgi-bin/eraccess.cgi?url=https://ebookcentral.proquest.com/lib/unsw/detail.action?docID=1575748)
 
 ## Introduction
 Determining the appropriate sample size (the number of participants in a study) is one of the most critical issues when designing a research study. A common question when planning a project is "How many participants do I need?" The sample size needs to be large enough to ensure that the results can be generalised to the population and will be accurate, but small enough for the study question to be answered with the resources available. In general, the larger the sample size, the more precise the study results will be.
