@@ -138,7 +138,7 @@ div.csl-indent {
 <li class="chapter" data-level="2.13" data-path="stata-notes.html"><a href="stata-notes.html#checking-your-data-for-errors-in-stata"><i class="fa fa-check"></i><b>2.13</b> Checking your data for errors in Stata<span></span></a></li>
 <li class="chapter" data-level="2.14" data-path="stata-notes.html"><a href="stata-notes.html#overlaying-a-normal-curve-on-a-histogram"><i class="fa fa-check"></i><b>2.14</b> Overlaying a Normal curve on a Histogram<span></span></a></li>
 <li class="chapter" data-level="2.15" data-path="stata-notes.html"><a href="stata-notes.html#descriptive-statistics-for-checking-normality"><i class="fa fa-check"></i><b>2.15</b> Descriptive statistics for checking normality<span></span></a></li>
-<li class="chapter" data-level="2.16" data-path="stata-notes.html"><a href="stata-notes.html#importing-excel-data-into-stata"><i class="fa fa-check"></i><b>2.16</b> Importing Excel data into Stata<span></span></a></li>
+<li class="chapter" data-level="2.16" data-path="stata-notes.html"><a href="stata-notes.html#import-excel"><i class="fa fa-check"></i><b>2.16</b> Importing Excel data into Stata<span></span></a></li>
 <li class="chapter" data-level="2.17" data-path="stata-notes.html"><a href="stata-notes.html#generating-new-variables"><i class="fa fa-check"></i><b>2.17</b> Generating new variables<span></span></a></li>
 <li class="chapter" data-level="2.18" data-path="stata-notes.html"><a href="stata-notes.html#summarising-data-by-another-variable"><i class="fa fa-check"></i><b>2.18</b> Summarising data by another variable<span></span></a></li>
 <li class="chapter" data-level="2.19" data-path="stata-notes.html"><a href="stata-notes.html#recoding-data"><i class="fa fa-check"></i><b>2.19</b> Recoding data<span></span></a></li>
@@ -348,15 +348,25 @@ div.csl-indent {
 </div>
 <div id="activity-2.4" class="section level3 unnumbered hasAnchor">
 <h3>Activity 2.4<a href="learning-activities-1.html#activity-2.4" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Using the health survey data (<code>health-survey.xlsx</code>) described in the Stata notes of this module, create a new variable, BMI, which is equal to a person’s weight (in kg) divided by their height (in metres) squared (i.e. <span class="math inline">\(\text{BMI} = \frac{\text{weight (kg)}}{\text{[height (m)]}^2}\)</span>. Categorise BMI using the WHO categories provided in Section <a href="stata-notes.html#recoding-data">2.19</a>. Create a two-way table to display the distribution of BMI categories by sex (sex: 1 = respondent identifies as male; 2 = respondent identifies as female). Does there appear to be a difference in categorised BMI between males and females?</p>
+<p>Using the health survey data (<code>Activity_S2.4.xlsx</code>) described in the Stata notes of this module (Section <a href="stata-notes.html#import-excel">2.16</a>), create a new variable, BMI, which is equal to a person’s weight (in kg) divided by their height (in metres) squared (i.e. <span class="math inline">\(\text{BMI} = \frac{\text{weight (kg)}}{\text{[height (m)]}^2}\)</span>. Categorise BMI using the WHO categories provided in Section <a href="stata-notes.html#recoding-data">2.19</a>. Create a two-way table to display the distribution of BMI categories by sex (sex: 1 = respondent identifies as male; 2 = respondent identifies as female). Does there appear to be a difference in categorised BMI between males and females?</p>
 </div>
 <div id="activity-2.5" class="section level3 unnumbered hasAnchor">
 <h3>Activity 2.5<a href="learning-activities-1.html#activity-2.5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The data in the file <code>LengthOfStay.dta</code> (available on Moodle) has information about birth weight and length of stay collected from 117 babies admitted consecutively to a hospital for surgery. Complete the following table to make a decision about whether each of the variables is symmetric, and which measures of the centre and spread of the data should be reported.</p>
+<p>The data in the file <code>Activity_S2.5.dta</code> (available on Moodle) has information about birth weight and length of stay collected from 117 babies admitted consecutively to a hospital for surgery. For each variable:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Create a histogram to inspect the distribution of the variable;</p></li>
+<li><p>Complete the following summary statistics for each variable:</p>
+<ul>
+<li>mean and median;</li>
+<li>standard deviation and interquartile range;</li>
+<li>skewness and kurtosis.</li>
+</ul></li>
+</ol>
+<p>Make a decision about whether each variable is symmetric or not, and which measure of central tendency and variability should be reported.</p>
 </div>
 <div id="activity-2.6" class="section level3 unnumbered hasAnchor">
 <h3>Activity 2.6<a href="learning-activities-1.html#activity-2.6" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>The data set of hospital stay data for 1323 hypothetical patients is available on Moodle in csv format (<code>activity2.5.csv</code>). Import this dataset into Stata. There are two variables in this dataset:</p>
+<p>The data set of hospital stay data for 1323 hypothetical patients is available on Moodle in csv format (<code>Activity2.6.csv</code>). Import this dataset into Stata. There are two variables in this dataset:</p>
 <ul>
 <li>female: female=1; male=0</li>
 <li>los: length of stay in days</li>

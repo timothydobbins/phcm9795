@@ -28,14 +28,23 @@ b)	What is the probability that a man will weigh more than 75 kg but less than 9
 
 ### Activity 2.4 {-}
 
-Using the health survey data (`health-survey.xlsx`) described in the Stata notes of this module, create a new variable, BMI, which is equal to a person's weight (in kg) divided by their height (in metres) squared (i.e. $\text{BMI} = \frac{\text{weight (kg)}}{\text{[height (m)]}^2}$. Categorise BMI using the WHO categories provided in Section \@ref(recoding-data). Create a two-way table to display the distribution of BMI categories by sex (sex: 1 = respondent identifies as male; 2 = respondent identifies as female). Does there appear to be a difference in categorised BMI between males and females?
+Using the health survey data (`Activity_S2.4.xlsx`) described in the Stata notes of this module (Section \@ref(import-excel)), create a new variable, BMI, which is equal to a person's weight (in kg) divided by their height (in metres) squared (i.e. $\text{BMI} = \frac{\text{weight (kg)}}{\text{[height (m)]}^2}$. Categorise BMI using the WHO categories provided in Section \@ref(recoding-data). Create a two-way table to display the distribution of BMI categories by sex (sex: 1 = respondent identifies as male; 2 = respondent identifies as female). Does there appear to be a difference in categorised BMI between males and females?
 
 ### Activity 2.5 {-}
 
-The data in the file `LengthOfStay.dta` (available on Moodle) has information about birth weight and length of stay collected from 117 babies admitted consecutively to a hospital for surgery. Complete the following table to make a decision about whether each of the variables is symmetric, and which measures of the centre and spread of the data should be reported.
+The data in the file `Activity_S2.5.dta` (available on Moodle) has information about birth weight and length of stay collected from 117 babies admitted consecutively to a hospital for surgery. For each variable:
+
+a.  Create a histogram to inspect the distribution of the variable;
+
+b.  Complete the following summary statistics for each variable:
+    - mean and median;
+    - standard deviation and interquartile range;
+    - skewness and kurtosis.
+
+Make a decision about whether each variable is symmetric or not, and which measure of central tendency and variability should be reported.
 
 ### Activity 2.6 {-}
-The data set of hospital stay data for 1323 hypothetical patients is available on Moodle in csv format (`activity2.5.csv`). Import this dataset into Stata. There are two variables in this dataset:
+The data set of hospital stay data for 1323 hypothetical patients is available on Moodle in csv format (`Activity2.6.csv`). Import this dataset into Stata. There are two variables in this dataset:
 
 - female: female=1; male=0
 - los: length of stay in days
