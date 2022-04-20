@@ -557,12 +557,18 @@ Using the same binomial probability function as in the previous question,</p>
 <div id="normal-distribution" class="section level2 hasAnchor" number="2.6">
 <h2><span class="header-section-number">2.6</span> Normal distribution<a href="probability-and-probability-distributions.html#normal-distribution" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures <a href="probability-and-probability-distributions.html#fig:fig-2-1">2.1</a> <a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> and <a href="probability-and-probability-distributions.html#fig:fig-2-2">2.2</a> <a href="#fn3" class="footnote-ref" id="fnref3"><sup>3</sup></a> demonstrate this type of distribution.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;dbp.png&quot;)): It is
+## highly recommended to use relative paths for images. You had absolute paths: &quot;/
+## Users/td/Documents/Repos/phcm9795/img/mod02/dbp.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-1"></span>
 <img src="img/mod02/dbp.png" alt="Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey" width="66%" />
 <p class="caption">
 Figure 2.1: Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey
 </p>
 </div>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;heights.png&quot;)):
+## It is highly recommended to use relative paths for images. You had absolute
+## paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/heights.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-2"></span>
 <img src="img/mod02/heights.png" alt="Distribution of male and female heights" width="66%" />
 <p class="caption">
@@ -573,6 +579,9 @@ Figure 2.2: Distribution of male and female heights
 <p>There are two reasons for the importance of the Normal distribution in biostatistics (Kirkwood and Sterne, 2003). The first is that many variables can be modelled reasonably well using the Normal distribution. Even if the observed data were not Normally distributed, it can often be made reasonably Normal after applying some transformation of the data. The second (and possible most important) reason, is based on the central limit theorem and will be discussed in Module 3.</p>
 <p>The Normal distribution is characterised by two parameters: the mean (<span class="math inline">\(\mu\)</span>) and the standard deviation (<span class="math inline">\(\sigma\)</span>). The mean defines where the middle of the Normal distribution is located, and the standard deviation defines how wide the tails of the distribution are.</p>
 <p>For a Normal distribution, about 68% of the observations lie between <span class="math inline">\(- \sigma\)</span> and <span class="math inline">\(\sigma\)</span> of the mean; 95% of the observations lie between <span class="math inline">\(−1.96 \times \sigma\)</span> and <span class="math inline">\(1.96 \times \sigma\)</span> from the mean; and almost all the observations (99.7%) lie between <span class="math inline">\(-3 \times \sigma\)</span> and <span class="math inline">\(3 \times \sigma\)</span> (Figure <a href="probability-and-probability-distributions.html#fig:fig-2-3">2.3</a>). Also note that the mean is the same as the median, as the curve is symmetric about its mean.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;normal-
+## curve.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/normal-curve.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-3"></span>
 <img src="img/mod02/normal-curve.png" alt="Characteristics of a Normal distribution" width="66%" />
 <p class="caption">
@@ -596,6 +605,10 @@ Figure 2.3: Characteristics of a Normal distribution
 Thus, a blood pressure of 90 mmHg corresponds to a z-score of 1.1, or a value 1.1 <span class="math inline">\(\times \sigma\)</span> above the mean weight of the population.</p>
 <p>Using a table of Z-scores (Appendix Table 1), we find the probability that a person has a diastolic blood pressure of 90 mmHg or more as P(Z ≥ 1.1) = 0.136.</p>
 <p>An extract from Appendix Table 1 is shown in Figure <a href="probability-and-probability-distributions.html#fig:fig-2-4">2.4</a> to demonstrate how to find the probability from the look-up table.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;z-table-
+## extract.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/z-table-
+## extract.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-4"></span>
 <img src="img/mod02/z-table-extract.png" alt="Obtaining a probability from a table of Standard Normal distribution" width="66%" />
 <p class="caption">
@@ -603,6 +616,10 @@ Figure 2.4: Obtaining a probability from a table of Standard Normal distribution
 </p>
 </div>
 <p>Figure <a href="probability-and-probability-distributions.html#fig:fig-2-5">2.5</a> shows the probability of a diastolic blood pressure of 90 mmHg or more in the population for a Z-score of greater than 1.1 on a Standard Normal distribution.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;z-dist-
+## shaded.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/z-dist-
+## shaded.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-5"></span>
 <img src="img/mod02/z-dist-shaded.png" alt="Area under the Standard Normal curve (as probability) for Z &gt; 1.1" width="66%" />
 <p class="caption">
@@ -644,6 +661,10 @@ Figure 2.5: Area under the Standard Normal curve (as probability) for Z &gt; 1.1
 
 <p>For your information: There are formal tests in Stata that test for Normality. These tests are beyond the scope of this course and will be discussed in the Advanced course.</p>
 <p>The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure <a href="probability-and-probability-distributions.html#fig:fig-2-6">2.6</a>) for symmetry and outliers at either end of the distribution.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;weights-hist-
+## boxplot.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/weights-hist-
+## boxplot.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-6"></span>
 <img src="img/mod02/weights-hist-boxplot.png" alt="Histogram and boxplot of weight of 30 students attending a gym" width="90%" />
 <p class="caption">
@@ -673,6 +694,10 @@ Figure 2.6: Histogram and boxplot of weight of 30 students attending a gym
 <p>When there are some very large values, the distribution is said to be positively skewed.This often occurs when measuring variables related to time, such as days of hospital stay, where most patients have short stays (say 1 - 5 days) but a few patients with serious medical conditions have very long lengths of hospital stay (say 20 - 100 days).</p>
 <p>In practice, most parametric summary statistics are quite robust to minor deviations from Normality and non-parametric statistical methods are only required when the sample size is small and/or the data are obviously skewed with some influential outliers.</p>
 <p>When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure <a href="probability-and-probability-distributions.html#fig:fig-2-7">2.7</a>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;los-hist-
+## boxplot.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod02/los-hist-
+## boxplot.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:fig-2-7"></span>
 <img src="img/mod02/los-hist-boxplot.png" alt="Histogram and boxplot of length of stay" width="90%" />
 <p class="caption">

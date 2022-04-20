@@ -318,14 +318,30 @@ div.csl-indent {
 <div id="stata-resources-2" class="section level1 unnumbered hasAnchor">
 <h1><strong>10</strong> Stata resources<a href="stata-resources-2.html#stata-resources-2" class="anchor-section" aria-label="Anchor link to header"></a></h1>
 <p>The <strong>Power, precision and sample size</strong> menu item is located at the very bottom of the <strong>Statistics</strong> menu. <strong>You may need to scroll down the menu to locate the item.</strong></p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## menu-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## menu-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-menu-1.png" width="100%" /></p>
 <p>The <strong>Power, precision and sample-size</strong> analysis dialog box appears as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## menu-3.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## menu-3.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-menu-3.png" width="66%" /></p>
 <div id="sample-size-calculation-for-two-independent-samples-t-test" class="section level2 hasAnchor" number="10.11">
 <h2><span class="header-section-number">10.11</span> Sample size calculation for two independent samples t-test<a href="stata-resources-2.html#sample-size-calculation-for-two-independent-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To do the problem discussed in Worked Example 10.2, you can expand the <strong>Means</strong> item under <strong>Population parameter</strong> on the left-hand-side of the <strong>Power and sample-size analysis</strong> dialog box, then choose <strong>Two independent</strong> samples. On the right-hand-side of the dialog box, choose <strong>Test comparing two independent means</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## twomeans-1.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
+## mod10-twomeans-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-twomeans-1.png" width="66%" /></p>
 <p>The <strong>power twomeans</strong> dialog box will appear. Based on the information in Worked Example 10.2, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong>. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is <code>90</code> mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg. We use equal numbers in each group (allocation ratio of <code>1</code> which is the default) because that would give us the smallest total sample size required.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## twomeans-2.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
+## mod10-twomeans-2.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-twomeans-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.1.</p>
 <p>[Command: <code>power twomeans 90 95, sd(25) power(0.9)</code>]</p>
@@ -333,8 +349,16 @@ div.csl-indent {
 <div id="sample-size-calculation-for-paired-samples-t-test" class="section level2 hasAnchor" number="10.12">
 <h2><span class="header-section-number">10.12</span> Sample size calculation for paired samples t-test<a href="stata-resources-2.html#sample-size-calculation-for-paired-samples-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>For a paired sample t-test, go back to the <strong>Power and sample-size analysis</strong> dialog box and click on <strong>Two paired samples</strong> under <strong>Means</strong> on the left-hand-side, then choose <strong>Paired test comparing two correlated means, specify correlation between paired observations</strong> as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## pairedmeans-1.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
+## mod10-pairedmeans-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-pairedmeans-1.png" width="66%" /></p>
 <p>In the <strong>power pairedmeans</strong> dialog box, change <strong>Power</strong> to <code>0.9</code> and enter <code>25</code> as the <strong>Common standard deviation</strong> as shown below. For the means, we can assume that <strong>Control</strong> mean systolic blood pressure is 90 mmHg and the the <strong>Experimental</strong> mean systolic blood pressure is 5 mmHg higher at <code>95</code> mmHg as we had for the independent samples.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## pairedmeans-2.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
+## mod10-pairedmeans-2.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-pairedmeans-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to produce Output 10.2.</p>
 <p>[Command: <code>power pairedmeans 90 95, corr(0) power(0.9) sd(25)</code>]</p>
@@ -342,21 +366,41 @@ div.csl-indent {
 <div id="sample-size-calculation-for-difference-between-two-independent-proportions" class="section level2 hasAnchor" number="10.13">
 <h2><span class="header-section-number">10.13</span> Sample size calculation for difference between two independent proportions<a href="stata-resources-2.html#sample-size-calculation-for-difference-between-two-independent-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To do the problem discussed in Worked Example 10.3, you can expand the <strong>Proportions</strong> item under <strong>Population parameter</strong> on the left-hand-side of the Power and sample-size analysis dialog box, then choose <strong>Two independent samples</strong>. On the right-hand-side of the dialog box, choose <strong>Chi-squared test comparing two independent proportions</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## twoprop-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## twoprop-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-twoprop-1.png" width="66%" /></p>
 <p>The <strong>power twoproportions</strong> dialog box will appear. Based on the information in Worked Example 10.3, check the <strong>Power</strong> is <code>0.8</code> and <strong>Significance level</strong> is <code>0.05</code> (these are the default values), then enter <code>0.35</code> and <code>0.2</code> as the <strong>Proportions</strong> as shown below. As with the two independent samples example, we can assume equal numbers in each group (<strong>Allocation ratio</strong> of <code>1</code> which is the default).</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## twoprop-2.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## twoprop-2.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-twoprop-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.3.</p>
 <p>[Command: <code>power twoproportions .35 .2, test(chi2)</code>]</p>
 <p>Note: It doesn’t matter if you swap the proportions for the <strong>Control</strong> and <strong>Experimental</strong> group, i.e. the command <code>power twoproportions .2 .35 , test(chi2)</code> gives the same results.</p>
 <p>If you had difference in proportion, relative risk or odds ratio for the sample size calculation, you can choose them from the drop-down list under Experimental as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## twoprop-3.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## twoprop-3.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-twoprop-3.png" width="66%" /></p>
 </div>
 <div id="sample-size-calculation-with-relative-risk-and-odds-ratio" class="section level2 hasAnchor" number="10.14">
 <h2><span class="header-section-number">10.14</span> Sample size calculation with relative risk and odds ratio<a href="stata-resources-2.html#sample-size-calculation-with-relative-risk-and-odds-ratio" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Using information from Worked Example 10.4, we change <strong>Power</strong> to <code>0.9</code>, enter <code>0.5</code> as the <strong>Control Proportion</strong>. As we are working with a relative risk, choose <strong>Relative risk</strong> as the effect size, and enter <code>1.5</code> as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## RR-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## RR-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-RR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 10.4.</p>
 <p>Now we calculate the sample size for Worked Example 10.5. Enter <code>0.3</code> as the <strong>Control Proportion</strong>, choose <strong>Odds ratio</strong> as the estimate from the dropdown list and enter <code>2</code> as the <strong>Odds ratio.</strong> In this example, you can also try entering two values for <strong>Power</strong>: <code>0.9</code> and <code>0.8</code> as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod10&quot;, &quot;stata&quot;, &quot;mod10-
+## OR-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
+## OR-1.png&quot;</code></pre>
 <p><img src="img/mod10/stata/mod10-OR-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output below.</p>
 <pre class="text"><code>Estimated sample sizes for a two-sample proportions test

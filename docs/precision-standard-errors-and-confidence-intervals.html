@@ -415,6 +415,10 @@ We interpret this confidence interval as: we are 95% confident that the true mea
 <h3><span class="header-section-number">3.5.2</span> The t-distribution and when should I use it?<a href="precision-standard-errors-and-confidence-intervals.html#the-t-distribution-and-when-should-i-use-it" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The population standard deviation (<span class="math inline">\(\sigma\)</span>) is required for calculation of the standard error. Often, <span class="math inline">\(\sigma\)</span> is not known and the sample standard deviation (<span class="math inline">\(s\)</span>) is used to estimate it. It is known, however, that the sample standard deviation of a normally distributed variable is a downward-biased estimator of <span class="math inline">\(\sigma\)</span>, particularly when the sample size is small.</p>
 <p>Someone by the pseudonym of Student came up with the Student’s t distribution with (<span class="math inline">\(n-1\)</span>) degrees of freedom to account for this bias. It looks very much like the standardised normal distribution, only that it has fatter tails (Figure <a href="precision-standard-errors-and-confidence-intervals.html#fig:mod03-z-t-dist">3.1</a>. As the degrees of freedom increase (i.e. as <span class="math inline">\(n\)</span> increases), the t-distribution gradually approaches the standard normal distribution. With a sufficiently large sample size, the Student’s t-distribution closely approximates the standardised normal distribution.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod03&quot;, &quot;mod03-z-t-
+## dist.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/Repos/phcm9795/img/mod03/mod03-z-t-
+## dist.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod03-z-t-dist"></span>
 <img src="img/mod03/mod03-z-t-dist.png" alt="The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom" width="100%" />
 <p class="caption">
