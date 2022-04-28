@@ -267,13 +267,7 @@ The report presents the leading causes of death in 2020, comparing the age-stand
 
 The information was also presented as a visualisation / infographic, demonstrating a simplistic, yet valuable way of presenting data and enabling rates of death for 2019 and 2020.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "cause-
-## death.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/cause-death.png"
-\end{verbatim}
-
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/cause-death}
+\includegraphics[width=1\linewidth]{img/mod01/cause-death}
 
 \hypertarget{inferential-statistics}{%
 \subsection{Inferential statistics}\label{inferential-statistics}}
@@ -290,15 +284,8 @@ At 30 June 2015: There were 36,134 prisoners in Australian prisons, an increase 
 
 Characteristics (sex, age group and Indigenous status) of the sample of prisoners from the NPHDC are given in the following table. We can use this information to make inferences about the whole population of prisoners that the sample was drawn from (The health of Australia's prisoners 2015).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "prisoner-
-## health.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-
-## health.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-health} \caption{Characteristics of the sample of prisoners from the NPHDC}\label{fig:fig1-2}
+\includegraphics[width=0.66\linewidth]{img/mod01/prisoner-health} \caption{Characteristics of the sample of prisoners from the NPHDC}\label{fig:fig1-2}
 \end{figure}
 
 \hypertarget{variables}{%
@@ -790,15 +777,8 @@ We might also consider a table containing further pieces of information. The tab
 
 Can you see any issues with the presentation of this table?
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "prisoner-
-## education.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-
-## education.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/prisoner-education} \caption{Highest level of completed education in prison entrants and the general community}\label{fig:fig-prison-education}
+\includegraphics[width=0.66\linewidth]{img/mod01/prisoner-education} \caption{Highest level of completed education in prison entrants and the general community}\label{fig:fig-prison-education}
 \end{figure}
 
 Source: Australian Institute of Health and Welfare 2015. The health of Australia's prisoners 2015. Cat. no. PHE 207. Canberra: AIHW.
@@ -873,53 +853,26 @@ Given the different possible formats of tables and their complexity, some furthe
 
 Using the PBC data from the Introduction to Stata exercise, we can present the distribution of Stage of Disease graphically using a bar graph. Bar graphs, which are suitable for plotting discrete or categorical variables, are defined by the fact that the bars do not touch.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "pbc-bar.png")):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar} \caption{Bar graph of stage of disease from PBC study}\label{fig:fig-1-1}
+\includegraphics[width=0.75\linewidth]{img/mod01/pbc-bar} \caption{Bar graph of stage of disease from PBC study}\label{fig:fig-1-1}
 \end{figure}
 
 Information from more than one variable can be presented as clustered or multiple bar chart (bars side-by-side) (Figure \ref{fig:fig-1-2}). This type of graph is useful when examining changes in the categories separately, but also comparing the grouping variable between the main bar variable. Here we can see that Stage 3 and Stage 4 disease is the most common for both males and females, but there are many more females within each stage of disease.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-
-## sex.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-
-## sex.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex} \caption{Bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-2}
+\includegraphics[width=0.75\linewidth]{img/mod01/pbc-bar-stage-sex} \caption{Bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-2}
 \end{figure}
 
 An alternative bar graph is a stacked or composite bar graph, which retains the overall height for each category, but differentiates the bars by another variable (Figure \ref{fig:fig-1-3}).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-
-## sex-stacked.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-
-## stage-sex-stacked.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked} \caption{Stacked bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-3}
+\includegraphics[width=0.75\linewidth]{img/mod01/pbc-bar-stage-sex-stacked} \caption{Stacked bar graph of stage of disease by sex from PBC study}\label{fig:fig-1-3}
 \end{figure}
 
 Finally, a stacked relative bar chart (Figure \ref{fig:fig-1-4}) displays the proportion of grouping variable for each bar, where each overall bar represents 100\%. These graphs allow the reader to compare the proportions between categories. We can easily see from Figure \ref{fig:fig-1-4} that the distribution of sex is similar across each stage of disease.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "pbc-bar-stage-
-## sex-stacked-relative.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/
-## pbc-bar-stage-sex-stacked-relative.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/pbc-bar-stage-sex-stacked-relative} \caption{Relative frequency of sex within stage of disease from PBC study}\label{fig:fig-1-4}
+\includegraphics[width=0.75\linewidth]{img/mod01/pbc-bar-stage-sex-stacked-relative} \caption{Relative frequency of sex within stage of disease from PBC study}\label{fig:fig-1-4}
 \end{figure}
 
 \hypertarget{line-graphs}{%
@@ -929,15 +882,8 @@ A line graph is effective to illustrate trends over time (e.g.~change over sever
 
 Cancer incidence is the number of new cases of cancer diagnosed in a population in a given time period. A useful comparison with the incidence rate is the mortality rate, revealing information about the deaths from cancer in the same period. Figure \ref{fig:fig-1-5} shows the prostate cancer trend in the NSW male population in the period 1972-2014, specifically the age-standardised incidence and mortality rate per 100,000.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "line-graph-
-## prostate-cancer.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/
-## line-graph-prostate-cancer.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/line-graph-prostate-cancer} \caption{Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014}\label{fig:fig-1-5}
+\includegraphics[width=0.66\linewidth]{img/mod01/line-graph-prostate-cancer} \caption{Prostate cancer age-standardised incidence and mortality rates (per 100,000), NSW, 1972-2014}\label{fig:fig-1-5}
 \end{figure}
 
 Source: The Cancer Institute NSW (2018) Cancer statistics NSW. \url{https://www.cancer.nsw.gov.au/cancer-statistics-nsw} (Accessed: 24 Jan 2019).
@@ -1179,15 +1125,8 @@ The skewness of a distribution is defined by the location of the longer tail, no
 
 Figure \ref{fig:fig-1-6} presents two histograms from the PBC data from the Introduction to Stata exercise: for age and serum bilirubin. We can see that the distribution for age is roughly symmetric, while the distribution for serum bilirubin is highly positively skewed (or skewed to the right).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "hist-symmetric-
-## skewed.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/hist-
-## symmetric-skewed.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/hist-symmetric-skewed} \caption{Histogram of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-6}
+\includegraphics[width=1\linewidth]{img/mod01/hist-symmetric-skewed} \caption{Histogram of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-6}
 \end{figure}
 
 \hypertarget{boxplots}{%
@@ -1219,15 +1158,8 @@ If the data are symmetric, the line across the box (the median value) will be in
 
 Figure \ref{fig:fig-1-7} presents two boxplots from the PBC data: for age and serum bilirubin. We can see that the boxplot for age has roughly equal tails, and the median (the horizontal line) lies roughly in the middle of the interquartile range (the shaded box). It would be reasonable to assume that age follows a symmetric distribution from this plot. The boxplot for serum bilirubin shows a much longer upper tail, and a median much closer to the bottom of the shaded box than the middle. The boxplot also shows a number of points above the 75th percentile plus 1.5 × IQR. As the upper tail is longer than the lower tail, this distribution is positively skewed.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "boxp-symmetric-
-## skewed.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/boxp-
-## symmetric-skewed.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/boxp-symmetric-skewed} \caption{Box plot of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-7}
+\includegraphics[width=1\linewidth]{img/mod01/boxp-symmetric-skewed} \caption{Box plot of age (left) and serum bilirubin (right) from PBC study data}\label{fig:fig-1-7}
 \end{figure}
 
 \hypertarget{how-to-report-summary-statistics}{%
@@ -1318,25 +1250,11 @@ If you are using MacOS, open Stata from the Applications folder. Note that while
 
 When you first open Stata, it will look something like the following.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "simple-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## simple-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/simple-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/simple-01}
 
 Each Stata session has a number of windows, which we will discuss later. For now, look in the top row of icons and find the icons that look like two grids: one with a pencil, and one with a magnifying glass: \includegraphics{img/mod01/stata/data-browser-icons.png}. Click the left icon, the one with the pencil. The following window will appear.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "simple-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## simple-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/simple-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/simple-02}
 
 This window is known as the \textbf{Data Editor}, and is where data can be entered or changed. Enter the following six ages into Stata, starting at the top-left cell, by typing each number and then hitting Enter.
 
@@ -1346,14 +1264,7 @@ This window is known as the \textbf{Data Editor}, and is where data can be enter
 
 If you make a mistake, simply click the incorrect cell, and enter the correct value. Your screen should look like this:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "simple-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## simple-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/simple-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/simple-03}
 
 There are two things to note here:
 
@@ -1370,27 +1281,13 @@ Close the \textbf{Data Editor} window to return to the main Stata window. You wi
 
 Let's rename our variable from \texttt{var1} to \texttt{age}. There are a few ways you can do this in Stata, but one of the most convenient is to use the \textbf{Variables Manager} which can be accessed via \textbf{Data \textgreater{} Variables Manager}:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "variables-manager-01.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/
-## stata/variables-manager-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/variables-manager-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/variables-manager-01}
 
 The \textbf{Variables Manager} is where you can change many variable properties, such as variable names or apply meaningful variable labels. Each variable is listed on a separate row, with aspects about each variable listed in the columns. To change the variable name, click \texttt{var1} in the \textbf{Name} column. Notice that information about that variable appears to the right of the window, in the \textbf{Variable properties} section.
 
 In the \textbf{Name} section within \textbf{Variable properties}, click \texttt{var1} and replace it with \texttt{age}. Click \textbf{Apply} and notice that the variable's name has been changed:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "variables-manager-02.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/
-## stata/variables-manager-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/variables-manager-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/variables-manager-02}
 
 Close the \textbf{Variables manager} window.
 
@@ -1402,25 +1299,11 @@ Some important points about variable names in Stata:
 
 Now that we have entered our six ages, let's calculate the mean age. Choose \textbf{Statistics \textgreater{} Summaries, tables and tests \textgreater{} Summary and descriptive statistics \textgreater{} Summary statistics}. The \textbf{summarize} dialog box will appear. From the \textbf{Variables} drop-down box, select \texttt{age} as below:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "simple-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## simple-05.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/simple-05}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/simple-05}
 
 Click \textbf{OK}, and the main Stata screen will appear as below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "simple-06.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## simple-06.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/simple-06}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/simple-06}
 
 The final text in the main window provides a summary of \texttt{age}: there are 6 observations, with a mean age of 24.2 years, a standard deviation of 3.49 years, a minimum of 20 and a maximum of 29 years.
 
@@ -1640,14 +1523,7 @@ As we saw earlier, Stata has specific rules about variable names. Variable label
 
 To apply a variable label, open the Variables Manager: \textbf{Data \textgreater{} Variables Manager}. Here we can click the variable to be labelled, and enter the new variable label and click \textbf{Apply}:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "label-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## label-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/label-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/label-01}
 
 The variable label will now be used in place of the variable name in most output:
 
@@ -1679,36 +1555,15 @@ The variable label will now be used in place of the variable name in most output
 
 As we saw in Part 1, continuous variables can be summarised using \textbf{Statistics \textgreater{} Summaries, tables and tests \textgreater{} Summary and descriptive statistics \textgreater{} Summary statistics}. There are three continuous variables that we would like to summarise: age, AST and serum bilirubin. Each of these can be listed in the \textbf{summarize} dialog box, as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "summ-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## summ-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/summ-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/summ-01}
 
 By default, the summarize command calculates the mean, standard deviation, minimum and maximum. We may be interested in obtaining the median and interquartile ranges, so we select the \textbf{Display additional statistics} option:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "summ-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## summ-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/summ-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/summ-02}
 
 Summary statistics are produced for each of the three variables. We will use describe the output for age:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "summ-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## summ-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/summ-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/summ-03}
 
 The output for a detailed summary in Stata should be read as three separate columns. The right-most column lists the number of observations, the mean and standard deviation and other numeric statistics. The left-most column contains the Percentiles: median (50\%), lower quartile (25\%) and upper quartile (75\%). The middle column lists the four smallest and four largest observations, so that we can assess whether the smallest and largest observations are plausible.
 
@@ -1719,49 +1574,21 @@ For each of our three continuous variables, we need to decide whether to present
 
 To produce a histogram, go to menu \textbf{Graphics \textgreater{} Histogram}. Choose the variable to be plotted in the \textbf{Variable} box, and choose the \textbf{Frequency} radio button so that a frequency histogram is produced. Note that only one variable can be plotted at a time, so this procedure will need to be repeated for each continuous variable.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "hist-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## hist-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/hist-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/hist-01}
 
 The default histogram for age appears below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "hist-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## hist-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/hist-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/hist-02}
 
 Stata will automatically choose the number of bins and the width of each bin, however these decisions may not always produce the most optimal histogram. These options can be altered by defining either: the number of bins, or the bin width (but not both); and/or the lower limit of the first bin.
 
 Looking at the command window, Stata has used the following parameters to define the histogram: bin=20, start=26.277892, width=2.6080767. This means that Stata has chosen 20 bins to represent the data, with the first bin starting at 26.2 years and each bin representing 2.6 years. A more easily read histogram might have a bin-width of 5, starting at 25 years of age, so that age categories represent 25 to less than 30, 30 to less than 35 etc, as defined below:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "hist-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## hist-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/hist-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/hist-03}
 
 This results in a histogram with fewer bars and more sensible cut-points:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "hist-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## hist-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/hist-04}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/hist-04}
 
 \hypertarget{producing-a-boxplot}{%
 \subsection{Producing a boxplot}\label{producing-a-boxplot}}
@@ -1777,14 +1604,7 @@ We have three categorical variables to summarise in Table 1: sex, stage and vita
 
 Choose \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} One-way table}. Choose the variable to be summarised as the \textbf{Categorical variable}, and leave all other options unchanged:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "tab-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## tab-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/tab-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/tab-01}
 
 Click \textbf{OK} to obtain the following table:
 
@@ -1817,14 +1637,7 @@ There are two parts to applying value labels to categorical variables: 1) defini
 
 Alternatively, choose \textbf{Data \textgreater{} Data utilities \textgreater{} Label utilities \textgreater{} Manage value labels}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "value-
-## labels-01.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-
-## labels-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-labels-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/value-labels-01}
 
 In the \textbf{Manage value labels} dialog box, click the \textbf{Create label} button.
 
@@ -1837,25 +1650,11 @@ In the \textbf{Manage value labels} dialog box, click the \textbf{Create label} 
   Next, we specify what each category (i.e.~1 and 2) represents. By checking the metadata document, we see that \texttt{1} represents ``Male'' and \texttt{2} represents ``Female''. Type the number \texttt{1} in the \textbf{Value:} box and the word \texttt{Male} in the \textbf{Label:} box; then click the \textbf{Add} button. Then type the number \texttt{2} in the \textbf{Value:} box and the word \texttt{Female} in the \textbf{Label:} box; click the \textbf{Add} button again. The defined value labels for males and females should appear in the box on the left-hand side. When you are done, click the \textbf{OK} button.
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "value-
-## labels-02.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-
-## labels-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-labels-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/value-labels-02}
 
 You will be returned to the \textbf{Manage value labels} dialog box, which will now have a record for \texttt{sex\_label}. By clicking the arrow next to the label name, you will see the codes that you have defined:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "value-
-## labels-03.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-
-## labels-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-labels-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/value-labels-03}
 
 At this point, you can close the \textbf{Manage value labels} dialog box by clicking \textbf{Close}.
 
@@ -1863,25 +1662,11 @@ At this point, you can close the \textbf{Manage value labels} dialog box by clic
 
 Now that the labels are defined, we need to attach them to the relevant variables. Within the Variables Manager, click the variable to be labelled (here, \texttt{sex}). The previously defined label can be assigned to this variable by clicking the \textbf{Value label} drop-down menu, and choosing the appropriate label (here, \texttt{sex\_label}), and clicking \textbf{Apply}:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "value-
-## labels-04-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## value-labels-04-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-labels-04-1}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/value-labels-04-1}
 
 Alternatively, go to \textbf{Data \textgreater{} Data utilities \textgreater{} Label utilities \textgreater{} Assign value label to variables}. Select \texttt{sex} from the \textbf{Variables:} dropdown box, and select \texttt{sex\_label} from the \textbf{Value label:} dropdown box. Click \textbf{OK}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "value-
-## labels-04.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-
-## labels-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/value-labels-04}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/value-labels-04}
 
 There are a number of ways that we can confirm that the labelling has been done correctly. One of the easiest ways is to use the \texttt{codebook} command to investigate the coding of sex: \textbf{Data \textgreater{} Describe data \textgreater{} Describe data contents (codebook)}.
 
@@ -1933,14 +1718,7 @@ To produce tables summarising two categorical variables, go to \textbf{Statistic
 
 To produce a two-way table showing stage of disease by sex using the pbc.dta data, do the following. In the \textbf{tabulate2 -- two way table with measures of association dialog box}, select the variable \texttt{sex} as the \textbf{Row variable:}, and \texttt{stage} as the \textbf{Column variable:} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata", "mod01-
-## twoway.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/mod01-
-## twoway.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/mod01-twoway}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/mod01-twoway}
 
 Click \textbf{OK} to obtain the output below.
 
@@ -2025,47 +1803,19 @@ To create a Bar chart, go to the Stata menu Graphics \textgreater{} Bar chart an
 
 For most of our bar graphs, we will be plotting frequencies, so we choose \textbf{Graph of frequencies within categories}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-01}
 
 For a simple bar graph, go to the \textbf{Categories} tab, tick the \textbf{Group 1} box and choose \texttt{stage} as your first grouping variable:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-02}
 
 Click the \textbf{Y axis} tab to include a more meaningful label for the y axis:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-03}
 
 Click \textbf{Submit} or \textbf{OK}, and the following graph will appear:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-04}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-04}
 
 Note: Value labels have been assigned to stage to create more meaningful output, and bar colours have been changed to allow for grey-scale printing.
 
@@ -2079,34 +1829,13 @@ You may note that most dialog boxes in Stata have two choices: the \textbf{Submi
 
 To create a clustered bar chart as shown in Figure 1.2, go to: \textbf{Graphics \textgreater{} Bar chart} again. With the previous settings in place (i.e.~stage as grouping variable and with appropriate axes labels), now choose \texttt{sex} as the \textbf{Group 1} variable, and tick \textbf{Group 2} and choose \texttt{stage} as the second grouping variable.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-05.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-05}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-05}
 
 In the \textbf{Options} tab, tick \textbf{Treat first category grouping as y variables}. When you are done, click \textbf{OK} or \textbf{Submit}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-06.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-06.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-06}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-06}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-07.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-07.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-07}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-07}
 
 In a clustered bar chart, the \textbf{Group 2} variable is the main variable grouping (here, \texttt{stage}), and each of the \textbf{Group 2} categories is split by the \textbf{Group 1} variable (here, \texttt{sex}).
 
@@ -2115,46 +1844,18 @@ In a clustered bar chart, the \textbf{Group 2} variable is the main variable gro
 
 To create a stacked bar chart shown in Figure 1.4, bring up the \textbf{Bar chart} dialog box, go to the \textbf{Options} tab and tick \textbf{Stack bars on y variables}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-08.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-08.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-08}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-08}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-10.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-10.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-10}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-10}
 
 \hypertarget{stacked-bar-graph-of-relative-frequencies}{%
 \subsection{Stacked bar graph of relative frequencies}\label{stacked-bar-graph-of-relative-frequencies}}
 
 If one wants to compare the sex distribution across the stage categories, it would be convenient if all the bars have the same height (100\%). To generate such a bar chart in Stata, tick \textbf{Base bar heights on percentages} in the \textbf{Options} tab of the \textbf{Bar charts} dialog box. Change the y-axis title in the \textbf{Y axis} tab to \texttt{Percentage\ of\ students\ in\ each\ age\ group}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-11.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-11.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-11}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-11}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "bar-12.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## bar-12.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/bar-12}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-12}
 
 \hypertarget{editing-graphs-in-stata}{%
 \subsection{Editing graphs in Stata}\label{editing-graphs-in-stata}}
@@ -2163,81 +1864,32 @@ There are two main approaches of editing many aspects of a graph (such as colour
 
 Here, we will define Bar 1 to be \texttt{White}:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-01.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-01}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-01}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-02}
 
 Bar 2 can be defined to be \texttt{Gray}, resulting in the graph below:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-03}
 
 The second approach to customising graphs is to use the \textbf{Graph Editor}. Each Stata graph window includes a Graph Editor button:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-04.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-04} \caption{Graph editor button on Stata for Windows}\label{fig:unnamed-chunk-44}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-04} \caption{Graph editor button on Stata for Windows}\label{fig:unnamed-chunk-44}
 \end{figure}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-05.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-05} \caption{Graph editor button on Stata for MacOS}\label{fig:unnamed-chunk-45}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-05} \caption{Graph editor button on Stata for MacOS}\label{fig:unnamed-chunk-45}
 \end{figure}
 
 The \textbf{Graph Editor} window comprises two main sections: the graph that can be edited on the left, and a list of elements of the graph on the right. Most aspects of a graph's appearance can be edited in the Graph Editor, usually by double-clicking an element (e.g.~a bar, or a bar segment) and changing its properties. There are too many ways to change a graph's appearance to document here: feel free to explore and experiment!
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-06.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-06.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-06} \caption{Graph editor window: Windows}\label{fig:unnamed-chunk-46}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-06} \caption{Graph editor window: Windows}\label{fig:unnamed-chunk-46}
 \end{figure}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "edit-07.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## edit-07.png"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/edit-07} \caption{Graph editor window: MacOS}\label{fig:unnamed-chunk-47}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-07} \caption{Graph editor window: MacOS}\label{fig:unnamed-chunk-47}
 \end{figure}
 
 When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the \textbf{Save} button, choose \textbf{Save as} and choose to save using the **PNG (*.png)** format. You can then insert your saved PNG file into your word processing package as usual.
@@ -2251,107 +1903,37 @@ If you look at the data in the \textbf{Data Editor} window, you will see that th
 
 To create a line graph as in Figure 1.5 select \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)} and click the \textbf{Create\ldots{}} button in the \textbf{twoway -- Twoway graphs} dialog box to bring up a dialog box for defining Plot 1.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-01}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-01}
 
 Choose \textbf{Line} as the plot type, \texttt{rcases} as the \textbf{Y variable} and \texttt{year} as the \textbf{X variable} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-02}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-02}
 
 Click \textbf{Accept}, and then click \textbf{Submit} to check how the graph looks.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-03}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-03}
 
 This looks ok, but we want to add the death rate to the plot. Click \textbf{Create\ldots{}} again and add a Plot 2 for mortality rate:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-03-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-03-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-03-1}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-03-1}
 
 Choose \textbf{Line} as the plot type again, \texttt{rdeaths} as the \textbf{Y} variable and \texttt{year} as the \textbf{X variable}. Click \textbf{Accept}, and then \textbf{Submit} to check how the graph looks like now. You should see both variables plotted:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-04}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-04}
 
 To change the format of either line, click the relevant plot definition in the main \textbf{twoway} dialog box and click \textbf{Edit}. Click the \textbf{Line properties} button and choose a \textbf{Pattern} (e.g.~Short-dash), then click \textbf{Submit} again.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-05.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-05}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-05}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-06}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-06.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-06.png"
-\end{verbatim}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-07}
 
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-06}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-07.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-07.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-07}
-
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-08.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-08.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-08}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-08}
 
 Next, we need an appropriate label for the y-axis. In the main \textbf{twoway} dialog box, click on the \textbf{Y axis} tab and label the title appropriately (e.g.~\texttt{Age-standardardised\ rate} and then click \textbf{OK} or \textbf{Submit}. The graph below should be produced.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod01", "stata",
-## "line-09.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod01/stata/
-## line-09.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod01/stata/line-09}
+\includegraphics[width=0.75\linewidth]{img/mod01/stata/line-09}
 
 {[}Command: \texttt{twoway\ (line\ rcases\ year)\ (line\ rdeaths\ year,\ lpattern(shortdash)),\ ytitle(Age-standardised\ rate)}{]}
 
@@ -3189,24 +2771,12 @@ Here, n=6, k=2 and p=0.198, giving the same answer as above: 0.903.
 
 The frequency plot for many biological and clinical measurements (for example blood pressure and height) follow a bell shape where the curve is symmetrical about the mean value and has tails at either end. Figures \ref{fig:fig-2-1} \footnote{Source: \url{https://www.aihw.gov.au/reports/risk-factors/high-blood-pressure/contents/high-blood-pressure} (accessed March 2021)} and \ref{fig:fig-2-2} \footnote{Source: \url{https://ourworldindata.org/human-height} (accessed March 2021)} demonstrate this type of distribution.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "dbp.png")): It is
-## highly recommended to use relative paths for images. You had absolute paths: "/
-## Users/td/Documents/Repos/phcm9795/img/mod02/dbp.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/dbp} \caption{Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey}\label{fig:fig-2-1}
+\includegraphics[width=0.66\linewidth]{img/mod02/dbp} \caption{Distribution of diastolic blood pressure, 2017–18 Australian Bureau of Statistics National Health Survey}\label{fig:fig-2-1}
 \end{figure}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "heights.png")):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/heights.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/heights} \caption{Distribution of male and female heights}\label{fig:fig-2-2}
+\includegraphics[width=0.66\linewidth]{img/mod02/heights} \caption{Distribution of male and female heights}\label{fig:fig-2-2}
 \end{figure}
 
 The Normal distribution, also called the Gaussian distribution (named after Johann Carl Friedrich Gauss, 1777--1855), has been shown to fit the frequency distribution of many naturally occurring variables. It is characterised by its bell-shaped, symmetric curve and its tails that approach zero on either side.
@@ -3217,14 +2787,8 @@ The Normal distribution is characterised by two parameters: the mean (\(\mu\)) a
 
 For a Normal distribution, about 68\% of the observations lie between \(- \sigma\) and \(\sigma\) of the mean; 95\% of the observations lie between \(−1.96 \times \sigma\) and \(1.96 \times \sigma\) from the mean; and almost all the observations (99.7\%) lie between \(-3 \times \sigma\) and \(3 \times \sigma\) (Figure \ref{fig:fig-2-3}). Also note that the mean is the same as the median, as the curve is symmetric about its mean.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "normal-
-## curve.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/normal-curve.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/normal-curve} \caption{Characteristics of a Normal distribution}\label{fig:fig-2-3}
+\includegraphics[width=0.66\linewidth]{img/mod02/normal-curve} \caption{Characteristics of a Normal distribution}\label{fig:fig-2-3}
 \end{figure}
 
 \hypertarget{the-standard-normal-distribution}{%
@@ -3257,28 +2821,14 @@ Using a table of Z-scores (Appendix Table 1), we find the probability that a per
 
 An extract from Appendix Table 1 is shown in Figure \ref{fig:fig-2-4} to demonstrate how to find the probability from the look-up table.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "z-table-
-## extract.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/z-table-
-## extract.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/z-table-extract} \caption{Obtaining a probability from a table of Standard Normal distribution}\label{fig:fig-2-4}
+\includegraphics[width=0.66\linewidth]{img/mod02/z-table-extract} \caption{Obtaining a probability from a table of Standard Normal distribution}\label{fig:fig-2-4}
 \end{figure}
 
 Figure \ref{fig:fig-2-5} shows the probability of a diastolic blood pressure of 90 mmHg or more in the population for a Z-score of greater than 1.1 on a Standard Normal distribution.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "z-dist-
-## shaded.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/z-dist-
-## shaded.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/z-dist-shaded} \caption{Area under the Standard Normal curve (as probability) for Z > 1.1}\label{fig:fig-2-5}
+\includegraphics[width=0.66\linewidth]{img/mod02/z-dist-shaded} \caption{Area under the Standard Normal curve (as probability) for Z > 1.1}\label{fig:fig-2-5}
 \end{figure}
 
 Apart from calculating probabilities, Z-scores are most useful for comparing measurements taken from a sample to a known population distribution. It allows measurements to be compared to one another despite being on different scales or having different predicted values.
@@ -3389,15 +2939,8 @@ For your information: There are formal tests in Stata that test for Normality. T
 
 The skewness and kurtosis values for the 30 weights are close to 0 and 3 respectively which is consistent with the symmetrical bell-shaped distribution as shown by the histogram. The mean and median (50th percentile) values are identical, as would be expected for a Normal distribution. These statistics indicate that the data are Normally distributed. Finally, you can look at the histogram and boxplot (Figure \ref{fig:fig-2-6}) for symmetry and outliers at either end of the distribution.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "weights-hist-
-## boxplot.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/weights-hist-
-## boxplot.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/weights-hist-boxplot} \caption{Histogram and boxplot of weight of 30 students attending a gym}\label{fig:fig-2-6}
+\includegraphics[width=0.9\linewidth]{img/mod02/weights-hist-boxplot} \caption{Histogram and boxplot of weight of 30 students attending a gym}\label{fig:fig-2-6}
 \end{figure}
 
 A summary of how to explore Normality is shown in Table \ref{tab:tab-2-examine-normality}.
@@ -3473,15 +3016,8 @@ In practice, most parametric summary statistics are quite robust to minor deviat
 
 When the data are markedly skewed, histograms and boxplots can look very different. For example, data of length of hospital stay in a sample of children are shown as a histogram and as a box plot in Figure \ref{fig:fig-2-7}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "los-hist-
-## boxplot.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/los-hist-
-## boxplot.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/los-hist-boxplot} \caption{Histogram and boxplot of length of stay}\label{fig:fig-2-7}
+\includegraphics[width=0.9\linewidth]{img/mod02/los-hist-boxplot} \caption{Histogram and boxplot of length of stay}\label{fig:fig-2-7}
 \end{figure}
 
 In the histogram of Figure \ref{fig:fig-2-7}, there is a tail of values to the right, so we would conclude that the distribution is skewed to the right. In the boxplot, the whiskers appear to be fairly symmetric, but there are some unusual values (denoted by dots) above the box and its whiskers. Stata defines these unusual values as being more than 1.5 times the IQR from the edge of the box.
@@ -3538,25 +3074,11 @@ A \texttt{csv} file, or a ``comma separated variables'' file is commonly used to
 In this demonstration, we will use data on the weight of 1000 people entered in a csv file called \texttt{weight\_s2.csv} available on Moodle.
 To confirm that the file is readable by any text editor, here are the first ten lines of the file, opened in Notepad on Microsoft Windows, and TextEdit on MacOS.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "import-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## import-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/import-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/import-01}
 
 To import it into Stata, use \textbf{File \textgreater{} Import \textgreater{} Text data (delimited, .csv, \ldots)} to bring up the import delimited text data dialog box. Click the \textbf{Open} button (the folder icon on the right-hand side of the window) and select the csv file you downloaded. The dialog box should look like below:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "import-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## import-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/import-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/import-02}
 
 Here, Stata has (correctly) decided that the first row of the dataset contains the variable names. You may need to change this if the Preview window does not look correct. Click \textbf{OK} or \textbf{Submit} button to import the data.
 
@@ -3569,14 +3091,7 @@ If an error is found, the best method for correcting the error is to go back to 
 
 For continuous variables, the easiest methods are to examine a boxplot and histogram. For example, a boxplot and histogram for the weight variable we just imported appear as:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "check-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## check-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/check-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/check-01}
 
 There is a clear outlying point shown in the boxplot. Although not obvious, the same point is shown in the histogram as a bar around 700 with a very short height.
 
@@ -3584,14 +3099,7 @@ To identify the outlying observation in the dataset, we can sort your data in as
 
 To sort data, you must be in the \textbf{Data Editor (Edit)} window. Select \textbf{Data \textgreater{} Sort data\ldots{}} and choose \texttt{weight} as shown in the \textbf{sort} dialog box below. Click \textbf{OK} to do an \emph{ascending} sort (arranging weight from smallest to largest). {[}Command: \texttt{sort\ weight}{]}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "check-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## check-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/check-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/check-02}
 
 By scrolling through the data, you will see that the values range from 53.8kg to 85.8kg with a very high value of 700.2kg. A value as high as 700kg is likely to be a data entry error (e.g.~error in entering an extra zero) and is not a plausible weight value. Here, \textbf{you should check your original data}. You might find that the original weight was recorded as 70.2kg. You can change this in Stata by deleting a zero from cell with 700.2 in the \textbf{Data Editor (Edit)} window.
 
@@ -3606,38 +3114,17 @@ Once you have checked your data for errors, you are ready to start analysing you
 
 It can be useful to produce a histogram with an overlayed Normal curve to assess whether our sample appears approximately Normally distributed. First go to menu \textbf{Graphics \textgreater{} Histogram}. In the \textbf{Histogram} dialog box, select \texttt{weight} into the \textbf{variable} box and choose the \textbf{Frequency} radio button for ease of interpretation.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "hist-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## hist-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-01}
 
 You can click the \textbf{Submit} button to check how the plot looks like. To superimpose the normal curve, go to the \textbf{Density plots} and tick \textbf{Add normal-density plot}, then click the \textbf{Submit} or \textbf{OK} button. You can change the X-axis label in the \textbf{X axis} tab, e.g.~to \texttt{Weight\ (kg)}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "hist-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## hist-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-02}
 
 {[}Command: \texttt{histogram\ weight,\ frequency\ normal\ xtitle(Weight\ (kg))}{]}
 
 Your histogram should look like this:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "hist-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## hist-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-03}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-03}
 
 \hypertarget{descriptive-statistics-for-checking-normality}{%
 \section{Descriptive statistics for checking normality}\label{descriptive-statistics-for-checking-normality}}
@@ -3646,14 +3133,7 @@ All the descriptive statistics including Skewness and Kurtosis discussed in this
 
 {[}Command: \texttt{summarize\ weight,\ detail}{]}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "desc-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## desc-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/desc-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/desc-01}
 
 You can similarly repeat this using the dataset \texttt{Example\_1.3.dta} used for creating these in the course notes for this module.
 
@@ -3676,14 +3156,7 @@ The health survey data contains 1140 records, comprising:
 
 To import data from Microsoft Excel, we use \textbf{File \textgreater{} Import \textgreater{} Excel spreadsheet}. First click \textbf{Browse} to locate the file to be imported:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "import-
-## excel-01.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/import-
-## excel-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/import-excel-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/import-excel-01}
 
 Take special note of the \textbf{Preview} at the bottom of the dialog box. Our dataset has the variable names listed in the first row of the spreadsheet, so we tick the \textbf{Import first row as variable names} checkbox. We don't want to \textbf{Import all data as strings} (strings are character, or text variables), so we leave this unchecked. We finalise the process by clicking \textbf{OK}.
 
@@ -3696,14 +3169,7 @@ Our health survey data contains information on height and weight. We often summa
 
 To generate a new variable, we use \textbf{Data \textgreater{} Create or change data \textgreater{} Create new variable}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "gen-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## gen-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/gen-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/gen-01}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3716,14 +3182,7 @@ To generate a new variable, we use \textbf{Data \textgreater{} Create or change 
 
 \textbf{Option 1:} click \textbf{Create} to open the Expression Builder dialog box. This box allows you to build the formula interactively:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "gen-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## gen-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/gen-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/gen-02}
 
 Clicking \textbf{Variables} in the lower-left-hand pane shows a list of variables in the lower-middle pane of the window. We want to create a new formula of \(\text{weight } \div \text{ height} ^2\). Double-clicking a variable name moves that variable into the formula builder. To build our BMI formula:
 
@@ -3744,25 +3203,11 @@ Clicking \textbf{Variables} in the lower-left-hand pane shows a list of variable
 
 Your completed window should look like:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "gen-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## gen-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/gen-03}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/gen-03}
 
 Click \textbf{OK} to return to the generate dialog box, which now should appear as:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "gen-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## gen-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/gen-04}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/gen-04}
 
 \textbf{Option 2:} if you are entering a simple formula, you can type the formula directly into the expression using your keyboard.
 
@@ -3772,14 +3217,7 @@ Click \textbf{OK} to generate your new variable.
 
 We should check the construction of the new variable by examining the Data Browser:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "gen-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## gen-05.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/gen-05}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/gen-05}
 
 In the general population, BMI ranges between about 15 to 30. It appears that BMI has been correctly generated in this example.
 
@@ -3796,14 +3234,7 @@ Many Stata commands (and dialog boxes) allow for a by-variable. For example, to 
   Define \texttt{BMI} as our \textbf{Variable} in the \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Summary statistics} dialog box.
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "summ-
-## by-01.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/summ-
-## by-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/summ-by-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/summ-by-01}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3813,14 +3244,7 @@ Many Stata commands (and dialog boxes) allow for a by-variable. For example, to 
   Click the \textbf{by/if/in} tab, tick \textbf{Repeat command by groups}, and select the variable you want to be the \emph{by-variable}. In this case, we choose \texttt{sex} and then click \textbf{OK}.
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "summ-
-## by-02.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/summ-
-## by-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/summ-by-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/summ-by-02}
 
 {[}Command: \texttt{by\ sex,\ sort\ :\ summarize\ BMI}{]}
 
@@ -3858,14 +3282,7 @@ A form of the \textbf{by} tab appears in many Stata windows. For example, we can
   Define \texttt{BMI} as the variable to be plotted
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "hist-
-## by-01.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-
-## by-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-by-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-by-01}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3875,25 +3292,11 @@ A form of the \textbf{by} tab appears in many Stata windows. For example, we can
   Define \texttt{sex} as a \emph{by-variable} by completing the \textbf{By} tab:
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "hist-
-## by-02.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-
-## by-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-by-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-by-02}
 
 This produces the following graph:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata", "hist-
-## by-03.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-
-## by-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/hist-by-03}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/hist-by-03}
 
 \hypertarget{recoding-data}{%
 \section{Recoding data}\label{recoding-data}}
@@ -3952,14 +3355,7 @@ Similarly, for the normal weight category, we would enter: \texttt{(18.5\ /\ 24.
 
 Your completed recode dialog box should look as follows:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "recode-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## recode-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/recode-01}
+\includegraphics[width=0.75\linewidth]{img/mod02/stata/recode-01}
 
 \begin{enumerate}
 \def\labelenumi{\arabic{enumi})}
@@ -3969,14 +3365,7 @@ Your completed recode dialog box should look as follows:
   \textbf{Do not forget this step!} To recode into a new variable, we \textbf{must} click the options tab to give the name of the new variable. If this step is not performed, Stata will overwrite the initial variable with the recoded version. Here, we tell Stata to generate a new variable called bmi\_category:
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "recode-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## recode-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.75\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/recode-02}
+\includegraphics[width=0.75\linewidth]{img/mod02/stata/recode-02}
 
 Click \textbf{OK} to complete the recoding.
 
@@ -4044,25 +3433,11 @@ There are three Stata functions that we can use to calculate probabilities based
 
 To do the computation for part (a) in Worked Example 2.1, go to \textbf{Data \textgreater{} Other utilities \textgreater{} Hand calculator} from the main menu in Stata.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "binomial-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## binomial-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/binomial-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/binomial-01}
 
 In the dialog box, click \textbf{Create\ldots{}} to bring up the \textbf{Expression Builder} dialog box. In the \textbf{Categories} box, click on \textbf{Functions} to expand the list, then scroll down to \textbf{Statistical}, expand the list again and select \textbf{Binomial}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "binomial-02.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## binomial-02.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/binomial-02}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/binomial-02}
 
 A list of functions will pop up to the right of the \textbf{Categories} box. Double click on \textbf{binomialp()} which will populate the top of the expression builder box with \texttt{binomialp(n,k,p)}. Following the instructions at the bottom of the box:
 
@@ -4078,14 +3453,7 @@ A list of functions will pop up to the right of the \textbf{Categories} box. Dou
 
 Replace each of these with the appropriate number into the box as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "binomial-03.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## binomial-03.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/binomial-03}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/binomial-03}
 
 Click the \textbf{OK} button in the Expression Builder box, then click \textbf{OK} or \textbf{Submit} in the main dialog box. The probability is now displayed on your Results screen as \texttt{.08008454} which rounds off to 0.08 as shown in part (a) of Worked Example 2.1. (Note that Stata doesn't print the 0 in front of the decimal point in the output.)
 
@@ -4095,27 +3463,13 @@ To calculate the upper tail of probability in part (b), go to \textbf{Data \text
 
 In the \textbf{Categories} box, navigate to \textbf{Binomial} and select it as you had before. Now double click on \textbf{binomialtail()} which will populate the top of the expression builder box with \texttt{binomialtail(n,k,p)}. To obtain P(X \(\ge\) 4) from 6 trials, \emph{n}=6, \emph{k}=4 and \emph{p}=0.198. When you are done, click the \textbf{OK} button in the \textbf{Expression Builder} box to get the below in the display dialog box:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "binomial-04.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## binomial-04.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/binomial-04}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/binomial-04}
 
 Click \textbf{OK} or \textbf{Submit} when you are done. {[}Command: \texttt{display\ binomialtail(6,\ 4,\ 0.198)}{]}
 
 For the lower tail for part (c), choose or double-click on \textbf{binomial()} from the list of functions. To obtain P(X \(\le\) 2) from 6 trials, enter \emph{n}=6, \emph{k}=2 and \emph{p}=0.198.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "binomial-05.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## binomial-05.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/binomial-05}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/binomial-05}
 
 Click \textbf{OK} or \textbf{Submit} when you are done. {[}Command: \texttt{display\ binomial(6,\ 2,\ 0.198)}{]}
 
@@ -4126,14 +3480,7 @@ From Stata, the probability using a normal distribution can be obtained from the
 
 The instructions at the bottom of the box explain that this is the cumulative standard normal distribution which means it gives P(Z\textless z) in Stata. In other words, the normal() function gives you the \textbf{lower tail} probability from the standard normal distribution. To obtain P(Z\textgreater0.5), edit the box to \texttt{1-normal(0.5)} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod02", "stata",
-## "normal-01.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod02/stata/
-## normal-01.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod02/stata/normal-01}
+\includegraphics[width=0.66\linewidth]{img/mod02/stata/normal-01}
 
 Click \textbf{OK}, then \textbf{Submit} to obtain the same value as from the table. {[}Command: \texttt{display\ 1-normal(0.5)}{]}
 
@@ -4410,15 +3757,8 @@ The population standard deviation (\(\sigma\)) is required for calculation of th
 
 Someone by the pseudonym of Student came up with the Student's t distribution with (\(n-1\)) degrees of freedom to account for this bias. It looks very much like the standardised normal distribution, only that it has fatter tails (Figure \ref{fig:mod03-z-t-dist}. As the degrees of freedom increase (i.e.~as \(n\) increases), the t-distribution gradually approaches the standard normal distribution. With a sufficiently large sample size, the Student's t-distribution closely approximates the standardised normal distribution.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod03", "mod03-z-t-
-## dist.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod03/mod03-z-t-
-## dist.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod03/mod03-z-t-dist} \caption{The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom}\label{fig:mod03-z-t-dist}
+\includegraphics[width=1\linewidth]{img/mod03/mod03-z-t-dist} \caption{The normal (Z) and the student’s t-distribution with 2, 5 and 30 degrees of freedom}\label{fig:mod03-z-t-dist}
 \end{figure}
 
 If a variable \(X\) is normally distributed and the population standard deviation \(\sigma\) is known, using the normal distribution is appropriate. However, if \(\sigma\) is not known then one should use the student t-distribution with (\(n – 1\)) degrees of freedom.
@@ -4456,13 +3796,7 @@ We are 95\% confident that the true mean weight lies between 67.8 kg and 72.2 kg
 
 To demonstrate the computation of the 95\% confidence interval of a mean we have used data from \texttt{Example\_1.3.dta}. To calculate the 95\% confidence interval, go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Confidence intervals}. In the \textbf{ci} dialog box, select \texttt{weight} as the \textbf{Variable}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod03", "stata", "mod3-
-## ci.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod03/stata/mod3-ci.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod03/stata/mod3-ci}
+\includegraphics[width=0.66\linewidth]{img/mod03/stata/mod3-ci}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 3.1.
 
@@ -4473,14 +3807,7 @@ Click \textbf{OK} or \textbf{Submit} to obtain Output 3.1.
 
 For Worked Example 3.2 where we are given the sample mean, sample standard deviation and sample size, we use the \texttt{cii\ means} command. To calculate the 95\% CI, go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Normal mean CI calculator}. In the \textbf{cii} dialog box, check that the \textbf{Normal mean} button is selected, and enter \texttt{30} as the \textbf{Sample size}, \texttt{70} as the \textbf{Sample mean}, \texttt{6} as the \textbf{Sample standard deviation} and check that \texttt{95} in entered as the \textbf{Confidence level}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod03", "stata", "mod3-
-## cii.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod03/stata/mod3-
-## cii.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod03/stata/mod3-cii}
+\includegraphics[width=0.66\linewidth]{img/mod03/stata/mod3-cii}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 3.2.
 
@@ -4754,15 +4081,8 @@ Reporting the effect size enables clinicians and other researchers to judge whet
 
 When applying statistical methods in health and medical research, we need to make an informed decision about whether the effect size that led to a statistically significant finding is also clinically important (see Figure \ref{fig:practical-importance}). The decision about whether a statistically significant result is also clinically important depends on expert knowledge and is best made by practitioners with experience in the field.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod04", "practical-vs-
-## statistical-sig.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod04/
-## practical-vs-statistical-sig.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod04/practical-vs-statistical-sig} \caption{Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)}\label{fig:practical-importance}
+\includegraphics[width=0.66\linewidth]{img/mod04/practical-vs-statistical-sig} \caption{Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)}\label{fig:practical-importance}
 \end{figure}
 
 It is possible when conducting significance tests, particularly in very large studies, that a small effect is found to be statistically significant. For example, say in a large study of over 1000 patients, a new medication was found to lower blood pressure on average by 1 mmHg more than a currently accepted drug and this was statistically significant (P \textless{} 0.05). However, such a small decrease in blood pressure would probably not be considered clinically important. The cost and side effects of prescribing the new medication would need to be weighed against the very small average benefit that would be expected. In this case, although the null hypothesis would be rejected (i.e.~the result is statistically significant), the result would not be clinically important. This is the situation described in scenario (c) of Figure \ref{fig:practical-importance}.
@@ -4855,15 +4175,8 @@ It is important to remember that the 95\% CI is estimated from the standard erro
 
 The 95\% CI tells us the region in which we are 95\% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95\% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure \ref{fig:cis-overlapping-null}. If the zero value lies outside the 95\% confidence interval, we can conclude that there is evidence of a difference between the groups because we are 95\% confident that the difference does not encompass a zero value (as shown in the lower two estimates in Figure \ref{fig:cis-overlapping-null}).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod04", "cis-overlapping-
-## null.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod04/cis-overlapping-
-## null.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod04/cis-overlapping-null} \caption{Using confidence intervals as informal hypothesis tests}\label{fig:cis-overlapping-null}
+\includegraphics[width=0.66\linewidth]{img/mod04/cis-overlapping-null} \caption{Using confidence intervals as informal hypothesis tests}\label{fig:cis-overlapping-null}
 \end{figure}
 
 For relative risk and odds ratio measures, when the 95\% CI includes the value of 1 it indicates that we can be 95\% confident that the true RR or OR of the association between the study factor and outcome factor includes 1.0 in the source population. This indicates little evidence of an association between the study factor and the outcome factor, e.g.~if the results of a study were reported as RR = 1.10 (95\% CI 0.95 to 1.25). The P-value can be calculated to assess this (discussed in Module 7).
@@ -4988,28 +4301,14 @@ Therefore, we can conclude that the mean diastolic BP of the female Pima people 
 
 Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod04", "two-tailed-
-## test.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod04/two-tailed-
-## test.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod04/two-tailed-test} \caption{P-value for a 2-tailed test}\label{fig:two-tailed-test}
+\includegraphics[width=0.66\linewidth]{img/mod04/two-tailed-test} \caption{P-value for a 2-tailed test}\label{fig:two-tailed-test}
 \end{figure}
 
 Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e.~a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved. The P value for a one tailed test would be 0.025 i.e.~the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod04", "one-tailed-
-## tests.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod04/one-tailed-
-## tests.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.9\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod04/one-tailed-tests} \caption{P-value for 1-tailed tests}\label{fig:one-tailed-tests}
+\includegraphics[width=0.9\linewidth]{img/mod04/one-tailed-tests} \caption{P-value for 1-tailed tests}\label{fig:one-tailed-tests}
 \end{figure}
 
 If a one tailed P value is reported, and is considered to be an invalid decision, it is usually easily converted to a two tailed value by doubling its numeric value. For example, for the same test statistic and sample size:
@@ -5051,14 +4350,7 @@ We will use data from \texttt{Example\_4.1.dta} to demonstrate how a one-sample 
 
 Ensure that the \textbf{One-sample} option is selected, then choose \texttt{dbp} as the \textbf{Variable name} from the drop-down list. Enter the \textbf{Hypothesised mean} value (\texttt{71} in this example) as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod04", "stata", "mod4-
-## ttest.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod04/stata/mod4-
-## ttest.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod04/stata/mod4-ttest}
+\includegraphics[width=0.66\linewidth]{img/mod04/stata/mod4-ttest}
 
 Click \textbf{OK} or \textbf{Submit} to obtain the output below.
 
@@ -5286,15 +4578,8 @@ In an observational study of a random sample of 100 full term babies from the co
 
 Some preliminary descriptive statistics of the distribution of the variable of interest in each group should always be obtained before a t-test is undertaken to ensure that the assumptions are met. Box plots and histograms are ideal for this. Histrograms and box plots of the data obtained in Stata using \textbf{Graphics \textgreater{} Box plot} is shown in Figure \ref{fig:mod05-bwt-gender}. The dataset Example\_5.1.dta is available on Moodle.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "mod05-bwt-
-## gender.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/mod05-bwt-
-## gender.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/mod05-bwt-gender} \caption{Histograms and box plots of birth weight by gender}\label{fig:mod05-bwt-gender}
+\includegraphics[width=1\linewidth]{img/mod05/mod05-bwt-gender} \caption{Histograms and box plots of birth weight by gender}\label{fig:mod05-bwt-gender}
 \end{figure}
 
 The plots show that the data are approximately normally distributed: the histograms are relatively bell shaped and symmetric, and the boxes are fairly symmetrical, there are no outliers as indicated by dots, and the spread is similar in both groups as the similar length of the whiskers suggesting that the variance is homogenous.
@@ -5441,15 +4726,8 @@ A total of 107 people were recruited into a study to assess whether ankle blood 
 
 The dataset Example\_5.2.dta is available on Moodle. First, we need to compute the pairwise difference between SBP measured in the two sites in Stata using the \texttt{generate} command. This is shown in the Stata manual at the end of this module (Checking the assumptions for a Paired t-test). The distribution of the difference between SBP measured in dorsalis pedis and tibialis posterior is shown in Figure \ref{fig:mod05-sbpdiff}. It approximates a normal distribution and therefore a paired t-test can be used.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "mod05-
-## sbpdiff.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/mod05-
-## sbpdiff.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/mod05-sbpdiff} \caption{Distribution of differences in ankle SBP between two sites of 107 participants}\label{fig:mod05-sbpdiff}
+\includegraphics[width=1\linewidth]{img/mod05/mod05-sbpdiff} \caption{Distribution of differences in ankle SBP between two sites of 107 participants}\label{fig:mod05-sbpdiff}
 \end{figure}
 
 The paired t-test is performed using the \texttt{ttest} command in Stata (see the Stata Notes section for details). We specify the data is paired with \texttt{sbp\_dp} as First variable and \texttt{sbp\_tp} as the Second variable. Output 5.3 shows the summary statistics for both sites. From this we can see that the mean SBP is very similar in the two sites.
@@ -5495,36 +4773,15 @@ As with any statistical test, it is important to decide what mean difference bet
 
 To obtain the histograms in Figure \ref{fig:mod05-bwt-gender} using the \texttt{Example\_5.1.dta} data, go to \textbf{Graphics \textgreater{} Histogram}. Select \texttt{birthweight} as the \textbf{Variable} in the \textbf{Main} tab. Next go to the \textbf{By} tab, tick \textbf{Draw subgraphs for unique values of variable} and select \texttt{gender} as the \textbf{variable} as shown below:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata", "hist-
-## by-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/hist-
-## by-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/hist-by-1}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/hist-by-1}
 
 Note that we have also improved the basic histogram definition on the \textbf{Main} tab, by defining the \textbf{Lower limit of first bin} to be 2.5, and the \textbf{Bin width} to be 0.25kg:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata", "hist-
-## by-2.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/hist-
-## by-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/hist-by-2}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/hist-by-2}
 
 A similar process is used to obtain the boxplots shown in Figure \ref{fig:mod05-bwt-gender}: go to \textbf{Graphics \textgreater{} Box plot}. In the \textbf{graph box -- Box plots} dialog box, select \texttt{birthweight} as the \textbf{Variable} in the \textbf{Main} tab. Next go to the \textbf{Categories} tab, tick \textbf{Group 1} and select \texttt{gender} as the \textbf{Grouping variable} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata", "box-
-## by-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/box-
-## by-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/box-by-1}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/box-by-1}
 
 Click \textbf{OK} or \textbf{Submit} to produce the box plot.
 
@@ -5535,14 +4792,7 @@ Click \textbf{OK} or \textbf{Submit} to produce the box plot.
 
 To produce summary statistics for a continuous variable, split by a second binary categorical variable, as in Worked Example 5.1 using \texttt{Example\_5.1.dta}, go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater{} Summary statistics} . In the \textbf{summarize} dialog box, select \texttt{birthweight} as the \textbf{Variable} in the \textbf{Main} tab of the dialog box. Next go to the \textbf{by/if/in} tab, tick \textbf{Repeat command by groups} and select \texttt{gender} as the \textbf{Variable that define groups} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata", "summ-
-## by-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/summ-
-## by-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/summ-by-1}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/summ-by-1}
 
 Click \textbf{OK} or \textbf{Submit} to obtain the output as shown below.
 
@@ -5619,14 +4869,7 @@ The output above is easy for copying into a report. You could also submit the su
 
 To carry out an independent sample t-test, go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Classical tests of hypotheses \textgreater{} t test (mean-comparison test)}. In the \textbf{ttest} dialog box, choose the \textbf{Two-sample using groups} button, then select \texttt{birthweight} as the \textbf{Variable} name and \texttt{gender} as the \textbf{Group} variable name as shown below. Because the variances of \texttt{birthweight} are similar for males and females, we can leave the \textbf{Unequal variances} box unchecked.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata",
-## "ttest-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/
-## ttest-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/ttest-1}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/ttest-1}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 5.2.
 
@@ -5641,14 +4884,7 @@ Go to \textbf{Data \textgreater{} Create new variable}.
 
 In the \textbf{generate -- Create a new variable} dialog box, assign a name (e.g.~\texttt{difference}) to your new variable in the \textbf{Variable name} box. We want to compute difference as sbp\_dp − sbp\_tp, so we enter this in the \textbf{Specify a value or an expression} box as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata",
-## "ttest-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/
-## ttest-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/ttest-2}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/ttest-2}
 
 Click \textbf{Submit} or \textbf{OK}.
 
@@ -5658,14 +4894,7 @@ Check that the new variable appears in your Data Editor window.
 
 Create a histogram with a normal curve under \textbf{Graphics \textgreater{} Histogram}, as shown previously in Module 2. You might want to vary the minimum bar value and the bar width: for example, Figure \ref{fig:mod05-sbpdiff} was defined to have a lower limit of -40 and a bin width of 10. We have also requested a Normal curve be plotted in the \textbf{Density plots} tab.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata",
-## "ttest-3.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/
-## ttest-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/ttest-3}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/ttest-3}
 
 {[}Command: \texttt{histogram\ difference,\ width(10)\ start(-40)\ frequency\ normal}{]}
 
@@ -5674,14 +4903,7 @@ Create a histogram with a normal curve under \textbf{Graphics \textgreater{} His
 
 To perform a paired t-test we will use the dataset \texttt{Example\_5.2.dta}. For a paired t-test, data must be organised into two variables (i.e.~two columns). Go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Classical tests of hypotheses \textgreater{} t test (mean-comparison test)} as you had for the Independent samples t-test. In the \textbf{ttest} dialog box, choose the \textbf{Paired} button then Select \texttt{sbp\_dp} from the dropdown list under \textbf{First variable} and select \texttt{sbp\_tp} from the dropdown list under \textbf{Second variable}. The dialog box will look like:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod05", "stata",
-## "ttest-4.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod05/stata/
-## ttest-4.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod05/stata/ttest-4}
+\includegraphics[width=0.66\linewidth]{img/mod05/stata/ttest-4}
 
 Click \textbf{Submit} or \textbf{OK}. The output will look like Output 5.4 in the course notes.
 
@@ -5989,13 +5211,7 @@ This z-statistic does not meet or exceed the critical value of 1.96 for a two ta
 
 The P-value for the test above can be obtained from a Normal distribution table as \(P = 2 × 0.192 = 0.38\) (using Table A2.1 in the Appendix), or using the hand-calculator in Stata.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "z-curve.png")):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/z-curve.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/z-curve}
+\includegraphics[width=0.66\linewidth]{img/mod06/z-curve}
 
 \hypertarget{binomial-test-for-testing-one-sample-proportion}{%
 \subsection{Binomial test for testing one sample proportion}\label{binomial-test-for-testing-one-sample-proportion}}
@@ -6181,14 +5397,8 @@ In this section, we wil present a very brief summary of three study types common
 
 A randomised controlled trial addresses the research question: what is the effect of an intervention on an outcome. In the simplest form of a randomised controlled trial, a group of participants is randomly allocated to a group that receives the treatment of interest or to a control group that does not receive the treatment of interest. Participants are followed up over time, and the outcome is measured at the conclusion of the study.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "ee-rct.jpg")): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## "/Users/td/Documents/Repos/phcm9795/img/mod06/ee-rct.jpg"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/ee-rct} \caption{The design of a randomised controlled trial [Figure 4.1, Essential Epidemiology]}\label{fig:ee-fig-rct}
+\includegraphics[width=0.66\linewidth]{img/mod06/ee-rct} \caption{The design of a randomised controlled trial [Figure 4.1, Essential Epidemiology]}\label{fig:ee-fig-rct}
 \end{figure}
 
 \hypertarget{cohort-study}{%
@@ -6196,14 +5406,8 @@ A randomised controlled trial addresses the research question: what is the effec
 
 A cohort study is an \emph{observational study} that addresses the research question: what is the effect of an exposure on an outcome. This research question is similar to that studied in a randomised controlled trial, but the exposure is defined by the participants' circumstances, and not manipulated by the researchers. In a cohort study, participants without the outcome of interest are enrolled, followed over time, and information on their exposure to a factor is measured (either at baseline or over time). At the conclusion of the study, information on the outcome is measured to identify new (incident) cases.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "ee-cohort.jpg")):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cohort.jpg"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cohort} \caption{The design of a cohort study [Figure 4.2, Essential Epidemiology]}\label{fig:ee-fig-cohort}
+\includegraphics[width=0.66\linewidth]{img/mod06/ee-cohort} \caption{The design of a cohort study [Figure 4.2, Essential Epidemiology]}\label{fig:ee-fig-cohort}
 \end{figure}
 
 \hypertarget{case-control-study}{%
@@ -6211,14 +5415,8 @@ A cohort study is an \emph{observational study} that addresses the research ques
 
 While the randomised controlled trial and cohort study begin with a population without the outcome, a case-control study begins by assembling a group with the outcome of interest (cases), and a group without the outcome of interest (controls). The researchers then ask the cases and controls about their previous exposures.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "ee-cc.jpg")): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## "/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cc.jpg"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cc} \caption{The design of a case-control trial [Figure 4.3, Essential Epidemiology]}\label{fig:ee-fig-cc}
+\includegraphics[width=0.66\linewidth]{img/mod06/ee-cc} \caption{The design of a case-control trial [Figure 4.3, Essential Epidemiology]}\label{fig:ee-fig-cc}
 \end{figure}
 
 \hypertarget{cross-sectional-study}{%
@@ -6226,14 +5424,8 @@ While the randomised controlled trial and cohort study begin with a population w
 
 In a cross-sectional study, the exposure and the outcome are measured at the same time. While this results in a study that is relatively quick to conduct, it does not allow for any temporal relationships to be assessed.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "ee-cs.jpg")): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## "/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cs.jpg"
-\end{verbatim}
-
 \begin{figure}[H]
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/ee-cs} \caption{The design of a cross-sectional study [Figure 4.4, Essential Epidemiology]}\label{fig:ee-fig-cs}
+\includegraphics[width=0.66\linewidth]{img/mod06/ee-cs} \caption{The design of a cross-sectional study [Figure 4.4, Essential Epidemiology]}\label{fig:ee-fig-cs}
 \end{figure}
 
 \hypertarget{measures-of-effect-for-epidemiological-studies}{%
@@ -6500,13 +5692,7 @@ Risk statistics are usually only reported with one or two decimal places. The in
 
 To compute the 95\% confidence interval for proportions, go to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Summary and descriptive statistics \textgreater Proportion CI calculator}. In the \texttt{cii} dialog box as shown below, key in \texttt{215} as the \textbf{Sample size} and \texttt{47} as the number of \textbf{Successes}. Choose \textbf{Wald} for the normal approximation to binomial distribution CI {[}Command: cii 215 47, wald{]} or \textbf{Wilson} for Wilson CI {[}Command: cii 215 47, wilson{]}. Click \textbf{OK} or \textbf{Submit} when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cii.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cii.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cii}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cii}
 
 \hypertarget{significance-test-for-single-proportion}{%
 \section{Significance test for single proportion}\label{significance-test-for-single-proportion}}
@@ -6537,27 +5723,13 @@ After checking the data, perform the binomial probability test by going to \text
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 6.3.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "bitest.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/
-## bitest.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/bitest}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/bitest}
 
 {[}Command: \texttt{bitest\ smoking\_status\ ==\ 0.2}{]}
 
 If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial probability test by going to \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Classical tests of hypotheses \textgreater{} Binomial probability test calculator}. Enter the numbers in the appropriate fields as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "bitesti.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/
-## bitesti.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/bitesti}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/bitesti}
 
 {[}Command: bitesti 300 54 0.2{]}
 
@@ -6566,35 +5738,17 @@ If you have only the aggregate data then the same test can be carried out using 
 
 Using data file from Worked Example 6.4, to obtain relative risk and its 95\% CI, go to \textbf{Statistics \textgreater{} Epidemiology and related \textgreater{} Tables for epidemiologists \textgreater{} Cohort study risk ratio etc\ldots{}}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cs-1.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-1}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cs-1}
 
 In the \textbf{cs -- cohort studies} dialog box, select the variable \texttt{side\_effect} in the \textbf{Case variable} box, and the variable \texttt{group} in the \textbf{Exposed variable} box. Click \textbf{OK} or \textbf{Submit} to obtain Output 6.4 in the notes.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cs-2.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-2}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cs-2}
 
 {[}Command: \texttt{cs\ side\_effect\ group}{]}
 
 If you only have the cross-tabulated data (i.e.~aggregated), you can go to \textbf{Statistics \textgreater{} Epidemiology and related \textgreater{} Tables for epidemiologists \textgreater{} Cohort study risk ratio etc. calculator}. In the \textbf{csi} dialog box, key in the relevant numbers from the cross-tabulated data (similarly to the cci dialog box above). Click \textbf{OK} or \textbf{Submit} to obtain Output 6.4.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cs-3.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cs-3}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cs-3}
 
 {[}Command: \texttt{csi\ 15\ 4\ 35\ 46}{]}
 
@@ -6605,23 +5759,11 @@ To obtain an odds ratio and its 95\% CI, go to \textbf{Statistics \textgreater{}
 
 To obtain the Cornfield confidence interval, click on the \textbf{Options} tab and select the \textbf{Cornfield approximation} radio button.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cc-1.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cc-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cc-1}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cc-1}
 
 If you only have the cross-tabulated data (i.e.~aggregated), you can go to \textbf{Statistics \textgreater{} Epidemiology and related \textgreater{} Tables for epidemiologists \textgreater{} Case-control odds ratio calculator}. In the \texttt{cci} dialog box, enter the numbers from the cross-tabulated data and select the \textbf{Cornfield approximation} radio button. For example, Worked example 6.5 would be entered as:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod06", "stata",
-## "cc-2.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cc-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod06/stata/cc-2}
+\includegraphics[width=0.66\linewidth]{img/mod06/stata/cc-2}
 
 \hypertarget{learning-activities-5}{%
 \chapter*{\texorpdfstring{\textbf{6} Learning Activities}{6 Learning Activities}}\label{learning-activities-5}}
@@ -7144,14 +6286,7 @@ As discussed in Module 7 course notes, in this dataset \texttt{group} is coded a
 
 Follow the steps: \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Two-way table with measures of association} (as shown in the Introductory Stata workshop). In the \texttt{tabulate2} dialog box, select the variable \texttt{group} in the \textbf{Row} variable box, and the variable \texttt{side\_effect} in the \textbf{Column} variable box as shown below. Tick \textbf{Pearson's chi-squared} to obtain the Pearson's chi-squared test or tick \textbf{Fisher's exact test} if you have small expected cell counts (see Course Notes).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod07", "stata",
-## "tabulate2-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod07/stata/
-## tabulate2-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-1}
+\includegraphics[width=0.66\linewidth]{img/mod07/stata/tabulate2-1}
 
 {[}Command: \texttt{tab\ group\ side\_effect,\ chi2\ expected\ row}{]}
 
@@ -7163,14 +6298,7 @@ The last line labelled Pearson chi2(1) reports the appropriate Chi-squared test 
 
 When you only have the cross-tabulated data, you can use the \texttt{tabi} command from \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Table calculator}. In the \texttt{tabi} dialog box, enter the table in the \textbf{User-supplied cell frequencies} box as \texttt{46\ 4\ \textbackslash{}\ 35\ 15} to obtain the same table as in the Output 7.1. As explained in the dialog box, each row of frequencies is separated by the backslash ``\,''. You can tick the same additional outputs and tests as in the tab2 command above.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod07", "stata",
-## "tabi-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod07/stata/
-## tabi-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabi-1}
+\includegraphics[width=0.66\linewidth]{img/mod07/stata/tabi-1}
 
 {[}Command: \texttt{tabi\ 46\ 4\ \textbackslash{}\ 35\ 15,\ chi2\ exp\ row}{]}
 
@@ -7181,14 +6309,7 @@ When you are done, click OK or Submit.
 
 Use the data in \texttt{Example\_7.2.dta}. We use similar steps as described above for a 2-by-2 table. Here we have defined the column based on sex, and we would like to obtain allergy severity by sex, so we choose ``Within-column relative frequencies''. We also request the expected cell counts to check the Pearson chi-squared test assumption that \textless20\% of cells have expected cell count \textless5 and the minimum expected cell count is \textgreater1.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod07", "stata",
-## "tabulate2-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod07/stata/
-## tabulate2-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-2}
+\includegraphics[width=0.66\linewidth]{img/mod07/stata/tabulate2-2}
 
 {[}Command: \texttt{tab\ allergy\_severity\ sex,\ chi2\ col\ exp}{]}
 
@@ -7199,14 +6320,7 @@ Click \textbf{OK} or \textbf{Submit} to obtain Stata Output 7.2.
 
 To perform this test in Stata, we will use the dataset \texttt{Example\_7.3.dta}. Responses to each drug should be in separate variables in the dataset as shown in Table 7.2 using the \texttt{tabulate2} command (\textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Frequency tables \textgreater{} Two-way table with measures of association}). In the tabulate2 dialog box, tick \textbf{Relative frequencies} under \textbf{Cell contents} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod07", "stata",
-## "tabulate2-3.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod07/stata/
-## tabulate2-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/tabulate2-3}
+\includegraphics[width=0.66\linewidth]{img/mod07/stata/tabulate2-3}
 
 {[}Command: \texttt{tab2\ drugb\ druga\ ,\ cell}{]}
 
@@ -7214,14 +6328,7 @@ Click \textbf{OK} or \textbf{Submit} to obtain Stata Output 7.3.
 
 To perform the McNemar's test, go to \textbf{Statistics \textgreater{} Epidemiology and related \textgreater{} Tables for epidemiologists \textgreater{} Matched case-control studies}. In the \texttt{mcc} dialog box, select the variable \texttt{drugb} as the \textbf{Exposed case variable} and \texttt{druga} as the \textbf{Exposed control variable} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod07", "stata",
-## "mcc-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod07/stata/
-## mcc-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod07/stata/mcc-1}
+\includegraphics[width=0.66\linewidth]{img/mod07/stata/mcc-1}
 
 {[}Command: \texttt{mcc\ drugb\ druga}{]}
 
@@ -7333,15 +6440,8 @@ We use correlation to measure the strength of a linear relationship between two 
 
 The Stata file \texttt{Example\_8.1.dta} has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45\%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure \ref{fig:scatter-plot}). This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08",
-## "scatterpng.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/
-## scatterpng.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/scatterpng} \caption{Association between height and lung function in 120 adults}\label{fig:scatter-plot}
+\includegraphics[width=0.66\linewidth]{img/mod08/scatterpng} \caption{Association between height and lung function in 120 adults}\label{fig:scatter-plot}
 \end{figure}
 
 \hypertarget{correlation-coefficients}{%
@@ -7353,15 +6453,8 @@ The coefficient is positive when large values of one variable tend to occur with
 
 The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure \ref{fig:scatter-plot-four} (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "scatterplot-four-
-## plots.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/scatterplot-four-
-## plots.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/scatterplot-four-plots} \caption{Scatter plots demonstrating strong and weak, positive and negative associations}\label{fig:scatter-plot-four}
+\includegraphics[width=0.66\linewidth]{img/mod08/scatterplot-four-plots} \caption{Scatter plots demonstrating strong and weak, positive and negative associations}\label{fig:scatter-plot-four}
 \end{figure}
 
 The P value associated with an r value is an estimate of whether the correlation coefficient is significantly different from zero. However, a correlation coefficient that does not have a significant P value does not imply that there is no relationship because the correlation coefficient only tests for a linear association and there may be a non-linear relationship such as a curved or irregular relationship.
@@ -7463,15 +6556,8 @@ The second purpose for using a regression model is for testing the hypothesis th
 
 From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure \ref{fig:scatter-plot-line} shows the data with the line fitted.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "scatterplot-
-## line-fvc-height.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/
-## scatterplot-line-fvc-height.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/scatterplot-line-fvc-height} \caption{Association between height and lung function in 120 adults}\label{fig:scatter-plot-line}
+\includegraphics[width=0.66\linewidth]{img/mod08/scatterplot-line-fvc-height} \caption{Association between height and lung function in 120 adults}\label{fig:scatter-plot-line}
 \end{figure}
 
 The line through the plot is called the line of `best fit' because the size of the deviations between the data points and the line is minimised in the calculation. The distance between each data point and the regression line is called a `residual'.
@@ -7485,15 +6571,8 @@ The mathematical equation for the line explains the relationship between the two
 
 This line is shown in Figure \ref{fig:regression-parameters} using the notation shown in Table \ref{tab:regression-notation}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "regression-
-## line-parameters.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/
-## regression-line-parameters.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/regression-line-parameters} \caption{Coefficients of a linear regression equation}\label{fig:regression-parameters}
+\includegraphics[width=0.66\linewidth]{img/mod08/regression-line-parameters} \caption{Coefficients of a linear regression equation}\label{fig:regression-parameters}
 \end{figure}
 
  
@@ -7646,15 +6725,8 @@ The distribution of the residuals should always be checked. Outlying residuals c
 
 The histogram of residuals from the model is shown in Figure 8.5. They are normally distributed and indicate that there are no influential outliers so that the assumptions for regression are met.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "regression-
-## residual-histogram.png")): It is highly recommended to use relative paths for
-## images. You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/
-## regression-residual-histogram.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/regression-residual-histogram} \caption{Histogram of regression residuals}\label{fig:residual-hist}
+\includegraphics[width=0.66\linewidth]{img/mod08/regression-residual-histogram} \caption{Histogram of regression residuals}\label{fig:residual-hist}
 \end{figure}
 
 \hypertarget{critical-appraisal}{%
@@ -7684,25 +6756,11 @@ We will demonstrate using Stata for correlation and simple linear regression usi
 
 To create a scatter plot to explore the association between height and FVC click: \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)}. In the \texttt{twoway} dialog box, click \textbf{Create\ldots{}}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-1}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-1}
 
 A new dialog box will open. Select the \textbf{Basic plots} radio button and highlight \textbf{Scatter} under \textbf{Basic plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-2}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-2}
 
 Click the \textbf{Accept} button in the \textbf{Plot 1} dialog box to return to the \textbf{twoway} dialog box, then click the \textbf{OK} or \textbf{Submit} button to produce the scatter plot shown in \textbf{Figure 8.1}.
 
@@ -7710,60 +6768,25 @@ Click the \textbf{Accept} button in the \textbf{Plot 1} dialog box to return to 
 
 To add a fitted line, go back to the \texttt{twoway} dialog box. If you clicked the \textbf{OK} button, you can go to \textbf{Graphics} \textbf{\textgreater{} Twoway} \textbf{graph (scatter, line, etc.)} to bring it back again.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-3.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-3}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-3}
 
 Click \textbf{Create\ldots{}}, then select the \textbf{Fit plots} radio button and \textbf{Linear prediction} under \textbf{Fit plots: (select type)}. Choose \textbf{FVC} for the \textbf{Y variable} and \textbf{Height} for the \textbf{X variable}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-4.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-4.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-4}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-4}
 
 Click the \textbf{Accept} button, then the \textbf{OK} or \textbf{Submit} button to produce the scatterplot below.
 
 {[}Command: \texttt{twoway\ (scatter\ FVC\ Height)\ (lfit\ FVC\ Height)}{]}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "scatter-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## scatter-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/scatter-1}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/scatter-1}
 
 Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the \textbf{Y axis} tab in the \textbf{twoway} dialog box to enter your title as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-5.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-5.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-5}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-5}
 
 You can click the \textbf{Submit} button to check how the scatter plot looks like. Next go the \textbf{Legend} tab and select the \textbf{Hide legend} radio button.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-6.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-6.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-6}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-6}
 
 Click the \textbf{OK} or \textbf{Submit} button when you are finished to produce \textbf{Figure 8.3}.
 
@@ -7771,14 +6794,7 @@ Click the \textbf{OK} or \textbf{Submit} button when you are finished to produce
 
 To save your graph, go to \textbf{File \textgreater{} Save} in the \textbf{Graph} window, and be sure to save your file as a PNG file:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "twoway-7.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## twoway-7.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/twoway-7}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/twoway-7}
 
 \hypertarget{calculating-a-correlation-coefficient}{%
 \section{Calculating a correlation coefficient}\label{calculating-a-correlation-coefficient}}
@@ -7787,14 +6803,7 @@ To calculate the Pearson's correlation using the dataset \texttt{Example\_8.1.dt
 
 Select the two variables, \textbf{FVC} and \textbf{Height} in the \textbf{Variables} box. You can click the \textbf{Submit} button to check the output. Next, tick the box for \textbf{Print significance level for each entry} to obtain the P-value and the box for \textbf{Print number of observations for each entry} to obtain the number of observations used as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "corr-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## corr-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/corr-1}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/corr-1}
 
 Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Output 8.1},
 
@@ -7809,14 +6818,7 @@ Choose \textbf{Statistics \textgreater{} Linear models and related \textgreater{
 
 In the \texttt{regress} dialog box, select \texttt{FVC} as the \textbf{Dependent variable}, and \texttt{Height} as the \textbf{Independent variable}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "regr-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## regr-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/regr-1}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/regr-1}
 
 Click the \textbf{OK} or the \textbf{Submit} button when you are done to produce \textbf{Outputs 8.2 and 8.3}.
 
@@ -7829,25 +6831,11 @@ To obtain the residuals, go to \textbf{Statistics \textgreater{} Post estimation
 
 In the \texttt{Postestimation\ Selector} dialog box, select \textbf{Predictions and their SEs, leverage statistics, distance statistics, etc.} in the list under Predictions as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "postest-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## postest-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-1}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/postest-1}
 
 In the \texttt{predict} dialog box, choose the \textbf{Residuals} button and enter a New variable name (e.g.~\texttt{FVC\_resid}) for the residuals from the regression model.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "postest-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## postest-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-2}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/postest-2}
 
 Click \textbf{OK} button when you are done.
 
@@ -7855,14 +6843,7 @@ Click \textbf{OK} button when you are done.
 
 You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using \textbf{Graphics \textgreater{} Histogram} as shown in \textbf{Stata Notes} section for \textbf{Module 2}. Below is the \textbf{histogram} dialog box used to produce the graph in \textbf{Figure 8.5}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod08", "stata",
-## "postest-3.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod08/stata/
-## postest-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod08/stata/postest-3}
+\includegraphics[width=0.66\linewidth]{img/mod08/stata/postest-3}
 
 {[}Command: \texttt{histogram\ FVC\_resid,\ bin(12)\ frequency\ normal}{]}
 
@@ -7998,28 +6979,16 @@ When a variable has a skewed distribution, one possibility is to transform the d
 
 We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example\_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure \ref{fig:mod09-los}. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "mod09-los.png")):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-los.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-los} \caption{Length of hospital stay for 132 patients}\label{fig:mod09-los}
+\includegraphics[width=0.66\linewidth]{img/mod09/mod09-los} \caption{Length of hospital stay for 132 patients}\label{fig:mod09-los}
 \end{figure}
 
 When data are positively skewed, as shown in Figure \ref{fig:mod09-los}, a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.
 
 In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure \ref{fig:mod09-lnlos}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "mod09-
-## lnlos.png")): It is highly recommended to use relative paths for images. You had
-## absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-lnlos.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-lnlos} \caption{istribution of log transformed (length of stay + 1)}\label{fig:mod09-lnlos}
+\includegraphics[width=0.66\linewidth]{img/mod09/mod09-lnlos} \caption{istribution of log transformed (length of stay + 1)}\label{fig:mod09-lnlos}
 \end{figure}
 
 The distribution now appears much more bell shaped. Output 9.1 shows the descriptive statistics for length of stay before and after logarithmic transformation. Before transformation, the SD is almost as large as the mean value which indicates that the data are skewed and that these statistics are not an accurate description of the centre and spread of the data.
@@ -8571,15 +7540,8 @@ A crossover trial is done to compare symptom scores for two drugs in 11 people w
 
 Before doing the analysis let us examine the distribution of the difference of symptom scores between the two drugs. As in Module 5, we first need to compute the difference between the symptom scores. To examine the distribution, we plot a histogram as shown in Figure \ref{fig:mod09-diff-hist}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "mod09-diff-
-## hist.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-diff-
-## hist.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/mod09-diff-hist} \caption{Distribution of difference in symptom scores between Drug 1 and Drug 2}\label{fig:mod09-diff-hist}
+\includegraphics[width=0.66\linewidth]{img/mod09/mod09-diff-hist} \caption{Distribution of difference in symptom scores between Drug 1 and Drug 2}\label{fig:mod09-diff-hist}
 \end{figure}
 
 The histogram shows that the differences are not normally distributed. The data looks negatively skewed with a gap in the histogram between the values of -5 and 0. Therefore, it would not be appropriate to conduct a paired t-test. Hence, we conduct a non-parametric paired test (Wilcoxon matched-pairs signed-rank test).
@@ -8691,25 +7653,11 @@ Go to \textbf{Data \textgreater{} Create or change data \textgreater{} Create ne
   click the \textbf{Create} button to bring up the \textbf{Expression Builder} dialog box. Double click on \textbf{Functions} to expand the list in the \textbf{Categories} box, then click on \textbf{Mathematical} to display the list of mathematical functions in the box on the right. Scroll down to the \textbf{ln()} function and double click on it to bring it to the main text box. Next scroll down the \textbf{Categories} box to \textbf{Variables} and click on it to check the variables you have in the dataset. In the text box, replace \texttt{x} with \texttt{los\ +\ 1} as shown below.
 \end{enumerate}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## gen-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## gen-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-gen-1}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-gen-1}
 
 Click the \textbf{OK} button when you are done to transfer the expression to the \textbf{Specify a value or an expression} box in the generate dialog box as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## gen-2.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## gen-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-gen-2}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-gen-2}
 
 Click \textbf{OK} and the new variable will appear in your dataset. You can check in your Variables window or your Data Editor window.
 
@@ -8721,14 +7669,7 @@ To obtain the back-transformed mean shown in Output 9.1, go to \textbf{Data \tex
 
 Click \textbf{OK} when you are done, then \textbf{OK} or \textbf{Submit} in the \textbf{display} dialog box.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## calc.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## calc.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-calc}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-calc}
 
 {[}Command: \texttt{di\ exp(3.407232)}{]}
 
@@ -8741,14 +7682,7 @@ The Wilcoxon ranked-sum test will be demonstrated using the length of stay data 
 
 In the \textbf{ranksum} dialog box, select \texttt{los} as the \textbf{Variable} and select \texttt{infect} as the \textbf{Grouping variable} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## ranksum.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## ranksum.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-ranksum}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-ranksum}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 9.3.
 
@@ -8761,14 +7695,7 @@ The Wilcoxon matched-pairs signed-rank test in Stata will be demonstrated using 
 
 To do the analysis, go to: \textbf{Statistics \textgreater{} Summaries, tables, and tests \textgreater{} Nonparametric tests of hypotheses \textgreater{} Wilcoxon matched-pairs sign-rank test}. In the \textbf{signrank} dialog box, select \texttt{drug\_1} in the \textbf{Variable} box and type \texttt{drug\_2} in the \textbf{Expression} box. The dialog box will look like:
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## signrank.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## signrank.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-signrank}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-signrank}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 9.4.
 {[}Command: \texttt{signrank\ drug\_1\ =\ drug\_2}{]}
@@ -8780,25 +7707,11 @@ The analyses for Spearman's and Kendall's rank correlation are conducted in simi
 
 \textbf{Statistics \textgreater{} Nonparametric analysis \textgreater{} Tests of hypotheses \textgreater{} Spearman's rank correlation}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## spearman.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## spearman.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-spearman}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-spearman}
 
 \textbf{Statistics \textgreater{} Nonparametric analysis \textgreater{} Tests of hypotheses \textgreater{} Kendall's rank correlation}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod09", "stata", "mod09-
-## kendall.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-
-## kendall.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod09/stata/mod09-kendall}
+\includegraphics[width=0.66\linewidth]{img/mod09/stata/mod09-kendall}
 
 \hypertarget{learning-activities-8}{%
 \chapter*{\texorpdfstring{\textbf{9} Learning Activities}{9 Learning Activities}}\label{learning-activities-8}}
@@ -9697,50 +8610,22 @@ In this module we have discussed the importance of conducting a clinical or epid
 
 The \textbf{Power, precision and sample size} menu item is located at the very bottom of the \textbf{Statistics} menu. \textbf{You may need to scroll down the menu to locate the item.}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## menu-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## menu-1.png"
-\end{verbatim}
-
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-menu-1}
+\includegraphics[width=1\linewidth]{img/mod10/stata/mod10-menu-1}
 
 The \textbf{Power, precision and sample-size} analysis dialog box appears as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## menu-3.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## menu-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-menu-3}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-menu-3}
 
 \hypertarget{sample-size-calculation-for-two-independent-samples-t-test}{%
 \section{Sample size calculation for two independent samples t-test}\label{sample-size-calculation-for-two-independent-samples-t-test}}
 
 To do the problem discussed in Worked Example 10.2, you can expand the \textbf{Means} item under \textbf{Population parameter} on the left-hand-side of the \textbf{Power and sample-size analysis} dialog box, then choose \textbf{Two independent} samples. On the right-hand-side of the dialog box, choose \textbf{Test comparing two independent means}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## twomeans-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
-## mod10-twomeans-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-twomeans-1}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-twomeans-1}
 
 The \textbf{power twomeans} dialog box will appear. Based on the information in Worked Example 10.2, change \textbf{Power} to \texttt{0.9} and enter \texttt{25} as the \textbf{Common standard deviation}. For the means, we can assume that \textbf{Control} mean systolic blood pressure is \texttt{90} mmHg and the the \textbf{Experimental} mean systolic blood pressure is 5 mmHg higher at \texttt{95} mmHg. We use equal numbers in each group (allocation ratio of \texttt{1} which is the default) because that would give us the smallest total sample size required.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## twomeans-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
-## mod10-twomeans-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-twomeans-2}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-twomeans-2}
 
 Click \textbf{OK} or \textbf{Submit} to produce Output 10.1.
 
@@ -9751,25 +8636,11 @@ Click \textbf{OK} or \textbf{Submit} to produce Output 10.1.
 
 For a paired sample t-test, go back to the \textbf{Power and sample-size analysis} dialog box and click on \textbf{Two paired samples} under \textbf{Means} on the left-hand-side, then choose \textbf{Paired test comparing two correlated means, specify correlation between paired observations} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## pairedmeans-1.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
-## mod10-pairedmeans-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-pairedmeans-1}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-pairedmeans-1}
 
 In the \textbf{power pairedmeans} dialog box, change \textbf{Power} to \texttt{0.9} and enter \texttt{25} as the \textbf{Common standard deviation} as shown below. For the means, we can assume that \textbf{Control} mean systolic blood pressure is 90 mmHg and the the \textbf{Experimental} mean systolic blood pressure is 5 mmHg higher at \texttt{95} mmHg as we had for the independent samples.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## pairedmeans-2.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/
-## mod10-pairedmeans-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-pairedmeans-2}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-pairedmeans-2}
 
 Click \textbf{OK} or \textbf{Submit} to produce Output 10.2.
 
@@ -9780,25 +8651,11 @@ Click \textbf{OK} or \textbf{Submit} to produce Output 10.2.
 
 To do the problem discussed in Worked Example 10.3, you can expand the \textbf{Proportions} item under \textbf{Population parameter} on the left-hand-side of the Power and sample-size analysis dialog box, then choose \textbf{Two independent samples}. On the right-hand-side of the dialog box, choose \textbf{Chi-squared test comparing two independent proportions}.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## twoprop-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## twoprop-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-twoprop-1}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-twoprop-1}
 
 The \textbf{power twoproportions} dialog box will appear. Based on the information in Worked Example 10.3, check the \textbf{Power} is \texttt{0.8} and \textbf{Significance level} is \texttt{0.05} (these are the default values), then enter \texttt{0.35} and \texttt{0.2} as the \textbf{Proportions} as shown below. As with the two independent samples example, we can assume equal numbers in each group (\textbf{Allocation ratio} of \texttt{1} which is the default).
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## twoprop-2.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## twoprop-2.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-twoprop-2}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-twoprop-2}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 10.3.
 
@@ -9808,41 +8665,20 @@ Note: It doesn't matter if you swap the proportions for the \textbf{Control} and
 
 If you had difference in proportion, relative risk or odds ratio for the sample size calculation, you can choose them from the drop-down list under Experimental as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## twoprop-3.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## twoprop-3.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-twoprop-3}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-twoprop-3}
 
 \hypertarget{sample-size-calculation-with-relative-risk-and-odds-ratio}{%
 \section{Sample size calculation with relative risk and odds ratio}\label{sample-size-calculation-with-relative-risk-and-odds-ratio}}
 
 Using information from Worked Example 10.4, we change \textbf{Power} to \texttt{0.9}, enter \texttt{0.5} as the \textbf{Control Proportion}. As we are working with a relative risk, choose \textbf{Relative risk} as the effect size, and enter \texttt{1.5} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## RR-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## RR-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-RR-1}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-RR-1}
 
 Click \textbf{OK} or \textbf{Submit} to obtain Output 10.4.
 
 Now we calculate the sample size for Worked Example 10.5. Enter \texttt{0.3} as the \textbf{Control Proportion}, choose \textbf{Odds ratio} as the estimate from the dropdown list and enter \texttt{2} as the \textbf{Odds ratio.} In this example, you can also try entering two values for \textbf{Power}: \texttt{0.9} and \texttt{0.8} as shown below.
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "mod10", "stata", "mod10-
-## OR-1.png")): It is highly recommended to use relative paths for images. You
-## had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-
-## OR-1.png"
-\end{verbatim}
-
-\includegraphics[width=0.66\linewidth]{/Users/td/Documents/Repos/phcm9795/img/mod10/stata/mod10-OR-1}
+\includegraphics[width=0.66\linewidth]{img/mod10/stata/mod10-OR-1}
 
 Click \textbf{OK} or \textbf{Submit} to obtain the output below.
 
@@ -9963,28 +8799,15 @@ How many participants will be needed to show that this mean value is significant
 \hypertarget{z-table}{%
 \chapter{z-table}\label{z-table}}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "misc", "z-table.png")): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## "/Users/td/Documents/Repos/phcm9795/img/misc/z-table.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/misc/z-table} \caption{Areas in the upper tail of the standard normal distribution}\label{fig:unnamed-chunk-123}
+\includegraphics[width=1\linewidth]{img/misc/z-table} \caption{Areas in the upper tail of the standard normal distribution}\label{fig:unnamed-chunk-123}
 \end{figure}
 
 \hypertarget{analysis-summary}{%
 \chapter{Analysis summary}\label{analysis-summary}}
 
-\begin{verbatim}
-## Warning in knitr::include_graphics(here::here("img", "misc", "analysis-
-## flowchart.png")): It is highly recommended to use relative paths for images.
-## You had absolute paths: "/Users/td/Documents/Repos/phcm9795/img/misc/analysis-
-## flowchart.png"
-\end{verbatim}
-
 \begin{figure}
-\includegraphics[width=1\linewidth]{/Users/td/Documents/Repos/phcm9795/img/misc/analysis-flowchart} \caption{Flowchart to determine which statistical test to use}\label{fig:unnamed-chunk-124}
+\includegraphics[width=1\linewidth]{img/misc/analysis-flowchart} \caption{Flowchart to determine which statistical test to use}\label{fig:unnamed-chunk-124}
 \end{figure}
 
   \bibliography{PHCM9795.bib}
