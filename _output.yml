@@ -5,8 +5,12 @@ bookdown::gitbook:
     toc:
       before: |
         <li><a href="./">PHCM9795 Foundations of Biostatistics</a></li>
-    edit: https://github.com/USERNAME/REPO/edit/BRANCH/%s
     download: ["pdf"]
+    sharing:
+      facebook: false
+      github: false
+      twitter: false
+      all: false
 bookdown::pdf_book:
   includes:
     in_header: preamble.tex
