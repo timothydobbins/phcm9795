@@ -184,7 +184,7 @@ huxtable(tab1_3) %>%
 
 The relative frequency is the frequency expressed as a proportion or percentage of the total frequency.  For example, 5 out of 30 students are aged 21, so the relative frequency is (5/30) $\times$ 100 = 16.7%.
 
-The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age.  For example, the cumulative frequency of students at the medical centre aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) $\times$ 100 = 36.7%.
+The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age.  For example, the cumulative frequency of students at the gym aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) $\times$ 100 = 36.7%.
 
 The information presented in Table \@ref(tab:tab1-ages-freq2) is called the frequency distribution of the variable age.  Frequency distributions can also be presented for qualitative (categorical) data.
 
@@ -446,7 +446,7 @@ Where $\sum{x}$ represents the sum of the values in the population, and $N$ repr
 
 To calculate the population variance ($\sigma^2$) and standard deviation($\sigma$), we use a slightly modified version of the equation for $s^2$:
 
-$$ \sigma^2 = \frac{\sum(x - \bar{x})^2}{N} $$
+$$ \sigma^2 = \frac{\sum(x - \mu)^2}{N} $$
 
 with a population standard deviation of: $\sigma = \sqrt{\sigma^2}$.
 

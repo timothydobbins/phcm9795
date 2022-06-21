@@ -550,7 +550,7 @@ This table is available in Table1.docx, saved on Moodle.</p>
 <p>There are two parts to applying value labels to categorical variables: 1) defining the labels, and 2) applying the labels to a variable. This may seem cumbersome, but there are times where we can apply value labels to a collection of variables (for example, multiple variables comprising yes/no categories, or Likert scales such as: strongly disagree, disagree, neutral, agree, strongly agree). Both parts can be done within the Variables Manager.</p>
 <p><strong>Part 1:</strong> Defining the value labels</p>
 <ol style="list-style-type: decimal">
-<li>Open the Variables Manager: <strong>Data &gt; Variables Manager</strong> and select the variable you want to assign labels to (in this case, <code>sex</code>). You will see that the <strong>Variable label</strong> in the <strong>Properties</strong> section is blank. To create a value label, click <strong>Manage</strong>.</li>
+<li>Open the Variables Manager: <strong>Data &gt; Variables Manager</strong> and select the variable you want to assign labels to (in this case, <code>sex</code>). You will see that the <strong>Value label</strong> in the <strong>Properties</strong> section is blank. To create a value label, click <strong>Manage</strong>.</li>
 </ol>
 <p>Alternatively, choose <strong>Data &gt; Data utilities &gt; Label utilities &gt; Manage value labels</strong>.</p>
 <p><img src="img/mod01/stata/value-labels-01.png" width="75%" /></p>
@@ -653,7 +653,7 @@ sex                                                                          (un
 <h2>Part 3: Creating other types of graphs<a href="an-introduction-to-stata.html#part-3-creating-other-types-of-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <div id="bar-graphs-1" class="section level3 hasAnchor" number="1.9.12">
 <h3><span class="header-section-number">1.9.12</span> Bar graphs<a href="an-introduction-to-stata.html#bar-graphs-1" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>Here we will create the bar chart shown in Figure 1.1 using the <code>pbc.dta</code> dataset. The x-axis of this graph will be the stage of disease, and the y-axis will show the number of participants in each category.</p>
+<p>Here we will create the bar chart shown in Figure <a href="introduction-to-statistics-and-presenting-data.html#fig:fig-1-1">1.3</a> using the <code>pbc.dta</code> dataset. The x-axis of this graph will be the stage of disease, and the y-axis will show the number of participants in each category.</p>
 <p>To create a Bar chart, go to the Stata menu Graphics &gt; Bar chart and the bar-chart dialog box will appear.</p>
 <div id="simple-bar-graph" class="section level4 hasAnchor" number="1.9.12.1">
 <h4><span class="header-section-number">1.9.12.1</span> Simple bar graph<a href="an-introduction-to-stata.html#simple-bar-graph" class="anchor-section" aria-label="Anchor link to header"></a></h4>
@@ -674,7 +674,7 @@ sex                                                                          (un
 </div>
 <div id="clustered-bar-graph" class="section level3 hasAnchor" number="1.9.14">
 <h3><span class="header-section-number">1.9.14</span> Clustered bar graph<a href="an-introduction-to-stata.html#clustered-bar-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To create a clustered bar chart as shown in Figure 1.2, go to: <strong>Graphics &gt; Bar chart</strong> again. With the previous settings in place (i.e. stage as grouping variable and with appropriate axes labels), now choose <code>sex</code> as the <strong>Group 1</strong> variable, and tick <strong>Group 2</strong> and choose <code>stage</code> as the second grouping variable.</p>
+<p>To create a clustered bar chart as shown in Figure <a href="introduction-to-statistics-and-presenting-data.html#fig:fig-1-2">1.4</a>, go to: <strong>Graphics &gt; Bar chart</strong> again. With the previous settings in place (i.e. stage as grouping variable and with appropriate axes labels), now choose <code>sex</code> as the <strong>Group 1</strong> variable, and tick <strong>Group 2</strong> and choose <code>stage</code> as the second grouping variable.</p>
 <p><img src="img/mod01/stata/bar-05.png" width="75%" /></p>
 <p>In the <strong>Options</strong> tab, tick <strong>Treat first category grouping as y variables</strong>. When you are done, click <strong>OK</strong> or <strong>Submit</strong>.</p>
 <p><img src="img/mod01/stata/bar-06.png" width="75%" /></p>
@@ -683,7 +683,7 @@ sex                                                                          (un
 </div>
 <div id="stacked-bar-graph" class="section level3 hasAnchor" number="1.9.15">
 <h3><span class="header-section-number">1.9.15</span> Stacked bar graph<a href="an-introduction-to-stata.html#stacked-bar-graph" class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>To create a stacked bar chart shown in Figure 1.4, bring up the <strong>Bar chart</strong> dialog box, go to the <strong>Options</strong> tab and tick <strong>Stack bars on y variables</strong>.</p>
+<p>To create a stacked bar chart shown in Figure <a href="introduction-to-statistics-and-presenting-data.html#fig:fig-1-3">1.5</a>, bring up the <strong>Bar chart</strong> dialog box, go to the <strong>Options</strong> tab and tick <strong>Stack bars on y variables</strong>.</p>
 <p><img src="img/mod01/stata/bar-08.png" width="75%" /></p>
 <p><img src="img/mod01/stata/bar-10.png" width="75%" /></p>
 </div>
@@ -727,13 +727,13 @@ Figure 1.12: Graph editor window: Windows
 Figure 1.13: Graph editor window: MacOS
 </p>
 </div>
-<p>When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the <strong>Save</strong> button, choose <strong>Save as</strong> and choose to save using the **PNG (*.png)** format. You can then insert your saved PNG file into your word processing package as usual.</p>
+<p>When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the <strong>Save</strong> button, choose <strong>Save as</strong> and choose to save using the <strong>PNG (*.png)</strong> format. You can then insert your saved PNG file into your word processing package as usual.</p>
 </div>
 <div id="creating-line-graphs" class="section level3 hasAnchor" number="1.9.18">
 <h3><span class="header-section-number">1.9.18</span> Creating line graphs<a href="an-introduction-to-stata.html#creating-line-graphs" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To demonstrate the graphing of aggregate data with Stata, we use the data on new cases and deaths from prostate cancer in males in NSW. This data has been entered into Stata as <code>Example_1.2.dta</code>.</p>
 <p>If you look at the data in the <strong>Data Editor</strong> window, you will see that there are 20 rows - a row for each year of data. Each row contains the number of new cases (<code>NCases</code>), number of deaths (<code>NDeaths</code>), the incidence rate (<code>RCases</code>) and death rate (<code>RDeaths</code>).</p>
-<p>To create a line graph as in Figure 1.5 select <strong>Graphics &gt; Twoway graph (scatter, line, etc.)</strong> and click the <strong>Create…</strong> button in the <strong>twoway – Twoway graphs</strong> dialog box to bring up a dialog box for defining Plot 1.</p>
+<p>To create a line graph as in Figure <a href="introduction-to-statistics-and-presenting-data.html#fig:fig-1-5">1.7</a> select <strong>Graphics &gt; Twoway graph (scatter, line, etc.)</strong> and click the <strong>Create…</strong> button in the <strong>twoway – Twoway graphs</strong> dialog box to bring up a dialog box for defining Plot 1.</p>
 <p><img src="img/mod01/stata/line-01.png" width="75%" /></p>
 <p>Choose <strong>Line</strong> as the plot type, <code>rcases</code> as the <strong>Y variable</strong> and <code>year</code> as the <strong>X variable</strong> as shown below.</p>
 <p><img src="img/mod01/stata/line-02.png" width="75%" /></p>

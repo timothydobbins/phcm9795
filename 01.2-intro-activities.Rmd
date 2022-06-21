@@ -31,7 +31,7 @@ Use Stata to create a 2 by 2 table to show the proportions of low birth weight b
 
 a) What was the total number of mothers who smoked during pregnancy?
 b) What proportion of mothers who smoked gave birth to low birth weight babies? What proportion of non-smoking mothers gave birth to low birth weight babies?
-c) Use Stata to construct a stacked bar chart of the data to examine if there a difference in the proportion of babies born with a low birth weight in relation to mother’s age? Provide appropriate labels for the axes and give the graph an appropriate title.
+c) Use Stata to construct a stacked bar chart of the data to examine if there a difference in the proportion of babies born with a low birth weight in relation to the age group of the mother? Provide appropriate labels for the axes and give the graph an appropriate title. [Hint: plot the data using the `AgeGrp` variable]
 d) Using your answers to the question a) and b), write a brief conclusion about the relationship of low birth weight and mother’s age and smoking status.
 
 ### Activity 1.3 {-}

@@ -219,6 +219,20 @@ On successful completion of this course, you will be able to:
   Present and interpret statistical findings appropriate for a population health audience.
 \end{enumerate}
 
+\hypertarget{changelog}{%
+\subsection*{Changelog}\label{changelog}}
+\addcontentsline{toc}{subsection}{Changelog}
+
+\textbf{2022-06-20}
+
+{[}Changed{]}
+
+\begin{itemize}
+\tightlist
+\item
+  Fixed various typos. Thanks to students for submitting issues.
+\end{itemize}
+
 \hypertarget{introduction-to-statistics-and-presenting-data}{%
 \chapter{Introduction to statistics and presenting data}\label{introduction-to-statistics-and-presenting-data}}
 
@@ -686,7 +700,7 @@ The frequency is a count of the number of individuals of each age in the corresp
 
 The relative frequency is the frequency expressed as a proportion or percentage of the total frequency. For example, 5 out of 30 students are aged 21, so the relative frequency is (5/30) \(\times\) 100 = 16.7\%.
 
-The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age. For example, the cumulative frequency of students at the medical centre aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) \(\times\) 100 = 36.7\%.
+The cumulative frequency here shows the total number of students less than or equal to a certain age, while the cumulative relative frequency is the percentage (of the total) who are less than a certain age. For example, the cumulative frequency of students at the gym aged 19 years or less is 1 + 5 + 5 = 11, and the cumulative relative frequency is (11/30) \(\times\) 100 = 36.7\%.
 
 The information presented in Table \ref{tab:tab1-ages-freq2} is called the frequency distribution of the variable age. Frequency distributions can also be presented for qualitative (categorical) data.
 
@@ -1131,7 +1145,7 @@ Where \(\sum{x}\) represents the sum of the values in the population, and \(N\) 
 
 To calculate the population variance (\(\sigma^2\)) and standard deviation(\(\sigma\)), we use a slightly modified version of the equation for \(s^2\):
 
-\[ \sigma^2 = \frac{\sum(x - \bar{x})^2}{N} \]
+\[ \sigma^2 = \frac{\sum(x - \mu)^2}{N} \]
 
 with a population standard deviation of: \(\sigma = \sqrt{\sigma^2}\).
 
@@ -1687,7 +1701,7 @@ There are two parts to applying value labels to categorical variables: 1) defini
 \def\labelenumi{\arabic{enumi}.}
 \tightlist
 \item
-  Open the Variables Manager: \textbf{Data \textgreater{} Variables Manager} and select the variable you want to assign labels to (in this case, \texttt{sex}). You will see that the \textbf{Variable label} in the \textbf{Properties} section is blank. To create a value label, click \textbf{Manage}.
+  Open the Variables Manager: \textbf{Data \textgreater{} Variables Manager} and select the variable you want to assign labels to (in this case, \texttt{sex}). You will see that the \textbf{Value label} in the \textbf{Properties} section is blank. To create a value label, click \textbf{Manage}.
 \end{enumerate}
 
 Alternatively, choose \textbf{Data \textgreater{} Data utilities \textgreater{} Label utilities \textgreater{} Manage value labels}.
@@ -1849,7 +1863,7 @@ Copying output from Stata can get a little complicated to explain. We have inclu
 \hypertarget{bar-graphs-1}{%
 \subsection{Bar graphs}\label{bar-graphs-1}}
 
-Here we will create the bar chart shown in Figure 1.1 using the \texttt{pbc.dta} dataset. The x-axis of this graph will be the stage of disease, and the y-axis will show the number of participants in each category.
+Here we will create the bar chart shown in Figure \ref{fig:fig-1-1} using the \texttt{pbc.dta} dataset. The x-axis of this graph will be the stage of disease, and the y-axis will show the number of participants in each category.
 
 To create a Bar chart, go to the Stata menu Graphics \textgreater{} Bar chart and the bar-chart dialog box will appear.
 
@@ -1882,7 +1896,7 @@ You may note that most dialog boxes in Stata have two choices: the \textbf{Submi
 \hypertarget{clustered-bar-graph}{%
 \subsection{Clustered bar graph}\label{clustered-bar-graph}}
 
-To create a clustered bar chart as shown in Figure 1.2, go to: \textbf{Graphics \textgreater{} Bar chart} again. With the previous settings in place (i.e.~stage as grouping variable and with appropriate axes labels), now choose \texttt{sex} as the \textbf{Group 1} variable, and tick \textbf{Group 2} and choose \texttt{stage} as the second grouping variable.
+To create a clustered bar chart as shown in Figure \ref{fig:fig-1-2}, go to: \textbf{Graphics \textgreater{} Bar chart} again. With the previous settings in place (i.e.~stage as grouping variable and with appropriate axes labels), now choose \texttt{sex} as the \textbf{Group 1} variable, and tick \textbf{Group 2} and choose \texttt{stage} as the second grouping variable.
 
 \includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-05}
 
@@ -1897,7 +1911,7 @@ In a clustered bar chart, the \textbf{Group 2} variable is the main variable gro
 \hypertarget{stacked-bar-graph}{%
 \subsection{Stacked bar graph}\label{stacked-bar-graph}}
 
-To create a stacked bar chart shown in Figure 1.4, bring up the \textbf{Bar chart} dialog box, go to the \textbf{Options} tab and tick \textbf{Stack bars on y variables}.
+To create a stacked bar chart shown in Figure \ref{fig:fig-1-3}, bring up the \textbf{Bar chart} dialog box, go to the \textbf{Options} tab and tick \textbf{Stack bars on y variables}.
 
 \includegraphics[width=0.75\linewidth]{img/mod01/stata/bar-08}
 
@@ -1947,7 +1961,7 @@ The \textbf{Graph Editor} window comprises two main sections: the graph that can
 \includegraphics[width=0.75\linewidth]{img/mod01/stata/edit-07} \caption{Graph editor window: MacOS}\label{fig:unnamed-chunk-47}
 \end{figure}
 
-When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the \textbf{Save} button, choose \textbf{Save as} and choose to save using the **PNG (*.png)** format. You can then insert your saved PNG file into your word processing package as usual.
+When you are done editing in the Graph Editor, click the Graph Editor icon again to stop the Graph Editor. You will be prompted to save your graph. You can click the \textbf{Save} button, choose \textbf{Save as} and choose to save using the \textbf{PNG (*.png)} format. You can then insert your saved PNG file into your word processing package as usual.
 
 \hypertarget{creating-line-graphs}{%
 \subsection{Creating line graphs}\label{creating-line-graphs}}
@@ -1956,7 +1970,7 @@ To demonstrate the graphing of aggregate data with Stata, we use the data on new
 
 If you look at the data in the \textbf{Data Editor} window, you will see that there are 20 rows - a row for each year of data. Each row contains the number of new cases (\texttt{NCases}), number of deaths (\texttt{NDeaths}), the incidence rate (\texttt{RCases}) and death rate (\texttt{RDeaths}).
 
-To create a line graph as in Figure 1.5 select \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)} and click the \textbf{Create\ldots{}} button in the \textbf{twoway -- Twoway graphs} dialog box to bring up a dialog box for defining Plot 1.
+To create a line graph as in Figure \ref{fig:fig-1-5} select \textbf{Graphics \textgreater{} Twoway graph (scatter, line, etc.)} and click the \textbf{Create\ldots{}} button in the \textbf{twoway -- Twoway graphs} dialog box to bring up a dialog box for defining Plot 1.
 
 \includegraphics[width=0.75\linewidth]{img/mod01/stata/line-01}
 
@@ -2102,7 +2116,7 @@ Use Stata to create a 2 by 2 table to show the proportions of low birth weight b
 \item
   What proportion of mothers who smoked gave birth to low birth weight babies? What proportion of non-smoking mothers gave birth to low birth weight babies?
 \item
-  Use Stata to construct a stacked bar chart of the data to examine if there a difference in the proportion of babies born with a low birth weight in relation to mother's age? Provide appropriate labels for the axes and give the graph an appropriate title.
+  Use Stata to construct a stacked bar chart of the data to examine if there a difference in the proportion of babies born with a low birth weight in relation to the age group of the mother? Provide appropriate labels for the axes and give the graph an appropriate title. {[}Hint: plot the data using the \texttt{AgeGrp} variable{]}
 \item
   Using your answers to the question a) and b), write a brief conclusion about the relationship of low birth weight and mother's age and smoking status.
 \end{enumerate}
@@ -3765,7 +3779,7 @@ The calculation of the 95\% CI for a mean is as follows:
 \[  \bar{x} \pm 1.96 \times \text{SE}( \bar{x} ) \]
 This is the generic formula for calculating 95\% CI for any summary statistic. In general, the mean value can be replaced by the point estimate of a rate or a proportion and the same formula applies for computing 95\% CIs, i.e.
 
-\[ 95\% \text{ CI} = \text{point estimate} \pm \text{SE}(\text{point estimate)} \]
+\[ 95\% \text{ CI} = \text{point estimate} \pm 1.96 \times \text{SE}(\text{point estimate)} \]
 
 The main difference in the methods used to calculate the 95\% CI for different point estimates is the way the SE is calculated. The methods for calculating 95\% CI around proportions and other ratio measures will be discussed in Module 6.
 

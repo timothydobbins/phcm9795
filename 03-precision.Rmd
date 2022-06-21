@@ -82,7 +82,7 @@ The calculation of the 95% CI for a mean is as follows:
 $$  \bar{x} \pm 1.96 \times \text{SE}( \bar{x} ) $$
 This is the generic formula for calculating 95% CI for any summary statistic. In general, the mean value can be replaced by the point estimate of a rate or a proportion and the same formula applies for computing 95% CIs, i.e.
 
-$$ 95\% \text{ CI} = \text{point estimate} \pm \text{SE}(\text{point estimate)} $$
+$$ 95\% \text{ CI} = \text{point estimate} \pm 1.96 \times \text{SE}(\text{point estimate)} $$
 
 The main difference in the methods used to calculate the 95% CI for different point estimates is the way the SE is calculated. The methods for calculating 95% CI around proportions and other ratio measures will be discussed in Module 6.
 
