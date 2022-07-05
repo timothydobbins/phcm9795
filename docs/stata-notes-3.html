@@ -329,10 +329,22 @@ div.csl-indent {
 <div id="producing-histograms-and-boxplots-by-a-second-variable" class="section level3 hasAnchor" number="5.4.1">
 <h3><span class="header-section-number">5.4.1</span> Producing histograms and boxplots by a second variable<a href="stata-notes-3.html#producing-histograms-and-boxplots-by-a-second-variable" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To obtain the histograms in Figure <a href="comparing-the-means-of-two-groups.html#fig:mod05-bwt-gender">5.1</a> using the <code>Example_5.1.dta</code> data, go to <strong>Graphics &gt; Histogram</strong>. Select <code>birthweight</code> as the <strong>Variable</strong> in the <strong>Main</strong> tab. Next go to the <strong>By</strong> tab, tick <strong>Draw subgraphs for unique values of variable</strong> and select <code>gender</code> as the <strong>variable</strong> as shown below:</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;, &quot;hist-
+## by-1.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/hist-
+## by-1.png&quot;</code></pre>
 <p><img src="img/mod05/stata/hist-by-1.png" width="66%" /></p>
 <p>Note that we have also improved the basic histogram definition on the <strong>Main</strong> tab, by defining the <strong>Lower limit of first bin</strong> to be 2.5, and the <strong>Bin width</strong> to be 0.25kg:</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;, &quot;hist-
+## by-2.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/hist-
+## by-2.png&quot;</code></pre>
 <p><img src="img/mod05/stata/hist-by-2.png" width="66%" /></p>
 <p>A similar process is used to obtain the boxplots shown in Figure <a href="comparing-the-means-of-two-groups.html#fig:mod05-bwt-gender">5.1</a>: go to <strong>Graphics &gt; Box plot</strong>. In the <strong>graph box – Box plots</strong> dialog box, select <code>birthweight</code> as the <strong>Variable</strong> in the <strong>Main</strong> tab. Next go to the <strong>Categories</strong> tab, tick <strong>Group 1</strong> and select <code>gender</code> as the <strong>Grouping variable</strong> as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;, &quot;box-
+## by-1.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/box-
+## by-1.png&quot;</code></pre>
 <p><img src="img/mod05/stata/box-by-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to produce the box plot.</p>
 <p>[Command: <code>graph box birthweight, over(gender)</code>]</p>
@@ -340,9 +352,13 @@ div.csl-indent {
 <div id="producing-split-summary-statistics" class="section level3 hasAnchor" number="5.4.2">
 <h3><span class="header-section-number">5.4.2</span> Producing split summary statistics<a href="stata-notes-3.html#producing-split-summary-statistics" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>To produce summary statistics for a continuous variable, split by a second binary categorical variable, as in Worked Example 5.1 using <code>Example_5.1.dta</code>, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong> . In the <strong>summarize</strong> dialog box, select <code>birthweight</code> as the <strong>Variable</strong> in the <strong>Main</strong> tab of the dialog box. Next go to the <strong>by/if/in</strong> tab, tick <strong>Repeat command by groups</strong> and select <code>gender</code> as the <strong>Variable that define groups</strong> as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;, &quot;summ-
+## by-1.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/summ-
+## by-1.png&quot;</code></pre>
 <p><img src="img/mod05/stata/summ-by-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain the output as shown below.</p>
-<p>[Command: <code>by gender, sort : summ birthweight</code>]</p>
+<p>[Command: <code>by gender, sort : summary birthweight</code>]</p>
 <pre class="text"><code>. by gender, sort : summ birthweight
 
 --------------------------------------------------------------------------------
@@ -402,6 +418,10 @@ div.csl-indent {
 <div id="independent-samples-t-test-1" class="section level2 hasAnchor" number="5.5">
 <h2><span class="header-section-number">5.5</span> Independent samples t-test<a href="stata-notes-3.html#independent-samples-t-test-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To carry out an independent sample t-test, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; t test (mean-comparison test)</strong>. In the <strong>ttest</strong> dialog box, choose the <strong>Two-sample using groups</strong> button, then select <code>birthweight</code> as the <strong>Variable</strong> name and <code>gender</code> as the <strong>Group</strong> variable name as shown below. Because the variances of <code>birthweight</code> are similar for males and females, we can leave the <strong>Unequal variances</strong> box unchecked.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;,
+## &quot;ttest-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/
+## ttest-1.png&quot;</code></pre>
 <p><img src="img/mod05/stata/ttest-1.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 5.2.</p>
 <p>[Command: <code>ttest birthweight, by(gender)</code>]</p>
@@ -411,19 +431,31 @@ div.csl-indent {
 <p>Before performing a paired t-test, you must check that the assumptions for the test have been met. Using the dataset <code>Example_5.2.dta</code> to show that the difference between the pair of measurements between the sites is normally distributed, we first need to compute a new variable of the differences.</p>
 <p>Go to <strong>Data &gt; Create new variable</strong>.</p>
 <p>In the <strong>generate – Create a new variable</strong> dialog box, assign a name (e.g. <code>difference</code>) to your new variable in the <strong>Variable name</strong> box. We want to compute difference as sbp_dp − sbp_tp, so we enter this in the <strong>Specify a value or an expression</strong> box as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;,
+## &quot;ttest-2.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/
+## ttest-2.png&quot;</code></pre>
 <p><img src="img/mod05/stata/ttest-2.png" width="66%" /></p>
 <p>Click <strong>Submit</strong> or <strong>OK</strong>.</p>
 <p>[Command: <code>generate difference = sbp_dp-sbp_tp</code>]</p>
 <p>Check that the new variable appears in your Data Editor window.</p>
 <p>Create a histogram with a normal curve under <strong>Graphics &gt; Histogram</strong>, as shown previously in Module 2. You might want to vary the minimum bar value and the bar width: for example, Figure <a href="comparing-the-means-of-two-groups.html#fig:mod05-sbpdiff">5.2</a> was defined to have a lower limit of -40 and a bin width of 10. We have also requested a Normal curve be plotted in the <strong>Density plots</strong> tab.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;,
+## &quot;ttest-3.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/
+## ttest-3.png&quot;</code></pre>
 <p><img src="img/mod05/stata/ttest-3.png" width="66%" /></p>
 <p>[Command: <code>histogram difference, width(10) start(-40) frequency normal</code>]</p>
 </div>
 <div id="paired-t-test" class="section level2 hasAnchor" number="5.7">
 <h2><span class="header-section-number">5.7</span> Paired t-Test<a href="stata-notes-3.html#paired-t-test" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To perform a paired t-test we will use the dataset <code>Example_5.2.dta</code>. For a paired t-test, data must be organised into two variables (i.e. two columns). Go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; t test (mean-comparison test)</strong> as you had for the Independent samples t-test. In the <strong>ttest</strong> dialog box, choose the <strong>Paired</strong> button then Select <code>sbp_dp</code> from the dropdown list under <strong>First variable</strong> and select <code>sbp_tp</code> from the dropdown list under <strong>Second variable</strong>. The dialog box will look like:</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;stata&quot;,
+## &quot;ttest-4.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/stata/
+## ttest-4.png&quot;</code></pre>
 <p><img src="img/mod05/stata/ttest-4.png" width="66%" /></p>
-<p>Click <strong>Submit</strong> or <strong>OK</strong>. The output will look like Output 5.4 in the course notes.</p>
+<p>Click <strong>Submit</strong> or <strong>OK</strong>. The output will look like Output 5.3 in the course notes.</p>
 <p>[Command: <code>ttest sbp_dp == sbp_tp</code>]</p>
 
 </div>

@@ -30,7 +30,7 @@ In an experiment to test the effect of vitamin C on IQ scores, the following con
 ```{r act-6-5, echo=FALSE}
 tab6_5 <- tibble::tribble(
   ~Population, ~`% with improved IQ`, ~`95% confidence interval`,
-    1L,  "30.0",  "32.0 to 38.0",
+    1L,  "35.0",  "32.0 to 38.0",
     2L,  "29.5",  "25.0 to 34.0",
     3L,  "43.5",  "42.0 to 45.0",
     4L,  "30.5",  "20.0 to 41.0",

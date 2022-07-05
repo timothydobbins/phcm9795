@@ -354,6 +354,10 @@ div.csl-indent {
 <div id="worked-example-11" class="section level3 hasAnchor" number="8.2.1">
 <h3><span class="header-section-number">8.2.1</span> Worked Example<a href="correlation-and-linear-regression.html#worked-example-11" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>The Stata file <code>Example_8.1.dta</code> has information about height and lung function collected from a sample of 120 adults. A random sample of adults was approached to take part in the research study, but the response rate was low at 45%. Information was collected on height (cm) and lung function, which was measured as forced vital capacity (FVC). Using the twoway command in Stata we can obtain the plot shown in Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot">8.1</a>). This shows that as height increases, lung function also increases, which is as expected. One or two of the data points are separated from the rest of the data but are not so far away as to be considered outliers because they do not seem to stand out of other observations.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;,
+## &quot;scatterpng.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## scatterpng.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:scatter-plot"></span>
 <img src="img/mod08/scatterpng.png" alt="Association between height and lung function in 120 adults" width="66%" />
 <p class="caption">
@@ -366,6 +370,10 @@ Figure 8.1: Association between height and lung function in 120 adults
 <p>A correlation coefficient (r) describes how closely the variables are related, that is the strength of linear association between two continuous variables. The range of the coefficient is from +1 to −1 where +1 is a perfect positive association, 0 is no association and −1 is a perfect inverse association. In general, an absolute (disregarding the sign) r value below 0.3 indicates a weak association, 0.3 to &lt; 0.6 is fair association, 0.6 to &lt; 0.8 is a moderate association, and <span class="math inline">\(\ge\)</span> 0.8 indicates a strong association.</p>
 <p>The coefficient is positive when large values of one variable tend to occur with large values of the other, and small values of one variable (y) tend to occur with small values of the other (x) (Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-four">8.2</a> (a and b)). For example, height and weight in healthy children or age and blood pressure.</p>
 <p>The coefficient is negative when large values of one variable tend to occur with small values of the other, and small values of one variable tend to occur with large values of the other (Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-four">8.2</a> (c and d)). For example, percentage immunised against infectious diseases and under-five mortality rate.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;scatterplot-four-
+## plots.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/scatterplot-
+## four-plots.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:scatter-plot-four"></span>
 <img src="img/mod08/scatterplot-four-plots.png" alt="Scatter plots demonstrating strong and weak, positive and negative associations" width="66%" />
 <p class="caption">
@@ -415,6 +423,10 @@ Figure 8.2: Scatter plots demonstrating strong and weak, positive and negative a
 <p>The nature of a relationship between two variables is more fully described using regression. There are two principal purposes for building a regression model. The most common is to build a predictive model, for example in situations in which age and gender are used to predict normal values of characteristics such as lung size or body mass index. Normal values are the range of values that occur naturally in the general population.</p>
 <p>The second purpose for using a regression model is for testing the hypothesis that there is a linear relationship between one or more explanatory variables and an outcome variable. For example, a regression model can be used to test the extent to which age predicts BMI or to test the hypothesis that two groups with a different dietary regime have significantly different BMI values after adjusting for age differences.</p>
 <p>From Worked Example 8.1, Stata can be used to plot a regression line through the scatter. Figure <a href="correlation-and-linear-regression.html#fig:scatter-plot-line">8.3</a> shows the data with the line fitted.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;scatterplot-line-
+## fvc-height.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## scatterplot-line-fvc-height.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:scatter-plot-line"></span>
 <img src="img/mod08/scatterplot-line-fvc-height.png" alt="Association between height and lung function in 120 adults" width="66%" />
 <p class="caption">
@@ -427,6 +439,10 @@ Figure 8.3: Association between height and lung function in 120 adults
 <p>The mathematical equation for the line explains the relationship between the two variables. The equation of the regression line is as follows:</p>
 <p><span class="math display">\[y = \beta_{0} + \beta_{1}x\]</span></p>
 <p>This line is shown in Figure <a href="correlation-and-linear-regression.html#fig:regression-parameters">8.4</a> using the notation shown in Table <a href="correlation-and-linear-regression.html#tab:regression-notation">8.2</a>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;regression-line-
+## parameters.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## regression-line-parameters.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:regression-parameters"></span>
 <img src="img/mod08/regression-line-parameters.png" alt="Coefficients of a linear regression equation" width="66%" />
 <p class="caption">
@@ -503,6 +519,10 @@ Figure 8.4: Coefficients of a linear regression equation
 <p>In the above example, the response rate for the survey was low and there may be selection bias in that people who were healthier may have been more likely to attend so the predictive equation may not be considered representative of the general population of adults from which the sample was drawn.</p>
 <p>The distribution of the residuals should always be checked. Outlying residuals can have a large effect on the slope of the model and need to be censored or brought closer to the remainder of the data to reduce their influence. The residuals can be generated using the predict command in Stata.</p>
 <p>The histogram of residuals from the model is shown in Figure 8.5. They are normally distributed and indicate that there are no influential outliers so that the assumptions for regression are met.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;regression-
+## residual-histogram.png&quot;)): It is highly recommended to use relative paths for
+## images. You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/
+## mod08/regression-residual-histogram.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:residual-hist"></span>
 <img src="img/mod08/regression-residual-histogram.png" alt="Histogram of regression residuals" width="66%" />
 <p class="caption">

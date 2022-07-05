@@ -352,6 +352,9 @@ div.csl-indent {
 <div id="worked-example-12" class="section level3 hasAnchor" number="9.2.1">
 <h3><span class="header-section-number">9.2.1</span> Worked Example<a href="analysing-non-normal-data.html#worked-example-12" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>We have data from 132 patients who had a hospital stay following admission to ICU available on Moodle (Example_9.1.dta). The distribution of the length of stay for these patients is shown in the histogram in Figure <a href="analysing-non-normal-data.html#fig:mod09-los">9.1</a>. As is common with variables that record time, the data are skewed with many patients having relatively short stays and a few patients having very long hospital stays. Clearly, it would not be possible to use parametric statistical methods for these data.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod09&quot;, &quot;mod09-los.png&quot;)):
+## It is highly recommended to use relative paths for images. You had absolute
+## paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod09/mod09-los.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod09-los"></span>
 <img src="img/mod09/mod09-los.png" alt="Length of hospital stay for 132 patients" width="66%" />
 <p class="caption">
@@ -360,6 +363,10 @@ Figure 9.1: Length of hospital stay for 132 patients
 </div>
 <p>When data are positively skewed, as shown in Figure <a href="analysing-non-normal-data.html#fig:mod09-los">9.1</a>, a logarithmic transformation can often make the data closer to being normally distributed. This is the most common transformation used. You should note, however, that the logarithmic function cannot handle 0 or negative values. One way to deal with zeros in a set of data is to add 1 to each value before taking the logarithm.</p>
 <p>In Stata, we can use the generate command to obtain a new variable, as shown in the Stata Notes section. As the minimum length of stay in these sample data was 0, we have added 1 to each length of stay before taking the logarithm. The distribution of the logarithm of (length of stay + 1) is shown in Figure <a href="analysing-non-normal-data.html#fig:mod09-lnlos">9.2</a>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod09&quot;, &quot;mod09-
+## lnlos.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod09/mod09-
+## lnlos.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod09-lnlos"></span>
 <img src="img/mod09/mod09-lnlos.png" alt="istribution of log transformed (length of stay + 1)" width="66%" />
 <p class="caption">
@@ -551,6 +558,10 @@ Ho: los(infect==No) = los(infect==Yes)
 </table>
 
 <p>Before doing the analysis let us examine the distribution of the difference of symptom scores between the two drugs. As in Module 5, we first need to compute the difference between the symptom scores. To examine the distribution, we plot a histogram as shown in Figure <a href="analysing-non-normal-data.html#fig:mod09-diff-hist">9.3</a>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod09&quot;, &quot;mod09-diff-
+## hist.png&quot;)): It is highly recommended to use relative paths for images. You had
+## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod09/mod09-diff-
+## hist.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod09-diff-hist"></span>
 <img src="img/mod09/mod09-diff-hist.png" alt="Distribution of difference in symptom scores between Drug 1 and Drug 2" width="66%" />
 <p class="caption">

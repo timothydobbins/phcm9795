@@ -327,6 +327,10 @@ div.csl-indent {
 <div id="confidence-intervals-for-proportions" class="section level2 hasAnchor" number="6.7">
 <h2><span class="header-section-number">6.7</span> 95% confidence intervals for proportions<a href="stata-notes-4.html#confidence-intervals-for-proportions" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To compute the 95% confidence interval for proportions, go to <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt;Proportion CI calculator</strong>. In the <code>cii</code> dialog box as shown below, key in <code>215</code> as the <strong>Sample size</strong> and <code>47</code> as the number of <strong>Successes</strong>. Choose <strong>Wald</strong> for the normal approximation to binomial distribution CI [Command: cii 215 47, wald] or <strong>Wilson</strong> for Wilson CI [Command: cii 215 47, wilson]. Click <strong>OK</strong> or <strong>Submit</strong> when you are done to obtain the outputs shown in the course notes for Worked Example 6.1.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cii.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cii.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cii.png" width="66%" /></p>
 </div>
 <div id="significance-test-for-single-proportion" class="section level2 hasAnchor" number="6.8">
@@ -349,20 +353,40 @@ smoking_status                                                    Smoking status
                             54         1  Smokers</code></pre>
 <p>After checking the data, perform the binomial probability test by going to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; Binomial probability test</strong>. Select <code>Smoking_status</code> as the <strong>Binomial variable</strong>. The probability we want to test against is entered in the <strong>Probability of success</strong> box. To test that the sample proportion (0.18) is different from the population proportion of 0.2, we enter 0.2 as the <strong>Probability of success</strong>.</p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 6.3.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;bitest.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## bitest.png&quot;</code></pre>
 <p><img src="img/mod06/stata/bitest.png" width="66%" /></p>
 <p>[Command: <code>bitest smoking_status == 0.2</code>]</p>
 <p>If you have only the aggregate data then the same test can be carried out using the immediate command. For that you will need to go through perform the binomial probability test by going to <strong>Statistics &gt; Summaries, tables, and tests &gt; Classical tests of hypotheses &gt; Binomial probability test calculator</strong>. Enter the numbers in the appropriate fields as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;bitesti.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## bitesti.png&quot;</code></pre>
 <p><img src="img/mod06/stata/bitesti.png" width="66%" /></p>
 <p>[Command: bitesti 300 54 0.2]</p>
 </div>
 <div id="computing-a-relative-risk-and-its-95-confidence-interval" class="section level2 hasAnchor" number="6.9">
 <h2><span class="header-section-number">6.9</span> Computing a relative risk and its 95% confidence interval<a href="stata-notes-4.html#computing-a-relative-risk-and-its-95-confidence-interval" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Using data file from Worked Example 6.4, to obtain relative risk and its 95% CI, go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Cohort study risk ratio etc…</strong></p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cs-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cs-1.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cs-1.png" width="66%" /></p>
 <p>In the <strong>cs – cohort studies</strong> dialog box, select the variable <code>side_effect</code> in the <strong>Case variable</strong> box, and the variable <code>group</code> in the <strong>Exposed variable</strong> box. Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 6.4 in the notes.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cs-2.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cs-2.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cs-2.png" width="66%" /></p>
 <p>[Command: <code>cs side_effect group</code>]</p>
 <p>If you only have the cross-tabulated data (i.e. aggregated), you can go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Cohort study risk ratio etc. calculator</strong>. In the <strong>csi</strong> dialog box, key in the relevant numbers from the cross-tabulated data (similarly to the cci dialog box above). Click <strong>OK</strong> or <strong>Submit</strong> to obtain Output 6.4.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cs-3.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cs-3.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cs-3.png" width="66%" /></p>
 <p>[Command: <code>csi 15 4 35 46</code>]</p>
 </div>
@@ -370,8 +394,16 @@ smoking_status                                                    Smoking status
 <h2><span class="header-section-number">6.10</span> Computing an odds ratio and its 95%CI<a href="stata-notes-4.html#computing-an-odds-ratio-and-its-95ci" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To obtain an odds ratio and its 95% CI, go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Case-control odds ratio</strong>. The <strong>cc</strong> dialog box is completed as for the <strong>cs</strong> dialog box.</p>
 <p>To obtain the Cornfield confidence interval, click on the <strong>Options</strong> tab and select the <strong>Cornfield approximation</strong> radio button.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cc-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cc-1.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cc-1.png" width="66%" /></p>
 <p>If you only have the cross-tabulated data (i.e. aggregated), you can go to <strong>Statistics &gt; Epidemiology and related &gt; Tables for epidemiologists &gt; Case-control odds ratio calculator</strong>. In the <code>cci</code> dialog box, enter the numbers from the cross-tabulated data and select the <strong>Cornfield approximation</strong> radio button. For example, Worked example 6.5 would be entered as:</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;stata&quot;,
+## &quot;cc-2.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/stata/
+## cc-2.png&quot;</code></pre>
 <p><img src="img/mod06/stata/cc-2.png" width="66%" /></p>
 
 </div>

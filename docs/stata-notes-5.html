@@ -328,31 +328,67 @@ div.csl-indent {
 <h2><span class="header-section-number">8.6</span> Creating a scatter plot<a href="stata-notes-5.html#creating-a-scatter-plot" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We will demonstrate using Stata for correlation and simple linear regression using the dataset <code>Example_8.1.dta</code>.</p>
 <p>To create a scatter plot to explore the association between height and FVC click: <strong>Graphics &gt; Twoway graph (scatter, line, etc.)</strong>. In the <code>twoway</code> dialog box, click <strong>Create…</strong></p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-1.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-1.png" width="66%" /></p>
 <p>A new dialog box will open. Select the <strong>Basic plots</strong> radio button and highlight <strong>Scatter</strong> under <strong>Basic plots: (select type)</strong>. Choose <strong>FVC</strong> for the <strong>Y variable</strong> and <strong>Height</strong> for the <strong>X variable</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-2.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-2.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-2.png" width="66%" /></p>
 <p>Click the <strong>Accept</strong> button in the <strong>Plot 1</strong> dialog box to return to the <strong>twoway</strong> dialog box, then click the <strong>OK</strong> or <strong>Submit</strong> button to produce the scatter plot shown in <strong>Figure 8.1</strong>.</p>
 <p>[Command: <code>twoway (scatter FVC Height)</code>]</p>
 <p>To add a fitted line, go back to the <code>twoway</code> dialog box. If you clicked the <strong>OK</strong> button, you can go to <strong>Graphics</strong> <strong>&gt; Twoway</strong> <strong>graph (scatter, line, etc.)</strong> to bring it back again.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-3.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-3.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-3.png" width="66%" /></p>
 <p>Click <strong>Create…</strong>, then select the <strong>Fit plots</strong> radio button and <strong>Linear prediction</strong> under <strong>Fit plots: (select type)</strong>. Choose <strong>FVC</strong> for the <strong>Y variable</strong> and <strong>Height</strong> for the <strong>X variable</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-4.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-4.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-4.png" width="66%" /></p>
 <p>Click the <strong>Accept</strong> button, then the <strong>OK</strong> or <strong>Submit</strong> button to produce the scatterplot below.</p>
 <p>[Command: <code>twoway (scatter FVC Height) (lfit FVC Height)</code>]</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;scatter-1.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## stata/scatter-1.png&quot;</code></pre>
 <p><img src="img/mod08/stata/scatter-1.png" width="66%" /></p>
 <p>Notice that a legend now appears, and the y-axis title is missing. To add a y-axis title, go to the <strong>Y axis</strong> tab in the <strong>twoway</strong> dialog box to enter your title as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-5.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-5.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-5.png" width="66%" /></p>
 <p>You can click the <strong>Submit</strong> button to check how the scatter plot looks like. Next go the <strong>Legend</strong> tab and select the <strong>Hide legend</strong> radio button.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-6.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-6.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-6.png" width="66%" /></p>
 <p>Click the <strong>OK</strong> or <strong>Submit</strong> button when you are finished to produce <strong>Figure 8.3</strong>.</p>
 <p>[Command: <code>twoway (scatter FVC Height) (lfit FVC Height), ytitle(Forced vital capacity (L)) legend(off)</code>]</p>
 <p>To save your graph, go to <strong>File &gt; Save</strong> in the <strong>Graph</strong> window, and be sure to save your file as a PNG file:</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;twoway-7.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## twoway-7.png&quot;</code></pre>
 <p><img src="img/mod08/stata/twoway-7.png" width="66%" /></p>
 </div>
 <div id="calculating-a-correlation-coefficient" class="section level2 hasAnchor" number="8.7">
 <h2><span class="header-section-number">8.7</span> Calculating a correlation coefficient<a href="stata-notes-5.html#calculating-a-correlation-coefficient" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To calculate the Pearson’s correlation using the dataset <code>Example_8.1.dta</code> go to: <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Pairwise correlations</strong></p>
 <p>Select the two variables, <strong>FVC</strong> and <strong>Height</strong> in the <strong>Variables</strong> box. You can click the <strong>Submit</strong> button to check the output. Next, tick the box for <strong>Print significance level for each entry</strong> to obtain the P-value and the box for <strong>Print number of observations for each entry</strong> to obtain the number of observations used as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;corr-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## corr-1.png&quot;</code></pre>
 <p><img src="img/mod08/stata/corr-1.png" width="66%" /></p>
 <p>Click the <strong>OK</strong> or the <strong>Submit</strong> button when you are done to produce <strong>Output 8.1</strong>,</p>
 <p>[Command: <code>pwcorr Height FVC, obs sig</code>]</p>
@@ -362,6 +398,10 @@ div.csl-indent {
 <p>We will fit a simple linear regression model with <code>Example_8.1.dta</code> to quantify the relationship between FVC and height.</p>
 <p>Choose <strong>Statistics &gt; Linear models and related &gt; Linear regression</strong></p>
 <p>In the <code>regress</code> dialog box, select <code>FVC</code> as the <strong>Dependent variable</strong>, and <code>Height</code> as the <strong>Independent variable</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;regr-1.png&quot;)): It is highly recommended to use relative paths for images. You
+## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/stata/
+## regr-1.png&quot;</code></pre>
 <p><img src="img/mod08/stata/regr-1.png" width="66%" /></p>
 <p>Click the <strong>OK</strong> or the <strong>Submit</strong> button when you are done to produce <strong>Outputs 8.2 and 8.3</strong>.</p>
 <p>[Command: <code>reg FVC Height</code>]</p>
@@ -370,12 +410,24 @@ div.csl-indent {
 <h2><span class="header-section-number">8.9</span> Plotting residuals from a simple linear regression<a href="stata-notes-5.html#plotting-residuals-from-a-simple-linear-regression" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>To obtain the residuals, go to <strong>Statistics &gt; Post estimation</strong> after running the regress command.</p>
 <p>In the <code>Postestimation Selector</code> dialog box, select <strong>Predictions and their SEs, leverage statistics, distance statistics, etc.</strong> in the list under Predictions as shown below.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;postest-1.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## stata/postest-1.png&quot;</code></pre>
 <p><img src="img/mod08/stata/postest-1.png" width="66%" /></p>
 <p>In the <code>predict</code> dialog box, choose the <strong>Residuals</strong> button and enter a New variable name (e.g. <code>FVC_resid</code>) for the residuals from the regression model.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;postest-2.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## stata/postest-2.png&quot;</code></pre>
 <p><img src="img/mod08/stata/postest-2.png" width="66%" /></p>
 <p>Click <strong>OK</strong> button when you are done.</p>
 <p>[Command: <code>predict FVC_resid, residuals</code>]</p>
 <p>You can now check the assumption that the residuals are normally distributed by creating a histogram with the normal curve using <strong>Graphics &gt; Histogram</strong> as shown in <strong>Stata Notes</strong> section for <strong>Module 2</strong>. Below is the <strong>histogram</strong> dialog box used to produce the graph in <strong>Figure 8.5</strong>.</p>
+<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod08&quot;, &quot;stata&quot;,
+## &quot;postest-3.png&quot;)): It is highly recommended to use relative paths for images.
+## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod08/
+## stata/postest-3.png&quot;</code></pre>
 <p><img src="img/mod08/stata/postest-3.png" width="66%" /></p>
 <p>[Command: <code>histogram FVC_resid, bin(12) frequency normal</code>]</p>
 

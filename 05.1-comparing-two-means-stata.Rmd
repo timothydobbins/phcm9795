@@ -36,7 +36,7 @@ knitr::include_graphics(here::here("img", "mod05", "stata", "summ-by-1.png"))
 
 Click **OK** or **Submit** to obtain the output as shown below. 
 
-[Command: `by gender, sort : summ birthweight`]
+[Command: `by gender, sort : summary birthweight`]
 
 ```{r, echo=TRUE, eval=FALSE, highlight=FALSE}
 . by gender, sort : summ birthweight
@@ -146,6 +146,6 @@ To perform a paired t-test we will use the dataset `Example_5.2.dta`. For a pair
 knitr::include_graphics(here::here("img", "mod05", "stata", "ttest-4.png"))
 ```
 
-Click **Submit** or **OK**. The output will look like Output 5.4 in the course notes. 
+Click **Submit** or **OK**. The output will look like Output 5.3 in the course notes. 
 
 [Command: `ttest sbp_dp == sbp_tp`]
