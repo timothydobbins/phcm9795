@@ -431,9 +431,6 @@ z &amp;= \frac{(0.20 - 0.18)}{\sqrt{\frac{0.20 × (1 - 0.20)}{300}}} \\
 \]</span></p>
 <p>This z-statistic does not meet or exceed the critical value of 1.96 for a two tailed test. This indicates that there is insufficient evidence to conclude that there is a difference between the proportion of smokers in the community and the country. This is consistent with our 95%% confidence interval which crosses the null value of 20%.</p>
 <p>The P-value for the test above can be obtained from a Normal distribution table as <span class="math inline">\(P = 2 × 0.192 = 0.38\)</span> (using Table A2.1 in the Appendix), or using the hand-calculator in Stata.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;z-curve.png&quot;)):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/z-curve.png&quot;</code></pre>
 <p><img src="img/mod06/z-curve.png" width="66%" /></p>
 </div>
 <div id="binomial-test-for-testing-one-sample-proportion" class="section level3 hasAnchor" number="6.3.3">
@@ -508,9 +505,6 @@ smoking_st~s |      300         54           60       0.20000      0.18000
 <div id="randomised-controlled-trial" class="section level3 hasAnchor" number="6.5.1">
 <h3><span class="header-section-number">6.5.1</span> Randomised controlled trial<a href="summary-statistics-for-binary-data.html#randomised-controlled-trial" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A randomised controlled trial addresses the research question: what is the effect of an intervention on an outcome. In the simplest form of a randomised controlled trial, a group of participants is randomly allocated to a group that receives the treatment of interest or to a control group that does not receive the treatment of interest. Participants are followed up over time, and the outcome is measured at the conclusion of the study.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;ee-rct.jpg&quot;)): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/ee-rct.jpg&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:ee-fig-rct"></span>
 <img src="img/mod06/ee-rct.jpg" alt="The design of a randomised controlled trial [Figure 4.1, Essential Epidemiology]" width="66%" />
 <p class="caption">
@@ -521,9 +515,6 @@ Figure 6.1: The design of a randomised controlled trial [Figure 4.1, Essential E
 <div id="cohort-study" class="section level3 hasAnchor" number="6.5.2">
 <h3><span class="header-section-number">6.5.2</span> Cohort study<a href="summary-statistics-for-binary-data.html#cohort-study" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A cohort study is an <em>observational study</em> that addresses the research question: what is the effect of an exposure on an outcome. This research question is similar to that studied in a randomised controlled trial, but the exposure is defined by the participants’ circumstances, and not manipulated by the researchers. In a cohort study, participants without the outcome of interest are enrolled, followed over time, and information on their exposure to a factor is measured (either at baseline or over time). At the conclusion of the study, information on the outcome is measured to identify new (incident) cases.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;ee-cohort.jpg&quot;)):
-## It is highly recommended to use relative paths for images. You had absolute
-## paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/ee-cohort.jpg&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:ee-fig-cohort"></span>
 <img src="img/mod06/ee-cohort.jpg" alt="The design of a cohort study [Figure 4.2, Essential Epidemiology]" width="66%" />
 <p class="caption">
@@ -534,9 +525,6 @@ Figure 6.2: The design of a cohort study [Figure 4.2, Essential Epidemiology]
 <div id="case-control-study" class="section level3 hasAnchor" number="6.5.3">
 <h3><span class="header-section-number">6.5.3</span> Case control study<a href="summary-statistics-for-binary-data.html#case-control-study" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>While the randomised controlled trial and cohort study begin with a population without the outcome, a case-control study begins by assembling a group with the outcome of interest (cases), and a group without the outcome of interest (controls). The researchers then ask the cases and controls about their previous exposures.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;ee-cc.jpg&quot;)): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/ee-cc.jpg&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:ee-fig-cc"></span>
 <img src="img/mod06/ee-cc.jpg" alt="The design of a case-control trial [Figure 4.3, Essential Epidemiology]" width="66%" />
 <p class="caption">
@@ -547,9 +535,6 @@ Figure 6.3: The design of a case-control trial [Figure 4.3, Essential Epidemiolo
 <div id="cross-sectional-study" class="section level3 hasAnchor" number="6.5.4">
 <h3><span class="header-section-number">6.5.4</span> Cross-sectional study<a href="summary-statistics-for-binary-data.html#cross-sectional-study" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In a cross-sectional study, the exposure and the outcome are measured at the same time. While this results in a study that is relatively quick to conduct, it does not allow for any temporal relationships to be assessed.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod06&quot;, &quot;ee-cs.jpg&quot;)): It
-## is highly recommended to use relative paths for images. You had absolute paths:
-## &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod06/ee-cs.jpg&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:ee-fig-cs"></span>
 <img src="img/mod06/ee-cs.jpg" alt="The design of a cross-sectional study [Figure 4.4, Essential Epidemiology]" width="66%" />
 <p class="caption">

@@ -332,16 +332,8 @@ div.csl-indent {
 <p>A <code>csv</code> file, or a “comma separated variables” file is commonly used to store data. These files have a very simple structure: they are plain text files, where data are separated by commas. csv files have the advantage that, as they are plain text files, they can be opened by a large number of programs (such as Notepad in Windows, TextEdit in MacOS, Microsoft Excel - even Microsoft Word). While they can be opened by Microsoft Excel, they can be opened by many other programs: the csv file can be thought of as the lingua-franca of data.</p>
 <p>In this demonstration, we will use data on the weight of 1000 people entered in a csv file called <code>weight_s2.csv</code> available on Moodle.
 To confirm that the file is readable by any text editor, here are the first ten lines of the file, opened in Notepad on Microsoft Windows, and TextEdit on MacOS.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;import-01.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/import-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/import-01.png" width="66%" /></p>
 <p>To import it into Stata, use <strong>File &gt; Import &gt; Text data (delimited, .csv, …)</strong> to bring up the import delimited text data dialog box. Click the <strong>Open</strong> button (the folder icon on the right-hand side of the window) and select the csv file you downloaded. The dialog box should look like below:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;import-02.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/import-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/import-02.png" width="66%" /></p>
 <p>Here, Stata has (correctly) decided that the first row of the dataset contains the variable names. You may need to change this if the Preview window does not look correct. Click <strong>OK</strong> or <strong>Submit</strong> button to import the data.</p>
 </div>
@@ -351,18 +343,10 @@ To confirm that the file is readable by any text editor, here are the first ten 
 <p>Before you start describing and analysing your data, it is important to make sure that no errors have been made during the data entry process. Basically, you are looking for values that are outside the range of possible or plausible values for that variable.</p>
 <p>If an error is found, the best method for correcting the error is to go back to the original data e.g. the hard copy questionnaire, to obtain the original value, entering the correct value into Stata. If the original data is not available or the original data is also incorrect, the erroneous value is often excluded from the dataset.</p>
 <p>For continuous variables, the easiest methods are to examine a boxplot and histogram. For example, a boxplot and histogram for the weight variable we just imported appear as:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;check-01.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## check-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/check-01.png" width="66%" /></p>
 <p>There is a clear outlying point shown in the boxplot. Although not obvious, the same point is shown in the histogram as a bar around 700 with a very short height.</p>
 <p>To identify the outlying observation in the dataset, we can sort your data in ascending order and check the minimum and maximum values in the Data Editor. You will need to decide if these values are a data entry error or are biologically plausible. If an extreme value or “outlier”, is biologically plausible, it should be included in all analyses.</p>
 <p>To sort data, you must be in the <strong>Data Editor (Edit)</strong> window. Select <strong>Data &gt; Sort data…</strong> and choose <code>weight</code> as shown in the <strong>sort</strong> dialog box below. Click <strong>OK</strong> to do an <em>ascending</em> sort (arranging weight from smallest to largest). [Command: <code>sort weight</code>]</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;check-02.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## check-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/check-02.png" width="66%" /></p>
 <p>By scrolling through the data, you will see that the values range from 53.8kg to 85.8kg with a very high value of 700.2kg. A value as high as 700kg is likely to be a data entry error (e.g. error in entering an extra zero) and is not a plausible weight value. Here, <strong>you should check your original data</strong>. You might find that the original weight was recorded as 70.2kg. You can change this in Stata by deleting a zero from cell with 700.2 in the <strong>Data Editor (Edit)</strong> window.</p>
 <p>[Command: <code>replace weight = 70.2 in 1000</code>]</p>
@@ -372,33 +356,17 @@ To confirm that the file is readable by any text editor, here are the first ten 
 <div id="overlaying-a-normal-curve-on-a-histogram" class="section level2 hasAnchor" number="2.14">
 <h2><span class="header-section-number">2.14</span> Overlaying a Normal curve on a Histogram<a href="stata-notes.html#overlaying-a-normal-curve-on-a-histogram" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>It can be useful to produce a histogram with an overlayed Normal curve to assess whether our sample appears approximately Normally distributed. First go to menu <strong>Graphics &gt; Histogram</strong>. In the <strong>Histogram</strong> dialog box, select <code>weight</code> into the <strong>variable</strong> box and choose the <strong>Frequency</strong> radio button for ease of interpretation.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;hist-01.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## hist-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-01.png" width="66%" /></p>
 <p>You can click the <strong>Submit</strong> button to check how the plot looks like. To superimpose the normal curve, go to the <strong>Density plots</strong> and tick <strong>Add normal-density plot</strong>, then click the <strong>Submit</strong> or <strong>OK</strong> button. You can change the X-axis label in the <strong>X axis</strong> tab, e.g. to <code>Weight (kg)</code>.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;hist-02.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## hist-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-02.png" width="66%" /></p>
 <p>[Command: <code>histogram weight, frequency normal xtitle(Weight (kg))</code>]</p>
 <p>Your histogram should look like this:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;hist-03.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## hist-03.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-03.png" width="66%" /></p>
 </div>
 <div id="descriptive-statistics-for-checking-normality" class="section level2 hasAnchor" number="2.15">
 <h2><span class="header-section-number">2.15</span> Descriptive statistics for checking normality<a href="stata-notes.html#descriptive-statistics-for-checking-normality" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All the descriptive statistics including Skewness and Kurtosis discussed in this module can be obtained using the <code>summarize</code> command from <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong> and specifying <strong>detail</strong> as an option in Stata (as shown in the Stata Notes for Module 1).</p>
 <p>[Command: <code>summarize weight, detail</code>]</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;desc-01.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## desc-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/desc-01.png" width="66%" /></p>
 <p>You can similarly repeat this using the dataset <code>Example_1.3.dta</code> used for creating these in the course notes for this module.</p>
 </div>
@@ -412,10 +380,6 @@ To confirm that the file is readable by any text editor, here are the first ten 
 <li>weight: weight in kilograms</li>
 </ul>
 <p>To import data from Microsoft Excel, we use <strong>File &gt; Import &gt; Excel spreadsheet</strong>. First click <strong>Browse</strong> to locate the file to be imported:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;import-
-## excel-01.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## import-excel-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/import-excel-01.png" width="66%" /></p>
 <p>Take special note of the <strong>Preview</strong> at the bottom of the dialog box. Our dataset has the variable names listed in the first row of the spreadsheet, so we tick the <strong>Import first row as variable names</strong> checkbox. We don’t want to <strong>Import all data as strings</strong> (strings are character, or text variables), so we leave this unchecked. We finalise the process by clicking <strong>OK</strong>.</p>
 <p>As always, check the Data Browser to confirm that the data were imported successfully.</p>
@@ -424,20 +388,12 @@ To confirm that the file is readable by any text editor, here are the first ten 
 <h2><span class="header-section-number">2.17</span> Generating new variables<a href="stata-notes.html#generating-new-variables" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Our health survey data contains information on height and weight. We often summarise body size using BMI: body mass index which is calculated as: <span class="math inline">\(\frac{\text{weight (kg)}}{(\text{height (m)})^2}\)</span></p>
 <p>To generate a new variable, we use <strong>Data &gt; Create or change data &gt; Create new variable</strong>.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;gen-01.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## gen-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/gen-01.png" width="66%" /></p>
 <ol style="list-style-type: decimal">
 <li>type the name of the new variable, BMI, in the Variable name box.</li>
 <li>enter the formula to calculate the variable in “Specify a value or an expression”. This can be done in one of two ways:</li>
 </ol>
 <p><strong>Option 1:</strong> click <strong>Create</strong> to open the Expression Builder dialog box. This box allows you to build the formula interactively:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;gen-02.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## gen-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/gen-02.png" width="66%" /></p>
 <p>Clicking <strong>Variables</strong> in the lower-left-hand pane shows a list of variables in the lower-middle pane of the window. We want to create a new formula of <span class="math inline">\(\text{weight } \div \text{ height} ^2\)</span>. Double-clicking a variable name moves that variable into the formula builder. To build our BMI formula:</p>
 <ol style="list-style-type: lower-roman">
@@ -448,25 +404,13 @@ To confirm that the file is readable by any text editor, here are the first ten 
 <li>enter <code>2</code> (as ^2 represents “to the power of 2”, or “squared”</li>
 </ol>
 <p>Your completed window should look like:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;gen-03.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## gen-03.png&quot;</code></pre>
 <p><img src="img/mod02/stata/gen-03.png" width="66%" /></p>
 <p>Click <strong>OK</strong> to return to the generate dialog box, which now should appear as:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;gen-04.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## gen-04.png&quot;</code></pre>
 <p><img src="img/mod02/stata/gen-04.png" width="66%" /></p>
 <p><strong>Option 2:</strong> if you are entering a simple formula, you can type the formula directly into the expression using your keyboard.</p>
 <p>Click <strong>OK</strong> to generate your new variable.</p>
 <p>[Command: <code>generate BMI = weight / height ^ 2</code>]</p>
 <p>We should check the construction of the new variable by examining the Data Browser:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;gen-05.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/
-## gen-05.png&quot;</code></pre>
 <p><img src="img/mod02/stata/gen-05.png" width="66%" /></p>
 <p>In the general population, BMI ranges between about 15 to 30. It appears that BMI has been correctly generated in this example.</p>
 </div>
@@ -477,18 +421,10 @@ Many Stata commands (and dialog boxes) allow for a by-variable. For example, to 
 <ol style="list-style-type: decimal">
 <li>Define <code>BMI</code> as our <strong>Variable</strong> in the <strong>Statistics &gt; Summaries, tables, and tests &gt; Summary and descriptive statistics &gt; Summary statistics</strong> dialog box.</li>
 </ol>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;summ-
-## by-01.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/summ-
-## by-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/summ-by-01.png" width="66%" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Click the <strong>by/if/in</strong> tab, tick <strong>Repeat command by groups</strong>, and select the variable you want to be the <em>by-variable</em>. In this case, we choose <code>sex</code> and then click <strong>OK</strong>.</li>
 </ol>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;summ-
-## by-02.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/summ-
-## by-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/summ-by-02.png" width="66%" /></p>
 <p>[Command: <code>by sex, sort : summarize BMI</code>]</p>
 <p>The by-variable will tell Stata to repeat the <code>summarize</code> command for each distinct value of <code>sex</code>. Hence, your by-variable must be a discrete variable with only a relatively small number of categories.</p>
@@ -513,24 +449,12 @@ A form of the <strong>by</strong> tab appears in many Stata windows. For example
 <ol style="list-style-type: decimal">
 <li>Define <code>BMI</code> as the variable to be plotted</li>
 </ol>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;hist-
-## by-01.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/hist-
-## by-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-by-01.png" width="66%" /></p>
 <ol start="2" style="list-style-type: decimal">
 <li>Define <code>sex</code> as a <em>by-variable</em> by completing the <strong>By</strong> tab:</li>
 </ol>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;hist-
-## by-02.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/hist-
-## by-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-by-02.png" width="66%" /></p>
 <p>This produces the following graph:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;, &quot;hist-
-## by-03.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/stata/hist-
-## by-03.png&quot;</code></pre>
 <p><img src="img/mod02/stata/hist-by-03.png" width="66%" /></p>
 </div>
 <div id="recoding-data" class="section level2 hasAnchor" number="2.19">
@@ -562,18 +486,10 @@ A form of the <strong>by</strong> tab appears in many Stata windows. For example
 <p>So to recode the underweight category, we would enter: <code>(min / 18.4999 = 1 "Underweight")</code>
 Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.9999 = 2 "Normal weight")</code></p>
 <p>Your completed recode dialog box should look as follows:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;recode-01.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/recode-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/recode-01.png" width="75%" /></p>
 <ol start="4" style="list-style-type: decimal">
 <li><strong>Do not forget this step!</strong> To recode into a new variable, we <strong>must</strong> click the options tab to give the name of the new variable. If this step is not performed, Stata will overwrite the initial variable with the recoded version. Here, we tell Stata to generate a new variable called bmi_category:</li>
 </ol>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;recode-02.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/recode-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/recode-02.png" width="75%" /></p>
 <p>Click <strong>OK</strong> to complete the recoding.</p>
 <p>Note that the default label for the new recoded variable <code>bmi_category</code> is <code>RECODE of BMI</code>. This can be relabelled in the usual way: click on <code>bmi_category</code> in the <strong>Variables</strong> window, then enter a name such as <code>BMI Category</code> in the <strong>Label</strong> box in the <strong>Properties</strong> window.</p>
@@ -593,16 +509,8 @@ Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.9999
 </table>
 
 <p>To do the computation for part (a) in Worked Example 2.1, go to <strong>Data &gt; Other utilities &gt; Hand calculator</strong> from the main menu in Stata.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;binomial-01.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/binomial-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/binomial-01.png" width="66%" /></p>
 <p>In the dialog box, click <strong>Create…</strong> to bring up the <strong>Expression Builder</strong> dialog box. In the <strong>Categories</strong> box, click on <strong>Functions</strong> to expand the list, then scroll down to <strong>Statistical</strong>, expand the list again and select <strong>Binomial</strong>.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;binomial-02.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/binomial-02.png&quot;</code></pre>
 <p><img src="img/mod02/stata/binomial-02.png" width="66%" /></p>
 <p>A list of functions will pop up to the right of the <strong>Categories</strong> box. Double click on <strong>binomialp()</strong> which will populate the top of the expression builder box with <code>binomialp(n,k,p)</code>. Following the instructions at the bottom of the box:</p>
 <ul>
@@ -611,26 +519,14 @@ Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.9999
 <li>and <em>p</em> is probability of drawing a smoker from the population, which is 19.8% (i.e. p=0.198).</li>
 </ul>
 <p>Replace each of these with the appropriate number into the box as shown below.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;binomial-03.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/binomial-03.png&quot;</code></pre>
 <p><img src="img/mod02/stata/binomial-03.png" width="66%" /></p>
 <p>Click the <strong>OK</strong> button in the Expression Builder box, then click <strong>OK</strong> or <strong>Submit</strong> in the main dialog box. The probability is now displayed on your Results screen as <code>.08008454</code> which rounds off to 0.08 as shown in part (a) of Worked Example 2.1. (Note that Stata doesn’t print the 0 in front of the decimal point in the output.)</p>
 <p>[Command: <code>display binomialp(6, 3, 0.198)</code>]</p>
 <p>To calculate the upper tail of probability in part (b), go to <strong>Data &gt; Other utilities &gt; Hand calculator</strong> from the main menu and bring up the <strong>Expression Builder</strong> box again. You may need to clear the text in your Expression box from your previous display command.</p>
 <p>In the <strong>Categories</strong> box, navigate to <strong>Binomial</strong> and select it as you had before. Now double click on <strong>binomialtail()</strong> which will populate the top of the expression builder box with <code>binomialtail(n,k,p)</code>. To obtain P(X <span class="math inline">\(\ge\)</span> 4) from 6 trials, <em>n</em>=6, <em>k</em>=4 and <em>p</em>=0.198. When you are done, click the <strong>OK</strong> button in the <strong>Expression Builder</strong> box to get the below in the display dialog box:</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;binomial-04.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/binomial-04.png&quot;</code></pre>
 <p><img src="img/mod02/stata/binomial-04.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomialtail(6, 4, 0.198)</code>]</p>
 <p>For the lower tail for part (c), choose or double-click on <strong>binomial()</strong> from the list of functions. To obtain P(X <span class="math inline">\(\le\)</span> 2) from 6 trials, enter <em>n</em>=6, <em>k</em>=2 and <em>p</em>=0.198.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;binomial-05.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/binomial-05.png&quot;</code></pre>
 <p><img src="img/mod02/stata/binomial-05.png" width="66%" /></p>
 <p>Click <strong>OK</strong> or <strong>Submit</strong> when you are done. [Command: <code>display binomial(6, 2, 0.198)</code>]</p>
 </div>
@@ -638,10 +534,6 @@ Similarly, for the normal weight category, we would enter: <code>(18.5 / 24.9999
 <h2><span class="header-section-number">2.21</span> Computing probabilities from the normal distribution using the Hand calculator in Stata<a href="stata-notes.html#computing-probabilities-from-the-normal-distribution-using-the-hand-calculator-in-stata" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>From Stata, the probability using a normal distribution can be obtained from the display command via <strong>Data &gt; Other utilities &gt; Hand calculator</strong> as shown in Worked example 2.1. In the dialog box, click the <strong>Create…</strong> button to bring up the <strong>Expression Builder</strong> dialog box. In the <strong>Categories</strong> box, click on <strong>Functions</strong> to expand the list, then scroll down to <strong>Statistical</strong> and expand the list again and select <strong>Normal</strong> this time. Double-click on <strong>normal()</strong> to populate the top of the expression builder box with <code>normal(z)</code>.</p>
 <p>The instructions at the bottom of the box explain that this is the cumulative standard normal distribution which means it gives P(Z&lt;z) in Stata. In other words, the normal() function gives you the <strong>lower tail</strong> probability from the standard normal distribution. To obtain P(Z&gt;0.5), edit the box to <code>1-normal(0.5)</code> as shown below.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod02&quot;, &quot;stata&quot;,
-## &quot;normal-01.png&quot;)): It is highly recommended to use relative paths for images.
-## You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod02/
-## stata/normal-01.png&quot;</code></pre>
 <p><img src="img/mod02/stata/normal-01.png" width="66%" /></p>
 <p>Click <strong>OK</strong>, then <strong>Submit</strong> to obtain the same value as from the table. [Command: <code>display 1-normal(0.5)</code>]</p>
 

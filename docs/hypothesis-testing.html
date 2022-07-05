@@ -396,10 +396,6 @@ Informally, the P-value can be interpreted as the probability of observing data 
 <div id="statistical-significance-and-clinical-importance" class="section level2 hasAnchor" number="4.4">
 <h2><span class="header-section-number">4.4</span> Statistical significance and clinical importance<a href="hypothesis-testing.html#statistical-significance-and-clinical-importance" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>When applying statistical methods in health and medical research, we need to make an informed decision about whether the effect size that led to a statistically significant finding is also clinically important (see Figure <a href="hypothesis-testing.html#fig:practical-importance">4.1</a>). The decision about whether a statistically significant result is also clinically important depends on expert knowledge and is best made by practitioners with experience in the field.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod04&quot;, &quot;practical-vs-
-## statistical-sig.png&quot;)): It is highly recommended to use relative paths for
-## images. You had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/
-## mod04/practical-vs-statistical-sig.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:practical-importance"></span>
 <img src="img/mod04/practical-vs-statistical-sig.png" alt="Statistical significance vs. clinical importance (Source: Armitage P, Berry G, Matthews JNS. (2001)" width="66%" />
 <p class="caption">
@@ -438,10 +434,6 @@ Figure 4.1: Statistical significance vs. clinical importance (Source: Armitage 
 <p><span class="math display">\[ 95\% \text{ CI} = \text{Difference in means} \pm 1.96 \times \text{SE}(\text{Difference in means)} \]</span></p>
 <p>It is important to remember that the 95% CI is estimated from the standard error, and that the standard error has a direct relationship to the sample size. For small sample sizes, the standard error is large and the 95% CI becomes wider. Conversely, the larger the sample size, the smaller the standard error and the narrower the 95% CI becomes indicating a more precise estimate of the mean difference.</p>
 <p>The 95% CI tells us the region in which we are 95% confident that the true difference between the groups in the population lies. If this region contains the null value of no difference, we can say that we are 95% confident that there is no true difference between the groups and therefore we would not reject the null hypothesis. This is shown in the top two estimates in Figure <a href="hypothesis-testing.html#fig:cis-overlapping-null">4.2</a>. If the zero value lies outside the 95% confidence interval, we can conclude that there is evidence of a difference between the groups because we are 95% confident that the difference does not encompass a zero value (as shown in the lower two estimates in Figure <a href="hypothesis-testing.html#fig:cis-overlapping-null">4.2</a>).</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod04&quot;, &quot;cis-overlapping-
-## null.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod04/cis-
-## overlapping-null.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:cis-overlapping-null"></span>
 <img src="img/mod04/cis-overlapping-null.png" alt="Using confidence intervals as informal hypothesis tests" width="66%" />
 <p class="caption">
@@ -497,10 +489,6 @@ Ho: mean = 71                                    degrees of freedom =      732
 <div id="one-and-two-tailed-tests" class="section level2 hasAnchor" number="4.8">
 <h2><span class="header-section-number">4.8</span> One and two tailed tests<a href="hypothesis-testing.html#one-and-two-tailed-tests" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>Most statistical tests are two tailed tests, that is, we conduct a test that allows for the summary statistic in the group of interest to be either higher or lower than in the comparison group. For a t-test, this requires that we obtain a two-tailed P value which gives us the probability of the t-value being in either one of the two tails of the t-distribution as shown in Figure 4.3. The shaded regions show the t values that indicate a P value less than 0.05.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod04&quot;, &quot;two-tailed-
-## test.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod04/two-tailed-
-## test.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:two-tailed-test"></span>
 <img src="img/mod04/two-tailed-test.png" alt="P-value for a 2-tailed test" width="66%" />
 <p class="caption">
@@ -508,10 +496,6 @@ Figure 4.3: P-value for a 2-tailed test
 </p>
 </div>
 <p>Occasionally, one tailed tests are conducted in which the summary statistic in the group of interest can only be higher or lower than the comparison group, i.e. a difference is specified to occur in one direction only. This makes it easier to reject the null hypothesis because the consequence is that the P value is essentially halved. The P value for a one tailed test would be 0.025 i.e. the shaded region for a one-tailed test would be doubled on one side of the distribution and eliminated from the other side of the distribution as shown in Figure 4.4.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod04&quot;, &quot;one-tailed-
-## tests.png&quot;)): It is highly recommended to use relative paths for images. You had
-## absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod04/one-tailed-
-## tests.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:one-tailed-tests"></span>
 <img src="img/mod04/one-tailed-tests.png" alt="P-value for 1-tailed tests" width="90%" />
 <p class="caption">

@@ -380,10 +380,6 @@ div.csl-indent {
 <h3><span class="header-section-number">5.2.2</span> Worked Example<a href="comparing-the-means-of-two-groups.html#worked-example-5" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>In an observational study of a random sample of 100 full term babies from the community, birth weight and gender were measured. There were 44 male babies and 56 female babies in the sample. The research question asked whether there was a difference in birth weights between boys and girls. The two groups are independent of each other and therefore an independent samples t-test can be used to test the null hypothesis that there is no difference in weight between the genders.</p>
 <p>Some preliminary descriptive statistics of the distribution of the variable of interest in each group should always be obtained before a t-test is undertaken to ensure that the assumptions are met. Box plots and histograms are ideal for this. Histrograms and box plots of the data obtained in Stata using <strong>Graphics &gt; Box plot</strong> is shown in Figure <a href="comparing-the-means-of-two-groups.html#fig:mod05-bwt-gender">5.1</a>. The dataset Example_5.1.dta is available on Moodle.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;mod05-bwt-
-## gender.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/mod05-
-## bwt-gender.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod05-bwt-gender"></span>
 <img src="img/mod05/mod05-bwt-gender.png" alt="Histograms and box plots of birth weight by gender" width="100%" />
 <p class="caption">
@@ -494,10 +490,6 @@ Ho: diff = 0                                     degrees of freedom =       98
 <h3><span class="header-section-number">5.3.3</span> Worked Example 5.2<a href="comparing-the-means-of-two-groups.html#worked-example-5.2" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>A total of 107 people were recruited into a study to assess whether ankle blood pressure measured in two different sites would be the same. For each person, systolic blood pressure (SBP) was measured in two sites: dorsalis pedis and tibialis posterior.</p>
 <p>The dataset Example_5.2.dta is available on Moodle. First, we need to compute the pairwise difference between SBP measured in the two sites in Stata using the <code>generate</code> command. This is shown in the Stata manual at the end of this module (Checking the assumptions for a Paired t-test). The distribution of the difference between SBP measured in dorsalis pedis and tibialis posterior is shown in Figure <a href="comparing-the-means-of-two-groups.html#fig:mod05-sbpdiff">5.2</a>. It approximates a normal distribution and therefore a paired t-test can be used.</p>
-<pre><code>## Warning in knitr::include_graphics(here::here(&quot;img&quot;, &quot;mod05&quot;, &quot;mod05-
-## sbpdiff.png&quot;)): It is highly recommended to use relative paths for images. You
-## had absolute paths: &quot;/Users/td/Documents/GithubRepos/phcm9795/img/mod05/mod05-
-## sbpdiff.png&quot;</code></pre>
 <div class="figure"><span style="display:block;" id="fig:mod05-sbpdiff"></span>
 <img src="img/mod05/mod05-sbpdiff.png" alt="Distribution of differences in ankle SBP between two sites of 107 participants" width="100%" />
 <p class="caption">
