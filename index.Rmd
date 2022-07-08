@@ -55,11 +55,19 @@ On successful completion of this course, you will be able to:
 
 ### Changelog {-}
 
+**2022-07-08**
+
+[Changed]
+
+- Corrected formula for odds ratio in Worked Example 6.5.
+- Corrected estimated proportion in Learning Activity 6.5.
+
 **2022-07-05**
 
 [Changed]
 
 - Fixed more typos.
+
 **2022-06-20**
 
 [Changed]
