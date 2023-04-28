@@ -394,7 +394,7 @@ From the cross-tabulated output, you can check the odds ratio estimate as follow
 $$
 \begin{aligned}
 \text{OR} &= \frac{a / c}{b /d} \\
-  &= \frac{57 / 43}{14 / 186} \\
+  &= \frac{57 / 14}{43 / 186} \\
   &= 17.6
 \end{aligned}
 $$
