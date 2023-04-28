@@ -36,14 +36,6 @@
   \KOMAoptions{parskip=half}}
 \makeatother
 \usepackage{xcolor}
-\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
-\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
-\hypersetup{
-  pdftitle={PHCM9795 Foundations of Biostatistics},
-  pdfauthor={Course notes},
-  hidelinks,
-  pdfcreator={LaTeX via pandoc}}
-\urlstyle{same} % disable monospaced font for URLs
 \usepackage{color}
 \usepackage{fancyvrb}
 \newcommand{\VerbBar}{|}
@@ -152,6 +144,14 @@
 \fi
 \usepackage[]{natbib}
 \bibliographystyle{plainnat}
+\IfFileExists{bookmark.sty}{\usepackage{bookmark}}{\usepackage{hyperref}}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same} % disable monospaced font for URLs
+\hypersetup{
+  pdftitle={PHCM9795 Foundations of Biostatistics},
+  pdfauthor={Course notes},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
 
 \title{PHCM9795 Foundations of Biostatistics}
 \author{Course notes}
@@ -1036,9 +1036,9 @@ We often collect measurements that are continuous in nature, that is measurement
 When computing summary statistics or using more formal statistical methods, mathematical and statistical notation is often used. Below are some of the common statistical terms and interpretation that will be used in the course and which are seen in many text books.
 
 \begin{longtable}[]{@{}ll@{}}
-\toprule
+\toprule()
 Notation & Interpretation \\
-\midrule
+\midrule()
 \endhead
 \(x\) & An observation in your sample \\
 \(\sum x\) & Sum of all the observations \\
@@ -1050,7 +1050,7 @@ Notation & Interpretation \\
 \(\bar{x}\) & Sample mean \\
 \(s^2\) & Sample variance \\
 \(s\) & Sample standard deviation \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 \hypertarget{measures-of-central-tendency}{%
@@ -1265,13 +1265,13 @@ A summary of these guidelines that will be used in this course appear below.
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.2908}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.7092}}@{}}
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Summary statistic
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Guideline (reference)
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 Mean & It is usually appropriate to quote the mean to one extra decimal place compared with the raw data. (Altman) \\
 Median, Interquartile range, Range & As medians, interquartile ranges and ranges are based on individual data points, these values should be presented with the same precision as the original data. \\
@@ -1286,7 +1286,7 @@ Difference in proportions & As for the estimated proportions \\
 Odds ratio / Relative risk & Hazard and odds ratios are normally reported to two decimal places, although this can be avoided for high odds ratios (Assel) \\
 Correlation coefficient & One or two decimal places, or more when very close to ±1 (Cole) \\
 Regression coefficient & Use one more significant figure than the underlying data (adapted from Cole) \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 Sources:
@@ -1412,13 +1412,13 @@ The Stata windows are summarised below.
 \begin{longtable}[]{@{}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}
   >{\raggedright\arraybackslash}p{(\columnwidth - 2\tabcolsep) * \real{0.5000}}@{}}
-\toprule
+\toprule()
 \begin{minipage}[b]{\linewidth}\raggedright
 Window
 \end{minipage} & \begin{minipage}[b]{\linewidth}\raggedright
 Purpose
 \end{minipage} \\
-\midrule
+\midrule()
 \endhead
 Results & Shows your issued commands, results output (e.g.~tables) and error messages or warnings. \\
 Command & Where you can type in a command you want to run. The command window need not be used in this course \\
@@ -1427,7 +1427,7 @@ Properties & Shows the properties of your currently selected variable (selected 
 History & Shows the history of your issued commands in your current session. \\
 Data Editor (Edit) & A separate window that allows you to edit or enter data. \\
 Data Editor (Browse) & A separate window that allows you to view data: data cannot be edited. \\
-\bottomrule
+\bottomrule()
 \end{longtable}
 
 Stata allows you to perform most of your work by selecting options from the appropriate menus at the top of the main Stata window. A brief description of the main menu bar options follows.
@@ -5658,7 +5658,7 @@ From Output 6.4, you can check the relative risk estimate:
 \hypertarget{worked-example-6.5}{%
 \subsection{Worked Example 6.5}\label{worked-example-6.5}}
 
-A case-control study investigated the association between human papillomavirus and oropharyngeal cancer (D'Souza, et al.~NEJM 2007), and the results appear in Table \ref{tab:tab-6-nejm}.
+A case-control study investigated the association between human papillomavirus and oropharyngeal cancer (D\textquotesingle Souza, et al.~NEJM 2007), and the results appear in Table \ref{tab:tab-6-nejm}.
 
  
   \providecommand{\huxb}[2]{\arrayrulecolor[RGB]{#1}\global\arrayrulewidth=#2pt}
